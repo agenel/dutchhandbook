@@ -29,8 +29,11 @@
     </div>
   </div>
 
-  <div class="roadmap">
-    <div class="roadmap-title"><span class="material-icons">route</span>Recommended learning order</div>
+  <details class="roadmap" id="roadmap">
+    <summary class="roadmap-title">
+      <span style="display:flex; align-items:center; gap:0.4rem"><span class="material-icons">route</span>Recommended learning order</span>
+      <span class="material-icons expand-icon" style="font-size: 1.1rem; margin-top:-2px;">expand_more</span>
+    </summary>
     <div class="rm-steps">
       <div class="rm-step"><div class="rm-num">1</div><span class="rm-label">Pronouns</span></div>
       <span class="rm-arrow">&rarr;</span>
@@ -56,7 +59,12 @@
       <span class="rm-arrow">&rarr;</span>
       <div class="rm-step"><div class="rm-num">12</div><span class="rm-label">Time & Dates</span></div>
     </div>
-  </div>
+  </details>
+  <script>
+    if (window.innerWidth > 600) {
+      document.getElementById('roadmap').setAttribute('open', '');
+    }
+  </script>
 
   <div class="section-title">All Cheat Sheets</div>
 
