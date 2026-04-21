@@ -6,49 +6,8 @@
 <title>Dutch Word Order — Cheat Sheet</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --orange:#E8500A; --orange-light:#FF7A3D; --orange-bg:#FFF2EB; --orange-border:#FFD0B5;
-  --cream:#FAF6EE; --ink:#1A1208; --muted:#7A6A55; --border:#E0D5C5; --white:#fff;
-  --blue:#1A3A6B; --blue-light:#E8EEF8; --blue-border:#C5D4ED;
-  --green:#1A5C3A; --green-light:#E8F4EE; --green-border:#B8DFC8;
-  --red:#8B1A1A; --red-light:#F5E8E8; --red-border:#E8B8B8;
-  --gold:#C4920A; --gold-light:#FDF3D8; --gold-border:#E8D49A;
-  --teal:#2D6B6B; --teal-light:#E5F5F5; --teal-border:#A8D8D8;
-  --purple:#7B2D8B; --purple-light:#F5EAF8; --purple-border:#DDB8E8;
-}
-body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--ink); min-height:100vh; padding:2rem 1rem; }
-.page { max-width:900px; margin:0 auto; }
-.breadcrumb { font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.4rem; }
-.breadcrumb a { color:var(--orange); text-decoration:none; font-weight:500; }
-.breadcrumb a:hover { text-decoration:underline; }
-.site-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:2rem; padding-bottom:1.5rem; border-bottom:3px solid var(--ink); gap:1rem; flex-wrap:wrap; }
-.site-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,3rem); font-weight:900; line-height:1; letter-spacing:-0.02em; }
-.site-header h1 .accent { color:var(--orange); }
-.site-header .subtitle { font-size:0.8rem; color:var(--muted); font-weight:300; margin-top:0.4rem; letter-spacing:0.08em; text-transform:uppercase; }
-.flag{display:flex;flex-direction:column;width:54px;height:36px;border-radius:4px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;margin-top:4px;}
-.flag-red{background:#AE1C28;flex:1}.flag-white{background:#fff;flex:1}.flag-blue{background:#21468B;flex:1}
-.pill-row { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
-.pill { font-family:'DM Mono',monospace; font-size:0.72rem; font-weight:500; padding:0.27rem 0.72rem; border-radius:999px; border:1.5px solid var(--ink); color:var(--ink); letter-spacing:0.02em; }
-.key-banner { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; display:flex; align-items:flex-start; gap:1rem; flex-wrap:wrap; }
-.key-banner .kb-label { font-family:'DM Mono',monospace; font-size:0.67rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--orange-light); flex-shrink:0; padding-top:2px; display:flex; align-items:center; gap:0.3rem; }
-.key-banner .kb-label .material-icons { font-size:0.9rem; }
-.key-banner p { font-size:0.86rem; line-height:1.55; font-weight:300; }
-.key-banner strong { font-weight:600; color:#FFD4BC; }
-.section-title { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--ink); margin-bottom:1rem; display:flex; align-items:center; gap:0.6rem; }
-.section-title::after { content:''; flex:1; height:1.5px; background:var(--border); }
-table { width:100%; border-collapse:collapse; font-size:0.82rem; background:var(--white); border-radius:10px; overflow:hidden; border:1.5px solid var(--border); margin-bottom:2rem; }
-thead tr { background:var(--ink); color:var(--cream); }
-thead th { padding:0.62rem 1rem; text-align:left; font-family:'DM Mono',monospace; font-size:0.63rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; }
-tbody tr { border-top:1px solid var(--border); }
-tbody tr:nth-child(even) { background:#FAFAF8; }
-td { padding:0.62rem 1rem; vertical-align:middle; line-height:1.45; }
-td.mono { font-family:'DM Mono',monospace; font-weight:500; }
-tr.row-hi td { background:var(--gold-light) !important; }
-footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--border); font-size:0.75rem; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.4rem; }
-@keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
-.anim{animation:fadeUp 0.4s ease both}.a1{animation-delay:0.04s}.a2{animation-delay:0.09s}.a3{animation-delay:0.14s}.a4{animation-delay:0.19s}.a5{animation-delay:0.24s}.a6{animation-delay:0.29s}
 
 /* tokens */
 .tokens { display:flex; flex-wrap:wrap; gap:0.27rem; align-items:center; }
@@ -103,14 +62,18 @@ td.order-rule { font-size:0.77rem; color:var(--ink); }
 <body>
 <div class="page">
 
-  <div class="breadcrumb"><a href="dutch-index.html">&#8592; Hub</a> <span>/</span> Word Order</div>
+  <div class="breadcrumb"><a href="../index.html">&#8592; Hub</a> <span>/</span> Word Order</div>
 
   <header class="site-header">
     <div>
       <h1>Dutch <span class="accent">Word Order</span></h1>
       <p class="subtitle">V2 Rule &middot; SOV &middot; Inversion &middot; Subclauses &middot; STOMPS</p>
     </div>
-    <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+    <div class="fc-toggle-wrap">
+      <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode"><span class="material-icons">dark_mode</span></button>
+      <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode"><span class="material-icons">visibility_off</span> Test Mode</button>
+      <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+    </div>
   </header>
 
   <div class="pill-row">
@@ -389,11 +352,17 @@ td.order-rule { font-size:0.77rem; color:var(--ink); }
     </tbody>
   </table>
 
+  <div class="page-nav anim a5">
+    <a href="verbs.html" class="pn-prev"><span class="material-icons">arrow_back</span> Verbs</a>
+    <a href="conjunctions.html" class="pn-next">Conjunctions <span class="material-icons">arrow_forward</span></a>
+  </div>
+
   <footer>
     <span>Dutch Word Order &middot; V2 &middot; SOV &middot; STOMPS &middot; Subclauses</span>
     <span>B1 Level Reference</span>
   </footer>
 
 </div>
+<script src="../js/main.js"></script>
 </body>
 </html>
