@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dutch Separable Verbs — Cheat Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --orange:#E8500A; --orange-light:#FF7A3D; --orange-bg:#FFF2EB; --orange-border:#FFD0B5;
+  --cream:#FAF6EE; --ink:#1A1208; --muted:#7A6A55; --border:#E0D5C5; --white:#fff;
+  --blue:#1A3A6B; --blue-light:#E8EEF8; --blue-border:#C5D4ED;
+  --green:#1A5C3A; --green-light:#E8F4EE; --green-border:#B8DFC8;
+  --red:#8B1A1A; --red-light:#F5E8E8; --red-border:#E8B8B8;
+  --gold:#C4920A; --gold-light:#FDF3D8; --gold-border:#E8D49A;
+  --teal:#2D6B6B; --teal-light:#E5F5F5; --teal-border:#A8D8D8;
+  --purple:#7B2D8B; --purple-light:#F5EAF8; --purple-border:#DDB8E8;
+}
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--ink); min-height:100vh; padding:2rem 1rem; }
+.page { max-width:900px; margin:0 auto; }
+.breadcrumb { font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.4rem; }
+.breadcrumb a { color:var(--orange); text-decoration:none; font-weight:500; }
+.breadcrumb a:hover { text-decoration:underline; }
+.site-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:2rem; padding-bottom:1.5rem; border-bottom:3px solid var(--ink); gap:1rem; flex-wrap:wrap; }
+.site-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,3rem); font-weight:900; line-height:1; letter-spacing:-0.02em; }
+.site-header h1 .accent { color:var(--orange); }
+.site-header .subtitle { font-size:0.8rem; color:var(--muted); font-weight:300; margin-top:0.4rem; letter-spacing:0.08em; text-transform:uppercase; }
+.flag{display:flex;flex-direction:column;width:54px;height:36px;border-radius:4px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;margin-top:4px;}
+.flag-red{background:#AE1C28;flex:1}.flag-white{background:#fff;flex:1}.flag-blue{background:#21468B;flex:1}
+.pill-row { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+.pill { font-family:'DM Mono',monospace; font-size:0.72rem; font-weight:500; padding:0.27rem 0.72rem; border-radius:999px; border:1.5px solid var(--ink); color:var(--ink); letter-spacing:0.02em; }
+.key-banner { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; display:flex; align-items:flex-start; gap:1rem; flex-wrap:wrap; }
+.key-banner .kb-label { font-family:'DM Mono',monospace; font-size:0.67rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--orange-light); flex-shrink:0; padding-top:2px; display:flex; align-items:center; gap:0.3rem; }
+.key-banner .kb-label .material-icons { font-size:0.9rem; }
+.key-banner p { font-size:0.86rem; line-height:1.55; font-weight:300; }
+.key-banner strong { font-weight:600; color:#FFD4BC; }
+.section-title { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--ink); margin-bottom:1rem; display:flex; align-items:center; gap:0.6rem; }
+.section-title::after { content:''; flex:1; height:1.5px; background:var(--border); }
+table { width:100%; border-collapse:collapse; font-size:0.82rem; background:var(--white); border-radius:10px; overflow:hidden; border:1.5px solid var(--border); margin-bottom:2rem; }
+thead tr { background:var(--ink); color:var(--cream); }
+thead th { padding:0.62rem 1rem; text-align:left; font-family:'DM Mono',monospace; font-size:0.63rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; }
+tbody tr { border-top:1px solid var(--border); }
+tbody tr:nth-child(even) { background:#FAFAF8; }
+td { padding:0.62rem 1rem; vertical-align:middle; line-height:1.45; }
+td.mono { font-family:'DM Mono',monospace; font-weight:500; }
+footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--border); font-size:0.75rem; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.4rem; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.anim{animation:fadeUp 0.4s ease both}.a1{animation-delay:0.04s}.a2{animation-delay:0.09s}.a3{animation-delay:0.14s}.a4{animation-delay:0.19s}.a5{animation-delay:0.24s}
+
+/* tokens */
+.tokens { display:flex; flex-wrap:wrap; gap:0.27rem; align-items:center; }
+.token { display:inline-flex; align-items:center; padding:0.27rem 0.52rem; border-radius:5px; font-family:'DM Mono',monospace; font-size:0.76rem; font-weight:500; line-height:1; }
+.tk-subj { background:var(--blue-light); color:var(--blue); border:1.5px solid var(--blue-border); }
+.tk-verb { background:var(--red-light); color:var(--red); border:1.5px solid var(--red-border); font-weight:700; }
+.tk-adv  { background:var(--gold-light); color:var(--gold); border:1.5px solid var(--gold-border); }
+.tk-conj { background:var(--ink); color:var(--cream); font-weight:600; }
+.tk-sep  { background:var(--purple-light); color:var(--purple); border:1.5px dashed var(--purple-border); font-weight:700; }
+.tk-sep-solid { background:var(--purple-light); color:var(--purple); border:1.5px solid var(--purple-border); font-weight:700; }
+.tk-rest { background:#F0F0EA; color:var(--muted); border:1.5px solid #E0D8CC; }
+
+.diag { background:var(--white); border:1.5px solid var(--border); border-radius:10px; padding:1.2rem 1.4rem; margin-bottom:1rem; }
+.diag-label { font-family:'DM Mono',monospace; font-size:0.63rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--purple); margin-bottom:0.45rem; font-weight:500; }
+.diag-title { font-family:'Playfair Display',serif; font-size:0.98rem; font-weight:700; color:var(--ink); margin-bottom:0.35rem; }
+.diag-desc { font-size:0.78rem; color:var(--muted); font-weight:300; line-height:1.5; margin-bottom:0.85rem; }
+.sent-row { display:flex; align-items:center; gap:0.55rem; margin-bottom:0.35rem; flex-wrap:wrap; }
+.sent-label { font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--muted); width:70px; flex-shrink:0; }
+.gloss { font-size:0.71rem; color:var(--muted); font-style:italic; margin-top:0.05rem; padding-left:78px; margin-bottom:0.5rem; }
+.divider { height:1px; background:var(--border); margin:0.72rem 0; }
+
+/* verb showcase */
+.verb-showcase { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:2rem; }
+@media(max-width:640px){.verb-showcase{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:380px){.verb-showcase{grid-template-columns:1fr}}
+
+.verb-card { background:var(--white); border:1.5px solid var(--border); border-radius:10px; overflow:hidden; }
+.verb-card:nth-child(1){animation:fadeUp 0.4s 0.04s ease both}
+.verb-card:nth-child(2){animation:fadeUp 0.4s 0.07s ease both}
+.verb-card:nth-child(3){animation:fadeUp 0.4s 0.10s ease both}
+.verb-card:nth-child(4){animation:fadeUp 0.4s 0.13s ease both}
+.verb-card:nth-child(5){animation:fadeUp 0.4s 0.16s ease both}
+.verb-card:nth-child(6){animation:fadeUp 0.4s 0.19s ease both}
+
+.vc-top { padding:0.8rem 0.95rem 0.65rem; background:var(--purple-light); border-bottom:1.5px solid var(--purple-border); display:flex; align-items:baseline; gap:0.25rem; }
+.vc-prefix { font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:900; color:var(--purple); }
+.vc-stem { font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:700; color:var(--muted); }
+.vc-body { padding:0.75rem 0.95rem; }
+.vc-meaning { font-size:0.74rem; font-style:italic; color:var(--muted); margin-bottom:0.5rem; font-weight:300; }
+.vc-ex { font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--ink); line-height:1.5; margin-bottom:0.15rem; }
+.vc-ex em { font-style:normal; color:var(--purple); font-weight:700; }
+.vc-tr { font-size:0.65rem; color:var(--muted); }
+
+/* ge- banner */
+.ge-box { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; display:flex; gap:1.1rem; flex-wrap:wrap; }
+.ge-label { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--purple-border); flex-shrink:0; padding-top:2px; font-weight:500; }
+.ge-body { font-size:0.83rem; line-height:1.6; font-weight:300; }
+.ge-body strong { color:var(--purple-border); font-weight:600; }
+.ge-exs { display:flex; flex-direction:column; gap:0.28rem; margin-top:0.55rem; }
+.ge-ex { font-family:'DM Mono',monospace; font-size:0.76rem; color:rgba(255,255,255,0.65); }
+.ge-ex em { font-style:normal; color:var(--purple-border); font-weight:600; }
+
+td.prefix-col { font-family:'DM Mono',monospace; font-weight:700; color:var(--purple); font-size:0.86rem; }
+td.verbs-col { font-size:0.8rem; line-height:1.7; }
+td.verbs-col span { font-family:'DM Mono',monospace; font-size:0.76rem; background:var(--purple-light); color:var(--purple); padding:0.08rem 0.35rem; border-radius:3px; margin-right:0.3rem; display:inline-block; margin-bottom:0.18rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="breadcrumb"><a href="dutch-index.html">&#8592; Hub</a> <span>/</span> Separable Verbs</div>
+
+  <header class="site-header">
+    <div>
+      <h1>Separable <span class="accent">Verbs</span></h1>
+      <p class="subtitle">Scheidbare Werkwoorden &middot; Prefix Rules &middot; ge- Participle</p>
+    </div>
+    <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">op- af- aan- uit- mee-</div>
+    <div class="pill">prefix &rarr; end of sentence</div>
+    <div class="pill">ge- between prefix + stem</div>
+    <div class="pill">subclauses stay together</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>Key Rule</div>
+    <p>Separable verbs are <strong>prefix + verb</strong> (e.g. <strong>op</strong> + <strong>bellen</strong> = opbellen). In a main clause, the prefix detaches and <strong>jumps to the end</strong>. In subclauses and infinitive phrases, the verb stays together. Past participle inserts <strong>ge-</strong> between prefix and stem: op + ge + beld = <strong>opgebeld</strong>.</p>
+  </div>
+
+  <div class="section-title anim a2">Common Separable Verbs</div>
+
+  <div class="verb-showcase">
+    <div class="verb-card">
+      <div class="vc-top"><span class="vc-prefix">op</span><span class="vc-stem">bellen</span></div>
+      <div class="vc-body">
+        <div class="vc-meaning">to call (by phone)</div>
+        <div class="vc-ex">Ik bel je morgen <em>op</em>.</div>
+        <div class="vc-tr">I'll call you tomorrow.</div>
+      </div>
+    </div>
+    <div class="verb-card">
+      <div class="vc-top"><span class="vc-prefix">mee</span><span class="vc-stem">nemen</span></div>
+      <div class="vc-body">
+        <div class="vc-meaning">to take along</div>
+        <div class="vc-ex">Neem je je tas <em>mee</em>?</div>
+        <div class="vc-tr">Are you taking your bag?</div>
+      </div>
+    </div>
+    <div class="verb-card">
+      <div class="vc-top"><span class="vc-prefix">aan</span><span class="vc-stem">komen</span></div>
+      <div class="vc-body">
+        <div class="vc-meaning">to arrive</div>
+        <div class="vc-ex">De trein komt om 3 uur <em>aan</em>.</div>
+        <div class="vc-tr">The train arrives at 3.</div>
+      </div>
+    </div>
+    <div class="verb-card">
+      <div class="vc-top"><span class="vc-prefix">uit</span><span class="vc-stem">gaan</span></div>
+      <div class="vc-body">
+        <div class="vc-meaning">to go out</div>
+        <div class="vc-ex">We gaan vanavond <em>uit</em>.</div>
+        <div class="vc-tr">We're going out tonight.</div>
+      </div>
+    </div>
+    <div class="verb-card">
+      <div class="vc-top"><span class="vc-prefix">af</span><span class="vc-stem">wassen</span></div>
+      <div class="vc-body">
+        <div class="vc-meaning">to wash dishes</div>
+        <div class="vc-ex">Was jij de borden <em>af</em>?</div>
+        <div class="vc-tr">Can you wash the dishes?</div>
+      </div>
+    </div>
+    <div class="verb-card">
+      <div class="vc-top"><span class="vc-prefix">in</span><span class="vc-stem">stappen</span></div>
+      <div class="vc-body">
+        <div class="vc-meaning">to get on (bus/train)</div>
+        <div class="vc-ex">We stappen hier <em>in</em>.</div>
+        <div class="vc-tr">We get on here.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title anim a3">The 4 Rules</div>
+
+  <div class="diag anim a3">
+    <div class="diag-label">Rule 1</div>
+    <div class="diag-title">Main clause: prefix flies to the end</div>
+    <div class="diag-desc">The conjugated verb stays in position&nbsp;2. The prefix detaches and moves to the very last slot.</div>
+
+    <div class="sent-row">
+      <span class="sent-label">Normal</span>
+      <div class="tokens">
+        <span class="token tk-subj">Ik</span>
+        <span class="token tk-verb">bel</span>
+        <span class="token tk-rest">mijn moeder</span>
+        <span class="token tk-rest">elke dag</span>
+        <span class="token tk-sep">op</span>
+        <span style="font-family:'DM Mono',monospace;font-size:0.8rem">.</span>
+      </div>
+    </div>
+    <div class="gloss">I call my mother every day.</div>
+    <div class="divider"></div>
+    <div class="sent-row">
+      <span class="sent-label">Inverted</span>
+      <div class="tokens">
+        <span class="token tk-adv">Morgen</span>
+        <span class="token tk-verb">bel</span>
+        <span class="token tk-subj">ik</span>
+        <span class="token tk-rest">haar</span>
+        <span class="token tk-sep">op</span>
+        <span style="font-family:'DM Mono',monospace;font-size:0.8rem">.</span>
+      </div>
+    </div>
+    <div class="gloss">Tomorrow I'll call her. (prefix still goes to the end!)</div>
+  </div>
+
+  <div class="diag anim a3" style="margin-bottom:1rem">
+    <div class="diag-label">Rule 2</div>
+    <div class="diag-title">Subclause: verb stays together at the end</div>
+    <div class="diag-desc">In subclauses, the full separable verb &mdash; prefix attached &mdash; moves as a unit to the end.</div>
+
+    <div class="sent-row">
+      <span class="sent-label">Correct</span>
+      <div class="tokens">
+        <span class="token tk-subj">Ik</span>
+        <span class="token tk-verb">weet</span>
+        <span class="token tk-rest">dat</span>
+        <span class="token tk-subj">hij</span>
+        <span class="token tk-rest">haar elke dag</span>
+        <span class="token tk-sep-solid">opbelt.</span>
+      </div>
+    </div>
+    <div class="gloss">I know that he calls her every day. (opbelt = together at end)</div>
+    <div class="divider"></div>
+    <div class="sent-row">
+      <span class="sent-label">Wrong</span>
+      <div class="tokens">
+        <span class="token tk-subj" style="opacity:0.4">hij</span>
+        <span class="token tk-verb" style="opacity:0.4;text-decoration:line-through">belt</span>
+        <span class="token tk-rest" style="opacity:0.4">haar elke dag</span>
+        <span class="token tk-sep" style="opacity:0.4;text-decoration:line-through">op.</span>
+        <span style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--red);margin-left:0.3rem;font-weight:700">&#10007;</span>
+      </div>
+    </div>
+    <div class="gloss" style="color:var(--red)">Do not split in subclauses.</div>
+  </div>
+
+  <div class="diag anim a4" style="margin-bottom:1rem">
+    <div class="diag-label">Rule 3</div>
+    <div class="diag-title">With modal verbs: infinitive stays together at the end</div>
+    <div class="diag-desc">After modals (willen, kunnen, moeten&hellip;), the full separable verb stays together and moves to the end.</div>
+
+    <div class="sent-row">
+      <span class="sent-label">Modal</span>
+      <div class="tokens">
+        <span class="token tk-subj">Ik</span>
+        <span class="token tk-verb">wil</span>
+        <span class="token tk-rest">je morgen</span>
+        <span class="token tk-sep-solid">opbellen.</span>
+      </div>
+    </div>
+    <div class="gloss">I want to call you tomorrow. (opbellen stays together)</div>
+    <div class="divider"></div>
+    <div class="sent-row">
+      <span class="sent-label">om&hellip;te</span>
+      <div class="tokens">
+        <span class="token tk-subj">Het</span>
+        <span class="token tk-verb">is</span>
+        <span class="token tk-rest">moeilijk</span>
+        <span class="token tk-rest">om</span>
+        <span class="token tk-sep-solid">op te bellen.</span>
+      </div>
+    </div>
+    <div class="gloss">It is difficult to call. (om&hellip;te: prefix + te + stem)</div>
+  </div>
+
+  <div class="diag anim a4" style="margin-bottom:2rem">
+    <div class="diag-label">Rule 4</div>
+    <div class="diag-title">Past participle: ge- goes between prefix and stem</div>
+    <div class="diag-desc">Unlike regular verbs where ge- precedes the whole word, separable verbs insert ge- between prefix and stem.</div>
+
+    <div class="sent-row">
+      <span class="sent-label">Perfect</span>
+      <div class="tokens">
+        <span class="token tk-subj">Ik</span>
+        <span class="token tk-verb">heb</span>
+        <span class="token tk-rest">haar</span>
+        <span class="token tk-sep-solid">opgebeld.</span>
+      </div>
+    </div>
+    <div class="gloss">I called her. (op + ge + beld = opgebeld)</div>
+    <div class="divider"></div>
+    <div class="sent-row">
+      <span class="sent-label">Motion</span>
+      <div class="tokens">
+        <span class="token tk-subj">We</span>
+        <span class="token tk-verb">zijn</span>
+        <span class="token tk-rest">gisteren</span>
+        <span class="token tk-sep-solid">aangekomen.</span>
+      </div>
+    </div>
+    <div class="gloss">We arrived yesterday. (aan + ge + komen = aangekomen)</div>
+  </div>
+
+  <!-- ge- dark box -->
+  <div class="ge-box anim a4">
+    <div class="ge-label">ge- Rule</div>
+    <div class="ge-body">
+      <strong>Regular:</strong> ge- + stem + d/t &nbsp;&mdash;&nbsp; <strong>Separable:</strong> prefix + <em>ge-</em> + stem + d/t / en
+      <div class="ge-exs">
+        <div class="ge-ex">opbellen &rarr; op + <em>ge</em> + beld = <em>opgebeld</em></div>
+        <div class="ge-ex">aankomen &rarr; aan + <em>ge</em> + komen = <em>aangekomen</em></div>
+        <div class="ge-ex">meenemen &rarr; mee + <em>ge</em> + nomen = <em>meegenomen</em></div>
+        <div class="ge-ex">uitstappen &rarr; uit + <em>ge</em> + stapt = <em>uitgestapt</em></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title anim a5">Common Separable Prefixes</div>
+
+  <table class="anim a5">
+    <thead>
+      <tr><th>Prefix</th><th>General meaning</th><th>Example verbs</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="prefix-col">op-</td><td>up / open / start</td><td class="verbs-col"><span>opbellen</span><span>opstaan</span><span>openen</span><span>opeten</span></td></tr>
+      <tr><td class="prefix-col">aan-</td><td>on / arriving</td><td class="verbs-col"><span>aankomen</span><span>aandoen</span><span>aantrekken</span></td></tr>
+      <tr><td class="prefix-col">uit-</td><td>out / off / finished</td><td class="verbs-col"><span>uitgaan</span><span>uitdoen</span><span>uitstappen</span><span>uitlezen</span></td></tr>
+      <tr><td class="prefix-col">af-</td><td>off / away / done</td><td class="verbs-col"><span>afwassen</span><span>afgeven</span><span>afmaken</span></td></tr>
+      <tr><td class="prefix-col">mee-</td><td>along / together</td><td class="verbs-col"><span>meenemen</span><span>meegaan</span><span>meedoen</span></td></tr>
+      <tr><td class="prefix-col">in-</td><td>in / entering</td><td class="verbs-col"><span>instappen</span><span>invullen</span><span>inrijden</span></td></tr>
+      <tr><td class="prefix-col">terug-</td><td>back / return</td><td class="verbs-col"><span>terugkomen</span><span>teruggaan</span><span>teruggeven</span></td></tr>
+      <tr><td class="prefix-col">door-</td><td>through / continue</td><td class="verbs-col"><span>doorgaan</span><span>doorlezen</span><span>doorwerken</span></td></tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <span>Dutch Separable Verbs &middot; Scheidbare Werkwoorden &middot; ge- Participle</span>
+    <span>B1 Level Reference</span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dutch Pronouns — Cheat Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --orange:#E8500A; --orange-light:#FF7A3D; --orange-bg:#FFF2EB; --orange-border:#FFD0B5;
+  --cream:#FAF6EE; --ink:#1A1208; --muted:#7A6A55; --border:#E0D5C5; --white:#fff;
+  --blue:#1A3A6B; --blue-light:#E8EEF8; --blue-border:#C5D4ED;
+  --green:#1A5C3A; --green-light:#E8F4EE; --green-border:#B8DFC8;
+  --red:#8B1A1A; --red-light:#F5E8E8; --red-border:#E8B8B8;
+  --gold:#C4920A; --gold-light:#FDF3D8; --gold-border:#E8D49A;
+  --teal:#2D6B6B; --teal-light:#E5F5F5; --teal-border:#A8D8D8;
+  --purple:#7B2D8B; --purple-light:#F5EAF8; --purple-border:#DDB8E8;
+}
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--ink); min-height:100vh; padding:2rem 1rem; }
+.page { max-width:900px; margin:0 auto; }
+
+.breadcrumb { font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.4rem; }
+.breadcrumb a { color:var(--orange); text-decoration:none; font-weight:500; }
+.breadcrumb a:hover { text-decoration:underline; }
+
+.site-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:2rem; padding-bottom:1.5rem; border-bottom:3px solid var(--ink); gap:1rem; flex-wrap:wrap; }
+.site-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,3rem); font-weight:900; line-height:1; letter-spacing:-0.02em; }
+.site-header h1 .accent { color:var(--orange); }
+.site-header .subtitle { font-size:0.8rem; color:var(--muted); font-weight:300; margin-top:0.4rem; letter-spacing:0.08em; text-transform:uppercase; }
+.flag{display:flex;flex-direction:column;width:54px;height:36px;border-radius:4px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;margin-top:4px;}
+.flag-red{background:#AE1C28;flex:1}.flag-white{background:#fff;flex:1}.flag-blue{background:#21468B;flex:1}
+
+.pill-row { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+.pill { font-family:'DM Mono',monospace; font-size:0.72rem; font-weight:500; padding:0.27rem 0.72rem; border-radius:999px; border:1.5px solid var(--ink); color:var(--ink); letter-spacing:0.02em; }
+
+.key-banner { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; display:flex; align-items:flex-start; gap:1rem; flex-wrap:wrap; }
+.key-banner .kb-label { font-family:'DM Mono',monospace; font-size:0.67rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--orange-light); flex-shrink:0; padding-top:2px; display:flex; align-items:center; gap:0.3rem; }
+.key-banner .kb-label .material-icons { font-size:0.9rem; }
+.key-banner p { font-size:0.86rem; line-height:1.55; font-weight:300; }
+.key-banner strong { font-weight:600; color:#FFD4BC; }
+
+.section-title { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--ink); margin-bottom:1rem; display:flex; align-items:center; gap:0.6rem; }
+.section-title::after { content:''; flex:1; height:1.5px; background:var(--border); }
+
+table { width:100%; border-collapse:collapse; font-size:0.82rem; background:var(--white); border-radius:10px; overflow:hidden; border:1.5px solid var(--border); margin-bottom:2rem; }
+thead tr { background:var(--ink); color:var(--cream); }
+thead th { padding:0.62rem 1rem; text-align:left; font-family:'DM Mono',monospace; font-size:0.63rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; }
+tbody tr { border-top:1px solid var(--border); }
+tbody tr:nth-child(even) { background:#FAFAF8; }
+td { padding:0.62rem 1rem; vertical-align:middle; line-height:1.45; }
+
+.example { border-left:2.5px solid var(--border); padding-left:0.75rem; margin-bottom:0.6rem; }
+.example .nl { font-family:'DM Mono',monospace; font-size:0.79rem; font-weight:500; color:var(--ink); display:block; }
+.example .nl em { font-style:normal; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.example .en { font-size:0.72rem; color:var(--muted); display:block; margin-top:1px; }
+
+footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--border); font-size:0.75rem; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.4rem; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.anim { animation:fadeUp 0.4s ease both; }
+.a1{animation-delay:0.04s} .a2{animation-delay:0.09s} .a3{animation-delay:0.14s}
+.a4{animation-delay:0.19s} .a5{animation-delay:0.24s}
+
+/* Page-specific */
+td.nl-main { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--blue); }
+td.nl-weak { font-family:'DM Mono',monospace; font-size:0.82rem; color:var(--muted); font-style:italic; }
+td.nl-obj  { font-family:'DM Mono',monospace; font-size:0.82rem; font-weight:600; color:var(--green); }
+td.nl-poss { font-family:'DM Mono',monospace; font-size:0.82rem; font-weight:600; color:var(--red); }
+tr.row-hi td { background:var(--gold-light) !important; }
+tr.row-hi td.nl-main { color:var(--gold); }
+
+.cards-2col { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem; }
+@media(max-width:560px){.cards-2col{grid-template-columns:1fr}}
+
+.form-card { background:var(--white); border:1.5px solid var(--border); border-radius:10px; overflow:hidden; }
+.fc-head { padding:0.8rem 1.1rem; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+.fc-title { font-family:'Playfair Display',serif; font-size:0.98rem; font-weight:700; }
+.fc-badge { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.18rem 0.5rem; border-radius:4px; font-weight:500; }
+.fc-body { padding:0.85rem 1.1rem; }
+.fc-rule { font-size:0.78rem; color:var(--muted); font-weight:300; line-height:1.5; margin-bottom:0.7rem; }
+
+.fc-subj .fc-head { background:var(--blue-light); border-color:var(--blue-border); }
+.fc-subj .fc-title { color:var(--blue); }
+.fc-subj .fc-badge { background:var(--blue-border); color:var(--blue); }
+.fc-subj .example { border-color:var(--blue-border); }
+
+.fc-obj .fc-head { background:var(--green-light); border-color:var(--green-border); }
+.fc-obj .fc-title { color:var(--green); }
+.fc-obj .fc-badge { background:var(--green-border); color:var(--green); }
+.fc-obj .example { border-color:var(--green-border); }
+
+.fc-poss .fc-head { background:var(--red-light); border-color:var(--red-border); }
+.fc-poss .fc-title { color:var(--red); }
+.fc-poss .fc-badge { background:var(--red-border); color:var(--red); }
+.fc-poss .example { border-color:var(--red-border); }
+
+.fc-refl .fc-head { background:var(--gold-light); border-color:var(--gold-border); }
+.fc-refl .fc-title { color:var(--gold); }
+.fc-refl .fc-badge { background:var(--gold-border); color:#7A5A00; }
+.fc-refl .example { border-color:var(--gold-border); }
+
+.note-box { border-radius:9px; padding:0.9rem 1.1rem; margin-bottom:1.5rem; display:flex; gap:0.75rem; align-items:flex-start; font-size:0.82rem; line-height:1.55; }
+.note-box .material-icons { font-size:1.05rem; flex-shrink:0; margin-top:1px; }
+.note-box p { font-weight:300; }
+.note-box strong { font-weight:600; }
+.note-warn { background:var(--gold-light); border:1.5px solid var(--gold-border); }
+.note-warn .material-icons { color:var(--gold); }
+.note-info { background:var(--red-light); border:1.5px solid var(--red-border); }
+.note-info .material-icons { color:var(--red); }
+
+.legend-row { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:0.8rem; font-size:0.74rem; }
+.leg { display:flex; align-items:center; gap:0.3rem; }
+.leg-dot { width:8px; height:8px; border-radius:50%; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="breadcrumb"><a href="dutch-index.html">&#8592; Hub</a> <span>/</span> Dutch Pronouns</div>
+
+  <header class="site-header">
+    <div>
+      <h1>Dutch <span class="accent">Pronouns</span></h1>
+      <p class="subtitle">Subject &middot; Object &middot; Possessive &middot; Reflexive</p>
+    </div>
+    <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">ik / jij / hij / zij</div>
+    <div class="pill">mij / jou / hem / haar</div>
+    <div class="pill">mijn / jouw / zijn / haar</div>
+    <div class="pill">stressed vs. unstressed</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>Key Rule</div>
+    <p>Dutch has <strong>two forms</strong> for most pronouns: a <strong>weak/unstressed</strong> form (normal speech) and a <strong>strong/stressed</strong> form (emphasis or sentence start). <strong>jij &rarr; je</strong>, <strong>mij &rarr; me</strong>, <strong>jouw &rarr; je</strong> &mdash; the shorter weak form is preferred in everyday spoken Dutch.</p>
+  </div>
+
+  <div class="section-title anim a2">Full Pronoun Reference Table</div>
+
+  <div class="legend-row anim a2">
+    <div class="leg"><div class="leg-dot" style="background:var(--blue)"></div><span style="color:var(--blue)">Subject</span></div>
+    <div class="leg"><div class="leg-dot" style="background:var(--green)"></div><span style="color:var(--green)">Object</span></div>
+    <div class="leg"><div class="leg-dot" style="background:var(--red)"></div><span style="color:var(--red)">Possessive</span></div>
+  </div>
+
+  <table class="anim a2">
+    <thead>
+      <tr>
+        <th>Person</th>
+        <th style="color:#A8C5ED">Subject (strong)</th>
+        <th style="color:#A8C5ED">Subject (weak)</th>
+        <th style="color:#A8D8B8">Object (strong)</th>
+        <th style="color:#A8D8B8">Object (weak)</th>
+        <th style="color:#E8A8A8">Possessive</th>
+        <th>English</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1sg</td>
+        <td class="nl-main">ik</td>
+        <td class="nl-weak">&mdash;</td>
+        <td class="nl-obj">mij</td>
+        <td class="nl-obj" style="opacity:0.65">me</td>
+        <td class="nl-poss">mijn</td>
+        <td>I / me / my</td>
+      </tr>
+      <tr class="row-hi">
+        <td>2sg</td>
+        <td class="nl-main" style="color:var(--gold)">jij</td>
+        <td class="nl-weak">je</td>
+        <td class="nl-obj" style="color:var(--gold)">jou</td>
+        <td class="nl-obj" style="opacity:0.65;color:var(--gold)">je</td>
+        <td class="nl-poss" style="color:var(--gold)">jouw / je</td>
+        <td>you / you / your</td>
+      </tr>
+      <tr>
+        <td>2sg formal</td>
+        <td class="nl-main">u</td>
+        <td class="nl-weak">&mdash;</td>
+        <td class="nl-obj">u</td>
+        <td class="nl-obj" style="opacity:0.65">&mdash;</td>
+        <td class="nl-poss">uw</td>
+        <td>you (formal) / your</td>
+      </tr>
+      <tr>
+        <td>3sg masc</td>
+        <td class="nl-main">hij</td>
+        <td class="nl-weak">ie / 'ie</td>
+        <td class="nl-obj">hem</td>
+        <td class="nl-obj" style="opacity:0.65">'m</td>
+        <td class="nl-poss">zijn</td>
+        <td>he / him / his</td>
+      </tr>
+      <tr>
+        <td>3sg fem</td>
+        <td class="nl-main">zij</td>
+        <td class="nl-weak">ze</td>
+        <td class="nl-obj">haar</td>
+        <td class="nl-obj" style="opacity:0.65">d'r / 'r</td>
+        <td class="nl-poss">haar</td>
+        <td>she / her / her</td>
+      </tr>
+      <tr>
+        <td>3sg neuter</td>
+        <td class="nl-main">het</td>
+        <td class="nl-weak">'t</td>
+        <td class="nl-obj">het</td>
+        <td class="nl-obj" style="opacity:0.65">'t</td>
+        <td class="nl-poss">zijn</td>
+        <td>it / it / its</td>
+      </tr>
+      <tr>
+        <td>1pl</td>
+        <td class="nl-main">wij</td>
+        <td class="nl-weak">we</td>
+        <td class="nl-obj">ons</td>
+        <td class="nl-obj" style="opacity:0.65">&mdash;</td>
+        <td class="nl-poss">ons / onze</td>
+        <td>we / us / our</td>
+      </tr>
+      <tr class="row-hi">
+        <td>2pl</td>
+        <td class="nl-main" style="color:var(--gold)">jullie</td>
+        <td class="nl-weak">&mdash;</td>
+        <td class="nl-obj" style="color:var(--gold)">jullie</td>
+        <td class="nl-obj" style="opacity:0.65;color:var(--gold)">&mdash;</td>
+        <td class="nl-poss" style="color:var(--gold)">jullie</td>
+        <td>you (pl) / you / your</td>
+      </tr>
+      <tr>
+        <td>3pl</td>
+        <td class="nl-main">zij</td>
+        <td class="nl-weak">ze</td>
+        <td class="nl-obj">hen / hun</td>
+        <td class="nl-obj" style="opacity:0.65">ze</td>
+        <td class="nl-poss">hun</td>
+        <td>they / them / their</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note-box note-warn anim a3">
+    <span class="material-icons">warning</span>
+    <p><strong>jij vs. je &mdash; the inversion rule:</strong> when the subject comes <em>after</em> the verb (inversion), always use <strong>je</strong>, not <strong>jij</strong>. &ldquo;Woon <strong>je</strong> hier?&rdquo; is natural; &ldquo;Woon <strong>jij</strong> hier?&rdquo; sounds emphatic. Use <strong>jij</strong> only for contrast: &ldquo;Niet ik, maar <strong>jij</strong> moet betalen!&rdquo;</p>
+  </div>
+
+  <div class="section-title anim a3">The Four Pronoun Forms</div>
+
+  <div class="cards-2col anim a3">
+    <div class="form-card fc-subj">
+      <div class="fc-head">
+        <div class="fc-title">Subject Pronouns</div>
+        <span class="fc-badge">wie doet het?</span>
+      </div>
+      <div class="fc-body">
+        <div class="fc-rule">The subject performs the action. It normally comes before the verb.</div>
+        <div class="example"><span class="nl"><em>Ik</em> werk in Amsterdam.</span><span class="en">I work in Amsterdam.</span></div>
+        <div class="example"><span class="nl"><em>Wij</em> eten om zes uur.</span><span class="en">We eat at six o'clock.</span></div>
+        <div class="example"><span class="nl">Werkt <em>ze</em> hier?</span><span class="en">Does she work here? (ze = unstressed zij)</span></div>
+      </div>
+    </div>
+
+    <div class="form-card fc-obj">
+      <div class="fc-head">
+        <div class="fc-title">Object Pronouns</div>
+        <span class="fc-badge">wie/wat ontvang?</span>
+      </div>
+      <div class="fc-body">
+        <div class="fc-rule">Object pronouns follow a verb or preposition. Use the strong form after prepositions.</div>
+        <div class="example"><span class="nl">Ik zie <em>hem</em> elke dag.</span><span class="en">I see him every day.</span></div>
+        <div class="example"><span class="nl">Ze belt <em>me</em> op.</span><span class="en">She calls me.</span></div>
+        <div class="example"><span class="nl">Dit is voor <em>jou</em>.</span><span class="en">This is for you. (strong — after preposition)</span></div>
+      </div>
+    </div>
+
+    <div class="form-card fc-poss">
+      <div class="fc-head">
+        <div class="fc-title">Possessive Pronouns</div>
+        <span class="fc-badge">van wie is het?</span>
+      </div>
+      <div class="fc-body">
+        <div class="fc-rule"><em>ons</em> for het-words, <em>onze</em> for de-words. <em>jouw</em> can shorten to <em>je</em>.</div>
+        <div class="example"><span class="nl">Dat is <em>mijn</em> fiets.</span><span class="en">That is my bicycle.</span></div>
+        <div class="example"><span class="nl"><em>Haar</em> huis is groot.</span><span class="en">Her house is big.</span></div>
+        <div class="example"><span class="nl">Dit is <em>ons</em> boek / <em>onze</em> tafel.</span><span class="en">This is our book / our table.</span></div>
+      </div>
+    </div>
+
+    <div class="form-card fc-refl">
+      <div class="fc-head">
+        <div class="fc-title">Reflexive Pronouns</div>
+        <span class="fc-badge">zich / zichzelf</span>
+      </div>
+      <div class="fc-body">
+        <div class="fc-rule">3rd person uses <em>zich</em>. All others use the regular object pronoun.</div>
+        <div class="example"><span class="nl">Ik was <em>me</em>.</span><span class="en">I wash myself.</span></div>
+        <div class="example"><span class="nl">Hij scheert <em>zich</em>.</span><span class="en">He shaves himself.</span></div>
+        <div class="example"><span class="nl">Ze voelen <em>zich</em> goed.</span><span class="en">They feel good.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box note-info anim a4">
+    <span class="material-icons">info</span>
+    <p><strong>hen vs. hun:</strong> Technically <strong>hen</strong> = direct object, <strong>hun</strong> = indirect object. In practice most Dutch speakers use <strong>ze</strong> for both in speech. Don&rsquo;t overthink it &mdash; use <strong>ze</strong> and you will almost always be correct.</p>
+  </div>
+
+  <div class="section-title anim a4">Quick Reference</div>
+
+  <table class="anim a4">
+    <thead>
+      <tr>
+        <th>Situation</th>
+        <th>Use</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Normal spoken Dutch</td>
+        <td class="mono" style="color:var(--blue)">weak forms (je, ze, we)</td>
+        <td><em>Je</em> hebt gelijk. / <em>Ze</em> komt morgen.</td>
+      </tr>
+      <tr>
+        <td>Emphasis or contrast</td>
+        <td class="mono" style="color:var(--blue)">strong forms (jij, zij, wij)</td>
+        <td>Niet ik, maar <em>jij</em> moet het doen!</td>
+      </tr>
+      <tr>
+        <td>After a preposition</td>
+        <td class="mono" style="color:var(--green)">strong object (mij, jou, hem)</td>
+        <td>Dit cadeau is voor <em>jou</em>.</td>
+      </tr>
+      <tr>
+        <td>Showing ownership</td>
+        <td class="mono" style="color:var(--red)">possessive (mijn, jouw, zijn)</td>
+        <td>Dat is <em>haar</em> auto.</td>
+      </tr>
+      <tr>
+        <td>Subject after inverted verb</td>
+        <td class="mono" style="color:var(--gold)">je (never jij here)</td>
+        <td>Kom <em>je</em> morgen?</td>
+      </tr>
+      <tr>
+        <td>Reflexive — 3rd person</td>
+        <td class="mono" style="color:var(--gold)">zich</td>
+        <td>Hij vergist <em>zich</em>. (He is mistaken.)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <span>Dutch Pronouns &middot; Subject &middot; Object &middot; Possessive &middot; Reflexive</span>
+    <span>A2 Level Reference</span>
+  </footer>
+
+</div>
+</body>
+</html>

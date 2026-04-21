@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dutch Word Order — Cheat Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --orange:#E8500A; --orange-light:#FF7A3D; --orange-bg:#FFF2EB; --orange-border:#FFD0B5;
+  --cream:#FAF6EE; --ink:#1A1208; --muted:#7A6A55; --border:#E0D5C5; --white:#fff;
+  --blue:#1A3A6B; --blue-light:#E8EEF8; --blue-border:#C5D4ED;
+  --green:#1A5C3A; --green-light:#E8F4EE; --green-border:#B8DFC8;
+  --red:#8B1A1A; --red-light:#F5E8E8; --red-border:#E8B8B8;
+  --gold:#C4920A; --gold-light:#FDF3D8; --gold-border:#E8D49A;
+  --teal:#2D6B6B; --teal-light:#E5F5F5; --teal-border:#A8D8D8;
+  --purple:#7B2D8B; --purple-light:#F5EAF8; --purple-border:#DDB8E8;
+}
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--ink); min-height:100vh; padding:2rem 1rem; }
+.page { max-width:900px; margin:0 auto; }
+.breadcrumb { font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.4rem; }
+.breadcrumb a { color:var(--orange); text-decoration:none; font-weight:500; }
+.breadcrumb a:hover { text-decoration:underline; }
+.site-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:2rem; padding-bottom:1.5rem; border-bottom:3px solid var(--ink); gap:1rem; flex-wrap:wrap; }
+.site-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,3rem); font-weight:900; line-height:1; letter-spacing:-0.02em; }
+.site-header h1 .accent { color:var(--orange); }
+.site-header .subtitle { font-size:0.8rem; color:var(--muted); font-weight:300; margin-top:0.4rem; letter-spacing:0.08em; text-transform:uppercase; }
+.flag{display:flex;flex-direction:column;width:54px;height:36px;border-radius:4px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;margin-top:4px;}
+.flag-red{background:#AE1C28;flex:1}.flag-white{background:#fff;flex:1}.flag-blue{background:#21468B;flex:1}
+.pill-row { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+.pill { font-family:'DM Mono',monospace; font-size:0.72rem; font-weight:500; padding:0.27rem 0.72rem; border-radius:999px; border:1.5px solid var(--ink); color:var(--ink); letter-spacing:0.02em; }
+.key-banner { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; display:flex; align-items:flex-start; gap:1rem; flex-wrap:wrap; }
+.key-banner .kb-label { font-family:'DM Mono',monospace; font-size:0.67rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--orange-light); flex-shrink:0; padding-top:2px; display:flex; align-items:center; gap:0.3rem; }
+.key-banner .kb-label .material-icons { font-size:0.9rem; }
+.key-banner p { font-size:0.86rem; line-height:1.55; font-weight:300; }
+.key-banner strong { font-weight:600; color:#FFD4BC; }
+.section-title { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--ink); margin-bottom:1rem; display:flex; align-items:center; gap:0.6rem; }
+.section-title::after { content:''; flex:1; height:1.5px; background:var(--border); }
+table { width:100%; border-collapse:collapse; font-size:0.82rem; background:var(--white); border-radius:10px; overflow:hidden; border:1.5px solid var(--border); margin-bottom:2rem; }
+thead tr { background:var(--ink); color:var(--cream); }
+thead th { padding:0.62rem 1rem; text-align:left; font-family:'DM Mono',monospace; font-size:0.63rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; }
+tbody tr { border-top:1px solid var(--border); }
+tbody tr:nth-child(even) { background:#FAFAF8; }
+td { padding:0.62rem 1rem; vertical-align:middle; line-height:1.45; }
+td.mono { font-family:'DM Mono',monospace; font-weight:500; }
+tr.row-hi td { background:var(--gold-light) !important; }
+footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--border); font-size:0.75rem; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.4rem; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.anim{animation:fadeUp 0.4s ease both}.a1{animation-delay:0.04s}.a2{animation-delay:0.09s}.a3{animation-delay:0.14s}.a4{animation-delay:0.19s}.a5{animation-delay:0.24s}.a6{animation-delay:0.29s}
+
+/* tokens */
+.tokens { display:flex; flex-wrap:wrap; gap:0.27rem; align-items:center; }
+.token { display:inline-flex; align-items:center; padding:0.27rem 0.52rem; border-radius:5px; font-family:'DM Mono',monospace; font-size:0.76rem; font-weight:500; line-height:1; }
+.tk-subj { background:var(--blue-light); color:var(--blue); border:1.5px solid var(--blue-border); }
+.tk-verb { background:var(--red-light); color:var(--red); border:1.5px solid var(--red-border); font-weight:700; }
+.tk-verb-end { background:var(--red-light); color:var(--red); border:1.5px dashed var(--red-border); font-weight:700; }
+.tk-adv  { background:var(--gold-light); color:var(--gold); border:1.5px solid var(--gold-border); }
+.tk-conj { background:var(--ink); color:var(--cream); font-weight:600; }
+.tk-sep  { background:var(--purple-light); color:var(--purple); border:1.5px dashed var(--purple-border); font-weight:700; }
+.tk-rest { background:#F0F0EA; color:var(--muted); border:1.5px solid #E0D8CC; }
+.tk-obj  { background:var(--green-light); color:var(--green); border:1.5px solid var(--green-border); }
+
+/* diagram */
+.diag { background:var(--white); border:1.5px solid var(--border); border-radius:10px; padding:1.2rem 1.4rem; margin-bottom:1rem; }
+.diag-label { font-family:'DM Mono',monospace; font-size:0.63rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.45rem; font-weight:500; }
+.diag-title { font-family:'Playfair Display',serif; font-size:0.98rem; font-weight:700; color:var(--ink); margin-bottom:0.35rem; }
+.diag-desc { font-size:0.78rem; color:var(--muted); font-weight:300; line-height:1.5; margin-bottom:0.85rem; }
+.sent-row { display:flex; align-items:center; gap:0.55rem; margin-bottom:0.35rem; flex-wrap:wrap; }
+.sent-label { font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--muted); width:70px; flex-shrink:0; }
+.gloss { font-size:0.71rem; color:var(--muted); font-style:italic; margin-top:0.05rem; padding-left:78px; margin-bottom:0.5rem; }
+.divider { height:1px; background:var(--border); margin:0.72rem 0; }
+
+/* field boxes */
+.field-grid { display:grid; grid-template-columns:90px 90px 1fr 90px; gap:0.4rem; margin-bottom:1rem; }
+@media(max-width:500px){.field-grid{grid-template-columns:1fr 1fr}}
+.fbox { border-radius:6px; padding:0.48rem 0.65rem; font-family:'DM Mono',monospace; font-size:0.7rem; text-align:center; }
+.fbox-label { font-size:0.55rem; letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:0.25rem; opacity:0.6; }
+.fb1 { background:var(--gold-light); color:var(--gold); border:1.5px solid var(--gold-border); }
+.fb2 { background:var(--red-light); color:var(--red); border:1.5px solid var(--red-border); font-weight:700; }
+.fbm { background:#F0F0EA; color:var(--muted); border:1.5px solid #E0D8CC; }
+.fbe { background:var(--purple-light); color:var(--purple); border:1.5px dashed var(--purple-border); }
+
+/* stomps */
+.stomps-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:0.6rem; margin-bottom:2rem; }
+@media(max-width:640px){.stomps-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:360px){.stomps-grid{grid-template-columns:repeat(2,1fr)}}
+.stomps-card { background:var(--white); border:1.5px solid var(--border); border-radius:9px; padding:0.75rem 0.65rem; text-align:center; }
+.stomps-letter { font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; color:var(--orange); line-height:1; margin-bottom:0.18rem; }
+.stomps-word { font-size:0.68rem; font-weight:600; color:var(--ink); margin-bottom:0.12rem; }
+.stomps-en { font-size:0.62rem; color:var(--muted); font-style:italic; }
+
+/* mistake table */
+td.order-ok  { font-family:'DM Mono',monospace; font-size:0.8rem; font-weight:600; color:var(--green); }
+td.order-bad { font-family:'DM Mono',monospace; font-size:0.8rem; font-weight:600; color:var(--red); text-decoration:line-through; }
+td.order-rule { font-size:0.77rem; color:var(--ink); }
+.tag { display:inline-block; font-family:'DM Mono',monospace; font-size:0.58rem; padding:0.1rem 0.4rem; border-radius:3px; font-weight:600; margin-right:0.2rem; }
+.tag-m { background:var(--blue-light); color:var(--blue); }
+.tag-s { background:var(--orange-bg); color:var(--orange); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="breadcrumb"><a href="dutch-index.html">&#8592; Hub</a> <span>/</span> Word Order</div>
+
+  <header class="site-header">
+    <div>
+      <h1>Dutch <span class="accent">Word Order</span></h1>
+      <p class="subtitle">V2 Rule &middot; SOV &middot; Inversion &middot; Subclauses &middot; STOMPS</p>
+    </div>
+    <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">V2 &mdash; verb always 2nd</div>
+    <div class="pill">SOV in subclauses</div>
+    <div class="pill">inversion after adverb</div>
+    <div class="pill">STOMPS order</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>Key Rule</div>
+    <p>Dutch is a <strong>V2 language</strong>: the finite verb ALWAYS occupies the second position in a main clause. If an adverb or object moves to first position, the <strong>subject and verb invert</strong>. In subclauses (after omdat, dat, als&hellip;), all verbs move to the <strong>very end</strong>.</p>
+  </div>
+
+  <div class="section-title anim a2">Rule 1 &mdash; The V2 Rule</div>
+
+  <div class="diag anim a2">
+    <div class="diag-label">Position layout</div>
+    <div class="diag-title">The finite verb is always in slot 2</div>
+    <div class="diag-desc">Whatever element comes first &mdash; subject, adverb, or object &mdash; the conjugated verb occupies slot&nbsp;2. The rest fills slots 3+, with infinitives and participles going to the end.</div>
+
+    <div class="field-grid">
+      <div class="fbox fb1"><span class="fbox-label">position 1</span>anything</div>
+      <div class="fbox fb2"><span class="fbox-label">position 2</span>FINITE VERB</div>
+      <div class="fbox fbm"><span class="fbox-label">middle field</span>rest of sentence</div>
+      <div class="fbox fbe"><span class="fbox-label">end</span>inf / part.</div>
+    </div>
+
+    <div class="sent-row">
+      <span class="sent-label">S first</span>
+      <div class="tokens">
+        <span class="token tk-subj">Ik</span>
+        <span class="token tk-verb">werk</span>
+        <span class="token tk-rest">in Amsterdam</span>
+        <span class="token tk-rest">elke dag.</span>
+      </div>
+    </div>
+    <div class="gloss">I work in Amsterdam every day.</div>
+
+    <div class="divider"></div>
+
+    <div class="sent-row">
+      <span class="sent-label">Adv first</span>
+      <div class="tokens">
+        <span class="token tk-adv">Elke dag</span>
+        <span class="token tk-verb">werk</span>
+        <span class="token tk-subj">ik</span>
+        <span class="token tk-rest">in Amsterdam.</span>
+      </div>
+    </div>
+    <div class="gloss">Every day I work in Amsterdam. &mdash; verb stays 2nd, subject moves to 3rd!</div>
+
+    <div class="divider"></div>
+
+    <div class="sent-row">
+      <span class="sent-label">Object first</span>
+      <div class="tokens">
+        <span class="token tk-obj">Koffie</span>
+        <span class="token tk-verb">drink</span>
+        <span class="token tk-subj">ik</span>
+        <span class="token tk-rest">elke ochtend.</span>
+      </div>
+    </div>
+    <div class="gloss">Coffee I drink every morning. (emphasis on coffee)</div>
+  </div>
+
+  <div class="section-title anim a3">Rule 2 &mdash; Modal + Infinitive at the End</div>
+
+  <div class="diag anim a3">
+    <div class="diag-desc">When a modal verb is used, the infinitive or past participle jumps to the end of the clause.</div>
+
+    <div class="sent-row">
+      <span class="sent-label">Modal</span>
+      <div class="tokens">
+        <span class="token tk-subj">Ik</span>
+        <span class="token tk-verb">wil</span>
+        <span class="token tk-rest">morgen</span>
+        <span class="token tk-rest">naar huis</span>
+        <span class="token tk-sep">gaan.</span>
+      </div>
+    </div>
+    <div class="gloss">I want to go home tomorrow. (gaan = infinitive &rarr; end)</div>
+
+    <div class="divider"></div>
+
+    <div class="sent-row">
+      <span class="sent-label">Perfect</span>
+      <div class="tokens">
+        <span class="token tk-subj">Zij</span>
+        <span class="token tk-verb">heeft</span>
+        <span class="token tk-rest">gisteren</span>
+        <span class="token tk-rest">veel</span>
+        <span class="token tk-sep">gewerkt.</span>
+      </div>
+    </div>
+    <div class="gloss">She worked a lot yesterday. (gewerkt = past participle &rarr; end)</div>
+
+    <div class="divider"></div>
+
+    <div class="sent-row">
+      <span class="sent-label">Adv first</span>
+      <div class="tokens">
+        <span class="token tk-adv">Morgen</span>
+        <span class="token tk-verb">moet</span>
+        <span class="token tk-subj">hij</span>
+        <span class="token tk-rest">vroeg</span>
+        <span class="token tk-sep">opstaan.</span>
+      </div>
+    </div>
+    <div class="gloss">Tomorrow he must wake up early.</div>
+  </div>
+
+  <div class="section-title anim a4">Rule 3 &mdash; Subclauses: All Verbs to the End</div>
+
+  <div class="diag anim a4">
+    <div class="diag-desc">After subordinating conjunctions (omdat, dat, als, toen, terwijl, zodat, hoewel&hellip;) ALL verbs pile up at the very end of the clause.</div>
+
+    <div class="sent-row">
+      <span class="sent-label">Main</span>
+      <div class="tokens">
+        <span class="token tk-subj">Ik</span>
+        <span class="token tk-verb">blijf</span>
+        <span class="token tk-rest">thuis,</span>
+      </div>
+    </div>
+    <div class="sent-row" style="margin-top:0.3rem">
+      <span class="sent-label">Sub</span>
+      <div class="tokens">
+        <span class="token tk-conj">omdat</span>
+        <span class="token tk-subj">ik</span>
+        <span class="token tk-rest">morgen vroeg</span>
+        <span class="token tk-verb" style="border-style:dashed">moet</span>
+        <span class="token tk-sep">werken.</span>
+      </div>
+    </div>
+    <div class="gloss">I stay home because I have to work early tomorrow. (moet + werken both at end)</div>
+
+    <div class="divider"></div>
+
+    <div class="sent-row">
+      <span class="sent-label">Sub first</span>
+      <div class="tokens">
+        <span class="token tk-conj">Als</span>
+        <span class="token tk-subj">het</span>
+        <span class="token tk-rest">regent,</span>
+        <span class="token tk-verb">blijf</span>
+        <span class="token tk-subj">ik</span>
+        <span class="token tk-rest">thuis.</span>
+      </div>
+    </div>
+    <div class="gloss">If it rains, I stay home. (subclause first &rarr; inversion in main clause)</div>
+  </div>
+
+  <div class="section-title anim a4">Rule 4 &mdash; Questions</div>
+
+  <div class="diag anim a4">
+    <div class="diag-desc">Yes/no questions: verb moves to position 1. Wh-questions: question word takes position 1, verb stays in position 2.</div>
+
+    <div class="sent-row">
+      <span class="sent-label">Yes/No</span>
+      <div class="tokens">
+        <span class="token tk-verb">Werk</span>
+        <span class="token tk-subj">jij</span>
+        <span class="token tk-rest">hier?</span>
+      </div>
+    </div>
+    <div class="gloss">Do you work here? (verb 1st, subject 2nd)</div>
+
+    <div class="divider"></div>
+
+    <div class="sent-row">
+      <span class="sent-label">Wh- Q</span>
+      <div class="tokens">
+        <span class="token tk-adv">Waar</span>
+        <span class="token tk-verb">werk</span>
+        <span class="token tk-subj">jij?</span>
+      </div>
+    </div>
+    <div class="gloss">Where do you work? (question word = 1st, verb = 2nd)</div>
+
+    <div class="divider"></div>
+
+    <div class="sent-row">
+      <span class="sent-label">Wh- modal</span>
+      <div class="tokens">
+        <span class="token tk-adv">Waarom</span>
+        <span class="token tk-verb">moet</span>
+        <span class="token tk-subj">hij</span>
+        <span class="token tk-rest">dat</span>
+        <span class="token tk-sep">doen?</span>
+      </div>
+    </div>
+    <div class="gloss">Why does he have to do that?</div>
+  </div>
+
+  <!-- STOMPS -->
+  <div class="section-title" style="margin-top:2rem">STOMPS &mdash; Adverb Order in the Middle Field</div>
+
+  <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1.2rem;font-weight:300;line-height:1.5">When multiple adverbs appear in the middle of a sentence, Dutch follows the <strong style="color:var(--ink)">STOMPS</strong> order. Time before Manner before Place.</p>
+
+  <div class="stomps-grid anim a5">
+    <div class="stomps-card"><div class="stomps-letter">S</div><div class="stomps-word">Sentence adv.</div><div class="stomps-en">misschien, ook</div></div>
+    <div class="stomps-card"><div class="stomps-letter">T</div><div class="stomps-word">Tijd (Time)</div><div class="stomps-en">morgen, nu, gisteren</div></div>
+    <div class="stomps-card"><div class="stomps-letter">O</div><div class="stomps-word">Overig (Other)</div><div class="stomps-en">toch, eigenlijk</div></div>
+    <div class="stomps-card"><div class="stomps-letter">M</div><div class="stomps-word">Manner (How)</div><div class="stomps-en">snel, samen, alleen</div></div>
+    <div class="stomps-card"><div class="stomps-letter">P</div><div class="stomps-word">Plaats (Place)</div><div class="stomps-en">hier, thuis, buiten</div></div>
+    <div class="stomps-card"><div class="stomps-letter">S</div><div class="stomps-word">Specific place</div><div class="stomps-en">op de tafel</div></div>
+  </div>
+
+  <div class="diag anim a5" style="margin-bottom:2rem">
+    <div class="diag-label">STOMPS in action &mdash; Time &rarr; Manner &rarr; Place</div>
+    <div class="sent-row">
+      <span class="sent-label">Correct</span>
+      <div class="tokens">
+        <span class="token tk-subj">Ik</span>
+        <span class="token tk-verb">ga</span>
+        <span class="token tk-adv">morgen</span>
+        <span class="token tk-rest" style="background:var(--green-light);color:var(--green);border:1.5px solid var(--green-border)">snel</span>
+        <span class="token tk-rest" style="background:var(--purple-light);color:var(--purple);border:1.5px solid var(--purple-border)">naar school.</span>
+      </div>
+    </div>
+    <div class="gloss">I am going to school quickly tomorrow.</div>
+    <div class="divider"></div>
+    <div class="sent-row">
+      <span class="sent-label">Wrong</span>
+      <div class="tokens">
+        <span class="token tk-subj" style="opacity:0.45">Ik</span>
+        <span class="token tk-verb" style="opacity:0.45">ga</span>
+        <span class="token tk-rest" style="opacity:0.45;background:var(--purple-light);color:var(--purple);border:1.5px solid var(--purple-border)">naar school</span>
+        <span class="token tk-adv" style="opacity:0.45">morgen</span>
+        <span class="token tk-rest" style="opacity:0.45;background:var(--green-light);color:var(--green);border:1.5px solid var(--green-border)">snel.</span>
+        <span style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--red);margin-left:0.3rem;font-weight:700">&#10007;</span>
+      </div>
+    </div>
+    <div class="gloss" style="color:var(--red)">Scrambled STOMPS order sounds very unnatural.</div>
+  </div>
+
+  <!-- Common mistakes -->
+  <div class="section-title anim a5">Common Word Order Mistakes</div>
+
+  <table class="anim a5">
+    <thead>
+      <tr><th>Type</th><th>Wrong</th><th>Correct</th><th>Rule</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="tag tag-m">MAIN</span>Adverb first</td>
+        <td class="order-bad">Morgen ik werk niet.</td>
+        <td class="order-ok">Morgen werk ik niet.</td>
+        <td class="order-rule">V2: after adverb, subject and verb invert</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-s">SUB</span>omdat</td>
+        <td class="order-bad">&hellip;omdat ik ben ziek.</td>
+        <td class="order-ok">&hellip;omdat ik ziek ben.</td>
+        <td class="order-rule">Subclause: verb to the end</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-m">MAIN</span>Modal</td>
+        <td class="order-bad">Ik wil gaan morgen.</td>
+        <td class="order-ok">Ik wil morgen gaan.</td>
+        <td class="order-rule">Infinitive goes after time adverb</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-s">SUB</span>dat-clause</td>
+        <td class="order-bad">&hellip;dat hij werkt morgen niet.</td>
+        <td class="order-ok">&hellip;dat hij morgen niet werkt.</td>
+        <td class="order-rule">dat-clause = subclause, verb to end</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-m">MAIN</span>Perfect</td>
+        <td class="order-bad">Ik heb gewerkt gisteren.</td>
+        <td class="order-ok">Ik heb gisteren gewerkt.</td>
+        <td class="order-rule">Participle goes last; time adverb before it</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <span>Dutch Word Order &middot; V2 &middot; SOV &middot; STOMPS &middot; Subclauses</span>
+    <span>B1 Level Reference</span>
+  </footer>
+
+</div>
+</body>
+</html>

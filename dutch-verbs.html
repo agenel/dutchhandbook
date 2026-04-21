@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dutch Verb Conjugation — Cheat Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --orange:#E8500A; --orange-light:#FF7A3D; --orange-bg:#FFF2EB; --orange-border:#FFD0B5;
+  --cream:#FAF6EE; --ink:#1A1208; --muted:#7A6A55; --border:#E0D5C5; --white:#fff;
+  --blue:#1A3A6B; --blue-light:#E8EEF8; --blue-border:#C5D4ED;
+  --green:#1A5C3A; --green-light:#E8F4EE; --green-border:#B8DFC8;
+  --red:#8B1A1A; --red-light:#F5E8E8; --red-border:#E8B8B8;
+  --gold:#C4920A; --gold-light:#FDF3D8; --gold-border:#E8D49A;
+  --teal:#2D6B6B; --teal-light:#E5F5F5; --teal-border:#A8D8D8;
+  --purple:#7B2D8B; --purple-light:#F5EAF8; --purple-border:#DDB8E8;
+}
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--ink); min-height:100vh; padding:2rem 1rem; }
+.page { max-width:900px; margin:0 auto; }
+.breadcrumb { font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.4rem; }
+.breadcrumb a { color:var(--orange); text-decoration:none; font-weight:500; }
+.breadcrumb a:hover { text-decoration:underline; }
+.site-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:2rem; padding-bottom:1.5rem; border-bottom:3px solid var(--ink); gap:1rem; flex-wrap:wrap; }
+.site-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,3rem); font-weight:900; line-height:1; letter-spacing:-0.02em; }
+.site-header h1 .accent { color:var(--orange); }
+.site-header .subtitle { font-size:0.8rem; color:var(--muted); font-weight:300; margin-top:0.4rem; letter-spacing:0.08em; text-transform:uppercase; }
+.flag{display:flex;flex-direction:column;width:54px;height:36px;border-radius:4px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;margin-top:4px;}
+.flag-red{background:#AE1C28;flex:1}.flag-white{background:#fff;flex:1}.flag-blue{background:#21468B;flex:1}
+.pill-row { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+.pill { font-family:'DM Mono',monospace; font-size:0.72rem; font-weight:500; padding:0.27rem 0.72rem; border-radius:999px; border:1.5px solid var(--ink); color:var(--ink); letter-spacing:0.02em; }
+.key-banner { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; display:flex; align-items:flex-start; gap:1rem; flex-wrap:wrap; }
+.key-banner .kb-label { font-family:'DM Mono',monospace; font-size:0.67rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--orange-light); flex-shrink:0; padding-top:2px; display:flex; align-items:center; gap:0.3rem; }
+.key-banner .kb-label .material-icons { font-size:0.9rem; }
+.key-banner p { font-size:0.86rem; line-height:1.55; font-weight:300; }
+.key-banner strong { font-weight:600; color:#FFD4BC; }
+.section-title { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--ink); margin-bottom:1rem; display:flex; align-items:center; gap:0.6rem; }
+.section-title::after { content:''; flex:1; height:1.5px; background:var(--border); }
+table { width:100%; border-collapse:collapse; font-size:0.82rem; background:var(--white); border-radius:10px; overflow:hidden; border:1.5px solid var(--border); margin-bottom:2rem; }
+thead tr { background:var(--ink); color:var(--cream); }
+thead th { padding:0.62rem 1rem; text-align:left; font-family:'DM Mono',monospace; font-size:0.63rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; }
+tbody tr { border-top:1px solid var(--border); }
+tbody tr:nth-child(even) { background:#FAFAF8; }
+td { padding:0.62rem 1rem; vertical-align:middle; line-height:1.45; }
+td.mono { font-family:'DM Mono',monospace; font-weight:500; }
+.example { border-left:2.5px solid var(--border); padding-left:0.75rem; margin-bottom:0.6rem; }
+.example .nl { font-family:'DM Mono',monospace; font-size:0.79rem; font-weight:500; color:var(--ink); display:block; }
+.example .nl em { font-style:normal; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.example .en { font-size:0.72rem; color:var(--muted); display:block; margin-top:1px; }
+footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--border); font-size:0.75rem; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.4rem; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.anim{animation:fadeUp 0.4s ease both}.a1{animation-delay:0.04s}.a2{animation-delay:0.09s}.a3{animation-delay:0.14s}.a4{animation-delay:0.19s}.a5{animation-delay:0.24s}
+
+/* Page-specific */
+.conj-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-bottom:2rem; }
+@media(max-width:680px){.conj-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.conj-grid{grid-template-columns:1fr}}
+
+.conj-card { background:var(--white); border:1.5px solid var(--border); border-radius:10px; overflow:hidden; }
+.conj-header { padding:0.85rem 1.1rem; border-bottom:1px solid var(--border); }
+.conj-verb { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:700; line-height:1; }
+.conj-meaning { font-size:0.72rem; color:var(--muted); font-style:italic; margin-top:0.2rem; font-weight:300; }
+.conj-row { display:flex; align-items:baseline; padding:0.4rem 1.1rem; border-bottom:1px solid var(--border); gap:0.7rem; }
+.conj-row:last-child { border-bottom:none; }
+.conj-pron { font-family:'DM Mono',monospace; font-size:0.7rem; color:var(--muted); width:55px; flex-shrink:0; }
+.conj-form { font-family:'DM Mono',monospace; font-size:0.86rem; font-weight:600; }
+.conj-note { font-size:0.65rem; color:var(--muted); font-style:italic; margin-left:auto; flex-shrink:0; }
+
+.cc-zijn .conj-header { background:var(--blue-light); border-color:var(--blue-border); }
+.cc-zijn .conj-verb { color:var(--blue); }
+.cc-zijn .conj-form { color:var(--blue); }
+.cc-hebben .conj-header { background:var(--green-light); border-color:var(--green-border); }
+.cc-hebben .conj-verb { color:var(--green); }
+.cc-hebben .conj-form { color:var(--green); }
+.cc-reg .conj-header { background:var(--orange-bg); border-color:var(--orange-border); }
+.cc-reg .conj-verb { color:var(--orange); }
+.cc-reg .conj-form { color:var(--orange); }
+
+.stem-box { background:var(--white); border:1.5px solid var(--border); border-radius:10px; padding:1.2rem 1.4rem; margin-bottom:1.5rem; }
+.stem-title { font-family:'DM Mono',monospace; font-size:0.67rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.9rem; font-weight:500; display:flex; align-items:center; gap:0.35rem; }
+.stem-title .material-icons { font-size:0.9rem; color:var(--orange); }
+.stem-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0.7rem; }
+@media(max-width:560px){.stem-steps{grid-template-columns:repeat(2,1fr)}}
+.stem-step { background:var(--cream); border:1.5px solid var(--border); border-radius:8px; padding:0.7rem; }
+.stem-num { font-family:'DM Mono',monospace; font-size:0.58rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem; }
+.stem-rule { font-size:0.78rem; font-weight:500; color:var(--ink); line-height:1.4; margin-bottom:0.2rem; }
+.stem-ex { font-family:'DM Mono',monospace; font-size:0.71rem; color:var(--orange); font-weight:500; }
+
+.kofschip-box { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; display:flex; gap:1.1rem; flex-wrap:wrap; }
+.kof-label { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--orange-light); flex-shrink:0; padding-top:2px; font-weight:500; }
+.kof-body { font-size:0.83rem; line-height:1.55; font-weight:300; }
+.kof-body strong { color:#FFD4BC; font-weight:600; }
+.kof-letters { display:flex; gap:0.2rem; margin-top:0.55rem; flex-wrap:wrap; }
+.kof-l { width:26px; height:26px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-family:'DM Mono',monospace; font-size:0.82rem; font-weight:700; }
+.kof-on { background:var(--orange); color:#fff; }
+.kof-off { background:rgba(255,255,255,0.09); color:rgba(255,255,255,0.3); }
+
+tr.row-hi td { background:var(--gold-light) !important; }
+td.v-form { font-family:'DM Mono',monospace; font-weight:600; color:var(--purple); font-size:0.83rem; }
+td.v-en { font-size:0.78rem; color:var(--muted); font-style:italic; }
+
+.note-box { border-radius:9px; padding:0.9rem 1.1rem; margin-bottom:1.5rem; display:flex; gap:0.75rem; align-items:flex-start; font-size:0.82rem; line-height:1.55; }
+.note-box .material-icons { font-size:1.05rem; flex-shrink:0; margin-top:1px; }
+.note-box p { font-weight:300; }
+.note-box strong { font-weight:600; }
+.note-warn { background:var(--gold-light); border:1.5px solid var(--gold-border); }
+.note-warn .material-icons { color:var(--gold); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="breadcrumb"><a href="dutch-index.html">&#8592; Hub</a> <span>/</span> Verb Conjugation</div>
+
+  <header class="site-header">
+    <div>
+      <h1>Dutch <span class="accent">Verbs</span></h1>
+      <p class="subtitle">Present Tense &middot; zijn &middot; hebben &middot; Modal Verbs</p>
+    </div>
+    <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">stam + endings</div>
+    <div class="pill">zijn (to be)</div>
+    <div class="pill">hebben (to have)</div>
+    <div class="pill">'t kofschip</div>
+    <div class="pill">-t drop on inversion</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>Key Rule</div>
+    <p>Dutch verbs are built on the <strong>stem (stam)</strong>: infinitive minus <strong>-en</strong>. Add nothing for <strong>ik</strong>, add <strong>-t</strong> for hij/zij/het/u. If the stem already ends in <strong>-t</strong>, don&rsquo;t add another. And if <strong>je/jij</strong> comes <em>after</em> the verb (inversion), drop the <strong>-t</strong>.</p>
+  </div>
+
+  <div class="section-title anim a2">The Three Essential Verbs</div>
+
+  <div class="conj-grid anim a2">
+    <div class="conj-card cc-zijn">
+      <div class="conj-header">
+        <div class="conj-verb">zijn</div>
+        <div class="conj-meaning">to be &mdash; fully irregular</div>
+      </div>
+      <div class="conj-row"><span class="conj-pron">ik</span><span class="conj-form">ben</span></div>
+      <div class="conj-row"><span class="conj-pron">jij / je</span><span class="conj-form">bent</span><span class="conj-note">ben (inversion)</span></div>
+      <div class="conj-row"><span class="conj-pron">u</span><span class="conj-form">bent / is</span></div>
+      <div class="conj-row"><span class="conj-pron">hij/zij/het</span><span class="conj-form">is</span></div>
+      <div class="conj-row"><span class="conj-pron">wij / we</span><span class="conj-form">zijn</span></div>
+      <div class="conj-row"><span class="conj-pron">jullie</span><span class="conj-form">zijn</span></div>
+      <div class="conj-row"><span class="conj-pron">zij / ze</span><span class="conj-form">zijn</span></div>
+    </div>
+
+    <div class="conj-card cc-hebben">
+      <div class="conj-header">
+        <div class="conj-verb">hebben</div>
+        <div class="conj-meaning">to have &mdash; slightly irregular</div>
+      </div>
+      <div class="conj-row"><span class="conj-pron">ik</span><span class="conj-form">heb</span></div>
+      <div class="conj-row"><span class="conj-pron">jij / je</span><span class="conj-form">hebt</span><span class="conj-note">heb (inversion)</span></div>
+      <div class="conj-row"><span class="conj-pron">u</span><span class="conj-form">heeft / hebt</span></div>
+      <div class="conj-row"><span class="conj-pron">hij/zij/het</span><span class="conj-form">heeft</span></div>
+      <div class="conj-row"><span class="conj-pron">wij / we</span><span class="conj-form">hebben</span></div>
+      <div class="conj-row"><span class="conj-pron">jullie</span><span class="conj-form">hebben</span></div>
+      <div class="conj-row"><span class="conj-pron">zij / ze</span><span class="conj-form">hebben</span></div>
+    </div>
+
+    <div class="conj-card cc-reg">
+      <div class="conj-header">
+        <div class="conj-verb">werken</div>
+        <div class="conj-meaning">to work &mdash; regular (stam: werk)</div>
+      </div>
+      <div class="conj-row"><span class="conj-pron">ik</span><span class="conj-form">werk</span><span class="conj-note">stam only</span></div>
+      <div class="conj-row"><span class="conj-pron">jij / je</span><span class="conj-form">werkt</span><span class="conj-note">werk (inversion)</span></div>
+      <div class="conj-row"><span class="conj-pron">u</span><span class="conj-form">werkt</span></div>
+      <div class="conj-row"><span class="conj-pron">hij/zij/het</span><span class="conj-form">werkt</span></div>
+      <div class="conj-row"><span class="conj-pron">wij / we</span><span class="conj-form">werken</span><span class="conj-note">= infinitive</span></div>
+      <div class="conj-row"><span class="conj-pron">jullie</span><span class="conj-form">werken</span></div>
+      <div class="conj-row"><span class="conj-pron">zij / ze</span><span class="conj-form">werken</span></div>
+    </div>
+  </div>
+
+  <!-- Stem rule -->
+  <div class="stem-box anim a3">
+    <div class="stem-title"><span class="material-icons">construction</span>How to Find the Stem (Stam)</div>
+    <div class="stem-steps">
+      <div class="stem-step"><div class="stem-num">Step 1</div><div class="stem-rule">Take the infinitive</div><div class="stem-ex">werken, wonen, leven</div></div>
+      <div class="stem-step"><div class="stem-num">Step 2</div><div class="stem-rule">Remove -en</div><div class="stem-ex">werk&ndash;, won&ndash;, lev&ndash;</div></div>
+      <div class="stem-step"><div class="stem-num">Step 3</div><div class="stem-rule">Fix spelling (double vowel / f&harr;v)</div><div class="stem-ex">won &rarr; woon, lev &rarr; leef</div></div>
+      <div class="stem-step"><div class="stem-num">Step 4</div><div class="stem-rule">Add endings: &mdash; (ik), -t (hij), -en (wij)</div><div class="stem-ex">ik woon / hij woont / wij wonen</div></div>
+    </div>
+  </div>
+
+  <!-- Kofschip -->
+  <div class="kofschip-box anim a3">
+    <div class="kof-label">'t Kofschip</div>
+    <div class="kof-body">
+      If the stem ends in a letter from <strong>'t kofschip</strong>, past tense gets <strong>-te / -ten</strong>. All other consonants get <strong>-de / -den</strong>. Also: <strong>fokschaap</strong> is the same mnemonic.
+      <div class="kof-letters">
+        <span class="kof-off">'</span><span class="kof-on">t</span><span class="kof-off">&nbsp;</span>
+        <span class="kof-on">k</span><span class="kof-on">o</span><span class="kof-on">f</span>
+        <span class="kof-on">s</span><span class="kof-on">c</span><span class="kof-on">h</span>
+        <span class="kof-on">i</span><span class="kof-on">p</span>
+      </div>
+      <div style="margin-top:0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.55)">
+        e.g. werk &rarr; stem ends in <strong style="color:#FFD4BC">k</strong> (in kofschip) &rarr; werkte &nbsp;|&nbsp; leer &rarr; stem ends in r (not in kofschip) &rarr; leerde
+      </div>
+    </div>
+  </div>
+
+  <!-- -t drop -->
+  <div class="section-title anim a3">The &ndash;t Drop Rule (Inversion)</div>
+
+  <table class="anim a3">
+    <thead>
+      <tr>
+        <th>Type</th><th>Dutch</th><th>English</th><th>Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono" style="color:var(--blue)">Normal order</td>
+        <td><em>Jij</em> werkt hier.</td>
+        <td>You work here.</td>
+        <td style="font-size:0.77rem;color:var(--muted)">jij before verb &rarr; keep -t</td>
+      </tr>
+      <tr class="row-hi">
+        <td class="mono" style="color:var(--gold)">Inversion (question)</td>
+        <td>Werk <em>je</em> hier?</td>
+        <td>Do you work here?</td>
+        <td style="font-size:0.77rem;color:var(--red);font-weight:600">je AFTER verb &rarr; drop -t</td>
+      </tr>
+      <tr>
+        <td class="mono" style="color:var(--blue)">Normal order</td>
+        <td><em>Jij</em> bent thuis.</td>
+        <td>You are home.</td>
+        <td style="font-size:0.77rem;color:var(--muted)">normal &rarr; bent</td>
+      </tr>
+      <tr class="row-hi">
+        <td class="mono" style="color:var(--gold)">Inversion</td>
+        <td>Ben <em>je</em> thuis?</td>
+        <td>Are you home?</td>
+        <td style="font-size:0.77rem;color:var(--red);font-weight:600">je after verb &rarr; ben (no -t)</td>
+      </tr>
+      <tr class="row-hi">
+        <td class="mono" style="color:var(--gold)">Adverb first</td>
+        <td>Morgen <em>werk je</em> niet.</td>
+        <td>Tomorrow you don't work.</td>
+        <td style="font-size:0.77rem;color:var(--red);font-weight:600">je still after verb &rarr; drop -t</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal verbs -->
+  <div class="section-title anim a4">Modal &amp; Common Irregular Verbs</div>
+
+  <table class="anim a4">
+    <thead>
+      <tr><th>Infinitive</th><th>Meaning</th><th>ik</th><th>jij / hij</th><th>wij</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="mono">willen</td><td class="v-en">to want</td><td class="v-form">wil</td><td class="v-form">wil / wilt</td><td class="v-form">willen</td></tr>
+      <tr><td class="mono">kunnen</td><td class="v-en">can / to be able</td><td class="v-form">kan</td><td class="v-form">kan / kunt</td><td class="v-form">kunnen</td></tr>
+      <tr><td class="mono">mogen</td><td class="v-en">may / to be allowed</td><td class="v-form">mag</td><td class="v-form">mag</td><td class="v-form">mogen</td></tr>
+      <tr><td class="mono">moeten</td><td class="v-en">must / to have to</td><td class="v-form">moet</td><td class="v-form">moet</td><td class="v-form">moeten</td></tr>
+      <tr><td class="mono">zullen</td><td class="v-en">shall / will (future)</td><td class="v-form">zal</td><td class="v-form">zal / zult</td><td class="v-form">zullen</td></tr>
+      <tr><td class="mono">gaan</td><td class="v-en">to go</td><td class="v-form">ga</td><td class="v-form">gaat</td><td class="v-form">gaan</td></tr>
+      <tr><td class="mono">komen</td><td class="v-en">to come</td><td class="v-form">kom</td><td class="v-form">komt</td><td class="v-form">komen</td></tr>
+      <tr><td class="mono">doen</td><td class="v-en">to do</td><td class="v-form">doe</td><td class="v-form">doet</td><td class="v-form">doen</td></tr>
+      <tr><td class="mono">zien</td><td class="v-en">to see</td><td class="v-form">zie</td><td class="v-form">ziet</td><td class="v-form">zien</td></tr>
+      <tr><td class="mono">weten</td><td class="v-en">to know (fact)</td><td class="v-form">weet</td><td class="v-form">weet</td><td class="v-form">weten</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box note-warn anim a5">
+    <span class="material-icons">warning</span>
+    <p><strong>weten vs. kennen:</strong> Dutch has two &ldquo;to know&rdquo; verbs. <strong>weten</strong> = know a fact (&ldquo;Ik weet het.&rdquo;). <strong>kennen</strong> = to be acquainted with (&ldquo;Ik ken haar.&rdquo;). This trips up many learners.</p>
+  </div>
+
+  <footer>
+    <span>Dutch Verbs &middot; Present Tense &middot; zijn &middot; hebben &middot; Modals</span>
+    <span>A2 Level Reference</span>
+  </footer>
+
+</div>
+</body>
+</html>
