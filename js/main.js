@@ -43,4 +43,78 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('dgh_flashcard_mode', isActive);
     });
   }
+  
+  // --- MASTERY TRACKING ---
+  const masteryToggle = document.querySelector('.mastery-toggle');
+  if (masteryToggle) {
+    const sheetId = masteryToggle.getAttribute('data-sheet');
+    const isMastered = localStorage.getItem(`dgh_mastered_${sheetId}`) === 'true';
+
+    function runMasteryVisuals(mastered) {
+      if (mastered) {
+        masteryToggle.classList.add('mastered');
+        masteryToggle.innerHTML = `Mastered <span class="material-icons">check_circle</span>`;
+      } else {
+        masteryToggle.classList.remove('mastered');
+        masteryToggle.innerHTML = `Mark as Mastered <span class="material-icons">check_circle_outline</span>`;
+      }
+    }
+    
+    runMasteryVisuals(isMastered);
+
+    masteryToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const currentlyMastered = localStorage.getItem(`dgh_mastered_${sheetId}`) === 'true';
+      if (currentlyMastered) {
+        localStorage.removeItem(`dgh_mastered_${sheetId}`);
+        runMasteryVisuals(false);
+      } else {
+        localStorage.setItem(`dgh_mastered_${sheetId}`, 'true');
+        runMasteryVisuals(true);
+      }
+    });
+  }
+
+  // --- HOME PAGE LOGIC (Index) ---
+  const indexCards = document.querySelectorAll('.sheet-card');
+  if (indexCards.length > 0) {
+    let masteredCount = 0;
+    
+    indexCards.forEach(card => {
+      const href = card.getAttribute('href');
+      const sheetId = href.split('/').pop().replace('.html', '');
+      
+      if (localStorage.getItem(`dgh_mastered_${sheetId}`) === 'true') {
+        card.classList.add('mastered-card');
+        masteredCount++;
+      }
+    });
+
+    const progBarFill = document.querySelector('.progress-fill');
+    const progText = document.querySelector('.progress-text');
+    if (progBarFill && progText) {
+      const pct = (masteredCount / indexCards.length) * 100;
+      progBarFill.style.width = `${pct}%`;
+      progText.innerHTML = `<strong>${masteredCount}/${indexCards.length}</strong> Modules Mastered`;
+      if (masteredCount === indexCards.length) {
+          progBarFill.style.background = 'var(--gold)';
+      }
+    }
+
+    // --- SEARCH/FILTER LOGIC ---
+    const searchInput = document.getElementById('search-hub');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        indexCards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+  }
 });

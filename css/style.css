@@ -295,6 +295,7 @@ details[open] .expand-icon {
   color: var(--ink);
   display: flex;
   flex-direction: column;
+  position: relative;
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
@@ -1011,4 +1012,120 @@ tr.row-hi td {
   * {
     animation: none !important;
   }
+}
+
+/* Gamification: Mastery Tracking */
+.mastery-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  transition: all 0.2s;
+  margin: 0 auto;
+}
+.mastery-toggle:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+.mastery-toggle.mastered {
+  background: var(--green-light);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.sheet-card .mastery-badge {
+  display: none !important;
+}
+.sheet-card.mastered-card {
+  border-color: var(--green) !important;
+  opacity: 0.6;
+}
+.sheet-card.mastered-card:hover {
+  opacity: 1;
+}
+.sheet-card.mastered-card .card-icon {
+  background-color: var(--green) !important;
+  color: var(--white) !important;
+  border-radius: 9px;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 163, 67, 0.15);
+  transition: all 0.2s;
+}
+.sheet-card.mastered-card .card-icon .material-icons {
+  display: none;
+}
+.sheet-card.mastered-card .card-icon::after {
+  content: 'check';
+  font-family: 'Material Icons';
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+/* Gamification: Progress Bar */
+.progress-container {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 26px;
+  flex: 1;
+  overflow: hidden;
+}
+.progress-fill {
+  background: var(--green);
+  height: 100%;
+  border-radius: 999px;
+  width: 0%;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.progress-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 0.7rem;
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  color: var(--ink);
+}
+.progress-text strong { font-weight: 700; color: var(--green); }
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 1.1rem;
+  flex: 1;
+}
+.search-container .material-icons {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.search-container input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--ink);
+  outline: none;
+}
+.search-container input::placeholder { color: var(--muted); opacity: 0.6; }
+.search-container:focus-within {
+  border-color: var(--orange);
+  box-shadow: 0 4px 12px rgba(232, 80, 10, 0.08);
 }
