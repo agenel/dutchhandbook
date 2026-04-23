@@ -12,21 +12,27 @@
 <div class="page">
 
   <div class="hero">
-    <div class="hero-top">
-      <div>
+    
+    <div class="fc-toggle-wrap hero-toggles">
+      <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode"><span class="material-icons">dark_mode</span></button>
+      <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+    </div>
+
+    <div class="hero-layout">
+      <div class="hero-title">
         <h1>Learn<br><em>Dutch</em><br>Grammar</h1>
+      </div>
+      
+      <div class="hero-content">
         <p class="hero-desc">A structured collection of cheat sheets covering the most essential grammar topics for Dutch learners — from A2 to B1 level. Each sheet is a complete self-contained reference.</p>
-      </div>
-      <div class="fc-toggle-wrap">
-        <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode"><span class="material-icons">dark_mode</span></button>
-        <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+        <div class="hero-pills">
+          <div class="pill">7 cheat sheets</div>
+          <div class="pill">A2 &mdash; B1</div>
+          <div class="pill">Grammar &middot; Vocabulary &middot; Structure</div>
+        </div>
       </div>
     </div>
-    <div class="hero-pills">
-      <div class="pill">7 cheat sheets</div>
-      <div class="pill">A2 &mdash; B1</div>
-      <div class="pill">Grammar &middot; Vocabulary &middot; Structure</div>
-    </div>
+
   </div>
 
   <details class="roadmap" id="roadmap">
@@ -66,7 +72,13 @@
     }
   </script>
 
-  <div class="section-title">All Cheat Sheets</div>
+  <div class="section-title">
+    All Cheat Sheets
+    <div class="title-line"></div>
+    <button id="toggle-mastered" class="icon-toggle-btn" title="Toggle Mastered Modules">
+      <span class="material-icons">visibility</span>
+    </button>
+  </div>
 
   
   <div class="dash-row" style="display:flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">

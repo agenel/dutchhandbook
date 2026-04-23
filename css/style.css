@@ -76,15 +76,35 @@ body {
   margin-bottom: 2.5rem;
   border-bottom: 3px solid var(--ink);
   animation: fadeUp 0.4s ease both;
+  position: relative;
 }
 
-.hero-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
+.fc-toggle-wrap.hero-toggles {
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  margin: 0;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: flex-end;
+  gap: 3rem;
+}
+
+@media(max-width: 800px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .fc-toggle-wrap.hero-toggles {
+    position: relative;
+    top: 0;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
 }
 
 .hero h1 {
@@ -101,11 +121,23 @@ body {
   color: var(--orange);
 }
 
+.hero-content {
+  max-width: 480px;
+  justify-self: end;
+  padding-bottom: 0.15rem;
+}
+
+@media(max-width: 800px) {
+  .hero-content {
+    justify-self: start;
+    padding-bottom: 0;
+  }
+}
+
 .hero-desc {
   font-size: 0.93rem;
   color: var(--muted);
   font-weight: 300;
-  max-width: 520px;
   line-height: 1.65;
   margin-top: 1rem;
 }
@@ -259,11 +291,28 @@ details[open] .expand-icon {
   gap: 0.6rem;
 }
 
-.section-title::after {
-  content: '';
+.title-line {
   flex: 1;
   height: 1.5px;
   background: var(--border);
+}
+
+.icon-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s, transform 0.2s;
+  margin-left: 1rem;
+}
+
+.icon-toggle-btn:hover {
+  color: var(--orange);
+  transform: scale(1.1);
 }
 
 .sheets-grid {
