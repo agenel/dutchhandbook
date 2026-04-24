@@ -161,29 +161,6 @@ body {
   letter-spacing: 0.02em;
 }
 
-.help-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1.5px solid var(--border);
-  color: var(--muted);
-  background: var(--white);
-  transition: all 0.2s;
-  text-decoration: none;
-  margin-left: 0.3rem;
-}
-.help-btn:hover {
-  color: var(--orange);
-  border-color: var(--orange);
-  transform: scale(1.1);
-}
-.help-btn .material-icons {
-  font-size: 1.15rem;
-}
-
 .flag {
   display: flex;
   flex-direction: column;
@@ -208,6 +185,12 @@ body {
 .flag-blue {
   background: #21468B;
   flex: 1;
+}
+
+@media (max-width: 600px) {
+  .site-header .flag {
+    display: none;
+  }
 }
 
 .roadmap {
@@ -1018,10 +1001,17 @@ tr.row-hi td {
 }
 
 .fc-btn.icon-only {
-  padding: 0.35rem;
+  padding: 0;
   border-radius: 50%;
-  width: 32px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.fc-btn.icon-only .material-icons {
+  font-size: 1.35rem;
 }
 
 .fc-btn .material-icons {
