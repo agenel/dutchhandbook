@@ -780,6 +780,12 @@ footer {
   flex-wrap: wrap;
 }
 
+[data-theme="dark"] .key-banner {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+}
+
 .key-banner .kb-label {
   font-family: 'DM Mono', monospace;
   font-size: 0.67rem;
@@ -806,6 +812,10 @@ footer {
 .key-banner strong {
   font-weight: 600;
   color: #FFD4BC;
+}
+
+[data-theme="dark"] .key-banner strong {
+  color: var(--orange);
 }
 
 table {

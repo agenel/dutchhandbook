@@ -58,7 +58,8 @@
 .fp { padding:0.16rem 0.42rem; border-radius:4px; font-family:'DM Mono',monospace; font-size:0.73rem; font-weight:600; }
 .fp-aux { background:var(--blue-light); color:var(--blue); border:1px solid var(--blue-border); }
 .fp-ge  { background:var(--red-light); color:var(--red); border:1px solid var(--red-border); }
-.fp-st  { background:#F0F0EA; color:var(--ink); border:1px solid #E0D8CC; }
+.fp-st { background:#F0F0EA; color:var(--ink); border:1px solid #E0D8CC; }
+[data-theme="dark"] .fp-st { background:var(--white); color:var(--ink); border-color:var(--border); }
 .fp-end { background:var(--green-light); color:var(--green); border:1px solid var(--green-border); }
 .fp-plus { color:var(--muted); font-size:0.75rem; }
 .fp-note { font-size:0.71rem; color:var(--muted); flex-basis:100%; margin-top:0.1rem; font-style:italic; }
@@ -85,6 +86,7 @@
 
 /* zijn/hebben split box */
 .zh-box { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; }
+[data-theme="dark"] .zh-box { background:var(--white); color:var(--ink); border:1.5px solid var(--border); }
 .zh-title { font-family:'Playfair Display',serif; font-size:0.98rem; font-weight:700; margin-bottom:0.85rem; }
 .zh-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
 @media(max-width:500px){.zh-grid{grid-template-columns:1fr}}
@@ -93,6 +95,7 @@
 .tc-hebb { color:var(--orange-light); }
 .zh-list { font-size:0.79rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.75); }
 .zh-list strong { color:rgba(255,255,255,0.95); font-weight:500; }
+[data-theme="dark"] .zh-list strong, [data-theme="dark"] .zh-list { color:var(--ink); }
 
 /* strong verbs table */
 td.s-inf  { font-family:'DM Mono',monospace; font-weight:600; color:var(--purple); font-size:0.82rem; }
