@@ -670,15 +670,45 @@ details[open] .expand-icon {
 }
 
 footer {
-  margin-top: 2rem;
-  padding-top: 1rem;
+  margin-top: 3rem;
+  padding: 1.5rem 0 0.5rem;
   border-top: 1px solid var(--border);
-  font-size: 0.75rem;
-  color: var(--muted);
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+footer .footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+footer .footer-brand span {
+  color: var(--orange);
+}
+
+footer .footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+footer .footer-meta .dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--muted);
+  opacity: 0.5;
 }
 
 @keyframes fadeUp {
@@ -929,12 +959,13 @@ tr.row-hi td {
 
 /* Page Navigation */
 .page-nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   margin-top: 3rem;
   padding-bottom: 1.5rem;
   border-top: 2px dashed var(--border);
+  gap: 0.75rem;
 }
 
 .page-nav a {
@@ -965,22 +996,36 @@ tr.row-hi td {
 }
 
 .pn-prev {
-  margin-right: auto;
+  justify-self: start;
 }
 
 .pn-next {
-  margin-left: auto;
+  justify-self: end;
 }
 
-@media (max-width: 500px) {
-  .page-nav a {
-    flex: 1;
-    justify-content: center;
+@media (max-width: 580px) {
+  .page-nav {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
   }
 
-  .page-nav {
-    gap: 1rem;
-    flex-wrap: wrap;
+  .pn-prev {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .pn-next {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .mastery-toggle {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    justify-content: center;
   }
 }
 
