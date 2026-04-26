@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards — Dutch Language Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../data/flashcards-data.js"></script>
+<style>
+  .fc-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  /* Deck Grid */
+  .deck-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .deck-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  .deck-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+    box-shadow: var(--shadow-sm);
+  }
+  .deck-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--orange);
+  }
+  .deck-card h3 { margin-bottom: 0.5rem; }
+  .deck-count { font-size: 0.8rem; color: var(--muted); font-family: 'DM Mono', monospace; }
+
+  /* Flashcard UI */
+  .study-mode { display: none; margin-top: 2rem; }
+
+  .flashcard-scene {
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    margin: 2rem auto;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+
+  .flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .flashcard.is-flipped { transform: rotateY(180deg); }
+
+  .flashcard-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    border: 2px solid var(--border);
+    padding: 2rem;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .flashcard-front {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
+
+  .flashcard-back {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.8rem;
+    transform: rotateY(180deg);
+    background: #fafafa;
+    color: var(--ink);
+  }
+
+  .face-label {
+    position: absolute;
+    top: 1.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .controls.active { opacity: 1; pointer-events: all; }
+
+  .btn-action {
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+  }
+  .btn-hard { background: #fee2e2; color: #991b1b; }
+  .btn-easy { background: #dcfce7; color: #166534; }
+  .btn-hard:hover { transform: translateY(-2px); background: #fecaca; }
+  .btn-easy:hover { transform: translateY(-2px); background: #bbf7d0; }
+
+  .study-footer {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .progress-container { flex: 1; margin: 0 2rem; height: 8px; }
+
+  .btn-back {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+  }
+  .btn-back:hover { color: var(--ink); }
+
+  [data-theme="dark"] .flashcard-back { background: #1e1e1e; }
+</style>
+</head>
+<body>
+
+<nav class="hub-nav">
+  <div class="hub-nav-inner">
+    <a href="../index.html" class="hub-logo">Dutch <span>Hub</span></a>
+    <ul class="hub-menu">
+      <li><a href="../index.html">Hub Home</a></li><li><a href="../cheatsheets.html">Cheat Sheets</a></li>
+      <li><a href="verb-explorer.html">Verb Explorer</a></li>
+      <li><a href="flashcards.html" class="active">Flashcards</a></li>
+      <li><a href="de-het.html">de/het Trainer</a></li>
+    </ul>
+    <div class="fc-toggle-wrap">
+      <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode"><span class="material-icons">dark_mode</span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="hero" id="hero-section" style="border-bottom:none; padding-bottom: 1rem;">
+    <h1>Vocab <em>Flashcards</em></h1>
+    <p class="hero-desc">Choose a deck and start practicing. Spaced repetition made simple.</p>
+  </div>
+
+  <div class="fc-container">
+    <!-- Deck Selection -->
+    <div id="deck-selection">
+      <div class="deck-grid" id="deck-grid">
+        <!-- Decks will be injected here -->
+      </div>
+    </div>
+
+    <!-- Study Mode -->
+    <div id="study-mode" class="study-mode">
+      <div class="study-header">
+        <button class="btn-back" onclick="exitStudy()"><span class="material-icons">arrow_back</span> Back to Decks</button>
+        <h2 id="current-deck-title" style="margin: 1rem 0 0.5rem 0;">Essential Phrases</h2>
+      </div>
+
+      <div class="flashcard-scene" onclick="flipCard()">
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-face flashcard-front">
+            <span class="face-label">Dutch</span>
+            <div id="card-front">Hoe gaat het?</div>
+          </div>
+          <div class="flashcard-face flashcard-back">
+            <span class="face-label">English</span>
+            <div id="card-back">How are you?</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="color: var(--muted); font-size: 0.9rem;" id="flip-hint">Click card to flip</p>
+
+      <div class="controls" id="card-controls">
+        <button class="btn-action btn-hard" onclick="nextCard(false)">
+          <span class="material-icons">close</span> Hard (Study Again)
+        </button>
+        <button class="btn-action btn-easy" onclick="nextCard(true)">
+          <span class="material-icons">done</span> Easy (Got it!)
+        </button>
+      </div>
+
+      <div class="study-footer">
+        <span id="card-counter" class="deck-count">1 / 10</span>
+        <div class="progress-container">
+          <div class="progress-fill" id="session-progress" style="width: 10%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const decks = window.DUTCH_FLASHCARDS || [];
+  let currentDeck = null;
+  let currentIndex = 0;
+  let isFlipped = false;
+  let sessionHistory = [];
+
+  const deckSelection = document.getElementById('deck-selection');
+  const studyMode = document.getElementById('study-mode');
+  const heroSection = document.getElementById('hero-section');
+  const deckGrid = document.getElementById('deck-grid');
+  const flashcard = document.getElementById('flashcard');
+  const cardControls = document.getElementById('card-controls');
+  const flipHint = document.getElementById('flip-hint');
+
+  function init() {
+    renderDecks();
+  }
+
+  function renderDecks() {
+    deckGrid.innerHTML = '';
+    decks.forEach((deck, index) => {
+      const div = document.createElement('div');
+      div.className = 'deck-card';
+      div.onclick = () => startStudy(index);
+      div.innerHTML = `
+        <div class="deck-icon"><span class="material-icons">${deck.icon || 'style'}</span></div>
+        <h3>${deck.category}</h3>
+        <div class="deck-count">${deck.cards.length} Cards</div>
+      `;
+      deckGrid.appendChild(div);
+    });
+  }
+
+  function startStudy(index) {
+    currentDeck = decks[index];
+    currentIndex = 0;
+    isFlipped = false;
+    sessionHistory = [];
+    
+    deckSelection.style.display = 'none';
+    heroSection.style.display = 'none';
+    studyMode.style.display = 'block';
+    
+    document.getElementById('current-deck-title').innerText = currentDeck.category;
+    updateCard();
+  }
+
+  function exitStudy() {
+    studyMode.style.display = 'none';
+    deckSelection.style.display = 'block';
+    heroSection.style.display = 'block';
+  }
+
+  function flipCard() {
+    isFlipped = !isFlipped;
+    flashcard.classList.toggle('is-flipped', isFlipped);
+    
+    if (isFlipped) {
+      cardControls.classList.add('active');
+      flipHint.style.opacity = '0';
+    }
+  }
+
+  function updateCard() {
+    const card = currentDeck.cards[currentIndex];
+    document.getElementById('card-front').innerText = card.front;
+    document.getElementById('card-back').innerText = card.back;
+    
+    // Reset flip
+    isFlipped = false;
+    flashcard.classList.remove('is-flipped');
+    cardControls.classList.remove('active');
+    flipHint.style.opacity = '1';
+    
+    // Update progress
+    const total = currentDeck.cards.length;
+    document.getElementById('card-counter').innerText = `${currentIndex + 1} / ${total}`;
+    document.getElementById('session-progress').style.width = `${((currentIndex + 1) / total) * 100}%`;
+  }
+
+  function nextCard(isEasy) {
+    const total = currentDeck.cards.length;
+    if (currentIndex < total - 1) {
+      currentIndex++;
+      updateCard();
+    } else {
+      // Finished deck
+      alert('Deck completed! Well done.');
+      exitStudy();
+    }
+  }
+
+  // Dark Mode
+  document.getElementById('dark-toggle').addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+    localStorage.setItem('dgh_dark_mode', !isDark);
+  });
+
+  if (localStorage.getItem('dgh_dark_mode') === 'true') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  init();
+</script>
+
+</body>
+</html>

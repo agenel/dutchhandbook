@@ -1,0 +1,62 @@
+window.DUTCH_SENTENCE_DATA = [
+  {
+    "category": "Basic Word Order (V2)",
+    "description": "Standard main clauses where the verb is the second element.",
+    "sentences": [
+      {
+        "translation": "I drink water.",
+        "scrambled": ["water", "drink", "Ik"],
+        "correct": ["Ik", "drink", "water"],
+        "explanation": "Subject + Verb (2nd position) + Object."
+      },
+      {
+        "translation": "We play football.",
+        "scrambled": ["voetbal", "spelen", "Wij"],
+        "correct": ["Wij", "spelen", "voetbal"],
+        "explanation": "Finite verb 'spelen' stays in the 2nd position."
+      },
+      {
+        "translation": "She reads a book.",
+        "scrambled": ["een", "leest", "Zij", "boek"],
+        "correct": ["Zij", "leest", "een", "boek"],
+        "explanation": "The article 'een' comes before the noun 'boek'."
+      }
+    ]
+  },
+  {
+    "category": "Inversion",
+    "description": "Sentences starting with a time or place, pushing the subject after the verb.",
+    "sentences": [
+      {
+        "translation": "Today I am working.",
+        "scrambled": ["ik", "werk", "Vandaag"],
+        "correct": ["Vandaag", "werk", "ik"],
+        "explanation": "Because the sentence starts with 'Vandaag', the verb 'werk' stays in 2nd position, and 'ik' moves to 3rd."
+      },
+      {
+        "translation": "Tomorrow we are going to school.",
+        "scrambled": ["naar", "morgen", "school", "gaan", "Wij"],
+        "correct": ["Morgen", "gaan", "Wij", "naar", "school"],
+        "explanation": "Morgen (1) + gaan (2) + Wij (3). The verb is always second."
+      }
+    ]
+  },
+  {
+    "category": "Modal Verbs",
+    "description": "Sentences with two verbs: the modal verb is 2nd, the main verb is at the end.",
+    "sentences": [
+      {
+        "translation": "I want to eat.",
+        "scrambled": ["eten", "wil", "Ik"],
+        "correct": ["Ik", "wil", "eten"],
+        "explanation": "The modal verb 'wil' is in 2nd position, and the infinitive 'eten' goes to the very end."
+      },
+      {
+        "translation": "We can speak Dutch.",
+        "scrambled": ["Nederlands", "kunnen", "Wij", "spreken"],
+        "correct": ["Wij", "kunnen", "Nederlands", "spreken"],
+        "explanation": "Kunnen (modal) is 2nd, spreken (infinitive) is last."
+      }
+    ]
+  }
+];

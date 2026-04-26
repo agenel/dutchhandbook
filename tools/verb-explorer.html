@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verb Explorer — Dutch Language Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../data/verbs-data.js"></script>
+<style>
+  .filters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .filter-group label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  select {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink);
+    outline: none;
+    cursor: pointer;
+  }
+  select:focus { border-color: var(--orange); }
+
+  .verb-table tbody tr { cursor: pointer; }
+  .verb-table tbody tr:last-child td { border-bottom: none; }
+
+  .loading-state {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--muted);
+  }
+  .loading-state .material-icons {
+    font-size: 3rem;
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 0.5rem;
+    animation: spin 1.5s linear infinite;
+  }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<nav class="hub-nav">
+  <div class="hub-nav-inner">
+    <a href="../index.html" class="hub-logo">Dutch <span>Hub</span></a>
+    <ul class="hub-menu">
+      <li><a href="../index.html">Hub Home</a></li><li><a href="../cheatsheets.html">Cheat Sheets</a></li>
+      <li><a href="verb-explorer.html" class="active">Verb Explorer</a></li>
+      <li><a href="flashcards.html">Flashcards</a></li>
+      <li><a href="de-het.html">de/het Trainer</a></li>
+    </ul>
+    <div class="fc-toggle-wrap">
+      <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode" aria-label="Toggle dark mode">
+        <span class="material-icons" aria-hidden="true">dark_mode</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="hero" style="border-bottom:none; padding-bottom: 1rem;">
+    <h1>Verb <em>Explorer</em></h1>
+    <p class="hero-desc">All 200 most common Dutch verbs. Search, filter by level or type, and track your mastery.</p>
+  </div>
+
+  <!-- Controls Row -->
+  <div style="display:flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: flex-end;">
+    <div class="search-container" style="flex:1; min-width:200px;">
+      <span class="material-icons">search</span>
+      <input type="text" id="verb-search" placeholder="Search by Dutch or English...">
+    </div>
+    <div class="filters">
+      <div class="filter-group">
+        <label>Mastery</label>
+        <select id="filter-mastery">
+          <option value="all">All Verbs</option>
+          <option value="unmastered">Unmastered Only</option>
+          <option value="mastered">Mastered Only</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Type</label>
+        <select id="filter-type">
+          <option value="all">All Types</option>
+          <option value="regular">Regular</option>
+          <option value="irregular">Irregular</option>
+          <option value="modal">Modal</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Level</label>
+        <select id="filter-level">
+          <option value="all">All Levels</option>
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+          <option value="B1">B1</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div style="margin-bottom: 1.5rem;">
+    <div class="progress-container">
+      <div class="progress-fill" id="mastery-progress"></div>
+      <div class="progress-text" id="mastery-text"><strong>0/200</strong> Verbs Mastered</div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="verb-table-container">
+    <table class="verb-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Infinitive</th>
+          <th>English</th>
+          <th>Type</th>
+          <th>Helper</th>
+          <th>Level</th>
+          <th style="text-align:right;">Done</th>
+        </tr>
+      </thead>
+      <tbody id="verb-list">
+        <tr>
+          <td colspan="7" class="loading-state">
+            <span class="material-icons">autorenew</span>
+            Loading verbs…
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="empty-state" style="display:none; text-align:center; padding: 4rem 0; color: var(--muted);">
+    <span class="material-icons" style="font-size: 3rem; margin-bottom: 0.5rem; opacity: 0.5; display:block;">search_off</span>
+    <p>No verbs found. Try adjusting your filters.</p>
+  </div>
+</div>
+
+<!-- Detail Overlay + Panel -->
+<div class="detail-overlay" id="detail-overlay"></div>
+<div class="detail-panel" id="detail-panel">
+  <div class="detail-header">
+    <div class="detail-title">
+      <h2 id="dp-infinitive"></h2>
+      <p id="dp-english"></p>
+    </div>
+    <button class="close-detail" id="close-detail">
+      <span class="material-icons">close</span>
+    </button>
+  </div>
+
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; gap:0.5rem; flex-wrap:wrap;">
+    <div class="tool-tag" id="dp-type"></div>
+    <button id="mastery-btn" class="fc-btn" style="padding:0.4rem 0.9rem; font-size:0.75rem;">
+      Mark as Mastered
+    </button>
+  </div>
+
+  <div class="example" style="margin-bottom:1.5rem;">
+    <span class="nl" id="dp-example"></span>
+    <span class="en" id="dp-example-en"></span>
+  </div>
+
+  <div class="conjugation-grid">
+    <div class="conj-box">
+      <h4>Present Tense</h4>
+      <div id="dp-present"></div>
+    </div>
+    <div class="conj-box">
+      <h4>Past &amp; Perfect</h4>
+      <div id="dp-past"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // ── State ──────────────────────────────────────────────
+  let allVerbs = [];
+  let masteredVerbs = JSON.parse(localStorage.getItem('dgh_mastered_verbs') || '[]');
+  let currentVerbId = null;
+
+  // ── DOM refs ───────────────────────────────────────────
+  const verbListEl   = document.getElementById('verb-list');
+  const emptyStateEl = document.getElementById('empty-state');
+  const searchEl     = document.getElementById('verb-search');
+  const filterType   = document.getElementById('filter-type');
+  const filterLevel  = document.getElementById('filter-level');
+  const filterMastery= document.getElementById('filter-mastery');
+  const detailPanel  = document.getElementById('detail-panel');
+  const detailOverlay= document.getElementById('detail-overlay');
+  const masteryBtn   = document.getElementById('mastery-btn');
+
+  // ── Theme init ─────────────────────────────────────────
+  if (localStorage.getItem('dgh_dark_mode') === 'true') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.querySelector('#dark-toggle .material-icons').textContent = 'light_mode';
+  }
+  document.getElementById('dark-toggle').addEventListener('click', () => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
+    document.querySelector('#dark-toggle .material-icons').textContent = dark ? 'dark_mode' : 'light_mode';
+    localStorage.setItem('dgh_dark_mode', !dark);
+  });
+
+  // ── Load data (purely static — reads window.DUTCH_VERBS from verbs-data.js) ──
+  function loadVerbs() {
+    if (window.DUTCH_VERBS && window.DUTCH_VERBS.length) {
+      allVerbs = window.DUTCH_VERBS;
+      updateProgress();
+      renderAll();
+    } else {
+      verbListEl.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:2rem;color:var(--muted);">
+        ⚠️ Could not find verb data. Make sure <code>data/verbs-data.js</code> exists next to this file.
+      </td></tr>`;
+    }
+  }
+
+  // ── Progress ───────────────────────────────────────────
+  function updateProgress() {
+    const total = allVerbs.length || 200;
+    const count = masteredVerbs.length;
+    const pct   = (count / total) * 100;
+    document.getElementById('mastery-progress').style.width = pct + '%';
+    document.getElementById('mastery-text').innerHTML =
+      `<strong>${count}/${total}</strong> Verbs Mastered`;
+    if (count === total) {
+      document.getElementById('mastery-progress').style.background = 'var(--gold, #f59e0b)';
+    }
+  }
+
+  // ── Render ─────────────────────────────────────────────
+  function renderAll() {
+    const term    = searchEl.value.trim().toLowerCase();
+    const type    = filterType.value;
+    const level   = filterLevel.value;
+    const mastery = filterMastery.value;
+
+    const filtered = allVerbs.filter(v => {
+      const isMastered = masteredVerbs.includes(v.id);
+      if (mastery === 'mastered'   && !isMastered) return false;
+      if (mastery === 'unmastered' &&  isMastered) return false;
+      if (type  !== 'all' && v.type  !== type)  return false;
+      if (level !== 'all' && v.level !== level) return false;
+      if (term) {
+        const haystack = (v.infinitive + ' ' + v.english).toLowerCase();
+        if (!haystack.includes(term)) return false;
+      }
+      return true;
+    });
+
+    verbListEl.innerHTML = '';
+
+    if (filtered.length === 0) {
+      emptyStateEl.style.display = 'block';
+      return;
+    }
+    emptyStateEl.style.display = 'none';
+
+    const frag = document.createDocumentFragment();
+    filtered.forEach(verb => {
+      const isMastered = masteredVerbs.includes(verb.id);
+      const tr = document.createElement('tr');
+      tr.style.opacity = isMastered ? '0.6' : '1';
+
+      const statusIcon = isMastered
+        ? '<span class="material-icons" style="color:var(--green);font-size:1.1rem;vertical-align:middle;">check_circle</span>'
+        : '<span class="material-icons" style="color:var(--border);font-size:1.1rem;vertical-align:middle;">radio_button_unchecked</span>';
+
+      tr.innerHTML = `
+        <td style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);">${verb.rank}</td>
+        <td><span class="verb-infinitive">${verb.infinitive}</span></td>
+        <td><span class="verb-meaning">${verb.english}</span></td>
+        <td><span class="verb-type">${verb.type}</span></td>
+        <td><span class="verb-type">${verb.helper}</span></td>
+        <td><span class="pill" style="font-size:0.6rem;">${verb.level}</span></td>
+        <td style="text-align:right;">${statusIcon}</td>
+      `;
+      tr.addEventListener('click', () => openDetail(verb));
+      frag.appendChild(tr);
+    });
+    verbListEl.appendChild(frag);
+  }
+
+  // ── Detail Panel ───────────────────────────────────────
+  function openDetail(verb) {
+    currentVerbId = verb.id;
+
+    document.getElementById('dp-infinitive').textContent = verb.infinitive;
+    document.getElementById('dp-english').textContent    = verb.english;
+    document.getElementById('dp-example').textContent    = verb.example;
+    document.getElementById('dp-example-en').textContent = verb.example_en;
+
+    let typeLabel = verb.type;
+    if (verb.separable) typeLabel += ' · separable';
+    document.getElementById('dp-type').textContent = typeLabel;
+
+    const c = verb.conjugations;
+    document.getElementById('dp-present').innerHTML = `
+      <div class="conj-row"><span class="conj-pronoun">ik</span><span class="conj-verb">${c.ik}</span></div>
+      <div class="conj-row"><span class="conj-pronoun">jij / je</span><span class="conj-verb">${c.jij}</span></div>
+      <div class="conj-row"><span class="conj-pronoun">hij / zij / u</span><span class="conj-verb">${c.hij}</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wij / jullie / zij</span><span class="conj-verb">${c.wij}</span></div>
+    `;
+    document.getElementById('dp-past').innerHTML = `
+      <div class="conj-row"><span class="conj-pronoun">past (sg)</span><span class="conj-verb">${c.imperfectum_sg}</span></div>
+      <div class="conj-row"><span class="conj-pronoun">past (pl)</span><span class="conj-verb">${c.imperfectum_pl}</span></div>
+      <div class="conj-row" style="margin-top:0.6rem;padding-top:0.6rem;border-top:1.5px solid var(--border);">
+        <span class="conj-pronoun">perfect</span>
+        <span class="conj-verb" style="color:var(--orange)">${c.perfectum}</span>
+      </div>
+    `;
+
+    refreshMasteryBtn();
+    detailPanel.classList.add('active');
+    detailOverlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDetail() {
+    detailPanel.classList.remove('active');
+    detailOverlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function refreshMasteryBtn() {
+    const mastered = masteredVerbs.includes(currentVerbId);
+    masteryBtn.textContent = mastered ? '✓ Mastered' : 'Mark as Mastered';
+    masteryBtn.style.background    = mastered ? 'var(--green)' : '';
+    masteryBtn.style.color         = mastered ? '#fff' : '';
+    masteryBtn.style.borderColor   = mastered ? 'var(--green)' : '';
+  }
+
+  masteryBtn.addEventListener('click', () => {
+    const idx = masteredVerbs.indexOf(currentVerbId);
+    if (idx > -1) masteredVerbs.splice(idx, 1);
+    else masteredVerbs.push(currentVerbId);
+    localStorage.setItem('dgh_mastered_verbs', JSON.stringify(masteredVerbs));
+    refreshMasteryBtn();
+    updateProgress();
+    renderAll();
+  });
+
+  document.getElementById('close-detail').addEventListener('click', closeDetail);
+  detailOverlay.addEventListener('click', closeDetail);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+  // ── Filters ────────────────────────────────────────────
+  searchEl.addEventListener('input', renderAll);
+  filterType.addEventListener('change', renderAll);
+  filterLevel.addEventListener('change', renderAll);
+  filterMastery.addEventListener('change', renderAll);
+
+  // ── Boot ───────────────────────────────────────────────
+  loadVerbs();
+})();
+</script>
+
+</body>
+</html>
