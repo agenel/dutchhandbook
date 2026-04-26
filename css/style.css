@@ -711,6 +711,25 @@ footer .footer-meta .dot {
   opacity: 0.5;
 }
 
+footer .footer-credit {
+  font-size: 0.62rem;
+  color: var(--muted);
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+}
+
+footer .footer-credit a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+footer .footer-credit a:hover {
+  color: var(--orange);
+  border-bottom-color: var(--orange);
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
