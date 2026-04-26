@@ -95,7 +95,7 @@
     <div class="hero" style="border-bottom:none; padding-top:1rem;">
       <div class="hero-layout">
         <div class="hero-title">
-          <h1>Grammar<br><em>Cheat</em><br>Sheets</h1>
+          <h1>Grammar<br><em>Cheat</em><br>Sheets <button class="help-trigger" id="help-trigger" title="How it works"><span class="material-icons">help_outline</span></button></h1>
         </div>
         <div class="hero-content">
           <p class="hero-desc">All 15 grammar modules in one place. Study each topic, track your mastery, and use Test
@@ -104,6 +104,33 @@
             <div class="pill">15 Modules</div>
             <div class="pill">A1 &mdash; B1</div>
             <div class="pill">Test Mode</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2>Library <em>Help</em></h2>
+          <div class="help-section">
+            <h3>Filter & Search</h3>
+            <p>Use the level pills (A1, A2, B1) and the search bar to find exactly what you need. You can also hide modules you've already mastered using the eye icon.</p>
+          </div>
+          <div class="help-section">
+            <h3>Test Mode</h3>
+            <p>Once you open a cheat sheet, you can toggle <strong>Test Mode</strong>. This hides translations and conjugations so you can quiz yourself as you read.</p>
+          </div>
+          <div class="help-section">
+            <h3>Mastery Badges</h3>
+            <p>Cards with a <span class="material-icons" style="font-size: 1rem; color: var(--green); vertical-align: middle;">check_circle</span> checkmark are those you've marked as mastered. This progress is saved to your browser.</p>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem;">
+              Full Platform Guide <span class="material-icons">menu_book</span>
+            </a>
           </div>
         </div>
       </div>
@@ -330,13 +357,12 @@
       </a>
     </div>
 
-    <footer>
+            <footer>
       <div class="footer-brand">More<span>Dutch</span></div>
       <div class="footer-meta">
         <span>15 Cheat Sheets</span>
         <span class="dot"></span>
         <span>A1&ndash;B1 Level</span>
-        <span class="dot"></span>
       </div>
       <div class="footer-credit">Made by <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a></div>
     </footer>

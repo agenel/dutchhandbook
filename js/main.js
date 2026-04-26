@@ -150,4 +150,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial run
     runFilters();
   }
+
+  // --- HELP MODAL LOGIC ---
+  const helpModal = document.getElementById('help-modal');
+  const helpTrigger = document.getElementById('help-trigger');
+  const helpClose = document.getElementById('help-close');
+
+  if (helpTrigger && helpModal) {
+    helpTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      helpModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (helpClose && helpModal) {
+    helpClose.addEventListener('click', () => {
+      helpModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  // Close modal on click outside
+  if (helpModal) {
+    helpModal.addEventListener('click', (e) => {
+      if (e.target === helpModal) {
+        helpModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 });

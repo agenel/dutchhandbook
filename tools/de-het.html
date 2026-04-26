@@ -194,8 +194,30 @@
 
 <div class="page">
   <div class="hero" style="border-bottom:none; padding-bottom: 0;">
-    <h1>de / het <em>Trainer</em></h1>
+    <h1>de / het <em>Trainer</em> <button class="help-trigger" id="help-trigger" title="How it works"><span class="material-icons">help_outline</span></button></h1>
     <p class="hero-desc">Master Dutch articles through repetition. The more you play, the better your intuition.</p>
+  </div>
+
+  <!-- Help Modal -->
+  <div class="help-modal" id="help-modal">
+    <div class="help-content">
+      <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+      <div class="help-body">
+        <h2>de / het <em>Help</em></h2>
+        <div class="help-section">
+          <h3>The Goal</h3>
+          <p>The best way to learn noun genders is through massive repetition. Simply choose the correct article for each noun shown.</p>
+        </div>
+        <div class="help-section">
+          <h3>Grammar Tips</h3>
+          <p>Many nouns include specific tips. For example, all diminutives (ending in -je) always take "het". These tips appear automatically after you answer.</p>
+        </div>
+        <div class="help-section">
+          <h3>Levels</h3>
+          <p>Use the level selector to practice nouns that match your current study goals (A1, A2, or B1).</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="game-container">
@@ -228,6 +250,15 @@
 
     <button class="btn-next" id="next-btn" onclick="nextWord()">Next Word <span class="material-icons" style="vertical-align: middle; font-size: 1.2rem; margin-left: 0.5rem;">arrow_forward</span></button>
   </div>
+            <footer>
+      <div class="footer-brand">More<span>Dutch</span></div>
+      <div class="footer-meta">
+        <span>de/het Trainer</span>
+        <span class="dot"></span>
+        <span>A1&ndash;B1 Level</span>
+      </div>
+      <div class="footer-credit">Made by <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a></div>
+    </footer>
 </div>
 
 <script>
@@ -339,6 +370,34 @@
   }
 
   init();
+
+  // ── Help Modal ─────────────────────────────────────────
+  const helpModal = document.getElementById('help-modal');
+  const helpTrigger = document.getElementById('help-trigger');
+  const helpClose = document.getElementById('help-close');
+
+  if (helpTrigger && helpModal) {
+    helpTrigger.addEventListener('click', () => {
+      helpModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (helpClose && helpModal) {
+    helpClose.addEventListener('click', () => {
+      helpModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  if (helpModal) {
+    helpModal.addEventListener('click', (e) => {
+      if (e.target === helpModal) {
+        helpModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 </script>
 
 </body>

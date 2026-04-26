@@ -192,8 +192,30 @@
 
 <div class="page">
   <div class="hero" id="hero-section" style="border-bottom:none; padding-bottom: 1rem;">
-    <h1>Vocab <em>Flashcards</em></h1>
+    <h1>Vocab <em>Flashcards</em> <button class="help-trigger" id="help-trigger" title="How it works"><span class="material-icons">help_outline</span></button></h1>
     <p class="hero-desc">Choose a deck and start practicing. Spaced repetition made simple.</p>
+  </div>
+
+  <!-- Help Modal -->
+  <div class="help-modal" id="help-modal">
+    <div class="help-content">
+      <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+      <div class="help-body">
+        <h2>Flashcards <em>Help</em></h2>
+        <div class="help-section">
+          <h3>Study Mode</h3>
+          <p>Click "Flip Card" to reveal the translation and an example sentence. Say the word out loud for better retention!</p>
+        </div>
+        <div class="help-section">
+          <h3>Categories</h3>
+          <p>We've grouped the most common 500+ Dutch words into categories like Verbs, Nouns, and Adjectives to help you study thematically.</p>
+        </div>
+        <div class="help-section">
+          <h3>Spaced Repetition</h3>
+          <p>If you find a word easy, click "Easy". If you struggle, click "Hard". This helps you focus your energy where it's needed most.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="fc-container">
@@ -243,6 +265,15 @@
       </div>
     </div>
   </div>
+            <footer>
+      <div class="footer-brand">More<span>Dutch</span></div>
+      <div class="footer-meta">
+        <span>Flashcards</span>
+        <span class="dot"></span>
+        <span>A1&ndash;B1 Level</span>
+      </div>
+      <div class="footer-credit">Made by <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a></div>
+    </footer>
 </div>
 
 <script>
@@ -350,6 +381,34 @@
   }
 
   init();
+
+  // ── Help Modal ─────────────────────────────────────────
+  const helpModal = document.getElementById('help-modal');
+  const helpTrigger = document.getElementById('help-trigger');
+  const helpClose = document.getElementById('help-close');
+
+  if (helpTrigger && helpModal) {
+    helpTrigger.addEventListener('click', () => {
+      helpModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (helpClose && helpModal) {
+    helpClose.addEventListener('click', () => {
+      helpModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  if (helpModal) {
+    helpModal.addEventListener('click', (e) => {
+      if (e.target === helpModal) {
+        helpModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 </script>
 
 </body>

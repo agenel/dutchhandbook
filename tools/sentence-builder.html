@@ -152,8 +152,30 @@
 
 <div class="page">
   <div class="hero" id="hero-section" style="border-bottom:none; padding-bottom: 1rem;">
-    <h1>Sentence <em>Builder</em></h1>
+    <h1>Sentence <em>Builder</em> <button class="help-trigger" id="help-trigger" title="How it works"><span class="material-icons">help_outline</span></button></h1>
     <p class="hero-desc">Master Dutch word order by assembling sentences block by block.</p>
+  </div>
+
+  <!-- Help Modal -->
+  <div class="help-modal" id="help-modal">
+    <div class="help-content">
+      <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+      <div class="help-body">
+        <h2>Builder <em>Help</em></h2>
+        <div class="help-section">
+          <h3>Assembling Sentences</h3>
+          <p>Click the word blocks in the correct order to translate the target sentence. If you make a mistake, you can reset the sentence and try again.</p>
+        </div>
+        <div class="help-section">
+          <h3>Word Order Rules</h3>
+          <p>Dutch has specific rules for verb placement (V2 rule) and word order (STOMPS). This tool helps you build muscle memory for these tricky patterns.</p>
+        </div>
+        <div class="help-section">
+          <h3>Complexity</h3>
+          <p>Start with simple subject-verb sentences and progress to inversion (starting with time or place) and subclauses where verbs move to the end.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="builder-container">
@@ -199,6 +221,15 @@
       </div>
     </div>
   </div>
+            <footer>
+      <div class="footer-brand">More<span>Dutch</span></div>
+      <div class="footer-meta">
+        <span>Sentence Builder</span>
+        <span class="dot"></span>
+        <span>A1&ndash;B1 Level</span>
+      </div>
+      <div class="footer-credit">Made by <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a></div>
+    </footer>
 </div>
 
 <script>
@@ -368,6 +399,34 @@
   }
 
   init();
+
+  // ── Help Modal ─────────────────────────────────────────
+  const helpModal = document.getElementById('help-modal');
+  const helpTrigger = document.getElementById('help-trigger');
+  const helpClose = document.getElementById('help-close');
+
+  if (helpTrigger && helpModal) {
+    helpTrigger.addEventListener('click', () => {
+      helpModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (helpClose && helpModal) {
+    helpClose.addEventListener('click', () => {
+      helpModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  if (helpModal) {
+    helpModal.addEventListener('click', (e) => {
+      if (e.target === helpModal) {
+        helpModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 </script>
 
 </body>

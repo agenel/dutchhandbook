@@ -90,7 +90,7 @@
     <div class="hero" style="border-bottom:none; padding-top:1rem;">
       <div class="hero-layout">
         <div class="hero-title">
-          <h1>Dutch<br><em>Language</em><br>Hub</h1>
+          <h1>Dutch<br><em>Language</em><br>Hub <button class="help-trigger" id="help-trigger" title="How it works"><span class="material-icons">help_outline</span></button></h1>
         </div>
         <div class="hero-content">
           <p class="hero-desc">Your central platform for mastering Dutch. Interactive tools to practice verbs,
@@ -99,6 +99,36 @@
             <div class="pill">Interactive Tools</div>
             <div class="pill">15 Cheat Sheets</div>
             <div class="pill">A1 &mdash; B1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2>Hub <em>Help</em></h2>
+          <div class="help-section">
+            <h3>Navigating the Hub</h3>
+            <p>This is your central station for Dutch learning. Access all 15 grammar modules and our interactive practice suite from here.</p>
+          </div>
+          <div class="help-section">
+            <h3>Tracking Progress</h3>
+            <p>The progress bar shows how many modules you've mastered. You can mark a module as mastered inside its individual cheat sheet page.</p>
+          </div>
+          <div class="help-section">
+            <h3>Quick Start</h3>
+            <ul class="help-list">
+              <li><span class="material-icons">library_books</span><span>Browse cheat sheets to learn rules.</span></li>
+              <li><span class="material-icons">bolt</span><span>Use practice tools to build muscle memory.</span></li>
+            </ul>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem;">
+              Full Guide <span class="material-icons">menu_book</span>
+            </a>
           </div>
         </div>
       </div>
@@ -180,13 +210,12 @@
 
     </div>
 
-    <footer>
+            <footer>
       <div class="footer-brand">More<span>Dutch</span></div>
       <div class="footer-meta">
         <span>Interactive Hub</span>
         <span class="dot"></span>
         <span>A1&ndash;B1 Level</span>
-        <span class="dot"></span>
       </div>
       <div class="footer-credit">Made by <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a></div>
     </footer>

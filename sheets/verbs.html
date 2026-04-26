@@ -20,7 +20,35 @@
 <meta name="twitter:title" content="Dutch Verb Conjugation Cheat Sheet — Present Tense, zijn, hebben | More Dutch">
 <meta name="twitter:description" content="Learn Dutch verb conjugation: the stem rule, zijn, hebben, modal verbs, 't kofschip rule, and the -t drop on inversion. Full A2 reference.">
 <meta name="twitter:site" content="@soyludev">
-  <script type="application/ld+json">
+  
+    <!-- Help Modal -->
+    <div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2>Sheet <em>Help</em></h2>
+          <div class="help-section">
+            <h3>Test Mode</h3>
+            <p>Toggle <strong>Test Mode</strong> to hide translations and conjugations. Click on any blurred text to reveal it instantly. This is the best way to practice!</p>
+          </div>
+          <div class="help-section">
+            <h3>Tracking Mastery</h3>
+            <p>Once you feel confident with this topic, click <strong>Mark as Mastered</strong> at the bottom. This will update your progress bar on the home page.</p>
+          </div>
+          <div class="help-section">
+            <h3>Learning Tips</h3>
+            <p>Look for colored boxes and icons throughout the sheet for important grammar rules, common pitfalls, and study tips.</p>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem;">
+              Full Guide <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LearningResource",
@@ -132,7 +160,7 @@ td.v-en { font-size:0.78rem; color:var(--muted); font-style:italic; }
     <div class="fc-toggle-wrap">
       
       <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode" aria-label="Toggle test mode"><span class="material-icons" aria-hidden="true">visibility_off</span> Test Mode</button>
-      <a href="../help.html" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help page"><span class="material-icons" aria-hidden="true">help_outline</span></a>
+      <button id="help-trigger" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help dialog"><span class="material-icons" aria-hidden="true">help_outline</span></button>
       
     </div>
   </header>
@@ -299,17 +327,15 @@ td.v-en { font-size:0.78rem; color:var(--muted); font-style:italic; }
     <a href="questions.html" class="pn-next">Question Words <span class="material-icons">arrow_forward</span></a>
   </div>
 
-  <footer>
-    <div class="footer-brand">More<span>Dutch</span></div>
-    <div class="footer-meta">
-      <span>Verb Conjugation</span>
-      <span class="dot"></span>
-      <span>A2 Level</span>
-      <span class="dot"></span>
-      <span>15 Cheat Sheets</span>
-    </div>
+          <footer>
+      <div class="footer-brand">More<span>Dutch</span></div>
+      <div class="footer-meta">
+        <span>Verbs</span>
+        <span class="dot"></span>
+        <span>A2 Level</span>
+      </div>
       <div class="footer-credit">Made by <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a></div>
-  </footer>
+    </footer>
 
 </div>
 <script src="../js/main.js"></script>
