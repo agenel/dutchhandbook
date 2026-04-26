@@ -3,7 +3,7 @@
 
   <!-- Hub / Homepage -->
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/</loc>
+    <loc>https://moredutch.com/</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Help Page -->
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/help.html</loc>
+    <loc>https://moredutch.com/help.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -19,7 +19,7 @@
 
   <!-- A1 Sheets -->
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/questions.html</loc>
+    <loc>https://moredutch.com/sheets/questions.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -27,49 +27,49 @@
 
   <!-- A2 Sheets -->
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/pronouns.html</loc>
+    <loc>https://moredutch.com/sheets/pronouns.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/nouns.html</loc>
+    <loc>https://moredutch.com/sheets/nouns.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/verbs.html</loc>
+    <loc>https://moredutch.com/sheets/verbs.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/time.html</loc>
+    <loc>https://moredutch.com/sheets/time.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/adjectives.html</loc>
+    <loc>https://moredutch.com/sheets/adjectives.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/negation.html</loc>
+    <loc>https://moredutch.com/sheets/negation.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/modal-verbs.html</loc>
+    <loc>https://moredutch.com/sheets/modal-verbs.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/prepositions.html</loc>
+    <loc>https://moredutch.com/sheets/prepositions.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -77,37 +77,37 @@
 
   <!-- B1 Sheets -->
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/word-order.html</loc>
+    <loc>https://moredutch.com/sheets/word-order.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/conjunctions.html</loc>
+    <loc>https://moredutch.com/sheets/conjunctions.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/separable-verbs.html</loc>
+    <loc>https://moredutch.com/sheets/separable-verbs.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/past-tense.html</loc>
+    <loc>https://moredutch.com/sheets/past-tense.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/diminutives.html</loc>
+    <loc>https://moredutch.com/sheets/diminutives.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soylu.dev/dutch-grammar-hub/sheets/er.html</loc>
+    <loc>https://moredutch.com/sheets/er.html</loc>
     <lastmod>2025-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
