@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheat Sheets — Dutch Language Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .filter-bar {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-pill {
+    padding: 0.45rem 1.1rem;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .filter-pill:hover, .filter-pill.active {
+    border-color: var(--orange);
+    color: var(--orange);
+    background: rgba(245, 158, 11, 0.06);
+  }
+</style>
+</head>
+<body>
+
+<nav class="hub-nav">
+  <div class="hub-nav-inner">
+    <a href="index.html" class="hub-logo">Dutch <span>Hub</span></a>
+    <ul class="hub-menu">
+      <li><a href="index.html">Hub Home</a></li>
+      <li><a href="cheatsheets.html" class="active">Cheat Sheets</a></li>
+      <li><a href="tools/verb-explorer.html">Verb Explorer</a></li>
+      <li><a href="tools/flashcards.html">Flashcards</a></li>
+      <li><a href="tools/de-het.html">de/het Trainer</a></li>
+    </ul>
+    <div class="fc-toggle-wrap">
+      <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode" aria-label="Toggle dark mode"><span class="material-icons" aria-hidden="true">dark_mode</span></button>
+      <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="hero" style="border-bottom:none; padding-top:1rem;">
+    <div class="hero-layout">
+      <div class="hero-title">
+        <h1>Grammar<br><em>Cheat</em><br>Sheets</h1>
+      </div>
+      <div class="hero-content">
+        <p class="hero-desc">All 15 grammar modules in one place. Study each topic, track your mastery, and use Test Mode to quiz yourself.</p>
+        <div class="hero-pills">
+          <div class="pill">15 Modules</div>
+          <div class="pill">A1 &mdash; B1</div>
+          <div class="pill">Test Mode</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    Grammar Cheat Sheets
+    <div class="title-line"></div>
+    <button id="toggle-mastered" class="icon-toggle-btn" title="Toggle Mastered Modules">
+      <span class="material-icons">visibility</span>
+    </button>
+  </div>
+
+  <div class="dash-row" style="display:flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+    <div class="search-container" style="margin-bottom: 0;">
+      <span class="material-icons">search</span>
+      <input type="text" id="search-hub" placeholder="Search cheatsheets...">
+    </div>
+    <div class="filter-bar" style="margin-bottom:0;">
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="A1">A1</button>
+      <button class="filter-pill" data-filter="A2">A2</button>
+      <button class="filter-pill" data-filter="B1">B1</button>
+    </div>
+    <div class="progress-wrap" style="flex: 1; min-width: 250px; display:flex; flex-direction:column; justify-content:center;">
+      <div class="progress-container" style="margin-bottom:0;">
+        <div class="progress-fill"></div>
+        <div class="progress-text"><strong>0/15</strong> Modules Mastered</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheets-grid" id="sheets-grid">
+<a href="sheets/pronouns.html" class="sheet-card sc-3" data-level="A2">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">person</span></div>
+        <div class="card-level">A2 &middot; Pronouns</div>
+        <div class="card-title">Personal &amp; Possessive Pronouns</div>
+        <div class="card-desc">ik/jij/hij/zij/wij/jullie with stressed forms, object forms, and possessives.</div>
+      </div>
+      <div class="card-footer"><span>Subject &middot; Object &middot; Possessive</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/nouns.html" class="sheet-card sc-2" data-level="A2">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">category</span></div>
+        <div class="card-level">A2 &middot; Nouns</div>
+        <div class="card-title">50 Common Dutch Nouns</div>
+        <div class="card-desc">Essential nouns with de/het articles, plurals, and example sentences in 7 categories.</div>
+      </div>
+      <div class="card-footer"><span>de/het &middot; Plurals</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/verbs.html" class="sheet-card sc-4" data-level="A2">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">build</span></div>
+        <div class="card-level">A2 &middot; Verbs</div>
+        <div class="card-title">Verb Conjugation — Present Tense</div>
+        <div class="card-desc">Regular verbs, zijn and hebben, modal verbs, the stem rule and -t drop.</div>
+      </div>
+      <div class="card-footer"><span>Regular &middot; zijn &middot; hebben</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/questions.html" class="sheet-card sc-7" data-level="A1">
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">help_outline</span></div>
+        <div class="card-level">A1 &middot; Question Words</div>
+        <div class="card-title">Wie, Wat, Waar, Waarom, Wanneer, Hoe</div>
+        <div class="card-desc">Forming questions correctly using Question Words and Inversion.</div>
+      </div>
+      <div class="card-footer"><span>Vraagwoorden &middot; Inversion</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/time.html" class="sheet-card sc-5" data-level="A1">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">schedule</span></div>
+        <div class="card-level">A1 &middot; Time</div>
+        <div class="card-title">Time &amp; Dates</div>
+        <div class="card-desc">Telling the time (half, kwart) and time prepositions (om, op, in).</div>
+      </div>
+      <div class="card-footer"><span>Kwart &middot; Half &middot; Om</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/adjectives.html" class="sheet-card sc-1" data-level="A2">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">text_format</span></div>
+        <div class="card-level">A2 &middot; Adjectives</div>
+        <div class="card-title">Adjectives</div>
+        <div class="card-desc">The +e drop rule, comparatives, superlatives, and material adjectives.</div>
+      </div>
+      <div class="card-footer"><span>groot &middot; grote &middot; groter</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/negation.html" class="sheet-card sc-4" data-level="A1">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">block</span></div>
+        <div class="card-level">A1 &middot; Negation</div>
+        <div class="card-title">Geen vs. Niet</div>
+        <div class="card-desc">When to use geen vs. niet, and the difficult sentence placement rules for niet.</div>
+      </div>
+      <div class="card-footer"><span>Geen &middot; Niet &middot; V2</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/modal-verbs.html" class="sheet-card sc-6" data-level="A2">
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">front_hand</span></div>
+        <div class="card-level">A2 &middot; Modal Verbs</div>
+        <div class="card-title">kunnen, moeten, mogen, willen, zullen</div>
+        <div class="card-desc">The 5 essential modal verbs that kick the main verb to the end of the sentence.</div>
+      </div>
+      <div class="card-footer"><span>Hulpwerkwoorden</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/word-order.html" class="sheet-card sc-5" data-level="B1">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">swap_horiz</span></div>
+        <div class="card-level">B1 &middot; Syntax</div>
+        <div class="card-title">Dutch Word Order</div>
+        <div class="card-desc">The V2 rule, SOV structure, inversion, STOMPS order, and subclauses.</div>
+      </div>
+      <div class="card-footer"><span>V2 &middot; SOV &middot; Inversion</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/prepositions.html" class="sheet-card sc-8" data-level="A2">
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">place</span></div>
+        <div class="card-level">A2 &middot; Prepositions</div>
+        <div class="card-title">Essential Prepositions of Place</div>
+        <div class="card-desc">op, in, naar, bij, uit: Tricky rules for navigating locations in Dutch.</div>
+      </div>
+      <div class="card-footer"><span>Voorzetsels</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/conjunctions.html" class="sheet-card sc-1" data-level="B1">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">flash_on</span></div>
+        <div class="card-level">B1 &middot; Conjunctions</div>
+        <div class="card-title">omdat, want, graag &amp; liever</div>
+        <div class="card-desc">The two "because" words, verb position changes, and expressing preference.</div>
+      </div>
+      <div class="card-footer"><span>Word order &middot; Adverbs</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/separable-verbs.html" class="sheet-card sc-6" data-level="B1">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">content_cut</span></div>
+        <div class="card-level">B1 &middot; Verbs</div>
+        <div class="card-title">Separable Verbs</div>
+        <div class="card-desc">How verbs like opbellen split apart in sentences, plus the ge- participle rule.</div>
+      </div>
+      <div class="card-footer"><span>Prefix &middot; Split &middot; Infinitive</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/past-tense.html" class="sheet-card sc-7" data-level="B1">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">history</span></div>
+        <div class="card-level">B1 &middot; Tense</div>
+        <div class="card-title">Past Tense</div>
+        <div class="card-desc">Perfectum vs. imperfectum, strong verbs table, zijn vs. hebben in perfect.</div>
+      </div>
+      <div class="card-footer"><span>Perfectum &middot; Imperfectum &middot; ge-</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/diminutives.html" class="sheet-card sc-3" data-level="A2">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">zoom_in_map</span></div>
+        <div class="card-level">A2 &middot; Diminutives</div>
+        <div class="card-title">Diminutives</div>
+        <div class="card-desc">The 4 rules for making words smaller (-je, -pje, -tje, -etje) and plurals.</div>
+      </div>
+      <div class="card-footer"><span>-je &middot; -tje &middot; -pje</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+
+<a href="sheets/er.html" class="sheet-card sc-8" data-level="B1">
+      <div class="mastery-badge"><span class="material-icons">check</span></div>
+      <div class="card-stripe"></div>
+      <div class="card-inner">
+        <div class="card-icon"><span class="material-icons">psychology</span></div>
+        <div class="card-level">B1 &middot; Pronoun</div>
+        <div class="card-title">The Word "Er"</div>
+        <div class="card-desc">The 4 types of "er": location, quantity, prepositional, and dummy subject.</div>
+      </div>
+      <div class="card-footer"><span>er &middot; erop &middot; ermee</span><span class="material-icons">arrow_forward</span></div>
+    </a>
+  </div>
+
+  <footer>
+    <div class="footer-brand">Dutch <span>Hub</span></div>
+    <div class="footer-meta">
+      <span>15 Cheat Sheets</span>
+      <span class="dot"></span>
+      <span>A1&ndash;B1 Level</span>
+      <span class="dot"></span>
+      <span>soylu.dev</span>
+    </div>
+    <div class="footer-credit">Made by <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a></div>
+  </footer>
+
+</div>
+
+<script>
+  // ── Dark Mode ─────────────────────────────────────────────────────────
+  const darkBtn = document.getElementById('dark-toggle');
+  const isDark = localStorage.getItem('dgh_dark_mode') === 'true';
+  if (isDark) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    darkBtn.querySelector('.material-icons').textContent = 'light_mode';
+  }
+  darkBtn.addEventListener('click', () => {
+    const currently = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', currently ? '' : 'dark');
+    darkBtn.querySelector('.material-icons').textContent = currently ? 'dark_mode' : 'light_mode';
+    localStorage.setItem('dgh_dark_mode', !currently);
+  });
+
+  // ── Mastery badges ────────────────────────────────────────────────────
+  const allCards = document.querySelectorAll('.sheet-card');
+  let masteredCount = 0;
+
+  allCards.forEach(card => {
+    const sheetId = card.getAttribute('href').split('/').pop().replace('.html', '');
+    if (localStorage.getItem(`dgh_mastered_${sheetId}`) === 'true') {
+      card.classList.add('mastered-card');
+      masteredCount++;
+    }
+  });
+
+  // Update progress bar
+  const progFill = document.querySelector('.progress-fill');
+  const progText = document.querySelector('.progress-text');
+  const pct = (masteredCount / allCards.length) * 100;
+  progFill.style.width = `${pct}%`;
+  progText.innerHTML = `<strong>${masteredCount}/${allCards.length}</strong> Modules Mastered`;
+  if (masteredCount === allCards.length) progFill.style.background = 'var(--gold)';
+
+  // ── Filter & Search ───────────────────────────────────────────────────
+  const searchInput = document.getElementById('search-hub');
+  const toggleMasteredBtn = document.getElementById('toggle-mastered');
+  const filterPills = document.querySelectorAll('.filter-pill');
+  let hideMastered = localStorage.getItem('dgh_hide_mastered') === 'true';
+  let activeLevel = 'all';
+
+  function runFilters() {
+    const query = searchInput.value.toLowerCase();
+    allCards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const level = card.getAttribute('data-level') || '';
+      const isMastered = card.classList.contains('mastered-card');
+
+      const matchesSearch = text.includes(query);
+      const matchesLevel = activeLevel === 'all' || level === activeLevel;
+      const matchesMastered = !hideMastered || !isMastered;
+
+      card.style.display = (matchesSearch && matchesLevel && matchesMastered) ? 'flex' : 'none';
+    });
+
+    const icon = toggleMasteredBtn.querySelector('.material-icons');
+    icon.textContent = hideMastered ? 'visibility_off' : 'visibility';
+    icon.style.color = hideMastered ? 'var(--orange)' : '';
+  }
+
+  searchInput.addEventListener('input', runFilters);
+
+  toggleMasteredBtn.addEventListener('click', () => {
+    hideMastered = !hideMastered;
+    localStorage.setItem('dgh_hide_mastered', hideMastered.toString());
+    runFilters();
+  });
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeLevel = pill.getAttribute('data-filter');
+      runFilters();
+    });
+  });
+
+  runFilters();
+</script>
+
+</body>
+</html>

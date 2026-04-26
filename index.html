@@ -3,345 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Master Dutch grammar with 15 free interactive cheat sheets. Covers verbs, word order, pronouns, past tense, adjectives and more — from A1 to B1 level.">
-<meta name="keywords" content="Dutch grammar, learn Dutch, Dutch cheat sheet, Dutch verb conjugation, Dutch word order, learn Dutch online, A1 B1 Dutch">
+<meta name="description" content="Master Dutch with interactive tools and grammar cheat sheets. Covers verbs, word order, flashcards, and more — from A1 to B1 level.">
+<meta name="keywords" content="Dutch grammar, learn Dutch, Dutch cheat sheet, Dutch verb explorer, Dutch flashcards, learn Dutch online, A1 B1 Dutch">
 <meta name="robots" content="index, follow">
 <meta name="author" content="soylu.dev">
 <link rel="canonical" href="https://moredutch.com/">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dutch Grammar Hub — Free A1–B1 Cheat Sheets for Dutch Learners">
-<meta property="og:description" content="Master Dutch grammar with 15 free interactive cheat sheets. Covers verbs, word order, pronouns, past tense, adjectives and more — from A1 to B1 level.">
-<meta property="og:url" content="https://moredutch.com/">
-<meta property="og:site_name" content="Dutch Grammar Hub">
-<meta property="og:locale" content="en_US">
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dutch Grammar Hub — Free A1–B1 Cheat Sheets for Dutch Learners">
-<meta name="twitter:description" content="Master Dutch grammar with 15 free interactive cheat sheets. Covers verbs, word order, pronouns, past tense, adjectives and more — from A1 to B1 level.">
-<meta name="twitter:site" content="@soyludev">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Dutch Grammar Hub",
-    "url": "https://moredutch.com/",
-    "description": "Master Dutch grammar with 15 free interactive cheat sheets. Covers verbs, word order, pronouns, past tense, adjectives and more — from A1 to B1 level.",
-    "publisher": {
-      "@type": "Person",
-      "name": "soylu.dev",
-      "url": "https://soylu.dev"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://moredutch.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-<title>Dutch Grammar Hub — Free A1–B1 Cheat Sheets for Dutch Learners</title>
+<title>Dutch Language Hub — Interactive Tools for Dutch Learners</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="page">
 
-  <div class="hero">
-    
-    <div class="fc-toggle-wrap hero-toggles">
+<nav class="hub-nav">
+  <div class="hub-nav-inner">
+    <a href="index.html" class="hub-logo">Dutch <span>Hub</span></a>
+    <ul class="hub-menu">
+      <li><a href="index.html" class="active">Hub Home</a></li>
+      <li><a href="cheatsheets.html">Cheat Sheets</a></li>
+      <li><a href="tools/verb-explorer.html">Verb Explorer</a></li>
+      <li><a href="tools/flashcards.html">Flashcards</a></li>
+      <li><a href="tools/de-het.html">de/het Trainer</a></li>
+      <li><a href="tools/sentence-builder.html">Sentence Builder</a></li>
+    </ul>
+    <div class="fc-toggle-wrap">
       <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode" aria-label="Toggle dark mode"><span class="material-icons" aria-hidden="true">dark_mode</span></button>
-      <a href="help.html" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help page"><span class="material-icons" aria-hidden="true">help_outline</span></a>
       <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
     </div>
+  </div>
+</nav>
 
+<div class="page">
+
+  <div class="hero" style="border-bottom:none; padding-top:1rem;">
     <div class="hero-layout">
       <div class="hero-title">
-        <h1>Learn<br><em>Dutch</em><br>Grammar</h1>
+        <h1>Dutch<br><em>Language</em><br>Hub</h1>
       </div>
-      
       <div class="hero-content">
-        <p class="hero-desc">A structured collection of cheat sheets covering the most essential grammar topics for Dutch learners — from A2 to B1 level. Each sheet is a complete self-contained reference.</p>
+        <p class="hero-desc">Your central platform for mastering Dutch. Interactive tools to practice verbs, vocabulary, and grammar rules — all in one place.</p>
         <div class="hero-pills">
-          <div class="pill">15 cheat sheets</div>
-          <div class="pill">A2 &mdash; B1</div>
-          <div class="pill">Grammar &middot; Vocabulary &middot; Structure</div>
+          <div class="pill">Interactive Tools</div>
+          <div class="pill">15 Cheat Sheets</div>
+          <div class="pill">A1 &mdash; B1</div>
         </div>
       </div>
     </div>
-
   </div>
-
-  <details class="roadmap" id="roadmap">
-    <summary class="roadmap-title">
-      <span style="display:flex; align-items:center; gap:0.4rem"><span class="material-icons">route</span>Recommended learning order</span>
-      <span class="material-icons expand-icon" style="font-size: 1.1rem; margin-top:-2px;">expand_more</span>
-    </summary>
-    <div class="rm-steps">
-      <div class="rm-step"><div class="rm-num">1</div><span class="rm-label">Pronouns</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">2</div><span class="rm-label">Nouns &amp; Articles</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">3</div><span class="rm-label">Verb Conjugation</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">4</div><span class="rm-label">Question Words</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">5</div><span class="rm-label">Time &amp; Dates</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">6</div><span class="rm-label">Adjectives</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">7</div><span class="rm-label">Negation</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">8</div><span class="rm-label">Modal Verbs</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">9</div><span class="rm-label">Word Order</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">10</div><span class="rm-label">Prepositions</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">11</div><span class="rm-label">omdat &amp; want</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">12</div><span class="rm-label">Separable Verbs</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">13</div><span class="rm-label">Past Tense</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">14</div><span class="rm-label">Diminutives</span></div>
-      <span class="rm-arrow">&rarr;</span>
-      <div class="rm-step"><div class="rm-num">15</div><span class="rm-label">The Word "Er"</span></div>
-    </div>
-  </details>
-  <script>
-    if (window.innerWidth > 600) {
-      document.getElementById('roadmap').setAttribute('open', '');
-    }
-  </script>
 
   <div class="section-title">
-    All Cheat Sheets
+    Interactive Practice Tools
     <div class="title-line"></div>
-    <button id="toggle-mastered" class="icon-toggle-btn" title="Toggle Mastered Modules">
-      <span class="material-icons">visibility</span>
-    </button>
   </div>
 
-  
-  <div class="dash-row" style="display:flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
-    <div class="search-container" style="margin-bottom: 0;">
-      <span class="material-icons">search</span>
-      <input type="text" id="search-hub" placeholder="Search cheatsheets...">
-    </div>
-    <div class="progress-wrap" style="flex: 1; min-width: 250px; display:flex; flex-direction:column; justify-content:center;">
-      <div style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem; font-weight:500;">Course Mastery</div>
-      <div class="progress-container" style="margin-bottom:0;">
-        <div class="progress-fill"></div>
-        <div class="progress-text"><strong>0/15</strong> Modules Mastered</div>
+  <div class="tools-grid">
+    <a href="tools/verb-explorer.html" class="tool-card">
+      <div class="tool-icon"><span class="material-icons">Auto_fix_high</span></div>
+      <div class="tool-info">
+        <h3>Verb Explorer</h3>
+        <p>Search and filter the 100 most used Dutch verbs. Full conjugations and examples for every verb.</p>
       </div>
-    </div>
-  </div>
-
-  <div class="sheets-grid">
-<a href="sheets/pronouns.html" class="sheet-card sc-3">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">person</span></div>
-        <div class="card-level">A2 &middot; Pronouns</div>
-        <div class="card-title">Personal &amp; Possessive Pronouns</div>
-        <div class="card-desc">ik/jij/hij/zij/wij/jullie with stressed forms, object forms, and possessives.</div>
-      </div>
-      <div class="card-footer"><span>Subject &middot; Object &middot; Possessive</span><span class="material-icons">arrow_forward</span></div>
+      <div class="tool-tag">Priority Tool</div>
     </a>
 
-<a href="sheets/nouns.html" class="sheet-card sc-2">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">category</span></div>
-        <div class="card-level">A2 &middot; Nouns</div>
-        <div class="card-title">50 Common Dutch Nouns</div>
-        <div class="card-desc">Essential nouns with de/het articles, plurals, and example sentences in 7 categories.</div>
+    <a href="tools/flashcards.html" class="tool-card">
+      <div class="tool-icon"><span class="material-icons">style</span></div>
+      <div class="tool-info">
+        <h3>Flashcards</h3>
+        <p>Master essential Dutch vocabulary with spaced-repetition flashcards across 6 categories.</p>
       </div>
-      <div class="card-footer"><span>de/het &middot; Plurals</span><span class="material-icons">arrow_forward</span></div>
+      <div class="tool-tag">Vocabulary</div>
     </a>
 
-<a href="sheets/verbs.html" class="sheet-card sc-4">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">build</span></div>
-        <div class="card-level">A2 &middot; Verbs</div>
-        <div class="card-title">Verb Conjugation — Present Tense</div>
-        <div class="card-desc">Regular verbs, zijn and hebben, modal verbs, the stem rule and -t drop.</div>
+    <a href="tools/de-het.html" class="tool-card">
+      <div class="tool-icon"><span class="material-icons">category</span></div>
+      <div class="tool-info">
+        <h3>de/het Trainer</h3>
+        <p>The fastest way to learn noun genders. Practice 500+ common nouns in a rapid-fire drill.</p>
       </div>
-      <div class="card-footer"><span>Regular &middot; zijn &middot; hebben</span><span class="material-icons">arrow_forward</span></div>
+      <div class="tool-tag">Practice</div>
     </a>
 
-<a href="sheets/questions.html" class="sheet-card sc-7">
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">help_outline</span></div>
-        <div class="card-level">A1 &middot; Question Words</div>
-        <div class="card-title">Wie, Wat, Waar, Waarom, Wanneer, Hoe</div>
-        <div class="card-desc">Forming questions correctly using Question Words and Inversion.</div>
+    <a href="tools/quiz.html" class="tool-card">
+      <div class="tool-icon"><span class="material-icons">quiz</span></div>
+      <div class="tool-info">
+        <h3>Grammar Quiz</h3>
+        <p>Test your knowledge of the grammar rules with interactive quizzes linked to our cheat sheets.</p>
       </div>
-      <div class="card-footer"><span>Vraagwoorden &middot; Inversion</span><span class="material-icons">arrow_forward</span></div>
+      <div class="tool-tag">Tests</div>
     </a>
 
-<a href="sheets/time.html" class="sheet-card sc-5">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">schedule</span></div>
-        <div class="card-level">A1 &middot; Time</div>
-        <div class="card-title">Time & Dates</div>
-        <div class="card-desc">Telling the time (half, kwart) and time prepositions (om, op, in).</div>
+    <a href="tools/sentence-builder.html" class="tool-card">
+      <div class="tool-icon"><span class="material-icons">account_tree</span></div>
+      <div class="tool-info">
+        <h3>Sentence Builder</h3>
+        <p>Master Dutch word order by assembling sentences block by block. V2, Inversion, and more.</p>
       </div>
-      <div class="card-footer"><span>Kwart &middot; Half &middot; Om</span><span class="material-icons">arrow_forward</span></div>
-    </a>
-
-<a href="sheets/adjectives.html" class="sheet-card sc-1">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">text_format</span></div>
-        <div class="card-level">A2 &middot; Adjectives</div>
-        <div class="card-title">Adjectives</div>
-        <div class="card-desc">The +e drop rule, comparatives, superlatives, and material adjectives.</div>
-      </div>
-      <div class="card-footer"><span>groot &middot; grote &middot; groter</span><span class="material-icons">arrow_forward</span></div>
-    </a>
-
-<a href="sheets/negation.html" class="sheet-card sc-4">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">block</span></div>
-        <div class="card-level">A1 &middot; Negation</div>
-        <div class="card-title">Geen vs. Niet</div>
-        <div class="card-desc">When to use geen vs. niet, and the difficult sentence placement rules for niet.</div>
-      </div>
-      <div class="card-footer"><span>Geen &middot; Niet &middot; V2</span><span class="material-icons">arrow_forward</span></div>
-    </a>
-
-<a href="sheets/modal-verbs.html" class="sheet-card sc-6">
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">front_hand</span></div>
-        <div class="card-level">A2 &middot; Modal Verbs</div>
-        <div class="card-title">kunnen, moeten, mogen, willen, zullen</div>
-        <div class="card-desc">The 5 essential modal verbs that kick the main verb to the end of the sentence.</div>
-      </div>
-      <div class="card-footer"><span>Hulpwerkwoorden</span><span class="material-icons">arrow_forward</span></div>
-    </a>
-
-<a href="sheets/word-order.html" class="sheet-card sc-5">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">swap_horiz</span></div>
-        <div class="card-level">B1 &middot; Syntax</div>
-        <div class="card-title">Dutch Word Order</div>
-        <div class="card-desc">The V2 rule, SOV structure, inversion, STOMPS order, and subclauses.</div>
-      </div>
-      <div class="card-footer"><span>V2 &middot; SOV &middot; Inversion</span><span class="material-icons">arrow_forward</span></div>
-    </a>
-
-<a href="sheets/prepositions.html" class="sheet-card sc-8">
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">place</span></div>
-        <div class="card-level">A2 &middot; Prepositions</div>
-        <div class="card-title">Essential Prepositions of Place</div>
-        <div class="card-desc">op, in, naar, bij, uit: Tricky rules for navigating locations in Dutch.</div>
-      </div>
-      <div class="card-footer"><span>Voorzetsels</span><span class="material-icons">arrow_forward</span></div>
-    </a>
-
-<a href="sheets/conjunctions.html" class="sheet-card sc-1">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">flash_on</span></div>
-        <div class="card-level">B1 &middot; Conjunctions</div>
-        <div class="card-title">omdat, want, graag &amp; liever</div>
-        <div class="card-desc">The two "because" words, verb position changes, and expressing preference.</div>
-      </div>
-      <div class="card-footer"><span>Word order &middot; Adverbs</span><span class="material-icons">arrow_forward</span></div>
-    </a>
-
-<a href="sheets/separable-verbs.html" class="sheet-card sc-6">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">content_cut</span></div>
-        <div class="card-level">B1 &middot; Verbs</div>
-        <div class="card-title">Separable Verbs</div>
-        <div class="card-desc">How verbs like opbellen split apart in sentences, plus the ge- participle rule.</div>
-      </div>
-      <div class="card-footer"><span>Prefix &middot; Split &middot; Infinitive</span><span class="material-icons">arrow_forward</span></div>
-    </a>
-
-<a href="sheets/past-tense.html" class="sheet-card sc-7">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">history</span></div>
-        <div class="card-level">B1 &middot; Tense</div>
-        <div class="card-title">Past Tense</div>
-        <div class="card-desc">Perfectum vs. imperfectum, strong verbs table, zijn vs. hebben in perfect.</div>
-      </div>
-      <div class="card-footer"><span>Perfectum &middot; Imperfectum &middot; ge-</span><span class="material-icons">arrow_forward</span></div>
-    </a>
-
-<a href="sheets/diminutives.html" class="sheet-card sc-3">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">zoom_in_map</span></div>
-        <div class="card-level">A2 &middot; Diminutives</div>
-        <div class="card-title">Diminutives</div>
-        <div class="card-desc">The 4 rules for making words smaller (-je, -pje, -tje, -etje) and plurals.</div>
-      </div>
-      <div class="card-footer"><span>-je &middot; -tje &middot; -pje</span><span class="material-icons">arrow_forward</span></div>
-    </a>
-
-<a href="sheets/er.html" class="sheet-card sc-8">
-      <div class="mastery-badge"><span class="material-icons">check</span></div>
-      <div class="card-stripe"></div>
-      <div class="card-inner">
-        <div class="card-icon"><span class="material-icons">psychology</span></div>
-        <div class="card-level">B1 &middot; Pronoun</div>
-        <div class="card-title">The Word "Er"</div>
-        <div class="card-desc">The 4 types of "er": location, quantity, prepositional, and dummy subject.</div>
-      </div>
-      <div class="card-footer"><span>er &middot; erop &middot; ermee</span><span class="material-icons">arrow_forward</span></div>
+      <div class="tool-tag">Advanced</div>
     </a>
   </div>
 
+  <div class="section-title">
+    Grammar Cheat Sheets
+    <div class="title-line"></div>
+  </div>
 
-  <div class="section-title">Study Tips</div>
-  <div class="tips-grid">
-    <div class="tip-box">
-      <div class="tip-head"><span class="material-icons">style</span>Use as flashcard prompts</div>
-      <p>Cover the English column and test yourself on each Dutch word or sentence structure.</p>
-    </div>
-    <div class="tip-box">
-      <div class="tip-head"><span class="material-icons">repeat</span>Focus on patterns</div>
-      <p>Dutch is very rule-based. Learn the rule first, then memorise the exceptions.</p>
-    </div>
-    <div class="tip-box">
-      <div class="tip-head"><span class="material-icons">chat</span>Output daily</div>
-      <p>Make one sentence per grammar rule every day. Production beats passive reading.</p>
-    </div>
+  <div style="text-align:center; padding: 3rem 1rem; background: var(--white); border-radius: 24px; border: 1.5px solid var(--border); margin-bottom: 3rem;">
+    <span class="material-icons" style="font-size: 3rem; color: var(--orange); display:block; margin-bottom: 1rem;">library_books</span>
+    <h2 style="font-family:'Playfair Display',serif; font-size:2rem; margin-bottom:0.75rem;">15 Grammar Modules</h2>
+    <p style="color:var(--muted); max-width:480px; margin:0 auto 2rem; line-height:1.6;">All grammar topics from A1 to B1 — pronouns, verbs, word order, adjectives, past tense, and more. Track your mastery as you go.</p>
+    <a href="cheatsheets.html" class="fc-btn" style="display:inline-flex; align-items:center; gap:0.5rem;">
+      Browse All Cheat Sheets <span class="material-icons" style="font-size:1.2rem;">arrow_forward</span>
+    </a>
   </div>
 
   <footer>
-    <div class="footer-brand">Dutch <span>Grammar Hub</span></div>
+    <div class="footer-brand">Dutch <span>Hub</span></div>
     <div class="footer-meta">
-      <span>15 Cheat Sheets</span>
+      <span>Interactive Hub</span>
       <span class="dot"></span>
       <span>A1&ndash;B1 Level</span>
       <span class="dot"></span>
-      <span>Grammar Reference</span>
+      <span>soylu.dev</span>
     </div>
       <div class="footer-credit">Made by <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a></div>
   </footer>

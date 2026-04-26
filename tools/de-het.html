@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De/Het Trainer — Dutch Language Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../data/nouns-data.js"></script>
+<style>
+  :root {
+    --de-color: #3b82f6;
+    --het-color: #f59e0b;
+  }
+
+  .game-container {
+    max-width: 600px;
+    margin: 4rem auto;
+    text-align: center;
+    perspective: 1000px;
+  }
+
+  .word-card {
+    background: var(--white);
+    padding: 4rem 2rem;
+    border-radius: 24px;
+    border: 1.5px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .word-card.correct { border-color: var(--green); background: rgba(16, 185, 129, 0.05); }
+  .word-card.incorrect { border-color: var(--red); background: rgba(239, 68, 68, 0.05); }
+
+  .current-word {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .word-meaning {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .article-btn {
+    padding: 1.2rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .btn-de { background: var(--de-color); color: white; }
+  .btn-de:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
+
+  .btn-het { background: var(--het-color); color: white; }
+  .btn-het:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3); }
+
+  .btn-next {
+    background: var(--ink);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    display: none;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+  }
+
+  .feedback-msg {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    min-height: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .rule-tip {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: var(--bg);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: none;
+  }
+
+  .stats-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .stats-bar > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .stats-label {
+    text-transform: none;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  #level-select {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  #level-select:focus { border-color: var(--het-color); }
+
+  .score-val { color: var(--ink); font-weight: 700; }
+
+  /* Animations */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+  }
+  .shake { animation: shake 0.4s ease-in-out; }
+
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  .pop { animation: pop 0.3s ease-out; }
+</style>
+</head>
+<body>
+
+<nav class="hub-nav">
+  <div class="hub-nav-inner">
+    <a href="../index.html" class="hub-logo">Dutch <span>Hub</span></a>
+    <ul class="hub-menu">
+      <li><a href="../index.html">Hub Home</a></li><li><a href="../cheatsheets.html">Cheat Sheets</a></li>
+      <li><a href="verb-explorer.html">Verb Explorer</a></li>
+      <li><a href="flashcards.html">Flashcards</a></li>
+      <li><a href="de-het.html" class="active">de/het Trainer</a></li>
+    </ul>
+    <div class="fc-toggle-wrap">
+      <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode"><span class="material-icons">dark_mode</span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="hero" style="border-bottom:none; padding-bottom: 0;">
+    <h1>de / het <em>Trainer</em></h1>
+    <p class="hero-desc">Master Dutch articles through repetition. The more you play, the better your intuition.</p>
+  </div>
+
+  <div class="game-container">
+    <div class="stats-bar">
+      <div>Session: <span id="session-score" class="score-val">0 / 0</span></div>
+      <div>
+        <span class="stats-label">Level:</span>
+        <select id="level-select" onchange="changeLevel()">
+          <option value="all">All Levels</option>
+          <option value="A1">A1 Only</option>
+          <option value="A2">A2 Only</option>
+          <option value="B1">B1 Only</option>
+        </select>
+      </div>
+      <div>Mastered: <span id="total-mastered" class="score-val">0</span></div>
+    </div>
+
+    <div class="word-card" id="word-card">
+      <div class="current-word" id="word-display">Laden...</div>
+      <div class="word-meaning" id="meaning-display">meaning</div>
+      
+      <div class="feedback-msg" id="feedback-msg"></div>
+      <div class="rule-tip" id="rule-tip"></div>
+    </div>
+
+    <div class="btn-group" id="action-btns">
+      <button class="article-btn btn-de" onclick="checkAnswer('de')">De</button>
+      <button class="article-btn btn-het" onclick="checkAnswer('het')">Het</button>
+    </div>
+
+    <button class="btn-next" id="next-btn" onclick="nextWord()">Next Word <span class="material-icons" style="vertical-align: middle; font-size: 1.2rem; margin-left: 0.5rem;">arrow_forward</span></button>
+  </div>
+</div>
+
+<script>
+  let nouns = window.DUTCH_NOUNS || [];
+  let filteredNouns = [...nouns];
+  let currentNoun = null;
+  let sessionTotal = 0;
+  let sessionCorrect = 0;
+  let masteredList = JSON.parse(localStorage.getItem('dgh_mastered_nouns') || '[]');
+
+  const wordDisplay = document.getElementById('word-display');
+  const meaningDisplay = document.getElementById('meaning-display');
+  const feedbackMsg = document.getElementById('feedback-msg');
+  const ruleTip = document.getElementById('rule-tip');
+  const wordCard = document.getElementById('word-card');
+  const nextBtn = document.getElementById('next-btn');
+  const actionBtns = document.getElementById('action-btns');
+  const sessionScoreEl = document.getElementById('session-score');
+  const totalMasteredEl = document.getElementById('total-mastered');
+  const levelSelect = document.getElementById('level-select');
+
+  function init() {
+    updateStats();
+    nextWord();
+  }
+
+  function changeLevel() {
+    const level = levelSelect.value;
+    if (level === 'all') {
+      filteredNouns = [...nouns];
+    } else {
+      filteredNouns = nouns.filter(n => n.level === level);
+    }
+    
+    // Reset session if changing level mid-session? 
+    // Let's just update and get a new word
+    nextWord();
+  }
+
+  function nextWord() {
+    if (filteredNouns.length === 0) {
+      wordDisplay.innerText = "Empty";
+      meaningDisplay.innerText = "No words for this level";
+      actionBtns.style.display = 'none';
+      return;
+    }
+
+    // Reset UI
+    wordCard.className = 'word-card';
+    feedbackMsg.innerText = '';
+    feedbackMsg.style.color = '';
+    ruleTip.style.display = 'none';
+    nextBtn.style.display = 'none';
+    actionBtns.style.display = 'flex';
+    
+    // Pick a random noun from filtered list
+    currentNoun = filteredNouns[Math.floor(Math.random() * filteredNouns.length)];
+    
+    wordDisplay.innerText = currentNoun.word;
+    meaningDisplay.innerText = currentNoun.english;
+  }
+
+  function checkAnswer(choice) {
+    sessionTotal++;
+    const isCorrect = choice === currentNoun.article;
+    
+    actionBtns.style.display = 'none';
+    nextBtn.style.display = 'block';
+
+    if (isCorrect) {
+      sessionCorrect++;
+      wordCard.classList.add('correct', 'pop');
+      feedbackMsg.innerText = 'Correct! Good job.';
+      feedbackMsg.style.color = 'var(--green)';
+      
+      // Add to mastery if not already there
+      if (!masteredList.includes(currentNoun.id)) {
+        masteredList.push(currentNoun.id);
+        localStorage.setItem('dgh_mastered_nouns', JSON.stringify(masteredList));
+      }
+    } else {
+      wordCard.classList.add('incorrect', 'shake');
+      feedbackMsg.innerHTML = `Actually, it's <strong style="text-transform:uppercase">${currentNoun.article}</strong> ${currentNoun.word}.`;
+      feedbackMsg.style.color = 'var(--red)';
+    }
+
+    if (currentNoun.rule) {
+      ruleTip.innerText = `Tip: ${currentNoun.rule}`;
+      ruleTip.style.display = 'block';
+    }
+
+    updateStats();
+  }
+
+  function updateStats() {
+    sessionScoreEl.innerText = `${sessionCorrect} / ${sessionTotal}`;
+    totalMasteredEl.innerText = masteredList.length;
+  }
+
+  // Dark Mode
+  document.getElementById('dark-toggle').addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+    localStorage.setItem('dgh_dark_mode', !isDark);
+  });
+
+  if (localStorage.getItem('dgh_dark_mode') === 'true') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  init();
+</script>
+
+</body>
+</html>

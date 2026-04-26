@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grammar Quiz — Dutch Language Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../data/quiz-data.js"></script>
+<style>
+  .quiz-container { max-width: 700px; margin: 2rem auto; }
+
+  /* Selection Screen */
+  .quiz-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .quiz-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .quiz-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+    box-shadow: var(--shadow-sm);
+  }
+  .quiz-card h3 { margin: 1rem 0 0.5rem 0; }
+  .quiz-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+
+  /* Quiz Flow */
+  .quiz-ui { display: none; margin-top: 2rem; }
+
+  .q-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .question-box {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1.5px solid var(--border);
+    margin-bottom: 2rem;
+  }
+
+  .question-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--ink);
+  }
+
+  .options-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .option-btn {
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .option-btn:hover { border-color: var(--orange); background: rgba(245, 158, 11, 0.05); }
+
+  .option-btn.correct { border-color: var(--green); background: rgba(16, 185, 129, 0.1); }
+  .option-btn.incorrect { border-color: var(--red); background: rgba(239, 68, 68, 0.1); }
+  .option-btn.disabled { pointer-events: none; }
+
+  /* Explanation */
+  .explanation-box {
+    display: none;
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--orange);
+    animation: fadeIn 0.4s ease;
+  }
+  [data-theme="dark"] .explanation-box { background: #1e1e1e; }
+
+  .explanation-title {
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  /* Results */
+  .results-ui { display: none; text-align: center; margin-top: 4rem; }
+  .score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 8px solid var(--orange);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+  }
+  .score-num { font-size: 3rem; font-weight: 900; line-height: 1; }
+  .score-label { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); }
+
+  .nav-btns { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+</style>
+</head>
+<body>
+
+<nav class="hub-nav">
+  <div class="hub-nav-inner">
+    <a href="../index.html" class="hub-logo">Dutch <span>Hub</span></a>
+    <ul class="hub-menu">
+      <li><a href="../index.html">Hub Home</a></li><li><a href="../cheatsheets.html">Cheat Sheets</a></li>
+      <li><a href="verb-explorer.html">Verb Explorer</a></li>
+      <li><a href="flashcards.html">Flashcards</a></li>
+      <li><a href="de-het.html">de/het Trainer</a></li>
+      <li><a href="quiz.html" class="active">Quiz</a></li>
+    </ul>
+    <div class="fc-toggle-wrap">
+      <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode"><span class="material-icons">dark_mode</span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="hero" id="quiz-hero" style="border-bottom:none; padding-bottom: 1rem;">
+    <h1>Grammar <em>Quiz</em></h1>
+    <p class="hero-desc">Put your Dutch knowledge to the test. Instant feedback and explanations included.</p>
+  </div>
+
+  <div class="quiz-container">
+    <!-- Topic Selection -->
+    <div id="selection-screen">
+      <div class="quiz-card-grid" id="category-grid">
+        <!-- Injected -->
+      </div>
+    </div>
+
+    <!-- Quiz Flow -->
+    <div id="quiz-ui" class="quiz-ui">
+      <div class="q-header">
+        <button class="btn-back" style="border:none; background:none; cursor:pointer; color:var(--muted); display:flex; align-items:center; gap:0.5rem;" onclick="exitQuiz()"><span class="material-icons">arrow_back</span> Exit</button>
+        <div id="progress-text" class="deck-count">Question 1 / 5</div>
+      </div>
+
+      <div class="question-box">
+        <div id="q-text" class="question-text">Loading question...</div>
+        <div id="options-grid" class="options-grid">
+          <!-- Injected -->
+        </div>
+
+        <div id="explanation-box" class="explanation-box">
+          <span class="explanation-title">Explanation</span>
+          <p id="explanation-text"></p>
+        </div>
+      </div>
+
+      <div id="next-container" style="display:none; text-align:right;">
+        <button class="fc-btn" onclick="nextQuestion()">Next Question <span class="material-icons" style="vertical-align:middle; font-size:1.2rem;">arrow_forward</span></button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="results-ui" class="results-ui">
+      <div class="score-circle">
+        <div id="final-score" class="score-num">4</div>
+        <div class="score-label">Correct</div>
+      </div>
+      <h2 id="result-title">Great Job!</h2>
+      <p id="result-desc" style="color:var(--muted); margin-top: 0.5rem;">You've mastered the basics of this topic.</p>
+      
+      <div class="nav-btns">
+        <button class="fc-btn secondary" onclick="exitQuiz()">Back to Topics</button>
+        <button class="fc-btn" onclick="retryQuiz()">Try Again</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const quizData = window.DUTCH_QUIZ_DATA || [];
+  let currentCategory = null;
+  let currentQuestionIndex = 0;
+  let score = 0;
+  let answered = false;
+
+  const selectionScreen = document.getElementById('selection-screen');
+  const quizUI = document.getElementById('quiz-ui');
+  const resultsUI = document.getElementById('results-ui');
+  const categoryGrid = document.getElementById('category-grid');
+  const qText = document.getElementById('q-text');
+  const optionsGrid = document.getElementById('options-grid');
+  const explanationBox = document.getElementById('explanation-box');
+  const nextContainer = document.getElementById('next-container');
+  const progressText = document.getElementById('progress-text');
+
+  function init() {
+    renderCategories();
+  }
+
+  function renderCategories() {
+    categoryGrid.innerHTML = '';
+    quizData.forEach((cat, idx) => {
+      const card = document.createElement('div');
+      card.className = 'quiz-card';
+      card.onclick = () => startQuiz(idx);
+      card.innerHTML = `
+        <span class="material-icons" style="font-size:2.5rem; color:var(--orange)">${cat.icon}</span>
+        <h3>${cat.category}</h3>
+        <p>${cat.description}</p>
+        <div class="deck-count" style="margin-top:1rem;">${cat.questions.length} Questions</div>
+      `;
+      categoryGrid.appendChild(card);
+    });
+  }
+
+  function startQuiz(idx) {
+    currentCategory = quizData[idx];
+    currentQuestionIndex = 0;
+    score = 0;
+    selectionScreen.style.display = 'none';
+    document.getElementById('quiz-hero').style.display = 'none';
+    quizUI.style.display = 'block';
+    loadQuestion();
+  }
+
+  function loadQuestion() {
+    answered = false;
+    explanationBox.style.display = 'none';
+    nextContainer.style.display = 'none';
+    
+    const q = currentCategory.questions[currentQuestionIndex];
+    qText.innerText = q.question;
+    progressText.innerText = `Question ${currentQuestionIndex + 1} / ${currentCategory.questions.length}`;
+
+    optionsGrid.innerHTML = '';
+    q.options.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.innerHTML = `<span>${opt}</span><span class="material-icons feedback-icon" style="display:none"></span>`;
+      btn.onclick = () => checkAnswer(idx, btn);
+      optionsGrid.appendChild(btn);
+    });
+  }
+
+  function checkAnswer(idx, btn) {
+    if (answered) return;
+    answered = true;
+    
+    const q = currentCategory.questions[currentQuestionIndex];
+    const btns = optionsGrid.querySelectorAll('.option-btn');
+    
+    btns.forEach((b, i) => {
+      b.classList.add('disabled');
+      if (i === q.correct) {
+        b.classList.add('correct');
+        b.querySelector('.feedback-icon').innerText = 'check_circle';
+        b.querySelector('.feedback-icon').style.display = 'block';
+      }
+    });
+
+    if (idx === q.correct) {
+      score++;
+    } else {
+      btn.classList.add('incorrect');
+      btn.querySelector('.feedback-icon').innerText = 'cancel';
+      btn.querySelector('.feedback-icon').style.display = 'block';
+    }
+
+    document.getElementById('explanation-text').innerText = q.explanation;
+    explanationBox.style.display = 'block';
+    nextContainer.style.display = 'block';
+  }
+
+  function nextQuestion() {
+    if (currentQuestionIndex < currentCategory.questions.length - 1) {
+      currentQuestionIndex++;
+      loadQuestion();
+    } else {
+      showResults();
+    }
+  }
+
+  function showResults() {
+    quizUI.style.display = 'none';
+    resultsUI.style.display = 'block';
+    
+    const total = currentCategory.questions.length;
+    document.getElementById('final-score').innerText = score;
+    
+    const pct = (score / total) * 100;
+    let title = "Well Done!";
+    let desc = "You have a solid understanding of this topic.";
+    
+    if (pct === 100) { title = "Perfect Score!"; desc = "You are a Dutch grammar master."; }
+    else if (pct < 60) { title = "Keep Practicing"; desc = "Try reviewing the cheat sheets for this topic."; }
+    
+    document.getElementById('result-title').innerText = title;
+    document.getElementById('result-desc').innerText = desc;
+  }
+
+  function exitQuiz() {
+    quizUI.style.display = 'none';
+    resultsUI.style.display = 'none';
+    selectionScreen.style.display = 'block';
+    document.getElementById('quiz-hero').style.display = 'block';
+  }
+
+  function retryQuiz() {
+    resultsUI.style.display = 'none';
+    quizUI.style.display = 'block';
+    currentQuestionIndex = 0;
+    score = 0;
+    loadQuestion();
+  }
+
+  // Dark Mode
+  document.getElementById('dark-toggle').addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+    localStorage.setItem('dgh_dark_mode', !isDark);
+  });
+
+  if (localStorage.getItem('dgh_dark_mode') === 'true') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  init();
+</script>
+
+</body>
+</html>
