@@ -104,9 +104,26 @@ td.verbs-col span { font-family:'DM Mono',monospace; font-size:0.76rem; backgrou
 </style>
 </head>
 <body>
-<div class="page">
+<nav class="hub-nav">
+  <div class="hub-nav-inner">
+    <a href="../index.html" class="hub-logo">More<span>Dutch</span></a>
+    <ul class="hub-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../cheatsheets.html" class="active">Cheat Sheets</a></li>
+      <li><a href="../tools/verb-explorer.html">Verb Explorer</a></li>
+      <li><a href="../tools/flashcards.html">Flashcards</a></li>
+      <li><a href="../tools/de-het.html">de/het Trainer</a></li>
+      <li><a href="../tools/quiz.html">Quiz</a></li>
+      <li><a href="../tools/sentence-builder.html">Sentence Builder</a></li>
+    </ul>
+    <div class="fc-toggle-wrap">
+      <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode" aria-label="Toggle dark mode"><span class="material-icons" aria-hidden="true">dark_mode</span></button>
+      <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+    </div>
+  </div>
+</nav>
 
-  <a href="../index.html" class="nav-back"><span class="material-icons">arrow_back</span> Back to Hub</a>
+<div class="page">
 
   <header class="site-header">
     <div>
@@ -114,10 +131,10 @@ td.verbs-col span { font-family:'DM Mono',monospace; font-size:0.76rem; backgrou
       <p class="subtitle">Scheidbare Werkwoorden &middot; Prefix Rules &middot; ge- Participle</p>
     </div>
     <div class="fc-toggle-wrap">
-      <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode" aria-label="Toggle dark mode"><span class="material-icons" aria-hidden="true">dark_mode</span></button>
+      
       <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode" aria-label="Toggle test mode"><span class="material-icons" aria-hidden="true">visibility_off</span> Test Mode</button>
       <a href="../help.html" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help page"><span class="material-icons" aria-hidden="true">help_outline</span></a>
-      <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
+      
     </div>
   </header>
 
