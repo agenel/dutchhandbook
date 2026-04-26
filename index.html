@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://moredutch.com/">
-<title>More Dutch — Interactive Dutch Grammar Hub & Cheat Sheets</title>
-<meta name="description" content="The ultimate interactive hub for Dutch learners. Master A1-B1 grammar with 15+ cheat sheets, verb explorers, flashcards, and drills. Start learning for free at More Dutch.">
-<meta name="keywords" content="Dutch grammar, learn Dutch, Dutch cheat sheet, Dutch verb explorer, Dutch flashcards, learn Dutch online, A1 B1 Dutch, More Dutch">
-<meta name="robots" content="index, follow">
-<meta name="author" content="soylu.dev">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://moredutch.com/">
+  <title>More Dutch — Interactive Dutch Grammar Hub & Cheat Sheets</title>
+  <meta name="description"
+    content="The ultimate interactive hub for Dutch learners. Master A1-B1 grammar with 15+ cheat sheets, verb explorers, flashcards, and drills. Start learning for free at More Dutch.">
+  <meta name="keywords"
+    content="Dutch grammar, learn Dutch, Dutch cheat sheet, Dutch verb explorer, Dutch flashcards, learn Dutch online, A1 B1 Dutch, More Dutch">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="soylu.dev">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://moredutch.com/">
-<meta property="og:title" content="More Dutch — Interactive Dutch Grammar Hub">
-<meta property="og:description" content="Master Dutch with interactive tools and grammar cheat sheets. Covers verbs, word order, flashcards, and more — from A1 to B1 level.">
-<meta property="og:image" content="https://moredutch.com/assets/og-image.png">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moredutch.com/">
+  <meta property="og:title" content="More Dutch — Interactive Dutch Grammar Hub">
+  <meta property="og:description"
+    content="Master Dutch with interactive tools and grammar cheat sheets. Covers verbs, word order, flashcards, and more — from A1 to B1 level.">
+  <meta property="og:image" content="https://moredutch.com/assets/og-image.png">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://moredutch.com/">
-<meta property="twitter:title" content="More Dutch — Interactive Dutch Grammar Hub">
-<meta property="twitter:description" content="Master Dutch with interactive tools and grammar cheat sheets. Covers verbs, word order, flashcards, and more — from A1 to B1 level.">
-<meta property="twitter:image" content="https://moredutch.com/assets/og-image.png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://moredutch.com/">
+  <meta property="twitter:title" content="More Dutch — Interactive Dutch Grammar Hub">
+  <meta property="twitter:description"
+    content="Master Dutch with interactive tools and grammar cheat sheets. Covers verbs, word order, flashcards, and more — from A1 to B1 level.">
+  <meta property="twitter:image" content="https://moredutch.com/assets/og-image.png">
 
-<!-- JSON-LD Structured Data -->
-<script type="application/ld+json">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -47,133 +52,147 @@
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<nav class="hub-nav">
-  <div class="hub-nav-inner">
-    <a href="index.html" class="hub-logo">More<span>Dutch</span></a>
-    <ul class="hub-menu">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="cheatsheets.html">Cheat Sheets</a></li>
-      <li><a href="tools/verb-explorer.html">Verb Explorer</a></li>
-      <li><a href="tools/flashcards.html">Flashcards</a></li>
-      <li><a href="tools/de-het.html">de/het Trainer</a></li>
-      <li><a href="tools/quiz.html">Quiz</a></li>
-      <li><a href="tools/sentence-builder.html">Sentence Builder</a></li>
-    </ul>
-    <div class="fc-toggle-wrap">
-      <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode" aria-label="Toggle dark mode"><span class="material-icons" aria-hidden="true">dark_mode</span></button>
-      <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
-    </div>
-  </div>
-</nav>
-
-<div class="page">
-
-  <div class="hero" style="border-bottom:none; padding-top:1rem;">
-    <div class="hero-layout">
-      <div class="hero-title">
-        <h1>Dutch<br><em>Language</em><br>Hub</h1>
-      </div>
-      <div class="hero-content">
-        <p class="hero-desc">Your central platform for mastering Dutch. Interactive tools to practice verbs, vocabulary, and grammar rules — all in one place.</p>
-        <div class="hero-pills">
-          <div class="pill">Interactive Tools</div>
-          <div class="pill">15 Cheat Sheets</div>
-          <div class="pill">A1 &mdash; B1</div>
+  <nav class="hub-nav">
+    <div class="hub-nav-inner">
+      <a href="index.html" class="hub-logo">More<span>Dutch</span></a>
+      <ul class="hub-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="cheatsheets.html">Cheat Sheets</a></li>
+        <li><a href="tools/verb-explorer.html">Verb Explorer</a></li>
+        <li><a href="tools/flashcards.html">Flashcards</a></li>
+        <li><a href="tools/de-het.html">de/het Trainer</a></li>
+        <li><a href="tools/quiz.html">Quiz</a></li>
+        <li><a href="tools/sentence-builder.html">Sentence Builder</a></li>
+      </ul>
+      <div class="fc-toggle-wrap">
+        <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode" aria-label="Toggle dark mode"><span
+            class="material-icons" aria-hidden="true">dark_mode</span></button>
+        <div class="flag">
+          <div class="flag-red"></div>
+          <div class="flag-white"></div>
+          <div class="flag-blue"></div>
         </div>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <div class="section-title">
-    Grammar Cheat Sheets
-    <div class="title-line"></div>
-  </div>
+  <div class="page">
 
-  <div class="sheets-bar" style="display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 1.5rem; background: var(--white); border-radius: 16px; border: 1.5px solid var(--border); margin-bottom: 2.5rem; gap: 1.5rem; flex-wrap: wrap;">
-    <div style="display: flex; align-items: center; gap: 1rem; flex: 1; min-width: 250px;">
-      <span class="material-icons" style="font-size: 1.8rem; color: var(--orange); flex-shrink: 0;">library_books</span>
-      <div style="text-align: left;">
-        <span style="font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 0.1rem;">15 Grammar Modules</span>
-        <p style="color:var(--muted); margin:0; line-height:1.4; font-size: 0.85rem;">The complete library of A1 to B1 grammar cheat sheets.</p>
+    <div class="hero" style="border-bottom:none; padding-top:1rem;">
+      <div class="hero-layout">
+        <div class="hero-title">
+          <h1>Dutch<br><em>Language</em><br>Hub</h1>
+        </div>
+        <div class="hero-content">
+          <p class="hero-desc">Your central platform for mastering Dutch. Interactive tools to practice verbs,
+            vocabulary, and grammar rules — all in one place.</p>
+          <div class="hero-pills">
+            <div class="pill">Interactive Tools</div>
+            <div class="pill">15 Cheat Sheets</div>
+            <div class="pill">A1 &mdash; B1</div>
+          </div>
+        </div>
       </div>
     </div>
-    <a href="cheatsheets.html" class="fc-btn" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; display: flex; align-items: center; gap: 0.4rem; white-space: nowrap;">
-      Browse All <span class="material-icons" style="font-size: 1.1rem;">arrow_forward</span>
-    </a>
-  </div>
 
-  <div class="section-title">
-    Interactive Practice Tools
-    <div class="title-line"></div>
-  </div>
-
-  <div class="tools-grid">
-    <a href="tools/verb-explorer.html" class="tool-card">
-      <div class="tool-icon" aria-label="Verb Explorer Icon"><span class="material-icons">travel_explore</span></div>
-      <div class="tool-info">
-        <h3>Verb Explorer</h3>
-        <p>Search and filter the 100 most used Dutch verbs. Full conjugations and examples for every verb.</p>
-      </div>
-      <div class="tool-tag">Priority Tool</div>
-    </a>
-
-    <a href="tools/flashcards.html" class="tool-card">
-      <div class="tool-icon" aria-label="Flashcards Icon"><span class="material-icons">style</span></div>
-      <div class="tool-info">
-        <h3>Flashcards</h3>
-        <p>Master essential Dutch vocabulary with spaced-repetition flashcards across 6 categories.</p>
-      </div>
-      <div class="tool-tag">Vocabulary</div>
-    </a>
-
-    <a href="tools/de-het.html" class="tool-card">
-      <div class="tool-icon" aria-label="de/het Trainer Icon"><span class="material-icons">category</span></div>
-      <div class="tool-info">
-        <h3>de/het Trainer</h3>
-        <p>The fastest way to learn noun genders. Practice 500+ common nouns in a rapid-fire drill.</p>
-      </div>
-      <div class="tool-tag">Practice</div>
-    </a>
-
-    <a href="tools/quiz.html" class="tool-card">
-      <div class="tool-icon" aria-label="Grammar Quiz Icon"><span class="material-icons">quiz</span></div>
-      <div class="tool-info">
-        <h3>Grammar Quiz</h3>
-        <p>Test your knowledge of the grammar rules with interactive quizzes linked to our cheat sheets.</p>
-      </div>
-      <div class="tool-tag">Tests</div>
-    </a>
-
-    <a href="tools/sentence-builder.html" class="tool-card">
-      <div class="tool-icon" aria-label="Sentence Builder Icon"><span class="material-icons">account_tree</span></div>
-      <div class="tool-info">
-        <h3>Sentence Builder</h3>
-        <p>Master Dutch word order by assembling sentences block by block. V2, Inversion, and more.</p>
-      </div>
-      <div class="tool-tag">Advanced</div>
-    </a>
-
-  </div>
-
-  <footer>
-    <div class="footer-brand">More<span>Dutch</span></div>
-    <div class="footer-meta">
-      <span>Interactive Hub</span>
-      <span class="dot"></span>
-      <span>A1&ndash;B1 Level</span>
-      <span class="dot"></span>
-      <span>soylu.dev</span>
+    <div class="section-title">
+      Grammar Cheat Sheets
+      <div class="title-line"></div>
     </div>
+
+    <div class="sheets-bar"
+      style="display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 1.5rem; background: var(--white); border-radius: 16px; border: 1.5px solid var(--border); margin-bottom: 2.5rem; gap: 1.5rem; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 1rem; flex: 1; min-width: 250px;">
+        <span class="material-icons"
+          style="font-size: 1.8rem; color: var(--orange); flex-shrink: 0;">library_books</span>
+        <div style="text-align: left;">
+          <span style="font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 0.1rem;">15 Grammar
+            Modules</span>
+          <p style="color:var(--muted); margin:0; line-height:1.4; font-size: 0.85rem;">The complete library of A1 to B1
+            grammar cheat sheets.</p>
+        </div>
+      </div>
+      <a href="cheatsheets.html" class="fc-btn"
+        style="padding: 0.6rem 1.2rem; font-size: 0.85rem; display: flex; align-items: center; gap: 0.4rem; white-space: nowrap;">
+        Browse All <span class="material-icons" style="font-size: 1.1rem;">arrow_forward</span>
+      </a>
+    </div>
+
+    <div class="section-title">
+      Interactive Practice Tools
+      <div class="title-line"></div>
+    </div>
+
+    <div class="tools-grid">
+      <a href="tools/verb-explorer.html" class="tool-card">
+        <div class="tool-icon" aria-label="Verb Explorer Icon"><span class="material-icons">travel_explore</span></div>
+        <div class="tool-info">
+          <h3>Verb Explorer</h3>
+          <p>Search and filter the 100 most used Dutch verbs. Full conjugations and examples for every verb.</p>
+        </div>
+        <div class="tool-tag">Priority Tool</div>
+      </a>
+
+      <a href="tools/flashcards.html" class="tool-card">
+        <div class="tool-icon" aria-label="Flashcards Icon"><span class="material-icons">style</span></div>
+        <div class="tool-info">
+          <h3>Flashcards</h3>
+          <p>Master essential Dutch vocabulary with spaced-repetition flashcards across 6 categories.</p>
+        </div>
+        <div class="tool-tag">Vocabulary</div>
+      </a>
+
+      <a href="tools/de-het.html" class="tool-card">
+        <div class="tool-icon" aria-label="de/het Trainer Icon"><span class="material-icons">category</span></div>
+        <div class="tool-info">
+          <h3>de/het Trainer</h3>
+          <p>The fastest way to learn noun genders. Practice 500+ common nouns in a rapid-fire drill.</p>
+        </div>
+        <div class="tool-tag">Practice</div>
+      </a>
+
+      <a href="tools/quiz.html" class="tool-card">
+        <div class="tool-icon" aria-label="Grammar Quiz Icon"><span class="material-icons">quiz</span></div>
+        <div class="tool-info">
+          <h3>Grammar Quiz</h3>
+          <p>Test your knowledge of the grammar rules with interactive quizzes linked to our cheat sheets.</p>
+        </div>
+        <div class="tool-tag">Tests</div>
+      </a>
+
+      <a href="tools/sentence-builder.html" class="tool-card">
+        <div class="tool-icon" aria-label="Sentence Builder Icon"><span class="material-icons">account_tree</span></div>
+        <div class="tool-info">
+          <h3>Sentence Builder</h3>
+          <p>Master Dutch word order by assembling sentences block by block. V2, Inversion, and more.</p>
+        </div>
+        <div class="tool-tag">Advanced</div>
+      </a>
+
+    </div>
+
+    <footer>
+      <div class="footer-brand">More<span>Dutch</span></div>
+      <div class="footer-meta">
+        <span>Interactive Hub</span>
+        <span class="dot"></span>
+        <span>A1&ndash;B1 Level</span>
+        <span class="dot"></span>
+      </div>
       <div class="footer-credit">Made by <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a></div>
-  </footer>
+    </footer>
 
-</div>
-<script src="js/main.js"></script>
+  </div>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
