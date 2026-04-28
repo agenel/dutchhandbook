@@ -21,32 +21,62 @@
 <meta name="twitter:description" content="Complete reference for Dutch personal, possessive and object pronouns. Includes stressed forms, inversion rules, and example sentences. A2 level.">
 <meta name="twitter:site" content="@soyludev">
   
+    
+    
     <!-- Help Modal -->
     <div class="help-modal" id="help-modal">
       <div class="help-content">
         <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
         <div class="help-body">
-          <h2>Sheet <em>Help</em></h2>
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
           <div class="help-section">
-            <h3>Test Mode</h3>
-            <p>Toggle <strong>Test Mode</strong> to hide translations and conjugations. Click on any blurred text to reveal it instantly. This is the best way to practice!</p>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
           </div>
           <div class="help-section">
-            <h3>Tracking Mastery</h3>
-            <p>Once you feel confident with this topic, click <strong>Mark as Mastered</strong> at the bottom. This will update your progress bar on the home page.</p>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
           </div>
           <div class="help-section">
-            <h3>Learning Tips</h3>
-            <p>Look for colored boxes and icons throughout the sheet for important grammar rules, common pitfalls, and study tips.</p>
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
           </div>
           <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
-            <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem;">
-              Full Guide <span class="material-icons">menu_book</span>
+            <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
             </a>
           </div>
         </div>
       </div>
     </div>
+
+
 
 <script type="application/ld+json">
   {
@@ -199,7 +229,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-obj">mij</td>
         <td class="nl-obj" style="opacity:0.65">me</td>
         <td class="nl-poss">mijn</td>
-        <td>I / me / my</td>
+        <td class="en">I / me / my</td>
       </tr>
       <tr class="row-hi">
         <td>2sg</td>
@@ -208,7 +238,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-obj" style="color:var(--gold)">jou</td>
         <td class="nl-obj" style="opacity:0.65;color:var(--gold)">je</td>
         <td class="nl-poss" style="color:var(--gold)">jouw / je</td>
-        <td>you / you / your</td>
+        <td class="en">you / you / your</td>
       </tr>
       <tr>
         <td>2sg formal</td>
@@ -217,7 +247,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-obj">u</td>
         <td class="nl-obj" style="opacity:0.65">&mdash;</td>
         <td class="nl-poss">uw</td>
-        <td>you (formal) / your</td>
+        <td class="en">you (formal) / your</td>
       </tr>
       <tr>
         <td>3sg masc</td>
@@ -226,7 +256,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-obj">hem</td>
         <td class="nl-obj" style="opacity:0.65">'m</td>
         <td class="nl-poss">zijn</td>
-        <td>he / him / his</td>
+        <td class="en">he / him / his</td>
       </tr>
       <tr>
         <td>3sg fem</td>
@@ -235,7 +265,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-obj">haar</td>
         <td class="nl-obj" style="opacity:0.65">d'r / 'r</td>
         <td class="nl-poss">haar</td>
-        <td>she / her / her</td>
+        <td class="en">she / her / her</td>
       </tr>
       <tr>
         <td>3sg neuter</td>
@@ -244,7 +274,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-obj">het</td>
         <td class="nl-obj" style="opacity:0.65">'t</td>
         <td class="nl-poss">zijn</td>
-        <td>it / it / its</td>
+        <td class="en">it / it / its</td>
       </tr>
       <tr>
         <td>1pl</td>
@@ -253,7 +283,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-obj">ons</td>
         <td class="nl-obj" style="opacity:0.65">&mdash;</td>
         <td class="nl-poss">ons / onze</td>
-        <td>we / us / our</td>
+        <td class="en">we / us / our</td>
       </tr>
       <tr class="row-hi">
         <td>2pl</td>
@@ -262,7 +292,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-obj" style="color:var(--gold)">jullie</td>
         <td class="nl-obj" style="opacity:0.65;color:var(--gold)">&mdash;</td>
         <td class="nl-poss" style="color:var(--gold)">jullie</td>
-        <td>you (pl) / you / your</td>
+        <td class="en">you (pl) / you / your</td>
       </tr>
       <tr>
         <td>3pl</td>
@@ -271,9 +301,9 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-obj">hen / hun</td>
         <td class="nl-obj" style="opacity:0.65">ze</td>
         <td class="nl-poss">hun</td>
-        <td>they / them / their</td>
+        <td class="en">they / them / their</td>
       </tr>
-    </tbody>
+      </tbody>
   </table>
 
   <div class="note-box note-warn anim a3">

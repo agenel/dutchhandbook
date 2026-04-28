@@ -156,23 +156,33 @@
     <p class="hero-desc">Master Dutch word order by assembling sentences block by block.</p>
   </div>
 
+  
   <!-- Help Modal -->
   <div class="help-modal" id="help-modal">
     <div class="help-content">
       <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
       <div class="help-body">
-        <h2>Builder <em>Help</em></h2>
+        <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sentence Builder <em>Guide</em></h2>
+        
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">bolt</span>
+                <h3 style="margin:0;">Practice Mode</h3>
+            </div>
+            <p>Use this tool to convert your theoretical knowledge into rapid intuition. Practice until you don't have to think anymore!</p>
+          </div>
+    
         <div class="help-section">
-          <h3>Assembling Sentences</h3>
-          <p>Click the word blocks in the correct order to translate the target sentence. If you make a mistake, you can reset the sentence and try again.</p>
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+              <span class="material-icons" style="color:var(--blue);">trending_up</span>
+              <h3 style="margin:0;">Build Muscle Memory</h3>
+          </div>
+          <p>This tool is designed for high-speed repetition. The goal is to reach a point where your choices are automatic.</p>
         </div>
-        <div class="help-section">
-          <h3>Word Order Rules</h3>
-          <p>Dutch has specific rules for verb placement (V2 rule) and word order (STOMPS). This tool helps you build muscle memory for these tricky patterns.</p>
-        </div>
-        <div class="help-section">
-          <h3>Complexity</h3>
-          <p>Start with simple subject-verb sentences and progress to inversion (starting with time or place) and subclauses where verbs move to the end.</p>
+        <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+          <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+            Full Platform Guide <span class="material-icons">menu_book</span>
+          </a>
         </div>
       </div>
     </div>

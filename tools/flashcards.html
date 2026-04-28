@@ -196,23 +196,33 @@
     <p class="hero-desc">Choose a deck and start practicing. Spaced repetition made simple.</p>
   </div>
 
+  
   <!-- Help Modal -->
   <div class="help-modal" id="help-modal">
     <div class="help-content">
       <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
       <div class="help-body">
-        <h2>Flashcards <em>Help</em></h2>
+        <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Flashcards <em>Guide</em></h2>
+        
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">style</span>
+                <h3 style="margin:0;">Digital Flashcards</h3>
+            </div>
+            <p>Classic active recall. See the Dutch word, think of the English translation, then reveal. Mark cards as known to shrink your deck.</p>
+          </div>
+        
         <div class="help-section">
-          <h3>Study Mode</h3>
-          <p>Click "Flip Card" to reveal the translation and an example sentence. Say the word out loud for better retention!</p>
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+              <span class="material-icons" style="color:var(--blue);">trending_up</span>
+              <h3 style="margin:0;">Build Muscle Memory</h3>
+          </div>
+          <p>This tool is designed for high-speed repetition. The goal is to reach a point where your choices are automatic.</p>
         </div>
-        <div class="help-section">
-          <h3>Categories</h3>
-          <p>We've grouped the most common 500+ Dutch words into categories like Verbs, Nouns, and Adjectives to help you study thematically.</p>
-        </div>
-        <div class="help-section">
-          <h3>Spaced Repetition</h3>
-          <p>If you find a word easy, click "Easy". If you struggle, click "Hard". This helps you focus your energy where it's needed most.</p>
+        <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+          <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+            Full Platform Guide <span class="material-icons">menu_book</span>
+          </a>
         </div>
       </div>
     </div>

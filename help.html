@@ -12,72 +12,110 @@
     .help-guide {
       background: var(--white);
       border: 1.5px solid var(--border);
-      border-radius: 20px;
-      padding: 3rem;
+      border-radius: 24px;
+      padding: 3.5rem;
       margin-bottom: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     }
     .help-step {
-      margin-bottom: 3.5rem;
+      margin-bottom: 4rem;
       display: grid;
-      grid-template-columns: 60px 1fr;
-      gap: 2rem;
+      grid-template-columns: 80px 1fr;
+      gap: 2.5rem;
     }
     .step-num {
-      width: 60px;
-      height: 60px;
-      border-radius: 15px;
-      background: var(--orange-bg);
-      color: var(--orange);
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--orange), #FF8C00);
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       font-weight: 900;
+      box-shadow: 0 8px 20px rgba(232, 80, 10, 0.2);
     }
     .step-content h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
       color: var(--ink);
+      background: linear-gradient(to right, var(--ink), var(--orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .step-content p {
-      font-size: 1rem;
-      line-height: 1.7;
+      font-size: 1.1rem;
+      line-height: 1.8;
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
     .feature-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+      gap: 2rem;
       margin-top: 2rem;
     }
     .feature-item {
       display: flex;
-      gap: 1rem;
-      padding: 1.2rem;
-      background: var(--stripe);
-      border-radius: 12px;
-      border: 1px solid var(--border);
+      flex-direction: column;
+      gap: 1.2rem;
+      padding: 2rem;
+      background: var(--white);
+      border-radius: 18px;
+      border: 1.5px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    .feature-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--orange);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
     .feature-item .material-icons {
+      font-size: 2rem;
       color: var(--orange);
     }
     .feature-info h4 {
-      font-size: 0.9rem;
-      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
       color: var(--ink);
     }
     .feature-info p {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       margin: 0;
-      line-height: 1.4;
+      line-height: 1.6;
     }
-    @media (max-width: 700px) {
-      .help-step { grid-template-columns: 1fr; gap: 1rem; }
+    .visual-pill {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .vp-a1 { background: var(--orange-bg); color: var(--orange); }
+    .vp-a2 { background: var(--green-bg); color: var(--green); }
+    .vp-b1 { background: var(--blue-bg); color: var(--blue); }
+
+    .color-block {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
+    }
+    .cb-dot { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
+
+    @media (max-width: 800px) {
+      .help-step { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+      .step-num { margin: 0 auto; }
       .feature-list { grid-template-columns: 1fr; }
-      .help-guide { padding: 1.5rem; }
+      .help-guide { padding: 2rem 1.5rem; }
     }
   </style>
 </head>
@@ -110,72 +148,116 @@
 
   <div class="help-guide">
     
+    <!-- Step 1 -->
     <div class="help-step">
       <div class="step-num">1</div>
       <div class="step-content">
         <h2>Explore the Library</h2>
-        <p>Our library contains 15 essential Dutch grammar modules ranging from A1 to B1. Each sheet is carefully designed to be concise, visual, and focused on practical usage.</p>
+        <p>Our library contains 15 high-quality Dutch grammar modules. Each sheet is designed to be a complete standalone reference for a specific topic, from simple nouns to complex word order rules.</p>
         <div class="feature-list">
           <div class="feature-item">
-            <span class="material-icons">filter_list</span>
+            <span class="material-icons">layers</span>
             <div class="feature-info">
-              <h4>Filter by Level</h4>
-              <p>Quickly find modules for your current level (A1, A2, or B1).</p>
+              <h4>Progressive Levels</h4>
+              <p>We've categorized everything by CEFR levels to match your current progress:</p>
+              <div style="margin-top:0.8rem;">
+                <span class="visual-pill vp-a1">A1 Beginner</span>
+                <span class="visual-pill vp-a2">A2 Elementary</span>
+                <span class="visual-pill vp-b1">B1 Intermediate</span>
+              </div>
             </div>
           </div>
           <div class="feature-item">
-            <span class="material-icons">search</span>
+            <span class="material-icons">manage_search</span>
             <div class="feature-info">
-              <h4>Instant Search</h4>
-              <p>Looking for "Negation" or "Inversion"? Just start typing.</p>
+              <h4>Smart Discovery</h4>
+              <p>Use the global search or filter by level to find exactly what you're struggling with. Our search even looks inside the content of the modules!</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Step 2 -->
     <div class="help-step">
       <div class="step-num">2</div>
       <div class="step-content">
-        <h2>Interactive Sheets</h2>
-        <p>Every grammar sheet has two modes: <strong>Study Mode</strong> and <strong>Test Mode</strong>. Use Study Mode to review rules, then toggle Test Mode to hide answers and challenge yourself.</p>
+        <h2>Grammar Cheat Sheets</h2>
+        <p>The core of More Dutch. These aren't just PDF files; they are interactive learning modules built for modern browsers.</p>
+        
         <div class="feature-list">
           <div class="feature-item">
             <span class="material-icons">visibility_off</span>
             <div class="feature-info">
-              <h4>Test Mode</h4>
-              <p>Blurs translations and conjugations. Click to reveal when you're ready.</p>
+              <h4>Active Recall (Test Mode)</h4>
+              <p>Toggle <strong>Test Mode</strong> in any sheet to blur the translations. This forces your brain to recall the Dutch word before seeing the answer. Just click a blurred item to reveal it!</p>
             </div>
           </div>
           <div class="feature-item">
-            <span class="material-icons">verified</span>
+            <span class="material-icons">stars</span>
             <div class="feature-info">
-              <h4>Track Mastery</h4>
-              <p>Mark a module as "Mastered" once you're confident. We'll save your progress locally.</p>
+              <h4>Mastery Tracking</h4>
+              <p>Once you've memorized a sheet, mark it as <strong>Mastered</strong>. This updates your progress bar on the home page and lets you hide mastered content in the library.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Step 3 -->
     <div class="help-step">
       <div class="step-num">3</div>
       <div class="step-content">
         <h2>Practice Tools</h2>
-        <p>Grammar is best learned through repetition. Our interactive tools take the rules from the cheat sheets and turn them into rapid-fire exercises.</p>
+        <p>Take your knowledge beyond theory. Our tools are designed for high-speed repetition to build intuition.</p>
         <div class="feature-list">
           <div class="feature-item">
-            <span class="material-icons">bolt</span>
+            <span class="material-icons">auto_awesome</span>
             <div class="feature-info">
-              <h4>Rapid Drills</h4>
-              <p>Practice noun genders, verb forms, and sentence building.</p>
+              <h4>Rapid-Fire Drills</h4>
+              <p>Practice noun genders (de/het), verb conjugations, and word order using our specialized training tools.</p>
             </div>
           </div>
           <div class="feature-item">
-            <span class="material-icons">link</span>
+            <span class="material-icons">history_edu</span>
             <div class="feature-info">
-              <h4>Integrated Learning</h4>
-              <p>Quizzes are linked directly to the grammar modules they test.</p>
+              <h4>Sentence Building</h4>
+              <p>Master the tricky Dutch word order by assembling sentences block-by-block. We'll give you instant feedback on your placement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="help-step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h2>Visual Design Language</h2>
+        <p>We use a consistent color coding system to help you identify grammar patterns without reading a single word.</p>
+        
+        <div class="feature-list">
+          <div class="feature-item">
+            <span class="material-icons">palette</span>
+            <div class="feature-info">
+              <h4>Grammar Role Colors</h4>
+              <div class="color-block"><div class="cb-dot" style="background:var(--blue)"></div><span><strong>Subject</strong> (ik, jij, hij, wij)</span></div>
+              <div class="color-block"><div class="cb-dot" style="background:var(--green)"></div><span><strong>Object</strong> (mij, jou, hem, ons)</span></div>
+              <div class="color-block"><div class="cb-dot" style="background:var(--red)"></div><span><strong>Possessive & Negation</strong> (mijn, geen)</span></div>
+              <div class="color-block"><div class="cb-dot" style="background:var(--gold)"></div><span><strong>Key Rules & Formal Forms</strong></span></div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="material-icons">lightbulb</span>
+            <div class="feature-info">
+              <h4>Note Types</h4>
+              <p>Look for these boxes in our sheets:</p>
+              <div style="margin-top:0.8rem; font-size:0.8rem; border-left:3px solid var(--gold); padding-left:10px; margin-bottom:10px;">
+                <strong>Warning</strong>: Common pitfalls.
+              </div>
+              <div style="margin-top:0.8rem; font-size:0.8rem; border-left:3px solid var(--blue); padding-left:10px;">
+                <strong>Tip</strong>: Memory tricks or spoken shortcuts.
+              </div>
             </div>
           </div>
         </div>

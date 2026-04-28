@@ -21,32 +21,62 @@
 <meta name="twitter:description" content="Master Dutch nouns with de/het articles, plural rules, and diminutive forms. 50 essential nouns with example sentences. A2 level reference.">
 <meta name="twitter:site" content="@soyludev">
   
+    
+    
     <!-- Help Modal -->
     <div class="help-modal" id="help-modal">
       <div class="help-content">
         <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
         <div class="help-body">
-          <h2>Sheet <em>Help</em></h2>
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
           <div class="help-section">
-            <h3>Test Mode</h3>
-            <p>Toggle <strong>Test Mode</strong> to hide translations and conjugations. Click on any blurred text to reveal it instantly. This is the best way to practice!</p>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
           </div>
           <div class="help-section">
-            <h3>Tracking Mastery</h3>
-            <p>Once you feel confident with this topic, click <strong>Mark as Mastered</strong> at the bottom. This will update your progress bar on the home page.</p>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
           </div>
           <div class="help-section">
-            <h3>Learning Tips</h3>
-            <p>Look for colored boxes and icons throughout the sheet for important grammar rules, common pitfalls, and study tips.</p>
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
           </div>
           <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
-            <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem;">
-              Full Guide <span class="material-icons">menu_book</span>
+            <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
             </a>
           </div>
         </div>
       </div>
     </div>
+
+
 
 <script type="application/ld+json">
   {
@@ -128,17 +158,27 @@ td.en-desc { color: var(--muted); font-size: 0.75rem; }
       <tr><th>Dutch</th><th>English</th><th>Plural</th></tr>
     </thead>
     <tbody>
-      <tr><td><span class="de-word">de</span> man</td><td class="en-desc">the man</td><td>de mannen</td></tr>
-      <tr><td><span class="de-word">de</span> vrouw</td><td class="en-desc">the woman</td><td>de vrouwen</td></tr>
-      <tr><td><span class="de-word">de</span> jongen</td><td class="en-desc">the boy</td><td>de jongens</td></tr>
-      <tr><td><span class="de-word">de</span> vader</td><td class="en-desc">the father</td><td>de vaders</td></tr>
-      <tr><td><span class="de-word">de</span> moeder</td><td class="en-desc">the mother</td><td>de moeders</td></tr>
-      <tr><td><span class="de-word">de</span> auto</td><td class="en-desc">the car</td><td>de auto's</td></tr>
-      <tr><td><span class="de-word">de</span> fiets</td><td class="en-desc">the bicycle</td><td>de fietsen</td></tr>
-      <tr><td><span class="de-word">de</span> tafel</td><td class="en-desc">the table</td><td>de tafels</td></tr>
-      <tr><td><span class="de-word">de</span> stoel</td><td class="en-desc">the chair</td><td>de stoelen</td></tr>
-      <tr><td><span class="de-word">de</span> boom</td><td class="en-desc">the tree</td><td>de bomen</td></tr>
-    </tbody>
+      <tr><td><span class="de-word">de</span> man</td><td class="en-desc">the man</td><td class="en">de mannen</td>
+      </tr>
+      <tr><td><span class="de-word">de</span> vrouw</td><td class="en-desc">the woman</td><td class="en">de vrouwen</td>
+      </tr>
+      <tr><td><span class="de-word">de</span> jongen</td><td class="en-desc">the boy</td><td class="en">de jongens</td>
+      </tr>
+      <tr><td><span class="de-word">de</span> vader</td><td class="en-desc">the father</td><td class="en">de vaders</td>
+      </tr>
+      <tr><td><span class="de-word">de</span> moeder</td><td class="en-desc">the mother</td><td class="en">de moeders</td>
+      </tr>
+      <tr><td><span class="de-word">de</span> auto</td><td class="en-desc">the car</td><td class="en">de auto's</td>
+      </tr>
+      <tr><td><span class="de-word">de</span> fiets</td><td class="en-desc">the bicycle</td><td class="en">de fietsen</td>
+      </tr>
+      <tr><td><span class="de-word">de</span> tafel</td><td class="en-desc">the table</td><td class="en">de tafels</td>
+      </tr>
+      <tr><td><span class="de-word">de</span> stoel</td><td class="en-desc">the chair</td><td class="en">de stoelen</td>
+      </tr>
+      <tr><td><span class="de-word">de</span> boom</td><td class="en-desc">the tree</td><td class="en">de bomen</td>
+      </tr>
+      </tbody>
   </table>
 
   <div class="section-title anim a3">Common het-words (Places & Concepts)</div>
@@ -147,17 +187,27 @@ td.en-desc { color: var(--muted); font-size: 0.75rem; }
       <tr><th>Dutch</th><th>English</th><th>Plural</th></tr>
     </thead>
     <tbody>
-      <tr><td><span class="het-word">het</span> meisje</td><td class="en-desc">the girl (diminutive)</td><td>de meisjes</td></tr>
-      <tr><td><span class="het-word">het</span> kind</td><td class="en-desc">the child</td><td>de kinderen</td></tr>
-      <tr><td><span class="het-word">het</span> huis</td><td class="en-desc">the house</td><td>de huizen</td></tr>
-      <tr><td><span class="het-word">het</span> boek</td><td class="en-desc">the book</td><td>de boeken</td></tr>
-      <tr><td><span class="het-word">het</span> werk</td><td class="en-desc">the work</td><td>(geen meervoud)</td></tr>
-      <tr><td><span class="het-word">het</span> land</td><td class="en-desc">the country</td><td>de landen</td></tr>
-      <tr><td><span class="het-word">het</span> water</td><td class="en-desc">the water</td><td>(geen meervoud)</td></tr>
-      <tr><td><span class="het-word">het</span> bier</td><td class="en-desc">the beer</td><td>(geen meervoud)</td></tr>
-      <tr><td><span class="het-word">het</span> jaar</td><td class="en-desc">the year</td><td>de jaren</td></tr>
-      <tr><td><span class="het-word">het</span> probleem</td><td class="en-desc">the problem</td><td>de problemen</td></tr>
-    </tbody>
+      <tr><td><span class="het-word">het</span> meisje</td><td class="en-desc">the girl (diminutive)</td><td class="en">de meisjes</td>
+      </tr>
+      <tr><td><span class="het-word">het</span> kind</td><td class="en-desc">the child</td><td class="en">de kinderen</td>
+      </tr>
+      <tr><td><span class="het-word">het</span> huis</td><td class="en-desc">the house</td><td class="en">de huizen</td>
+      </tr>
+      <tr><td><span class="het-word">het</span> boek</td><td class="en-desc">the book</td><td class="en">de boeken</td>
+      </tr>
+      <tr><td><span class="het-word">het</span> werk</td><td class="en-desc">the work</td><td class="en">(geen meervoud)</td>
+      </tr>
+      <tr><td><span class="het-word">het</span> land</td><td class="en-desc">the country</td><td class="en">de landen</td>
+      </tr>
+      <tr><td><span class="het-word">het</span> water</td><td class="en-desc">the water</td><td class="en">(geen meervoud)</td>
+      </tr>
+      <tr><td><span class="het-word">het</span> bier</td><td class="en-desc">the beer</td><td class="en">(geen meervoud)</td>
+      </tr>
+      <tr><td><span class="het-word">het</span> jaar</td><td class="en-desc">the year</td><td class="en">de jaren</td>
+      </tr>
+      <tr><td><span class="het-word">het</span> probleem</td><td class="en-desc">the problem</td><td class="en">de problemen</td>
+      </tr>
+      </tbody>
   </table>
 
   <div class="page-nav anim a5">

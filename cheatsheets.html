@@ -114,22 +114,39 @@
       <div class="help-content">
         <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
         <div class="help-body">
-          <h2>Library <em>Help</em></h2>
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Library <em>Help</em></h2>
+          
           <div class="help-section">
-            <h3>Filter & Search</h3>
-            <p>Use the level pills (A1, A2, B1) and the search bar to find exactly what you need. You can also hide modules you've already mastered using the eye icon.</p>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">manage_search</span>
+                <h3 style="margin:0;">Advanced Discovery</h3>
+            </div>
+            <p>Use the level pills (A1, A2, B1) and the search bar to find exactly what you need. Our search even looks inside the content of the modules!</p>
           </div>
+
           <div class="help-section">
-            <h3>Test Mode</h3>
-            <p>Once you open a cheat sheet, you can toggle <strong>Test Mode</strong>. This hides translations and conjugations so you can quiz yourself as you read.</p>
-          </div>
-          <div class="help-section">
-            <h3>Mastery Badges</h3>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Mastery Badges</h3>
+            </div>
             <p>Cards with a <span class="material-icons" style="font-size: 1rem; color: var(--green); vertical-align: middle;">check_circle</span> checkmark are those you've marked as mastered. This progress is saved to your browser.</p>
           </div>
+
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Visual Coding</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border); margin-top:0.5rem;">
+              <div class="color-block"><div class="cb-dot" style="background:var(--orange)"></div><span><strong>Orange</strong>: A1 Beginner</span></div>
+              <div class="color-block"><div class="cb-dot" style="background:var(--green)"></div><span><strong>Green</strong>: A2 Elementary</span></div>
+              <div class="color-block"><div class="cb-dot" style="background:var(--blue)"></div><span><strong>Blue</strong>: B1 Intermediate</span></div>
+            </div>
+          </div>
+
           <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
-            <a href="help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem;">
-              Full Platform Guide <span class="material-icons">menu_book</span>
+            <a href="help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Visual Guide <span class="material-icons">menu_book</span>
             </a>
           </div>
         </div>

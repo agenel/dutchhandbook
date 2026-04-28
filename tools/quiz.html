@@ -20,33 +20,36 @@
 <link rel="stylesheet" href="../css/style.css">
 <script src="../data/quiz-data.js"></script>
 <style>
-  .quiz-container { max-width: 700px; margin: 2rem auto; }
+  .quiz-container { max-width: 850px; margin: 2rem auto; padding: 0 1rem; }
 
   /* Selection Screen */
   .quiz-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.2rem;
     margin-top: 2rem;
   }
   .quiz-card {
     background: var(--white);
-    padding: 2rem;
-    border-radius: 20px;
+    color: var(--ink);
+    padding: 1.2rem;
+    border-radius: 12px;
     border: 1.5px solid var(--border);
     cursor: pointer;
     transition: all 0.3s;
+    text-align: center;
   }
   .quiz-card:hover {
     transform: translateY(-5px);
     border-color: var(--orange);
     box-shadow: var(--shadow-sm);
   }
-  .quiz-card h3 { margin: 1rem 0 0.5rem 0; }
-  .quiz-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+  .quiz-card .material-icons { font-size: 1.8rem !important; }
+  .quiz-card h3 { margin: 0.8rem 0 0.4rem 0; font-size: 1rem; color: var(--ink); }
+  .quiz-card p { font-size: 0.75rem; color: var(--muted); line-height: 1.3; }
 
   /* Quiz Flow */
-  .quiz-ui { display: none; margin-top: 2rem; }
+  .quiz-ui { display: none; margin: 2rem auto; max-width: 550px; }
 
   .q-header {
     display: flex;
@@ -57,17 +60,18 @@
 
   .question-box {
     background: var(--white);
-    padding: 2.5rem;
-    border-radius: 24px;
+    padding: 2rem;
+    border-radius: 20px;
     border: 1.5px solid var(--border);
     margin-bottom: 2rem;
+    color: var(--ink);
   }
 
   .question-text {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--ink);
   }
 
@@ -77,10 +81,11 @@
   }
 
   .option-btn {
-    padding: 1.2rem 1.5rem;
+    padding: 1rem 1.25rem;
     border-radius: 12px;
     border: 1.5px solid var(--border);
     background: var(--white);
+    color: var(--ink);
     font-family: 'DM Sans', sans-serif;
     font-size: 1rem;
     text-align: left;
@@ -90,23 +95,37 @@
     justify-content: space-between;
     align-items: center;
   }
-  .option-btn:hover { border-color: var(--orange); background: rgba(245, 158, 11, 0.05); }
+  .option-btn:hover {
+    border-color: var(--orange);
+    background: var(--orange-bg);
+    color: var(--ink);
+  }
 
-  .option-btn.correct { border-color: var(--green); background: rgba(16, 185, 129, 0.1); }
-  .option-btn.incorrect { border-color: var(--red); background: rgba(239, 68, 68, 0.1); }
+  .option-btn.correct {
+    border-color: var(--green);
+    background: var(--green-light);
+    color: var(--ink);
+  }
+  .option-btn.incorrect {
+    border-color: var(--red);
+    background: var(--red-light);
+    color: var(--ink);
+  }
   .option-btn.disabled { pointer-events: none; }
 
   /* Explanation */
   .explanation-box {
     display: none;
-    background: #f8fafc;
+    background: var(--stripe);
     padding: 1.5rem;
     border-radius: 12px;
     margin-top: 1.5rem;
     border-left: 4px solid var(--orange);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--orange);
+    color: var(--ink);
     animation: fadeIn 0.4s ease;
   }
-  [data-theme="dark"] .explanation-box { background: #1e1e1e; }
 
   .explanation-title {
     font-weight: 700;
@@ -118,10 +137,10 @@
   }
 
   /* Results */
-  .results-ui { display: none; text-align: center; margin-top: 4rem; }
+  .results-ui { display: none; text-align: center; margin-top: 3rem; }
   .score-circle {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 8px solid var(--orange);
     display: flex;
@@ -163,23 +182,33 @@
     <p class="hero-desc">Put your Dutch knowledge to the test. Instant feedback and explanations included.</p>
   </div>
 
+  
   <!-- Help Modal -->
   <div class="help-modal" id="help-modal">
     <div class="help-content">
       <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
       <div class="help-body">
-        <h2>Quiz <em>Help</em></h2>
+        <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Quiz <em>Guide</em></h2>
+        
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">bolt</span>
+                <h3 style="margin:0;">Practice Mode</h3>
+            </div>
+            <p>Use this tool to convert your theoretical knowledge into rapid intuition. Practice until you don't have to think anymore!</p>
+          </div>
+    
         <div class="help-section">
-          <h3>Taking the Quiz</h3>
-          <p>Each category contains 5-10 questions. Select the best answer to proceed. You'll get instant feedback after every choice.</p>
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+              <span class="material-icons" style="color:var(--blue);">trending_up</span>
+              <h3 style="margin:0;">Build Muscle Memory</h3>
+          </div>
+          <p>This tool is designed for high-speed repetition. The goal is to reach a point where your choices are automatic.</p>
         </div>
-        <div class="help-section">
-          <h3>Explanations</h3>
-          <p>If you get a question wrong (or right!), read the explanation below it to understand the underlying grammar rule.</p>
-        </div>
-        <div class="help-section">
-          <h3>Study Links</h3>
-          <p>If a specific topic is difficult, follow the link to the corresponding Grammar Cheat Sheet to review the rules before trying again.</p>
+        <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+          <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+            Full Platform Guide <span class="material-icons">menu_book</span>
+          </a>
         </div>
       </div>
     </div>
@@ -210,10 +239,10 @@
           <span class="explanation-title">Explanation</span>
           <p id="explanation-text"></p>
         </div>
-      </div>
 
-      <div id="next-container" style="display:none; text-align:right;">
-        <button class="fc-btn" onclick="nextQuestion()">Next Question <span class="material-icons" style="vertical-align:middle; font-size:1.2rem;">arrow_forward</span></button>
+        <div id="next-container" style="display:none; margin-top: 1.5rem; justify-content: flex-end;">
+          <button class="fc-btn" onclick="nextQuestion()">Next Question <span class="material-icons" style="vertical-align:middle; font-size:1.2rem;">arrow_forward</span></button>
+        </div>
       </div>
     </div>
 
@@ -271,10 +300,10 @@
       card.className = 'quiz-card';
       card.onclick = () => startQuiz(idx);
       card.innerHTML = `
-        <span class="material-icons" style="font-size:2.5rem; color:var(--orange)">${cat.icon}</span>
+        <span class="material-icons" style="color:var(--orange)">${cat.icon}</span>
         <h3>${cat.category}</h3>
         <p>${cat.description}</p>
-        <div class="deck-count" style="margin-top:1rem;">${cat.questions.length} Questions</div>
+        <div class="deck-count" style="margin-top:0.8rem; font-size: 0.7rem;">${cat.questions.length} Questions</div>
       `;
       categoryGrid.appendChild(card);
     });
@@ -335,7 +364,7 @@
 
     document.getElementById('explanation-text').innerText = q.explanation;
     explanationBox.style.display = 'block';
-    nextContainer.style.display = 'block';
+    nextContainer.style.display = 'flex';
   }
 
   function nextQuestion() {

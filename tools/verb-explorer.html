@@ -96,23 +96,40 @@
     <p class="hero-desc">All 200 most common Dutch verbs. Search, filter by level or type, and track your mastery.</p>
   </div>
 
+  
   <!-- Help Modal -->
   <div class="help-modal" id="help-modal">
     <div class="help-content">
       <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
       <div class="help-body">
-        <h2>Explorer <em>Help</em></h2>
+        <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Verb Explorer <em>Guide</em></h2>
+        
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">search</span>
+                <h3 style="margin:0;">Search & Filter</h3>
+            </div>
+            <p>Find any verb by Dutch or English. Filter by type (regular/irregular) or CEFR level to focus your study.</p>
+          </div>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">list_alt</span>
+                <h3 style="margin:0;">Full Conjugations</h3>
+            </div>
+            <p>Click any verb to see its full forms in Present, Past, and Perfect tenses. Perfect for checking tricky irregulars.</p>
+          </div>
+        
         <div class="help-section">
-          <h3>Finding Verbs</h3>
-          <p>Search by Dutch or English names. Use the filters to drill down into specific levels (A1, A2, B1) or to hide verbs you've already mastered.</p>
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+              <span class="material-icons" style="color:var(--blue);">trending_up</span>
+              <h3 style="margin:0;">Build Muscle Memory</h3>
+          </div>
+          <p>This tool is designed for high-speed repetition. The goal is to reach a point where your choices are automatic.</p>
         </div>
-        <div class="help-section">
-          <h3>Conjugation Details</h3>
-          <p>Click any verb card to open the detail panel. There you'll find the full conjugation for present and past tenses, plus the past participle.</p>
-        </div>
-        <div class="help-section">
-          <h3>Mastery</h3>
-          <p>Mark verbs as "Mastered" within the detail panel. Mastered verbs get a green border and can be filtered out to focus on what's left.</p>
+        <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+          <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+            Full Platform Guide <span class="material-icons">menu_book</span>
+          </a>
         </div>
       </div>
     </div>

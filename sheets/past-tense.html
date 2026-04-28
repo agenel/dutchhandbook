@@ -21,32 +21,62 @@
 <meta name="twitter:description" content="Complete Dutch past tense guide: perfectum with hebben/zijn, 't kofschip rule, strong irregular verbs table, and imperfectum for narrative. B1.">
 <meta name="twitter:site" content="@soyludev">
   
+    
+    
     <!-- Help Modal -->
     <div class="help-modal" id="help-modal">
       <div class="help-content">
         <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
         <div class="help-body">
-          <h2>Sheet <em>Help</em></h2>
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
           <div class="help-section">
-            <h3>Test Mode</h3>
-            <p>Toggle <strong>Test Mode</strong> to hide translations and conjugations. Click on any blurred text to reveal it instantly. This is the best way to practice!</p>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
           </div>
           <div class="help-section">
-            <h3>Tracking Mastery</h3>
-            <p>Once you feel confident with this topic, click <strong>Mark as Mastered</strong> at the bottom. This will update your progress bar on the home page.</p>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
           </div>
           <div class="help-section">
-            <h3>Learning Tips</h3>
-            <p>Look for colored boxes and icons throughout the sheet for important grammar rules, common pitfalls, and study tips.</p>
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
           </div>
           <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
-            <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem;">
-              Full Guide <span class="material-icons">menu_book</span>
+            <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
             </a>
           </div>
         </div>
       </div>
     </div>
+
+
 
 <script type="application/ld+json">
   {
@@ -347,21 +377,35 @@ td.s-en   { font-size:0.77rem; color:var(--muted); font-style:italic; }
       <tr><th>Infinitive</th><th>Meaning</th><th>Imperfectum (hij)</th><th>Participle</th><th>Aux.</th></tr>
     </thead>
     <tbody>
-      <tr><td class="s-inf">zijn</td><td class="s-en">to be</td><td class="s-past">was / waren</td><td class="s-part">geweest</td><td>zijn</td></tr>
-      <tr><td class="s-inf">hebben</td><td class="s-en">to have</td><td class="s-past">had / hadden</td><td class="s-part">gehad</td><td>hebben</td></tr>
-      <tr><td class="s-inf">gaan</td><td class="s-en">to go</td><td class="s-past">ging / gingen</td><td class="s-part">gegaan</td><td>zijn</td></tr>
-      <tr><td class="s-inf">komen</td><td class="s-en">to come</td><td class="s-past">kwam / kwamen</td><td class="s-part">gekomen</td><td>zijn</td></tr>
-      <tr><td class="s-inf">zien</td><td class="s-en">to see</td><td class="s-past">zag / zagen</td><td class="s-part">gezien</td><td>hebben</td></tr>
-      <tr><td class="s-inf">doen</td><td class="s-en">to do</td><td class="s-past">deed / deden</td><td class="s-part">gedaan</td><td>hebben</td></tr>
-      <tr><td class="s-inf">rijden</td><td class="s-en">to drive/ride</td><td class="s-past">reed / reden</td><td class="s-part">gereden</td><td>zijn</td></tr>
-      <tr><td class="s-inf">schrijven</td><td class="s-en">to write</td><td class="s-past">schreef / schreven</td><td class="s-part">geschreven</td><td>hebben</td></tr>
-      <tr><td class="s-inf">lezen</td><td class="s-en">to read</td><td class="s-past">las / lazen</td><td class="s-part">gelezen</td><td>hebben</td></tr>
-      <tr><td class="s-inf">eten</td><td class="s-en">to eat</td><td class="s-past">at / aten</td><td class="s-part">gegeten</td><td>hebben</td></tr>
-      <tr><td class="s-inf">drinken</td><td class="s-en">to drink</td><td class="s-past">dronk / dronken</td><td class="s-part">gedronken</td><td>hebben</td></tr>
-      <tr><td class="s-inf">vinden</td><td class="s-en">to find / think</td><td class="s-past">vond / vonden</td><td class="s-part">gevonden</td><td>hebben</td></tr>
-      <tr><td class="s-inf">worden</td><td class="s-en">to become</td><td class="s-past">werd / werden</td><td class="s-part">geworden</td><td>zijn</td></tr>
-      <tr><td class="s-inf">helpen</td><td class="s-en">to help</td><td class="s-past">hielp / hielpen</td><td class="s-part">geholpen</td><td>hebben</td></tr>
-    </tbody>
+      <tr><td class="s-inf">zijn</td><td class="s-en">to be</td><td class="s-past">was / waren</td><td class="s-part">geweest</td><td class="en">zijn</td>
+      </tr>
+      <tr><td class="s-inf">hebben</td><td class="s-en">to have</td><td class="s-past">had / hadden</td><td class="s-part">gehad</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">gaan</td><td class="s-en">to go</td><td class="s-past">ging / gingen</td><td class="s-part">gegaan</td><td class="en">zijn</td>
+      </tr>
+      <tr><td class="s-inf">komen</td><td class="s-en">to come</td><td class="s-past">kwam / kwamen</td><td class="s-part">gekomen</td><td class="en">zijn</td>
+      </tr>
+      <tr><td class="s-inf">zien</td><td class="s-en">to see</td><td class="s-past">zag / zagen</td><td class="s-part">gezien</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">doen</td><td class="s-en">to do</td><td class="s-past">deed / deden</td><td class="s-part">gedaan</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">rijden</td><td class="s-en">to drive/ride</td><td class="s-past">reed / reden</td><td class="s-part">gereden</td><td class="en">zijn</td>
+      </tr>
+      <tr><td class="s-inf">schrijven</td><td class="s-en">to write</td><td class="s-past">schreef / schreven</td><td class="s-part">geschreven</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">lezen</td><td class="s-en">to read</td><td class="s-past">las / lazen</td><td class="s-part">gelezen</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">eten</td><td class="s-en">to eat</td><td class="s-past">at / aten</td><td class="s-part">gegeten</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">drinken</td><td class="s-en">to drink</td><td class="s-past">dronk / dronken</td><td class="s-part">gedronken</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">vinden</td><td class="s-en">to find / think</td><td class="s-past">vond / vonden</td><td class="s-part">gevonden</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">worden</td><td class="s-en">to become</td><td class="s-past">werd / werden</td><td class="s-part">geworden</td><td class="en">zijn</td>
+      </tr>
+      <tr><td class="s-inf">helpen</td><td class="s-en">to help</td><td class="s-past">hielp / hielpen</td><td class="s-part">geholpen</td><td class="en">hebben</td>
+      </tr>
+      </tbody>
   </table>
 
   <div class="section-title anim a5">When to Use Each Tense</div>

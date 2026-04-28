@@ -5,36 +5,16 @@ window.DUTCH_QUIZ_DATA = [
     "icon": "auto_fix_high",
     "description": "Practice present tense endings for regular and irregular verbs.",
     "questions": [
-      {
-        "question": "What is the correct conjugation: Ik ___ (hebben) een appel.",
-        "options": ["heb", "hebt", "heeft", "hebben"],
-        "correct": 0,
-        "explanation": "For 'ik', you use the stem of the verb. Stem of hebben is 'heb'."
-      },
-      {
-        "question": "What is the correct conjugation: Jij ___ (lopen) naar huis.",
-        "options": ["loop", "loopt", "lopen", "liep"],
-        "correct": 1,
-        "explanation": "For 'jij/je', you add -t to the stem (loop + t = loopt)."
-      },
-      {
-        "question": "What is the correct conjugation: Wij ___ (werken) vandaag.",
-        "options": ["werk", "werkt", "werken", "gewerkt"],
-        "correct": 2,
-        "explanation": "For plural subjects (wij, jullie, zij), you use the infinitive form."
-      },
-      {
-        "question": "Which is correct for the modal verb 'kunnen' (can): Hij ___ goed zwemmen.",
-        "options": ["kan", "kant", "kunnen", "gekund"],
-        "correct": 0,
-        "explanation": "Modal verbs often have irregular 'hij' forms. 'Hij kan' is the correct form."
-      },
-      {
-        "question": "What is the stem of the verb 'reizen' (to travel)?",
-        "options": ["reize", "reiz", "reis", "reist"],
-        "correct": 2,
-        "explanation": "To get the stem, remove -en. If it ends in -zen, the z becomes s. (reizen -> reiz -> reis)."
-      }
+      { "question": "Ik ___ (hebben) een appel.", "options": ["heb","hebt","heeft","hebben"], "correct": 0, "explanation": "For 'ik', use the verb stem. The stem of 'hebben' is 'heb'." },
+      { "question": "Jij ___ (lopen) naar huis.", "options": ["loop","loopt","lopen","liep"], "correct": 1, "explanation": "For 'jij/je', add -t to the stem: loop + t = loopt." },
+      { "question": "Wij ___ (werken) vandaag.", "options": ["werk","werkt","werken","gewerkt"], "correct": 2, "explanation": "For plural subjects (wij, jullie, zij), use the infinitive form." },
+      { "question": "Hij ___ (kunnen) goed zwemmen.", "options": ["kan","kant","kunnen","gekund"], "correct": 0, "explanation": "Modal verbs have irregular forms. 'Hij kan' is correct." },
+      { "question": "What is the stem of 'reizen' (to travel)?", "options": ["reize","reiz","reis","reist"], "correct": 2, "explanation": "Remove -en, then change z→s at the end of a stem: reizen → reiz → reis." },
+      { "question": "Hij ___ (zijn) ziek vandaag.", "options": ["is","ben","bent","zijn"], "correct": 0, "explanation": "'Hij/zij/het' always uses 'is' with the verb zijn." },
+      { "question": "Jullie ___ (zijn) moe.", "options": ["is","ben","bent","zijn"], "correct": 3, "explanation": "For plural subjects, 'zijn' stays as 'zijn'." },
+      { "question": "Ik ___ (willen) koffie.", "options": ["wil","wilt","wille","willen"], "correct": 0, "explanation": "Modal verb 'willen' → ik wil (stem, no -t)." },
+      { "question": "Zij (she) ___ (werken) bij een bank.", "options": ["werk","werkt","werken","gewerkt"], "correct": 1, "explanation": "For 'zij' (singular), add -t to the stem: werk + t = werkt." },
+      { "question": "What happens to the -t ending when 'jij' comes AFTER the verb?", "options": ["stays","drops","doubles","adds -te"], "correct": 1, "explanation": "The -t drops with inversion: 'Werkt jij?' → 'Werk jij?' (t-drop rule)." }
     ]
   },
   {
@@ -43,36 +23,16 @@ window.DUTCH_QUIZ_DATA = [
     "icon": "category",
     "description": "Test your intuition on Dutch noun genders.",
     "questions": [
-      {
-        "question": "Which article is used for 'meisje' (girl)?",
-        "options": ["de", "het"],
-        "correct": 1,
-        "explanation": "Diminutives (words ending in -je) always take 'het'."
-      },
-      {
-        "question": "Which article is used for 'auto' (car)?",
-        "options": ["de", "het"],
-        "correct": 0,
-        "explanation": "'Auto' is a common noun that takes 'de'."
-      },
-      {
-        "question": "Which article is used for 'boeken' (books)?",
-        "options": ["de", "het"],
-        "correct": 0,
-        "explanation": "All plural nouns in Dutch take 'de', regardless of their singular article."
-      },
-      {
-        "question": "Which article is used for 'vrijheid' (freedom)?",
-        "options": ["de", "het"],
-        "correct": 0,
-        "explanation": "Nouns ending in -heid are always 'de' words."
-      },
-      {
-        "question": "Which article is used for 'water'?",
-        "options": ["de", "het"],
-        "correct": 1,
-        "explanation": "'Water' is a neuter noun and takes 'het'."
-      }
+      { "question": "Which article: 'meisje' (girl)?", "options": ["de","het"], "correct": 1, "explanation": "Diminutives ending in -je always take 'het'." },
+      { "question": "Which article: 'auto' (car)?", "options": ["de","het"], "correct": 0, "explanation": "'Auto' is a de-word." },
+      { "question": "Which article: 'boeken' (books — plural)?", "options": ["de","het"], "correct": 0, "explanation": "All Dutch plural nouns take 'de'." },
+      { "question": "Which article: 'vrijheid' (freedom)?", "options": ["de","het"], "correct": 0, "explanation": "All nouns ending in -heid take 'de'." },
+      { "question": "Which article: 'water'?", "options": ["de","het"], "correct": 1, "explanation": "'Water' is a neuter noun: het water." },
+      { "question": "Which article: 'kind' (child)?", "options": ["de","het"], "correct": 1, "explanation": "'Het kind' — this is a common irregular het-word to memorise." },
+      { "question": "Which article: 'huis' (house)?", "options": ["de","het"], "correct": 1, "explanation": "'Het huis' — neuter noun." },
+      { "question": "Which article: 'tafel' (table)?", "options": ["de","het"], "correct": 0, "explanation": "'De tafel' — common object nouns are often de-words." },
+      { "question": "All nouns ending in -ing are…", "options": ["de-words","het-words","either"], "correct": 0, "explanation": "Words ending in -ing (like 'opleiding', 'vergadering') always take 'de'." },
+      { "question": "All diminutives (words ending in -je) take which article?", "options": ["de","het"], "correct": 1, "explanation": "This is one of the most reliable rules: -je words are ALWAYS het-words." }
     ]
   },
   {
@@ -81,29 +41,185 @@ window.DUTCH_QUIZ_DATA = [
     "icon": "low_priority",
     "description": "Master the position of verbs in Dutch sentences.",
     "questions": [
-      {
-        "question": "In a standard main clause, which position does the finite verb take?",
-        "options": ["First", "Second", "Last", "Anywhere"],
-        "correct": 1,
-        "explanation": "Dutch follows the V2 rule: the conjugated verb must be the second element in a main clause."
-      },
-      {
-        "question": "Which sentence is correct?",
-        "options": [
-          "Morgen ik ga naar Amsterdam.",
-          "Morgen ga ik naar Amsterdam.",
-          "Ik morgen ga naar Amsterdam.",
-          "Ga ik morgen naar Amsterdam."
-        ],
-        "correct": 1,
-        "explanation": "When a sentence starts with something other than the subject (like 'Morgen'), inversion occurs: the verb stays in 2nd position, and the subject follows it."
-      },
-      {
-        "question": "Where does the 'niet' (not) go in: 'Ik begrijp het ___.'",
-        "options": ["niet", "voor het", "na de ik", "is niet nodig"],
-        "correct": 0,
-        "explanation": "'Niet' usually comes after the finite verb and the direct object if it's a pronoun like 'het'."
-      }
+      { "question": "In a standard Dutch main clause, the conjugated verb is always in position…", "options": ["1st","2nd","Last","3rd"], "correct": 1, "explanation": "This is the V2 (verb-second) rule: the finite verb is always element #2." },
+      { "question": "Which sentence is correct?", "options": ["Morgen ik ga naar Amsterdam.","Morgen ga ik naar Amsterdam.","Ik morgen ga naar Amsterdam.","Ga morgen ik naar Amsterdam."], "correct": 1, "explanation": "When a time word starts the sentence, inversion occurs: verb stays 2nd, subject follows." },
+      { "question": "Where does 'niet' go in: 'Ik begrijp het ___.'?", "options": ["niet","voor het","after 'begrijp'","it doesn't matter"], "correct": 0, "explanation": "'Niet' usually comes at the end when negating the whole verb action." },
+      { "question": "In a subordinate clause (starting with 'omdat'), where does the verb go?", "options": ["2nd position","1st position","At the end","After the subject"], "correct": 2, "explanation": "In subordinate clauses, the verb moves to the END: 'omdat ik ziek ben'." },
+      { "question": "Which is the correct subordinate clause?", "options": ["...omdat ik ben ziek.","...omdat ik ziek ben.","...omdat ben ik ziek.","...omdat ziek ben ik."], "correct": 1, "explanation": "In subclauses, the verb goes last: 'omdat ik ziek ben'." },
+      { "question": "Infinitives and participles in a verb cluster go to the…", "options": ["beginning","middle","end"], "correct": 2, "explanation": "In Dutch, infinitives and past participles cluster at the END of the sentence." },
+      { "question": "What is the correct word order? '___ ga ik naar school.'", "options": ["Morgen","Ik morgen","School morgen","Ben"], "correct": 0, "explanation": "A time adverb like 'Morgen' can start a sentence, causing inversion." }
+    ]
+  },
+  {
+    "category": "Pronouns",
+    "id": "pronouns",
+    "icon": "person",
+    "description": "Subject, object, and possessive pronouns in Dutch.",
+    "questions": [
+      { "question": "What is the object form of 'jij'?", "options": ["je/jou","jij","jouw","jullie"], "correct": 0, "explanation": "The object form of 'jij' is 'jou' (stressed) or 'je' (unstressed)." },
+      { "question": "What is the possessive form of 'wij'?", "options": ["we","ons/onze","hen","hun"], "correct": 1, "explanation": "'Ons' (before het-words) and 'onze' (before de-words/plurals) are the possessives for 'wij'." },
+      { "question": "Which is the formal/polite 'you' in Dutch?", "options": ["jij","jullie","u","jou"], "correct": 2, "explanation": "'U' is the formal second-person pronoun, used with elders or strangers." },
+      { "question": "What is the object form of 'hij'?", "options": ["hij","zijn","hem","hun"], "correct": 2, "explanation": "Object form of 'hij' is 'hem': 'Ik zie hem.' (I see him.)" },
+      { "question": "Which pronoun means 'them' as a direct object?", "options": ["hun","hen","zij","ze"], "correct": 1, "explanation": "'Hen' is the direct object form ('Ik zie hen'). 'Hun' is used as indirect object." },
+      { "question": "What is the possessive for 'jij' (informal you)?", "options": ["jou","je/jouw","jullie","u"], "correct": 1, "explanation": "'Jouw' (stressed) or 'je' (unstressed) are the possessive forms of 'jij'." },
+      { "question": "Fill in: '___ heten Jan en Marie.' (They are named Jan and Marie.)", "options": ["Hun","Hen","Zij","Ze"], "correct": 2, "explanation": "'Zij' or 'Ze' are the subject forms (they). 'Hun/Hen' are object forms." }
+    ]
+  },
+  {
+    "category": "Negation (Geen & Niet)",
+    "id": "negation",
+    "icon": "block",
+    "description": "Learn when to use 'geen' vs 'niet'.",
+    "questions": [
+      { "question": "Which word negates a noun without an article? 'Ik heb ___ tijd.'", "options": ["niet","geen","nee","nooit"], "correct": 1, "explanation": "'Geen' negates nouns (without or with 'een'): 'Ik heb geen tijd.'" },
+      { "question": "Which word negates a verb? 'Ik slaap ___ goed.'", "options": ["geen","niet","nooit","niks"], "correct": 1, "explanation": "'Niet' negates verbs and adjectives: 'Ik slaap niet goed.'" },
+      { "question": "Correct sentence: 'I don't have a car.'", "options": ["Ik heb niet een auto.","Ik heb geen auto.","Ik heb auto niet.","Ik niet heb een auto."], "correct": 1, "explanation": "'Geen' replaces the indefinite article + noun: 'Ik heb geen auto.'" },
+      { "question": "Where does 'niet' go with a prepositional phrase? 'Ik ga ___ naar school.'", "options": ["Ik niet ga naar school.","Ik ga niet naar school.","Ik ga naar niet school.","Niet ik ga naar school."], "correct": 1, "explanation": "'Niet' goes BEFORE the prepositional phrase it negates." },
+      { "question": "Which is correct: 'That is not my bag.'", "options": ["Dat is geen mijn tas.","Dat is mijn tas niet.","Dat is niet mijn tas.","Dat niet is mijn tas."], "correct": 2, "explanation": "When negating a possessive, 'niet' goes before it: 'niet mijn tas'." },
+      { "question": "Which is correct to negate 'De hond is groot'?", "options": ["De hond is geen groot.","De hond is niet groot.","De hond niet is groot.","Geen hond is groot."], "correct": 1, "explanation": "'Niet' negates adjectives and comes right before them." }
+    ]
+  },
+  {
+    "category": "Past Tense (Preterite)",
+    "id": "past_tense",
+    "icon": "history",
+    "description": "Form the simple past with zijn, hebben, and regular verbs.",
+    "questions": [
+      { "question": "What is the simple past (preterite) of 'zijn' for 'ik'?", "options": ["ben","was","werd","geweest"], "correct": 1, "explanation": "'Ik was' is the past tense of 'zijn'. Completely irregular." },
+      { "question": "What is the past tense of 'hebben' for 'jij'?", "options": ["hebt","heeft","had","heb"], "correct": 2, "explanation": "'Jij had' is the past tense of 'hebben'." },
+      { "question": "For a regular verb with a 't kofschip stem, the past tense ending is…", "options": ["-de/-den","-te/-ten","-ed","-en"], "correct": 1, "explanation": "If the last letter of the stem is in 't kofschip (t, k, f, s, ch, p), you add -te/-ten." },
+      { "question": "Past tense of 'werken' (to work) for 'ik'?", "options": ["werkde","werkte","gewerkt","werk"], "correct": 1, "explanation": "Stem is 'werk'. 'k' is in 't kofschip → add -te: 'ik werkte'." },
+      { "question": "Past tense of 'leven' (to live) for 'ik'?", "options": ["leefde","leefde","levede","geleefd"], "correct": 0, "explanation": "Stem is 'leef' (v→f). 'f' is in 't kofschip → BUT v in stem means -de: 'ik leefde'." },
+      { "question": "Which auxiliary verb ('zijn' or 'hebben') is used with 'gaan' (to go) in the perfect tense?", "options": ["hebben","zijn","both","neither"], "correct": 1, "explanation": "Motion/change-of-state verbs use 'zijn': 'Ik ben gegaan'." },
+      { "question": "Perfect tense: 'I have eaten.' = ?", "options": ["Ik heb gegeten.","Ik ben gegeten.","Ik had gegeten.","Ik heb eten."], "correct": 0, "explanation": "'Eten' uses 'hebben'. Past participle is 'gegeten': 'Ik heb gegeten.'" }
+    ]
+  },
+  {
+    "category": "Adjective Declension",
+    "id": "adjectives",
+    "icon": "text_fields",
+    "description": "When to add -e to adjectives in Dutch.",
+    "questions": [
+      { "question": "Which is correct: 'a big house' (het huis)?", "options": ["een groot huis","een grote huis","een groote huis","het grote huis"], "correct": 0, "explanation": "After 'een' before a het-word, the adjective does NOT get -e: 'een groot huis'." },
+      { "question": "Which is correct: 'the big house'?", "options": ["het groot huis","het grote huis","de grote huis","het groote huis"], "correct": 1, "explanation": "After 'het' (definite), the adjective DOES get -e: 'het grote huis'." },
+      { "question": "Which is correct: 'a red car' (de auto)?", "options": ["een rood auto","een rode auto","de rode auto","rood een auto"], "correct": 1, "explanation": "Before a de-word with 'een', the adjective always gets -e: 'een rode auto'." },
+      { "question": "Which is correct: 'beautiful flowers' (de bloemen — plural)?", "options": ["mooie bloemen","mooi bloemen","mooier bloemen","mooiste bloemen"], "correct": 0, "explanation": "In plural, adjectives always get -e: 'mooie bloemen'." },
+      { "question": "Adjectives that are used alone after a verb (predicatively) get -e ending?", "options": ["Yes, always","No, never","Only with de-words"], "correct": 1, "explanation": "Predicative adjectives (after zijn, worden) NEVER get -e: 'De auto is rood.'" },
+      { "question": "Which is correct: 'an old woman'? (de vrouw)", "options": ["een oud vrouw","een oude vrouw","de oud vrouw","een oude vrouw"], "correct": 1, "explanation": "Before a de-word with 'een', always add -e: 'een oude vrouw'." }
+    ]
+  },
+  {
+    "category": "Modal Verbs",
+    "id": "modals",
+    "icon": "psychology",
+    "description": "Kunnen, mogen, moeten, willen, zullen, hoeven.",
+    "questions": [
+      { "question": "Which modal expresses 'must / have to'?", "options": ["kunnen","mogen","moeten","willen"], "correct": 2, "explanation": "'Moeten' means must/have to: 'Ik moet studeren.'" },
+      { "question": "Which modal expresses 'may / to be allowed to'?", "options": ["kunnen","mogen","moeten","willen"], "correct": 1, "explanation": "'Mogen' means may/be allowed: 'Mag ik hier zitten?'" },
+      { "question": "Which modal expresses 'can / to be able to'?", "options": ["kunnen","mogen","moeten","willen"], "correct": 0, "explanation": "'Kunnen' means can/be able to: 'Ik kan zwemmen.'" },
+      { "question": "Correct sentence: 'I don't have to go.'", "options": ["Ik moet niet gaan.","Ik hoef niet te gaan.","Ik kan niet gaan.","Ik mag niet gaan."], "correct": 1, "explanation": "'Hoeven … niet te' expresses 'don't have to'. 'Moet niet' means 'must not'." },
+      { "question": "Where does the infinitive go in a modal sentence: 'Hij wil ...'?", "options": ["Before the modal","After the modal at the end","In the middle","Anywhere"], "correct": 1, "explanation": "The dependent infinitive always comes at the END: 'Hij wil koffie drinken.'" },
+      { "question": "Which is correct: 'You are not allowed to smoke here.'", "options": ["Je moet hier niet roken.","Je hoeft hier niet te roken.","Je mag hier niet roken.","Je kunt hier niet roken."], "correct": 2, "explanation": "'Mogen' expresses permission. 'Mag niet' = not allowed." }
+    ]
+  },
+  {
+    "category": "Separable Verbs",
+    "id": "separable",
+    "icon": "call_split",
+    "description": "How separable verbs work in main and subordinate clauses.",
+    "questions": [
+      { "question": "What happens to a separable verb in a main clause? E.g. 'opbellen' (to call)", "options": ["stays together","prefix moves to the end","prefix stays at front","both parts move to end"], "correct": 1, "explanation": "The prefix separates and moves to the END: 'Ik bel hem op.'" },
+      { "question": "Correct sentence with 'meenemen' (to take along): 'I take the book along.'", "options": ["Ik meeneem het boek.","Ik neem het boek mee.","Ik neem mee het boek.","Ik meenemen het boek."], "correct": 1, "explanation": "Prefix 'mee' goes to end: 'Ik neem het boek mee.'" },
+      { "question": "In a subordinate clause, does a separable verb split up?", "options": ["Yes, prefix goes to end","No, it stays together","Yes, prefix goes to front","Only with modals"], "correct": 1, "explanation": "In subclauses the verb goes to the end as one unit: '...omdat hij het boek meeneemt.'" },
+      { "question": "What is the past participle of 'opbellen'?", "options": ["gebeld op","opgebeld","opbegeld","gebelop"], "correct": 1, "explanation": "The ge- is inserted between the prefix and stem: op + ge + beld = opgebeld." },
+      { "question": "Which sentence correctly uses 'uitgaan' (to go out)?", "options": ["Ik uitgaan vanavond.","Ik ga vanavond uit.","Vanavond ik ga uit.","Ik ga uit vanavond."], "correct": 1, "explanation": "Prefix 'uit' separates to the end. With inversion: 'Vanavond ga ik uit.'" }
+    ]
+  },
+  {
+    "category": "The Word 'Er'",
+    "id": "er",
+    "icon": "swap_horiz",
+    "description": "The many uses of 'er' in Dutch.",
+    "questions": [
+      { "question": "In 'Er zijn drie stoelen,' what function does 'er' serve?", "options": ["Location","Pronoun for thing","Existential placeholder","Part of verb"], "correct": 2, "explanation": "'Er zijn' is the existential construction meaning 'there are'." },
+      { "question": "Rewrite with 'er': 'Ik praat over het probleem.' → 'Ik praat ___ over.'", "options": ["er","hier","daar","het"], "correct": 0, "explanation": "'Er' replaces a prepositional phrase (over + het) → 'Ik praat er over' / 'Ik praat erover.'" },
+      { "question": "'Er' as a location means roughly…", "options": ["here","there (a place already mentioned)","everywhere","nowhere"], "correct": 1, "explanation": "'Er' as a location pronoun refers back to a place just mentioned, like 'there'." },
+      { "question": "Which is correct: 'I have three of them.'", "options": ["Ik heb drie ervan.","Ik heb er drie van.","Ik heb drie van hen.","Ik heb er drie."], "correct": 1, "explanation": "With quantities, 'er' precedes the number: 'Ik heb er drie (van).'" },
+      { "question": "Complete: 'Ik ben ___ blij mee.' (I am happy with it.)", "options": ["er","het","dat","hier"], "correct": 0, "explanation": "'Ermee' / 'er … mee' replaces 'met het': 'Ik ben er blij mee.'" }
+    ]
+  },
+  {
+    "category": "Diminutives",
+    "id": "diminutives",
+    "icon": "child_care",
+    "description": "Learn the rules for forming small versions of nouns (-je, -tje, etc).",
+    "questions": [
+      { "question": "What is the diminutive of 'boom' (tree)?", "options": ["boomje","boompje","boomtje","boometje"], "correct": 1, "explanation": "Nouns ending in -m usually take -pje: boompje." },
+      { "question": "What is the diminutive of 'tafel' (table)?", "options": ["tafelje","tafeltje","tafelpje","tafeletje"], "correct": 1, "explanation": "Nouns ending in -l, -n, or -r after a long vowel take -tje: tafeltje." },
+      { "question": "What is the diminutive of 'man'?", "options": ["manje","mantje","mannetje","manpje"], "correct": 2, "explanation": "Short vowel + n/m/l/r takes -etje: mannetje." },
+      { "question": "What is the diminutive of 'huis'?", "options": ["huisje","huistje","huispje","huisetje"], "correct": 0, "explanation": "Most nouns take -je: huisje." },
+      { "question": "Which article is used for ALL diminutives?", "options": ["de","het"], "correct": 1, "explanation": "Diminutives are always 'het' words." }
+    ]
+  },
+  {
+    "category": "Plurals",
+    "id": "plurals",
+    "icon": "groups",
+    "description": "Master -en, -s and irregular plural forms.",
+    "questions": [
+      { "question": "What is the plural of 'boek'?", "options": ["boeks","boeken","boektje","boeker"], "correct": 1, "explanation": "Most Dutch nouns take -en: boeken." },
+      { "question": "What is the plural of 'auto'?", "options": ["autoen","autos","auto's","auton"], "correct": 2, "explanation": "Nouns ending in a long vowel (except -e) take -'s: auto's." },
+      { "question": "What is the plural of 'vader'?", "options": ["vaderen","vaders","vader's","vadere"], "correct": 1, "explanation": "Nouns ending in -el, -em, -en, -er usually take -s: vaders." },
+      { "question": "What is the plural of 'stad' (city)?", "options": ["stads","staden","steden","stedes"], "correct": 2, "explanation": "'Stad' is irregular: the plural is 'steden'." },
+      { "question": "What happens to 'f' at the end of a noun in plural (e.g. 'brief')?", "options": ["stays f","becomes v","becomes ff","drops"], "correct": 1, "explanation": "F usually becomes V: brief → brieven." }
+    ]
+  },
+  {
+    "category": "Inversion",
+    "id": "inversion",
+    "icon": "swap_vert",
+    "description": "Practice switching subject and verb when sentences don't start with the subject.",
+    "questions": [
+      { "question": "Correct this: 'Vandaag ik werk.'", "options": ["Vandaag ik werk.","Vandaag werk ik.","Ik vandaag werk.","Werk vandaag ik."], "correct": 1, "explanation": "If a sentence starts with something other than the subject, the verb comes first: Vandaag werk ik." },
+      { "question": "When asking a question, where does the verb go?", "options": ["1st position","2nd position","End","3rd position"], "correct": 0, "explanation": "In yes/no questions, the verb starts the sentence: 'Werk jij vandaag?'" },
+      { "question": "What happens to the -t in 'jij werkt' during inversion?", "options": ["stays","drops","becomes -d","becomes -en"], "correct": 1, "explanation": "In inversion with 'jij' as the subject, the -t drops: 'Werk jij?'" },
+      { "question": "Does inversion happen after 'en', 'maar', or 'want'?", "options": ["Yes","No","Sometimes"], "correct": 1, "explanation": "Coordinating conjunctions (en, maar, want, of) do NOT cause inversion." }
+    ]
+  },
+  {
+    "category": "Prepositions",
+    "id": "prepositions",
+    "icon": "explore",
+    "description": "Common Dutch prepositions and their usage.",
+    "questions": [
+      { "question": "Which preposition means 'to' (a city/country)?", "options": ["naar","aan","bij","tot"], "correct": 0, "explanation": "'Naar' is used for directions: 'Ik ga naar Amsterdam'." },
+      { "question": "Which preposition is used for 'waiting FOR'?", "options": ["voor","op","aan","bij"], "correct": 1, "explanation": "'Wachten op' is a fixed combination: 'Ik wacht op de bus'." },
+      { "question": "Which preposition is used for 'thinking ABOUT'?", "options": ["over","aan","op","bij"], "correct": 1, "explanation": "'Denken aan' is the standard way to say think about/of someone/something." },
+      { "question": "Which preposition means 'at/by' (a person's house/business)?", "options": ["naar","bij","aan","op"], "correct": 1, "explanation": "'Bij' is used for 'at': 'Ik ben bij de kapper' (at the hairdresser)." }
+    ]
+  },
+  {
+    "category": "Reflexive Verbs",
+    "id": "reflexive",
+    "icon": "self_improvement",
+    "description": "Practice verbs where the action reflects back on the subject.",
+    "questions": [
+      { "question": "How do you say 'I wash myself'?", "options": ["Ik was mij.","Ik was me.","Ik was zich.","Ik was jou."], "correct": 1, "explanation": "For 'ik', use the reflexive pronoun 'me' (or 'mij'): 'Ik was me'." },
+      { "question": "What is the reflexive pronoun for 'u' (formal)?", "options": ["me","zich/u","zichzelf","je"], "correct": 1, "explanation": "For 'u', use 'u' or 'zich': 'U wast u' or 'U wast zich'." },
+      { "question": "What is the reflexive pronoun for 'hij/zij/het'?", "options": ["hem","haar","zich","ze"], "correct": 2, "explanation": "Singular and plural 3rd person (hij/zij/wij/jullie/zij) use 'zich': 'Hij wast zich'." },
+      { "question": "Complete: 'Wij vergissen ___.' (We are mistaken.)", "options": ["ons","zich","me","je"], "correct": 0, "explanation": "For 'wij', the reflexive is 'ons': 'Wij vergissen ons'." }
+    ]
+  },
+  {
+    "category": "Time & Dates",
+    "id": "time",
+    "icon": "schedule",
+    "description": "Learn how to tell time and talk about days in Dutch.",
+    "questions": [
+      { "question": "How do you say 'half past two' in Dutch?", "options": ["half twee","half drie","twee uur dertig","half over twee"], "correct": 1, "explanation": "Dutch says 'half' of the NEXT hour: 'half drie' is 2:30." },
+      { "question": "What is 2:20 in Dutch?", "options": ["tien voor half drie","tien over twee","tien voor twee","twintig over twee"], "correct": 0, "explanation": "Between 20-40 mins, Dutch uses the half hour as a reference: 'tien voor half drie'." },
+      { "question": "How do you say 'quarter to four'?", "options": ["kwart over vier","kwart voor vier","kwart over drie","kwart voor drie"], "correct": 1, "explanation": "'Kwart voor vier' is 3:45." },
+      { "question": "Which day is 'woensdag'?", "options": ["Tuesday","Wednesday","Thursday","Friday"], "correct": 1, "explanation": "Maandag, dinsdag, WOENSDAG (Wednesday)." }
     ]
   }
 ];

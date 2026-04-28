@@ -21,32 +21,62 @@
 <meta name="twitter:description" content="The 5 essential Dutch modal verbs: kunnen, moeten, mogen, willen, zullen. Conjugation tables, sentence structure, and infinitive placement. A2.">
 <meta name="twitter:site" content="@soyludev">
   
+    
+    
     <!-- Help Modal -->
     <div class="help-modal" id="help-modal">
       <div class="help-content">
         <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
         <div class="help-body">
-          <h2>Sheet <em>Help</em></h2>
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
           <div class="help-section">
-            <h3>Test Mode</h3>
-            <p>Toggle <strong>Test Mode</strong> to hide translations and conjugations. Click on any blurred text to reveal it instantly. This is the best way to practice!</p>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
           </div>
           <div class="help-section">
-            <h3>Tracking Mastery</h3>
-            <p>Once you feel confident with this topic, click <strong>Mark as Mastered</strong> at the bottom. This will update your progress bar on the home page.</p>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
           </div>
           <div class="help-section">
-            <h3>Learning Tips</h3>
-            <p>Look for colored boxes and icons throughout the sheet for important grammar rules, common pitfalls, and study tips.</p>
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
           </div>
           <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
-            <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem;">
-              Full Guide <span class="material-icons">menu_book</span>
+            <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
             </a>
           </div>
         </div>
       </div>
     </div>
+
+
 
 <script type="application/ld+json">
   {
