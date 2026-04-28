@@ -1493,6 +1493,30 @@ tr.row-hi td {
   padding: 1.2rem 1rem 0.4rem;
 }
 
+/* Flat-link variant used on sheet pages */
+.hub-mobile-link {
+  display: block;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 1rem;
+  transition: all 0.15s;
+}
+.hub-mobile-link:hover,
+.hub-mobile-link.active { background: var(--orange-bg); color: var(--orange); }
+
+.hub-mobile-section {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding: 1.2rem 1rem 0.4rem;
+}
+
 /* Hub Tool Cards */
 .tools-grid {
   display: grid;
