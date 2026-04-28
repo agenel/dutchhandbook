@@ -31,45 +31,81 @@
 <script src="../data/knm-data/ch10-data.js"></script>
 
 <style>
-  .exam-container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+  .page { padding-bottom: 4rem; }
+  .exam-content { max-width: 800px; margin: 0 auto; }
   
   /* Start Screen */
   .setup-card {
     background: var(--white);
-    padding: 3rem;
-    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    border-radius: 32px;
     border: 1.5px solid var(--border);
     text-align: center;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    background-image: radial-gradient(circle at top right, var(--orange-bg), transparent 300px);
   }
-  .setup-card h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: var(--ink); }
-  .setup-card p { color: var(--muted); margin-bottom: 2rem; }
+  .setup-card h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; margin-bottom: 0.5rem; color: var(--ink); }
+  .setup-card p { color: var(--muted); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.5; font-size: 0.95rem; }
   
   .option-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.8rem;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
   }
-  @media (max-width: 700px) { .option-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 400px) { .option-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 768px) { .option-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .option-grid { grid-template-columns: 1fr; } }
   
   .length-btn {
-    padding: 1.2rem 0.8rem;
+    padding: 1rem 0.8rem;
     border: 1.5px solid var(--border);
-    border-radius: 16px;
+    border-radius: 20px;
     background: var(--white);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 100px;
+    position: relative;
   }
-  .length-btn:hover { border-color: var(--orange); background: var(--orange-bg); }
-  .length-btn.active { border-color: var(--orange); background: var(--orange-bg); color: var(--orange); font-weight: 700; }
-  .length-btn span { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 400; margin-top: 0.3rem; }
+  .length-btn:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+  .length-btn.active { border-color: var(--orange); background: var(--orange-bg); border-width: 2px; }
+  .length-btn.active::after {
+    content: 'check_circle';
+    font-family: 'Material Icons';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--white);
+    color: var(--orange);
+    border-radius: 50%;
+    font-size: 18px;
+  }
+
+  .start-btn {
+    padding: 1rem 4rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 100px;
+    background: var(--orange);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(232, 80, 10, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0 auto;
+  }
+  .start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(232, 80, 10, 0.3);
+    background: #ff5a00;
+  }
+  .length-btn span { display: block; font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-top: 0.3rem; line-height: 1.2; }
 
   /* Exam UI */
   .exam-ui { display: none; }
@@ -161,15 +197,16 @@
         <li><a href="knm-exam.html" class="active">KNM Exam</a></li>
       </ul>
       <div class="fc-toggle-wrap">
-        <button id="dark-toggle" class="fc-btn icon-only"><span class="material-icons">dark_mode</span></button>
+        <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode" aria-label="Toggle dark mode"><span class="material-icons" aria-hidden="true">dark_mode</span></button>
+        <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
       </div>
     </div>
   </nav>
 
-  <div class="exam-container">
-    <div class="hero" style="border-bottom:none; padding-top:1rem; text-align:center; margin-bottom:2rem;">
-      <h1 style="font-family:'Playfair Display', serif; font-size: 3rem; margin-bottom:0.5rem;">KNM <em>Exam</em> <button class="help-trigger" id="help-trigger" title="How it works"><span class="material-icons">help_outline</span></button></h1>
-      <p style="color:var(--muted);">Kennis van de Nederlandse Maatschappij</p>
+  <div class="page">
+    <div class="hero" style="border-bottom:none; padding-top:0.5rem; text-align:center; margin-bottom:1rem;">
+      <h1 style="font-family:'Playfair Display', serif; font-size: 2.8rem; margin-bottom:0.2rem;">KNM <em>Exam</em> <button class="help-trigger" id="help-trigger" title="How it works"><span class="material-icons">help_outline</span></button></h1>
+      <p style="color:var(--muted); font-size: 0.9rem;">Kennis van de Nederlandse Maatschappij</p>
     </div>
 
     <!-- Help Modal -->
@@ -212,67 +249,77 @@
       </div>
     </div>
 
-    <!-- Setup Screen -->
-    <div id="setup-screen" class="setup-card">
-      <span class="material-icons" style="font-size: 4rem; color: var(--orange); margin-bottom: 1rem;">gavel</span>
-      <h2>KNM Mock Exam</h2>
-      <p>Test your knowledge of Dutch society. Questions are randomly selected from all 10 chapters.</p>
-      
-      <div class="option-grid">
-        <button class="length-btn" onclick="setLength(15)">15 Questions <span>Perfect for a quick drill</span></button>
-        <button class="length-btn" onclick="setLength(25)">25 Questions <span>Full exam simulation</span></button>
-        <button class="length-btn" onclick="setLength(50)">50 Questions <span>Intensive practice</span></button>
-        <button class="length-btn" onclick="setLength(75)">75 Questions <span>Ultimate challenge</span></button>
-      </div>
-      
-      <button class="fc-btn active" style="padding: 1rem 3rem; font-size: 1.1rem;" onclick="startExam()">Start Exam</button>
-    </div>
-
-    <!-- Exam Screen -->
-    <div id="exam-ui" class="exam-ui">
-      <div class="q-header">
-        <div id="progress-text" class="q-meta">Question 1 / 15</div>
-        <div id="score-text" class="q-meta">Score: 0</div>
-      </div>
-      
-      <div class="progress-container">
-        <div id="progress-bar" class="progress-bar"></div>
-      </div>
-
-      <div class="question-card">
-        <div id="topic-tag" class="topic-tag">Topic</div>
-        <div id="q-text" class="question-text">Question loading...</div>
-        <div id="ans-grid" class="ans-grid">
-          <!-- Injected -->
+    <div class="exam-content" style="max-width: 800px; margin: 0 auto;">
+      <!-- Setup Screen -->
+      <div id="setup-screen" class="setup-card">
+        <span class="material-icons" style="font-size: 3.5rem; color: var(--orange); margin-bottom: 0.8rem;">gavel</span>
+        <h2>KNM Mock Exam</h2>
+        <p>Test your knowledge of Dutch society. Questions are randomly selected from all 10 chapters.</p>
+        
+        <div class="option-grid">
+          <button class="length-btn" onclick="setLength(15)">15 Questions <span>Perfect for a quick drill</span></button>
+          <button class="length-btn" onclick="setLength(25)">25 Questions <span>Full exam simulation</span></button>
+          <button class="length-btn" onclick="setLength(50)">50 Questions <span>Intensive practice</span></button>
+          <button class="length-btn" onclick="setLength(75)">75 Questions <span>Ultimate challenge</span></button>
+        </div>
+        
+        <div style="display:flex; justify-content:center;">
+          <button class="start-btn" onclick="startExam()">
+            Start Practice Exam
+            <span class="material-icons">play_arrow</span>
+          </button>
         </div>
       </div>
 
-      <div class="footer-actions">
-        <button id="next-btn" class="fc-btn active" style="display:none;" onclick="nextQuestion()">
-          Next Question <span class="material-icons">arrow_forward</span>
-        </button>
+      <!-- Exam Screen -->
+      <div id="exam-ui" class="exam-ui">
+        <div class="q-header">
+          <div id="progress-text" class="q-meta">Question 1 / 15</div>
+          <div id="score-text" class="q-meta">Score: 0</div>
+        </div>
+        
+        <div class="progress-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+
+        <div class="question-card">
+          <div id="topic-tag" class="topic-tag">Topic</div>
+          <div id="q-text" class="question-text">Question loading...</div>
+          <div id="ans-grid" class="ans-grid">
+            <!-- Injected -->
+          </div>
+        </div>
+
+        <div class="footer-actions">
+          <button id="next-btn" class="fc-btn active" style="display:none;" onclick="nextQuestion()">
+            Next Question <span class="material-icons">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Screen -->
+      <div id="results-ui" class="results-ui setup-card">
+        <div class="score-circle">
+          <div id="final-score" class="score-val">0%</div>
+          <div class="score-label">SUCCESS</div>
+        </div>
+        <div id="result-msg" class="result-msg">Great job!</div>
+        <p id="result-detail" style="margin-bottom: 2rem;">You answered 0 out of 0 questions correctly.</p>
+        <button class="fc-btn active" onclick="location.reload()">Restart Exam</button>
+        <a href="../index.html" class="fc-btn" style="margin-left: 1rem; text-decoration:none;">Back to Hub</a>
       </div>
     </div>
 
-    <!-- Results Screen -->
-    <div id="results-ui" class="results-ui setup-card">
-      <div class="score-circle">
-        <div id="final-score" class="score-val">0%</div>
-        <div class="score-label">SUCCESS</div>
+    <footer>
+      <div class="footer-brand">More<span>Dutch</span></div>
+      <div class="footer-meta">
+        <span>KNM Practice Exam</span>
+        <span class="dot"></span>
+        <span>A1&ndash;B1 Level</span>
       </div>
-      <div id="result-msg" class="result-msg">Great job!</div>
-      <p id="result-detail" style="margin-bottom: 2rem;">You answered 0 out of 0 questions correctly.</p>
-      <button class="fc-btn active" onclick="location.reload()">Restart Exam</button>
-      <a href="../index.html" class="fc-btn" style="margin-left: 1rem; text-decoration:none;">Back to Hub</a>
-    </div>
+      <div class="footer-credit">Made by <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a></div>
+    </footer>
   </div>
-
-  <footer class="hub-footer">
-    <p>&copy; 2026 More Dutch • Practice for the KNM Exam</p>
-    <div class="footer-links">
-      <a href="https://soylu.dev">soylu.dev</a>
-    </div>
-  </footer>
 
   <script>
     // Combine all data
