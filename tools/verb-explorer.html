@@ -186,12 +186,12 @@
     <table class="verb-table">
       <thead>
         <tr>
-          <th>#</th>
+          <th class="col-rank">#</th>
           <th>Infinitive</th>
           <th>English</th>
-          <th>Type</th>
-          <th>Helper</th>
-          <th>Level</th>
+          <th class="col-type">Type</th>
+          <th class="col-helper">Helper</th>
+          <th class="col-level">Level</th>
           <th style="text-align:right;">Done</th>
         </tr>
       </thead>
@@ -353,12 +353,12 @@
         : '<span class="material-icons" style="color:var(--border);font-size:1.1rem;vertical-align:middle;">radio_button_unchecked</span>';
 
       tr.innerHTML = `
-        <td style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);">${verb.rank}</td>
+        <td class="col-rank" style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);">${verb.rank}</td>
         <td><span class="verb-infinitive">${verb.infinitive}</span></td>
         <td><span class="verb-meaning">${verb.english}</span></td>
-        <td><span class="verb-type">${verb.type}</span></td>
-        <td><span class="verb-type">${verb.helper}</span></td>
-        <td><span class="pill" style="font-size:0.6rem;">${verb.level}</span></td>
+        <td class="col-type"><span class="verb-type">${verb.type}</span></td>
+        <td class="col-helper"><span class="verb-type">${verb.helper}</span></td>
+        <td class="col-level"><span class="pill" style="font-size:0.6rem;">${verb.level}</span></td>
         <td style="text-align:right;">${statusIcon}</td>
       `;
       tr.addEventListener('click', () => openDetail(verb));
