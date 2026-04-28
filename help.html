@@ -128,19 +128,50 @@
     <ul class="hub-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="cheatsheets.html">Cheat Sheets</a></li>
-      <li><a href="tools/verb-explorer.html">Verb Explorer</a></li>
-      <li><a href="tools/flashcards.html">Flashcards</a></li>
-      <li><a href="tools/de-het.html">de/het Trainer</a></li>
-      <li><a href="tools/quiz.html">Quiz</a></li>
-      <li><a href="tools/sentence-builder.html">Sentence Builder</a></li>
-        <li><a href="tools/knm-exam.html">KNM Exam</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Tools <span class="material-icons" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="tools/verb-explorer.html"><span class="material-icons">edit</span>Verb Explorer</a>
+          <a href="tools/flashcards.html"><span class="material-icons">style</span>Flashcards</a>
+          <a href="tools/de-het.html"><span class="material-icons">compare_arrows</span>de/het Trainer</a>
+          <a href="tools/quiz.html"><span class="material-icons">quiz</span>Quiz</a>
+          <a href="tools/sentence-builder.html"><span class="material-icons">construction</span>Sentence Builder</a>
+          <a href="tools/knm-exam.html"><span class="material-icons">gavel</span>KNM Exam</a>
+        </div>
+      </li>
     </ul>
     <div class="fc-toggle-wrap">
+      <button id="hub-hamburger" class="hub-hamburger" aria-label="Open menu"><span class="material-icons">menu</span></button>
       <button id="dark-toggle" class="fc-btn icon-only" title="Toggle Dark Mode" aria-label="Toggle dark mode"><span class="material-icons" aria-hidden="true">dark_mode</span></button>
       <div class="flag"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
     </div>
   </div>
 </nav>
+
+<!-- Mobile menu -->
+<div class="hub-mobile-menu" id="hub-mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="hub-mobile-header">
+    <a href="index.html" class="hub-logo">More<span>Dutch</span></a>
+    <button id="hub-mobile-close" class="hub-mobile-close" aria-label="Close menu"><span class="material-icons">close</span></button>
+  </div>
+  <div class="hub-mobile-body">
+    <ul class="hub-mobile-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cheatsheets.html">Cheat Sheets</a></li>
+    </ul>
+    <div class="hub-mobile-section-label">Tools</div>
+    <ul class="hub-mobile-links">
+        <li><a href="tools/verb-explorer.html">Verb Explorer</a></li>
+        <li><a href="tools/flashcards.html">Flashcards</a></li>
+        <li><a href="tools/de-het.html">de/het Trainer</a></li>
+        <li><a href="tools/quiz.html">Quiz</a></li>
+        <li><a href="tools/sentence-builder.html">Sentence Builder</a></li>
+        <li><a href="tools/knm-exam.html">KNM Exam</a></li>
+    </ul>
+  </div>
+</div>
 
 <div class="page">
   <div class="hero" style="border-bottom:none;">
@@ -306,5 +337,6 @@
     localStorage.setItem('dgh_dark_mode', !isDark);
   });
 </script>
+<script src="js/nav.js"></script>
 </body>
 </html>
