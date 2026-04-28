@@ -31,81 +31,68 @@
 <script src="../data/knm-data/ch10-data.js"></script>
 
 <style>
-  .page { padding-bottom: 4rem; }
-  .exam-content { max-width: 800px; margin: 0 auto; }
+  .exam-content { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
   
   /* Start Screen */
   .setup-card {
     background: var(--white);
-    padding: 2.5rem 2rem;
-    border-radius: 32px;
+    padding: 3rem 2rem;
+    border-radius: 20px;
     border: 1.5px solid var(--border);
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-    background-image: radial-gradient(circle at top right, var(--orange-bg), transparent 300px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
   }
-  .setup-card h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; margin-bottom: 0.5rem; color: var(--ink); }
-  .setup-card p { color: var(--muted); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.5; font-size: 0.95rem; }
+  .setup-card h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; color: var(--ink); }
+  .setup-card p { color: var(--muted); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6; font-size: 0.95rem; }
   
   .option-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-bottom: 2.5rem;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
   }
-  @media (max-width: 768px) { .option-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 480px) { .option-grid { grid-template-columns: 1fr; } }
-  
+  @media (max-width: 600px) { .option-grid { grid-template-columns: repeat(2, 1fr); } }
+
   .length-btn {
-    padding: 1rem 0.8rem;
+    padding: 1.2rem;
     border: 1.5px solid var(--border);
-    border-radius: 20px;
+    border-radius: 12px;
     background: var(--white);
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    min-height: 100px;
-    position: relative;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ink);
   }
-  .length-btn:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
-  .length-btn.active { border-color: var(--orange); background: var(--orange-bg); border-width: 2px; }
-  .length-btn.active::after {
-    content: 'check_circle';
-    font-family: 'Material Icons';
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: var(--white);
-    color: var(--orange);
-    border-radius: 50%;
-    font-size: 18px;
-  }
+  .length-btn:hover { border-color: var(--orange); transform: translateY(-5px); box-shadow: var(--shadow-sm); }
+  .length-btn.active { border-color: var(--orange); background: var(--orange-bg); }
 
   .start-btn {
-    padding: 1rem 4rem;
-    font-size: 1.15rem;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
     font-weight: 700;
-    border-radius: 100px;
+    border-radius: 16px;
     background: var(--orange);
     color: white;
     border: none;
     cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 10px 20px rgba(232, 80, 10, 0.2);
+    transition: all 0.2s;
+    box-shadow: 0 8px 16px rgba(232, 80, 10, 0.2);
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.6rem;
     margin: 0 auto;
   }
   .start-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(232, 80, 10, 0.3);
-    background: #ff5a00;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(232, 80, 10, 0.3);
   }
-  .length-btn span { display: block; font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-top: 0.3rem; line-height: 1.2; }
+  .length-btn .material-icons { font-size: 1.8rem; color: var(--orange); }
+  .length-btn h3 { margin: 0; font-size: 1rem; color: var(--ink); }
+  .length-btn p { font-size: 0.75rem; color: var(--muted); line-height: 1.3; margin: 0; }
 
   /* New Result Button Styles */
   .result-actions {
@@ -216,15 +203,15 @@
 
   .footer-actions { display: flex; justify-content: flex-end; margin-top: 1.5rem; min-height: 50px; }
 
-  /* Progress Bar */
-  .progress-container { height: 6px; background: var(--border); border-radius: 3px; margin-bottom: 2rem; overflow: hidden; }
-  .progress-bar { height: 100%; background: var(--orange); width: 0%; transition: width 0.3s ease; }
+  /* Progress Bar — uses global .progress-container + .progress-fill (green) */
+  .exam-ui .progress-container { margin-bottom: 2rem; align-items: stretch; }
+  .exam-ui .progress-fill { min-height: 22px; }
 
   /* Results */
   .results-ui { display: none; text-align: center; }
   .score-circle {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 8px solid var(--orange);
     display: flex;
@@ -233,10 +220,11 @@
     justify-content: center;
     margin: 0 auto 2rem;
   }
-  .score-val { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; line-height: 1; }
-  .score-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+  .score-val { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; line-height: 1; }
+  .score-label { font-size: 0.75rem; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; letter-spacing: 0.05em; }
   
-  .result-msg { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; }
+  .result-msg { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: var(--ink); }
+  .results-ui p { color: var(--muted); margin-bottom: 2.5rem; font-size: 0.95rem; }
 </style>
 </head>
 <body>
@@ -261,9 +249,9 @@
   </nav>
 
   <div class="page">
-    <div class="hero" style="border-bottom:none; padding-top:0.5rem; text-align:center; margin-bottom:1rem;">
-      <h1 style="font-family:'Playfair Display', serif; font-size: 2.8rem; margin-bottom:0.2rem;">KNM <em>Exam</em> <button class="help-trigger" id="help-trigger" title="How it works"><span class="material-icons">help_outline</span></button></h1>
-      <p style="color:var(--muted); font-size: 0.9rem;">Kennis van de Nederlandse Maatschappij</p>
+    <div class="hero" style="border-bottom:none; padding-bottom: 1rem;">
+      <h1>KNM <em>Exam</em> <button class="help-trigger" id="help-trigger" title="How it works"><span class="material-icons">help_outline</span></button></h1>
+      <p class="hero-desc">Kennis van de Nederlandse Maatschappij — Practice for the Dutch civics exam.</p>
     </div>
 
     <!-- Help Modal -->
@@ -306,21 +294,37 @@
       </div>
     </div>
 
-    <div class="exam-content" style="max-width: 800px; margin: 0 auto;">
+    <div class="exam-content">
       <!-- Setup Screen -->
       <div id="setup-screen" class="setup-card">
-        <span class="material-icons" style="font-size: 3.5rem; color: var(--orange); margin-bottom: 0.8rem;">gavel</span>
+        <span class="material-icons" style="font-size: 3rem; color: var(--orange); margin-bottom: 1rem; display: block;">gavel</span>
         <h2>KNM Mock Exam</h2>
         <p>Test your knowledge of Dutch society. Questions are randomly selected from all 10 chapters.</p>
         
         <div class="option-grid">
-          <button class="length-btn" onclick="setLength(15)">15 Questions <span>Perfect for a quick drill</span></button>
-          <button class="length-btn" onclick="setLength(25)">25 Questions <span>Full exam simulation</span></button>
-          <button class="length-btn" onclick="setLength(50)">50 Questions <span>Intensive practice</span></button>
-          <button class="length-btn" onclick="setLength(75)">75 Questions <span>Ultimate challenge</span></button>
+          <button class="length-btn" onclick="setLength(15)">
+            <span class="material-icons">bolt</span>
+            <h3>15 Questions</h3>
+            <p>Quick drill</p>
+          </button>
+          <button class="length-btn" onclick="setLength(25)">
+            <span class="material-icons">school</span>
+            <h3>25 Questions</h3>
+            <p>Standard session</p>
+          </button>
+          <button class="length-btn" onclick="setLength(50)">
+            <span class="material-icons">fitness_center</span>
+            <h3>50 Questions</h3>
+            <p>Full simulation</p>
+          </button>
+          <button class="length-btn" onclick="setLength(75)">
+            <span class="material-icons">emoji_events</span>
+            <h3>75 Questions</h3>
+            <p>Ultimate challenge</p>
+          </button>
         </div>
         
-        <div style="display:flex; justify-content:center;">
+        <div style="margin-top: 1.5rem;">
           <button class="start-btn" onclick="startExam()">
             Start Practice Exam
             <span class="material-icons">play_arrow</span>
@@ -336,7 +340,7 @@
         </div>
         
         <div class="progress-container">
-          <div id="progress-bar" class="progress-bar"></div>
+          <div id="progress-bar" class="progress-fill"></div>
         </div>
 
         <div class="question-card">
@@ -358,10 +362,10 @@
       <div id="results-ui" class="results-ui setup-card">
         <div class="score-circle">
           <div id="final-score" class="score-val">0%</div>
-          <div class="score-label">SUCCESS</div>
+          <div class="score-label">Result</div>
         </div>
         <div id="result-msg" class="result-msg">Great job!</div>
-        <p id="result-detail" style="margin-bottom: 2.5rem;">You answered 0 out of 0 questions correctly.</p>
+        <p id="result-detail">You answered 0 out of 0 questions correctly.</p>
         
         <div class="result-actions">
           <button class="btn-primary" onclick="location.reload()">
@@ -413,7 +417,7 @@
       examLength = len;
       document.querySelectorAll('.length-btn').forEach(btn => {
         btn.classList.remove('active');
-        if (btn.innerText.includes(len)) btn.classList.add('active');
+        if (btn.getAttribute('onclick') === `setLength(${len})`) btn.classList.add('active');
       });
     }
 
