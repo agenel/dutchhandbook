@@ -107,6 +107,63 @@
   }
   .length-btn span { display: block; font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-top: 0.3rem; line-height: 1.2; }
 
+  /* New Result Button Styles */
+  .result-actions {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 1.2rem 2rem;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border: 2px solid transparent;
+    font-family: 'DM Sans', sans-serif;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: white;
+    flex: 2;
+    box-shadow: 0 8px 16px rgba(232, 80, 10, 0.2);
+  }
+  .btn-primary:hover {
+    background: #ff5a00;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(232, 80, 10, 0.3);
+  }
+
+  .btn-secondary {
+    background: var(--white);
+    color: var(--ink);
+    border-color: var(--border);
+    flex: 1;
+  }
+  .btn-secondary:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+    background: var(--orange-bg);
+  }
+
+  @media (max-width: 600px) {
+    .result-actions { flex-direction: column; }
+    .btn-primary, .btn-secondary { width: 100%; }
+  }
+
   /* Exam UI */
   .exam-ui { display: none; }
   .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
@@ -304,9 +361,16 @@
           <div class="score-label">SUCCESS</div>
         </div>
         <div id="result-msg" class="result-msg">Great job!</div>
-        <p id="result-detail" style="margin-bottom: 2rem;">You answered 0 out of 0 questions correctly.</p>
-        <button class="fc-btn active" onclick="location.reload()">Restart Exam</button>
-        <a href="../index.html" class="fc-btn" style="margin-left: 1rem; text-decoration:none;">Back to Hub</a>
+        <p id="result-detail" style="margin-bottom: 2.5rem;">You answered 0 out of 0 questions correctly.</p>
+        
+        <div class="result-actions">
+          <button class="btn-primary" onclick="location.reload()">
+            <span class="material-icons">refresh</span> Restart Practice
+          </button>
+          <a href="../index.html" class="btn-secondary">
+            Back to Hub
+          </a>
+        </div>
       </div>
     </div>
 
