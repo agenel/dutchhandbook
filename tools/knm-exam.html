@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://moredutch.com/tools/knm-exam.html">
+<title>KNM Practice Exam — Knowledge of Dutch Society | More Dutch</title>
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<meta name="description" content="Practice for the KNM (Kennis van de Nederlandse Maatschappij) exam with realistic mock tests. Customizable exam lengths and instant feedback.">
+<meta name="keywords" content="KNM practice, KNM exam, Dutch society exam, Kennis van de Nederlandse Maatschappij, civic integration exam">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://moredutch.com/tools/knm-exam.html">
+<meta property="og:title" content="KNM Practice Exam — More Dutch">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+
+<!-- Load Data -->
+<script src="../data/knm-data/ch1-data.js"></script>
+<script src="../data/knm-data/ch2-data.js"></script>
+<script src="../data/knm-data/ch3-data.js"></script>
+<script src="../data/knm-data/ch4-data.js"></script>
+<script src="../data/knm-data/ch5-data.js"></script>
+<script src="../data/knm-data/ch6-data.js"></script>
+<script src="../data/knm-data/ch7-data.js"></script>
+<script src="../data/knm-data/ch8-data.js"></script>
+<script src="../data/knm-data/ch9-data.js"></script>
+<script src="../data/knm-data/ch10-data.js"></script>
+
+<style>
+  .exam-container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+  
+  /* Start Screen */
+  .setup-card {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1.5px solid var(--border);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .setup-card h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: var(--ink); }
+  .setup-card p { color: var(--muted); margin-bottom: 2rem; }
+  
+  .option-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 700px) { .option-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 400px) { .option-grid { grid-template-columns: 1fr; } }
+  
+  .length-btn {
+    padding: 1.2rem 0.8rem;
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100px;
+  }
+  .length-btn:hover { border-color: var(--orange); background: var(--orange-bg); }
+  .length-btn.active { border-color: var(--orange); background: var(--orange-bg); color: var(--orange); font-weight: 700; }
+  .length-btn span { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 400; margin-top: 0.3rem; }
+
+  /* Exam UI */
+  .exam-ui { display: none; }
+  .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  .q-meta { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  
+  .question-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    margin-bottom: 2rem;
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    background: var(--stripe);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--muted);
+    border-bottom-left-radius: 12px;
+  }
+  .question-text { font-size: 1.35rem; font-weight: 600; margin-bottom: 2rem; line-height: 1.4; }
+  
+  .ans-grid { display: grid; gap: 0.8rem; }
+  .ans-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+  }
+  .ans-btn:hover:not(.disabled) { border-color: var(--orange); background: var(--orange-bg); }
+  .ans-btn.correct { border-color: var(--green); background: var(--green-light); }
+  .ans-btn.incorrect { border-color: var(--red); background: var(--red-light); }
+  .ans-btn.disabled { cursor: default; }
+
+  .feedback-icon { margin-left: auto; font-size: 1.2rem; }
+
+  .footer-actions { display: flex; justify-content: flex-end; margin-top: 1.5rem; min-height: 50px; }
+
+  /* Progress Bar */
+  .progress-container { height: 6px; background: var(--border); border-radius: 3px; margin-bottom: 2rem; overflow: hidden; }
+  .progress-bar { height: 100%; background: var(--orange); width: 0%; transition: width 0.3s ease; }
+
+  /* Results */
+  .results-ui { display: none; text-align: center; }
+  .score-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 8px solid var(--orange);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+  }
+  .score-val { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; line-height: 1; }
+  .score-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+  
+  .result-msg { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; }
+</style>
+</head>
+<body>
+
+  <nav class="hub-nav">
+    <div class="hub-nav-inner">
+      <a href="../index.html" class="hub-logo">More<span>Dutch</span></a>
+      <ul class="hub-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../cheatsheets.html">Cheat Sheets</a></li>
+        <li><a href="verb-explorer.html">Verb Explorer</a></li>
+        <li><a href="flashcards.html">Flashcards</a></li>
+        <li><a href="de-het.html">de/het Trainer</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="knm-exam.html" class="active">KNM Exam</a></li>
+      </ul>
+      <div class="fc-toggle-wrap">
+        <button id="dark-toggle" class="fc-btn icon-only"><span class="material-icons">dark_mode</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="exam-container">
+    <div class="hero" style="border-bottom:none; padding-top:1rem; text-align:center; margin-bottom:2rem;">
+      <h1 style="font-family:'Playfair Display', serif; font-size: 3rem; margin-bottom:0.5rem;">KNM <em>Exam</em> <button class="help-trigger" id="help-trigger" title="How it works"><span class="material-icons">help_outline</span></button></h1>
+      <p style="color:var(--muted);">Kennis van de Nederlandse Maatschappij</p>
+    </div>
+
+    <!-- Help Modal -->
+    <div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">KNM <em>Exam Guide</em></h2>
+          
+            <div class="help-section">
+              <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                  <span class="material-icons" style="color:var(--orange);">gavel</span>
+                  <h3 style="margin:0;">Exam Simulation</h3>
+              </div>
+              <p>This tool simulates the Kennis van de Nederlandse Maatschappij (KNM) exam. Questions are drawn from all 10 chapters of Dutch society studies.</p>
+            </div>
+      
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">settings</span>
+                <h3 style="margin:0;">Custom Length</h3>
+            </div>
+            <p>Choose between 15 and 75 questions. The real exam typically has 40-45 questions, so 50 is a great simulation!</p>
+          </div>
+
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">check_circle</span>
+                <h3 style="margin:0;">Passing Grade</h3>
+            </div>
+            <p>You generally need a 60% score or higher to pass the KNM exam. Aim for the green score circle!</p>
+          </div>
+
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="../help.html" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Platform Guide <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Setup Screen -->
+    <div id="setup-screen" class="setup-card">
+      <span class="material-icons" style="font-size: 4rem; color: var(--orange); margin-bottom: 1rem;">gavel</span>
+      <h2>KNM Mock Exam</h2>
+      <p>Test your knowledge of Dutch society. Questions are randomly selected from all 10 chapters.</p>
+      
+      <div class="option-grid">
+        <button class="length-btn" onclick="setLength(15)">15 Questions <span>Perfect for a quick drill</span></button>
+        <button class="length-btn" onclick="setLength(25)">25 Questions <span>Full exam simulation</span></button>
+        <button class="length-btn" onclick="setLength(50)">50 Questions <span>Intensive practice</span></button>
+        <button class="length-btn" onclick="setLength(75)">75 Questions <span>Ultimate challenge</span></button>
+      </div>
+      
+      <button class="fc-btn active" style="padding: 1rem 3rem; font-size: 1.1rem;" onclick="startExam()">Start Exam</button>
+    </div>
+
+    <!-- Exam Screen -->
+    <div id="exam-ui" class="exam-ui">
+      <div class="q-header">
+        <div id="progress-text" class="q-meta">Question 1 / 15</div>
+        <div id="score-text" class="q-meta">Score: 0</div>
+      </div>
+      
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div class="question-card">
+        <div id="topic-tag" class="topic-tag">Topic</div>
+        <div id="q-text" class="question-text">Question loading...</div>
+        <div id="ans-grid" class="ans-grid">
+          <!-- Injected -->
+        </div>
+      </div>
+
+      <div class="footer-actions">
+        <button id="next-btn" class="fc-btn active" style="display:none;" onclick="nextQuestion()">
+          Next Question <span class="material-icons">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-ui" class="results-ui setup-card">
+      <div class="score-circle">
+        <div id="final-score" class="score-val">0%</div>
+        <div class="score-label">SUCCESS</div>
+      </div>
+      <div id="result-msg" class="result-msg">Great job!</div>
+      <p id="result-detail" style="margin-bottom: 2rem;">You answered 0 out of 0 questions correctly.</p>
+      <button class="fc-btn active" onclick="location.reload()">Restart Exam</button>
+      <a href="../index.html" class="fc-btn" style="margin-left: 1rem; text-decoration:none;">Back to Hub</a>
+    </div>
+  </div>
+
+  <footer class="hub-footer">
+    <p>&copy; 2026 More Dutch • Practice for the KNM Exam</p>
+    <div class="footer-links">
+      <a href="https://soylu.dev">soylu.dev</a>
+    </div>
+  </footer>
+
+  <script>
+    // Combine all data
+    const ALL_QUESTIONS = [
+      ...window.KNM_CH1, ...window.KNM_CH2, ...window.KNM_CH3, ...window.KNM_CH4, ...window.KNM_CH5,
+      ...window.KNM_CH6, ...window.KNM_CH7, ...window.KNM_CH8, ...window.KNM_CH9, ...window.KNM_CH10
+    ];
+
+    let examLength = 15;
+    let currentQuestions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let answered = false;
+
+    const setupScreen = document.getElementById('setup-screen');
+    const examUI = document.getElementById('exam-ui');
+    const resultsUI = document.getElementById('results-ui');
+    const qText = document.getElementById('q-text');
+    const ansGrid = document.getElementById('ans-grid');
+    const nextBtn = document.getElementById('next-btn');
+    const topicTag = document.getElementById('topic-tag');
+    const progressText = document.getElementById('progress-text');
+    const scoreText = document.getElementById('score-text');
+    const progressBar = document.getElementById('progress-bar');
+
+    function setLength(len) {
+      examLength = len;
+      document.querySelectorAll('.length-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.innerText.includes(len)) btn.classList.add('active');
+      });
+    }
+
+    function startExam() {
+      // Shuffle and pick
+      currentQuestions = [...ALL_QUESTIONS].sort(() => 0.5 - Math.random()).slice(0, examLength);
+      currentIndex = 0;
+      score = 0;
+      
+      setupScreen.style.display = 'none';
+      examUI.style.display = 'block';
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      answered = false;
+      nextBtn.style.display = 'none';
+      const q = currentQuestions[currentIndex];
+      
+      qText.innerText = q.question;
+      topicTag.innerText = q.topic;
+      progressText.innerText = `Question ${currentIndex + 1} / ${examLength}`;
+      scoreText.innerText = `Score: ${score}`;
+      progressBar.style.width = `${((currentIndex) / examLength) * 100}%`;
+
+      ansGrid.innerHTML = '';
+      q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'ans-btn';
+        btn.innerHTML = `<span>${opt}</span><span class="material-icons feedback-icon" style="display:none"></span>`;
+        btn.onclick = () => checkAnswer(opt, btn);
+        ansGrid.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected, btn) {
+      if (answered) return;
+      answered = true;
+      
+      const q = currentQuestions[currentIndex];
+      const isCorrect = selected === q.answer;
+      
+      const btns = ansGrid.querySelectorAll('.ans-btn');
+      btns.forEach(b => {
+        b.classList.add('disabled');
+        const optText = b.querySelector('span').innerText;
+        if (optText === q.answer) {
+          b.classList.add('correct');
+          b.querySelector('.feedback-icon').innerText = 'check_circle';
+          b.querySelector('.feedback-icon').style.display = 'block';
+        }
+      });
+
+      if (isCorrect) {
+        score++;
+        scoreText.innerText = `Score: ${score}`;
+      } else {
+        btn.classList.add('incorrect');
+        btn.querySelector('.feedback-icon').innerText = 'cancel';
+        btn.querySelector('.feedback-icon').style.display = 'block';
+      }
+
+      nextBtn.style.display = 'flex';
+      if (currentIndex === examLength - 1) {
+        nextBtn.innerHTML = 'Finish Exam <span class="material-icons">check</span>';
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIndex < examLength - 1) {
+        currentIndex++;
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      examUI.style.display = 'none';
+      resultsUI.style.display = 'block';
+      
+      const percent = Math.round((score / examLength) * 100);
+      document.getElementById('final-score').innerText = `${percent}%`;
+      document.getElementById('result-detail').innerText = `You answered ${score} out of ${examLength} questions correctly.`;
+      
+      let msg = "";
+      if (percent >= 80) msg = "Excellent! You are ready for the KNM exam.";
+      else if (percent >= 60) msg = "Good job! You passed, but keep practicing.";
+      else msg = "Keep studying. You need at least 60% to pass.";
+      document.getElementById('result-msg').innerText = msg;
+    }
+
+    // Dark Mode Support
+    const darkToggle = document.getElementById('dark-toggle');
+    const html = document.documentElement;
+    
+    if (localStorage.getItem('theme') === 'dark') {
+      html.setAttribute('data-theme', 'dark');
+      darkToggle.querySelector('span').innerText = 'light_mode';
+    }
+
+    darkToggle.onclick = () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        darkToggle.querySelector('span').innerText = 'dark_mode';
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        darkToggle.querySelector('span').innerText = 'light_mode';
+      }
+    };
+
+    // Help Modal Logic
+    const helpTrigger = document.getElementById('help-trigger');
+    const helpModal = document.getElementById('help-modal');
+    const helpClose = document.getElementById('help-close');
+
+    if (helpTrigger && helpModal && helpClose) {
+      helpTrigger.addEventListener('click', () => {
+        helpModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      helpClose.addEventListener('click', () => {
+        helpModal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      helpModal.addEventListener('click', (e) => {
+        if (e.target === helpModal) {
+          helpModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
