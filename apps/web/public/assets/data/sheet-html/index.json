@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "adjectives",
+    "bytes": 9202
+  },
+  {
+    "slug": "conjunctions",
+    "bytes": 7305
+  },
+  {
+    "slug": "diminutives",
+    "bytes": 8455
+  },
+  {
+    "slug": "er",
+    "bytes": 9019
+  },
+  {
+    "slug": "modal-verbs",
+    "bytes": 6654
+  },
+  {
+    "slug": "negation",
+    "bytes": 8698
+  },
+  {
+    "slug": "nouns",
+    "bytes": 8691
+  },
+  {
+    "slug": "past-tense",
+    "bytes": 23709
+  },
+  {
+    "slug": "prepositions",
+    "bytes": 6854
+  },
+  {
+    "slug": "pronouns",
+    "bytes": 18115
+  },
+  {
+    "slug": "questions",
+    "bytes": 6653
+  },
+  {
+    "slug": "separable-verbs",
+    "bytes": 20602
+  },
+  {
+    "slug": "time",
+    "bytes": 8478
+  },
+  {
+    "slug": "verbs",
+    "bytes": 19308
+  },
+  {
+    "slug": "word-order",
+    "bytes": 21799
+  }
+]

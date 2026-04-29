@@ -1,0 +1,281 @@
+<style>/* Page-specific */
+.conj-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-bottom:2rem; }
+@media(max-width:680px){.conj-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.conj-grid{grid-template-columns:1fr}}
+
+.conj-card { background:var(--white); border:1.5px solid var(--border); border-radius:10px; overflow:hidden; }
+.conj-header { padding:0.85rem 1.1rem; border-bottom:1px solid var(--border); }
+.conj-verb { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:700; line-height:1; }
+.conj-meaning { font-size:0.72rem; color:var(--muted); font-style:italic; margin-top:0.2rem; font-weight:300; }
+.conj-row { display:flex; align-items:baseline; padding:0.4rem 1.1rem; border-bottom:1px solid var(--border); gap:0.7rem; }
+.conj-row:last-child { border-bottom:none; }
+.conj-pron { font-family:'DM Mono',monospace; font-size:0.7rem; color:var(--muted); width:55px; flex-shrink:0; }
+.conj-form { font-family:'DM Mono',monospace; font-size:0.86rem; font-weight:600; }
+.conj-note { font-size:0.65rem; color:var(--muted); font-style:italic; margin-left:auto; flex-shrink:0; }
+
+.cc-zijn .conj-header { background:var(--blue-light); border-color:var(--blue-border); }
+.cc-zijn .conj-verb { color:var(--blue); }
+.cc-zijn .conj-form { color:var(--blue); }
+.cc-hebben .conj-header { background:var(--green-light); border-color:var(--green-border); }
+.cc-hebben .conj-verb { color:var(--green); }
+.cc-hebben .conj-form { color:var(--green); }
+.cc-reg .conj-header { background:var(--orange-bg); border-color:var(--orange-border); }
+.cc-reg .conj-verb { color:var(--orange); }
+.cc-reg .conj-form { color:var(--orange); }
+
+.stem-box { background:var(--white); border:1.5px solid var(--border); border-radius:10px; padding:1.2rem 1.4rem; margin-bottom:1.5rem; }
+.stem-title { font-family:'DM Mono',monospace; font-size:0.67rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.9rem; font-weight:500; display:flex; align-items:center; gap:0.35rem; }
+.stem-title .material-icons { font-size:0.9rem; color:var(--orange); }
+.stem-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0.7rem; }
+@media(max-width:560px){.stem-steps{grid-template-columns:repeat(2,1fr)}}
+.stem-step { background:var(--cream); border:1.5px solid var(--border); border-radius:8px; padding:0.7rem; }
+.stem-num { font-family:'DM Mono',monospace; font-size:0.58rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem; }
+.stem-rule { font-size:0.78rem; font-weight:500; color:var(--ink); line-height:1.4; margin-bottom:0.2rem; }
+.stem-ex { font-family:'DM Mono',monospace; font-size:0.71rem; color:var(--orange); font-weight:500; }
+
+.kofschip-box { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; display:flex; gap:1.1rem; flex-wrap:wrap; }
+[data-theme="dark"] .kofschip-box { background:var(--white); border:1.5px solid var(--border); color:var(--ink); }
+.kof-label { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--orange-light); flex-shrink:0; padding-top:2px; font-weight:500; }
+.kof-body { font-size:0.83rem; line-height:1.55; font-weight:300; }
+.kof-body strong { color:#FFD4BC; font-weight:600; }
+[data-theme="dark"] .kof-body strong { color:var(--orange); }
+.kof-letters { display:flex; gap:0.2rem; margin-top:0.55rem; flex-wrap:wrap; }
+.kof-l { width:26px; height:26px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-family:'DM Mono',monospace; font-size:0.82rem; font-weight:700; }
+.kof-on { background:var(--orange); color:#fff; }
+.kof-off { background:rgba(255,255,255,0.09); color:rgba(255,255,255,0.3); }
+
+tr.row-hi td { background:var(--gold-light) !important; }
+td.v-form { font-family:'DM Mono',monospace; font-weight:600; color:var(--purple); font-size:0.83rem; }
+td.v-en { font-size:0.78rem; color:var(--muted); font-style:italic; }
+
+.note-box { border-radius:9px; padding:0.9rem 1.1rem; margin-bottom:1.5rem; display:flex; gap:0.75rem; align-items:flex-start; font-size:0.82rem; line-height:1.55; }
+.note-box .material-icons { font-size:1.05rem; flex-shrink:0; margin-top:1px; }
+.note-box p { font-weight:300; }
+.note-box strong { font-weight:600; }
+.note-warn { background:var(--gold-light); border:1.5px solid var(--gold-border); }
+.note-warn .material-icons { color:var(--gold); }</style>
+<div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
+          </div>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
+          </div>
+          <div class="help-section">
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="/help" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+<header class="site-header">
+    <div>
+      <h1>Dutch <span class="accent">Verbs</span></h1>
+      <p class="subtitle">Present Tense &middot; zijn &middot; hebben &middot; Modal Verbs</p>
+    </div>
+    <div class="fc-toggle-wrap">
+      
+      <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode" aria-label="Toggle test mode"><span class="material-icons" aria-hidden="true">visibility_off</span> Test Mode</button>
+      <button id="help-trigger" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help dialog"><span class="material-icons" aria-hidden="true">help_outline</span></button>
+      
+    </div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">stam + endings</div>
+    <div class="pill">zijn (to be)</div>
+    <div class="pill">hebben (to have)</div>
+    <div class="pill">'t kofschip</div>
+    <div class="pill">-t drop on inversion</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>Key Rule</div>
+    <p>Dutch verbs are built on the <strong>stem (stam)</strong>: infinitive minus <strong>-en</strong>. Add nothing for <strong>ik</strong>, add <strong>-t</strong> for hij/zij/het/u. If the stem already ends in <strong>-t</strong>, don&rsquo;t add another. And if <strong>je/jij</strong> comes <em>after</em> the verb (inversion), drop the <strong>-t</strong>.</p>
+  </div>
+
+  <div class="section-title anim a2">The Three Essential Verbs</div>
+
+  <div class="conj-grid anim a2">
+    <div class="conj-card cc-zijn">
+      <div class="conj-header">
+        <div class="conj-verb">zijn</div>
+        <div class="conj-meaning">to be &mdash; fully irregular</div>
+      </div>
+      <div class="conj-row"><span class="conj-pron">ik</span><span class="conj-form">ben</span></div>
+      <div class="conj-row"><span class="conj-pron">jij / je</span><span class="conj-form">bent</span><span class="conj-note">ben (inversion)</span></div>
+      <div class="conj-row"><span class="conj-pron">u</span><span class="conj-form">bent / is</span></div>
+      <div class="conj-row"><span class="conj-pron">hij/zij/het</span><span class="conj-form">is</span></div>
+      <div class="conj-row"><span class="conj-pron">wij / we</span><span class="conj-form">zijn</span></div>
+      <div class="conj-row"><span class="conj-pron">jullie</span><span class="conj-form">zijn</span></div>
+      <div class="conj-row"><span class="conj-pron">zij / ze</span><span class="conj-form">zijn</span></div>
+    </div>
+
+    <div class="conj-card cc-hebben">
+      <div class="conj-header">
+        <div class="conj-verb">hebben</div>
+        <div class="conj-meaning">to have &mdash; slightly irregular</div>
+      </div>
+      <div class="conj-row"><span class="conj-pron">ik</span><span class="conj-form">heb</span></div>
+      <div class="conj-row"><span class="conj-pron">jij / je</span><span class="conj-form">hebt</span><span class="conj-note">heb (inversion)</span></div>
+      <div class="conj-row"><span class="conj-pron">u</span><span class="conj-form">heeft / hebt</span></div>
+      <div class="conj-row"><span class="conj-pron">hij/zij/het</span><span class="conj-form">heeft</span></div>
+      <div class="conj-row"><span class="conj-pron">wij / we</span><span class="conj-form">hebben</span></div>
+      <div class="conj-row"><span class="conj-pron">jullie</span><span class="conj-form">hebben</span></div>
+      <div class="conj-row"><span class="conj-pron">zij / ze</span><span class="conj-form">hebben</span></div>
+    </div>
+
+    <div class="conj-card cc-reg">
+      <div class="conj-header">
+        <div class="conj-verb">werken</div>
+        <div class="conj-meaning">to work &mdash; regular (stam: werk)</div>
+      </div>
+      <div class="conj-row"><span class="conj-pron">ik</span><span class="conj-form">werk</span><span class="conj-note">stam only</span></div>
+      <div class="conj-row"><span class="conj-pron">jij / je</span><span class="conj-form">werkt</span><span class="conj-note">werk (inversion)</span></div>
+      <div class="conj-row"><span class="conj-pron">u</span><span class="conj-form">werkt</span></div>
+      <div class="conj-row"><span class="conj-pron">hij/zij/het</span><span class="conj-form">werkt</span></div>
+      <div class="conj-row"><span class="conj-pron">wij / we</span><span class="conj-form">werken</span><span class="conj-note">= infinitive</span></div>
+      <div class="conj-row"><span class="conj-pron">jullie</span><span class="conj-form">werken</span></div>
+      <div class="conj-row"><span class="conj-pron">zij / ze</span><span class="conj-form">werken</span></div>
+    </div>
+  </div>
+
+  <!-- Stem rule -->
+  <div class="stem-box anim a3">
+    <div class="stem-title"><span class="material-icons">construction</span>How to Find the Stem (Stam)</div>
+    <div class="stem-steps">
+      <div class="stem-step"><div class="stem-num">Step 1</div><div class="stem-rule">Take the infinitive</div><div class="stem-ex">werken, wonen, leven</div></div>
+      <div class="stem-step"><div class="stem-num">Step 2</div><div class="stem-rule">Remove -en</div><div class="stem-ex">werk&ndash;, won&ndash;, lev&ndash;</div></div>
+      <div class="stem-step"><div class="stem-num">Step 3</div><div class="stem-rule">Fix spelling (double vowel / f&harr;v)</div><div class="stem-ex">won &rarr; woon, lev &rarr; leef</div></div>
+      <div class="stem-step"><div class="stem-num">Step 4</div><div class="stem-rule">Add endings: &mdash; (ik), -t (hij), -en (wij)</div><div class="stem-ex">ik woon / hij woont / wij wonen</div></div>
+    </div>
+  </div>
+
+  <!-- Kofschip -->
+  <div class="kofschip-box anim a3">
+    <div class="kof-label">'t Kofschip</div>
+    <div class="kof-body">
+      If the stem ends in a letter from <strong>'t kofschip</strong>, past tense gets <strong>-te / -ten</strong>. All other consonants get <strong>-de / -den</strong>. Also: <strong>fokschaap</strong> is the same mnemonic.
+      <div class="kof-letters">
+        <span class="kof-off">'</span><span class="kof-on">t</span><span class="kof-off">&nbsp;</span>
+        <span class="kof-on">k</span><span class="kof-on">o</span><span class="kof-on">f</span>
+        <span class="kof-on">s</span><span class="kof-on">c</span><span class="kof-on">h</span>
+        <span class="kof-on">i</span><span class="kof-on">p</span>
+      </div>
+      <div style="margin-top:0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.55)">
+        e.g. werk &rarr; stem ends in <strong style="color:#FFD4BC">k</strong> (in kofschip) &rarr; werkte &nbsp;|&nbsp; leer &rarr; stem ends in r (not in kofschip) &rarr; leerde
+      </div>
+    </div>
+  </div>
+
+  <!-- -t drop -->
+  <div class="section-title anim a3">The &ndash;t Drop Rule (Inversion)</div>
+
+  <table class="anim a3">
+    <thead>
+      <tr>
+        <th>Type</th><th>Dutch</th><th>English</th><th>Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono" style="color:var(--blue)">Normal order</td>
+        <td><em>Jij</em> werkt hier.</td>
+        <td>You work here.</td>
+        <td style="font-size:0.77rem;color:var(--muted)">jij before verb &rarr; keep -t</td>
+      </tr>
+      <tr class="row-hi">
+        <td class="mono" style="color:var(--gold)">Inversion (question)</td>
+        <td>Werk <em>je</em> hier?</td>
+        <td>Do you work here?</td>
+        <td style="font-size:0.77rem;color:var(--red);font-weight:600">je AFTER verb &rarr; drop -t</td>
+      </tr>
+      <tr>
+        <td class="mono" style="color:var(--blue)">Normal order</td>
+        <td><em>Jij</em> bent thuis.</td>
+        <td>You are home.</td>
+        <td style="font-size:0.77rem;color:var(--muted)">normal &rarr; bent</td>
+      </tr>
+      <tr class="row-hi">
+        <td class="mono" style="color:var(--gold)">Inversion</td>
+        <td>Ben <em>je</em> thuis?</td>
+        <td>Are you home?</td>
+        <td style="font-size:0.77rem;color:var(--red);font-weight:600">je after verb &rarr; ben (no -t)</td>
+      </tr>
+      <tr class="row-hi">
+        <td class="mono" style="color:var(--gold)">Adverb first</td>
+        <td>Morgen <em>werk je</em> niet.</td>
+        <td>Tomorrow you don't work.</td>
+        <td style="font-size:0.77rem;color:var(--red);font-weight:600">je still after verb &rarr; drop -t</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal verbs -->
+  <div class="section-title anim a4">Modal &amp; Common Irregular Verbs</div>
+
+  <table class="anim a4">
+    <thead>
+      <tr><th>Infinitive</th><th>Meaning</th><th>ik</th><th>jij / hij</th><th>wij</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="mono">willen</td><td class="v-en">to want</td><td class="v-form">wil</td><td class="v-form">wil / wilt</td><td class="v-form">willen</td></tr>
+      <tr><td class="mono">kunnen</td><td class="v-en">can / to be able</td><td class="v-form">kan</td><td class="v-form">kan / kunt</td><td class="v-form">kunnen</td></tr>
+      <tr><td class="mono">mogen</td><td class="v-en">may / to be allowed</td><td class="v-form">mag</td><td class="v-form">mag</td><td class="v-form">mogen</td></tr>
+      <tr><td class="mono">moeten</td><td class="v-en">must / to have to</td><td class="v-form">moet</td><td class="v-form">moet</td><td class="v-form">moeten</td></tr>
+      <tr><td class="mono">zullen</td><td class="v-en">shall / will (future)</td><td class="v-form">zal</td><td class="v-form">zal / zult</td><td class="v-form">zullen</td></tr>
+      <tr><td class="mono">gaan</td><td class="v-en">to go</td><td class="v-form">ga</td><td class="v-form">gaat</td><td class="v-form">gaan</td></tr>
+      <tr><td class="mono">komen</td><td class="v-en">to come</td><td class="v-form">kom</td><td class="v-form">komt</td><td class="v-form">komen</td></tr>
+      <tr><td class="mono">doen</td><td class="v-en">to do</td><td class="v-form">doe</td><td class="v-form">doet</td><td class="v-form">doen</td></tr>
+      <tr><td class="mono">zien</td><td class="v-en">to see</td><td class="v-form">zie</td><td class="v-form">ziet</td><td class="v-form">zien</td></tr>
+      <tr><td class="mono">weten</td><td class="v-en">to know (fact)</td><td class="v-form">weet</td><td class="v-form">weet</td><td class="v-form">weten</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box note-warn anim a5">
+    <span class="material-icons">warning</span>
+    <p><strong>weten vs. kennen:</strong> Dutch has two &ldquo;to know&rdquo; verbs. <strong>weten</strong> = know a fact (&ldquo;Ik weet het.&rdquo;). <strong>kennen</strong> = to be acquainted with (&ldquo;Ik ken haar.&rdquo;). This trips up many learners.</p>
+  </div>
+
+  <div class="page-nav anim a5">
+    <a href="/sheets/nouns" class="pn-prev"><span class="material-icons">arrow_back</span> Nouns & Articles</a>
+    <button class="mastery-toggle" data-sheet="verbs">Mark as Mastered <span class="material-icons">check_circle_outline</span></button>
+    <a href="/sheets/questions" class="pn-next">Question Words <span class="material-icons">arrow_forward</span></a>
+  </div>

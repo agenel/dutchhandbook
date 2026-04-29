@@ -1,0 +1,148 @@
+<style>.dim-type { font-family: 'DM Mono', monospace; font-size: 0.82rem; font-weight: 700; color: var(--orange); }</style>
+<div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
+          </div>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
+          </div>
+          <div class="help-section">
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="/help" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+<header class="site-header">
+    <div>
+      <h1>Dutch <span class="accent">Diminutives</span></h1>
+      <p class="subtitle">-je &middot; -tje &middot; -pje &middot; -etje</p>
+    </div>
+    <div class="fc-toggle-wrap">
+      
+      <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode" aria-label="Toggle test mode"><span class="material-icons" aria-hidden="true">visibility_off</span> Test Mode</button>
+      <button id="help-trigger" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help dialog"><span class="material-icons" aria-hidden="true">help_outline</span></button>
+      
+    </div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">het huisje</div>
+    <div class="pill">een biertje</div>
+    <div class="pill">het beetje</div>
+    <div class="pill">het boompje</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>Always "Het"</div>
+    <p>Diminutives (verkleinwoorden) are used constantly in Dutch. They make words "smaller" or "cuter" (e.g., a small house, a little beer). The absolute most important rule is that <strong>EVERY single diminutive is a "het" word</strong> automatically, even if the base word was a "de" word. They also use the plural ending <strong>-s</strong>.</p>
+  </div>
+
+  <div class="section-title anim a2">1. The 4 Suffix Rules</div>
+  <table class="anim a2">
+    <thead>
+      <tr><th>Ending</th><th>Rule / Word Ending</th><th>Examples</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dim-type">-je</td>
+        <td>The standard ending. Most words that end in <strong>p, t, k, f, s, ch</strong>.</td>
+        <td>boek &rarr; <strong>boekje</strong> (little book)<br>huis &rarr; <strong>huisje</strong> (little house)</td>
+      </tr>
+      <tr>
+        <td class="dim-type">-tje</td>
+        <td>Words that end in vowels, or <strong>w, l, n, r</strong>.</td>
+        <td>stoel &rarr; <strong>stoeltje</strong> (little chair)<br>vrouw &rarr; <strong>vrouwtje</strong> (little woman)</td>
+      </tr>
+      <tr>
+        <td class="dim-type">-pje</td>
+        <td>Words that end in <strong>-m</strong>.</td>
+        <td>boom &rarr; <strong>boompje</strong> (little tree)<br>raam &rarr; <strong>raampje</strong> (little window)</td>
+      </tr>
+      <tr>
+        <td class="dim-type">-etje</td>
+        <td>Words with a short vowel ending in <strong>l, m, n, r, ng</strong>. <em>(Consonant doubles!)</em></td>
+        <td>ding &rarr; <strong>dingetje</strong> (little thing)<br>bel &rarr; <strong>belletje</strong> (little bell)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip-box anim a3" style="margin-bottom: 2rem; margin-top: 2rem;">
+    <div class="tip-head"><span class="material-icons">lightbulb</span> Pluralizing Diminutives</div>
+    <p>Because all diminutives end in a vowel sound (schwa), they ALWAYS take an <strong>-s</strong> to become plural. Never -en.<br>
+    <em>het huisje &rarr; de huisjes</em><br>
+    <em>het boompje &rarr; de boompjes</em></p>
+  </div>
+
+  <div class="section-title anim a4">2. Common Idiomatic Uses</div>
+  <p class="anim a4" style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">Dutch speakers don't only use diminutives for size; they use it to express affection, politeness, or coziness (gezelligheid).</p>
+  <table class="anim a4">
+    <thead>
+      <tr><th>Word</th><th>Diminutive</th><th>What it implies</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>bier (beer)</td>
+        <td><strong>een biertje</strong></td>
+        <td class="en-desc">A glass of beer. Sounds friendly when ordering.</td>
+      </tr>
+      <tr>
+        <td>moment (moment)</td>
+        <td><strong>een momentje</strong></td>
+        <td class="en-desc">"Just a brief second." Sounds more polite.</td>
+      </tr>
+      <tr>
+        <td>beet (bite)</td>
+        <td><strong>een beetje</strong></td>
+        <td class="en-desc">Means "a little bit". Used all the time.</td>
+      </tr>
+      <tr>
+        <td>meis (girl - archaic)</td>
+        <td><strong>het meisje</strong></td>
+        <td class="en-desc">The standard word for girl. There is no other!</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-nav anim a5">
+    <a href="/sheets/past-tense" class="pn-prev"><span class="material-icons">arrow_back</span> Past Tense</a>
+    <button class="mastery-toggle" data-sheet="diminutives">Mark as Mastered <span class="material-icons">check_circle_outline</span></button>
+    <a href="/sheets/er" class="pn-next">The Word "Er" <span class="material-icons">arrow_forward</span></a>
+  </div>

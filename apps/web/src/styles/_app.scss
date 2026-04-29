@@ -1,0 +1,47 @@
+/*
+ * App-level overrides — kept tiny on purpose so the legacy stylesheet
+ * remains the visual source of truth.
+ */
+
+html,
+body {
+  height: 100%;
+}
+
+md-root {
+  display: block;
+  min-height: 100%;
+}
+
+/* Skip link (a11y) — visually hidden until focused */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 8px;
+  text-decoration: none;
+  z-index: 9999;
+  transform: translateY(-200%);
+  transition: transform 0.15s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Smooth route transition (fades on Angular outlet switches) */
+.route-fade-enter {
+  animation: routeFadeIn 0.25s ease both;
+}
+@keyframes routeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

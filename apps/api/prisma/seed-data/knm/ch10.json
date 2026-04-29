@@ -1,0 +1,222 @@
+[
+  {
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Wat voor een land is Nederland?",
+    "options": [
+      "Een republiek",
+      "Een koninkrijk met een democratie",
+      "Een land zonder regels",
+      "Een land met een president"
+    ],
+    "answer": "Een koninkrijk met een democratie"
+  },
+  {
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Wie is het staatshoofd van Nederland?",
+    "options": [
+      "De minister-president",
+      "De koning",
+      "De burgemeester",
+      "De voorzitter van de Tweede Kamer"
+    ],
+    "answer": "De koning"
+  },
+  {
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Wie is de voorzitter van de ministers?",
+    "options": [
+      "De koning",
+      "De minister-president",
+      "De commissaris van de Koning",
+      "De burgemeester"
+    ],
+    "answer": "De minister-president"
+  },
+  {
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Wie vormen samen de regering?",
+    "options": [
+      "De koning en de ministers",
+      "De ministers en de Tweede Kamer",
+      "De koning en het parlement",
+      "De burgemeester en de wethouders"
+    ],
+    "answer": "De koning en de ministers"
+  },
+  {
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Hoeveel leden heeft de Tweede Kamer?",
+    "options": [
+      "75",
+      "100",
+      "150",
+      "225"
+    ],
+    "answer": "150"
+  },
+  {
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Wat is een belangrijke taak van de Tweede Kamer?",
+    "options": [
+      "De koning kiezen",
+      "Wetten maken en de regering controleren",
+      "Plannen maken voor de gemeente",
+      "Direct de baas zijn van de politie"
+    ],
+    "answer": "Wetten maken en de regering controleren"
+  },
+  {
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Hoe heet de voorzitter van een gemeente?",
+    "options": [
+      "De burgemeester",
+      "De minister-president",
+      "De wethouder",
+      "De commissaris van de Koning"
+    ],
+    "answer": "De burgemeester"
+  },
+  {
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Waarvoor zorgt de gemeente?",
+    "options": [
+      "Het maken van landelijke wetten",
+      "Het leger en de grenzen",
+      "Dingen in de buurt, zoals parken en afval",
+      "De prijs van de euro"
+    ],
+    "answer": "Dingen in de buurt, zoals parken en afval"
+  },
+  {
+    "topic": "Verkiezingen (Elections)",
+    "question": "Hoe vaak zijn er meestal verkiezingen voor de Tweede Kamer?",
+    "options": [
+      "Elk jaar",
+      "Om de twee jaar",
+      "Om de vier jaar",
+      "Om de vijf jaar"
+    ],
+    "answer": "Om de vier jaar"
+  },
+  {
+    "topic": "Verkiezingen (Elections)",
+    "question": "Wie mag er stemmen voor de Tweede Kamer?",
+    "options": [
+      "Iedereen die in Nederland woont",
+      "Iedereen van 16 jaar en ouder",
+      "Nederlanders van 18 jaar en ouder",
+      "Alleen mensen met veel geld"
+    ],
+    "answer": "Nederlanders van 18 jaar en ouder"
+  },
+  {
+    "topic": "Verkiezingen (Elections)",
+    "question": "Is het in Nederland verplicht om te stemmen?",
+    "options": [
+      "Ja, voor iedereen boven de 18",
+      "Nee, het is een recht, geen plicht",
+      "Alleen als je een uitnodiging krijgt",
+      "Alleen voor de gemeente"
+    ],
+    "answer": "Nee, het is een recht, geen plicht"
+  },
+  {
+    "topic": "Verkiezingen (Elections)",
+    "question": "Mag je met je partner samen in het stemhokje gaan?",
+    "options": [
+      "Ja, als je getrouwd bent",
+      "Ja, als je hulp nodig hebt met de taal",
+      "Nee, je moet alleen in het hokje gaan",
+      "Alleen bij de gemeenteraadsverkiezingen"
+    ],
+    "answer": "Nee, je moet alleen in het hokje gaan"
+  },
+  {
+    "topic": "Verkiezingen (Elections)",
+    "question": "Wat kies je als je gaat stemmen?",
+    "options": [
+      "Een nieuwe koning",
+      "Een politieke partij of een persoon",
+      "De nieuwe minister-president",
+      "De nieuwe burgemeester"
+    ],
+    "answer": "Een politieke partij of een persoon"
+  },
+  {
+    "topic": "Verkiezingen (Elections)",
+    "question": "Wanneer mag je stemmen voor de gemeente als je geen Nederlander bent?",
+    "options": [
+      "Nooit, dat mag alleen voor Nederlanders",
+      "Meteen als je een verblijfsvergunning hebt",
+      "Als je langer dan 5 jaar legaal in Nederland woont",
+      "Alleen als je uit een EU-land komt"
+    ],
+    "answer": "Als je langer dan 5 jaar legaal in Nederland woont"
+  },
+  {
+    "topic": "De regels (The rules)",
+    "question": "Wat is de belangrijkste wet van Nederland?",
+    "options": [
+      "Het wetboek van strafrecht",
+      "De Grondwet",
+      "De verkeersregels",
+      "De gemeentewet"
+    ],
+    "answer": "De Grondwet"
+  },
+  {
+    "topic": "De regels (The rules)",
+    "question": "Wat staat er in de Grondwet?",
+    "options": [
+      "Hoe duur de boodschappen zijn",
+      "De belangrijkste rechten van de mensen in Nederland",
+      "Het telefoonnummer van de politie",
+      "De adressen van alle scholen"
+    ],
+    "answer": "De belangrijkste rechten van de mensen in Nederland"
+  },
+  {
+    "topic": "De regels (The rules)",
+    "question": "Mag je in Nederland zeggen wat je denkt?",
+    "options": [
+      "Nee, dat is verboden",
+      "Alleen als de regering het goed vindt",
+      "Ja, dat is de vrijheid van meningsuiting",
+      "Alleen op televisie"
+    ],
+    "answer": "Ja, dat is de vrijheid van meningsuiting"
+  },
+  {
+    "topic": "De regels (The rules)",
+    "question": "Wie beslist er in de rechtbank of iemand straf krijgt?",
+    "options": [
+      "De politie",
+      "De burgemeester",
+      "De rechter",
+      "De koning"
+    ],
+    "answer": "De rechter"
+  },
+  {
+    "topic": "De regels (The rules)",
+    "question": "Wat betekent discriminatie?",
+    "options": [
+      "Dat iedereen dezelfde rechten heeft",
+      "Dat je iemand anders behandelt vanwege zijn afkomst of geloof",
+      "Dat je op een politieke partij stemt",
+      "Dat je een boete krijgt van de politie"
+    ],
+    "answer": "Dat je iemand anders behandelt vanwege zijn afkomst of geloof"
+  },
+  {
+    "topic": "Nederland en Europa",
+    "question": "Hoe vaak zijn er verkiezingen voor het Europees Parlement?",
+    "options": [
+      "Elke 2 jaar",
+      "Elke 4 jaar",
+      "Elke 5 jaar",
+      "Elke 10 jaar"
+    ],
+    "answer": "Elke 5 jaar"
+  }
+]

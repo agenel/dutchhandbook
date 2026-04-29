@@ -1,0 +1,222 @@
+[
+  {
+    "topic": "De tijd voor 1800",
+    "question": "Wie wordt de 'Vader des Vaderlands' genoemd?",
+    "options": [
+      "Koning Willem-Alexander",
+      "Napoleon Bonaparte",
+      "Willem van Oranje",
+      "Michiel de Ruyter"
+    ],
+    "answer": "Willem van Oranje"
+  },
+  {
+    "topic": "De tijd voor 1800",
+    "question": "Hoe lang duurde de oorlog van Nederland tegen Spanje?",
+    "options": [
+      "10 jaar",
+      "40 jaar",
+      "80 jaar",
+      "100 jaar"
+    ],
+    "answer": "80 jaar"
+  },
+  {
+    "topic": "De tijd voor 1800",
+    "question": "In welke eeuw was de 'Gouden Eeuw', waarin Nederland erg rijk was?",
+    "options": [
+      "De 15e eeuw",
+      "De 17e eeuw",
+      "De 19e eeuw",
+      "De 20e eeuw"
+    ],
+    "answer": "De 17e eeuw"
+  },
+  {
+    "topic": "De tijd voor 1800",
+    "question": "Wat was de VOC (Verenigde Oost-Indische Compagnie)?",
+    "options": [
+      "Een politieke partij",
+      "Een grote handelsorganisatie voor schepen naar Azië",
+      "Een legergroep",
+      "Een club voor kunstenaars"
+    ],
+    "answer": "Een grote handelsorganisatie voor schepen naar Azië"
+  },
+  {
+    "topic": "De tijd voor 1800",
+    "question": "Wie was een beroemde Nederlandse zeeheld uit de 17e eeuw?",
+    "options": [
+      "Vincent van Gogh",
+      "Michiel de Ruyter",
+      "Erasmus",
+      "Thorbecke"
+    ],
+    "answer": "Michiel de Ruyter"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Welk land was de baas in Nederland rond het jaar 1800?",
+    "options": [
+      "Duitsland",
+      "Engeland",
+      "Frankrijk",
+      "Spanje"
+    ],
+    "answer": "Frankrijk"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Wie was de eerste koning van het Koninkrijk der Nederlanden (vanaf 1815)?",
+    "options": [
+      "Koning Willem I",
+      "Koning Willem II",
+      "Koning Willem III",
+      "Koning Willem-Alexander"
+    ],
+    "answer": "Koning Willem I"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Welke belangrijke wet bedacht Johan Rudolph Thorbecke in 1848?",
+    "options": [
+      "De Wegenwet",
+      "De nieuwe Grondwet voor meer democratie",
+      "De Leerplichtwet",
+      "De Milieuwet"
+    ],
+    "answer": "De nieuwe Grondwet voor meer democratie"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Sinds welk jaar mogen ook vrouwen in Nederland stemmen?",
+    "options": [
+      "1848",
+      "1900",
+      "1919",
+      "1945"
+    ],
+    "answer": "1919"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Wat deed Nederland tijdens de Eerste Wereldoorlog (1914-1918)?",
+    "options": [
+      "Nederland vocht mee tegen Duitsland",
+      "Nederland vocht mee tegen Engeland",
+      "Nederland was neutraal (vocht niet mee)",
+      "Nederland werd bezet door Frankrijk"
+    ],
+    "answer": "Nederland was neutraal (vocht niet mee)"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Wanneer begon de Tweede Wereldoorlog voor Nederland?",
+    "options": [
+      "1914",
+      "1930",
+      "1940",
+      "1945"
+    ],
+    "answer": "1940"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Wie was het Joodse meisje dat beroemd werd door haar dagboek in de oorlog?",
+    "options": [
+      "Koningin Wilhelmina",
+      "Aletta Jacobs",
+      "Anne Frank",
+      "Prinses Beatrix"
+    ],
+    "answer": "Anne Frank"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Hoe noemen we de laatste winter van de Tweede Wereldoorlog waarin veel mensen geen eten hadden?",
+    "options": [
+      "De Grote Winter",
+      "De Hongerwinter",
+      "De Koude Oorlog",
+      "De Spaanse Griep"
+    ],
+    "answer": "De Hongerwinter"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Op welke datum vieren we Bevrijdingsdag in Nederland?",
+    "options": [
+      "27 april",
+      "4 mei",
+      "5 mei",
+      "25 december"
+    ],
+    "answer": "5 mei"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Welk land hoorde vroeger bij Nederland en werd na de oorlog onafhankelijk onder de naam Indonesië?",
+    "options": [
+      "Nederlands-Indië",
+      "Suriname",
+      "De Antillen",
+      "Zuid-Afrika"
+    ],
+    "answer": "Nederlands-Indië"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Wat gebeurde er in 1953 in Zeeland waardoor veel mensen verdronken?",
+    "options": [
+      "Een grote brand",
+      "Een aardbeving",
+      "De Watersnoodramp",
+      "Een oorlog"
+    ],
+    "answer": "De Watersnoodramp"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Hoe heet het systeem van dijken en dammen dat Nederland beschermt tegen het water?",
+    "options": [
+      "De Afsluitdijk",
+      "De Deltawerken",
+      "De Randstad",
+      "De Polder"
+    ],
+    "answer": "De Deltawerken"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Wat kwamen de gastarbeiders uit Turkije en Marokko rond 1970 doen in Nederland?",
+    "options": [
+      "Vakantie vieren",
+      "Studeren aan de universiteit",
+      "Werken in fabrieken en mijnen",
+      "De koning helpen"
+    ],
+    "answer": "Werken in fabrieken en mijnen"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "Wat is een 'verzorgingsstaat' of 'welvaartsstaat'?",
+    "options": [
+      "Een land waar iedereen soldaat moet zijn",
+      "Een land waar de overheid zorgt voor mensen die niet voor zichzelf kunnen zorgen",
+      "Een land zonder regels of wetten",
+      "Een land dat alleen maar uit steden bestaat"
+    ],
+    "answer": "Een land waar de overheid zorgt voor mensen die niet voor zichzelf kunnen zorgen"
+  },
+  {
+    "topic": "De tijd na 1800",
+    "question": "In welk jaar werd Suriname een onafhankelijk land?",
+    "options": [
+      "1945",
+      "1953",
+      "1975",
+      "2000"
+    ],
+    "answer": "1975"
+  }
+]

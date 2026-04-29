@@ -1,0 +1,35 @@
+{
+  "name": "moredutch",
+  "private": true,
+  "version": "1.0.0",
+  "description": "More Dutch — Interactive Dutch Grammar Hub (Angular SSR + NestJS)",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run start",
+    "dev:api": "npm --workspace apps/api run start:dev",
+    "build:web": "npm --workspace apps/web run build",
+    "build:api": "npm --workspace apps/api run build",
+    "build": "npm run build:shared && npm run build:web && npm run build:api",
+    "build:shared": "npm --workspace packages/shared run build",
+    "lint": "npm --workspaces --if-present run lint",
+    "test": "npm --workspaces --if-present run test",
+    "seed": "npm --workspace apps/api run seed",
+    "prisma:migrate": "npm --workspace apps/api run prisma:migrate",
+    "format": "prettier --write \"**/*.{ts,js,json,md,html,scss,css}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "typescript": "~5.9.2"
+  },
+  "engines": {
+    "node": ">=20.11.0",
+    "npm": ">=10.0.0"
+  },
+  "dependencies": {
+    "@primeuix/themes": "^2.0.3",
+    "primeng": "^21.1.6"
+  }
+}

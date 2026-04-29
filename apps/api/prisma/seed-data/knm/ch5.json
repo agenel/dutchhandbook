@@ -1,0 +1,222 @@
+[
+  {
+    "topic": "De politie (The police)",
+    "question": "Vanaf welke leeftijd moet je in Nederland altijd een identiteitsbewijs bij je hebben?",
+    "options": [
+      "Vanaf 12 jaar",
+      "Vanaf 14 jaar",
+      "Vanaf 18 jaar",
+      "Alleen als je volwassen bent"
+    ],
+    "answer": "Vanaf 14 jaar"
+  },
+  {
+    "topic": "De politie (The police)",
+    "question": "Welk telefoonnummer bel je als de politie wel moet komen, maar er geen haast bij is (geen spoed)?",
+    "options": [
+      "112",
+      "0900-8844",
+      "911",
+      "Het nummer van de gemeente"
+    ],
+    "answer": "0900-8844"
+  },
+  {
+    "topic": "De politie (The police)",
+    "question": "Wat is 'aangifte doen'?",
+    "options": [
+      "Een identiteitsbewijs aanvragen",
+      "Iets officieel aan de politie vertellen, bijvoorbeeld na een diefstal",
+      "Een bekeuring betalen",
+      "Zeggen dat je gaat verhuizen"
+    ],
+    "answer": "Iets officieel aan de politie vertellen, bijvoorbeeld na een diefstal"
+  },
+  {
+    "topic": "De politie (The police)",
+    "question": "Wanneer bel je het alarmnummer 112?",
+    "options": [
+      "Als je portemonnee gisteren is gestolen",
+      "Als je een nieuw paspoort nodig hebt",
+      "Bij een ongeluk of als er direct hulp nodig is",
+      "Als je de weg wilt vragen"
+    ],
+    "answer": "Bij een ongeluk of als er direct hulp nodig is"
+  },
+  {
+    "topic": "De gemeente (The municipality)",
+    "question": "Binnen hoeveel dagen moet je de geboorte van een kind doorgeven aan de gemeente?",
+    "options": [
+      "Binnen 3 dagen",
+      "Binnen een week",
+      "Binnen een maand",
+      "Wanneer je tijd hebt"
+    ],
+    "answer": "Binnen 3 dagen"
+  },
+  {
+    "topic": "De gemeente (The municipality)",
+    "question": "Waar vraag je een Nederlands paspoort of een rijbewijs aan?",
+    "options": [
+      "Bij de politie",
+      "Bij de Belastingdienst",
+      "Bij de gemeente",
+      "Bij de bank"
+    ],
+    "answer": "Bij de gemeente"
+  },
+  {
+    "topic": "De gemeente (The municipality)",
+    "question": "Wat is een uittreksel uit de gemeentelijke basisadministratie (GBA/BRP)?",
+    "options": [
+      "Een paspoort voor het buitenland",
+      "Een officieel papier met je naam, adres en andere gegevens",
+      "Een brief over je belastingen",
+      "Een vergunning om te mogen verbouwen"
+    ],
+    "answer": "Een officieel papier met je naam, adres en andere gegevens"
+  },
+  {
+    "topic": "De gemeente (The municipality)",
+    "question": "Wat moet je meenemen als je een nieuw identiteitsbewijs gaat aanvragen?",
+    "options": [
+      "Alleen geld",
+      "Je oude identiteitsbewijs en goede pasfoto's",
+      "Een brief van de koning",
+      "Je hele familie"
+    ],
+    "answer": "Je oude identiteitsbewijs en goede pasfoto's"
+  },
+  {
+    "topic": "De Belastingdienst (Tax office)",
+    "question": "Wie betaalt er in Nederland belasting?",
+    "options": [
+      "Alleen rijke mensen",
+      "Iedereen die in Nederland woont of werkt",
+      "Alleen mensen met een eigen bedrijf",
+      "Alleen mensen met een Nederlands paspoort"
+    ],
+    "answer": "Iedereen die in Nederland woont of werkt"
+  },
+  {
+    "topic": "De Belastingdienst (Tax office)",
+    "question": "Wat is inkomstenbelasting?",
+    "options": [
+      "Belasting over de spullen die je koopt",
+      "Belasting over het geld dat je verdient met werken",
+      "Belasting voor je huis",
+      "Belasting voor de auto"
+    ],
+    "answer": "Belasting over het geld dat je verdient met werken"
+  },
+  {
+    "topic": "Toeslagen (Allowances)",
+    "question": "Wat is 'toeslag'?",
+    "options": [
+      "Extra belasting die je moet betalen",
+      "Een boete van de politie",
+      "Geld dat je van de Belastingdienst terugkrijgt om kosten te betalen",
+      "Een cadeau van de gemeente"
+    ],
+    "answer": "Geld dat je van de Belastingdienst terugkrijgt om kosten te betalen"
+  },
+  {
+    "topic": "Betalen (Payments/Banking)",
+    "question": "Wat heb je nodig om een bankrekening te openen?",
+    "options": [
+      "Een geldig identiteitsbewijs en een BSN-nummer",
+      "Veel contant geld",
+      "Een diploma van school",
+      "Toestemming van je werkgever"
+    ],
+    "answer": "Een geldig identiteitsbewijs en een BSN-nummer"
+  },
+  {
+    "topic": "Betalen (Payments/Banking)",
+    "question": "Wat is je pincode?",
+    "options": [
+      "Je telefoonnummer",
+      "Je geboortedatum",
+      "Een geheim getal om met je pasje te kunnen betalen",
+      "Je huisnummer"
+    ],
+    "answer": "Een geheim getal om met je pasje te kunnen betalen"
+  },
+  {
+    "topic": "Betalen (Payments/Banking)",
+    "question": "Hoe heet het als je geld van je eigen rekening naar een andere rekening stuurt?",
+    "options": [
+      "Pinnen",
+      "Overmaken",
+      "Declareren",
+      "Sparen"
+    ],
+    "answer": "Overmaken"
+  },
+  {
+    "topic": "Verblijfsvergunning (Residence permit)",
+    "question": "Bij welke organisatie moet je zijn voor vragen over je verblijfsvergunning?",
+    "options": [
+      "De politie",
+      "De IND (Immigratie- en Naturalisatiedienst)",
+      "De Belastingdienst",
+      "Het UWV"
+    ],
+    "answer": "De IND (Immigratie- en Naturalisatiedienst)"
+  },
+  {
+    "topic": "Verblijfsvergunning (Residence permit)",
+    "question": "Wat is naturalisatie?",
+    "options": [
+      "Een vakantie in de natuur",
+      "Het aanvragen van de Nederlandse nationaliteit",
+      "Het verlengen van je paspoort",
+      "Verhuizen naar een andere gemeente"
+    ],
+    "answer": "Het aanvragen van de Nederlandse nationaliteit"
+  },
+  {
+    "topic": "Hulp bij problemen (Help with problems)",
+    "question": "Wie kan je helpen als je juridische vragen hebt of een probleem met een contract?",
+    "options": [
+      "De apotheek",
+      "Het Juridisch Loket of een advocaat",
+      "De thuiszorg",
+      "De bank"
+    ],
+    "answer": "Het Juridisch Loket of een advocaat"
+  },
+  {
+    "topic": "Hulp bij problemen (Help with problems)",
+    "question": "Wat doet maatschappelijk werk?",
+    "options": [
+      "Ze helpen bij het vinden van een huis",
+      "Ze geven medische zorg",
+      "Ze helpen bij persoonlijke problemen of problemen in het gezin",
+      "Ze maken de straat schoon"
+    ],
+    "answer": "Ze helpen bij persoonlijke problemen of problemen in het gezin"
+  },
+  {
+    "topic": "Hulp bij problemen (Help with problems)",
+    "question": "Wanneer kun je hulp krijgen van de 'thuiszorg'?",
+    "options": [
+      "Als je wilt verhuizen",
+      "Als je ziek bent of oud en hulp nodig hebt bij de verzorging thuis",
+      "Als je ruzie hebt met de buren",
+      "Als je hulp nodig hebt met je belastingen"
+    ],
+    "answer": "Als je ziek bent of oud en hulp nodig hebt bij de verzorging thuis"
+  },
+  {
+    "topic": "DigiD",
+    "question": "Wat is DigiD?",
+    "options": [
+      "Een digitaal identiteitsbewijs om zaken met de overheid online te regelen",
+      "Een nieuwe computer van de gemeente",
+      "Een kortingskaart voor de winkel",
+      "Een app voor het openbaar vervoer"
+    ],
+    "answer": "Een digitaal identiteitsbewijs om zaken met de overheid online te regelen"
+  }
+]

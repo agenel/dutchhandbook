@@ -1,37 +1,57 @@
-# Dutch Grammar Hub
-
-Welcome to the **Dutch Grammar Hub**! This project is a modern, modular, and highly interactive learning hub designed to make mastering A1-B1 Dutch grammar as intuitive and visually pleasing as possible.
+# More Dutch (Monorepo)
 
 Website: https://moredutch.com
 
-##  Features
+This repo contains the new generation of More Dutch:
 
-- **12 Comprehensive Cheat Sheets**: Covers all the notoriously difficult topics for English speakers including **The '+e' Rule**, **The Word "Er"**, **Geen vs. Niet**, **Separable Verbs**, and **Word Order (V2/STOMPS)**.
-- **Interactive Flashcards ("Test Mode")**: A built-in study tool synced to your browser's local storage. Toggle "Test Mode" to blur out all English answers—mimicking a native "spoiler" blackout—and hover or tap to reveal them for active recall.
-- **Dark Mode**: Fully implemented automatic and manual dark mode using CSS variables. 
-- **Print Optimization**: Includes strict `@media print` rules. Pressing `Cmd+P` or `Ctrl+P` automatically strips away the dark theming, hides navigation buttons, and reformats the documents so they print cleanly on white A4 paper without wasting printer ink.
-- **Guided Navigation**: A natively foldable curriculum roadmap on the homepage, combined with seamless "Next/Previous" linear navigation across all 12 modules.
-- **Fully Responsive**: Crafted entirely with CSS Grid and Flexbox to guarantee a flawless experience whether you are on a massive desktop monitor or a small mobile phone.
+- `apps/web`: Angular SSR + PrimeNG frontend (keeps the original theme)
+- `apps/api`: NestJS + Prisma + PostgreSQL backend (auth + progress sync)
+- `packages/shared`: shared DTOs + Zod schemas
+- `legacy/`: the original static HTML/CSS/JS site (kept for parity reference)
 
-## Architecture
+## Local development (recommended)
 
-This application is built with **Vanilla Web Technologies**. There are no heavy frameworks, no build steps, and no `node_modules`.
+### 1) Install
 
-- `index.html`: The central hub and roadmap.
-- `sheets/`: The subdirectory containing the 12 standalone HTML grammar modules.
-- `css/style.css`: The singular, unified stylesheet bridging the entire UI design system, Grid layouts, animations, and dark/light mode tokens.
-- `js/main.js`: A lightweight vanity script that handles the local storage syncing for the Flashcard Mode and Dark Mode toggles.
+```bash
+npm install
+```
 
-##  Running Locally
+### 2) Configure env
 
-Because it's a completely static project, you don't need any local web server to run it. 
+Copy `.env.example` → `.env` and update values.
 
-Simply double-click the `index.html` file to open it in your browser and start learning!
+### 3) Run
 
-##  Expanding the Hub
+Frontend:
 
-If you want to add a 13th sheet:
-1. Duplicate a file inside the `sheets/` dictionary (e.g., `time.html`).
-2. Add your new table content. Be sure to wrap English translations in the `<span class="en">` class—this automatically grants it the interactive Flashcard blurred behavior!
-3. Add a new route card to `index.html`.
-4. Update the "Next/Previous" linear buttons on the neighboring sheets.
+```bash
+npm run dev:web
+```
+
+Backend:
+
+```bash
+npm run dev:api
+```
+
+## Docker (dev)
+
+```bash
+docker compose -f infra/docker-compose.yml up
+```
+
+## Data migration
+
+Legacy data lives in `legacy/data/*.js` (window globals). Convert it into JSON assets with:
+
+```bash
+node scripts/migrate-data.mjs
+```
+
+The Angular app reads the generated files under `apps/web/public/assets/data/`.
+
+## Security
+
+See `SECURITY.md`.
+

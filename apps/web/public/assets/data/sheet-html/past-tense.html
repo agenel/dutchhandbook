@@ -1,0 +1,359 @@
+<style>/* tense comparison */
+.tense-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem; }
+@media(max-width:560px){.tense-grid{grid-template-columns:1fr}}
+
+.tense-box { background:var(--white); border:1.5px solid var(--border); border-radius:10px; overflow:hidden; }
+.tense-box:nth-child(1){animation:fadeUp 0.4s 0.04s ease both}
+.tense-box:nth-child(2){animation:fadeUp 0.4s 0.09s ease both}
+
+.tb-head { padding:0.95rem 1.2rem 0.8rem; border-bottom:1px solid var(--border); }
+.tb-name { font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700; line-height:1; }
+.tb-alt { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.06em; font-weight:500; margin-top:0.2rem; }
+.tb-desc { font-size:0.74rem; color:var(--muted); font-weight:300; margin-top:0.35rem; line-height:1.45; }
+.tb-body { padding:1rem 1.2rem; }
+.tb-rule { font-size:0.79rem; line-height:1.5; margin-bottom:0.65rem; }
+.tb-rule strong { font-weight:600; }
+.tb-ex { font-family:'DM Mono',monospace; font-size:0.77rem; padding:0.55rem 0.75rem; border-radius:6px; margin-bottom:0.4rem; line-height:1.5; }
+.tb-ex em { font-style:normal; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.tb-gloss { font-size:0.67rem; color:var(--muted); font-style:italic; margin-top:-0.22rem; margin-bottom:0.4rem; }
+
+.tb-perf .tb-head { background:var(--teal-light); border-color:var(--teal-border); }
+.tb-perf .tb-name { color:var(--teal); }
+.tb-perf .tb-alt { color:var(--teal); }
+.tb-perf .tb-ex { background:var(--teal-light); color:var(--teal); border:1px solid var(--teal-border); }
+
+.tb-imp .tb-head { background:var(--gold-light); border-color:var(--gold-border); }
+.tb-imp .tb-name { color:var(--gold); }
+.tb-imp .tb-alt { color:var(--gold); }
+.tb-imp .tb-ex { background:var(--gold-light); color:#7A5A00; border:1px solid var(--gold-border); }
+
+/* form cards */
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem; }
+@media(max-width:560px){.form-grid{grid-template-columns:1fr}}
+
+.form-card { background:var(--white); border:1.5px solid var(--border); border-radius:10px; overflow:hidden; }
+.form-card:nth-child(1){animation:fadeUp 0.4s 0.10s ease both}
+.form-card:nth-child(2){animation:fadeUp 0.4s 0.15s ease both}
+.form-card:nth-child(3){animation:fadeUp 0.4s 0.20s ease both}
+.form-card:nth-child(4){animation:fadeUp 0.4s 0.25s ease both}
+
+.fc-head { padding:0.78rem 1.1rem; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+.fc-title { font-family:'Playfair Display',serif; font-size:0.95rem; font-weight:700; }
+.fc-badge { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.07em; text-transform:uppercase; padding:0.16rem 0.48rem; border-radius:4px; font-weight:500; }
+.fc-body { padding:0.82rem 1.1rem; font-size:0.78rem; color:var(--muted); font-weight:300; line-height:1.5; }
+.fc-body strong { color:var(--ink); font-weight:600; }
+
+.formula { display:flex; align-items:center; gap:0.3rem; flex-wrap:wrap; margin:0.6rem 0; }
+.fp { padding:0.16rem 0.42rem; border-radius:4px; font-family:'DM Mono',monospace; font-size:0.73rem; font-weight:600; }
+.fp-aux { background:var(--blue-light); color:var(--blue); border:1px solid var(--blue-border); }
+.fp-ge  { background:var(--red-light); color:var(--red); border:1px solid var(--red-border); }
+.fp-st { background:#F0F0EA; color:var(--ink); border:1px solid #E0D8CC; }
+[data-theme="dark"] .fp-st { background:var(--white); color:var(--ink); border-color:var(--border); }
+.fp-end { background:var(--green-light); color:var(--green); border:1px solid var(--green-border); }
+.fp-plus { color:var(--muted); font-size:0.75rem; }
+.fp-note { font-size:0.71rem; color:var(--muted); flex-basis:100%; margin-top:0.1rem; font-style:italic; }
+
+.ex-line { font-family:'DM Mono',monospace; font-size:0.76rem; color:var(--ink); font-weight:500; margin-top:0.45rem; }
+.ex-line em { font-style:normal; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.ex-tr { font-size:0.67rem; color:var(--muted); margin-top:1px; }
+
+.fc-hebben .fc-head { background:var(--orange-bg); border-color:var(--orange-border); }
+.fc-hebben .fc-title { color:var(--orange); }
+.fc-hebben .fc-badge { background:var(--orange-border); color:var(--red); }
+
+.fc-zijn .fc-head { background:var(--teal-light); border-color:var(--teal-border); }
+.fc-zijn .fc-title { color:var(--teal); }
+.fc-zijn .fc-badge { background:var(--teal-border); color:var(--teal); }
+
+.fc-weak .fc-head { background:var(--gold-light); border-color:var(--gold-border); }
+.fc-weak .fc-title { color:var(--gold); }
+.fc-weak .fc-badge { background:var(--gold-border); color:#7A5A00; }
+
+.fc-strong .fc-head { background:var(--purple-light); border-color:var(--purple-border); }
+.fc-strong .fc-title { color:var(--purple); }
+.fc-strong .fc-badge { background:var(--purple-border); color:var(--purple); }
+
+/* zijn/hebben split box */
+.zh-box { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; }
+[data-theme="dark"] .zh-box { background:var(--white); color:var(--ink); border:1.5px solid var(--border); }
+.zh-title { font-family:'Playfair Display',serif; font-size:0.98rem; font-weight:700; margin-bottom:0.85rem; }
+.zh-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+@media(max-width:500px){.zh-grid{grid-template-columns:1fr}}
+.zh-col-title { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.45rem; font-weight:500; }
+.tc-zijn { color:var(--teal-border); }
+.tc-hebb { color:var(--orange-light); }
+.zh-list { font-size:0.79rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.75); }
+.zh-list strong { color:rgba(255,255,255,0.95); font-weight:500; }
+[data-theme="dark"] .zh-list strong, [data-theme="dark"] .zh-list { color:var(--ink); }
+
+/* strong verbs table */
+td.s-inf  { font-family:'DM Mono',monospace; font-weight:600; color:var(--purple); font-size:0.82rem; }
+td.s-past { font-family:'DM Mono',monospace; font-weight:600; color:var(--red);    font-size:0.82rem; }
+td.s-part { font-family:'DM Mono',monospace; font-weight:600; color:var(--teal);   font-size:0.82rem; }
+td.s-en   { font-size:0.77rem; color:var(--muted); font-style:italic; }
+
+/* when-to-use */
+.when-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; margin-bottom:2rem; }
+@media(max-width:520px){.when-grid{grid-template-columns:1fr}}
+.when-card { border:1.5px solid var(--border); border-radius:9px; padding:0.9rem 1.1rem; background:var(--white); }
+.wc-head { font-weight:600; font-size:0.8rem; margin-bottom:0.3rem; padding-left:0.6rem; }
+.wc-perf { color:var(--teal); border-left:3px solid var(--teal); }
+.wc-imp  { color:var(--gold); border-left:3px solid var(--gold); }
+.when-card p { font-size:0.77rem; color:var(--muted); font-weight:300; line-height:1.5; margin-top:0.2rem; }</style>
+<div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
+          </div>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
+          </div>
+          <div class="help-section">
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="/help" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+<header class="site-header">
+    <div>
+      <h1>Dutch <span class="accent">Past Tense</span></h1>
+      <p class="subtitle">Perfectum &middot; Imperfectum &middot; zijn vs. hebben &middot; Strong Verbs</p>
+    </div>
+    <div class="fc-toggle-wrap">
+      
+      <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode" aria-label="Toggle test mode"><span class="material-icons" aria-hidden="true">visibility_off</span> Test Mode</button>
+      <button id="help-trigger" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help dialog"><span class="material-icons" aria-hidden="true">help_outline</span></button>
+      
+    </div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">perfectum = hebben/zijn + ge-</div>
+    <div class="pill">imperfectum = stem + te/de</div>
+    <div class="pill">'t kofschip &rarr; -te</div>
+    <div class="pill">strong verbs = vowel change</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>Key Rule</div>
+    <p>Dutch has two past tenses. The <strong>perfectum</strong> (ik heb gewerkt) is used in most spoken Dutch. The <strong>imperfectum</strong> (ik werkte) is more common in writing and with modal verbs. When in doubt, use the <strong>perfectum</strong> &mdash; it is correct in almost every spoken context.</p>
+  </div>
+
+  <div class="section-title anim a2">The Two Past Tenses</div>
+
+  <div class="tense-grid">
+    <div class="tense-box tb-perf">
+      <div class="tb-head">
+        <div class="tb-name">Perfectum</div>
+        <div class="tb-alt">Present Perfect &middot; most common in speech</div>
+        <div class="tb-desc">Used for completed actions, recent events, and most everyday storytelling.</div>
+      </div>
+      <div class="tb-body">
+        <div class="tb-rule"><strong>hebben/zijn</strong> (present) + <strong>past participle</strong> (ge- + stem + d/t) at the end.</div>
+        <div class="tb-ex"><em>Ik heb</em> gisteren veel <em>gewerkt</em>.</div>
+        <div class="tb-gloss">I worked a lot yesterday.</div>
+        <div class="tb-ex"><em>Ze is</em> naar Amsterdam <em>gegaan</em>.</div>
+        <div class="tb-gloss">She went to Amsterdam.</div>
+      </div>
+    </div>
+
+    <div class="tense-box tb-imp">
+      <div class="tb-head">
+        <div class="tb-name">Imperfectum</div>
+        <div class="tb-alt">Simple Past &middot; writing &amp; narrating</div>
+        <div class="tb-desc">Preferred in written Dutch, journalism, literature. Always used for modal verbs (wilde, moest, kon&hellip;).</div>
+      </div>
+      <div class="tb-body">
+        <div class="tb-rule"><strong>Stem</strong> + <strong>-te/-de</strong> (singular) or <strong>-ten/-den</strong> (plural). Use <strong>'t kofschip</strong> to decide -te vs. -de.</div>
+        <div class="tb-ex">Ik <em>werkte</em> gisteren veel.</div>
+        <div class="tb-gloss">I worked a lot yesterday.</div>
+        <div class="tb-ex">Ze <em>woonde</em> vroeger in Utrecht.</div>
+        <div class="tb-gloss">She used to live in Utrecht.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title anim a3">Forming the Perfectum</div>
+
+  <div class="form-grid">
+    <div class="form-card fc-hebben">
+      <div class="fc-head"><div class="fc-title">With hebben</div><span class="fc-badge">~80% of verbs</span></div>
+      <div class="fc-body">
+        Most verbs use <strong>hebben</strong>. Transitive verbs (with a direct object) almost always use hebben.
+        <div class="formula">
+          <span class="fp fp-aux">heb/heeft</span><span class="fp-plus">+</span>
+          <span class="fp fp-ge">ge-</span><span class="fp fp-st">stam</span><span class="fp fp-end">d/t</span>
+        </div>
+        <div class="ex-line">Ik <em>heb gewerkt</em>.</div><div class="ex-tr">I (have) worked.</div>
+        <div class="ex-line" style="margin-top:0.35rem">Ze <em>heeft gebeld</em>.</div><div class="ex-tr">She called.</div>
+        <div class="ex-line" style="margin-top:0.35rem">We <em>hebben gegeten</em>.</div><div class="ex-tr">We ate. (strong verb)</div>
+      </div>
+    </div>
+
+    <div class="form-card fc-zijn">
+      <div class="fc-head"><div class="fc-title">With zijn</div><span class="fc-badge">motion + change</span></div>
+      <div class="fc-body">
+        Verbs of <strong>motion</strong> (gaan, komen, rijden) and <strong>change of state</strong> (worden, groeien) use zijn.
+        <div class="formula">
+          <span class="fp fp-aux" style="background:var(--teal-light);color:var(--teal);border-color:var(--teal-border)">ben/is/zijn</span><span class="fp-plus">+</span>
+          <span class="fp fp-ge">ge-</span><span class="fp fp-st">stam</span><span class="fp fp-end">d/t/en</span>
+        </div>
+        <div class="ex-line">Ik <em>ben gegaan</em>.</div><div class="ex-tr">I went. (gaan = motion)</div>
+        <div class="ex-line" style="margin-top:0.35rem">Ze <em>is aangekomen</em>.</div><div class="ex-tr">She arrived.</div>
+        <div class="ex-line" style="margin-top:0.35rem">Hij <em>is geworden</em>.</div><div class="ex-tr">He became.</div>
+      </div>
+    </div>
+
+    <div class="form-card fc-weak">
+      <div class="fc-head"><div class="fc-title">Weak Participles</div><span class="fc-badge">ge- + stem + d/t</span></div>
+      <div class="fc-body">
+        <strong>-t</strong> if stem ends in a 't kofschip' letter (t k f s ch p). <strong>-d</strong> for all other consonants and vowels.
+        <div class="formula">
+          <span class="fp-note">'t kofschip &rarr; -t &nbsp;|&nbsp; others &rarr; -d</span>
+        </div>
+        <div class="ex-line">werken &rarr; <em>gewerkt</em></div><div class="ex-tr">k is in 't kofschip &rarr; -t</div>
+        <div class="ex-line" style="margin-top:0.35rem">leven &rarr; <em>geleefd</em></div><div class="ex-tr">v/f, not in list &rarr; -d</div>
+        <div class="ex-line" style="margin-top:0.35rem">bellen &rarr; <em>gebeld</em></div><div class="ex-tr">l &rarr; -d</div>
+      </div>
+    </div>
+
+    <div class="form-card fc-strong">
+      <div class="fc-head"><div class="fc-title">Strong Participles</div><span class="fc-badge">vowel change &mdash; memorise</span></div>
+      <div class="fc-body">
+        Strong verbs change their stem vowel and take <strong>-en</strong> in the participle. No ge- rule applies &mdash; just memorise.
+        <div class="formula">
+          <span class="fp-note">inf &rarr; past stem &rarr; ge + past stem + en</span>
+        </div>
+        <div class="ex-line">rijden &rarr; reed &rarr; <em>gereden</em></div><div class="ex-tr">to drive &rarr; drove &rarr; driven</div>
+        <div class="ex-line" style="margin-top:0.35rem">schrijven &rarr; schreef &rarr; <em>geschreven</em></div><div class="ex-tr">to write &rarr; written</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- zijn vs hebben -->
+  <div class="zh-box anim a4">
+    <div class="zh-title">zijn or hebben? &mdash; Quick Decision Guide</div>
+    <div class="zh-grid">
+      <div>
+        <div class="zh-col-title tc-zijn">Use zijn when&hellip;</div>
+        <div class="zh-list">
+          <strong>Motion:</strong> gaan, komen, rijden, lopen, vliegen, vallen<br>
+          <strong>Change of state:</strong> worden, groeien, sterven, trouwen<br>
+          <strong>Remaining:</strong> blijven, zijn (zelf)<br>
+          <strong>Departure/arrival:</strong> opstaan, vertrekken, aankomen
+        </div>
+      </div>
+      <div>
+        <div class="zh-col-title tc-hebb">Use hebben when&hellip;</div>
+        <div class="zh-list">
+          <strong>Transitive verbs</strong> (direct object): eten, drinken, maken, kopen<br>
+          <strong>Most regular verbs:</strong> werken, leren, bellen, wachten<br>
+          <strong>Modal verbs in perfect:</strong> hebben gewild, hebben gekund<br>
+          <strong>When unsure</strong> &mdash; default to hebben (~80% correct)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Strong verbs table -->
+  <div class="section-title anim a4">Essential Strong Verbs &mdash; Memorise These</div>
+
+  <table class="anim a4">
+    <thead>
+      <tr><th>Infinitive</th><th>Meaning</th><th>Imperfectum (hij)</th><th>Participle</th><th>Aux.</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="s-inf">zijn</td><td class="s-en">to be</td><td class="s-past">was / waren</td><td class="s-part">geweest</td><td class="en">zijn</td>
+      </tr>
+      <tr><td class="s-inf">hebben</td><td class="s-en">to have</td><td class="s-past">had / hadden</td><td class="s-part">gehad</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">gaan</td><td class="s-en">to go</td><td class="s-past">ging / gingen</td><td class="s-part">gegaan</td><td class="en">zijn</td>
+      </tr>
+      <tr><td class="s-inf">komen</td><td class="s-en">to come</td><td class="s-past">kwam / kwamen</td><td class="s-part">gekomen</td><td class="en">zijn</td>
+      </tr>
+      <tr><td class="s-inf">zien</td><td class="s-en">to see</td><td class="s-past">zag / zagen</td><td class="s-part">gezien</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">doen</td><td class="s-en">to do</td><td class="s-past">deed / deden</td><td class="s-part">gedaan</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">rijden</td><td class="s-en">to drive/ride</td><td class="s-past">reed / reden</td><td class="s-part">gereden</td><td class="en">zijn</td>
+      </tr>
+      <tr><td class="s-inf">schrijven</td><td class="s-en">to write</td><td class="s-past">schreef / schreven</td><td class="s-part">geschreven</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">lezen</td><td class="s-en">to read</td><td class="s-past">las / lazen</td><td class="s-part">gelezen</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">eten</td><td class="s-en">to eat</td><td class="s-past">at / aten</td><td class="s-part">gegeten</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">drinken</td><td class="s-en">to drink</td><td class="s-past">dronk / dronken</td><td class="s-part">gedronken</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">vinden</td><td class="s-en">to find / think</td><td class="s-past">vond / vonden</td><td class="s-part">gevonden</td><td class="en">hebben</td>
+      </tr>
+      <tr><td class="s-inf">worden</td><td class="s-en">to become</td><td class="s-past">werd / werden</td><td class="s-part">geworden</td><td class="en">zijn</td>
+      </tr>
+      <tr><td class="s-inf">helpen</td><td class="s-en">to help</td><td class="s-past">hielp / hielpen</td><td class="s-part">geholpen</td><td class="en">hebben</td>
+      </tr>
+      </tbody>
+  </table>
+
+  <div class="section-title anim a5">When to Use Each Tense</div>
+
+  <div class="when-grid anim a5">
+    <div class="when-card">
+      <div class="wc-head wc-perf"><span class="material-icons" style="font-size:0.9rem;margin-right:0.2rem;vertical-align:middle">record_voice_over</span>Perfectum &mdash; default for speech</div>
+      <p>Use when talking about anything that happened: &ldquo;I went to the store&rdquo;, &ldquo;She called&rdquo;. Safe default for any completed past action.</p>
+    </div>
+    <div class="when-card">
+      <div class="wc-head wc-imp"><span class="material-icons" style="font-size:0.9rem;margin-right:0.2rem;vertical-align:middle">article</span>Imperfectum &mdash; writing &amp; narrating</div>
+      <p>Preferred in written Dutch, news, books, and narrating a sequence of events. &ldquo;It was dark. He walked in. She looked up.&rdquo;</p>
+    </div>
+    <div class="when-card">
+      <div class="wc-head wc-imp"><span class="material-icons" style="font-size:0.9rem;margin-right:0.2rem;vertical-align:middle">settings</span>Always imperfectum for modals</div>
+      <p>willen &rarr; wilde &middot; moeten &rarr; moest &middot; kunnen &rarr; kon &middot; zullen &rarr; zou &middot; mogen &rarr; mocht. Never say &ldquo;ik heb gemoeten&rdquo; &mdash; always &ldquo;ik moest&rdquo;.</p>
+    </div>
+    <div class="when-card">
+      <div class="wc-head wc-perf"><span class="material-icons" style="font-size:0.9rem;margin-right:0.2rem;vertical-align:middle">lightbulb</span>Quick rule of thumb</div>
+      <p>In doubt? Use the perfectum. &ldquo;Ik heb dat gedaan&rdquo; is correct in almost every spoken context. Master the perfectum first.</p>
+    </div>
+  </div>
+
+  <div class="page-nav anim a5">
+    <a href="/sheets/separable-verbs" class="pn-prev"><span class="material-icons">arrow_back</span> Separable Verbs</a>
+    <button class="mastery-toggle" data-sheet="past-tense">Mark as Mastered <span class="material-icons">check_circle_outline</span></button>
+    <a href="/sheets/diminutives" class="pn-next">Diminutives <span class="material-icons">arrow_forward</span></a>
+  </div>

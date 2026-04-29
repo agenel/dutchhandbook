@@ -1,0 +1,12 @@
+/*
+ * MoreDutch global styles.
+ * 1. The original vanilla-CSS design system (`_legacy.scss`) is the source of truth
+ *    for all colors / typography / dark-mode tokens, so the look & feel stays identical.
+ * 2. PrimeNG components are themed by mapping their CSS variables onto our existing
+ *    `--orange`, `--ink`, `--cream`, etc. tokens (see `_primeng-bridge.scss`).
+ * 3. App-level layout overrides go in `_app.scss`.
+ */
+
+@use './styles/legacy';
+@use './styles/primeng-bridge';
+@use './styles/app';

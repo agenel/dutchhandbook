@@ -1,0 +1,83 @@
+[
+  {
+    "id": "s-0-0",
+    "english": "I drink water.",
+    "words": [
+      "Ik",
+      "drink",
+      "water"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "Subject + Verb (2nd position) + Object."
+  },
+  {
+    "id": "s-0-1",
+    "english": "We play football.",
+    "words": [
+      "Wij",
+      "spelen",
+      "voetbal"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "Finite verb 'spelen' stays in the 2nd position."
+  },
+  {
+    "id": "s-0-2",
+    "english": "She reads a book.",
+    "words": [
+      "Zij",
+      "leest",
+      "een",
+      "boek"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "The article 'een' comes before the noun 'boek'."
+  },
+  {
+    "id": "s-1-0",
+    "english": "Today I am working.",
+    "words": [
+      "Vandaag",
+      "werk",
+      "ik"
+    ],
+    "rule": "Inversion",
+    "explanation": "Because the sentence starts with 'Vandaag', the verb 'werk' stays in 2nd position, and 'ik' moves to 3rd."
+  },
+  {
+    "id": "s-1-1",
+    "english": "Tomorrow we are going to school.",
+    "words": [
+      "Morgen",
+      "gaan",
+      "Wij",
+      "naar",
+      "school"
+    ],
+    "rule": "Inversion",
+    "explanation": "Morgen (1) + gaan (2) + Wij (3). The verb is always second."
+  },
+  {
+    "id": "s-2-0",
+    "english": "I want to eat.",
+    "words": [
+      "Ik",
+      "wil",
+      "eten"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "The modal verb 'wil' is in 2nd position, and the infinitive 'eten' goes to the very end."
+  },
+  {
+    "id": "s-2-1",
+    "english": "We can speak Dutch.",
+    "words": [
+      "Wij",
+      "kunnen",
+      "Nederlands",
+      "spreken"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "Kunnen (modal) is 2nd, spreken (infinitive) is last."
+  }
+]

@@ -1,0 +1,92 @@
+/*
+ * PrimeNG theme bridge.
+ * We don't import a PrimeNG preset CSS file. Instead we let PrimeNG emit its
+ * own design-token CSS variables and then *override* them with our existing
+ * MoreDutch palette so every PrimeNG component automatically inherits the
+ * warm orange/cream look in light mode and the muted dark mode.
+ *
+ * This file is loaded after `_legacy.scss`, so all `--orange`, `--ink`,
+ * `--cream`, `--border`, etc. variables already exist on `:root` and on
+ * `[data-theme="dark"]`.
+ */
+
+:root {
+  /* Surfaces ----------------------------------------------------------- */
+  --p-content-background: var(--white);
+  --p-content-color: var(--ink);
+  --p-content-border-color: var(--border);
+  --p-content-hover-background: var(--stripe);
+  --p-content-hover-color: var(--ink);
+  --p-overlay-background: var(--white);
+  --p-overlay-border-color: var(--border);
+  --p-overlay-color: var(--ink);
+
+  /* Primary (we map this onto our signature orange) -------------------- */
+  --p-primary-color: var(--orange);
+  --p-primary-contrast-color: #ffffff;
+  --p-primary-hover-color: #d04408;
+  --p-primary-active-color: #b73c07;
+  --p-primary-50: var(--orange-bg);
+  --p-primary-100: #ffe1cc;
+  --p-primary-200: #ffc299;
+  --p-primary-300: #ffa366;
+  --p-primary-400: #ff8533;
+  --p-primary-500: var(--orange);
+  --p-primary-600: #d04408;
+  --p-primary-700: #b73c07;
+  --p-primary-800: #8e2f06;
+  --p-primary-900: #642205;
+
+  /* Forms -------------------------------------------------------------- */
+  --p-form-field-background: var(--white);
+  --p-form-field-disabled-background: var(--stripe);
+  --p-form-field-color: var(--ink);
+  --p-form-field-placeholder-color: var(--muted);
+  --p-form-field-border-color: var(--border);
+  --p-form-field-hover-border-color: var(--orange-border);
+  --p-form-field-focus-border-color: var(--orange);
+  --p-form-field-shadow: 0 0 0 3px rgba(232, 80, 10, 0.18);
+  --p-form-field-border-radius: 12px;
+
+  /* Buttons ------------------------------------------------------------ */
+  --p-button-primary-background: var(--orange);
+  --p-button-primary-hover-background: #d04408;
+  --p-button-primary-active-background: #b73c07;
+  --p-button-primary-border-color: var(--orange);
+  --p-button-primary-color: #ffffff;
+
+  /* Severity colors --------------------------------------------------- */
+  --p-success-color: var(--green);
+  --p-info-color: var(--blue);
+  --p-warn-color: var(--gold);
+  --p-danger-color: var(--red);
+  --p-help-color: var(--purple);
+
+  /* Misc --------------------------------------------------------------- */
+  --p-text-color: var(--ink);
+  --p-text-muted-color: var(--muted);
+  --p-anchor-color: var(--orange);
+  --p-border-radius: 12px;
+}
+
+[data-theme='dark'] {
+  --p-content-background: var(--white); /* `--white` is dark in dark mode */
+  --p-content-hover-background: var(--stripe);
+  --p-overlay-background: var(--white);
+  --p-form-field-shadow: 0 0 0 3px rgba(232, 80, 10, 0.35);
+}
+
+/* Smoothing: PrimeNG uses its own focus ring; we want our orange ring */
+.p-component:focus-visible,
+.p-button:focus-visible,
+.p-inputtext:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* Tighten PrimeNG menubar so it blends with .hub-nav */
+.p-menubar {
+  background: transparent;
+  border: none;
+  padding: 0;
+}

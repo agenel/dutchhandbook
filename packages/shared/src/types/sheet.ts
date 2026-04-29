@@ -1,0 +1,232 @@
+export type CefrLevel = 'A1' | 'A2' | 'B1';
+
+export interface SheetMeta {
+  slug: string;
+  title: string;
+  description: string;
+  level: CefrLevel;
+  order: number;
+  /** Material-icons name for the cheatsheets card. */
+  icon: string;
+  /** Tagline shown in the card footer. */
+  footer: string;
+  /** Short label used as the card eyebrow ("A1 · Verbs"). */
+  category: string;
+  /** Card stripe color class — sc-1..sc-8. */
+  stripe: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  prev?: string;
+  next?: string;
+}
+
+export const SHEET_REGISTRY: SheetMeta[] = [
+  {
+    slug: 'pronouns',
+    title: 'Personal & Possessive Pronouns',
+    description:
+      'ik/jij/hij/zij/wij/jullie with stressed forms, object forms, and possessives.',
+    level: 'A2',
+    category: 'A2 · Pronouns',
+    icon: 'person',
+    footer: 'Subject · Object · Possessive',
+    stripe: 3,
+    order: 1,
+    next: 'nouns',
+  },
+  {
+    slug: 'nouns',
+    title: '50 Common Dutch Nouns',
+    description:
+      'Essential nouns with de/het articles, plurals, and example sentences in 7 categories.',
+    level: 'A2',
+    category: 'A2 · Nouns',
+    icon: 'category',
+    footer: 'de/het · Plurals',
+    stripe: 2,
+    order: 2,
+    prev: 'pronouns',
+    next: 'verbs',
+  },
+  {
+    slug: 'verbs',
+    title: 'Verb Conjugation — Present Tense',
+    description:
+      'Regular verbs, zijn and hebben, modal verbs, the stem rule and -t drop.',
+    level: 'A2',
+    category: 'A2 · Verbs',
+    icon: 'build',
+    footer: 'Regular · zijn · hebben',
+    stripe: 4,
+    order: 3,
+    prev: 'nouns',
+    next: 'questions',
+  },
+  {
+    slug: 'questions',
+    title: 'Wie, Wat, Waar, Waarom, Wanneer, Hoe',
+    description: 'Forming questions correctly using Question Words and Inversion.',
+    level: 'A1',
+    category: 'A1 · Question Words',
+    icon: 'help_outline',
+    footer: 'Vraagwoorden · Inversion',
+    stripe: 7,
+    order: 4,
+    prev: 'verbs',
+    next: 'time',
+  },
+  {
+    slug: 'time',
+    title: 'Time & Dates',
+    description:
+      'Telling the time (half, kwart) and time prepositions (om, op, in).',
+    level: 'A1',
+    category: 'A1 · Time',
+    icon: 'schedule',
+    footer: 'Kwart · Half · Om',
+    stripe: 5,
+    order: 5,
+    prev: 'questions',
+    next: 'adjectives',
+  },
+  {
+    slug: 'adjectives',
+    title: 'Adjectives',
+    description:
+      'The +e drop rule, comparatives, superlatives, and material adjectives.',
+    level: 'A2',
+    category: 'A2 · Adjectives',
+    icon: 'text_format',
+    footer: 'groot · grote · groter',
+    stripe: 1,
+    order: 6,
+    prev: 'time',
+    next: 'negation',
+  },
+  {
+    slug: 'negation',
+    title: 'Geen vs. Niet',
+    description:
+      'When to use geen vs. niet, and the difficult sentence placement rules for niet.',
+    level: 'A1',
+    category: 'A1 · Negation',
+    icon: 'block',
+    footer: 'Geen · Niet · V2',
+    stripe: 4,
+    order: 7,
+    prev: 'adjectives',
+    next: 'modal-verbs',
+  },
+  {
+    slug: 'modal-verbs',
+    title: 'kunnen, moeten, mogen, willen, zullen',
+    description:
+      'The 5 essential modal verbs that kick the main verb to the end of the sentence.',
+    level: 'A2',
+    category: 'A2 · Modal Verbs',
+    icon: 'front_hand',
+    footer: 'Hulpwerkwoorden',
+    stripe: 6,
+    order: 8,
+    prev: 'negation',
+    next: 'word-order',
+  },
+  {
+    slug: 'word-order',
+    title: 'Dutch Word Order',
+    description: 'The V2 rule, SOV structure, inversion, STOMPS order, and subclauses.',
+    level: 'B1',
+    category: 'B1 · Syntax',
+    icon: 'swap_horiz',
+    footer: 'V2 · SOV · Inversion',
+    stripe: 5,
+    order: 9,
+    prev: 'modal-verbs',
+    next: 'prepositions',
+  },
+  {
+    slug: 'prepositions',
+    title: 'Essential Prepositions of Place',
+    description:
+      'op, in, naar, bij, uit: Tricky rules for navigating locations in Dutch.',
+    level: 'A2',
+    category: 'A2 · Prepositions',
+    icon: 'place',
+    footer: 'Voorzetsels',
+    stripe: 8,
+    order: 10,
+    prev: 'word-order',
+    next: 'conjunctions',
+  },
+  {
+    slug: 'conjunctions',
+    title: 'omdat, want, graag & liever',
+    description:
+      'The two "because" words, verb position changes, and expressing preference.',
+    level: 'B1',
+    category: 'B1 · Conjunctions',
+    icon: 'flash_on',
+    footer: 'Word order · Adverbs',
+    stripe: 1,
+    order: 11,
+    prev: 'prepositions',
+    next: 'separable-verbs',
+  },
+  {
+    slug: 'separable-verbs',
+    title: 'Separable Verbs',
+    description:
+      'How verbs like opbellen split apart in sentences, plus the ge- participle rule.',
+    level: 'B1',
+    category: 'B1 · Verbs',
+    icon: 'content_cut',
+    footer: 'Prefix · Split · Infinitive',
+    stripe: 6,
+    order: 12,
+    prev: 'conjunctions',
+    next: 'past-tense',
+  },
+  {
+    slug: 'past-tense',
+    title: 'Past Tense',
+    description:
+      'Perfectum vs. imperfectum, strong verbs table, zijn vs. hebben in perfect.',
+    level: 'B1',
+    category: 'B1 · Tense',
+    icon: 'history',
+    footer: 'Perfectum · Imperfectum · ge-',
+    stripe: 7,
+    order: 13,
+    prev: 'separable-verbs',
+    next: 'diminutives',
+  },
+  {
+    slug: 'diminutives',
+    title: 'Diminutives',
+    description:
+      'The 4 rules for making words smaller (-je, -pje, -tje, -etje) and plurals.',
+    level: 'A2',
+    category: 'A2 · Diminutives',
+    icon: 'zoom_in_map',
+    footer: '-je · -tje · -pje',
+    stripe: 3,
+    order: 14,
+    prev: 'past-tense',
+    next: 'er',
+  },
+  {
+    slug: 'er',
+    title: 'The Word "Er"',
+    description:
+      'The 4 types of "er": location, quantity, prepositional, and dummy subject.',
+    level: 'B1',
+    category: 'B1 · Pronoun',
+    icon: 'psychology',
+    footer: 'Locative · Quantitative · Dummy',
+    stripe: 8,
+    order: 15,
+    prev: 'diminutives',
+  },
+];
+
+export function getSheet(slug: string): SheetMeta | undefined {
+  return SHEET_REGISTRY.find((s) => s.slug === slug);
+}

@@ -1,0 +1,153 @@
+<style>.geen { color: var(--red); font-weight: bold; }
+.niet { color: var(--blue); font-weight: bold; }</style>
+<div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
+          </div>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
+          </div>
+          <div class="help-section">
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="/help" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+<header class="site-header">
+    <div>
+      <h1>Dutch <span class="accent">Negation</span></h1>
+      <p class="subtitle">Geen vs. Niet &middot; Niet Placement</p>
+    </div>
+    <div class="fc-toggle-wrap">
+      
+      <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode" aria-label="Toggle test mode"><span class="material-icons" aria-hidden="true">visibility_off</span> Test Mode</button>
+      <button id="help-trigger" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help dialog"><span class="material-icons" aria-hidden="true">help_outline</span></button>
+      
+    </div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">Ik heb geen tijd.</div>
+    <div class="pill">Ik doe het niet.</div>
+    <div class="pill">Dat is niet mijn kat.</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>Geen vs Niet</div>
+    <p>English uses "not" for almost everything. In Dutch, you must choose between <strong>geen</strong> (none / not a) and <strong>niet</strong> (not). The rule is simple: use <em>geen</em> to negate unspecific nouns (nouns without an article, or with 'een'). For absolutely everything else (verbs, adjectives, specific nouns), use <em>niet</em>.</p>
+  </div>
+
+  <div class="section-title anim a2">1. When to use Geen</div>
+  <table class="anim a2">
+    <thead>
+      <tr><th>Use case</th><th>Example Sentence</th><th>English</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Negating a noun with "een"</td>
+        <td>Dat is <span class="geen">geen</span> probleem.<br><em>(Not: Dat is niet een probleem)</em></td>
+        <td class="en-desc">That is not a problem.</td>
+      </tr>
+      <tr>
+        <td>Negating uncountable nouns</td>
+        <td>Ik drink <span class="geen">geen</span> melk.</td>
+        <td class="en-desc">I don't drink milk.</td>
+      </tr>
+      <tr>
+        <td>Negating undefined plurals</td>
+        <td>Wij hebben <span class="geen">geen</span> auto's.</td>
+        <td class="en-desc">We do not have cars.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title anim a3">2. When to use Niet</div>
+  <table class="anim a3">
+    <thead>
+      <tr><th>Use case</th><th>Example Sentence</th><th>English</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Negating an action (verb)</td>
+        <td>Ik fiets <span class="niet">niet</span>.</td>
+        <td class="en-desc">I am not cycling.</td>
+      </tr>
+      <tr>
+        <td>Negating an adjective</td>
+        <td>De hond is <span class="niet">niet</span> groot.</td>
+        <td class="en-desc">The dog is not big.</td>
+      </tr>
+      <tr>
+        <td>Negating specific nouns (de/het)</td>
+        <td>Ik zie de man <span class="niet">niet</span>.</td>
+        <td class="en-desc">I do not see the man.</td>
+      </tr>
+      <tr>
+        <td>Negating possessives (mijn/jouw)</td>
+        <td>Dat is <span class="niet">niet</span> mijn jas.</td>
+        <td class="en-desc">That is not my coat.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title anim a4">3. Where to put "Niet" in a sentence!</div>
+  <p class="anim a4" style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">The hardest part of Dutch negation is where to place "niet". English puts it right after the verb. In Dutch, "niet" likes to be <strong>as far to the back as possible</strong>, UNLESS it is specifically negating a preposition or adjective.</p>
+  
+  <div class="tips-grid anim a4">
+    <div class="tip-box">
+      <div class="tip-head">At the very end of the sentence</div>
+      <p>When "niet" negates the main action/verb, and there are no prepositional phrases, it goes at the end.<br><br>Ik ken hem <strong>niet</strong>.<br><span class="en" style="font-size:0.7rem">(I don't know him.)</span></p>
+    </div>
+    <div class="tip-box">
+      <div class="tip-head">BEFORE Adjectives</div>
+      <p>If negating an adjective, it goes right before it.<br><br>De auto is <strong>niet</strong> snel.<br><span class="en" style="font-size:0.7rem">(The car is not fast.)</span></p>
+    </div>
+    <div class="tip-box">
+      <div class="tip-head">BEFORE Prepositions</div>
+      <p>If there is a preposition (op, in, naar, met), "niet" MUST go right before it.<br><br>Ik ga <strong>niet</strong> naar het park.<br><span class="en" style="font-size:0.7rem">(I'm not going to the park.)</span></p>
+    </div>
+  </div>
+
+  <div class="page-nav anim a5">
+    <a href="/sheets/adjectives" class="pn-prev"><span class="material-icons">arrow_back</span> Adjectives</a>
+    <button class="mastery-toggle" data-sheet="negation">Mark as Mastered <span class="material-icons">check_circle_outline</span></button>
+    <a href="/sheets/modal-verbs" class="pn-next">Modal Verbs <span class="material-icons">arrow_forward</span></a>
+  </div>

@@ -1,0 +1,138 @@
+<div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
+          </div>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
+          </div>
+          <div class="help-section">
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="/help" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+<header class="site-header">
+    <div>
+      <h1>Dutch <span class="accent">Time</span></h1>
+      <p class="subtitle">Klokkijken &middot; Over/Voor &middot; Prepositions of Time</p>
+    </div>
+    <div class="fc-toggle-wrap">
+      
+      <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode" aria-label="Toggle test mode"><span class="material-icons" aria-hidden="true">visibility_off</span> Test Mode</button>
+      <button id="help-trigger" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help dialog"><span class="material-icons" aria-hidden="true">help_outline</span></button>
+      
+    </div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">kwart over</div>
+    <div class="pill">half acht</div>
+    <div class="pill">om tien uur</div>
+    <div class="pill">op maandag</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>"Half" looks forward!</div>
+    <p>Telling time (Klokkijken) in Dutch can break English speakers' brains. The biggest rule to remember is that <strong>"half" looks toward the NEXT hour.</strong> "Half acht" (half 8) means 7:30. You are saying "it is halfway to 8". Additionally, the minute ranges from 20-40 are read relative to the half-hour, not the full hour.</p>
+  </div>
+
+  <div class="section-title anim a2">1. The Clock (Klokkijken)</div>
+  <table class="anim a2">
+    <thead>
+      <tr><th>Time</th><th>Dutch Phrase</th><th>Literal meaning</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>7:00</td><td><strong>zeven uur</strong></td><td class="en-desc">seven hour</td></tr>
+      <tr><td>7:10</td><td><strong>tien over zeven</strong></td><td class="en-desc">ten past seven</td></tr>
+      <tr><td>7:15</td><td><strong>kwart over zeven</strong></td><td class="en-desc">quarter past seven</td></tr>
+      <tr class="row-hi"><td>7:30</td><td><strong>half acht</strong></td><td class="en-desc">half (towards) eight</td></tr>
+      <tr><td>7:45</td><td><strong>kwart voor acht</strong></td><td class="en-desc">quarter to eight</td></tr>
+      <tr><td>7:50</td><td><strong>tien voor acht</strong></td><td class="en-desc">ten to eight</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tip-box anim a3" style="margin-bottom: 2rem; margin-top: 2rem;">
+    <div class="tip-head"><span class="material-icons">warning</span> The difficult 20 / 40 minutes</div>
+    <p>Dutch reads minutes close to the half-hour relative to the half-hour itself.<br>
+    7:20 = <strong>tien voor half acht</strong> (ten minutes before half 8)<br>
+    7:40 = <strong>tien over half acht</strong> (ten minutes past half 8)</p>
+  </div>
+
+  <div class="section-title anim a4">2. Time Prepositions (om, op, in)</div>
+  <p class="anim a4" style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">Just like English uses "at", "on", and "in", Dutch has strict prepositions for different date formats.</p>
+  <table class="anim a4">
+    <thead>
+      <tr><th>Preposition</th><th>When to use it</th><th>Examples</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono" style="color:var(--orange)">om</td>
+        <td>Exact clock times</td>
+        <td><strong>om</strong> 8 uur <span class="en">(at 8 o'clock)</span><br><strong>om</strong> half drie <span class="en">(at 2:30)</span></td>
+      </tr>
+      <tr>
+        <td class="mono" style="color:var(--orange)">op</td>
+        <td>Days of the week & specific dates</td>
+        <td><strong>op</strong> maandag <span class="en">(on Monday)</span><br><strong>op</strong> 5 mei <span class="en">(on May 5th)</span></td>
+      </tr>
+      <tr>
+        <td class="mono" style="color:var(--orange)">in</td>
+        <td>Months, Years, Seasons, generic times</td>
+        <td><strong>in</strong> juli <span class="en">(in July)</span><br><strong>in</strong> de winter <span class="en">(in the winter)</span><br><strong>in</strong> de ochtend <span class="en">(in the morning)</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title anim a5">3. Asking the time</div>
+  <div class="example anim a6">
+    <span class="nl">Hoe laat is het?</span>
+    <span class="en">How late is it? (What time is it?)</span>
+  </div>
+  <div class="example anim a6">
+    <span class="nl">Hoe laat begint de film?</span>
+    <span class="en">What time does the movie start?</span>
+  </div>
+
+  <div class="page-nav anim a5">
+    <a href="/sheets/questions" class="pn-prev"><span class="material-icons">arrow_back</span> Question Words</a>
+    <button class="mastery-toggle" data-sheet="time">Mark as Mastered <span class="material-icons">check_circle_outline</span></button>
+    <a href="/sheets/adjectives" class="pn-next">Adjectives <span class="material-icons">arrow_forward</span></a>
+  </div>

@@ -1,0 +1,262 @@
+[
+  {
+    "id": "ch3-0",
+    "topic": "Afspraken (Appointments)",
+    "question": "Wat is verplicht om te doen voordat je naar een huisarts of specialist gaat?",
+    "options": [
+      "Meteen naar de praktijk lopen",
+      "Eerst een afspraak maken",
+      "Een brief schrijven naar de gemeente",
+      "Cadeautjes meenemen"
+    ],
+    "answer": "Eerst een afspraak maken",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-1",
+    "topic": "De huisarts (The GP)",
+    "question": "Naar wie ga je in Nederland meestal als eerste met een gezondheidsklacht?",
+    "options": [
+      "De specialist in het ziekenhuis",
+      "De apotheek",
+      "De huisarts",
+      "De fysiotherapeut"
+    ],
+    "answer": "De huisarts",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch3-2",
+    "topic": "De huisarts (The GP)",
+    "question": "Wat heb je nodig van de huisarts om naar een specialist in het ziekenhuis te mogen?",
+    "options": [
+      "Een recept",
+      "Een verwijsbrief",
+      "Een identiteitsbewijs",
+      "Een patiëntenpas"
+    ],
+    "answer": "Een verwijsbrief",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-3",
+    "topic": "Medicijnen (Medicine)",
+    "question": "Waar moet je naartoe met een recept van de dokter voor medicijnen?",
+    "options": [
+      "De drogist",
+      "De supermarkt",
+      "De apotheek",
+      "Het gemeentehuis"
+    ],
+    "answer": "De apotheek",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch3-4",
+    "topic": "Medicijnen (Medicine)",
+    "question": "Wat is een bijsluiter?",
+    "options": [
+      "Een brief van de verzekering",
+      "Een briefje met informatie dat bij de medicijnen zit",
+      "Het etiket op het medicijndoosje",
+      "De rekening voor de medicijnen"
+    ],
+    "answer": "Een briefje met informatie dat bij de medicijnen zit",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-5",
+    "topic": "Ziekenhuis (Hospital)",
+    "question": "Wat is een patiëntenpas?",
+    "options": [
+      "Een pasje van de zorgverzekering",
+      "Een paspoort voor in het ziekenhuis",
+      "Een plastic kaartje van het ziekenhuis met jouw informatie en foto",
+      "Een bewijs dat je medicijnen mag kopen"
+    ],
+    "answer": "Een plastic kaartje van het ziekenhuis met jouw informatie en foto",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch3-6",
+    "topic": "Tandarts (Dentist)",
+    "question": "Hoe vaak gaan de meeste mensen in Nederland voor controle naar de tandarts?",
+    "options": [
+      "Eén keer in de twee jaar",
+      "Twee keer per jaar",
+      "Alleen als ze kiespijn hebben",
+      "Elke maand"
+    ],
+    "answer": "Twee keer per jaar",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-7",
+    "topic": "Snel hulp nodig (Emergency)",
+    "question": "Welk nummer bel je voor spoedhulp van een ambulance, de politie of de brandweer?",
+    "options": [
+      "0900-8844",
+      "112",
+      "911",
+      "Het nummer van de huisarts"
+    ],
+    "answer": "112",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-8",
+    "topic": "Snel hulp nodig (Emergency)",
+    "question": "Wat doe je als je in het weekend of 's nachts dringend een dokter nodig hebt?",
+    "options": [
+      "Je gaat direct naar het ziekenhuis",
+      "Je belt de huisartsenpost",
+      "Je wacht tot maandagochtend",
+      "Je gaat naar de apotheek"
+    ],
+    "answer": "Je belt de huisartsenpost",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-9",
+    "topic": "Snel hulp nodig (Emergency)",
+    "question": "Waarvoor staat de afkorting SEH in een ziekenhuis?",
+    "options": [
+      "Sociale En Hulpverlening",
+      "Specialistische Eerste Hulp",
+      "Spoedeisende Hulp",
+      "Service En Hygiëne"
+    ],
+    "answer": "Spoedeisende Hulp",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch3-10",
+    "topic": "Zorgverzekering (Insurance)",
+    "question": "Welke zorgverzekering is voor iedereen in Nederland verplicht?",
+    "options": [
+      "De aanvullende verzekering",
+      "De basisverzekering",
+      "De tandartsverzekering",
+      "De reisverzekering"
+    ],
+    "answer": "De basisverzekering",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-11",
+    "topic": "Zorgverzekering (Insurance)",
+    "question": "Tot welke leeftijd is de zorgverzekering voor kinderen gratis?",
+    "options": [
+      "Tot 12 jaar",
+      "Tot 16 jaar",
+      "Tot 18 jaar",
+      "Tot 21 jaar"
+    ],
+    "answer": "Tot 18 jaar",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch3-12",
+    "topic": "Zorgverzekering (Insurance)",
+    "question": "Wat is het eigen risico?",
+    "options": [
+      "Een deel van de medische kosten dat je zelf moet betalen",
+      "Geld dat je krijgt van de Belastingdienst",
+      "De boete als je geen verzekering hebt",
+      "De premie die je elke maand betaalt"
+    ],
+    "answer": "Een deel van de medische kosten dat je zelf moet betalen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch3-13",
+    "topic": "Zorgverzekering (Insurance)",
+    "question": "Wat is zorgtoeslag?",
+    "options": [
+      "Extra geld dat je betaalt voor een operatie",
+      "Geld dat mensen met een laag inkomen terugkrijgen van de Belastingdienst voor de premie",
+      "Een cadeau van de dokter",
+      "Geld voor extra medicijnen"
+    ],
+    "answer": "Geld dat mensen met een laag inkomen terugkrijgen van de Belastingdienst voor de premie",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-14",
+    "topic": "Gezond blijven (Stay healthy)",
+    "question": "Welk type brood is volgens het boek gezonder?",
+    "options": [
+      "Wittebrood",
+      "Krentenbrood",
+      "Volkorenbrood",
+      "Suikerbrood"
+    ],
+    "answer": "Volkorenbrood",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch3-15",
+    "topic": "Gezond blijven (Stay healthy)",
+    "question": "Waarom mag je op veel openbare plaatsen in Nederland niet roken?",
+    "options": [
+      "Omdat het te duur is",
+      "Vanwege brandgevaar",
+      "Omdat roken en meeroken slecht zijn voor de gezondheid",
+      "Omdat de koning het niet wil"
+    ],
+    "answer": "Omdat roken en meeroken slecht zijn voor de gezondheid",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch3-16",
+    "topic": "Veilige seks (Safe sex)",
+    "question": "Wat beschermt zowel tegen zwangerschap als tegen soa's?",
+    "options": [
+      "De pil",
+      "Een condoom",
+      "Paracetamol",
+      "Vitamines"
+    ],
+    "answer": "Een condoom",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-17",
+    "topic": "Vrije tijd (Free time)",
+    "question": "Wat is een 'vereniging'?",
+    "options": [
+      "Een ander woord voor een club",
+      "Een type ziekenhuis",
+      "Een politieke partij",
+      "Een winkel"
+    ],
+    "answer": "Een ander woord voor een club",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch3-18",
+    "topic": "Vrije tijd (Free time)",
+    "question": "Wat kun je lenen bij de bibliotheek?",
+    "options": [
+      "Alleen boeken",
+      "Boeken, cd's en films",
+      "Geld voor een vakantie",
+      "Medicijnen"
+    ],
+    "answer": "Boeken, cd's en films",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-19",
+    "topic": "Gezond blijven (Stay healthy)",
+    "question": "Hoeveel moet je ongeveer per dag drinken (water, melk etc.) voor een gezonde voeding?",
+    "options": [
+      "Halve liter",
+      "1 liter",
+      "Anderhalve liter",
+      "3 liter"
+    ],
+    "answer": "Anderhalve liter",
+    "correctIndex": 2
+  }
+]

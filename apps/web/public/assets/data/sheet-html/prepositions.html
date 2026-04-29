@@ -1,0 +1,116 @@
+<div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
+          </div>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
+          </div>
+          <div class="help-section">
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="/help" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+<header class="site-header">
+    <div>
+      <h1>Dutch <span class="accent">Prepositions</span></h1>
+      <p class="subtitle">op &middot; in &middot; naar &middot; bij &middot; uit</p>
+    </div>
+    <div class="fc-toggle-wrap">
+      <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode" aria-label="Toggle test mode"><span class="material-icons" aria-hidden="true">visibility_off</span> Test Mode</button>
+      <button id="help-trigger" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help dialog"><span class="material-icons" aria-hidden="true">help_outline</span></button>
+    </div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">Voorzetsels</div>
+    <div class="pill">Place & Direction</div>
+    <div class="pill">A2 Level</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>Key Rule</div>
+    <p>Dutch prepositions can be tricky because literal translation rarely works mapping directly to English. Moving <em>towards</em> a country is <strong>naar</strong>, but moving towards a person or profession is going <strong>naar</strong>... wait, actually it's <strong>naar de kapper</strong> but being at the hairdresser is <strong>bij de kapper</strong>.</p>
+  </div>
+
+  <div class="section-title anim a2">Essential Prepositions of Place</div>
+  <table class="anim a2">
+    <thead>
+      <tr>
+        <th style="width:120px;">Preposition</th>
+        <th style="width:150px;">General Meaning</th>
+        <th>Usage Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="v-form">op</td>
+        <td class="v-en">on / at</td>
+        <td><strong>op</strong> tafel (on the table), <strong>op</strong> vakantie (on vacation), <strong>op</strong> school (at school)</td>
+      </tr>
+      <tr class="row-hi">
+        <td class="v-form">in</td>
+        <td class="v-en">in / inside</td>
+        <td><strong>in</strong> het huis (in the house), <strong>in</strong> Amsterdam (in Amsterdam)</td>
+      </tr>
+      <tr>
+        <td class="v-form">naar</td>
+        <td class="v-en">to (direction)</td>
+        <td>Ik ga <strong>naar</strong> huis. (I am going home.), <strong>naar</strong> Nederland (to the Netherlands)</td>
+      </tr>
+      <tr class="row-hi">
+        <td class="v-form">bij</td>
+        <td class="v-en">at / near / with</td>
+        <td><strong>bij</strong> de dokter (at the doctor), <strong>bij</strong> het station (near the station)</td>
+      </tr>
+      <tr>
+        <td class="v-form">uit</td>
+        <td class="v-en">out of / from</td>
+        <td>Ik kom <strong>uit</strong> Turkije. (I come from Turkey.), <strong>uit</strong> de doos (out of the box)</td>
+      </tr>
+    </tbody>
+  </table>
+
+<div class="page-nav anim a5">
+    <a href="/sheets/word-order" class="pn-prev"><span class="material-icons">arrow_back</span> Word Order</a>
+    <button class="mastery-toggle" data-sheet="prepositions">Mark as Mastered <span class="material-icons">check_circle_outline</span></button>
+    <a href="/sheets/conjunctions" class="pn-next">omdat & want <span class="material-icons">arrow_forward</span></a>
+  </div>

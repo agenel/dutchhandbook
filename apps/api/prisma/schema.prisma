@@ -1,0 +1,160 @@
+// Prisma schema for More Dutch.
+//
+// Conventions:
+// - All ids are UUID v7 strings ("ulid-like" sortable) for index locality.
+// - All timestamps are UTC.
+// - Auth-sensitive fields (passwordHash, totpSecretEnc, refreshTokenHash) are
+//   never returned by API serializers — see UsersService.toPublic().
+// - Foreign keys cascade on user delete so account deletion is GDPR-safe.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // NOTE: for local development and automated verification we use SQLite.
+  // Production deployments should switch this back to PostgreSQL and re-run migrations.
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String   @id @default(uuid())
+  email           String   @unique
+  emailNormalized String   @unique
+  passwordHash    String
+  displayName     String?
+  emailVerified   Boolean  @default(false)
+  /// Encrypted base32 TOTP secret (envelope encryption with KEK from env).
+  totpSecretEnc   String?
+  hasTotp         Boolean  @default(false)
+  failedLogins    Int      @default(0)
+  lockedUntil     DateTime?
+  lastLoginAt     DateTime?
+  lastLoginIp     String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  sessions          Session[]
+  emailTokens       EmailToken[]
+  oauthAccounts     OAuthAccount[]
+  mastery           MasteryEntry[]
+  flashcardProgress FlashcardProgress[]
+  quizAttempts      QuizAttempt[]
+  knmAttempts       KnmAttempt[]
+  auditLogs         AuditLog[]
+
+  @@index([emailNormalized])
+}
+
+model Session {
+  id               String   @id @default(uuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// Hash of the opaque refresh-token cookie (we store argon2(token) only).
+  refreshTokenHash String
+  csrfSecret       String
+  userAgent        String?
+  ip               String?
+  createdAt        DateTime @default(now())
+  lastSeenAt       DateTime @default(now())
+  expiresAt        DateTime
+  revokedAt        DateTime?
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model EmailToken {
+  id        String            @id @default(uuid())
+  userId    String
+  user      User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  purpose   String
+  /// Argon2 hash of the random token; the cleartext is mailed only.
+  tokenHash String            @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime          @default(now())
+
+  @@index([userId, purpose])
+}
+
+model OAuthAccount {
+  id           String   @id @default(uuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  provider     String
+  providerSub  String
+  accessToken  String?
+  refreshToken String?
+  createdAt    DateTime @default(now())
+
+  @@unique([provider, providerSub])
+  @@index([userId])
+}
+
+model MasteryEntry {
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sheetSlug String
+  mastered  Boolean  @default(true)
+  updatedAt DateTime @updatedAt
+
+  @@id([userId, sheetSlug])
+}
+
+model FlashcardProgress {
+  userId   String
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  deckId   String
+  cardId   String
+  /// Leitner box 0..7
+  box      Int      @default(0)
+  dueAt    DateTime?
+  updatedAt DateTime @updatedAt
+
+  @@id([userId, deckId, cardId])
+  @@index([userId, dueAt])
+}
+
+model QuizAttempt {
+  id         String   @id @default(uuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quizId     String
+  score      Float
+  total      Int
+  correct    Int
+  durationMs Int?
+  createdAt  DateTime @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model KnmAttempt {
+  id         String   @id @default(uuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  chapterId  String
+  score      Float
+  total      Int
+  correct    Int
+  durationMs Int?
+  createdAt  DateTime @default(now())
+
+  @@index([userId, chapterId, createdAt])
+}
+
+model AuditLog {
+  id        String     @id @default(uuid())
+  userId    String?
+  user      User?      @relation(fields: [userId], references: [id], onDelete: SetNull)
+  event     String
+  ip        String?
+  userAgent String?
+  meta      String?
+  createdAt DateTime   @default(now())
+
+  @@index([userId, createdAt])
+  @@index([event, createdAt])
+}

@@ -1,0 +1,52 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: moredutch
+      POSTGRES_PASSWORD: moredutch
+      POSTGRES_DB: moredutch
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  api:
+    image: node:22-alpine
+    working_dir: /app
+    env_file:
+      - ../.env.example
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://moredutch:moredutch@postgres:5432/moredutch?schema=public
+    volumes:
+      - ..:/app
+    command: sh -lc "npm ci && npm --workspace apps/api run prisma:generate && npm --workspace apps/api run start:dev"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+
+  web:
+    image: node:22-alpine
+    working_dir: /app
+    env_file:
+      - ../.env.example
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ..:/app
+    command: sh -lc "npm ci && npm --workspace apps/web run start -- --host 0.0.0.0 --port 4200"
+    ports:
+      - "4200:4200"
+    depends_on:
+      - api
+
+volumes:
+  pg_data:
+

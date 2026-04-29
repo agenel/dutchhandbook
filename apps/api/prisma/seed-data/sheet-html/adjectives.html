@@ -1,0 +1,147 @@
+<style>.adj-rule { font-family: 'DM Mono', monospace; font-size: 0.8rem; font-weight: 700; color: var(--orange); }</style>
+<div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
+          </div>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
+          </div>
+          <div class="help-section">
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="/help" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+<header class="site-header">
+    <div>
+      <h1>Dutch <span class="accent">Adjectives</span></h1>
+      <p class="subtitle">The +e Rule &middot; Comparatives &middot; Superlatives</p>
+    </div>
+    <div class="fc-toggle-wrap">
+      
+      <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode" aria-label="Toggle test mode"><span class="material-icons" aria-hidden="true">visibility_off</span> Test Mode</button>
+      <button id="help-trigger" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help dialog"><span class="material-icons" aria-hidden="true">help_outline</span></button>
+      
+    </div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">het huis</div>
+    <div class="pill">het rode huis</div>
+    <div class="pill">een rood huis</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>The +E Rule</div>
+    <p>In Dutch, adjectives placed before a noun usually get an <strong>-e</strong> at the end (e.g., <em>klein</em> becomes <em>kleine</em>). There is only <strong>ONE</strong> exception: you do not add an <em>-e</em> if the noun is a <strong>het-word</strong> AND the article is indefinite (een, geen, or no article).</p>
+  </div>
+
+  <div class="section-title anim a2">1. The +E Logic Table</div>
+  <table class="anim a2">
+    <thead>
+      <tr><th>Article Type</th><th>De-Word (Auto)</th><th>Het-Word (Huis)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="adj-rule">Definite (de/het)</td>
+        <td>de mooi<span style="color:var(--orange)">e</span> auto<br><span class="en">the beautiful car</span></td>
+        <td>het mooi<span style="color:var(--orange)">e</span> huis<br><span class="en">the beautiful house</span></td>
+      </tr>
+      <tr>
+        <td class="adj-rule">Indefinite (een/geen)</td>
+        <td>een mooi<span style="color:var(--orange)">e</span> auto<br><span class="en">a beautiful car</span></td>
+        <td style="background-color: var(--red-light);"><strong style="color: var(--red);">een mooi huis</strong> (No -e!)<br><span class="en">a beautiful house</span></td>
+      </tr>
+      <tr>
+        <td class="adj-rule">Possessive (mijn/zijn)</td>
+        <td>zijn mooi<span style="color:var(--orange)">e</span> auto<br><span class="en">his beautiful car</span></td>
+        <td>zijn mooi<span style="color:var(--orange)">e</span> huis<br><span class="en">his beautiful house</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip-box anim a3" style="margin-bottom: 2rem;">
+    <div class="tip-head"><span class="material-icons">lightbulb</span> Spelling Changes when adding -E</div>
+    <p>When you add an -e to an adjective, standard Dutch spelling rules apply:<br>
+    &#8226; Double vowels lose one: <em>gr<strong>oo</strong>t &rarr; de gr<strong>o</strong>te auto</em><br>
+    &#8226; Short vowels double the consonant: <em>d<strong>i</strong>k &rarr; de di<strong>kk</strong>e trui</em><br>
+    &#8226; F changes to V: <em>lie<strong>f</strong> &rarr; de lie<strong>v</strong>e hond</em><br>
+    &#8226; S changes to Z: <em>boo<strong>s</strong> &rarr; de bo<strong>z</strong>e man</em></p>
+  </div>
+
+  <div class="section-title anim a4">2. Material Adjectives</div>
+  <p class="anim a4" style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">Adjectives showing what something is made of end in <strong>-en</strong> and never change.</p>
+  <table class="anim a4">
+    <thead>
+      <tr><th>Material</th><th>Example</th><th>English</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="mono">hout (wood)</td><td>de houten stoel</td><td class="en-desc">the wooden chair</td></tr>
+      <tr><td class="mono">goud (gold)</td><td>de gouden ring</td><td class="en-desc">the gold ring</td></tr>
+      <tr><td class="mono">zilver (silver)</td><td>het zilveren horloge</td><td class="en-desc">the silver watch</td></tr>
+      <tr><td class="mono">katoen (cotton)</td><td>het katoenen shirt</td><td class="en-desc">the cotton shirt</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title anim a5">3. Comparatives & Superlatives</div>
+  <table class="anim a5">
+    <thead>
+      <tr><th>Base (+e)</th><th>Comparative (+er)</th><th>Superlative (+st)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>klein <span class="en">(small)</span></td><td>kleiner</td><td class="en">kleinst</td>
+      </tr>
+      <tr><td>groot <span class="en">(big)</span></td><td>groter <em>(spelling rule)</em></td><td class="en">grootst</td>
+      </tr>
+      <tr><td>duur <span class="en">(expensive)</span></td><td>duur<strong>der</strong> <em>(ends in 'r', add 'der')</em></td><td class="en">duurst</td>
+      </tr>
+      <tr class="row-hi"><td>goed <span class="en">(good)</span></td><td>beter</td><td class="en">best</td>
+      </tr>
+      <tr class="row-hi"><td>veel <span class="en">(much/many)</span></td><td>meer</td><td class="en">meest</td>
+      </tr>
+      </tbody>
+  </table>
+
+  <div class="page-nav anim a5">
+    <a href="/sheets/time" class="pn-prev"><span class="material-icons">arrow_back</span> Time & Dates</a>
+    <button class="mastery-toggle" data-sheet="adjectives">Mark as Mastered <span class="material-icons">check_circle_outline</span></button>
+    <a href="/sheets/negation" class="pn-next">Negation <span class="material-icons">arrow_forward</span></a>
+  </div>

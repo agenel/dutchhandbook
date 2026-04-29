@@ -1,0 +1,118 @@
+<div class="help-modal" id="help-modal">
+      <div class="help-content">
+        <button class="help-close" id="help-close" aria-label="Close help"><span class="material-icons">close</span></button>
+        <div class="help-body">
+          <h2 style="background: linear-gradient(to right, var(--ink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sheet <em>Help</em></h2>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+                <h3 style="margin:0;">Interactive Test Mode</h3>
+            </div>
+            <p>Toggle <strong>Test Mode</strong> in the header to hide translations. This is the best way to practice active recall. Click any blurred word to reveal it instantly.</p>
+          </div>
+          <div class="help-section">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--blue);">palette</span>
+                <h3 style="margin:0;">Color Coding Legend</h3>
+            </div>
+            <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1px solid var(--border);">
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+                    <span><strong>Blue</strong>: Subject Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+                    <span><strong>Green</strong>: Object Pronouns</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+                    <span><strong>Red</strong>: Possessive / Negation</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+                    <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+                    <span><strong>Gold</strong>: Key Rules / Formal</span>
+                </div>
+            </div>
+          </div>
+          <div class="help-section">
+             <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                <span class="material-icons" style="color:var(--green);">verified</span>
+                <h3 style="margin:0;">Pro Tip: Mastery</h3>
+            </div>
+            <p>Marking a sheet as <strong>Mastered</strong> at the bottom will fill your global progress bar and help you stay motivated!</p>
+          </div>
+          <div style="margin-top: 2rem; border-top: 1.5px solid var(--border); padding-top: 1.5rem;">
+            <a href="/help" class="fc-btn" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem; background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange);">
+              Full Guide & Visuals <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+<header class="site-header">
+    <div>
+      <h1>Modal <span class="accent">Verbs</span></h1>
+      <p class="subtitle">kunnen &middot; moeten &middot; mogen &middot; willen &middot; zullen</p>
+    </div>
+    <div class="fc-toggle-wrap">
+      
+      <button id="fc-toggle" class="fc-btn" title="Toggle Test Mode" aria-label="Toggle test mode"><span class="material-icons" aria-hidden="true">visibility_off</span> Test Mode</button>
+      <button id="help-trigger" class="fc-btn icon-only" title="Help / How it Works" aria-label="Open help dialog"><span class="material-icons" aria-hidden="true">help_outline</span></button>
+      
+    </div>
+  </header>
+
+  <div class="pill-row">
+    <div class="pill">Hulpwerkwoorden</div>
+    <div class="pill">Kick verb to end</div>
+    <div class="pill">A2 Level</div>
+  </div>
+
+  <div class="key-banner anim a1">
+    <div class="kb-label"><span class="material-icons">bolt</span>Key Rule</div>
+    <p>Modal verbs express ability, necessity, or permission. They take the <strong>second position</strong> in the sentence and kick the <strong>main verb to the very end</strong> in its full infinitive form.</p>
+  </div>
+
+  <div class="section-title anim a2">The 5 Modal Verbs</div>
+  <table class="anim a2">
+    <thead>
+      <tr>
+        <th style="width:120px;">Verb</th>
+        <th style="width:150px;">Meaning</th>
+        <th>Example Sentence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="v-form">kunnen</td>
+        <td class="v-en">can / ability</td>
+        <td>Ik <strong>kan</strong> morgen niet <strong>werken</strong>. (I cannot work tomorrow.)</td>
+      </tr>
+      <tr class="row-hi">
+        <td class="v-form">moeten</td>
+        <td class="v-en">must / have to</td>
+        <td>Wij <strong>moeten</strong> naar de dokter <strong>gaan</strong>. (We must go to the doctor.)</td>
+      </tr>
+      <tr>
+        <td class="v-form">mogen</td>
+        <td class="v-en">may / permitted</td>
+        <td>Jij <strong>mag</strong> hier niet <strong>parkeren</strong>. (You are not allowed to park here.)</td>
+      </tr>
+      <tr class="row-hi">
+        <td class="v-form">willen</td>
+        <td class="v-en">want to</td>
+        <td>Zij <strong>wil</strong> een nieuwe auto <strong>kopen</strong>. (She wants to buy a new car.)</td>
+      </tr>
+      <tr>
+        <td class="v-form">zullen</td>
+        <td class="v-en">will / shall (future)</td>
+        <td>Wij <strong>zullen</strong> dat morgen <strong>doen</strong>. (We will do that tomorrow.)</td>
+      </tr>
+    </tbody>
+  </table>
+
+<div class="page-nav anim a5">
+    <a href="/sheets/negation" class="pn-prev"><span class="material-icons">arrow_back</span> Negation</a>
+    <button class="mastery-toggle" data-sheet="modal-verbs">Mark as Mastered <span class="material-icons">check_circle_outline</span></button>
+    <a href="/sheets/word-order" class="pn-next">Word Order <span class="material-icons">arrow_forward</span></a>
+  </div>
