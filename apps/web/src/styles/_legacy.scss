@@ -1609,6 +1609,7 @@ tr.row-hi td {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .hub-logo {
@@ -1630,6 +1631,9 @@ tr.row-hi td {
   align-items: center;
   gap: 0.8rem;
   list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hub-menu li {

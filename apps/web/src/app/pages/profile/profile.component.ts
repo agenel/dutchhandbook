@@ -46,11 +46,11 @@ import { MetaService } from '../../core/meta.service';
             <div class="stat-label">Sheets Mastered</div>
           </div>
           <div class="stat">
-            <div class="stat-num">{{ stats()?.masteredVerbs ?? '—' }}</div>
+            <div class="stat-num">{{ progress.masteredVerbsCount() }}</div>
             <div class="stat-label">Verbs Mastered</div>
           </div>
           <div class="stat">
-            <div class="stat-num">{{ stats()?.masteredNouns ?? '—' }}</div>
+            <div class="stat-num">{{ progress.masteredNounsCount() }}</div>
             <div class="stat-label">Nouns Mastered</div>
           </div>
           <div class="stat">
@@ -295,6 +295,9 @@ export class ProfileComponent implements OnInit {
     if (this.auth.isAuthenticated()) {
       this.progress.getAttempts().subscribe((items) => this.attempts.set(items));
       this.progress.getStats().subscribe((s) => this.stats.set(s));
+      // Refresh verb/noun signals from server so counts are in sync
+      this.progress.refreshVerbsFromServer().subscribe();
+      this.progress.refreshNounsFromServer().subscribe();
     }
   }
 

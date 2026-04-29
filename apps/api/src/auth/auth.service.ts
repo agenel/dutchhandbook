@@ -31,11 +31,15 @@ export class AuthService {
     private readonly config: ConfigService,
   ) {}
 
-  async requireUser(req: Request): Promise<PublicUser> {
+  async requireUser(req: Request, res?: Response): Promise<PublicUser> {
     const session = await this.sessions.getSessionFromRequest(req);
     if (!session) throw new UnauthorizedException();
     const user = await this.prisma.user.findUnique({ where: { id: session.userId } });
     if (!user) throw new UnauthorizedException();
+    // Re-issue the CSRF cookie when a response object is available (e.g. /auth/me
+    // bootstrap call) so returning users always have a fresh token even when
+    // they never went through login in the current browser session.
+    if (res) this.issueCsrfCookie(res);
     return this.toPublic(user);
   }
 

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@a
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { forkJoin, map, type Observable } from 'rxjs';
+import { AuthService } from '../../../core/auth.service';
 import { ContentService } from '../../../core/content.service';
 import { MetaService } from '../../../core/meta.service';
 import { ProgressService } from '../../../core/progress.service';
@@ -160,6 +161,21 @@ type ExamState = 'setup' | 'exam' | 'results';
           </div>
           <div class="result-msg">{{ resultMessage() }}</div>
           <p>You answered {{ correct() }} out of {{ questions().length }} questions correctly.</p>
+
+          @if (attemptSaved() === 'saved') {
+            <div class="save-notice saved">
+              <span class="material-icons">check_circle</span> Result saved to your profile.
+            </div>
+          } @else if (attemptSaved() === 'failed') {
+            <div class="save-notice failed">
+              <span class="material-icons">error_outline</span> Could not save result. Check your connection or try signing in again.
+            </div>
+          } @else if (attemptSaved() === 'anon') {
+            <div class="save-notice anon">
+              <span class="material-icons">lock_open</span>
+              <span><a routerLink="/auth/login">Sign in</a> or <a routerLink="/auth/register">create an account</a> to save your results.</span>
+            </div>
+          }
 
           <div class="result-actions">
             <button class="btn-primary" type="button" (click)="restart()">
@@ -390,6 +406,24 @@ type ExamState = 'setup' | 'exam' | 'results';
         margin-bottom: 1rem;
         color: var(--ink);
       }
+      .save-notice {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+        font-size: 0.88rem;
+        padding: 0.65rem 1rem;
+        border-radius: 10px;
+        margin: 0 auto 1.2rem;
+        max-width: 480px;
+      }
+      .save-notice .material-icons { font-size: 1rem; }
+      .save-notice.saved { background: #f0fff4; border: 1px solid #9ae6b4; color: #276749; }
+      .save-notice.failed { background: #fff5f5; border: 1px solid #fed7d7; color: #c53030; }
+      .save-notice.anon { background: var(--orange-bg); border: 1px solid var(--orange-border); color: var(--muted); }
+      .save-notice.anon a { color: var(--orange); font-weight: 600; text-decoration: none; }
+      .save-notice.anon a:hover { text-decoration: underline; }
+
       .result-actions {
         display: flex;
         gap: 1.2rem;
@@ -443,7 +477,9 @@ type ExamState = 'setup' | 'exam' | 'results';
 export class KnmExamComponent {
   private readonly content = inject(ContentService);
   private readonly progress = inject(ProgressService);
+  private readonly auth = inject(AuthService);
   private examStartTime = 0;
+  protected readonly attemptSaved = signal<'saved' | 'failed' | 'anon' | null>(null);
 
   protected readonly lengths = [
     { value: 15, label: 'Quick drill', icon: 'bolt' },
@@ -520,13 +556,17 @@ export class KnmExamComponent {
     if (this.index() + 1 >= this.questions().length) {
       this.state.set('results');
       const total = this.questions().length;
+      if (!this.auth.isAuthenticated()) {
+        this.attemptSaved.set('anon');
+        return;
+      }
       this.progress.saveKnmAttempt({
         chapterId: 'mock-exam',
         score: total > 0 ? this.correct() / total : 0,
         total,
         correct: this.correct(),
         durationMs: Date.now() - this.examStartTime,
-      });
+      }).subscribe((ok) => this.attemptSaved.set(ok ? 'saved' : 'failed'));
       return;
     }
     this.index.update((value) => value + 1);
@@ -539,6 +579,7 @@ export class KnmExamComponent {
     this.index.set(0);
     this.picked.set(null);
     this.correct.set(0);
+    this.attemptSaved.set(null);
   }
 
   isCorrectOption(optionIndex: number): boolean {

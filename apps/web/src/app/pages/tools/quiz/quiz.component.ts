@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { RouterLink } from '@angular/router';
+import { AuthService } from '../../../core/auth.service';
 import { ContentService } from '../../../core/content.service';
 import { MetaService } from '../../../core/meta.service';
 import { ProgressService } from '../../../core/progress.service';
@@ -16,7 +18,7 @@ interface QuizQuestion {
 @Component({
   selector: 'md-quiz',
   standalone: true,
-  imports: [HelpDialogComponent],
+  imports: [HelpDialogComponent, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="hero" style="border-bottom:none; padding-bottom: 1rem;">
@@ -94,6 +96,22 @@ interface QuizQuestion {
         <div class="result">
           <h2>Quiz finished</h2>
           <p>You scored {{ correct() }} / {{ questions().length }}.</p>
+
+          @if (attemptSaved() === 'saved') {
+            <div class="save-notice saved">
+              <span class="material-icons">check_circle</span> Result saved to your profile.
+            </div>
+          } @else if (attemptSaved() === 'failed') {
+            <div class="save-notice failed">
+              <span class="material-icons">error_outline</span> Could not save result. Check your connection or try signing in again.
+            </div>
+          } @else if (attemptSaved() === 'anon') {
+            <div class="save-notice anon">
+              <span class="material-icons">lock_open</span>
+              <span><a routerLink="/auth/login">Sign in</a> or <a routerLink="/auth/register">create an account</a> to save your results.</span>
+            </div>
+          }
+
           <div class="nav-btns">
             <button type="button" class="fc-btn" (click)="restart()">Try Again</button>
           </div>
@@ -166,6 +184,23 @@ interface QuizQuestion {
         border: 1.5px solid var(--border);
         border-radius: 16px;
       }
+      .save-notice {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+        font-size: 0.88rem;
+        padding: 0.6rem 1rem;
+        border-radius: 10px;
+        margin: 0.8rem auto 0;
+        max-width: 400px;
+      }
+      .save-notice .material-icons { font-size: 1rem; }
+      .save-notice.saved { background: #f0fff4; border: 1px solid #9ae6b4; color: #276749; }
+      .save-notice.failed { background: #fff5f5; border: 1px solid #fed7d7; color: #c53030; }
+      .save-notice.anon { background: var(--orange-bg); border: 1px solid var(--orange-border); color: var(--muted); }
+      .save-notice.anon a { color: var(--orange); font-weight: 600; text-decoration: none; }
+      .save-notice.anon a:hover { text-decoration: underline; }
       .nav-btns {
         display: flex;
         gap: 1rem;
@@ -178,6 +213,7 @@ interface QuizQuestion {
 export class QuizComponent {
   private readonly content = inject(ContentService);
   private readonly progress = inject(ProgressService);
+  private readonly auth = inject(AuthService);
   private startTime = Date.now();
 
   protected readonly questions = toSignal(
@@ -189,6 +225,7 @@ export class QuizComponent {
   protected readonly correct = signal(0);
   protected readonly picked = signal<number | null>(null);
   protected readonly finished = signal(false);
+  protected readonly attemptSaved = signal<'saved' | 'failed' | 'anon' | null>(null);
   protected helpOpen = false;
 
   protected readonly current = computed(() => this.questions()[this.index()]);
@@ -217,13 +254,17 @@ export class QuizComponent {
     const total = this.questions().length;
     if (this.index() + 1 >= total) {
       this.finished.set(true);
+      if (!this.auth.isAuthenticated()) {
+        this.attemptSaved.set('anon');
+        return;
+      }
       this.progress.saveQuizAttempt({
         quizId: 'grammar',
         score: total > 0 ? this.correct() / total : 0,
         total,
         correct: this.correct(),
         durationMs: Date.now() - this.startTime,
-      });
+      }).subscribe((ok) => this.attemptSaved.set(ok ? 'saved' : 'failed'));
       return;
     }
     this.index.update((i) => i + 1);
@@ -235,6 +276,7 @@ export class QuizComponent {
     this.correct.set(0);
     this.picked.set(null);
     this.finished.set(false);
+    this.attemptSaved.set(null);
     this.startTime = Date.now();
   }
 }

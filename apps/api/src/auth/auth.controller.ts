@@ -11,8 +11,11 @@ export class AuthController {
   constructor(private readonly auth: AuthService) {}
 
   @Get('me')
-  async me(@Req() req: Request): Promise<PublicUser> {
-    const user = await this.auth.requireUser(req);
+  async me(
+    @Req() req: Request,
+    @Res({ passthrough: true }) res: Response,
+  ): Promise<PublicUser> {
+    const user = await this.auth.requireUser(req, res);
     return user;
   }
 

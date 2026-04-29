@@ -7,7 +7,7 @@ import type {
   KnmAttemptDto,
   AttemptItem,
 } from '@moredutch/shared';
-import { Observable, catchError, of, tap } from 'rxjs';
+import { Observable, catchError, map, of, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
 
@@ -37,12 +37,20 @@ export class ProgressService {
 
   private readonly _mastery = signal<MasteryState>(this.loadLocalMastery());
   private readonly _hideMastered = signal<boolean>(this.loadHideMastered());
+  private readonly _masteredVerbs = signal<Set<string>>(new Set<string>());
+  private readonly _masteredNouns = signal<Set<string>>(new Set<string>());
 
   readonly mastery = computed(() => this._mastery());
   readonly hideMastered = computed(() => this._hideMastered());
   readonly masteredCount = computed(() => Object.values(this._mastery()).filter(Boolean).length);
+  readonly masteredVerbsCount = computed(() => this._masteredVerbs().size);
+  readonly masteredNounsCount = computed(() => this._masteredNouns().size);
 
   constructor() {
+    // Seed verb/noun signals from localStorage on startup
+    this._masteredVerbs.set(this.readMasteredVerbs());
+    this._masteredNouns.set(this.readMasteredNouns());
+
     effect(() => {
       if (!this.isBrowser) return;
       try {
@@ -125,6 +133,7 @@ export class ProgressService {
   }
 
   writeMasteredVerbs(ids: Set<string>): void {
+    this._masteredVerbs.set(new Set(ids));
     if (!this.isBrowser) return;
     try {
       localStorage.setItem(VERBS_KEY, JSON.stringify([...ids]));
@@ -161,6 +170,7 @@ export class ProgressService {
   }
 
   writeMasteredNouns(ids: Set<string>): void {
+    this._masteredNouns.set(new Set(ids));
     if (!this.isBrowser) return;
     try {
       localStorage.setItem(NOUNS_KEY, JSON.stringify([...ids]));
@@ -186,20 +196,30 @@ export class ProgressService {
 
   // ── Quiz / KNM attempts ───────────────────────────────────────────────────
 
-  saveQuizAttempt(dto: QuizAttemptDto): void {
-    if (!this.auth.isAuthenticated()) return;
-    this.http
+  saveQuizAttempt(dto: QuizAttemptDto): Observable<boolean> {
+    if (!this.auth.isAuthenticated()) return of(false);
+    return this.http
       .post(`${this.base}/quiz-attempt`, dto)
-      .pipe(catchError(() => of(null)))
-      .subscribe();
+      .pipe(
+        map(() => true),
+        catchError((err) => {
+          console.error('[ProgressService] saveQuizAttempt failed', err);
+          return of(false);
+        }),
+      );
   }
 
-  saveKnmAttempt(dto: KnmAttemptDto): void {
-    if (!this.auth.isAuthenticated()) return;
-    this.http
+  saveKnmAttempt(dto: KnmAttemptDto): Observable<boolean> {
+    if (!this.auth.isAuthenticated()) return of(false);
+    return this.http
       .post(`${this.base}/knm-attempt`, dto)
-      .pipe(catchError(() => of(null)))
-      .subscribe();
+      .pipe(
+        map(() => true),
+        catchError((err) => {
+          console.error('[ProgressService] saveKnmAttempt failed', err);
+          return of(false);
+        }),
+      );
   }
 
   getAttempts(): Observable<AttemptItem[]> {
