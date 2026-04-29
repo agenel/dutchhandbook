@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TOOL_REGISTRY } from '@moredutch/shared';
+import { AuthService } from '../../core/auth.service';
 import { MetaService } from '../../core/meta.service';
 import { ProgressService } from '../../core/progress.service';
 import { HelpDialogComponent } from '../../layout/help-dialog/help-dialog.component';
@@ -111,12 +112,23 @@ import { HelpDialogComponent } from '../../layout/help-dialog/help-dialog.compon
       </a>
     </div>
 
-    <div class="progress-container" style="margin-bottom:2.5rem;">
-      <div class="progress-fill" [style.width.%]="masteryPct()"></div>
-      <div class="progress-text">
-        <strong>{{ mastered() }}/{{ total }}</strong> Modules Mastered
+    @if (auth.isAuthenticated()) {
+      <div class="progress-container" style="margin-bottom:2.5rem;">
+        <div class="progress-fill" [style.width.%]="masteryPct()"></div>
+        <div class="progress-text">
+          <strong>{{ mastered() }}/{{ total }}</strong> Modules Mastered
+        </div>
       </div>
-    </div>
+    } @else {
+      <div class="progress-signin-nudge">
+        <span class="material-icons">lock_open</span>
+        <span>
+          Want to track your progress?
+          <a routerLink="/auth/login">Sign in</a> or
+          <a routerLink="/auth/register">create a free account</a>.
+        </span>
+      </div>
+    }
 
     <div class="section-title">
       Interactive Practice Tools
@@ -142,6 +154,7 @@ import { HelpDialogComponent } from '../../layout/help-dialog/help-dialog.compon
 export class HomeComponent {
   private readonly meta = inject(MetaService);
   private readonly progress = inject(ProgressService);
+  protected readonly auth = inject(AuthService);
   protected readonly tools = TOOL_REGISTRY;
 
   protected readonly total = 15;

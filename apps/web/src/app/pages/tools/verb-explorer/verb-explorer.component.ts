@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import type { Verb } from '@moredutch/shared';
 import { ContentService } from '../../../core/content.service';
 import { MetaService } from '../../../core/meta.service';
+import { ProgressService } from '../../../core/progress.service';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
 const MASTERED_VERBS_KEY = 'dgh_mastered_verbs';
@@ -311,6 +312,7 @@ type VerbWithLegacyFields = Verb & {
 })
 export class VerbExplorerComponent {
   private readonly content = inject(ContentService);
+  private readonly progress = inject(ProgressService);
 
   protected readonly verbs = toSignal(this.content.verbs(), {
     initialValue: [] as VerbWithLegacyFields[],
@@ -384,6 +386,7 @@ export class VerbExplorerComponent {
     this.masteredIds.update((ids) =>
       ids.includes(verb.id!) ? ids.filter((id) => id !== verb.id) : [...ids, verb.id!],
     );
+    this.progress.syncVerbs(this.masteredIds().map(String));
   }
 
   protected typeLabel(verb: VerbWithLegacyFields): string {

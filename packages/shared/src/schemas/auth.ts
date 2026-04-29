@@ -1,8 +1,7 @@
 import { z } from 'zod';
 
 /**
- * Strong password policy: min 12 chars, mixed case, digit, symbol.
- * Matches the OWASP ASVS L1 password requirements.
+ * Password policy: min 12 chars, mixed case, digit.
  */
 export const PasswordSchema = z
   .string()
@@ -10,8 +9,7 @@ export const PasswordSchema = z
   .max(128, 'Password must be at most 128 characters')
   .regex(/[a-z]/, 'Password must contain a lowercase letter')
   .regex(/[A-Z]/, 'Password must contain an uppercase letter')
-  .regex(/[0-9]/, 'Password must contain a digit')
-  .regex(/[^a-zA-Z0-9]/, 'Password must contain a symbol');
+  .regex(/[0-9]/, 'Password must contain a digit');
 
 export const EmailSchema = z.string().trim().toLowerCase().email().max(254);
 

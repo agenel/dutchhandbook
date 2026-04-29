@@ -39,6 +39,8 @@ model User {
   emailTokens       EmailToken[]
   oauthAccounts     OAuthAccount[]
   mastery           MasteryEntry[]
+  verbMastery       VerbMastery[]
+  nounMastery       NounMastery[]
   flashcardProgress FlashcardProgress[]
   quizAttempts      QuizAttempt[]
   knmAttempts       KnmAttempt[]
@@ -101,6 +103,26 @@ model MasteryEntry {
   updatedAt DateTime @updatedAt
 
   @@id([userId, sheetSlug])
+}
+
+model VerbMastery {
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  verbId    String
+  updatedAt DateTime @updatedAt
+
+  @@id([userId, verbId])
+  @@index([userId])
+}
+
+model NounMastery {
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nounId    String
+  updatedAt DateTime @updatedAt
+
+  @@id([userId, nounId])
+  @@index([userId])
 }
 
 model FlashcardProgress {

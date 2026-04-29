@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { forkJoin, map, type Observable } from 'rxjs';
 import { ContentService } from '../../../core/content.service';
 import { MetaService } from '../../../core/meta.service';
+import { ProgressService } from '../../../core/progress.service';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
 interface KnmQuestion {
@@ -441,6 +442,8 @@ type ExamState = 'setup' | 'exam' | 'results';
 })
 export class KnmExamComponent {
   private readonly content = inject(ContentService);
+  private readonly progress = inject(ProgressService);
+  private examStartTime = 0;
 
   protected readonly lengths = [
     { value: 15, label: 'Quick drill', icon: 'bolt' },
@@ -503,6 +506,7 @@ export class KnmExamComponent {
     this.index.set(0);
     this.picked.set(null);
     this.correct.set(0);
+    this.examStartTime = Date.now();
     this.state.set('exam');
   }
 
@@ -515,6 +519,14 @@ export class KnmExamComponent {
   nextQuestion(): void {
     if (this.index() + 1 >= this.questions().length) {
       this.state.set('results');
+      const total = this.questions().length;
+      this.progress.saveKnmAttempt({
+        chapterId: 'mock-exam',
+        score: total > 0 ? this.correct() / total : 0,
+        total,
+        correct: this.correct(),
+        durationMs: Date.now() - this.examStartTime,
+      });
       return;
     }
     this.index.update((value) => value + 1);

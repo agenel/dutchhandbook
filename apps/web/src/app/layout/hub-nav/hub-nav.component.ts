@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../core/theme.service';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'md-hub-nav',
@@ -69,6 +70,19 @@ import { ThemeService } from '../../core/theme.service';
               theme.dark() ? 'light_mode' : 'dark_mode'
             }}</span>
           </button>
+          @if (auth.isAuthenticated()) {
+            <a routerLink="/profile" class="fc-btn nav-user" title="My Profile" aria-label="My Profile">
+              <span class="material-icons" aria-hidden="true">account_circle</span>
+              Profile
+            </a>
+            <button type="button" class="fc-btn icon-only nav-signout" title="Sign Out" aria-label="Sign Out" (click)="signOut()">
+              <span class="material-icons" aria-hidden="true">logout</span>
+            </button>
+          } @else {
+            <a routerLink="/auth/login" class="fc-btn nav-signin">
+              Sign In
+            </a>
+          }
           <div class="flag" aria-hidden="true">
             <div class="flag-red"></div>
             <div class="flag-white"></div>
@@ -104,6 +118,15 @@ import { ThemeService } from '../../core/theme.service';
               </li>
             }
           </ul>
+          <div class="hub-mobile-section-label">Account</div>
+          <ul class="hub-mobile-links">
+            @if (auth.isAuthenticated()) {
+              <li><a routerLink="/profile" (click)="closeMobile()">My Profile</a></li>
+            } @else {
+              <li><a routerLink="/auth/login" (click)="closeMobile()">Sign In</a></li>
+              <li><a routerLink="/auth/register" (click)="closeMobile()">Create Account</a></li>
+            }
+          </ul>
         </div>
       </div>
     }
@@ -111,6 +134,8 @@ import { ThemeService } from '../../core/theme.service';
 })
 export class HubNavComponent {
   protected readonly theme = inject(ThemeService);
+  protected readonly auth = inject(AuthService);
+  private readonly router = inject(Router);
   protected readonly tools = [
     { slug: 'verb-explorer', title: 'Verb Explorer', icon: 'edit' },
     { slug: 'flashcards', title: 'Flashcards', icon: 'style' },
@@ -158,5 +183,9 @@ export class HubNavComponent {
 
   closeMobile(): void {
     this.mobileOpen = false;
+  }
+
+  signOut(): void {
+    this.auth.logout().subscribe(() => this.router.navigate(['/']));
   }
 }

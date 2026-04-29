@@ -1,65 +1,89 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { MessageModule } from 'primeng/message';
-import { PasswordModule } from 'primeng/password';
 import { AuthService } from '../../../core/auth.service';
 
 @Component({
   selector: 'md-register',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    RouterLink,
-    ButtonModule,
-    InputTextModule,
-    PasswordModule,
-    MessageModule,
-  ],
+  imports: [ReactiveFormsModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="auth-shell">
+      <div class="auth-logo">
+        <a routerLink="/">More<span>Dutch</span></a>
+      </div>
       <h1 class="auth-title">Create account</h1>
       <p class="auth-sub">Sync your mastery and progress across devices, free.</p>
 
       <form [formGroup]="form" (ngSubmit)="submit()" class="auth-form">
-        <label>
-          Display name (optional)
-          <input pInputText type="text" autocomplete="nickname" formControlName="displayName" />
-        </label>
-        <label>
-          Email
-          <input pInputText type="email" autocomplete="email" formControlName="email" />
-        </label>
-        <label>
-          Password
-          <p-password
-            formControlName="password"
-            [toggleMask]="true"
-            promptLabel="At least 12 characters with mixed case, a digit and a symbol."
-            inputStyleClass="w-full"
-            styleClass="w-full"
+        <label class="auth-label">
+          Display name <span class="auth-optional">(optional)</span>
+          <input
+            class="auth-input"
+            type="text"
+            autocomplete="nickname"
+            placeholder="Jan de Vries"
+            formControlName="displayName"
           />
+        </label>
+
+        <label class="auth-label">
+          Email
+          <input
+            class="auth-input"
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            formControlName="email"
+          />
+        </label>
+
+        <label class="auth-label">
+          Password
+          <div class="auth-input-wrap">
+            <input
+              class="auth-input"
+              [type]="showPw() ? 'text' : 'password'"
+              autocomplete="new-password"
+              placeholder="At least 12 characters"
+              formControlName="password"
+            />
+            <button
+              type="button"
+              class="auth-eye"
+              (click)="showPw.set(!showPw())"
+              [attr.aria-label]="showPw() ? 'Hide password' : 'Show password'"
+            >
+              <span class="material-icons">{{ showPw() ? 'visibility_off' : 'visibility' }}</span>
+            </button>
+          </div>
+          <span class="auth-hint">Min. 12 characters with mixed case and a digit.</span>
         </label>
 
         @if (error()) {
-          <p-message severity="error" [text]="error()!" />
+          <div class="auth-alert error">
+            <span class="material-icons">error_outline</span>
+            {{ error() }}
+          </div>
         }
         @if (success()) {
-          <p-message
-            severity="success"
-            text="Account created. Check your inbox for a verification email."
-          />
+          <div class="auth-alert success">
+            <span class="material-icons">mark_email_read</span>
+            Account created! Check your inbox for a verification email.
+          </div>
         }
 
         <button
-          pButton
+          class="fc-btn auth-submit"
           type="submit"
-          [disabled]="loading() || form.invalid"
-          label="Create account"
-        ></button>
+          [disabled]="loading() || form.invalid || success()"
+        >
+          @if (loading()) {
+            <span class="material-icons spin">progress_activity</span>
+          }
+          Create account
+        </button>
       </form>
 
       <div class="auth-links">
@@ -68,46 +92,9 @@ import { AuthService } from '../../../core/auth.service';
       </div>
     </div>
   `,
-  styles: [
-    `
-      .auth-shell {
-        max-width: 420px;
-        margin: 3rem auto;
-        background: var(--white);
-        border: 1.5px solid var(--border);
-        border-radius: 20px;
-        padding: 2rem;
-      }
-      .auth-title {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.4rem;
-        margin-bottom: 0.4rem;
-      }
-      .auth-sub {
-        color: var(--muted);
-        margin-bottom: 1.6rem;
-      }
-      .auth-form {
-        display: grid;
-        gap: 1rem;
-      }
-      .auth-form label {
-        display: grid;
-        gap: 0.4rem;
-        font-size: 0.85rem;
-        color: var(--muted);
-      }
-      .auth-links {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1.4rem;
-        font-size: 0.9rem;
-      }
-      .auth-links a {
-        color: var(--orange);
-      }
-    `,
-  ],
+  styles: [`
+    :host { display: block; }
+  `],
 })
 export class RegisterComponent {
   private readonly fb = inject(FormBuilder);
@@ -117,6 +104,7 @@ export class RegisterComponent {
   protected readonly loading = signal(false);
   protected readonly error = signal<string | null>(null);
   protected readonly success = signal(false);
+  protected readonly showPw = signal(false);
 
   protected readonly form = this.fb.nonNullable.group({
     displayName: [''],
@@ -139,7 +127,7 @@ export class RegisterComponent {
         next: () => {
           this.success.set(true);
           this.loading.set(false);
-          setTimeout(() => this.router.navigateByUrl('/'), 1500);
+          setTimeout(() => this.router.navigateByUrl('/'), 2000);
         },
         error: (err: { error?: { message?: string } }) => {
           this.loading.set(false);

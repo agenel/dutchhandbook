@@ -45,6 +45,27 @@ export const PreferencesSchema = z.object({
 });
 export type PreferencesDto = z.infer<typeof PreferencesSchema>;
 
+export const VerbSyncSchema = z.object({
+  masteredIds: z.array(z.string().min(1).max(64)).max(500),
+});
+export type VerbSyncDto = z.infer<typeof VerbSyncSchema>;
+
+export const NounSyncSchema = z.object({
+  masteredIds: z.array(z.string().min(1).max(64)).max(2000),
+});
+export type NounSyncDto = z.infer<typeof NounSyncSchema>;
+
+export const AttemptItemSchema = z.object({
+  id: z.string(),
+  tool: z.enum(['quiz', 'knm']),
+  score: z.number(),
+  total: z.number().int(),
+  correct: z.number().int(),
+  durationMs: z.number().int().nullable(),
+  createdAt: z.string(),
+});
+export type AttemptItem = z.infer<typeof AttemptItemSchema>;
+
 /**
  * One-shot bulk migration payload pushed when a previously-anonymous user
  * logs in for the first time and we want to merge their localStorage state

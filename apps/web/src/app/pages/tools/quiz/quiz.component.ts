@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@a
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ContentService } from '../../../core/content.service';
 import { MetaService } from '../../../core/meta.service';
+import { ProgressService } from '../../../core/progress.service';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
 interface QuizQuestion {
@@ -176,6 +177,8 @@ interface QuizQuestion {
 })
 export class QuizComponent {
   private readonly content = inject(ContentService);
+  private readonly progress = inject(ProgressService);
+  private startTime = Date.now();
 
   protected readonly questions = toSignal(
     this.content.quiz() as unknown as import('rxjs').Observable<QuizQuestion[]>,
@@ -214,6 +217,13 @@ export class QuizComponent {
     const total = this.questions().length;
     if (this.index() + 1 >= total) {
       this.finished.set(true);
+      this.progress.saveQuizAttempt({
+        quizId: 'grammar',
+        score: total > 0 ? this.correct() / total : 0,
+        total,
+        correct: this.correct(),
+        durationMs: Date.now() - this.startTime,
+      });
       return;
     }
     this.index.update((i) => i + 1);
@@ -225,5 +235,6 @@ export class QuizComponent {
     this.correct.set(0);
     this.picked.set(null);
     this.finished.set(false);
+    this.startTime = Date.now();
   }
 }

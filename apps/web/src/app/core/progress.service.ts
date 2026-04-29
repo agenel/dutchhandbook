@@ -1,12 +1,19 @@
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, PLATFORM_ID, computed, effect, inject, signal } from '@angular/core';
-import type { ProgressMigrationDto } from '@moredutch/shared';
+import type {
+  ProgressMigrationDto,
+  QuizAttemptDto,
+  KnmAttemptDto,
+  AttemptItem,
+} from '@moredutch/shared';
 import { Observable, catchError, of, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
 
 const HIDE_MASTERED_KEY = 'dgh_hide_mastered';
+const VERBS_KEY = 'dgh_mastered_verbs';
+const NOUNS_KEY = 'dgh_mastered_nouns';
 const masteredKey = (slug: string) => `dgh_mastered_${slug}`;
 
 interface MasteryState {
@@ -45,6 +52,8 @@ export class ProgressService {
       }
     });
   }
+
+  // ── Sheet mastery ─────────────────────────────────────────────────────────
 
   isMastered(slug: string): boolean {
     return !!this._mastery()[slug];
@@ -103,6 +112,132 @@ export class ProgressService {
     );
   }
 
+  // ── Verb mastery ──────────────────────────────────────────────────────────
+
+  readMasteredVerbs(): Set<string> {
+    if (!this.isBrowser) return new Set();
+    try {
+      const raw = localStorage.getItem(VERBS_KEY);
+      return new Set(raw ? (JSON.parse(raw) as string[]) : []);
+    } catch {
+      return new Set();
+    }
+  }
+
+  writeMasteredVerbs(ids: Set<string>): void {
+    if (!this.isBrowser) return;
+    try {
+      localStorage.setItem(VERBS_KEY, JSON.stringify([...ids]));
+    } catch {
+      /* ignore */
+    }
+  }
+
+  syncVerbs(ids: string[]): void {
+    if (!this.auth.isAuthenticated()) return;
+    this.http
+      .post(`${this.base}/verbs/sync`, { masteredIds: ids })
+      .pipe(catchError(() => of(null)))
+      .subscribe();
+  }
+
+  refreshVerbsFromServer(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.base}/verbs`).pipe(
+      tap((ids) => this.writeMasteredVerbs(new Set(ids ?? []))),
+      catchError(() => of([] as string[])),
+    );
+  }
+
+  // ── Noun mastery ──────────────────────────────────────────────────────────
+
+  readMasteredNouns(): Set<string> {
+    if (!this.isBrowser) return new Set();
+    try {
+      const raw = localStorage.getItem(NOUNS_KEY);
+      return new Set(raw ? (JSON.parse(raw) as string[]) : []);
+    } catch {
+      return new Set();
+    }
+  }
+
+  writeMasteredNouns(ids: Set<string>): void {
+    if (!this.isBrowser) return;
+    try {
+      localStorage.setItem(NOUNS_KEY, JSON.stringify([...ids]));
+    } catch {
+      /* ignore */
+    }
+  }
+
+  syncNouns(ids: string[]): void {
+    if (!this.auth.isAuthenticated()) return;
+    this.http
+      .post(`${this.base}/nouns/sync`, { masteredIds: ids })
+      .pipe(catchError(() => of(null)))
+      .subscribe();
+  }
+
+  refreshNounsFromServer(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.base}/nouns`).pipe(
+      tap((ids) => this.writeMasteredNouns(new Set(ids ?? []))),
+      catchError(() => of([] as string[])),
+    );
+  }
+
+  // ── Quiz / KNM attempts ───────────────────────────────────────────────────
+
+  saveQuizAttempt(dto: QuizAttemptDto): void {
+    if (!this.auth.isAuthenticated()) return;
+    this.http
+      .post(`${this.base}/quiz-attempt`, dto)
+      .pipe(catchError(() => of(null)))
+      .subscribe();
+  }
+
+  saveKnmAttempt(dto: KnmAttemptDto): void {
+    if (!this.auth.isAuthenticated()) return;
+    this.http
+      .post(`${this.base}/knm-attempt`, dto)
+      .pipe(catchError(() => of(null)))
+      .subscribe();
+  }
+
+  getAttempts(): Observable<AttemptItem[]> {
+    return this.http
+      .get<AttemptItem[]>(`${this.base}/attempts`)
+      .pipe(catchError(() => of([] as AttemptItem[])));
+  }
+
+  getStats(): Observable<{
+    masteredSheets: number;
+    masteredVerbs: number;
+    masteredNouns: number;
+    totalQuizAttempts: number;
+    totalKnmAttempts: number;
+  }> {
+    return this.http
+      .get<{
+        masteredSheets: number;
+        masteredVerbs: number;
+        masteredNouns: number;
+        totalQuizAttempts: number;
+        totalKnmAttempts: number;
+      }>(`${this.base}/stats`)
+      .pipe(
+        catchError(() =>
+          of({
+            masteredSheets: 0,
+            masteredVerbs: 0,
+            masteredNouns: 0,
+            totalQuizAttempts: 0,
+            totalKnmAttempts: 0,
+          }),
+        ),
+      );
+  }
+
+  // ── Private helpers ───────────────────────────────────────────────────────
+
   private loadLocalMastery(): MasteryState {
     if (!this.isBrowser) return {};
     const out: MasteryState = {};
@@ -110,6 +245,8 @@ export class ProgressService {
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         if (!key || !key.startsWith('dgh_mastered_')) continue;
+        // Skip non-sheet keys (verbs/nouns stored separately)
+        if (key === VERBS_KEY || key === NOUNS_KEY) continue;
         const slug = key.replace('dgh_mastered_', '');
         out[slug] = localStorage.getItem(key) === 'true';
       }

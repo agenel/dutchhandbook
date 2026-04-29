@@ -1,6 +1,20 @@
 import { Body, Controller, Get, HttpCode, Post, Req } from '@nestjs/common';
 import { Request } from 'express';
-import { MasteryToggleSchema, ProgressMigrationSchema, type MasteryToggleDto, type ProgressMigrationDto } from '@moredutch/shared';
+import {
+  MasteryToggleSchema,
+  ProgressMigrationSchema,
+  QuizAttemptSchema,
+  KnmAttemptSchema,
+  VerbSyncSchema,
+  NounSyncSchema,
+  type MasteryToggleDto,
+  type ProgressMigrationDto,
+  type QuizAttemptDto,
+  type KnmAttemptDto,
+  type VerbSyncDto,
+  type NounSyncDto,
+  type AttemptItem,
+} from '@moredutch/shared';
 import { ZodValidationPipe } from '../common/zod.pipe';
 import { AuthService } from '../auth/auth.service';
 import { ProgressService } from './progress.service';
@@ -11,6 +25,8 @@ export class ProgressController {
     private readonly auth: AuthService,
     private readonly progress: ProgressService,
   ) {}
+
+  // ── Sheet mastery ────────────────────────────────────────────────────────────
 
   @Get('mastery')
   async mastery(@Req() req: Request): Promise<Record<string, boolean>> {
@@ -37,5 +53,84 @@ export class ProgressController {
     const user = await this.auth.requireUser(req);
     await this.progress.migrateMastery(user.id, dto.masteredSlugs);
   }
-}
 
+  // ── Verb mastery ─────────────────────────────────────────────────────────────
+
+  @Get('verbs')
+  async getVerbs(@Req() req: Request): Promise<string[]> {
+    const user = await this.auth.requireUser(req);
+    return this.progress.getVerbs(user.id);
+  }
+
+  @Post('verbs/sync')
+  @HttpCode(204)
+  async syncVerbs(
+    @Body(new ZodValidationPipe(VerbSyncSchema)) dto: VerbSyncDto,
+    @Req() req: Request,
+  ): Promise<void> {
+    const user = await this.auth.requireUser(req);
+    await this.progress.syncVerbs(user.id, dto.masteredIds);
+  }
+
+  // ── Noun mastery ─────────────────────────────────────────────────────────────
+
+  @Get('nouns')
+  async getNouns(@Req() req: Request): Promise<string[]> {
+    const user = await this.auth.requireUser(req);
+    return this.progress.getNouns(user.id);
+  }
+
+  @Post('nouns/sync')
+  @HttpCode(204)
+  async syncNouns(
+    @Body(new ZodValidationPipe(NounSyncSchema)) dto: NounSyncDto,
+    @Req() req: Request,
+  ): Promise<void> {
+    const user = await this.auth.requireUser(req);
+    await this.progress.syncNouns(user.id, dto.masteredIds);
+  }
+
+  // ── Quiz attempts ────────────────────────────────────────────────────────────
+
+  @Post('quiz-attempt')
+  @HttpCode(204)
+  async saveQuizAttempt(
+    @Body(new ZodValidationPipe(QuizAttemptSchema)) dto: QuizAttemptDto,
+    @Req() req: Request,
+  ): Promise<void> {
+    const user = await this.auth.requireUser(req);
+    await this.progress.saveQuizAttempt(user.id, dto);
+  }
+
+  // ── KNM attempts ─────────────────────────────────────────────────────────────
+
+  @Post('knm-attempt')
+  @HttpCode(204)
+  async saveKnmAttempt(
+    @Body(new ZodValidationPipe(KnmAttemptSchema)) dto: KnmAttemptDto,
+    @Req() req: Request,
+  ): Promise<void> {
+    const user = await this.auth.requireUser(req);
+    await this.progress.saveKnmAttempt(user.id, dto);
+  }
+
+  // ── Combined history + stats ──────────────────────────────────────────────────
+
+  @Get('attempts')
+  async getAttempts(@Req() req: Request): Promise<AttemptItem[]> {
+    const user = await this.auth.requireUser(req);
+    return this.progress.getAttempts(user.id);
+  }
+
+  @Get('stats')
+  async getStats(@Req() req: Request): Promise<{
+    masteredSheets: number;
+    masteredVerbs: number;
+    masteredNouns: number;
+    totalQuizAttempts: number;
+    totalKnmAttempts: number;
+  }> {
+    const user = await this.auth.requireUser(req);
+    return this.progress.getStats(user.id);
+  }
+}

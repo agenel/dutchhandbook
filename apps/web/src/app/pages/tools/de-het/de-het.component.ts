@@ -3,6 +3,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import type { Noun } from '@moredutch/shared';
 import { ContentService } from '../../../core/content.service';
 import { MetaService } from '../../../core/meta.service';
+import { ProgressService } from '../../../core/progress.service';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
 type NounWithLegacyFields = Noun & {
@@ -282,6 +283,7 @@ type NounWithLegacyFields = Noun & {
 })
 export class DeHetComponent {
   private readonly content = inject(ContentService);
+  private readonly progress = inject(ProgressService);
 
   protected readonly nouns = toSignal(this.content.nouns(), {
     initialValue: [] as NounWithLegacyFields[],
@@ -380,5 +382,6 @@ export class DeHetComponent {
     } catch {
       /* ignore */
     }
+    this.progress.syncNouns(this.masteredIds().map(String));
   }
 }
