@@ -3,7 +3,6 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/auth.service';
 import { ContentService } from '../../../core/content.service';
-import { MetaService } from '../../../core/meta.service';
 import { ProgressService } from '../../../core/progress.service';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
@@ -233,15 +232,6 @@ export class QuizComponent {
     const total = this.questions().length;
     return total ? Math.round(((this.index() + 1) / total) * 100) : 0;
   });
-
-  constructor() {
-    inject(MetaService).set({
-      title: 'Dutch Grammar Quiz — More Dutch',
-      description:
-        'Test your knowledge of Dutch grammar with interactive quizzes linked to our cheat sheets.',
-      canonicalPath: '/tools/quiz',
-    });
-  }
 
   pick(i: number): void {
     const q = this.current();

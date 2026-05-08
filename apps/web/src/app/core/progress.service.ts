@@ -2,10 +2,11 @@ import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, PLATFORM_ID, computed, effect, inject, signal } from '@angular/core';
 import type {
+  AttemptItem,
+  KnmAttemptDto,
+  PreferencesDto,
   ProgressMigrationDto,
   QuizAttemptDto,
-  KnmAttemptDto,
-  AttemptItem,
 } from '@moredutch/shared';
 import { Observable, catchError, map, of, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -90,6 +91,14 @@ export class ProgressService {
 
   toggleHideMastered(): void {
     this._hideMastered.update((v) => !v);
+    if (this.auth.isAuthenticated()) {
+      this.patchPreferences({ hideMastered: this._hideMastered() }).subscribe();
+    }
+  }
+
+  /** Apply server-sourced hide-mastered without persisting back immediately. */
+  applyHideMasteredFromServer(value: boolean): void {
+    this._hideMastered.set(value);
   }
 
   /** Pull server-side mastery for the just-logged-in user. */
@@ -100,14 +109,32 @@ export class ProgressService {
     );
   }
 
+  refreshPreferencesFromServer(): Observable<PreferencesDto | null> {
+    if (!this.auth.isAuthenticated()) return of(null);
+    return this.http.get<PreferencesDto>(`${this.base}/preferences`).pipe(
+      catchError(() => of(null)),
+    );
+  }
+
+  patchPreferences(partial: Partial<PreferencesDto>): Observable<void> {
+    if (!this.auth.isAuthenticated()) return of(void 0);
+    return this.http.patch<void>(`${this.base}/preferences`, partial).pipe(
+      catchError(() => of(void 0)),
+    );
+  }
+
   /** Push the localStorage cache up once after sign-in. */
   migrateAnonymousProgress(): Observable<void> {
     if (!this.isBrowser) return of(void 0);
     const masteredSlugs = Object.entries(this._mastery())
       .filter(([, v]) => v)
       .map(([k]) => k);
-    if (masteredSlugs.length === 0) return of(void 0);
-    const dto: ProgressMigrationDto = { masteredSlugs };
+    const preferences = this.readLocalPreferencesForMigration();
+    if (masteredSlugs.length === 0 && !preferences) return of(void 0);
+    const dto: ProgressMigrationDto = {
+      masteredSlugs,
+      ...(preferences ? { preferences } : {}),
+    };
     return this.http.post<void>(`${this.base}/migrate`, dto).pipe(
       tap(() => {
         try {
@@ -282,6 +309,22 @@ export class ProgressService {
       return localStorage.getItem(HIDE_MASTERED_KEY) === 'true';
     } catch {
       return false;
+    }
+  }
+
+  private readLocalPreferencesForMigration(): PreferencesDto | undefined {
+    if (!this.isBrowser) return undefined;
+    try {
+      const darkRaw = localStorage.getItem('dgh_dark_mode');
+      const flashRaw = localStorage.getItem('dgh_flashcard_mode');
+      const hideRaw = localStorage.getItem(HIDE_MASTERED_KEY);
+      const out: PreferencesDto = {};
+      if (darkRaw !== null) out.darkMode = darkRaw === 'true';
+      if (flashRaw !== null) out.flashcardMode = flashRaw === 'true';
+      if (hideRaw !== null) out.hideMastered = hideRaw === 'true';
+      return Object.keys(out).length ? out : undefined;
+    } catch {
+      return undefined;
     }
   }
 }

@@ -4,7 +4,6 @@ import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SHEET_REGISTRY, type CefrLevel, type SheetMeta } from '@moredutch/shared';
-import { MetaService } from '../../core/meta.service';
 import { ProgressService } from '../../core/progress.service';
 import { HelpDialogComponent } from '../../layout/help-dialog/help-dialog.component';
 
@@ -159,7 +158,6 @@ type LevelFilter = 'all' | CefrLevel;
   `,
 })
 export class CheatsheetsComponent {
-  private readonly meta = inject(MetaService);
   protected readonly progress = inject(ProgressService);
 
   protected readonly sheets: readonly SheetMeta[] = SHEET_REGISTRY;
@@ -187,13 +185,4 @@ export class CheatsheetsComponent {
   protected readonly masteryPct = computed(() =>
     Math.round((this.progress.masteredCount() / this.total) * 100),
   );
-
-  constructor() {
-    this.meta.set({
-      title: '15 Essential Dutch Grammar Cheat Sheets — More Dutch',
-      description:
-        'Browse 15 interactive Dutch grammar cheat sheets covering A1 to B1 levels. Master Dutch word order, verbs, negation, and more with our free library.',
-      canonicalPath: '/cheatsheets',
-    });
-  }
 }

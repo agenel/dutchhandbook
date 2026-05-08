@@ -10,6 +10,9 @@ export interface PageMeta {
   ogImage?: string;
   type?: 'website' | 'article';
   jsonLd?: Record<string, unknown>;
+  /** e.g. `noindex, nofollow` for private or error pages */
+  robots?: string;
+  keywords?: string;
 }
 
 /**
@@ -31,8 +34,15 @@ export class MetaService {
 
     this.title.setTitle(fullTitle);
     this.upsertName('description', description);
-    this.upsertName('robots', 'index, follow');
+    this.upsertName('robots', meta.robots ?? 'index, follow');
+    if (meta.keywords?.trim()) {
+      this.upsertName('keywords', meta.keywords.trim());
+    } else if (this.meta.getTag(`name="keywords"`)) {
+      this.meta.removeTag(`name="keywords"`);
+    }
 
+    this.upsertProperty('og:site_name', 'More Dutch');
+    this.upsertProperty('og:locale', 'en_GB');
     this.upsertProperty('og:type', meta.type ?? 'website');
     this.upsertProperty('og:url', url);
     this.upsertProperty('og:title', fullTitle);

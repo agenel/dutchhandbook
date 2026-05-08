@@ -1,5 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import type { AttemptItem, QuizAttemptDto, KnmAttemptDto } from '@moredutch/shared';
+import type {
+  AttemptItem,
+  KnmAttemptDto,
+  PreferencesDto,
+  QuizAttemptDto,
+} from '@moredutch/shared';
 import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
@@ -32,7 +37,7 @@ export class ProgressService {
     await this.prisma.masteryEntry.createMany({
       data: masteredSlugs.map((sheetSlug) => ({ userId, sheetSlug, mastered: true })),
       skipDuplicates: true,
-    });
+    } as never);
   }
 
   // ── Verb mastery ─────────────────────────────────────────────────────────────
@@ -48,7 +53,7 @@ export class ProgressService {
       this.prisma.verbMastery.createMany({
         data: masteredIds.map((verbId) => ({ userId, verbId })),
         skipDuplicates: true,
-      }),
+      } as never),
     ]);
   }
 
@@ -65,7 +70,7 @@ export class ProgressService {
       this.prisma.nounMastery.createMany({
         data: masteredIds.map((nounId) => ({ userId, nounId })),
         skipDuplicates: true,
-      }),
+      } as never),
     ]);
   }
 
@@ -143,5 +148,52 @@ export class ProgressService {
         this.prisma.knmAttempt.count({ where: { userId } }),
       ]);
     return { masteredSheets, masteredVerbs, masteredNouns, totalQuizAttempts, totalKnmAttempts };
+  }
+
+  // ── UI preferences (theme, library filters) ─────────────────────────────────
+
+  async getPreferences(userId: string): Promise<PreferencesDto> {
+    const row = await this.prisma.userPreference.findUnique({ where: { userId } });
+    return {
+      darkMode: row?.darkMode ?? false,
+      flashcardMode: row?.flashcardMode ?? false,
+      hideMastered: row?.hideMastered ?? false,
+    };
+  }
+
+  async patchPreferences(userId: string, dto: Partial<PreferencesDto>): Promise<void> {
+    const data: { darkMode?: boolean; flashcardMode?: boolean; hideMastered?: boolean } = {};
+    if (dto.darkMode !== undefined) data.darkMode = dto.darkMode;
+    if (dto.flashcardMode !== undefined) data.flashcardMode = dto.flashcardMode;
+    if (dto.hideMastered !== undefined) data.hideMastered = dto.hideMastered;
+    if (Object.keys(data).length === 0) return;
+
+    await this.prisma.userPreference.upsert({
+      where: { userId },
+      create: {
+        userId,
+        darkMode: dto.darkMode ?? false,
+        flashcardMode: dto.flashcardMode ?? false,
+        hideMastered: dto.hideMastered ?? false,
+      },
+      update: data,
+    });
+  }
+
+  async mergePreferencesFromMigration(userId: string, dto: Partial<PreferencesDto>): Promise<void> {
+    await this.prisma.userPreference.upsert({
+      where: { userId },
+      create: {
+        userId,
+        darkMode: dto.darkMode ?? false,
+        flashcardMode: dto.flashcardMode ?? false,
+        hideMastered: dto.hideMastered ?? false,
+      },
+      update: {
+        ...(dto.darkMode !== undefined && { darkMode: dto.darkMode }),
+        ...(dto.flashcardMode !== undefined && { flashcardMode: dto.flashcardMode }),
+        ...(dto.hideMastered !== undefined && { hideMastered: dto.hideMastered }),
+      },
+    });
   }
 }

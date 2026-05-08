@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@a
 import { toSignal } from '@angular/core/rxjs-interop';
 import type { FlashcardDeck } from '@moredutch/shared';
 import { ContentService } from '../../../core/content.service';
-import { MetaService } from '../../../core/meta.service';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
 @Component({
@@ -298,15 +297,6 @@ export class FlashcardsComponent {
     const deck = this.selectedDeck();
     return deck ? Math.round(((this.index() + 1) / deck.cards.length) * 100) : 0;
   });
-
-  constructor() {
-    inject(MetaService).set({
-      title: 'Dutch Vocabulary Flashcards — Learn Fast | More Dutch',
-      description:
-        'Master essential Dutch vocabulary with interactive flashcards. Categories include numbers, colors, clothing, and house items.',
-      canonicalPath: '/tools/flashcards',
-    });
-  }
 
   select(deck: FlashcardDeck): void {
     this.selectedDeck.set(deck);

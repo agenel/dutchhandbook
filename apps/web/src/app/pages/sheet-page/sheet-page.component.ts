@@ -1,12 +1,20 @@
-import { NgComponentOutlet } from '@angular/common';
+import { isPlatformBrowser, NgComponentOutlet } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  PLATFORM_ID,
+  computed,
+  effect,
+  inject,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { DomSanitizer, type SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { getSheet, type SheetMeta } from '@moredutch/shared';
 import { catchError, map, of, switchMap } from 'rxjs';
+import { environment } from '../../../environments/environment';
 import { MetaService } from '../../core/meta.service';
 import { ProgressService } from '../../core/progress.service';
 import { SheetContentRegistry } from './sheet-content.registry';
@@ -131,6 +139,8 @@ export class SheetPageComponent {
   private readonly meta = inject(MetaService);
   private readonly registry = inject(SheetContentRegistry);
   private readonly sanitizer = inject(DomSanitizer);
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly isBrowser = isPlatformBrowser(this.platformId);
   protected readonly progress = inject(ProgressService);
 
   private readonly params = toSignal<ParamMap | null>(this.route.paramMap, { initialValue: null });
@@ -140,14 +150,15 @@ export class SheetPageComponent {
       switchMap((params) => {
         const slug = params.get('slug');
         if (!slug) return of(null);
-        return this.http
-          .get(`/assets/data/sheet-html/${slug}.html`, { responseType: 'text' })
-          .pipe(
-            map((html) =>
-              this.sanitizer.bypassSecurityTrustHtml(this.renderLegacyMasteryState(html, slug)),
-            ),
-            catchError(() => of(null)),
-          );
+        return this.http.get(`/assets/data/sheet-html/${slug}.html`, { responseType: 'text' }).pipe(
+          map((html) => {
+            const processed = this.isBrowser
+              ? this.renderLegacyMasteryState(html, slug)
+              : html;
+            return this.sanitizer.bypassSecurityTrustHtml(processed);
+          }),
+          catchError(() => of(null)),
+        );
       }),
     ),
     { initialValue: null },
@@ -155,22 +166,52 @@ export class SheetPageComponent {
 
   protected readonly sheet = computed<SheetMeta | undefined>(() => {
     const slug = this.params()?.get('slug') ?? '';
-    const s = getSheet(slug);
-    if (s) {
-      this.meta.set({
-        title: `${s.title} — More Dutch`,
-        description: s.description,
-        canonicalPath: `/sheets/${s.slug}`,
-        type: 'article',
-      });
-    }
-    return s;
+    return getSheet(slug);
   });
 
   protected readonly contentComponent = computed(() => {
     const s = this.sheet();
     return s ? this.registry.get(s.slug) : null;
   });
+
+  constructor() {
+    effect(() => {
+      const s = this.sheet();
+      const slug = this.params()?.get('slug') ?? '';
+      if (s) {
+        const url = `${environment.siteUrl}/sheets/${s.slug}`;
+        this.meta.set({
+          title: `${s.title} — More Dutch`,
+          description: s.description,
+          canonicalPath: `/sheets/${s.slug}`,
+          type: 'article',
+          keywords: `Dutch grammar, ${s.title}, Dutch ${s.level}, cheat sheet`,
+          jsonLd: {
+            '@context': 'https://schema.org',
+            '@type': 'LearningResource',
+            name: s.title,
+            description: s.description,
+            url,
+            educationalLevel: s.level,
+            inLanguage: ['nl', 'en'],
+            isPartOf: {
+              '@type': 'Course',
+              name: 'More Dutch Grammar Hub',
+              url: environment.siteUrl,
+            },
+          },
+        });
+      } else if (slug) {
+        this.meta.set({
+          title: 'Module not found — More Dutch',
+          description:
+            'This cheat sheet URL is not valid. Browse the full library of Dutch grammar modules on More Dutch.',
+          canonicalPath: '/cheatsheets',
+          robots: 'noindex, follow',
+        });
+      }
+    });
+  }
 
   toggleMastery(slug: string): void {
     this.progress.setMastered(slug, !this.progress.isMastered(slug));
@@ -219,8 +260,12 @@ export class SheetPageComponent {
   }
 
   private themeToggleFlashcard(): void {
+    if (!this.isBrowser) return;
     document.body.classList.toggle('flashcard-mode');
-    localStorage.setItem('dgh_flashcard_mode', String(document.body.classList.contains('flashcard-mode')));
+    localStorage.setItem(
+      'dgh_flashcard_mode',
+      String(document.body.classList.contains('flashcard-mode')),
+    );
   }
 
   private renderLegacyMasteryState(html: string, slug: string): string {
@@ -241,6 +286,7 @@ export class SheetPageComponent {
   }
 
   private setLegacyHelpOpen(open: boolean): void {
+    if (!this.isBrowser) return;
     const modal = document.getElementById('help-modal');
     if (!modal) return;
     modal.classList.toggle('active', open);

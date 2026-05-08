@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MetaService } from '../../core/meta.service';
 
 @Component({
   selector: 'md-help',
@@ -80,13 +79,4 @@ import { MetaService } from '../../core/meta.service';
     </div>
   `,
 })
-export class HelpComponent {
-  constructor() {
-    inject(MetaService).set({
-      title: 'Learning Guide — More Dutch',
-      description:
-        'How to get the most out of More Dutch — full learning guide for the interactive Dutch grammar hub.',
-      canonicalPath: '/help',
-    });
-  }
-}
+export class HelpComponent {}

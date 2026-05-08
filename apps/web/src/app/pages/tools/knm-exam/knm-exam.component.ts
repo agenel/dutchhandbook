@@ -4,7 +4,6 @@ import { RouterLink } from '@angular/router';
 import { forkJoin, map, type Observable } from 'rxjs';
 import { AuthService } from '../../../core/auth.service';
 import { ContentService } from '../../../core/content.service';
-import { MetaService } from '../../../core/meta.service';
 import { ProgressService } from '../../../core/progress.service';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
@@ -521,15 +520,6 @@ export class KnmExamComponent {
     if (percent >= 60) return 'Good job! You passed, but keep practicing.';
     return 'Keep studying. You need at least 60% to pass.';
   });
-
-  constructor() {
-    inject(MetaService).set({
-      title: 'KNM Practice Exam — Dutch Society Test | More Dutch',
-      description:
-        'Practice for the KNM exam with randomized mock tests from all 10 Dutch society chapters.',
-      canonicalPath: '/tools/knm-exam',
-    });
-  }
 
   setLength(length: number): void {
     this.selectedLength.set(length);

@@ -45,8 +45,18 @@ model User {
   quizAttempts      QuizAttempt[]
   knmAttempts       KnmAttempt[]
   auditLogs         AuditLog[]
+  preferences       UserPreference?
 
   @@index([emailNormalized])
+}
+
+model UserPreference {
+  userId         String   @id
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  darkMode       Boolean  @default(false)
+  flashcardMode  Boolean  @default(false)
+  hideMastered   Boolean  @default(false)
+  updatedAt      DateTime @updatedAt
 }
 
 model Session {

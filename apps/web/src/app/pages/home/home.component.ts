@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { RouterLink } from '@angular/router';
 import { TOOL_REGISTRY } from '@moredutch/shared';
 import { AuthService } from '../../core/auth.service';
-import { MetaService } from '../../core/meta.service';
 import { ProgressService } from '../../core/progress.service';
 import { HelpDialogComponent } from '../../layout/help-dialog/help-dialog.component';
 
@@ -152,7 +151,6 @@ import { HelpDialogComponent } from '../../layout/help-dialog/help-dialog.compon
   `,
 })
 export class HomeComponent {
-  private readonly meta = inject(MetaService);
   private readonly progress = inject(ProgressService);
   protected readonly auth = inject(AuthService);
   protected readonly tools = TOOL_REGISTRY;
@@ -164,25 +162,4 @@ export class HomeComponent {
   );
 
   protected helpOpen = false;
-
-  constructor() {
-    this.meta.set({
-      title: 'More Dutch — Interactive Dutch Grammar Hub & Cheat Sheets',
-      description:
-        'The ultimate interactive hub for Dutch learners. Master A1-B1 grammar with 15+ cheat sheets, verb explorers, flashcards, and drills. Start learning for free at More Dutch.',
-      canonicalPath: '/',
-      jsonLd: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'More Dutch Hub',
-        url: 'https://moredutch.com',
-        description:
-          'Interactive tools and grammar cheat sheets for learning Dutch (A1-B1).',
-        applicationCategory: 'EducationalApplication',
-        operatingSystem: 'Web',
-        author: { '@type': 'Organization', name: 'More Dutch', url: 'https://moredutch.com' },
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-      },
-    });
-  }
 }

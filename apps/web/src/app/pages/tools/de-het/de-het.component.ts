@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } 
 import { toSignal } from '@angular/core/rxjs-interop';
 import type { Noun } from '@moredutch/shared';
 import { ContentService } from '../../../core/content.service';
-import { MetaService } from '../../../core/meta.service';
 import { ProgressService } from '../../../core/progress.service';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
@@ -311,13 +310,6 @@ export class DeHetComponent {
   protected readonly masteredCount = computed(() => this.masteredIds().length);
 
   constructor() {
-    inject(MetaService).set({
-      title: 'de / het Trainer — Master Dutch Noun Gender | More Dutch',
-      description:
-        'The fastest way to learn de/het. Practice 500+ common nouns in a rapid-fire drill.',
-      canonicalPath: '/tools/de-het',
-    });
-
     effect(() => {
       const list = this.filteredNouns();
       if (list.length > 0 && (!this.initialized || this.index() >= list.length)) {

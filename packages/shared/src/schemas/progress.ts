@@ -45,6 +45,9 @@ export const PreferencesSchema = z.object({
 });
 export type PreferencesDto = z.infer<typeof PreferencesSchema>;
 
+export const PreferencesPatchSchema = PreferencesSchema.partial();
+export type PreferencesPatchDto = z.infer<typeof PreferencesPatchSchema>;
+
 export const VerbSyncSchema = z.object({
   masteredIds: z.array(z.string().min(1).max(64)).max(500),
 });

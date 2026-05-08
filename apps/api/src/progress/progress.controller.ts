@@ -1,19 +1,21 @@
-import { Body, Controller, Get, HttpCode, Post, Req } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Patch, Post, Req } from '@nestjs/common';
 import { Request } from 'express';
 import {
+  KnmAttemptSchema,
   MasteryToggleSchema,
+  NounSyncSchema,
+  PreferencesPatchSchema,
   ProgressMigrationSchema,
   QuizAttemptSchema,
-  KnmAttemptSchema,
   VerbSyncSchema,
-  NounSyncSchema,
+  type AttemptItem,
+  type KnmAttemptDto,
   type MasteryToggleDto,
+  type PreferencesPatchDto,
   type ProgressMigrationDto,
   type QuizAttemptDto,
-  type KnmAttemptDto,
   type VerbSyncDto,
   type NounSyncDto,
-  type AttemptItem,
 } from '@moredutch/shared';
 import { ZodValidationPipe } from '../common/zod.pipe';
 import { AuthService } from '../auth/auth.service';
@@ -52,6 +54,25 @@ export class ProgressController {
   ): Promise<void> {
     const user = await this.auth.requireUser(req);
     await this.progress.migrateMastery(user.id, dto.masteredSlugs);
+    if (dto.preferences) {
+      await this.progress.mergePreferencesFromMigration(user.id, dto.preferences);
+    }
+  }
+
+  @Get('preferences')
+  async getPreferences(@Req() req: Request) {
+    const user = await this.auth.requireUser(req);
+    return this.progress.getPreferences(user.id);
+  }
+
+  @Patch('preferences')
+  @HttpCode(204)
+  async patchPreferences(
+    @Body(new ZodValidationPipe(PreferencesPatchSchema)) dto: PreferencesPatchDto,
+    @Req() req: Request,
+  ): Promise<void> {
+    const user = await this.auth.requireUser(req);
+    await this.progress.patchPreferences(user.id, dto);
   }
 
   // ── Verb mastery ─────────────────────────────────────────────────────────────

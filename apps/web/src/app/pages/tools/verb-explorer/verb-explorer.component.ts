@@ -1,9 +1,17 @@
-import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  PLATFORM_ID,
+  computed,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import type { Verb } from '@moredutch/shared';
 import { ContentService } from '../../../core/content.service';
-import { MetaService } from '../../../core/meta.service';
 import { ProgressService } from '../../../core/progress.service';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
@@ -311,6 +319,7 @@ type VerbWithLegacyFields = Verb & {
   ],
 })
 export class VerbExplorerComponent {
+  private readonly platformId = inject(PLATFORM_ID);
   private readonly content = inject(ContentService);
   private readonly progress = inject(ProgressService);
 
@@ -355,26 +364,24 @@ export class VerbExplorerComponent {
   });
 
   constructor() {
-    inject(MetaService).set({
-      title: 'Dutch Verb Explorer — Conjugations & Search | More Dutch',
-      description:
-        'Search and filter the most common Dutch verbs. Conjugations and example sentences for every verb.',
-      canonicalPath: '/tools/verb-explorer',
-    });
-
     effect(() => {
+      if (!isPlatformBrowser(this.platformId)) return;
       localStorage.setItem(MASTERED_VERBS_KEY, JSON.stringify(this.masteredIds()));
     });
   }
 
   protected openDetail(verb: VerbWithLegacyFields): void {
     this.selectedVerb.set(verb);
-    document.body.style.overflow = 'hidden';
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   protected closeDetail(): void {
     this.selectedVerb.set(null);
-    document.body.style.overflow = '';
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = '';
+    }
   }
 
   protected isMastered(verb: VerbWithLegacyFields): boolean {

@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ContentService } from '../../../core/content.service';
-import { MetaService } from '../../../core/meta.service';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
 interface SentenceChallenge {
@@ -197,15 +196,6 @@ export class SentenceBuilderComponent {
     if (!c) return [];
     return this.placedIndices().map((idx) => ({ idx, text: c.words[idx] }));
   });
-
-  constructor() {
-    inject(MetaService).set({
-      title: 'Sentence Builder — Master Dutch Word Order | More Dutch',
-      description:
-        'Master Dutch word order by assembling sentences block by block. V2, Inversion, and more.',
-      canonicalPath: '/tools/sentence-builder',
-    });
-  }
 
   place(wordIndex: number): void {
     this.placedIndices.update((arr) => [...arr, wordIndex]);

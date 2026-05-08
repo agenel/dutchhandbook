@@ -1,5 +1,6 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Injectable, PLATFORM_ID, computed, effect, inject, signal } from '@angular/core';
+import { ProgressService } from './progress.service';
 
 const DARK_KEY = 'dgh_dark_mode';
 const FLASHCARD_KEY = 'dgh_flashcard_mode';
@@ -15,6 +16,7 @@ const FLASHCARD_KEY = 'dgh_flashcard_mode';
 export class ThemeService {
   private readonly document = inject(DOCUMENT);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private readonly progress = inject(ProgressService);
 
   private readonly _dark = signal<boolean>(this.readBool(DARK_KEY, false));
   private readonly _flashcard = signal<boolean>(false);
@@ -52,10 +54,26 @@ export class ThemeService {
 
   toggleDark(): void {
     this._dark.update((v) => !v);
+    if (this.isBrowser) {
+      this.progress.patchPreferences({ darkMode: this._dark() }).subscribe();
+    }
+  }
+
+  /** Replace dark mode (e.g. after loading server preferences). */
+  setDark(value: boolean): void {
+    this._dark.set(value);
   }
 
   toggleFlashcard(): void {
     this._flashcard.update((v) => !v);
+    if (this.isBrowser) {
+      this.progress.patchPreferences({ flashcardMode: this._flashcard() }).subscribe();
+    }
+  }
+
+  /** Replace flashcard blur mode (server preferences). */
+  setFlashcard(value: boolean): void {
+    this._flashcard.set(value);
   }
 
   private readBool(key: string, fallback: boolean): boolean {

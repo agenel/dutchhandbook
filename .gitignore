@@ -49,3 +49,4 @@ playwright/.cache/
 *.sqlite
 *.sqlite-journal
 *.db
+*.db-journal

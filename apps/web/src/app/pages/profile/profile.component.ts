@@ -10,7 +10,6 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import type { AttemptItem } from '@moredutch/shared';
 import { AuthService } from '../../core/auth.service';
 import { ProgressService } from '../../core/progress.service';
-import { MetaService } from '../../core/meta.service';
 
 @Component({
   selector: 'md-profile',
@@ -282,14 +281,6 @@ export class ProfileComponent implements OnInit {
     totalQuizAttempts: number;
     totalKnmAttempts: number;
   } | null>(null);
-
-  constructor() {
-    inject(MetaService).set({
-      title: 'My Profile — More Dutch',
-      description: 'View your Dutch learning progress, quiz history, and mastery stats.',
-      canonicalPath: '/profile',
-    });
-  }
 
   ngOnInit(): void {
     if (this.auth.isAuthenticated()) {

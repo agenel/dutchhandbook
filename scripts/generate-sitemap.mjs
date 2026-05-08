@@ -11,6 +11,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const ROUTES_FILE = join(ROOT, 'apps', 'web', 'src', 'prerender-routes.txt');
 const OUT_DIR = join(ROOT, 'apps', 'web', 'dist', 'web', 'browser');
+const OUT_PUBLIC = join(ROOT, 'apps', 'web', 'public');
 const SITE_URL = process.env.SITE_URL ?? 'https://moredutch.com';
 
 async function main() {
@@ -44,9 +45,12 @@ Sitemap: ${SITE_URL}/sitemap.xml
 `;
 
   await fs.mkdir(OUT_DIR, { recursive: true });
+  await fs.mkdir(OUT_PUBLIC, { recursive: true });
   await fs.writeFile(join(OUT_DIR, 'sitemap.xml'), sitemap);
   await fs.writeFile(join(OUT_DIR, 'robots.txt'), robots);
-  console.log('Wrote sitemap.xml and robots.txt to', OUT_DIR);
+  await fs.writeFile(join(OUT_PUBLIC, 'sitemap.xml'), sitemap);
+  await fs.writeFile(join(OUT_PUBLIC, 'robots.txt'), robots);
+  console.log('Wrote sitemap.xml and robots.txt to', OUT_DIR, 'and', OUT_PUBLIC);
 }
 
 main().catch((err) => {
