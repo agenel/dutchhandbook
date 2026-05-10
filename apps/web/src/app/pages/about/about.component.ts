@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
     <div class="hero" style="border-bottom:none; padding-top:1rem;">
       <div class="hero-layout">
         <div class="hero-title">
-          <h1>Our<br /><em>Mission</em></h1>
+          <h1>The<br /><em>Mission</em></h1>
         </div>
         <div class="hero-content">
           <p class="hero-desc">
@@ -74,4 +74,4 @@ import { RouterLink } from '@angular/router';
     </div>
   `,
 })
-export class AboutComponent {}
+export class AboutComponent { }
