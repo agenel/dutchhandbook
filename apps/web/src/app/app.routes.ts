@@ -39,6 +39,16 @@ export const routes: Routes = [
     },
   },
   {
+    path: 'about',
+    loadComponent: () => import('./pages/about/about.component').then((m) => m.AboutComponent),
+    data: {
+      title: 'About Us — More Dutch',
+      description:
+        'Learn about the mission of More Dutch and how it was built to help expats pass the KNM and DUO integration exams.',
+      canonicalPath: '/about',
+    },
+  },
+  {
     path: 'sheets/:slug',
     loadComponent: () =>
       import('./pages/sheet-page/sheet-page.component').then((m) => m.SheetPageComponent),
