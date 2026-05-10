@@ -109,7 +109,7 @@ body {
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-size: clamp(2.38rem, 5.95vw, 4.25rem);
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -0.03em;
@@ -135,7 +135,7 @@ body {
 }
 
 .hero-desc {
-  font-size: 0.93rem;
+  font-size: 0.8rem;
   color: var(--muted);
   font-weight: 300;
   line-height: 1.65;
@@ -791,7 +791,7 @@ footer .footer-credit a:hover {
 
 .site-header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.7rem, 4.25vw, 2.55rem);
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.02em;
