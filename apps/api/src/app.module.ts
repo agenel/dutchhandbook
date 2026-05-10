@@ -11,13 +11,22 @@ import { HealthModule } from './health/health.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ProgressModule } from './progress/progress.module';
 import { UsersModule } from './users/users.module';
+import * as path from 'path';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
       cache: true,
-      envFilePath: ['.env', '../../.env'],
+      // Resolve .env paths based on compiled output location:
+      //   __dirname = apps/api/dist/src  (NestJS compiles into dist/src/)
+      //   '../..'  = apps/api/              → loads apps/api/.env  (highest priority)
+      //   '../../..' = apps/api/../../../  → no, need '../../../...' = monorepo root
+      //   apps/api/dist/src → ../../.. → apps/ → need one more → monorepo root
+      envFilePath: [
+        path.resolve(__dirname, '..', '..', '.env'),          // apps/api/.env  (highest priority)
+        path.resolve(__dirname, '..', '..', '..', '..', '.env'), // monorepo root .env (fallback)
+      ],
     }),
     LoggerModule.forRoot({
       pinoHttp: {

@@ -50,3 +50,4 @@ playwright/.cache/
 *.sqlite-journal
 *.db
 *.db-journal
+package-lock.json

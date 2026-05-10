@@ -19,9 +19,24 @@ npm install
 
 ### 2) Configure env
 
-Copy `.env.example` → `.env` and update values.
+```bash
+# Root env (shared vars for web + API)
+cp .env.example .env
 
-### 3) Run
+# API-specific env (DATABASE_URL lives here — relative path works on any machine)
+cp apps/api/.env.example apps/api/.env
+```
+
+Edit `apps/api/.env` and fill in your `COOKIE_SECRET`. The `DATABASE_URL` is pre-configured for local SQLite development and works out of the box.
+
+### 3) Set up the database
+
+```bash
+# Run Prisma migrations to create / update the SQLite database
+npm run prisma:migrate
+```
+
+### 4) Run
 
 Frontend:
 

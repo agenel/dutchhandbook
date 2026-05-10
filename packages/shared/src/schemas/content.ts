@@ -14,6 +14,7 @@ export const FlashcardDeckSchema = z.object({
 export type FlashcardDeck = z.infer<typeof FlashcardDeckSchema>;
 
 export const NounSchema = z.object({
+  id: z.number().optional(),
   word: z.string(),
   article: z.enum(['de', 'het']),
   english: z.string().optional(),

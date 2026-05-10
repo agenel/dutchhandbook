@@ -44,7 +44,7 @@ export class ProgressService {
 
   async getVerbs(userId: string): Promise<string[]> {
     const rows = await this.prisma.verbMastery.findMany({ where: { userId }, select: { verbId: true } });
-    return rows.map((r) => r.verbId);
+    return rows.map((r: { verbId: string }) => r.verbId);
   }
 
   async syncVerbs(userId: string, masteredIds: string[]): Promise<void> {
@@ -61,7 +61,7 @@ export class ProgressService {
 
   async getNouns(userId: string): Promise<string[]> {
     const rows = await this.prisma.nounMastery.findMany({ where: { userId }, select: { nounId: true } });
-    return rows.map((r) => r.nounId);
+    return rows.map((r: { nounId: string }) => r.nounId);
   }
 
   async syncNouns(userId: string, masteredIds: string[]): Promise<void> {
@@ -107,7 +107,7 @@ export class ProgressService {
     ]);
 
     const items: AttemptItem[] = [
-      ...quiz.map((q) => ({
+      ...quiz.map((q: any) => ({
         id: q.id,
         tool: 'quiz' as const,
         score: q.score,
@@ -116,7 +116,7 @@ export class ProgressService {
         durationMs: q.durationMs,
         createdAt: q.createdAt.toISOString(),
       })),
-      ...knm.map((k) => ({
+      ...knm.map((k: any) => ({
         id: k.id,
         tool: 'knm' as const,
         score: k.score,

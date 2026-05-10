@@ -110,7 +110,7 @@ model MasteryEntry {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   sheetSlug String
   mastered  Boolean  @default(true)
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime @default(now()) @updatedAt
 
   @@id([userId, sheetSlug])
 }
@@ -119,7 +119,7 @@ model VerbMastery {
   userId    String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   verbId    String
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime @default(now()) @updatedAt
 
   @@id([userId, verbId])
   @@index([userId])
@@ -129,7 +129,7 @@ model NounMastery {
   userId    String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   nounId    String
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime @default(now()) @updatedAt
 
   @@id([userId, nounId])
   @@index([userId])
@@ -143,7 +143,7 @@ model FlashcardProgress {
   /// Leitner box 0..7
   box      Int      @default(0)
   dueAt    DateTime?
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime @default(now()) @updatedAt
 
   @@id([userId, deckId, cardId])
   @@index([userId, dueAt])
