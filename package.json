@@ -16,11 +16,13 @@
     "build:shared": "npm --workspace packages/shared run build",
     "lint": "npm --workspaces --if-present run lint",
     "test": "npm --workspaces --if-present run test",
+    "test:e2e": "playwright test",
     "seed": "npm --workspace apps/api run seed",
     "prisma:migrate": "npm --workspace apps/api run prisma:migrate",
     "format": "prettier --write \"**/*.{ts,js,json,md,html,scss,css}\""
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "prettier": "^3.3.3",
     "typescript": "~5.9.2"
   },
