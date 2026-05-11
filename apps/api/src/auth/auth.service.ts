@@ -79,6 +79,7 @@ export class AuthService {
     console.log(`[verify-email] email=${email} token=${verifyToken}`);
 
     await this.sessions.createSession(user.id, req, res);
+    await this.logEvent(user.id, 'REGISTER', req);
     return { user: this.toPublic(user) };
   }
 
@@ -86,7 +87,10 @@ export class AuthService {
     const email = normalizeEmail(dto.email);
     const user = await this.prisma.user.findFirst({ where: { emailNormalized: email } });
     // Generic error message for enumeration resistance.
-    if (!user) throw new UnauthorizedException({ message: 'Invalid email or password' });
+    if (!user) {
+      await this.logEvent(null, 'LOGIN_FAILED', req, { email });
+      throw new UnauthorizedException({ message: 'Invalid email or password' });
+    }
 
     if (user.lockedUntil && user.lockedUntil.getTime() > Date.now()) {
       throw new ForbiddenException({ message: 'Account temporarily locked' });
@@ -102,6 +106,7 @@ export class AuthService {
             user.failedLogins + 1 >= 5 ? new Date(Date.now() + 15 * 60 * 1000) : user.lockedUntil,
         },
       });
+      await this.logEvent(user.id, 'LOGIN_FAILED', req);
       throw new UnauthorizedException({ message: 'Invalid email or password' });
     }
 
@@ -111,13 +116,18 @@ export class AuthService {
     });
 
     await this.sessions.createSession(user.id, req, res);
+    await this.logEvent(user.id, 'LOGIN_SUCCESS', req);
     return { user: this.toPublic(user) };
   }
 
   async logout(req: Request, res: Response): Promise<void> {
     const sid = String(req.signedCookies?.[COOKIE_SID] ?? '');
     if (sid) {
-      await this.prisma.session.updateMany({ where: { id: sid }, data: { revokedAt: new Date() } });
+      const session = await this.prisma.session.findUnique({ where: { id: sid } });
+      if (session) {
+        await this.prisma.session.update({ where: { id: sid }, data: { revokedAt: new Date() } });
+        await this.logEvent(session.userId, 'LOGOUT', req);
+      }
     }
     this.sessions.clearCookies(res);
   }
@@ -148,8 +158,8 @@ export class AuthService {
 
     // TODO: send email. For now log token in server logs only.
     // This is safe for local dev; production should wire SMTP before enabling.
-    // eslint-disable-next-line no-console
     console.log(`[password-reset] email=${email} token=${token} ip=${req.ip}`);
+    await this.logEvent(user.id, 'PASSWORD_RESET_REQUEST', req);
   }
 
   async confirmPasswordReset(token: string, newPassword: string): Promise<void> {
@@ -200,6 +210,7 @@ export class AuthService {
     emailVerified: boolean;
     hasTotp: boolean;
     createdAt: Date;
+    isAdmin: boolean;
   }): PublicUser {
     return {
       id: user.id,
@@ -208,6 +219,7 @@ export class AuthService {
       emailVerified: user.emailVerified,
       hasTotp: user.hasTotp,
       createdAt: user.createdAt.toISOString(),
+      isAdmin: user.isAdmin,
     };
   }
 
@@ -234,6 +246,24 @@ export class AuthService {
   issueCsrfCookie(res: Response): void {
     const token = randToken(24);
     res.cookie(COOKIE_CSRF, token, this.csrfCookieOptions());
+  }
+
+  private async logEvent(userId: string | null, event: string, req: Request, meta?: any) {
+    try {
+      await this.prisma.auditLog.create({
+        data: {
+          userId,
+          event,
+          ip: req.ip,
+          userAgent: req.get('user-agent'),
+          meta: meta ? JSON.stringify(meta) : null,
+        },
+      });
+    } catch (err) {
+      // Fail silently for audit logs to not block main flow
+      // eslint-disable-next-line no-console
+      console.error('[audit-log-error]', err);
+    }
   }
 }
 

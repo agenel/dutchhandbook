@@ -4,3 +4,4 @@ export * from './schemas/content';
 export * from './types/user';
 export * from './types/sheet';
 export * from './types/tool';
+export * from './schemas/admin';

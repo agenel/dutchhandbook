@@ -34,6 +34,10 @@ model User {
   lastLoginIp     String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+  isAdmin         Boolean  @default(false)
+  isBanned        Boolean  @default(false)
+  bannedReason    String?
+  bannedAt        DateTime?
 
   sessions          Session[]
   emailTokens       EmailToken[]

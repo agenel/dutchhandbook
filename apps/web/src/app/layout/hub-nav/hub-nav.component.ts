@@ -52,6 +52,11 @@ import { AuthService } from '../../core/auth.service';
           <li>
             <a routerLink="/about" routerLinkActive="active">About</a>
           </li>
+          @if (auth.user()?.isAdmin) {
+            <li>
+              <a routerLink="/admin" routerLinkActive="active" class="admin-link">Admin</a>
+            </li>
+          }
         </ul>
         <div class="fc-toggle-wrap">
           <button
@@ -126,6 +131,9 @@ import { AuthService } from '../../core/auth.service';
           <ul class="hub-mobile-links">
             @if (auth.isAuthenticated()) {
               <li><a routerLink="/profile" (click)="closeMobile()">My Profile</a></li>
+              @if (auth.user()?.isAdmin) {
+                <li><a routerLink="/admin" (click)="closeMobile()">Admin Panel</a></li>
+              }
             } @else {
               <li><a routerLink="/auth/login" (click)="closeMobile()">Sign In</a></li>
               <li><a routerLink="/auth/register" (click)="closeMobile()">Create Account</a></li>

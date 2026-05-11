@@ -13,6 +13,7 @@ export class UsersService {
     emailVerified: boolean;
     hasTotp: boolean;
     createdAt: Date;
+    isAdmin: boolean;
   }): PublicUser {
     return {
       id: user.id,
@@ -21,6 +22,7 @@ export class UsersService {
       emailVerified: user.emailVerified,
       hasTotp: user.hasTotp,
       createdAt: user.createdAt.toISOString(),
+      isAdmin: user.isAdmin,
     };
   }
 }

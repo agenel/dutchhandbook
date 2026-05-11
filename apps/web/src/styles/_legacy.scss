@@ -1721,6 +1721,15 @@ tr.row-hi td {
   color: var(--orange);
 }
 
+.hub-menu a.admin-link {
+  color: var(--purple);
+}
+
+.hub-menu a.admin-link:hover,
+.hub-menu a.admin-link.active {
+  color: var(--orange);
+}
+
 @media (max-width: 850px) {
   .hub-menu {
     display: none;

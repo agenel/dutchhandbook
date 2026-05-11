@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { adminGuard } from './core/admin.guard';
 
 export const routes: Routes = [
   {
@@ -183,6 +184,11 @@ export const routes: Routes = [
       canonicalPath: '/profile',
       robots: 'noindex, follow',
     },
+  },
+  {
+    path: 'admin',
+    canActivate: [adminGuard],
+    loadChildren: () => import('./pages/admin/admin.routes').then(m => m.ADMIN_ROUTES),
   },
   { path: '**', redirectTo: '' },
 ];

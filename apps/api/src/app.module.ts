@@ -11,6 +11,7 @@ import { HealthModule } from './health/health.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ProgressModule } from './progress/progress.module';
 import { UsersModule } from './users/users.module';
+import { AdminModule } from './admin/admin.module';
 import * as path from 'path';
 
 @Module({
@@ -68,6 +69,7 @@ import * as path from 'path';
     ProgressModule,
     ContentModule,
     HealthModule,
+    AdminModule,
   ],
   providers: [
     { provide: APP_GUARD, useClass: CsrfGuard },

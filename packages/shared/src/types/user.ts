@@ -5,6 +5,7 @@ export interface PublicUser {
   emailVerified: boolean;
   hasTotp: boolean;
   createdAt: string;
+  isAdmin: boolean;
 }
 
 export interface SessionUser extends PublicUser {
