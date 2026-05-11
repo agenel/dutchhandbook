@@ -160,6 +160,7 @@ export class AuthService {
 
     // TODO: send email. For now log token in server logs only.
     // This is safe for local dev; production should wire SMTP before enabling.
+    // eslint-disable-next-line no-console
     console.log(`[password-reset] email=${email} token=${token} ip=${req.ip}`);
     await this.logEvent(user.id, 'PASSWORD_RESET_REQUEST', req);
   }

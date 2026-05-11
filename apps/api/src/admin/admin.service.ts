@@ -106,7 +106,6 @@ export class AdminService {
   }
 
   async patchUser(id: string, dto: AdminUserPatchDto, req: Request): Promise<AdminUserDto> {
-    const admin = await this.prisma.user.findFirst({ where: { isAdmin: true } }); // This is just for types, we'll get real admin from req in controller
     let updateData: any = {};
     if (dto.displayName !== undefined) updateData.displayName = dto.displayName;
     if (dto.isAdmin !== undefined) updateData.isAdmin = dto.isAdmin;
@@ -135,17 +134,17 @@ export class AdminService {
        });
     }
 
-    await this.audit.logEvent(null, 'ADMIN_PATCH_USER', req, { targetId: id, ...dto });
+    await this.audit.logEvent((req as any).user?.id, 'ADMIN_PATCH_USER', req, { targetId: id, ...dto });
     return this.getUser(id);
   }
 
   async deleteUser(id: string, req: Request): Promise<void> {
-    await this.audit.logEvent(null, 'ADMIN_DELETE_USER', req, { targetId: id });
+    await this.audit.logEvent((req as any).user?.id, 'ADMIN_DELETE_USER', req, { targetId: id });
     await this.prisma.user.delete({ where: { id } });
   }
 
   async exportUsers(req: Request): Promise<string> {
-    await this.audit.logEvent(null, 'ADMIN_EXPORT_USERS', req);
+    await this.audit.logEvent((req as any).user?.id, 'ADMIN_EXPORT_USERS', req);
     const users = await this.prisma.user.findMany({
       orderBy: { createdAt: 'desc' },
       include: {

@@ -4,12 +4,11 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { SessionsService } from './sessions.service';
 import { AuditService } from '../common/audit.service';
-import { Reflector } from '@nestjs/core';
 
 @Module({
   imports: [ThrottlerModule],
   controllers: [AuthController],
-  providers: [AuthService, SessionsService, AuditService, Reflector],
+  providers: [AuthService, SessionsService, AuditService],
   exports: [AuthService],
 })
 export class AuthModule {}
