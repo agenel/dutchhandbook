@@ -59,31 +59,48 @@ type VerbWithLegacyFields = Verb & {
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
           <span class="material-icons" style="color:var(--orange);">search</span>
-          <h3 style="margin:0;">Search & Filter</h3>
+          <h3 style="margin:0;">Master the Core 200</h3>
         </div>
         <p>
-          Find any verb by Dutch or English. Filter by type (regular/irregular) or CEFR level to
-          focus your study.
+          We've curated the 200 most essential verbs for A1-B1 Dutch. 
+          Use the <strong>Type</strong> filter to isolate <em>Irregular</em> verbs — these are 
+          the most common but also the trickiest to memorize.
         </p>
       </div>
+      
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--blue);">list_alt</span>
-          <h3 style="margin:0;">Full Conjugations</h3>
+          <span class="material-icons" style="color:var(--blue);">swap_horiz</span>
+          <h3 style="margin:0;">Hebben vs Zijn</h3>
         </div>
         <p>
-          Click any verb to see its full forms in Present, Past, and Perfect tenses. Perfect for
-          checking tricky irregulars.
+          In the <strong>Helper</strong> column, pay attention to which verb is used for the perfect tense. 
+          Most verbs use <em>hebben</em>, but verbs indicating a change of state or direction (like 
+          <em>gaan</em> or <em>worden</em>) use <strong>zijn</strong>. Some can use both!
         </p>
       </div>
+
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--blue);">trending_up</span>
-          <h3 style="margin:0;">Build Muscle Memory</h3>
+          <span class="material-icons" style="color:var(--green);">splitscreen</span>
+          <h3 style="margin:0;">Separable Verbs</h3>
         </div>
         <p>
-          This tool is designed for high-speed repetition. The goal is to reach a point where your
-          choices are automatic.
+          Look for the <strong>separable</strong> tag. These verbs split in the present tense 
+          (e.g., <em>opbellen</em> becomes <em>"Ik bel de dokter op"</em>). Our explorer 
+          shows you exactly how they behave.
+        </p>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--gold);">stars</span>
+          <h3 style="margin:0;">Mark Your Progress</h3>
+        </div>
+        <p>
+          Click any verb to see its full conjugations. Once you can confidently use all its forms 
+          in a sentence, click <strong>Mark as Mastered</strong>. Your goal is to turn the 
+          progress bar gold!
         </p>
       </div>
     </md-help-dialog>

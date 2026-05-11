@@ -33,33 +33,46 @@ type NounWithLegacyFields = Noun & {
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
           <span class="material-icons" style="color:var(--orange);">bolt</span>
-          <h3 style="margin:0;">Rapid Choice</h3>
+          <h3 style="margin:0;">Intuition First</h3>
         </div>
         <p>
-          Decide instantly between De or Het. It's the only way to build the intuition needed for
-          real conversation.
+          Dutch articles are 80% intuition. Don't overthink. Choose quickly, and let 
+          the correct sounds sink in. With enough repetition, <em>"Het tafel"</em> will 
+          start to sound "wrong" to your ears.
         </p>
       </div>
 
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
           <span class="material-icons" style="color:var(--green);">lightbulb</span>
-          <h3 style="margin:0;">Rule Tips</h3>
+          <h3 style="margin:0;">The Diminutive Rule</h3>
         </div>
         <p>
-          If you get it wrong, we'll often show you the specific grammar rule (like diminutives or
-          professions) to help you remember.
+          Every word ending in <strong>-je</strong> (like <em>meisje</em> or <em>biertje</em>) 
+          is ALWAYS <strong>het</strong>. This is the most reliable rule in the Dutch language!
         </p>
       </div>
 
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--blue);">trending_up</span>
-          <h3 style="margin:0;">Build Muscle Memory</h3>
+          <span class="material-icons" style="color:var(--blue);">groups</span>
+          <h3 style="margin:0;">The Plural Rule</h3>
         </div>
         <p>
-          This tool is designed for high-speed repetition. The goal is to reach a point where your
-          choices are automatic.
+          All plural nouns are ALWAYS <strong>de</strong>. Whether it's <em>de boeken</em> or 
+          <em>de huizen</em>, pluralization levels the playing field to <strong>de</strong>.
+        </p>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--gold);">workspace_premium</span>
+          <h3 style="margin:0;">Professions & Trees</h3>
+        </div>
+        <p>
+          Most professions (<em>de dokter</em>) and most trees/fruits (<em>de appel</em>) 
+          are <strong>de</strong>. When in doubt, <strong>de</strong> is correct for about 
+          75% of Dutch nouns!
         </p>
       </div>
     </md-help-dialog>

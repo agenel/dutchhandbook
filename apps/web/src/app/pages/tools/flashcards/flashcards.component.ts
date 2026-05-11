@@ -27,23 +27,37 @@ import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.com
     <md-help-dialog [(visible)]="helpOpen" title="Flashcards <em>Guide</em>">
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--orange);">style</span>
-          <h3 style="margin:0;">Digital Flashcards</h3>
+          <span class="material-icons" style="color:var(--orange);">psychology</span>
+          <h3 style="margin:0;">Active Recall</h3>
         </div>
         <p>
-          Classic active recall. See the Dutch word, think of the English translation, then reveal.
-          Mark cards as known to shrink your deck.
+          Flashcards are only effective if you <strong>force your brain to remember</strong> 
+          before you flip. Don't peek! The effort of trying to retrieve the word is what 
+          actually burns it into your long-term memory.
         </p>
       </div>
 
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--blue);">trending_up</span>
-          <h3 style="margin:0;">Build Muscle Memory</h3>
+          <span class="material-icons" style="color:var(--blue);">record_voice_over</span>
+          <h3 style="margin:0;">Say it Out Loud</h3>
         </div>
         <p>
-          This tool is designed for high-speed repetition. The goal is to reach a point where your
-          choices are automatic.
+          Always pronounce the Dutch word out loud before you reveal the translation. 
+          Auditory feedback helps link the visual spelling to the spoken sound, 
+          which is crucial for real-life conversations.
+        </p>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--green);">thumbs_up_down</span>
+          <h3 style="margin:0;">Hard vs Easy</h3>
+        </div>
+        <p>
+          Be honest! If you hesitated for more than 2 seconds, mark it as <strong>Hard</strong>. 
+          If the answer popped into your head instantly, mark it as <strong>Easy</strong>. 
+          Our system uses this to help you focus on the words that actually need work.
         </p>
       </div>
     </md-help-dialog>

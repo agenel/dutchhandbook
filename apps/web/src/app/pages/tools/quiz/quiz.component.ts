@@ -35,23 +35,36 @@ interface QuizQuestion {
     <md-help-dialog [(visible)]="helpOpen" title="Quiz <em>Guide</em>">
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--orange);">bolt</span>
-          <h3 style="margin:0;">Practice Mode</h3>
+          <span class="material-icons" style="color:var(--orange);">checklist</span>
+          <h3 style="margin:0;">Comprehensive Testing</h3>
         </div>
         <p>
-          Use this tool to convert your theoretical knowledge into rapid intuition. Practice until
-          you don't have to think anymore!
+          Our grammar quiz covers everything from basic sentence structure to complex 
+          prepositional phrases. It's the ultimate test of your Dutch foundations.
         </p>
       </div>
 
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--blue);">trending_up</span>
-          <h3 style="margin:0;">Build Muscle Memory</h3>
+          <span class="material-icons" style="color:var(--blue);">lightbulb</span>
+          <h3 style="margin:0;">Learn from Mistakes</h3>
         </div>
         <p>
-          This tool is designed for high-speed repetition. The goal is to reach a point where your
-          choices are automatic.
+          Every question includes a <strong>detailed explanation</strong>. If you get an 
+          answer wrong, take a moment to read <em>why</em>. This is often where the most 
+          important learning happens!
+        </p>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--green);">save</span>
+          <h3 style="margin:0;">Track Your Growth</h3>
+        </div>
+        <p>
+          Your quiz scores are saved to your profile and reflected in your 
+          <strong>Admin Dashboard</strong>. Try to consistently score above 80% to ensure 
+          you've truly mastered the grammar logic.
         </p>
       </div>
     </md-help-dialog>

@@ -32,23 +32,37 @@ interface SentenceChallenge {
     <md-help-dialog [(visible)]="helpOpen" title="Sentence Builder <em>Guide</em>">
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--orange);">bolt</span>
-          <h3 style="margin:0;">Practice Mode</h3>
+          <span class="material-icons" style="color:var(--orange);">gavel</span>
+          <h3 style="margin:0;">The V2 Rule</h3>
         </div>
         <p>
-          Use this tool to convert your theoretical knowledge into rapid intuition. Practice until
-          you don't have to think anymore!
+          In a standard Dutch sentence, the <strong>conjugated verb</strong> is ALWAYS the 
+          second element. This is known as the Verb-Second (V2) rule. 
+          <em>(e.g., "Ik <strong>drink</strong> water")</em>.
         </p>
       </div>
 
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--blue);">trending_up</span>
-          <h3 style="margin:0;">Build Muscle Memory</h3>
+          <span class="material-icons" style="color:var(--blue);">swap_calls</span>
+          <h3 style="margin:0;">Inversion</h3>
         </div>
         <p>
-          This tool is designed for high-speed repetition. The goal is to reach a point where your
-          choices are automatic.
+          If a sentence starts with something other than the subject (like a time or place), 
+          the <strong>verb and subject swap places</strong> to keep the verb in the 2nd spot. 
+          <em>(e.g., "Morgen <strong>drink ik</strong> water")</em>.
+        </p>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--green);">format_align_right</span>
+          <h3 style="margin:0;">Verb at the End</h3>
+        </div>
+        <p>
+          If there is a second verb (like an infinitive or past participle), it almost always 
+          goes to the <strong>very end</strong> of the sentence. 
+          <em>(e.g., "Ik wil water <strong>drinken</strong>")</em>.
         </p>
       </div>
     </md-help-dialog>

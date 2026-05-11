@@ -19,12 +19,105 @@ import { MetaService } from '../../core/meta.service';
 import { ProgressService } from '../../core/progress.service';
 import { SheetContentRegistry } from './sheet-content.registry';
 
+import { HelpDialogComponent } from '../../layout/help-dialog/help-dialog.component';
+
 @Component({
   selector: 'md-sheet-page',
   standalone: true,
-  imports: [RouterLink, ButtonModule, NgComponentOutlet],
+  imports: [RouterLink, ButtonModule, NgComponentOutlet, HelpDialogComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
+    <md-help-dialog [(visible)]="helpOpen" title="Cheat Sheet <em>Guide</em>">
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--orange);">visibility_off</span>
+          <h3 style="margin:0;">Active Recall Mode</h3>
+        </div>
+        <p>
+          Toggle <strong>Test Mode</strong> in the header to blur English translations. 
+          Scientific studies show that forcing your brain to retrieve a word before 
+          seeing it improves retention by up to <strong>300%</strong>. Hover or tap 
+          a blurred word to reveal it.
+        </p>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--blue);">palette</span>
+          <h3 style="margin:0;">Visual Grammar</h3>
+        </div>
+        <p>
+          We use a consistent color system to help your brain categorize patterns:
+        </p>
+        <div style="background:var(--stripe); padding:1rem; border-radius:12px; border:1.5px solid var(--border); margin-top:0.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+            <div style="width:12px; height:12px; border-radius:3px; background:var(--blue);"></div>
+            <span><strong>Blue</strong>: Subjects & Core Elements</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+            <div style="width:12px; height:12px; border-radius:3px; background:var(--green);"></div>
+            <span><strong>Green</strong>: Objects & Secondary Details</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; font-size:0.85rem;">
+            <div style="width:12px; height:12px; border-radius:3px; background:var(--red);"></div>
+            <span><strong>Red</strong>: Negations & Possessives</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.8rem; font-size:0.85rem;">
+            <div style="width:12px; height:12px; border-radius:3px; background:var(--gold);"></div>
+            <span><strong>Gold</strong>: Crucial Exceptions & Rules</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--ink);">record_voice_over</span>
+          <h3 style="margin:0;">The "Silent" Grammar</h3>
+        </div>
+        <p>
+          Pay attention to <strong>stressed vs. unstressed</strong> forms (e.g., <em>jij</em> vs. <em>je</em>). 
+          In spoken Dutch, the short form is used 90% of the time. Use the long form 
+          only when you want to emphasize a contrast!
+        </p>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--orange);">auto_awesome</span>
+          <h3 style="margin:0;">The Magic of -je</h3>
+        </div>
+        <p>
+          Whenever you see a noun ending in <strong>-je</strong>, <strong>-tje</strong>, 
+          or <strong>-pje</strong>, it is <em>always</em> a <strong>het-word</strong>. 
+          Use this to instantly simplify your article choices!
+        </p>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--blue);">gavel</span>
+          <h3 style="margin:0;">The Golden Rule (V2)</h3>
+        </div>
+        <p>
+          In a main Dutch clause, the <strong>conjugated verb</strong> must always be 
+          in the second position. If you start a sentence with time or place, 
+          the subject must move to the third position.
+        </p>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--gold);">stars</span>
+          <h3 style="margin:0;">The Path to Mastery</h3>
+        </div>
+        <p>
+          Each sheet you master contributes to your <strong>Dutch Mastery Index</strong> 
+          on the dashboard. Practice consistently—10 minutes a day is better than 
+          2 hours once a week.
+        </p>
+      </div>
+
+    </md-help-dialog>
     @if (sheet(); as s) {
       @if (legacyHtml()) {
         <article
@@ -63,35 +156,35 @@ import { SheetContentRegistry } from './sheet-content.registry';
             </div>
           }
         </article>
-
-        <div class="sheet-footer">
-          <button
-            type="button"
-            class="mastery-toggle"
-            [class.mastered]="progress.isMastered(s.slug)"
-            (click)="toggleMastery(s.slug)"
-          >
-            @if (progress.isMastered(s.slug)) {
-              Mastered <span class="material-icons">check_circle</span>
-            } @else {
-              Mark as Mastered <span class="material-icons">check_circle_outline</span>
-            }
-          </button>
-
-          <nav class="sheet-nav">
-            @if (s.prev) {
-              <a [routerLink]="['/sheets', s.prev]" class="fc-btn">
-                <span class="material-icons">arrow_back</span> Previous
-              </a>
-            }
-            @if (s.next) {
-              <a [routerLink]="['/sheets', s.next]" class="fc-btn">
-                Next <span class="material-icons">arrow_forward</span>
-              </a>
-            }
-          </nav>
-        </div>
       }
+
+      <div class="sheet-footer">
+        <button
+          type="button"
+          class="mastery-toggle"
+          [class.mastered]="progress.isMastered(s.slug)"
+          (click)="toggleMastery(s.slug)"
+        >
+          @if (progress.isMastered(s.slug)) {
+            Mastered <span class="material-icons">check_circle</span>
+          } @else {
+            Mark as Mastered <span class="material-icons">check_circle_outline</span>
+          }
+        </button>
+
+        <nav class="sheet-nav">
+          @if (s.prev) {
+            <a [routerLink]="['/sheets', s.prev]" class="fc-btn">
+              <span class="material-icons">arrow_back</span> Previous
+            </a>
+          }
+          @if (s.next) {
+            <a [routerLink]="['/sheets', s.next]" class="fc-btn">
+              Next <span class="material-icons">arrow_forward</span>
+            </a>
+          }
+        </nav>
+      </div>
     } @else {
       <div class="placeholder-card">
         <h2>Sheet not found</h2>
@@ -140,8 +233,9 @@ export class SheetPageComponent {
   private readonly registry = inject(SheetContentRegistry);
   private readonly sanitizer = inject(DomSanitizer);
   private readonly platformId = inject(PLATFORM_ID);
-  private readonly isBrowser = isPlatformBrowser(this.platformId);
+  protected readonly isBrowser = isPlatformBrowser(this.platformId);
   protected readonly progress = inject(ProgressService);
+  protected helpOpen = false;
 
   private readonly params = toSignal<ParamMap | null>(this.route.paramMap, { initialValue: null });
 
@@ -152,9 +246,11 @@ export class SheetPageComponent {
         if (!slug) return of(null);
         return this.http.get(`/assets/data/sheet-html/${slug}.html`, { responseType: 'text' }).pipe(
           map((html) => {
+            // Strip legacy footer
+            const cleaned = html.replace(/<div class="page-nav[^>]*>[\s\S]*?<\/div>/g, '');
             const processed = this.isBrowser
-              ? this.renderLegacyMasteryState(html, slug)
-              : html;
+              ? this.renderLegacyMasteryState(cleaned, slug)
+              : cleaned;
             return this.sanitizer.bypassSecurityTrustHtml(processed);
           }),
           catchError(() => of(null)),
@@ -244,18 +340,18 @@ export class SheetPageComponent {
     const helpTrigger = target.closest('#help-trigger');
     if (helpTrigger) {
       event.preventDefault();
-      this.setLegacyHelpOpen(true);
+      this.helpOpen = true;
       return;
     }
 
     if (target.closest('#help-close')) {
       event.preventDefault();
-      this.setLegacyHelpOpen(false);
+      this.helpOpen = false;
       return;
     }
 
     if (target.classList.contains('help-modal')) {
-      this.setLegacyHelpOpen(false);
+      this.helpOpen = false;
     }
   }
 
@@ -283,13 +379,5 @@ export class SheetPageComponent {
     button.innerHTML = mastered
       ? 'Mastered <span class="material-icons">check_circle</span>'
       : 'Mark as Mastered <span class="material-icons">check_circle_outline</span>';
-  }
-
-  private setLegacyHelpOpen(open: boolean): void {
-    if (!this.isBrowser) return;
-    const modal = document.getElementById('help-modal');
-    if (!modal) return;
-    modal.classList.toggle('active', open);
-    document.body.style.overflow = open ? 'hidden' : '';
   }
 }

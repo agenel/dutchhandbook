@@ -69,14 +69,54 @@ import { ProgressService } from '../../../core/progress.service';
         </button>
       </form>
 
+      <div class="auth-or">or</div>
+
+      <a routerLink="/auth/register" class="fc-btn auth-secondary">
+        Create an account
+      </a>
+
       <div class="auth-links">
         <a routerLink="/auth/forgot">Forgot password?</a>
-        <a routerLink="/auth/register">Create an account</a>
       </div>
     </div>
   `,
   styles: [`
     :host { display: block; }
+    .auth-or {
+      text-align: center;
+      margin: 0.4rem 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .auth-or::before, .auth-or::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      opacity: 0.4;
+    }
+    .auth-secondary {
+      width: 100%;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      margin-top: 0;
+    }
+    .auth-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+      background: var(--orange-bg);
+    }
   `],
 })
 export class LoginComponent {

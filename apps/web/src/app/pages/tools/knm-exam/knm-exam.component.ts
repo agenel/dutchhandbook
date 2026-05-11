@@ -39,32 +39,50 @@ type ExamState = 'setup' | 'exam' | 'results';
     <md-help-dialog [(visible)]="helpOpen" title="KNM <em>Exam Guide</em>">
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--orange);">gavel</span>
+          <span class="material-icons" style="color:var(--orange);">menu_book</span>
+          <h3 style="margin:0;">The 10 Chapters</h3>
+        </div>
+        <p>
+          The official KNM exam covers everything from <strong>Work & Income</strong> to 
+          <strong>Healthcare</strong> and <strong>History</strong>. Our pool of questions is 
+          balanced across all 10 official chapters to ensure full coverage.
+        </p>
+      </div>
+
+      <div class="help-section">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+          <span class="material-icons" style="color:var(--blue);">timer</span>
           <h3 style="margin:0;">Exam Simulation</h3>
         </div>
         <p>
-          This tool simulates the Kennis van de Nederlandse Maatschappij (KNM) exam.
-          Questions are drawn randomly from all 10 chapters of Dutch society studies.
+          The real DUO exam lasts 45 minutes and has ~40 questions. Practice with our 
+          <strong>50-question</strong> mode to build the stamina and speed needed for the 
+          actual test day.
         </p>
       </div>
 
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--blue);">settings</span>
-          <h3 style="margin:0;">Custom Length</h3>
+          <span class="material-icons" style="color:var(--green);">verified</span>
+          <h3 style="margin:0;">What is a Pass?</h3>
         </div>
         <p>
-          Choose between 15 and 75 questions. The real exam typically has 40-45 questions,
-          so 50 is a great simulation.
+          To pass the real exam, you generally need to answer at least <strong>26-28</strong> 
+          questions correctly out of 40. Aim for a consistent <strong>75%</strong> on our 
+          mock exams to be safe!
         </p>
       </div>
 
       <div class="help-section">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-          <span class="material-icons" style="color:var(--green);">check_circle</span>
-          <h3 style="margin:0;">Passing Grade</h3>
+          <span class="material-icons" style="color:var(--gold);">tips_and_updates</span>
+          <h3 style="margin:0;">Pro Tip</h3>
         </div>
-        <p>You generally need a 60% score or higher to pass the KNM exam.</p>
+        <p>
+          Don't just memorize answers. Try to understand the <em>Dutch context</em> behind 
+          the questions. Many real exam questions use images or short videos — pay close 
+          attention to our descriptive scenarios!
+        </p>
       </div>
     </md-help-dialog>
 
