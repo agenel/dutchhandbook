@@ -19,9 +19,6 @@ import { AuthService } from '../../core/auth.service';
             >
           </li>
           <li>
-            <a routerLink="/about" routerLinkActive="active">About</a>
-          </li>
-          <li>
             <a routerLink="/cheatsheets" routerLinkActive="active">Cheat Sheets</a>
           </li>
           <li
@@ -51,6 +48,9 @@ import { AuthService } from '../../core/auth.service';
                 }
               </div>
             }
+          </li>
+          <li>
+            <a routerLink="/about" routerLinkActive="active">About</a>
           </li>
         </ul>
         <div class="fc-toggle-wrap">
@@ -111,8 +111,8 @@ import { AuthService } from '../../core/auth.service';
         <div class="hub-mobile-body">
           <ul class="hub-mobile-links">
             <li><a routerLink="/" (click)="closeMobile()">Home</a></li>
-            <li><a routerLink="/about" (click)="closeMobile()">About</a></li>
             <li><a routerLink="/cheatsheets" (click)="closeMobile()">Cheat Sheets</a></li>
+            <li><a routerLink="/about" (click)="closeMobile()">About</a></li>
           </ul>
           <div class="hub-mobile-section-label">Tools</div>
           <ul class="hub-mobile-links">
