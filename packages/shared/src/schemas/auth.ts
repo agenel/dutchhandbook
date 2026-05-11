@@ -12,10 +12,12 @@ export const PasswordSchema = z
 
 export const EmailSchema = z.string().trim().toLowerCase().email().max(254);
 
+const sanitize = (val?: string | null) => val?.replace(/<[^>]*>/g, '').trim() || undefined;
+
 export const RegisterSchema = z.object({
   email: EmailSchema,
   password: PasswordSchema,
-  displayName: z.string().trim().min(2).max(40).optional(),
+  displayName: z.string().max(40).optional().transform(sanitize),
 });
 export type RegisterDto = z.infer<typeof RegisterSchema>;
 

@@ -11,6 +11,7 @@ import argon2 from 'argon2';
 import { randomBytes } from 'node:crypto';
 import type { LoginDto, RegisterDto, PublicUser } from '@moredutch/shared';
 import { SessionsService } from './sessions.service';
+import { AuditService } from '../common/audit.service';
 
 const COOKIE_SID = 'mc_sid';
 const COOKIE_CSRF = 'mc_csrf';
@@ -29,6 +30,7 @@ export class AuthService {
     private readonly prisma: PrismaService,
     private readonly sessions: SessionsService,
     private readonly config: ConfigService,
+    private readonly audit: AuditService,
   ) {}
 
   async requireUser(req: Request, res?: Response): Promise<PublicUser> {
@@ -249,21 +251,7 @@ export class AuthService {
   }
 
   private async logEvent(userId: string | null, event: string, req: Request, meta?: any) {
-    try {
-      await this.prisma.auditLog.create({
-        data: {
-          userId,
-          event,
-          ip: req.ip,
-          userAgent: req.get('user-agent'),
-          meta: meta ? JSON.stringify(meta) : null,
-        },
-      });
-    } catch (err) {
-      // Fail silently for audit logs to not block main flow
-      // eslint-disable-next-line no-console
-      console.error('[audit-log-error]', err);
-    }
+    return this.audit.logEvent(userId, event, req, meta);
   }
 }
 

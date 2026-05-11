@@ -8,8 +8,10 @@ import {
   Body, 
   UseGuards,
   HttpCode,
-  Res
+  Res,
+  Req
 } from '@nestjs/common';
+import { Request } from 'express';
 import { AdminService } from './admin.service';
 import { AdminGuard } from './admin.guard';
 import { ZodValidationPipe } from '../common/zod.pipe';
@@ -32,8 +34,8 @@ export class AdminController {
   }
 
   @Get('users-export')
-  async exportUsers(@Res() res: any) {
-    const csv = await this.admin.exportUsers();
+  async exportUsers(@Req() req: Request, @Res() res: any) {
+    const csv = await this.admin.exportUsers(req);
     res.setHeader('Content-Type', 'text/csv');
     res.setHeader('Content-Disposition', 'attachment; filename=users-export.csv');
     return res.send(csv);
@@ -47,15 +49,16 @@ export class AdminController {
   @Patch('users/:id')
   async patchUser(
     @Param('id') id: string,
-    @Body(new ZodValidationPipe(AdminUserPatchSchema)) dto: AdminUserPatchDto
+    @Body(new ZodValidationPipe(AdminUserPatchSchema)) dto: AdminUserPatchDto,
+    @Req() req: Request
   ) {
-    return this.admin.patchUser(id, dto);
+    return this.admin.patchUser(id, dto, req);
   }
 
   @Delete('users/:id')
   @HttpCode(204)
-  async deleteUser(@Param('id') id: string) {
-    await this.admin.deleteUser(id);
+  async deleteUser(@Param('id') id: string, @Req() req: Request) {
+    await this.admin.deleteUser(id, req);
   }
 
   @Get('stats')

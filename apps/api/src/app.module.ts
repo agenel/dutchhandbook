@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { APP_FILTER, APP_GUARD } from '@nestjs/core';
-import { ThrottlerModule } from '@nestjs/throttler';
+import { APP_FILTER, APP_GUARD, Reflector } from '@nestjs/core';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { LoggerModule } from 'nestjs-pino';
 import { AuthModule } from './auth/auth.module';
 import { GlobalExceptionFilter } from './common/global-exception.filter';
@@ -57,12 +57,13 @@ import * as path from 'path';
         },
       },
     }),
-    ThrottlerModule.forRoot([
-      // Two-layer rate limit: a fast burst limiter and a slower hard ceiling.
-      { name: 'short', ttl: 1000, limit: 10 },
-      { name: 'medium', ttl: 10_000, limit: 50 },
-      { name: 'long', ttl: 60_000, limit: 200 },
-    ]),
+    ThrottlerModule.forRoot({
+      throttlers: [
+        { name: 'short', ttl: 1000, limit: 10 },
+        { name: 'medium', ttl: 10000, limit: 50 },
+        { name: 'long', ttl: 60000, limit: 200 },
+      ],
+    }),
     PrismaModule,
     AuthModule,
     UsersModule,

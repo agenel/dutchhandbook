@@ -1,5 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { AuditService } from '../common/audit.service';
+import { Request } from 'express';
 import type { 
   AdminUserDto, 
   AdminStatsDto, 
@@ -13,7 +15,10 @@ import type {
 
 @Injectable()
 export class AdminService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly audit: AuditService,
+  ) {}
 
   async getUsers(page: number, limit: number, search: string): Promise<PaginatedResult<AdminUserDto>> {
     const skip = (page - 1) * limit;
@@ -100,7 +105,8 @@ export class AdminService {
     };
   }
 
-  async patchUser(id: string, dto: AdminUserPatchDto): Promise<AdminUserDto> {
+  async patchUser(id: string, dto: AdminUserPatchDto, req: Request): Promise<AdminUserDto> {
+    const admin = await this.prisma.user.findFirst({ where: { isAdmin: true } }); // This is just for types, we'll get real admin from req in controller
     let updateData: any = {};
     if (dto.displayName !== undefined) updateData.displayName = dto.displayName;
     if (dto.isAdmin !== undefined) updateData.isAdmin = dto.isAdmin;
@@ -129,14 +135,17 @@ export class AdminService {
        });
     }
 
+    await this.audit.logEvent(null, 'ADMIN_PATCH_USER', req, { targetId: id, ...dto });
     return this.getUser(id);
   }
 
-  async deleteUser(id: string): Promise<void> {
+  async deleteUser(id: string, req: Request): Promise<void> {
+    await this.audit.logEvent(null, 'ADMIN_DELETE_USER', req, { targetId: id });
     await this.prisma.user.delete({ where: { id } });
   }
 
-  async exportUsers(): Promise<string> {
+  async exportUsers(req: Request): Promise<string> {
+    await this.audit.logEvent(null, 'ADMIN_EXPORT_USERS', req);
     const users = await this.prisma.user.findMany({
       orderBy: { createdAt: 'desc' },
       include: {

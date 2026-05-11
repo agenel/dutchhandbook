@@ -1,9 +1,11 @@
 import { z } from 'zod';
 
+const sanitize = (val?: string | null) => (val ? val.replace(/<[^>]*>/g, '').trim() : val);
+
 export const AdminUserPatchSchema = z.object({
-  displayName: z.string().optional().nullable(),
+  displayName: z.string().optional().nullable().transform(sanitize),
   isBanned: z.boolean().optional(),
-  bannedReason: z.string().optional().nullable(),
+  bannedReason: z.string().optional().nullable().transform(sanitize),
   isAdmin: z.boolean().optional(),
 });
 
