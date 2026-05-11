@@ -1,6 +1,15 @@
 import { Body, Controller, Get, HttpCode, Post, Req, Res, UnauthorizedException } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { LoginSchema, RegisterSchema, type LoginDto, type RegisterDto } from '@moredutch/shared';
+import { 
+  LoginSchema, 
+  RegisterSchema, 
+  PasswordResetRequestSchema, 
+  PasswordResetConfirmSchema,
+  type LoginDto, 
+  type RegisterDto,
+  type PasswordResetRequestDto,
+  type PasswordResetConfirmDto
+} from '@moredutch/shared';
 import { SkipCsrf } from '../common/csrf.guard';
 import { ZodValidationPipe } from '../common/zod.pipe';
 import { AuthService } from './auth.service';
@@ -60,23 +69,20 @@ export class AuthController {
   @Post('password/request-reset')
   @HttpCode(204)
   async requestReset(
-    @Body() body: { email?: string },
+    @Body(new ZodValidationPipe(PasswordResetRequestSchema)) dto: PasswordResetRequestDto,
     @Req() req: Request,
   ): Promise<void> {
     // Always 204 to avoid user enumeration.
-    const email = String(body?.email ?? '').trim().toLowerCase();
-    if (!email) return;
-    await this.auth.requestPasswordReset(email, req);
+    await this.auth.requestPasswordReset(dto.email, req);
   }
 
   @SkipCsrf()
   @Post('password/confirm-reset')
   @HttpCode(204)
-  async confirmReset(@Body() body: { token?: string; password?: string }): Promise<void> {
-    const token = String(body?.token ?? '');
-    const password = String(body?.password ?? '');
-    if (!token || !password) throw new UnauthorizedException();
-    await this.auth.confirmPasswordReset(token, password);
+  async confirmReset(
+    @Body(new ZodValidationPipe(PasswordResetConfirmSchema)) dto: PasswordResetConfirmDto
+  ): Promise<void> {
+    await this.auth.confirmPasswordReset(dto.token, dto.password);
   }
 
   @SkipCsrf()

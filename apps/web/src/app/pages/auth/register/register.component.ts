@@ -46,7 +46,7 @@ import { AuthService } from '../../../core/auth.service';
               class="auth-input"
               [type]="showPw() ? 'text' : 'password'"
               autocomplete="new-password"
-              placeholder="At least 12 characters"
+              placeholder="At least 8 characters"
               formControlName="password"
             />
             <button
@@ -58,7 +58,7 @@ import { AuthService } from '../../../core/auth.service';
               <span class="material-icons">{{ showPw() ? 'visibility_off' : 'visibility' }}</span>
             </button>
           </div>
-          <span class="auth-hint">Min. 12 characters with mixed case and a digit.</span>
+          <span class="auth-hint">Min. 8 characters.</span>
         </label>
 
         @if (error()) {
@@ -109,7 +109,7 @@ export class RegisterComponent {
   protected readonly form = this.fb.nonNullable.group({
     displayName: [''],
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(12)]],
+    password: ['', [Validators.required, Validators.minLength(8)]],
   });
 
   submit(): void {
