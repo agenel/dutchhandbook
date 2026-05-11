@@ -42,10 +42,13 @@ export class GlobalExceptionFilter implements ExceptionFilter {
 
   private normalize(exception: unknown): ErrorBody {
     if (exception instanceof ZodError) {
+      const flattened = exception.flatten();
+      const fieldErrors = flattened.fieldErrors as Record<string, string[] | undefined>;
+      const firstError = Object.values(fieldErrors)[0]?.[0];
       return {
         statusCode: HttpStatus.BAD_REQUEST,
-        message: 'Validation failed',
-        details: exception.flatten(),
+        message: firstError ? `Validation error: ${firstError}` : 'Validation failed',
+        details: flattened,
       };
     }
     if (exception instanceof HttpException) {

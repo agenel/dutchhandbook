@@ -14,9 +14,12 @@ export class ZodValidationPipe<T> implements PipeTransform<unknown, T> {
   transform(value: unknown, _metadata: ArgumentMetadata): T {
     const result = this.schema.safeParse(value);
     if (!result.success) {
+      const flattened = result.error.flatten();
+      const fieldErrors = flattened.fieldErrors as Record<string, string[] | undefined>;
+      const firstError = Object.values(fieldErrors)[0]?.[0];
       throw new BadRequestException({
-        message: 'Validation failed',
-        details: result.error.flatten(),
+        message: firstError ? `Validation error: ${firstError}` : 'Validation failed',
+        details: flattened,
       });
     }
     return result.data;

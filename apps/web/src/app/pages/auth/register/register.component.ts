@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal, computed } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/auth.service';
@@ -46,8 +46,9 @@ import { AuthService } from '../../../core/auth.service';
               class="auth-input"
               [type]="showPw() ? 'text' : 'password'"
               autocomplete="new-password"
-              placeholder="At least 8 characters"
+              placeholder="Create a strong password"
               formControlName="password"
+              (input)="onPwInput($event)"
             />
             <button
               type="button"
@@ -58,7 +59,22 @@ import { AuthService } from '../../../core/auth.service';
               <span class="material-icons">{{ showPw() ? 'visibility_off' : 'visibility' }}</span>
             </button>
           </div>
-          <span class="auth-hint">Min. 8 characters.</span>
+          
+          <!-- Password Requirements Checklist -->
+          <div class="pw-requirements">
+            <div class="req-item" [class.valid]="hasLength()">
+              <span class="material-icons">{{ hasLength() ? 'check_circle' : 'circle' }}</span>
+              Min. 8 characters
+            </div>
+            <div class="req-item" [class.valid]="hasNumber()">
+              <span class="material-icons">{{ hasNumber() ? 'check_circle' : 'circle' }}</span>
+              At least one number
+            </div>
+            <div class="req-item" [class.valid]="hasSymbol()">
+              <span class="material-icons">{{ hasSymbol() ? 'check_circle' : 'circle' }}</span>
+              At least one symbol (!@#$%...)
+            </div>
+          </div>
         </label>
 
         @if (error()) {
@@ -94,6 +110,30 @@ import { AuthService } from '../../../core/auth.service';
   `,
   styles: [`
     :host { display: block; }
+    .pw-requirements {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .req-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .req-item .material-icons {
+      font-size: 0.9rem;
+      opacity: 0.4;
+    }
+    .req-item.valid {
+      color: var(--green);
+    }
+    .req-item.valid .material-icons {
+      opacity: 1;
+    }
   `],
 })
 export class RegisterComponent {
@@ -106,11 +146,27 @@ export class RegisterComponent {
   protected readonly success = signal(false);
   protected readonly showPw = signal(false);
 
+  // Requirement signals
+  protected readonly pwValue = signal('');
+  protected readonly hasLength = computed(() => this.pwValue().length >= 8);
+  protected readonly hasNumber = computed(() => /[0-9]/.test(this.pwValue()));
+  protected readonly hasSymbol = computed(() => /[^a-zA-Z0-9]/.test(this.pwValue()));
+
   protected readonly form = this.fb.nonNullable.group({
     displayName: [''],
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(8)]],
+    password: ['', [
+      Validators.required, 
+      Validators.minLength(8),
+      Validators.pattern(/[0-9]/),
+      Validators.pattern(/[^a-zA-Z0-9]/)
+    ]],
   });
+
+  onPwInput(event: Event): void {
+    const val = (event.target as HTMLInputElement).value;
+    this.pwValue.set(val);
+  }
 
   submit(): void {
     if (this.form.invalid) return;

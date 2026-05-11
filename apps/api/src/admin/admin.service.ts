@@ -7,7 +7,8 @@ import type {
   AdminAttemptsChartDto,
   AdminAuditLogDto,
   AdminUserPatchDto,
-  PaginatedResult
+  PaginatedResult,
+  AdminChartRange
 } from '@moredutch/shared';
 
 @Injectable()

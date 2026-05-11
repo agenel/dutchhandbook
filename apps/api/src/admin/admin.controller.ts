@@ -13,7 +13,7 @@ import {
 import { AdminService } from './admin.service';
 import { AdminGuard } from './admin.guard';
 import { ZodValidationPipe } from '../common/zod.pipe';
-import { AdminUserPatchSchema, AdminUserPatchDto } from '@moredutch/shared';
+import { AdminUserPatchSchema, AdminUserPatchDto, AdminChartRange } from '@moredutch/shared';
 
 @Controller({ path: 'admin', version: '1' })
 @UseGuards(AdminGuard)
