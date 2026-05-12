@@ -62,6 +62,20 @@ import type { AdminUserDto, PaginatedResult } from '@moredutch/shared';
                   } @else {
                     <span class="badge active">ACTIVE</span>
                   }
+                  <div class="verification-status">
+                    @if (user.emailVerified) {
+                      <span class="badge verified">
+                        <span class="material-icons" style="font-size:0.7rem;">verified</span> VERIFIED
+                      </span>
+                    } @else {
+                      <span class="badge unverified" [title]="getUnverifiedWarning(user)">
+                        <span class="material-icons" style="font-size:0.7rem;">help_outline</span> UNVERIFIED
+                        @if (isNearDeletion(user)) {
+                          <span class="material-icons warning-pulse" style="font-size:0.8rem; color: var(--red);">warning</span>
+                        }
+                      </span>
+                    }
+                  </div>
                 </td>
                 <td>
                   <div class="stats-cell">
@@ -223,6 +237,27 @@ import type { AdminUserDto, PaginatedResult } from '@moredutch/shared';
       .badge.admin { background: var(--purple-light); color: var(--purple); }
       .badge.active { background: var(--green-light); color: var(--green); }
       .badge.banned { background: var(--red-light); color: var(--red); }
+      .badge.verified { background: #e3f2fd; color: #1976d2; }
+      .badge.unverified { background: #fff3e0; color: #ef6c00; }
+
+      .verification-status {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .warning-pulse {
+        animation: pulse 2s infinite;
+        vertical-align: middle;
+        margin-left: 2px;
+      }
+
+      @keyframes pulse {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.2); opacity: 0.7; }
+        100% { transform: scale(1); opacity: 1; }
+      }
 
       .small-muted {
         font-size: 0.75rem;
@@ -328,7 +363,7 @@ export class AdminUsersComponent implements OnInit {
   protected page = signal(1);
   protected searchQuery = signal('');
   protected loading = signal(false);
-  
+
   private searchTimeout: any;
 
   ngOnInit() {
@@ -418,5 +453,21 @@ export class AdminUsersComponent implements OnInit {
     return new Date(iso).toLocaleDateString('en-GB', {
       day: 'numeric', month: 'short', year: 'numeric'
     });
+  }
+
+  isNearDeletion(user: AdminUserDto): boolean {
+    if (user.emailVerified) return false;
+    const joined = new Date(user.createdAt);
+    const elevenMonthsAgo = new Date();
+    elevenMonthsAgo.setMonth(elevenMonthsAgo.getMonth() - 11);
+    return joined < elevenMonthsAgo;
+  }
+
+  getUnverifiedWarning(user: AdminUserDto): string {
+    if (user.emailVerified) return '';
+    if (this.isNearDeletion(user)) {
+      return 'Account is older than 11 months and unverified. It will be deleted soon.';
+    }
+    return 'User has not verified their email.';
   }
 }

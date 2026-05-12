@@ -164,6 +164,17 @@ export const routes: Routes = [
     },
   },
   {
+    path: 'auth/reset',
+    loadComponent: () =>
+      import('./pages/auth/reset/reset.component').then((m) => m.ResetComponent),
+    data: {
+      title: 'Choose new password — More Dutch',
+      description: 'Set a new password for your More Dutch account.',
+      canonicalPath: '/auth/reset',
+      robots: 'noindex, follow',
+    },
+  },
+  {
     path: 'auth/verify',
     loadComponent: () =>
       import('./pages/auth/verify/verify.component').then((m) => m.VerifyComponent),

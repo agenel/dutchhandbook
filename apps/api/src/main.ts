@@ -31,6 +31,7 @@ async function bootstrap() {
         : false,
       crossOriginEmbedderPolicy: false,
       referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
+      frameguard: isProd ? { action: 'sameorigin' } : false,
     }),
   );
 

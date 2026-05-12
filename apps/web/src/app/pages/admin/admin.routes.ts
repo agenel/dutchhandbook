@@ -21,6 +21,11 @@ export const ADMIN_ROUTES: Routes = [
         data: { title: 'Audit Logs — More Dutch' }
       },
       {
+        path: 'mail-templates',
+        loadComponent: () => import('./mail-templates/admin-mail-templates.component').then(m => m.AdminMailTemplatesComponent),
+        data: { title: 'Email Templates — More Dutch' }
+      },
+      {
         path: 'system',
         loadComponent: () => import('./system/admin-system.component').then(m => m.AdminSystemComponent),
         data: { title: 'System Health — More Dutch' }

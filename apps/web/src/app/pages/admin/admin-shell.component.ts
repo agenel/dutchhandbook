@@ -26,6 +26,11 @@ import { AuthService } from '../../core/auth.service';
             </a>
           </li>
           <li>
+            <a routerLink="/admin/mail-templates" routerLinkActive="active">
+              <span class="material-icons">email</span> Email Templates
+            </a>
+          </li>
+          <li>
             <a routerLink="/admin/audit-logs" routerLinkActive="active">
               <span class="material-icons">history</span> Audit Logs
             </a>

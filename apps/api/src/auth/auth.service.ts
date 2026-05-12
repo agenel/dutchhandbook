@@ -12,6 +12,7 @@ import { randomBytes } from 'node:crypto';
 import type { LoginDto, RegisterDto, PublicUser } from '@moredutch/shared';
 import { SessionsService } from './sessions.service';
 import { AuditService } from '../common/audit.service';
+import { MailService } from '../mail/mail.service';
 
 const COOKIE_SID = 'mc_sid';
 const COOKIE_CSRF = 'mc_csrf';
@@ -31,6 +32,7 @@ export class AuthService {
     private readonly sessions: SessionsService,
     private readonly config: ConfigService,
     private readonly audit: AuditService,
+    private readonly mail: MailService,
   ) {}
 
   async requireUser(req: Request, res?: Response): Promise<PublicUser> {
@@ -77,8 +79,7 @@ export class AuthService {
         expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
       },
     });
-    // eslint-disable-next-line no-console
-    console.log(`[verify-email] email=${email} token=${verifyToken}`);
+    await this.mail.sendVerificationEmail(email, verifyToken);
 
     await this.sessions.createSession(user.id, req, res);
     await this.logEvent(user.id, 'REGISTER', req);
@@ -160,8 +161,7 @@ export class AuthService {
 
     // TODO: send email. For now log token in server logs only.
     // This is safe for local dev; production should wire SMTP before enabling.
-    // eslint-disable-next-line no-console
-    console.log(`[password-reset] email=${email} token=${token} ip=${req.ip}`);
+    await this.mail.sendPasswordResetEmail(email, token);
     await this.logEvent(user.id, 'PASSWORD_RESET_REQUEST', req);
   }
 
