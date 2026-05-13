@@ -1209,5 +1209,245 @@
     "correctIndex": 1,
     "explanation": "Maandag, dinsdag, WOENSDAG (Wednesday).",
     "category": "Time & Dates"
+  },
+  {
+    "id": "gram-1",
+    "question": "Morgen ___ ik naar Amsterdam.",
+    "options": ["ga", "gaat", "gaan", "gaat u"],
+    "correctIndex": 0,
+    "explanation": "Inversion: When a sentence starts with something other than the subject (like 'Morgen'), the verb and subject swap places. Subject is 'ik', so verb is 'ga'.",
+    "category": "Word Order"
+  },
+  {
+    "id": "gram-2",
+    "question": "Ik vind dat een ___ (mooi) boek.",
+    "options": ["mooi", "mooie", "mooiste", "moois"],
+    "correctIndex": 0,
+    "explanation": "Adjective Inflection: We don't add -e for 'een' + 'het-word' (het boek). 'Een mooi boek'.",
+    "category": "Adjectives"
+  },
+  {
+    "id": "gram-3",
+    "question": "Dat is de ___ (klein) auto.",
+    "options": ["klein", "kleine", "kleiner", "kleinst"],
+    "correctIndex": 1,
+    "explanation": "Adjective Inflection: We add -e for 'de' or 'het' words. 'De kleine auto'.",
+    "category": "Adjectives"
+  },
+  {
+    "id": "gram-4",
+    "question": "Ik ___ (opbellen) mijn moeder vanavond.",
+    "options": ["opbel", "bel op", "bellen op", "opbellen"],
+    "correctIndex": 1,
+    "explanation": "Separable Verbs: In a main clause, the prefix (op) goes to the end. 'Ik bel mijn moeder op'.",
+    "category": "Verbs"
+  },
+  {
+    "id": "gram-5",
+    "question": "Waarom ben je te laat? ___ ik de bus heb gemist.",
+    "options": ["Want", "Omdat", "Dus", "Maar"],
+    "correctIndex": 1,
+    "explanation": "'Omdat' is used to start a subordinate clause where the verb goes to the end. 'Want' would require main clause order.",
+    "category": "Conjunctions"
+  },
+  {
+    "id": "gram-6",
+    "question": "Wat is het meervoud van 'kind'?",
+    "options": ["kinden", "kinders", "kinderen", "kinds"],
+    "correctIndex": 2,
+    "explanation": "'Kind' is an irregular plural ending in -eren: 'kinderen'.",
+    "category": "Plurals"
+  },
+  {
+    "id": "gram-7",
+    "question": "Ik heb ___ (geen/niet) tijd.",
+    "options": ["geen", "niet", "niks", "niet een"],
+    "correctIndex": 0,
+    "explanation": "Use 'geen' to negate a noun that would otherwise have 'een' or no article.",
+    "category": "Negation"
+  },
+  {
+    "id": "gram-8",
+    "question": "Jij ___ (hebben) een appel.",
+    "options": ["heb", "hebt", "heeft", "hebben"],
+    "correctIndex": 1,
+    "explanation": "Conjugation of 'hebben': Ik heb, jij hebt, hij heeft.",
+    "category": "Verbs"
+  },
+  {
+    "id": "gram-9",
+    "question": "De man ___ (lopen) op straat.",
+    "options": ["loop", "loopt", "lopen", "loope"],
+    "correctIndex": 1,
+    "explanation": "Third person singular: stem (loop) + t = loopt.",
+    "category": "Verbs"
+  },
+  {
+    "id": "gram-10",
+    "question": "Which of these is a 'het-word'?",
+    "options": ["Huis", "Auto", "Fiets", "Tafel"],
+    "correctIndex": 0,
+    "explanation": "Het huis. The others are de-words: de auto, de fiets, de tafel.",
+    "category": "Articles"
+  },
+  {
+    "id": "gram-11",
+    "question": "Ik ben gisteren naar de stad ___ (lopen).",
+    "options": ["geloopt", "gelopen", "gelopen zijn", "loop"],
+    "correctIndex": 1,
+    "explanation": "Perfectum: 'Lopen' indicates movement with a destination, so it uses 'zijn' + the strong participle 'gelopen'.",
+    "category": "Perfectum"
+  },
+  {
+    "id": "gram-12",
+    "question": "Ik ___ (zich wassen) elke ochtend.",
+    "options": ["was me", "was zich", "was je", "was hem"],
+    "correctIndex": 0,
+    "explanation": "Reflexive Verbs: For 'ik', the reflexive pronoun is 'me'. 'Ik was me'.",
+    "category": "Reflexive Verbs"
+  },
+  {
+    "id": "gram-13",
+    "question": "De man ___ daar loopt, is mijn vader.",
+    "options": ["die", "dat", "wat", "wie"],
+    "correctIndex": 0,
+    "explanation": "Relative Pronouns: Use 'die' for de-words (de man).",
+    "category": "Relative Pronouns"
+  },
+  {
+    "id": "gram-14",
+    "question": "Het boek ___ op tafel ligt, is nieuw.",
+    "options": ["die", "dat", "wat", "wie"],
+    "correctIndex": 1,
+    "explanation": "Relative Pronouns: Use 'dat' for het-words (het boek).",
+    "category": "Relative Pronouns"
+  },
+  {
+    "id": "gram-15",
+    "question": "Hij heeft de hele dag ___ (werken).",
+    "options": ["gewerkt", "gewerken", "gewerckt", "gewerktet"],
+    "correctIndex": 0,
+    "explanation": "Perfectum: 'Werken' is a weak verb. Stem 'werk' ends in 'k' (Soft Ketchup), so it ends in 't'.",
+    "category": "Perfectum"
+  },
+  {
+    "id": "gram-16",
+    "question": "Wat betekent de uitdrukking: 'Helaas pindakaas'?",
+    "options": ["Unfortunately, peanut butter", "That's too bad", "I love peanuts", "It's a sticky situation"],
+    "correctIndex": 1,
+    "explanation": "A very common informal idiom meaning 'Too bad' or 'That's a pity' (literally 'Unfortunately, peanut butter').",
+    "category": "Idioms"
+  },
+  {
+    "id": "gram-17",
+    "question": "Hoe zeg je 'to enjoy yourself'?",
+    "options": ["Zich vermaken", "Zich gebruiken", "Zich kijken", "Zich praten"],
+    "correctIndex": 0,
+    "explanation": "'Zich vermaken' is the reflexive verb for enjoying oneself.",
+    "category": "Reflexive Verbs"
+  },
+  {
+    "id": "gram-18",
+    "question": "Ik heb het huis ___ (kopen).",
+    "options": ["gekocht", "gekoopt", "gekopen", "kocht"],
+    "correctIndex": 0,
+    "explanation": "Perfectum: 'Kopen' is an irregular verb. Participle is 'gekocht'.",
+    "category": "Perfectum"
+  },
+  {
+    "id": "gram-19",
+    "question": "Wij ___ (zijn) vorig jaar in Parijs.",
+    "options": ["waren", "was", "zijn", "ben"],
+    "correctIndex": 0,
+    "explanation": "Imperfectum (Simple Past) of 'zijn': Wij waren.",
+    "category": "Past Tense"
+  },
+  {
+    "id": "gram-20",
+    "question": "___ (hoe laat) begint de les?",
+    "options": ["Wanneer", "Hoe laat", "Waarom", "Hoe"],
+    "correctIndex": 1,
+    "explanation": "'Hoe laat' is used specifically for the clock time, while 'wanneer' is more general.",
+    "category": "Question Words"
+  },
+  {
+    "id": "gram-21",
+    "question": "Ik ___ (gaan) naar de supermarkt.",
+    "options": ["ben gegaan", "heb gegaan", "ben gaant", "heb gegaant"],
+    "correctIndex": 0,
+    "explanation": "Verbs of movement with a destination use 'zijn'. 'Ik ben gegaan'.",
+    "category": "Perfectum"
+  },
+  {
+    "id": "gram-22",
+    "question": "Wat is de hoofdstad van Nederland?",
+    "options": ["Den Haag", "Rotterdam", "Amsterdam", "Utrecht"],
+    "correctIndex": 2,
+    "explanation": "Amsterdam is the capital, though the government is in Den Haag.",
+    "category": "General Knowledge"
+  },
+  {
+    "id": "gram-23",
+    "question": "Ik ga ___ (met) de fiets naar school.",
+    "options": ["met", "door", "bij", "op"],
+    "correctIndex": 0,
+    "explanation": "Use 'met' for transportation methods: met de fiets, met de bus.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "gram-24",
+    "question": "Zij ___ (drinken) een kopje koffie.",
+    "options": ["drinkt", "drinken", "drink", "drinked"],
+    "correctIndex": 0,
+    "explanation": "Third person singular: stem + t. 'Zij drinkt'.",
+    "category": "Verbs"
+  },
+  {
+    "id": "gram-25",
+    "question": "Wij ___ (wonen) al drie jaar in Nederland.",
+    "options": ["wonen", "woont", "woon", "gewoond"],
+    "correctIndex": 0,
+    "explanation": "First person plural: infinite form of the verb. 'Wij wonen'.",
+    "category": "Verbs"
+  },
+  {
+    "id": "gram-26",
+    "question": "Het is tien ___ (over) half drie.",
+    "options": ["over", "voor", "na", "bij"],
+    "correctIndex": 1,
+    "explanation": "Telling time: 'Tien voor half drie' is 14:20. Dutch counts towards or after the 'half hour'.",
+    "category": "Time"
+  },
+  {
+    "id": "gram-27",
+    "question": "Ik heb ___ (de) auto gewassen.",
+    "options": ["de", "het", "een", "geen"],
+    "correctIndex": 0,
+    "explanation": "De auto. It is a masculine/feminine word.",
+    "category": "Articles"
+  },
+  {
+    "id": "gram-28",
+    "question": "Wat is 'a snack bar' in Dutch?",
+    "options": ["De snackbar", "Het snackbar", "De restaurant", "Het cafe"],
+    "correctIndex": 0,
+    "explanation": "De snackbar.",
+    "category": "Vocabulary"
+  },
+  {
+    "id": "gram-29",
+    "question": "Hij ___ (hebben) gisteren een cadeau gekregen.",
+    "options": ["had", "heeft", "heb", "hebben"],
+    "correctIndex": 0,
+    "explanation": "Simple past of 'hebben': hij had.",
+    "category": "Past Tense"
+  },
+  {
+    "id": "gram-30",
+    "question": "Ik ga naar de bakker ___ brood te kopen.",
+    "options": ["om", "voor", "te", "zodat"],
+    "correctIndex": 0,
+    "explanation": "Use 'om ... te' for intentions/purposes. 'Om brood te kopen'.",
+    "category": "Conjunctions"
   }
 ]

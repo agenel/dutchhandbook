@@ -272,5 +272,101 @@
         "back": "Purple"
       }
     ]
+  },
+  {
+    "category": "Common Conjunctions",
+    "icon": "link",
+    "cards": [
+      { "id": "conj1", "front": "Want", "back": "Because (main clause order)" },
+      { "id": "conj2", "front": "Omdat", "back": "Because (subordinate clause order)" },
+      { "id": "conj3", "front": "Maar", "back": "But" },
+      { "id": "conj4", "front": "Hoewel", "back": "Although" },
+      { "id": "conj5", "front": "Terwijl", "back": "While / Whereas" },
+      { "id": "conj6", "front": "Of", "back": "Or / Whether" },
+      { "id": "conj7", "front": "Dus", "back": "So / Therefore" },
+      { "id": "conj8", "front": "Wanneer", "back": "When" },
+      { "id": "conj9", "front": "Sinds", "back": "Since" },
+      { "id": "conj10", "front": "Zodat", "back": "So that" }
+    ]
+  },
+  {
+    "category": "Prepositions of Place",
+    "icon": "location_on",
+    "cards": [
+      { "id": "prep1", "front": "Op", "back": "On / At" },
+      { "id": "prep2", "front": "In", "back": "In" },
+      { "id": "prep3", "front": "Onder", "back": "Under" },
+      { "id": "prep4", "front": "Boven", "back": "Above" },
+      { "id": "prep5", "front": "Naast", "back": "Next to" },
+      { "id": "prep6", "front": "Tussen", "back": "Between" },
+      { "id": "prep7", "front": "Achter", "back": "Behind" },
+      { "id": "prep8", "front": "Voor", "back": "In front of / For" },
+      { "id": "prep9", "front": "Tegenover", "back": "Opposite" },
+      { "id": "prep10", "front": "Dichtbij", "back": "Near" }
+    ]
+  },
+  {
+    "category": "At the Doctor",
+    "icon": "medical_services",
+    "cards": [
+      { "id": "med1", "front": "De afspraak", "back": "The appointment" },
+      { "id": "med2", "front": "De pijn", "back": "The pain" },
+      { "id": "med3", "front": "Ik ben ziek", "back": "I am sick" },
+      { "id": "med4", "front": "De koorts", "back": "The fever" },
+      { "id": "med5", "front": "Het recept", "back": "The prescription" },
+      { "id": "med6", "front": "De apotheek", "back": "The pharmacy" },
+      { "id": "med7", "front": "Hoofdpijn", "back": "Headache" },
+      { "id": "med8", "front": "Verkouden", "back": "To have a cold" },
+      { "id": "med9", "front": "De verzekering", "back": "The insurance" },
+      { "id": "med10", "front": "Beterschap!", "back": "Get well soon!" }
+    ]
+  },
+  {
+    "category": "At the Supermarket",
+    "icon": "shopping_cart",
+    "cards": [
+      { "id": "shop1", "front": "De aanbieding", "back": "The offer / sale" },
+      { "id": "shop2", "front": "De kassa", "back": "The checkout / cash register" },
+      { "id": "shop3", "front": "Het bonnetje", "back": "The receipt" },
+      { "id": "shop4", "front": "De tas", "back": "The bag" },
+      { "id": "shop5", "front": "Wisselgeld", "back": "Change (money)" },
+      { "id": "shop6", "front": "Pinnen", "back": "To pay by card" },
+      { "id": "shop7", "front": "Contant", "back": "Cash" },
+      { "id": "shop8", "front": "De korting", "back": "The discount" },
+      { "id": "shop9", "front": "Houdbaarheidsdatum", "back": "Expiration date" },
+      { "id": "shop10", "front": "Zelfscankassa", "back": "Self-scan checkout" }
+    ]
+  },
+  {
+    "category": "Work & Office",
+    "icon": "work",
+    "cards": [
+      { "id": "work1", "front": "De vergadering", "back": "The meeting" },
+      { "id": "work2", "front": "De collega", "back": "The colleague" },
+      { "id": "work3", "front": "Het salaris", "back": "The salary" },
+      { "id": "work4", "front": "De pauze", "back": "The break" },
+      { "id": "work5", "front": "Solliciteren", "back": "To apply for a job" },
+      { "id": "work6", "front": "De werkgever", "back": "The employer" },
+      { "id": "work7", "front": "Ontslag nemen", "back": "To quit / resign" },
+      { "id": "work8", "front": "De deadline", "back": "The deadline" },
+      { "id": "work9", "front": "Thuiswerken", "back": "Working from home" },
+      { "id": "work10", "front": "De handleiding", "back": "The manual" }
+    ]
+  },
+  {
+    "category": "Opposite Adjectives",
+    "icon": "compare_arrows",
+    "cards": [
+      { "id": "adj1", "front": "Groot / Klein", "back": "Big / Small" },
+      { "id": "adj2", "front": "Snel / Langzaam", "back": "Fast / Slow" },
+      { "id": "adj3", "front": "Duur / Goedkoop", "back": "Expensive / Cheap" },
+      { "id": "adj4", "front": "Warm / Koud", "back": "Warm / Cold" },
+      { "id": "adj5", "front": "Mooi / Lelijk", "back": "Beautiful / Ugly" },
+      { "id": "adj6", "front": "Makkelijk / Moeilijk", "back": "Easy / Difficult" },
+      { "id": "adj7", "front": "Rijk / Arm", "back": "Rich / Poor" },
+      { "id": "adj8", "front": "Schoon / Vuil", "back": "Clean / Dirty" },
+      { "id": "adj9", "front": "Vol / Leeg", "back": "Full / Empty" },
+      { "id": "adj10", "front": "Zwaar / Licht", "back": "Heavy / Light" }
+    ]
   }
 ]
