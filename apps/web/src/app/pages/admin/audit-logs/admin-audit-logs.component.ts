@@ -12,15 +12,28 @@ import type { AdminAuditLogDto, PaginatedResult } from '@moredutch/shared';
     <div class="admin-page-header">
       <h1>Audit Logs</h1>
       <div class="filters">
-        <select (change)="onEventFilterChange($event)">
-          <option value="">All Events</option>
-          <option value="LOGIN_SUCCESS">LOGIN_SUCCESS</option>
-          <option value="LOGIN_FAILED">LOGIN_FAILED</option>
-          <option value="REGISTER">REGISTER</option>
-          <option value="PASSWORD_RESET_REQUEST">PASSWORD_RESET_REQUEST</option>
-          <option value="PASSWORD_RESET_SUCCESS">PASSWORD_RESET_SUCCESS</option>
-          <option value="EMAIL_VERIFY">EMAIL_VERIFY</option>
-        </select>
+        <div class="filter-group">
+          <label>Event Type</label>
+          <select (change)="onEventFilterChange($event)">
+            <option value="">All Events</option>
+            <optgroup label="Authentication">
+              <option value="LOGIN_SUCCESS">Login Success</option>
+              <option value="LOGIN_FAILED">Login Failed</option>
+              <option value="LOGOUT">Logout</option>
+              <option value="REGISTER">Registration</option>
+              <option value="EMAIL_VERIFY">Email Verification</option>
+            </optgroup>
+            <optgroup label="Password Management">
+              <option value="PASSWORD_RESET_REQUEST">Reset Requested</option>
+              <option value="PASSWORD_RESET_SUCCESS">Reset Successful</option>
+            </optgroup>
+            <optgroup label="Administrative Actions">
+              <option value="ADMIN_PATCH_USER">User Updated</option>
+              <option value="ADMIN_DELETE_USER">User Deleted</option>
+              <option value="ADMIN_EXPORT_USERS">Users Exported</option>
+            </optgroup>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -88,14 +101,39 @@ import type { AdminAuditLogDto, PaginatedResult } from '@moredutch/shared';
         color: var(--ink);
         margin: 0;
       }
-      .filters select {
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
+      .filters {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+      .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .filter-group label {
+        font-size: 0.7rem;
+        font-family: 'DM Mono', monospace;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 600;
+        margin-left: 2px;
+      }
+      .filter-group select {
+        padding: 0.6rem 1rem;
+        border-radius: 10px;
         border: 1.5px solid var(--border);
         background: var(--white);
         font-family: 'DM Sans', sans-serif;
+        font-size: 0.9rem;
         color: var(--ink);
         outline: none;
+        min-width: 220px;
+        cursor: pointer;
+        transition: border-color 0.2s;
+      }
+      .filter-group select:focus {
+        border-color: var(--orange);
       }
       
       .table-container {
@@ -150,6 +188,7 @@ import type { AdminAuditLogDto, PaginatedResult } from '@moredutch/shared';
       .event-badge.danger { background: var(--red-light); color: var(--red); }
       .event-badge.info { background: var(--blue-light); color: var(--blue); }
       .event-badge.warning { background: var(--gold-light); color: var(--gold); }
+      .event-badge.muted { background: var(--stripe); color: var(--muted); }
 
       .mono { font-family: 'DM Mono', monospace; }
       .muted { color: var(--muted); }
@@ -226,9 +265,11 @@ export class AdminAuditLogsComponent implements OnInit {
   }
 
   getEventClass(event: string): string {
-    if (event.includes('SUCCESS') || event === 'REGISTER') return 'success';
-    if (event.includes('FAIL') || event.includes('ERROR')) return 'danger';
+    if (event.includes('SUCCESS') || event === 'REGISTER' || event === 'EMAIL_VERIFY') return 'success';
+    if (event.includes('FAIL') || event.includes('ERROR') || event === 'ADMIN_DELETE_USER') return 'danger';
     if (event.includes('WARNING') || event.includes('LOCK')) return 'warning';
+    if (event.startsWith('ADMIN_')) return 'warning'; // Admin actions are sensitive
+    if (event === 'LOGOUT') return 'muted';
     return 'info';
   }
 
