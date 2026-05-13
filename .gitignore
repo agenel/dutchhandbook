@@ -52,4 +52,3 @@ playwright/.cache/
 *.db-journal
 package-lock.json
 *.tsbuildinfo
-package-lock.json
