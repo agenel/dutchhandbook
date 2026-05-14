@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "prisma generate --schema=prisma/schema.prisma && tsc -p tsconfig.build.json",
     "start": "node dist/main.js",
     "start:dev": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:debug": "ts-node --inspect -r tsconfig-paths/register src/main.ts",
