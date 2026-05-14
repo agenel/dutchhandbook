@@ -11,7 +11,7 @@
     "dev:web": "npm --workspace apps/web run start",
     "dev:api": "npm --workspace apps/api run start:dev",
     "build:web": "npm --workspace apps/web run build",
-    "build:api": "npm --workspace apps/api run build",
+    "build:api": "node_modules/.bin/prisma generate --schema=apps/api/prisma/schema.prisma && npm --workspace apps/api run build",
     "build": "npm run build:shared && npm run build:web && npm run build:api",
     "build:shared": "npm --workspace packages/shared run build",
     "lint": "npm --workspaces --if-present run lint",
