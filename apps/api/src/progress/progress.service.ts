@@ -34,10 +34,13 @@ export class ProgressService {
 
   async migrateMastery(userId: string, masteredSlugs: string[]): Promise<void> {
     if (!masteredSlugs.length) return;
-    await this.prisma.masteryEntry.createMany({
-      data: masteredSlugs.map((sheetSlug) => ({ userId, sheetSlug, mastered: true })),
-      skipDuplicates: true,
-    } as never);
+    for (const sheetSlug of masteredSlugs) {
+      await this.prisma.masteryEntry.upsert({
+        where: { userId_sheetSlug: { userId, sheetSlug } },
+        create: { userId, sheetSlug, mastered: true },
+        update: { mastered: true },
+      });
+    }
   }
 
   // ── Verb mastery ─────────────────────────────────────────────────────────────
@@ -48,13 +51,13 @@ export class ProgressService {
   }
 
   async syncVerbs(userId: string, masteredIds: string[]): Promise<void> {
-    await this.prisma.$transaction([
-      this.prisma.verbMastery.deleteMany({ where: { userId } }),
-      this.prisma.verbMastery.createMany({
-        data: masteredIds.map((verbId) => ({ userId, verbId })),
-        skipDuplicates: true,
-      } as never),
-    ]);
+    const data = masteredIds.map((verbId) => ({ userId, verbId }));
+    await this.prisma.$transaction(async (tx) => {
+      await tx.verbMastery.deleteMany({ where: { userId } });
+      if (data.length > 0) {
+        await tx.verbMastery.createMany({ data });
+      }
+    });
   }
 
   // ── Noun mastery ─────────────────────────────────────────────────────────────
@@ -65,13 +68,13 @@ export class ProgressService {
   }
 
   async syncNouns(userId: string, masteredIds: string[]): Promise<void> {
-    await this.prisma.$transaction([
-      this.prisma.nounMastery.deleteMany({ where: { userId } }),
-      this.prisma.nounMastery.createMany({
-        data: masteredIds.map((nounId) => ({ userId, nounId })),
-        skipDuplicates: true,
-      } as never),
-    ]);
+    const data = masteredIds.map((nounId) => ({ userId, nounId }));
+    await this.prisma.$transaction(async (tx) => {
+      await tx.nounMastery.deleteMany({ where: { userId } });
+      if (data.length > 0) {
+        await tx.nounMastery.createMany({ data });
+      }
+    });
   }
 
   // ── Common words mastery ─────────────────────────────────────────────────────
@@ -85,13 +88,13 @@ export class ProgressService {
   }
 
   async syncCommonWords(userId: string, masteredIds: string[]): Promise<void> {
-    await this.prisma.$transaction([
-      this.prisma.commonWordMastery.deleteMany({ where: { userId } }),
-      this.prisma.commonWordMastery.createMany({
-        data: masteredIds.map((wordId) => ({ userId, wordId })),
-        skipDuplicates: true,
-      } as never),
-    ]);
+    const data = masteredIds.map((wordId) => ({ userId, wordId }));
+    await this.prisma.$transaction(async (tx) => {
+      await tx.commonWordMastery.deleteMany({ where: { userId } });
+      if (data.length > 0) {
+        await tx.commonWordMastery.createMany({ data });
+      }
+    });
   }
 
   // ── Quiz attempts ────────────────────────────────────────────────────────────

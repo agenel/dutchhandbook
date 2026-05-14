@@ -23,31 +23,36 @@ interface Lesson {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="tool-shell">
-      <div class="hero" [style.border-bottom]="selectedLesson() ? 'none' : null" [style.padding-bottom]="selectedLesson() ? '0' : null">
-        <a routerLink="/tools" class="nav-back" style="margin-bottom: 1.5rem;">
-          <span class="material-icons">arrow_back</span>
-          Back to Tools
-        </a>
-        <h1>1000 Common <em>Words</em></h1>
-        <p class="hero-desc">
-          Master the most frequently used Dutch words. Grouped into 40 lessons of 25 words each to make your vocabulary building systematic and efficient.
-        </p>
-      </div>
-
-      <div class="mastery-summary">
-        <div class="progress-container">
-          <div class="progress-fill" [style.width.%]="masteryPct()" [style.background]="progress.masteredCommonWordsCount() === totalWords() ? 'var(--gold)' : null"></div>
-          <div class="progress-text">
-            <strong>{{ progress.masteredCommonWordsCount() }} / {{ totalWords() }}</strong> Words Mastered
+      <div class="hero-header">
+        <div class="hero-main">
+          <a routerLink="/tools" class="nav-back small">
+            <span class="material-icons">arrow_back</span>
+            Back to Tools
+          </a>
+          <h1>1000 Common <em>Words</em></h1>
+          <p class="hero-desc compact">
+            Master the most frequently used Dutch words. 40 lessons of 25 words each.
+          </p>
+        </div>
+        <div class="hero-stats">
+          <div class="progress-container compact">
+            <div class="progress-fill" [style.width.%]="masteryPct()"></div>
+            <div class="progress-text">
+              @if (!selectedLesson()) {
+                <strong>{{ masteredLessonsCount() }} / {{ lessons().length }}</strong> Lessons Mastered
+              } @else {
+                <strong>{{ getLessonMasteredCount(selectedLesson()!) }} / {{ selectedLesson()?.cards?.length }}</strong> Words Mastered
+              }
+            </div>
           </div>
         </div>
       </div>
 
       @if (!selectedLesson()) {
-        <div class="section-title" style="margin: 2rem 0 1.5rem;">Lessons <div class="title-line"></div></div>
+        <div class="section-title compact">Lessons <div class="title-line"></div></div>
         <div class="lesson-grid">
           @for (lesson of lessons(); track lesson.category; let i = $index) {
-            <button class="lesson-card" (click)="selectLesson(lesson)">
+            <button class="lesson-card" [class.fully-mastered]="isLessonFullyMastered(lesson)" (click)="selectLesson(lesson)">
               <div class="lesson-icon">
                 <span class="material-icons">{{ lesson.icon }}</span>
               </div>
@@ -55,7 +60,7 @@ interface Lesson {
                 <h3>{{ lesson.category }}</h3>
                 <div class="lesson-meta">
                   <span class="pill">{{ lesson.cards.length }} words</span>
-                  @if (getLessonMasteredCount(lesson) > 0) {
+                  @if (getLessonMasteredCount(lesson) > 0 && !isLessonFullyMastered(lesson)) {
                     <span class="mastery-badge">
                       <span class="material-icons">check_circle</span>
                       {{ getLessonMasteredCount(lesson) }} mastered
@@ -63,6 +68,12 @@ interface Lesson {
                   }
                 </div>
               </div>
+              @if (isLessonFullyMastered(lesson)) {
+                <div class="mastery-ribbon">
+                  <span class="material-icons">stars</span>
+                  Mastered
+                </div>
+              }
               <span class="material-icons arrow">chevron_right</span>
             </button>
           }
@@ -86,7 +97,7 @@ interface Lesson {
 
           <div class="lesson-header">
             <h2>{{ selectedLesson()?.category }}</h2>
-            <p>{{ getLessonMasteredCount(selectedLesson()!) }} / {{ selectedLesson()?.cards?.length }} mastered in this lesson</p>
+            <p>Track your progress word by word in this lesson.</p>
           </div>
 
           @if (viewMode() === 'list') {
@@ -162,18 +173,54 @@ interface Lesson {
     .tool-shell {
       max-width: 900px;
       margin: 0 auto;
-      padding-bottom: 4rem;
+      padding-bottom: 2rem;
     }
 
-    .mastery-summary {
-      margin-bottom: 2rem;
+    .hero-header {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.5rem 0;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--ink);
     }
 
-    .progress-container {
+    @media (max-width: 600px) {
+      .hero-header {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+      .hero-stats {
+        display: none;
+      }
+    }
+
+    .hero-main h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 900;
+      margin: 0.25rem 0;
+      line-height: 1;
+    }
+
+    .hero-main h1 em {
+      color: var(--orange);
+      font-style: italic;
+    }
+
+    .hero-desc.compact {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .progress-container.compact {
       background: var(--white);
       border: 1.5px solid var(--border);
-      height: 44px;
-      border-radius: 12px;
+      height: 36px;
+      border-radius: 10px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -186,7 +233,7 @@ interface Lesson {
       top: 0;
       bottom: 0;
       background: var(--orange);
-      opacity: 0.15;
+      opacity: 0.1;
       transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -194,9 +241,10 @@ interface Lesson {
       position: relative;
       width: 100%;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       color: var(--ink);
       z-index: 1;
+      font-weight: 500;
     }
 
     .progress-text strong {
@@ -204,13 +252,20 @@ interface Lesson {
       font-family: 'DM Mono', monospace;
     }
 
+    .section-title.compact {
+      margin: 0 0 1rem 0;
+      font-size: 0.9rem;
+    }
+
     .lesson-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .lesson-card {
+      position: relative;
+      overflow: hidden;
       background: var(--white);
       border: 1.5px solid var(--border);
       border-radius: 16px;
@@ -224,10 +279,48 @@ interface Lesson {
       width: 100%;
     }
 
+    .mastery-ribbon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--green);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 0.25rem 1rem;
+      transform: rotate(0);
+      border-bottom-left-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: -2px 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .mastery-ribbon .material-icons {
+      font-size: 0.8rem;
+    }
+
     .lesson-card:hover {
       transform: translateY(-3px);
       border-color: var(--orange);
       box-shadow: 0 8px 24px rgba(232, 80, 10, 0.08);
+    }
+
+    .lesson-card.fully-mastered {
+      border-color: var(--green);
+      background: var(--green-light);
+    }
+
+    .lesson-card.fully-mastered .lesson-icon {
+      background: var(--green);
+      color: white;
+    }
+
+    .mastery-badge.done {
+      color: var(--green);
+      font-weight: 700;
     }
 
     .lesson-icon {
@@ -252,8 +345,14 @@ interface Lesson {
     .lesson-meta {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-top: 0.4rem;
+      flex-wrap: nowrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .pill {
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .mastery-badge {
@@ -263,6 +362,7 @@ interface Lesson {
       font-size: 0.7rem;
       color: var(--green);
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .mastery-badge .material-icons {
@@ -290,6 +390,15 @@ interface Lesson {
       text-decoration: none;
     }
 
+    .nav-back.small {
+      font-size: 0.75rem;
+      gap: 0.35rem;
+    }
+
+    .nav-back.small .material-icons {
+      font-size: 0.95rem;
+    }
+
     .nav-back:hover {
       color: var(--orange);
     }
@@ -298,7 +407,7 @@ interface Lesson {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .view-toggle {
@@ -312,9 +421,9 @@ interface Lesson {
     .view-toggle button {
       background: transparent;
       border: none;
-      padding: 0.4rem 1rem;
+      padding: 0.35rem 0.8rem;
       border-radius: 7px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
       color: var(--muted);
       cursor: pointer;
@@ -325,7 +434,7 @@ interface Lesson {
     }
 
     .view-toggle button .material-icons {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     .view-toggle button.active {
@@ -334,36 +443,38 @@ interface Lesson {
     }
 
     .lesson-header {
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--border);
     }
 
     .lesson-header h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin: 0 0 0.25rem;
+      font-size: 1.4rem;
+      margin: 0 0 0.15rem;
     }
 
     .lesson-header p {
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       margin: 0;
     }
 
     .word-list-container {
       background: var(--white);
       border: 1.5px solid var(--border);
-      border-radius: 16px;
+      border-radius: 12px;
       overflow: hidden;
     }
 
     .list-header {
       display: grid;
       grid-template-columns: 1fr 1fr 60px;
-      padding: 0.75rem 1.5rem;
+      padding: 0.5rem 1.25rem;
       background: var(--stripe);
       border-bottom: 1.5px solid var(--border);
       font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
@@ -372,7 +483,7 @@ interface Lesson {
     .word-row {
       display: grid;
       grid-template-columns: 1fr 1fr 60px;
-      padding: 1rem 1.5rem;
+      padding: 0.75rem 1.25rem;
       border-bottom: 1px solid var(--border);
       align-items: center;
       cursor: pointer;
@@ -417,14 +528,14 @@ interface Lesson {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2.5rem;
-      padding: 1rem 0;
+      gap: 1.5rem;
+      padding: 0.5rem 0;
     }
 
     .card-container {
       width: 100%;
-      max-width: 440px;
-      aspect-ratio: 16/10;
+      max-width: 400px;
+      aspect-ratio: 16/9;
       perspective: 1000px;
       cursor: pointer;
     }
@@ -447,13 +558,13 @@ interface Lesson {
       backface-visibility: hidden;
       background: var(--white);
       border: 2px solid var(--border);
-      border-radius: 24px;
+      border-radius: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.04);
+      padding: 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
     }
 
     .card-face.back {
@@ -463,24 +574,24 @@ interface Lesson {
 
     .card-label {
       font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       color: var(--muted);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .card-face .content {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       text-align: center;
       color: var(--ink);
     }
 
     .hint {
-      margin-top: 2.5rem;
-      font-size: 0.75rem;
+      margin-top: 1.5rem;
+      font-size: 0.7rem;
       color: var(--muted);
       font-style: italic;
       opacity: 0.6;
@@ -489,26 +600,26 @@ interface Lesson {
     .practice-controls {
       display: flex;
       align-items: center;
-      gap: 2.5rem;
+      gap: 1.5rem;
     }
 
     .center-controls {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 0.5rem;
     }
 
     .card-count {
       font-family: 'DM Mono', monospace;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--muted);
     }
 
     .nav-btn {
-      width: 54px;
-      height: 54px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       border: 1.5px solid var(--border);
       background: var(--white);
@@ -557,10 +668,21 @@ export class CommonWordsComponent {
     this.lessons().reduce((acc, curr) => acc + curr.cards.length, 0)
   );
 
+  protected readonly masteredLessonsCount = computed(() => {
+    return this.lessons().filter(l => this.isLessonFullyMastered(l)).length;
+  });
+
   protected readonly masteryPct = computed(() => {
-    const total = this.totalWords();
-    if (total === 0) return 0;
-    return (this.progress.masteredCommonWordsCount() / total) * 100;
+    const lesson = this.selectedLesson();
+    if (lesson) {
+      const total = lesson.cards.length;
+      if (total === 0) return 0;
+      return (this.getLessonMasteredCount(lesson) / total) * 100;
+    } else {
+      const total = this.lessons().length;
+      if (total === 0) return 0;
+      return (this.masteredLessonsCount() / total) * 100;
+    }
   });
 
   protected readonly currentCard = computed(() => {
@@ -600,6 +722,11 @@ export class CommonWordsComponent {
 
   getLessonMasteredCount(lesson: Lesson): number {
     return lesson.cards.filter(c => this.isMastered(c.id)).length;
+  }
+
+  isLessonFullyMastered(lesson: Lesson): boolean {
+    if (lesson.cards.length === 0) return false;
+    return lesson.cards.every(c => this.isMastered(c.id));
   }
 
   nextCard() {
