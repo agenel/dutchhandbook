@@ -79,3 +79,8 @@ export const ProgressMigrationSchema = z.object({
   masteredSlugs: z.array(SheetSlugSchema).max(64),
 });
 export type ProgressMigrationDto = z.infer<typeof ProgressMigrationSchema>;
+
+export const CommonWordSyncSchema = z.object({
+  masteredIds: z.array(z.string().min(1).max(64)).max(2000),
+});
+export type CommonWordSyncDto = z.infer<typeof CommonWordSyncSchema>;

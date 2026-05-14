@@ -37,7 +37,6 @@ import { ProgressService } from '../../core/progress.service';
           </div>
         </div>
 
-        <!-- Stats row -->
         <div class="section-title">Progress Overview <div class="title-line"></div></div>
         <div class="stats-row">
           <div class="stat">
@@ -53,7 +52,11 @@ import { ProgressService } from '../../core/progress.service';
             <div class="stat-label">Nouns Mastered</div>
           </div>
           <div class="stat">
-            <div class="stat-num">{{ (stats()?.totalQuizAttempts ?? 0) + (stats()?.totalKnmAttempts ?? 0) }}</div>
+            <div class="stat-num">{{ progress.masteredCommonWordsCount() }}</div>
+            <div class="stat-label">Words Mastered</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">{{ (userStats()?.totalQuizAttempts ?? 0) + (userStats()?.totalKnmAttempts ?? 0) }}</div>
             <div class="stat-label">Total Attempts</div>
           </div>
         </div>
@@ -274,7 +277,7 @@ export class ProfileComponent implements OnInit {
   private readonly router = inject(Router);
 
   protected readonly attempts = signal<AttemptItem[]>([]);
-  protected readonly stats = signal<{
+  protected readonly userStats = signal<{
     masteredSheets: number;
     masteredVerbs: number;
     masteredNouns: number;
@@ -285,10 +288,11 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     if (this.auth.isAuthenticated()) {
       this.progress.getAttempts().subscribe((items) => this.attempts.set(items));
-      this.progress.getStats().subscribe((s) => this.stats.set(s));
-      // Refresh verb/noun signals from server so counts are in sync
+      this.progress.getStats().subscribe((s) => this.userStats.set(s));
+      // Refresh signals from server so counts are in sync
       this.progress.refreshVerbsFromServer().subscribe();
       this.progress.refreshNounsFromServer().subscribe();
+      this.progress.refreshCommonWordsFromServer().subscribe();
     }
   }
 

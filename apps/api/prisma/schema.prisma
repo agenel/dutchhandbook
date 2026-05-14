@@ -48,6 +48,7 @@ model User {
   flashcardProgress FlashcardProgress[]
   quizAttempts      QuizAttempt[]
   knmAttempts       KnmAttempt[]
+  commonWordMastery CommonWordMastery[]
   auditLogs         AuditLog[]
   preferences       UserPreference?
 
@@ -193,4 +194,14 @@ model AuditLog {
 
   @@index([userId, createdAt])
   @@index([event, createdAt])
+}
+
+model CommonWordMastery {
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId    String
+  updatedAt DateTime @default(now()) @updatedAt
+
+  @@id([userId, wordId])
+  @@index([userId])
 }

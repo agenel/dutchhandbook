@@ -15,6 +15,7 @@ import { AuthService } from './auth.service';
 const HIDE_MASTERED_KEY = 'dgh_hide_mastered';
 const VERBS_KEY = 'dgh_mastered_verbs';
 const NOUNS_KEY = 'dgh_mastered_nouns';
+const COMMON_WORDS_KEY = 'dgh_mastered_common_words';
 const masteredKey = (slug: string) => `dgh_mastered_${slug}`;
 
 interface MasteryState {
@@ -40,17 +41,21 @@ export class ProgressService {
   private readonly _hideMastered = signal<boolean>(this.loadHideMastered());
   private readonly _masteredVerbs = signal<Set<string>>(new Set<string>());
   private readonly _masteredNouns = signal<Set<string>>(new Set<string>());
+  private readonly _masteredCommonWords = signal<Set<string>>(new Set<string>());
 
   readonly mastery = computed(() => this._mastery());
   readonly hideMastered = computed(() => this._hideMastered());
   readonly masteredCount = computed(() => Object.values(this._mastery()).filter(Boolean).length);
   readonly masteredVerbsCount = computed(() => this._masteredVerbs().size);
   readonly masteredNounsCount = computed(() => this._masteredNouns().size);
+  readonly masteredCommonWordsCount = computed(() => this._masteredCommonWords().size);
+  readonly masteredCommonWords = computed(() => this._masteredCommonWords());
 
   constructor() {
     // Seed verb/noun signals from localStorage on startup
     this._masteredVerbs.set(this.readMasteredVerbs());
     this._masteredNouns.set(this.readMasteredNouns());
+    this._masteredCommonWords.set(this.readMasteredCommonWords());
 
     effect(() => {
       if (!this.isBrowser) return;
@@ -221,6 +226,43 @@ export class ProgressService {
     );
   }
 
+  // ── Common words mastery ──────────────────────────────────────────────────
+
+  readMasteredCommonWords(): Set<string> {
+    if (!this.isBrowser) return new Set();
+    try {
+      const raw = localStorage.getItem(COMMON_WORDS_KEY);
+      return new Set(raw ? (JSON.parse(raw) as string[]) : []);
+    } catch {
+      return new Set();
+    }
+  }
+
+  writeMasteredCommonWords(ids: Set<string>): void {
+    this._masteredCommonWords.set(new Set(ids));
+    if (!this.isBrowser) return;
+    try {
+      localStorage.setItem(COMMON_WORDS_KEY, JSON.stringify([...ids]));
+    } catch {
+      /* ignore */
+    }
+  }
+
+  syncCommonWords(ids: string[]): void {
+    if (!this.auth.isAuthenticated()) return;
+    this.http
+      .post(`${this.base}/common-words/sync`, { masteredIds: ids })
+      .pipe(catchError(() => of(null)))
+      .subscribe();
+  }
+
+  refreshCommonWordsFromServer(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.base}/common-words`).pipe(
+      tap((ids) => this.writeMasteredCommonWords(new Set(ids ?? []))),
+      catchError(() => of([] as string[])),
+    );
+  }
+
   // ── Quiz / KNM attempts ───────────────────────────────────────────────────
 
   saveQuizAttempt(dto: QuizAttemptDto): Observable<boolean> {
@@ -259,6 +301,7 @@ export class ProgressService {
     masteredSheets: number;
     masteredVerbs: number;
     masteredNouns: number;
+    masteredCommonWords: number;
     totalQuizAttempts: number;
     totalKnmAttempts: number;
   }> {
@@ -267,6 +310,7 @@ export class ProgressService {
         masteredSheets: number;
         masteredVerbs: number;
         masteredNouns: number;
+        masteredCommonWords: number;
         totalQuizAttempts: number;
         totalKnmAttempts: number;
       }>(`${this.base}/stats`)
@@ -276,6 +320,7 @@ export class ProgressService {
             masteredSheets: 0,
             masteredVerbs: 0,
             masteredNouns: 0,
+            masteredCommonWords: 0,
             totalQuizAttempts: 0,
             totalKnmAttempts: 0,
           }),
@@ -292,8 +337,8 @@ export class ProgressService {
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         if (!key || !key.startsWith('dgh_mastered_')) continue;
-        // Skip non-sheet keys (verbs/nouns stored separately)
-        if (key === VERBS_KEY || key === NOUNS_KEY) continue;
+        // Skip non-sheet keys (verbs/nouns/common-words stored separately)
+        if (key === VERBS_KEY || key === NOUNS_KEY || key === COMMON_WORDS_KEY) continue;
         const slug = key.replace('dgh_mastered_', '');
         out[slug] = localStorage.getItem(key) === 'true';
       }

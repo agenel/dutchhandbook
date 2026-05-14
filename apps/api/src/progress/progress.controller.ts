@@ -8,6 +8,7 @@ import {
   ProgressMigrationSchema,
   QuizAttemptSchema,
   VerbSyncSchema,
+  CommonWordSyncSchema,
   type AttemptItem,
   type KnmAttemptDto,
   type MasteryToggleDto,
@@ -16,6 +17,7 @@ import {
   type QuizAttemptDto,
   type VerbSyncDto,
   type NounSyncDto,
+  type CommonWordSyncDto,
 } from '@moredutch/shared';
 import { ZodValidationPipe } from '../common/zod.pipe';
 import { AuthService } from '../auth/auth.service';
@@ -111,6 +113,24 @@ export class ProgressController {
     await this.progress.syncNouns(user.id, dto.masteredIds);
   }
 
+  // ── Common words mastery ─────────────────────────────────────────────────────
+
+  @Get('common-words')
+  async getCommonWords(@Req() req: Request): Promise<string[]> {
+    const user = await this.auth.requireUser(req);
+    return this.progress.getCommonWords(user.id);
+  }
+
+  @Post('common-words/sync')
+  @HttpCode(204)
+  async syncCommonWords(
+    @Body(new ZodValidationPipe(CommonWordSyncSchema)) dto: CommonWordSyncDto,
+    @Req() req: Request,
+  ): Promise<void> {
+    const user = await this.auth.requireUser(req);
+    await this.progress.syncCommonWords(user.id, dto.masteredIds);
+  }
+
   // ── Quiz attempts ────────────────────────────────────────────────────────────
 
   @Post('quiz-attempt')
@@ -148,6 +168,7 @@ export class ProgressController {
     masteredSheets: number;
     masteredVerbs: number;
     masteredNouns: number;
+    masteredCommonWords: number;
     totalQuizAttempts: number;
     totalKnmAttempts: number;
   }> {

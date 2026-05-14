@@ -155,6 +155,7 @@ export class HubNavComponent {
     { slug: 'quiz', title: 'Quiz', icon: 'quiz' },
     { slug: 'sentence-builder', title: 'Sentence Builder', icon: 'construction' },
     { slug: 'knm-exam', title: 'KNM Exam', icon: 'gavel' },
+    { slug: 'common-words', title: '1000 Common Words', icon: 'menu_book' },
   ];
 
   protected readonly dropdownOpen = signal(false);

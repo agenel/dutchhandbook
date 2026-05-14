@@ -131,6 +131,18 @@ export const routes: Routes = [
     },
   },
   {
+    path: 'tools/common-words',
+    loadComponent: () =>
+      import('./pages/tools/common-words/common-words.component').then((m) => m.CommonWordsComponent),
+    data: {
+      title: '1000 Most Common Dutch Words — Master Vocabulary | More Dutch',
+      description:
+        'Master the 1000 most frequently used Dutch words grouped by lesson. Interactive flashcards and list views for efficient learning.',
+      canonicalPath: '/tools/common-words',
+      keywords: 'Dutch vocabulary, 1000 common Dutch words, learn Dutch words, basic Dutch',
+    },
+  },
+  {
     path: 'auth/login',
     loadComponent: () =>
       import('./pages/auth/login/login.component').then((m) => m.LoginComponent),

@@ -74,6 +74,26 @@ export class ProgressService {
     ]);
   }
 
+  // ── Common words mastery ─────────────────────────────────────────────────────
+
+  async getCommonWords(userId: string): Promise<string[]> {
+    const rows = await this.prisma.commonWordMastery.findMany({
+      where: { userId },
+      select: { wordId: true },
+    });
+    return rows.map((r: { wordId: string }) => r.wordId);
+  }
+
+  async syncCommonWords(userId: string, masteredIds: string[]): Promise<void> {
+    await this.prisma.$transaction([
+      this.prisma.commonWordMastery.deleteMany({ where: { userId } }),
+      this.prisma.commonWordMastery.createMany({
+        data: masteredIds.map((wordId) => ({ userId, wordId })),
+        skipDuplicates: true,
+      } as never),
+    ]);
+  }
+
   // ── Quiz attempts ────────────────────────────────────────────────────────────
 
   async saveQuizAttempt(userId: string, dto: QuizAttemptDto): Promise<void> {
@@ -136,18 +156,33 @@ export class ProgressService {
     masteredSheets: number;
     masteredVerbs: number;
     masteredNouns: number;
+    masteredCommonWords: number;
     totalQuizAttempts: number;
     totalKnmAttempts: number;
   }> {
-    const [masteredSheets, masteredVerbs, masteredNouns, totalQuizAttempts, totalKnmAttempts] =
-      await Promise.all([
-        this.prisma.masteryEntry.count({ where: { userId, mastered: true } }),
-        this.prisma.verbMastery.count({ where: { userId } }),
-        this.prisma.nounMastery.count({ where: { userId } }),
-        this.prisma.quizAttempt.count({ where: { userId } }),
-        this.prisma.knmAttempt.count({ where: { userId } }),
-      ]);
-    return { masteredSheets, masteredVerbs, masteredNouns, totalQuizAttempts, totalKnmAttempts };
+    const [
+      masteredSheets,
+      masteredVerbs,
+      masteredNouns,
+      masteredCommonWords,
+      totalQuizAttempts,
+      totalKnmAttempts,
+    ] = await Promise.all([
+      this.prisma.masteryEntry.count({ where: { userId, mastered: true } }),
+      this.prisma.verbMastery.count({ where: { userId } }),
+      this.prisma.nounMastery.count({ where: { userId } }),
+      this.prisma.commonWordMastery.count({ where: { userId } }),
+      this.prisma.quizAttempt.count({ where: { userId } }),
+      this.prisma.knmAttempt.count({ where: { userId } }),
+    ]);
+    return {
+      masteredSheets,
+      masteredVerbs,
+      masteredNouns,
+      masteredCommonWords,
+      totalQuizAttempts,
+      totalKnmAttempts,
+    };
   }
 
   // ── UI preferences (theme, library filters) ─────────────────────────────────

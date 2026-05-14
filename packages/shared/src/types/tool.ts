@@ -55,6 +55,14 @@ export const TOOL_REGISTRY: ToolMeta[] = [
     icon: 'account_tree',
     tag: 'Advanced',
   },
+  {
+    slug: 'common-words',
+    title: '1000 Common Words',
+    description:
+      'Master the 1000 most frequently used Dutch words grouped by lesson. Interactive practice modes.',
+    icon: 'menu_book',
+    tag: 'Vocabulary',
+  },
 ];
 
 export function getTool(slug: string): ToolMeta | undefined {
