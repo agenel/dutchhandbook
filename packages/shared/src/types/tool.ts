@@ -24,6 +24,14 @@ export const TOOL_REGISTRY: ToolMeta[] = [
     tag: 'Priority Tool',
   },
   {
+    slug: 'common-words',
+    title: '1000 Common Words',
+    description:
+      'Master the 1000 most frequently used Dutch words grouped by lesson. Interactive practice modes.',
+    icon: 'menu_book',
+    tag: 'Vocabulary',
+  },
+  {
     slug: 'flashcards',
     title: 'Flashcards',
     description:
@@ -54,14 +62,6 @@ export const TOOL_REGISTRY: ToolMeta[] = [
       'Master Dutch word order by assembling sentences block by block. V2, Inversion, and more.',
     icon: 'account_tree',
     tag: 'Advanced',
-  },
-  {
-    slug: 'common-words',
-    title: '1000 Common Words',
-    description:
-      'Master the 1000 most frequently used Dutch words grouped by lesson. Interactive practice modes.',
-    icon: 'menu_book',
-    tag: 'Vocabulary',
   },
 ];
 

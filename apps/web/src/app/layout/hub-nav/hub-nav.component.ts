@@ -149,13 +149,13 @@ export class HubNavComponent {
   protected readonly auth = inject(AuthService);
   private readonly router = inject(Router);
   protected readonly tools = [
-    { slug: 'verb-explorer', title: 'Verb Explorer', icon: 'edit' },
-    { slug: 'flashcards', title: 'Flashcards', icon: 'style' },
-    { slug: 'de-het', title: 'de/het Trainer', icon: 'compare_arrows' },
-    { slug: 'quiz', title: 'Quiz', icon: 'quiz' },
-    { slug: 'sentence-builder', title: 'Sentence Builder', icon: 'construction' },
     { slug: 'knm-exam', title: 'KNM Exam', icon: 'gavel' },
+    { slug: 'verb-explorer', title: 'Verb Explorer', icon: 'travel_explore' },
     { slug: 'common-words', title: '1000 Common Words', icon: 'menu_book' },
+    { slug: 'flashcards', title: 'Flashcards', icon: 'style' },
+    { slug: 'de-het', title: 'de/het Trainer', icon: 'category' },
+    { slug: 'quiz', title: 'Quiz', icon: 'quiz' },
+    { slug: 'sentence-builder', title: 'Sentence Builder', icon: 'account_tree' },
   ];
 
   protected readonly dropdownOpen = signal(false);

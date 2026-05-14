@@ -1962,7 +1962,7 @@ tr.row-hi td {
 /* Hub Tool Cards */
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.2rem;
   margin-bottom: 3rem;
 }
