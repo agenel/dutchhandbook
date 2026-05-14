@@ -6,15 +6,20 @@
 // - Auth-sensitive fields (passwordHash, totpSecretEnc, refreshTokenHash) are
 //   never returned by API serializers — see UsersService.toPublic().
 // - Foreign keys cascade on user delete so account deletion is GDPR-safe.
+// 
+// When switching between SQLite and PostgreSQL:
+// 1. Update the provider field in 'datasource db'.
+// 2. Update DATABASE_URL in your .env file.
+// 3. Run 'npx prisma generate'.
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  // NOTE: for local development and automated verification we use SQLite.
-  // Production deployments should switch this back to PostgreSQL and re-run migrations.
-  provider = "sqlite"
+  // NOTE: for local development we previously used SQLite.
+  // Production deployments use PostgreSQL (Neon/Supabase).
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
