@@ -60,14 +60,13 @@ interface Lesson {
                 <h3>{{ lesson.category }}</h3>
                 <div class="lesson-meta">
                   <span class="pill">{{ lesson.cards.length }} words</span>
-                  @if (getLessonMasteredCount(lesson) > 0 && !isLessonFullyMastered(lesson)) {
-                    <span class="mastery-badge">
-                      <span class="material-icons">check_circle</span>
-                      {{ getLessonMasteredCount(lesson) }} mastered
-                    </span>
-                  }
                 </div>
               </div>
+              @if (getLessonMasteredCount(lesson) > 0 && !isLessonFullyMastered(lesson)) {
+                <div class="card-progress">
+                  <div class="card-progress-fill" [style.width.%]="(getLessonMasteredCount(lesson) / lesson.cards.length) * 100"></div>
+                </div>
+              }
               @if (isLessonFullyMastered(lesson)) {
                 <div class="mastery-ribbon">
                   <span class="material-icons">stars</span>
@@ -171,14 +170,14 @@ interface Lesson {
   `,
   styles: [`
     .tool-shell {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding-bottom: 2rem;
     }
 
     .hero-header {
       display: grid;
-      grid-template-columns: 1fr 200px;
+      grid-template-columns: 1fr 220px;
       align-items: center;
       gap: 2rem;
       padding: 1.5rem 0;
@@ -186,14 +185,14 @@ interface Lesson {
       border-bottom: 2px solid var(--ink);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
       .hero-header {
         grid-template-columns: 1fr;
         gap: 1rem;
         padding: 1rem 0;
       }
       .hero-stats {
-        display: none;
+        max-width: 300px;
       }
     }
 
@@ -245,6 +244,7 @@ interface Lesson {
       color: var(--ink);
       z-index: 1;
       font-weight: 500;
+      padding: 0 1rem;
     }
 
     .progress-text strong {
@@ -259,7 +259,7 @@ interface Lesson {
 
     .lesson-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 0.75rem;
     }
 
@@ -269,14 +269,30 @@ interface Lesson {
       background: var(--white);
       border: 1.5px solid var(--border);
       border-radius: 16px;
-      padding: 1.25rem;
+      padding: 1rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.75rem;
       cursor: pointer;
       text-align: left;
       transition: all 0.2s ease;
       width: 100%;
+    }
+
+    .card-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--border);
+      opacity: 0.5;
+    }
+
+    .card-progress-fill {
+      height: 100%;
+      background: var(--orange);
+      transition: width 0.3s ease;
     }
 
     .mastery-ribbon {
@@ -324,21 +340,25 @@ interface Lesson {
     }
 
     .lesson-icon {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       background: var(--orange-bg);
       color: var(--orange);
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
 
+    .lesson-icon .material-icons {
+      font-size: 1.2rem;
+    }
+
     .lesson-info h3 {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--ink);
     }
 

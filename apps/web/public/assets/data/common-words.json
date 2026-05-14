@@ -1,7 +1,7 @@
 [
   {
     "category": "Lesson 1: Basics",
-    "icon": "vaving_hand",
+    "icon": "waving_hand",
     "cards": [
       { "id": "cw1-1", "front": "ik", "back": "I" },
       { "id": "cw1-2", "front": "ik heet", "back": "my name is" },
