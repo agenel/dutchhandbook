@@ -188,8 +188,8 @@ body {
   flex: 1;
 }
 
-@media (max-width: 600px) {
-  .site-header .flag {
+@media (max-width: 850px) {
+  .hub-nav .flag {
     display: none;
   }
 }

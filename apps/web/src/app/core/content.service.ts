@@ -42,6 +42,10 @@ export class ContentService {
     return this.cached<{ id: string; title: string }[]>('assets/data/knm/index.json');
   }
 
+  commonWords(): Observable<any[]> {
+    return this.cached<any[]>('assets/data/common-words.json');
+  }
+
   private cached<T>(url: string): Observable<T> {
     let stream = this.cache.get(url) as Observable<T> | undefined;
     if (!stream) {
