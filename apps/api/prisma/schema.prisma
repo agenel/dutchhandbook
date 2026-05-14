@@ -17,8 +17,7 @@ generator client {
 }
 
 datasource db {
-  // NOTE: for local development we previously used SQLite.
-  // Production deployments use PostgreSQL (Neon/Supabase).
+  // NOTE: local development using PostgreSQL.
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
