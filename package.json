@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "postinstall": "prisma generate --schema=apps/api/prisma/schema.prisma",
     "dev:web": "npm --workspace apps/web run start",
     "dev:api": "npm --workspace apps/api run start:dev",
     "build:web": "npm --workspace apps/web run build",
