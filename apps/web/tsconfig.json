@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "ignoreDeprecations": "5.0",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -18,10 +17,9 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
-    "baseUrl": ".",
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@env/*": ["src/environments/*"],
+      "@app/*": ["./src/app/*"],
+      "@env/*": ["./src/environments/*"],
       "@moredutch/shared": ["../../packages/shared/src/index.ts"],
       "@moredutch/shared/*": ["../../packages/shared/src/*"]
     }
