@@ -1,86 +1,62 @@
-import { z } from 'zod';
+export interface MasteryToggleDto {
+  sheetSlug: string;
+  mastered: boolean;
+}
 
-export const SheetSlugSchema = z
-  .string()
-  .min(1)
-  .max(64)
-  .regex(/^[a-z0-9-]+$/, 'Invalid sheet slug');
+export interface FlashcardProgressDto {
+  deckId: string;
+  cardId: string;
+  box: number;
+  dueAt?: string | null;
+}
 
-export const MasteryToggleSchema = z.object({
-  sheetSlug: SheetSlugSchema,
-  mastered: z.boolean(),
-});
-export type MasteryToggleDto = z.infer<typeof MasteryToggleSchema>;
+export interface QuizAttemptDto {
+  quizId: string;
+  score: number;
+  total: number;
+  correct: number;
+  durationMs?: number;
+}
 
-export const FlashcardProgressSchema = z.object({
-  deckId: z.string().min(1).max(64),
-  cardId: z.string().min(1).max(64),
-  box: z.number().int().min(0).max(7),
-  dueAt: z.string().datetime().nullable().optional(),
-});
-export type FlashcardProgressDto = z.infer<typeof FlashcardProgressSchema>;
+export interface KnmAttemptDto {
+  chapterId: string;
+  score: number;
+  total: number;
+  correct: number;
+  durationMs?: number;
+}
 
-export const QuizAttemptSchema = z.object({
-  quizId: z.string().min(1).max(64),
-  score: z.number().min(0).max(1),
-  total: z.number().int().min(1).max(10000),
-  correct: z.number().int().min(0),
-  durationMs: z.number().int().min(0).optional(),
-});
-export type QuizAttemptDto = z.infer<typeof QuizAttemptSchema>;
+export interface PreferencesDto {
+  darkMode?: boolean;
+  flashcardMode?: boolean;
+  hideMastered?: boolean;
+}
 
-export const KnmAttemptSchema = z.object({
-  chapterId: z.string().min(1).max(64),
-  score: z.number().min(0).max(1),
-  total: z.number().int().min(1).max(10000),
-  correct: z.number().int().min(0),
-  durationMs: z.number().int().min(0).optional(),
-});
-export type KnmAttemptDto = z.infer<typeof KnmAttemptSchema>;
+export type PreferencesPatchDto = Partial<PreferencesDto>;
 
-export const PreferencesSchema = z.object({
-  darkMode: z.boolean().optional(),
-  flashcardMode: z.boolean().optional(),
-  hideMastered: z.boolean().optional(),
-});
-export type PreferencesDto = z.infer<typeof PreferencesSchema>;
+export interface VerbSyncDto {
+  masteredIds: string[];
+}
 
-export const PreferencesPatchSchema = PreferencesSchema.partial();
-export type PreferencesPatchDto = z.infer<typeof PreferencesPatchSchema>;
+export interface NounSyncDto {
+  masteredIds: string[];
+}
 
-export const VerbSyncSchema = z.object({
-  masteredIds: z.array(z.string().min(1).max(64)).max(500),
-});
-export type VerbSyncDto = z.infer<typeof VerbSyncSchema>;
+export interface AttemptItem {
+  id: string;
+  tool: 'quiz' | 'knm';
+  score: number;
+  total: number;
+  correct: number;
+  durationMs: number | null;
+  createdAt: string;
+}
 
-export const NounSyncSchema = z.object({
-  masteredIds: z.array(z.string().min(1).max(64)).max(2000),
-});
-export type NounSyncDto = z.infer<typeof NounSyncSchema>;
+export interface ProgressMigrationDto {
+  preferences?: PreferencesDto;
+  masteredSlugs: string[];
+}
 
-export const AttemptItemSchema = z.object({
-  id: z.string(),
-  tool: z.enum(['quiz', 'knm']),
-  score: z.number(),
-  total: z.number().int(),
-  correct: z.number().int(),
-  durationMs: z.number().int().nullable(),
-  createdAt: z.string(),
-});
-export type AttemptItem = z.infer<typeof AttemptItemSchema>;
-
-/**
- * One-shot bulk migration payload pushed when a previously-anonymous user
- * logs in for the first time and we want to merge their localStorage state
- * into the server.
- */
-export const ProgressMigrationSchema = z.object({
-  preferences: PreferencesSchema.optional(),
-  masteredSlugs: z.array(SheetSlugSchema).max(64),
-});
-export type ProgressMigrationDto = z.infer<typeof ProgressMigrationSchema>;
-
-export const CommonWordSyncSchema = z.object({
-  masteredIds: z.array(z.string().min(1).max(64)).max(2000),
-});
-export type CommonWordSyncDto = z.infer<typeof CommonWordSyncSchema>;
+export interface CommonWordSyncDto {
+  masteredIds: string[];
+}

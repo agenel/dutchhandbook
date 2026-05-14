@@ -14,8 +14,9 @@ import {
 import { Request } from 'express';
 import { AdminService } from './admin.service';
 import { AdminGuard } from './admin.guard';
+import type { AdminUserPatchDto, AdminChartRange } from '@moredutch/shared';
 import { ZodValidationPipe } from '../common/zod.pipe';
-import { AdminUserPatchSchema, AdminUserPatchDto, AdminChartRange } from '@moredutch/shared';
+import { AdminUserPatchSchema } from '../schemas/validation';
 
 @Controller({ path: 'admin', version: '1' })
 @UseGuards(AdminGuard)

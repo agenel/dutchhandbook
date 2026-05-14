@@ -17,9 +17,6 @@
     "watch": "tsc -p tsconfig.json --watch",
     "clean": "rimraf dist"
   },
-  "dependencies": {
-    "zod": "^3.23.8"
-  },
   "devDependencies": {
     "rimraf": "^6.0.1",
     "typescript": "~5.9.2"

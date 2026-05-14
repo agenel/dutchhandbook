@@ -1,5 +1,16 @@
 import { Body, Controller, Get, HttpCode, Patch, Post, Req } from '@nestjs/common';
 import { Request } from 'express';
+import type {
+  AttemptItem,
+  KnmAttemptDto,
+  MasteryToggleDto,
+  PreferencesPatchDto,
+  ProgressMigrationDto,
+  QuizAttemptDto,
+  VerbSyncDto,
+  NounSyncDto,
+  CommonWordSyncDto,
+} from '@moredutch/shared';
 import {
   KnmAttemptSchema,
   MasteryToggleSchema,
@@ -9,16 +20,7 @@ import {
   QuizAttemptSchema,
   VerbSyncSchema,
   CommonWordSyncSchema,
-  type AttemptItem,
-  type KnmAttemptDto,
-  type MasteryToggleDto,
-  type PreferencesPatchDto,
-  type ProgressMigrationDto,
-  type QuizAttemptDto,
-  type VerbSyncDto,
-  type NounSyncDto,
-  type CommonWordSyncDto,
-} from '@moredutch/shared';
+} from '../schemas/validation';
 import { ZodValidationPipe } from '../common/zod.pipe';
 import { AuthService } from '../auth/auth.service';
 import { ProgressService } from './progress.service';

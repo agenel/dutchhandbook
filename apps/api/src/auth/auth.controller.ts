@@ -1,19 +1,15 @@
 import { Body, Controller, Get, HttpCode, Post, Req, Res, UnauthorizedException } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { 
-  LoginSchema, 
-  RegisterSchema, 
-  PasswordResetRequestSchema, 
+import type { LoginDto, RegisterDto, PasswordResetRequestDto, PasswordResetConfirmDto, PublicUser } from '@moredutch/shared';
+import {
+  LoginSchema,
+  RegisterSchema,
+  PasswordResetRequestSchema,
   PasswordResetConfirmSchema,
-  type LoginDto, 
-  type RegisterDto,
-  type PasswordResetRequestDto,
-  type PasswordResetConfirmDto
-} from '@moredutch/shared';
+} from '../schemas/validation';
 import { SkipCsrf } from '../common/csrf.guard';
 import { ZodValidationPipe } from '../common/zod.pipe';
 import { AuthService } from './auth.service';
-import type { PublicUser } from '@moredutch/shared';
 
 @Controller({ path: 'auth', version: '1' })
 export class AuthController {
