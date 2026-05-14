@@ -2,14 +2,14 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "ignoreDeprecations": "5.0",
+    "module": "Node16",
+    "moduleResolution": "node16",
     "target": "ES2022",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "isolatedModules": false,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "rootDir": ".",
@@ -22,9 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
     "paths": {
-      "@app/*": ["./src/*"],
       "@moredutch/shared": ["../../packages/shared/dist/index.d.ts"],
       "@moredutch/shared/*": ["../../packages/shared/dist/*"]
     }
