@@ -144,7 +144,7 @@ import { RouterLink } from '@angular/router';
             style="width: fit-content; padding: 0.75rem 2rem; cursor: pointer;"
           >
             @if (loading()) {
-              <span class="material-icons spin">progress_activity</span>
+              <span class="material-icons spin">autorenew</span>
             }
             Send Message
           </button>

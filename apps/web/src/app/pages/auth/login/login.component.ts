@@ -63,7 +63,7 @@ import { ProgressService } from '../../../core/progress.service';
           [disabled]="loading() || form.invalid"
         >
           @if (loading()) {
-            <span class="material-icons spin">progress_activity</span>
+            <span class="material-icons spin">autorenew</span>
           }
           Sign in
         </button>

@@ -96,7 +96,7 @@ import { AuthService } from '../../../core/auth.service';
           [disabled]="loading() || form.invalid || success()"
         >
           @if (loading()) {
-            <span class="material-icons spin">progress_activity</span>
+            <span class="material-icons spin">autorenew</span>
           }
           Create account
         </button>
