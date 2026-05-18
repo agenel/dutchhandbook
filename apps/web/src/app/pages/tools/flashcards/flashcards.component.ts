@@ -301,6 +301,7 @@ export class FlashcardsComponent {
   protected readonly selectedDeck = signal<FlashcardDeck | null>(null);
   protected readonly index = signal(0);
   protected readonly flipped = signal(false);
+  protected readonly animating = signal(false);
   protected helpOpen = false;
 
   protected readonly current = computed(() => {
@@ -316,24 +317,32 @@ export class FlashcardsComponent {
     this.selectedDeck.set(deck);
     this.index.set(0);
     this.flipped.set(false);
+    this.animating.set(false);
   }
 
   exit(): void {
     this.selectedDeck.set(null);
     this.index.set(0);
+    this.animating.set(false);
   }
 
   flip(): void {
+    if (this.animating()) return;
     this.flipped.update((v) => !v);
   }
 
   rate(_easy: boolean): void {
+    if (this.animating()) return;
     const deck = this.selectedDeck();
     if (!deck) return;
     const current = this.index();
     if (current < deck.cards.length - 1) {
-      this.index.set(current + 1);
+      this.animating.set(true);
       this.flipped.set(false);
+      setTimeout(() => {
+        this.index.set(current + 1);
+        this.animating.set(false);
+      }, 300);
     } else {
       alert('Deck completed! Well done.');
       this.exit();
