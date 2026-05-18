@@ -436,24 +436,24 @@ interface WheelTense {
       box-shadow: 0 4px 16px rgba(0,0,0,0.07);
     }
     .satellite.present {
-      background: #fdf2f2;
-      border-color: #c0392b;
+      background: var(--red-light);
+      border-color: var(--red);
     }
     .satellite.past {
-      background: #eef2ff;
-      border-color: #2c3e87;
+      background: var(--blue-light);
+      border-color: var(--blue);
     }
     .satellite.perfect {
-      background: #edfdf5;
-      border-color: #27ae60;
+      background: var(--green-light);
+      border-color: var(--green);
     }
     .satellite.hidden-tense {
-      background: #f8f8f8;
+      background: var(--stripe);
       border-style: dashed;
       border-color: var(--border);
     }
-    .satellite.correct { background: #d1fae5 !important; border-color: var(--green) !important; border-style: solid !important; }
-    .satellite.wrong   { background: #fee2e2 !important; border-color: #ef4444 !important; border-style: solid !important; }
+    .satellite.correct { background: var(--green-light) !important; border-color: var(--green) !important; border-style: solid !important; }
+    .satellite.wrong   { background: var(--red-light) !important; border-color: var(--red) !important; border-style: solid !important; }
 
     .center-circle {
       width: 170px;
@@ -514,7 +514,7 @@ interface WheelTense {
       padding: 0.4rem 0.5rem;
       border-radius: 8px;
       border: 1.5px solid var(--orange);
-      background: #fff;
+      background: var(--white);
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       outline: none;

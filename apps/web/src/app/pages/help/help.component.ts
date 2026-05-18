@@ -141,6 +141,42 @@ import { RouterLink } from '@angular/router';
           actually know the material.
         </p>
       </details>
+      <details>
+        <summary>Is More Dutch really 100% free?</summary>
+        <p>
+          Yes! More Dutch is completely free with zero ads, paywalls, or premium subscriptions. 
+          The platform is maintained entirely through community support and coffee donations from fellow expats.
+        </p>
+      </details>
+      <details>
+        <summary>Which integration exams does this prepare me for?</summary>
+        <p>
+          Our tools and cheat sheets are specifically tailored for the official DUO Inburgering exams, 
+          covering the KNM (Knowledge of Dutch Society) exam and language proficiency up to CEFR B1 level.
+        </p>
+      </details>
+      <details>
+        <summary>Can I practice on my mobile phone?</summary>
+        <p>
+          Absolutely. More Dutch is optimized as a mobile-friendly web app. You can drill noun genders, 
+          flip vocabulary flashcards, and review verb conjugations seamlessly on any mobile phone or tablet.
+        </p>
+      </details>
+      <details>
+        <summary>What is the source of the lesson material?</summary>
+        <p>
+          The lessons, grammar sheets, and vocabulary decks are meticulously sourced from official and most common 
+          Dutch educational textbooks and standardized workbooks. No AI-generated content is included, ensuring complete 
+          accuracy for official exam preparation.
+        </p>
+      </details>
+      <details>
+        <summary>How often is the study material updated?</summary>
+        <p>
+          We regularly update and expand our grammar modules, exam simulators, and vocabulary decks 
+          to reflect the latest DUO exam patterns and feedback from successful test takers.
+        </p>
+      </details>
     </div>
   `,
   styles: [`

@@ -24,6 +24,14 @@ export const TOOL_REGISTRY: ToolMeta[] = [
     tag: 'Priority Tool',
   },
   {
+    slug: 'verb-wheel',
+    title: 'Conjugation Wheel',
+    description:
+      'Visualize all three tenses in one spatial layout. Practice present, past, and perfect tenses with drill mode.',
+    icon: 'donut_large',
+    tag: 'Grammar Drill',
+  },
+  {
     slug: 'common-words',
     title: '1000 Common Words',
     description:
