@@ -45,3 +45,28 @@ md-root {
     transform: translateY(0);
   }
 }
+
+/* Buy Me a Coffee Support Button */
+.bmc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFDD00;
+  color: #000000 !important;
+  font-family: 'Poppins', 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: 1.5px solid #000000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  text-decoration: none !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  line-height: 1.2;
+}
+.bmc-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 221, 0, 0.4);
+}
+.bmc-btn .bmc-emoji { font-size: 1.05rem; }
+

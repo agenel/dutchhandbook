@@ -16,6 +16,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         Made by
         <a href="https://soylu.dev" target="_blank" rel="noopener">soylu.dev</a>
       </div>
+      <div class="footer-support" style="margin-top: 1rem; display: flex; justify-content: center;">
+        <a href="https://www.buymeacoffee.com/moredutch" target="_blank" rel="noopener noreferrer" class="bmc-btn">
+          <span class="bmc-emoji">☕</span>
+          <span class="bmc-text">Buy me a coffee</span>
+        </a>
+      </div>
     </footer>
   `,
 })

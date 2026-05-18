@@ -38,6 +38,13 @@ import { RouterLink } from '@angular/router';
         I built <strong>More Dutch</strong> to provide future candidates with a streamlined, interactive, 
         and free tool to practice exactly what is needed for these exams.
       </p>
+      <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <span style="font-size: 0.95rem; color: var(--muted); font-weight: 500;">Support the ongoing development of More Dutch:</span>
+        <a href="https://www.buymeacoffee.com/moredutch" target="_blank" rel="noopener noreferrer" class="bmc-btn" style="font-size: 0.95rem; padding: 0.55rem 1.1rem;">
+          <span class="bmc-emoji">☕</span>
+          <span class="bmc-text">Buy me a coffee</span>
+        </a>
+      </div>
     </div>
 
     <div class="section-title" style="margin-top: 3rem;">
