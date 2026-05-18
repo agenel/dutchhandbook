@@ -209,3 +209,9 @@ model CommonWordMastery {
   @@id([userId, wordId])
   @@index([userId])
 }
+
+model SystemSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @default(now()) @updatedAt
+}

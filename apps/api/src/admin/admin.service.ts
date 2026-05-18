@@ -298,4 +298,30 @@ export class AdminService {
 
     return { data, total, page, pageSize: limit };
   }
+
+  async getSettings(): Promise<Record<string, string>> {
+    const settings = await this.prisma.systemSetting.findMany();
+    return settings.reduce((acc, curr) => {
+      acc[curr.key] = curr.value;
+      return acc;
+    }, {} as Record<string, string>);
+  }
+
+  async updateSettings(dto: Record<string, string>, req: Request): Promise<Record<string, string>> {
+    await this.audit.logEvent((req as any).user?.id, 'ADMIN_UPDATE_SETTINGS', req, { keys: Object.keys(dto) });
+    
+    for (const [key, value] of Object.entries(dto)) {
+      if (value === '') {
+        await this.prisma.systemSetting.deleteMany({ where: { key } });
+      } else {
+        await this.prisma.systemSetting.upsert({
+          where: { key },
+          update: { value },
+          create: { key, value }
+        });
+      }
+    }
+
+    return this.getSettings();
+  }
 }

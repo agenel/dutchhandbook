@@ -26,6 +26,11 @@ export const ADMIN_ROUTES: Routes = [
         data: { title: 'Email Templates — More Dutch' }
       },
       {
+        path: 'dev-tools',
+        loadComponent: () => import('./dev-tools/admin-dev-tools.component').then(m => m.AdminDevToolsComponent),
+        data: { title: 'Developer Tools — More Dutch' }
+      },
+      {
         path: 'system',
         loadComponent: () => import('./system/admin-system.component').then(m => m.AdminSystemComponent),
         data: { title: 'System Health — More Dutch' }
@@ -33,3 +38,4 @@ export const ADMIN_ROUTES: Routes = [
     ]
   }
 ];
+

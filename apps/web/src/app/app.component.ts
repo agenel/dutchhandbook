@@ -4,6 +4,7 @@ import { AuthService } from './core/auth.service';
 import { ProgressService } from './core/progress.service';
 import { RouteSeoService } from './core/route-seo.service';
 import { ThemeService } from './core/theme.service';
+import { AnalyticsService } from './core/analytics.service';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HubNavComponent } from './layout/hub-nav/hub-nav.component';
 
@@ -27,9 +28,12 @@ export class AppComponent implements OnInit {
   private readonly theme = inject(ThemeService);
   /** Subscribes to `Router` events and applies per-route SEO from `data`. */
   private readonly routeSeo = inject(RouteSeoService);
+  private readonly analytics = inject(AnalyticsService);
 
   ngOnInit(): void {
     void this.routeSeo;
+    this.analytics.init();
+
     // Re-hydrate the session cookie on first load. Failure is fine — we
     // simply stay anonymous and keep using localStorage progress.
     this.auth.bootstrap().subscribe((user) => {

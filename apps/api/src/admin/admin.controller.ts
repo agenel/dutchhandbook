@@ -16,7 +16,7 @@ import { AdminService } from './admin.service';
 import { AdminGuard } from './admin.guard';
 import type { AdminUserPatchDto, AdminChartRange } from '@moredutch/shared';
 import { ZodValidationPipe } from '../common/zod.pipe';
-import { AdminUserPatchSchema } from '../schemas/validation';
+import { AdminUserPatchSchema, UpdateSettingsSchema } from '../schemas/validation';
 
 @Controller({ path: 'admin', version: '1' })
 @UseGuards(AdminGuard)
@@ -86,5 +86,18 @@ export class AdminController {
     const p = Math.max(1, parseInt(page, 10) || 1);
     const l = Math.min(100, Math.max(1, parseInt(limit, 10) || 20));
     return this.admin.getAuditLogs(p, l, event || undefined);
+  }
+
+  @Get('settings')
+  async getSettings() {
+    return this.admin.getSettings();
+  }
+
+  @Patch('settings')
+  async updateSettings(
+    @Body(new ZodValidationPipe(UpdateSettingsSchema)) dto: Record<string, string>,
+    @Req() req: Request
+  ) {
+    return this.admin.updateSettings(dto, req);
   }
 }

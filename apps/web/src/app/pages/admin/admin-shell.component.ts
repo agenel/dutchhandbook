@@ -36,6 +36,11 @@ import { AuthService } from '../../core/auth.service';
             </a>
           </li>
           <li>
+            <a routerLink="/admin/dev-tools" routerLinkActive="active">
+              <span class="material-icons">code</span> Developer Tools
+            </a>
+          </li>
+          <li>
             <a routerLink="/admin/system" routerLinkActive="active">
               <span class="material-icons">monitor_heart</span> System
             </a>

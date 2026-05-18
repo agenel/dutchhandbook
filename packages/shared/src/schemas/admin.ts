@@ -60,3 +60,12 @@ export interface PaginatedResult<T> {
   page: number;
   pageSize: number;
 }
+
+export interface SystemSettingDto {
+  key: string;
+  value: string;
+  updatedAt: string;
+}
+
+export type UpdateSettingsDto = Record<string, string>;
+

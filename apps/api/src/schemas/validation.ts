@@ -118,3 +118,6 @@ export const AdminUserPatchSchema = z.object({
   bannedReason: z.string().optional().nullable().transform(sanitizeNullable),
   isAdmin: z.boolean().optional(),
 });
+
+export const UpdateSettingsSchema = z.record(z.string(), z.string());
+

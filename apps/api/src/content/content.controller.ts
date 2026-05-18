@@ -1,4 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
+import { PrismaService } from '../prisma/prisma.service';
 
 /**
  * Placeholder content API.
@@ -10,9 +11,21 @@ import { Controller, Get } from '@nestjs/common';
  */
 @Controller({ path: 'content', version: '1' })
 export class ContentController {
+  constructor(private readonly prisma: PrismaService) {}
+
   @Get('version')
   version(): { ok: true; version: string } {
     return { ok: true, version: '1' };
   }
+
+  @Get('config')
+  async config(): Promise<Record<string, string>> {
+    const settings = await this.prisma.systemSetting.findMany();
+    return settings.reduce((acc, curr) => {
+      acc[curr.key] = curr.value;
+      return acc;
+    }, {} as Record<string, string>);
+  }
 }
+
 
