@@ -119,5 +119,9 @@ export const AdminUserPatchSchema = z.object({
   isAdmin: z.boolean().optional(),
 });
 
-export const UpdateSettingsSchema = z.record(z.string(), z.string());
+export const UpdateSettingsSchema = z.record(
+  z.string().min(1).max(128).regex(/^[a-zA-Z0-9_.-]+$/, 'Invalid key format'),
+  z.string().max(2048)
+);
+
 
