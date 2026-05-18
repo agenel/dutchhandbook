@@ -151,6 +151,7 @@ export class HubNavComponent {
   protected readonly tools = [
     { slug: 'knm-exam', title: 'KNM Exam', icon: 'gavel' },
     { slug: 'verb-explorer', title: 'Verb Explorer', icon: 'travel_explore' },
+    { slug: 'verb-wheel', title: 'Conjugation Wheel', icon: 'donut_large' },
     { slug: 'common-words', title: '1000 Common Words', icon: 'menu_book' },
     { slug: 'flashcards', title: 'Flashcards', icon: 'style' },
     { slug: 'de-het', title: 'de/het Trainer', icon: 'category' },

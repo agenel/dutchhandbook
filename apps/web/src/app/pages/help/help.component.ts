@@ -67,6 +67,15 @@ import { RouterLink } from '@angular/router';
       </div>
 
       <div class="tool-info">
+        <h3><span class="material-icons">donut_large</span> Conjugation Wheel</h3>
+        <p>
+          See all three tenses — Present, Past, and Perfect — arranged spatially around the infinitive.
+          <strong>Pro Tip:</strong> Use <strong>Drill Mode</strong> and set the Type filter to 
+          <em>Irregular</em> only. Mastering the ~40 most common irregular verbs covers 80% of real conversations.
+        </p>
+      </div>
+
+      <div class="tool-info">
         <h3><span class="material-icons">architecture</span> Sentence Builder</h3>
         <p>
           The hardest part of Dutch is the word order. 

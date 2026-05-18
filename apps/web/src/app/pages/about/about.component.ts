@@ -67,7 +67,14 @@ import { RouterLink } from '@angular/router';
         or build your vocabulary with <a routerLink="/tools/flashcards">Flashcards</a>.
       </p>
 
-      <h3>3. Exam Practice</h3>
+      <h3>3. Conjugation Wheel</h3>
+      <p>
+        The <a routerLink="/tools/verb-wheel">Conjugation Wheel</a> visualizes all three tenses — 
+        Present, Past, and Perfect — in one spatial layout so your brain builds associative memory. 
+        Switch to <strong>Drill Mode</strong> to actively test yourself verb by verb.
+      </p>
+
+      <h3>4. Exam Practice</h3>
       <p>
         Get ready for the integration exams using our dedicated 
         <a routerLink="/tools/knm-exam">KNM Practice Exam</a> simulator and 

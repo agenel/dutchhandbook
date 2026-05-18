@@ -119,6 +119,20 @@ export const routes: Routes = [
     },
   },
   {
+    path: 'tools/verb-wheel',
+    loadComponent: () =>
+      import('./pages/tools/verb-wheel/verb-wheel.component').then(
+        (m) => m.VerbWheelComponent,
+      ),
+    data: {
+      title: 'Verb Conjugation Wheel — Visualize Dutch Tenses | More Dutch',
+      description:
+        'Browse all 200 Dutch verbs in an interactive tense wheel. Practice present, past, and perfect tenses with drill mode.',
+      canonicalPath: '/tools/verb-wheel',
+      keywords: 'Dutch verb conjugation, Dutch tenses, Dutch grammar drill, verb wheel',
+    },
+  },
+  {
     path: 'tools/knm-exam',
     loadComponent: () =>
       import('./pages/tools/knm-exam/knm-exam.component').then((m) => m.KnmExamComponent),

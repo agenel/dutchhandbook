@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import type { Verb } from '@moredutch/shared';
 import { ContentService } from '../../../core/content.service';
 import { ProgressService } from '../../../core/progress.service';
@@ -40,7 +41,7 @@ type VerbWithLegacyFields = Verb & {
 @Component({
   selector: 'md-verb-explorer',
   standalone: true,
-  imports: [FormsModule, HelpDialogComponent],
+  imports: [FormsModule, HelpDialogComponent, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="hero" style="border-bottom:none; padding-bottom: 1rem;">
@@ -238,6 +239,14 @@ type VerbWithLegacyFields = Verb & {
           >
             {{ isMastered(verb) ? '✓ Mastered' : 'Mark as Mastered' }}
           </button>
+          <a
+            [routerLink]="['/tools/verb-wheel']"
+            class="fc-btn"
+            style="padding:0.4rem 0.9rem; font-size:0.75rem; text-decoration:none; display:inline-flex; align-items:center; gap:0.3rem;"
+            (click)="$event.stopPropagation()"
+          >
+            <span class="material-icons" style="font-size:0.9rem;">donut_large</span> Practice in Wheel
+          </a>
         </div>
 
         <div class="example" style="margin-bottom:1.5rem;">
