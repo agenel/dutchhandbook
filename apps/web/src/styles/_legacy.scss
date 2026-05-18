@@ -1370,7 +1370,7 @@ tr.row-hi td {
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--fg);
+  color: var(--ink);
   text-decoration: none;
 }
 
@@ -1423,8 +1423,8 @@ tr.row-hi td {
   padding: 0.65rem 0.9rem;
   border: 1.5px solid var(--border);
   border-radius: 10px;
-  background: var(--bg);
-  color: var(--fg);
+  background: var(--white);
+  color: var(--ink);
   font-family: 'DM Mono', monospace;
   font-size: 0.88rem;
   transition: border-color 0.2s;

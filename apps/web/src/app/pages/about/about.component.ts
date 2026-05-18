@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'md-about',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="hero" style="border-bottom:none; padding-top:1rem;">
@@ -72,6 +73,124 @@ import { RouterLink } from '@angular/router';
         Test Mode and syncing your progress across devices.
       </p>
     </div>
+
+    <div class="section-title" style="margin-top: 3rem;">
+      Get in Touch
+      <div class="title-line"></div>
+    </div>
+
+    <div class="help-section">
+      @if (submitted()) {
+        <div class="auth-shell" style="max-width: 500px; margin: 1.5rem 0 0; padding: 2.5rem 2rem; text-align: center;">
+          <div style="margin-bottom: 1rem;">
+            <span class="material-icons" style="font-size: 3.5rem; color: var(--green);">check_circle</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--ink); margin-bottom: 0.5rem; text-transform: none; letter-spacing: normal;">
+            Thank you!
+          </h3>
+          <p style="color: var(--muted); margin-bottom: 0; font-size: 0.95rem; text-transform: none; letter-spacing: normal;">
+            Your message has been successfully sent.
+          </p>
+        </div>
+      } @else {
+        <h3>Have questions or feedback?</h3>
+        <p>
+          Whether you have a suggestion for More Dutch, found a bug, or just want to say hello, feel free to reach out using the form below.
+        </p>
+
+        <form [formGroup]="form" (ngSubmit)="submit()" class="auth-form" style="max-width: 500px; margin-top: 1.5rem;">
+          <label class="auth-label">
+            Name
+            <input
+              class="auth-input"
+              type="text"
+              placeholder="Your name"
+              formControlName="name"
+            />
+          </label>
+
+          <label class="auth-label">
+            Email
+            <input
+              class="auth-input"
+              type="email"
+              placeholder="you@example.com"
+              formControlName="email"
+            />
+          </label>
+
+          <label class="auth-label">
+            Message
+            <textarea
+              class="auth-input"
+              rows="5"
+              placeholder="Your message..."
+              formControlName="message"
+              style="font-family: inherit; resize: vertical;"
+            ></textarea>
+          </label>
+
+          @if (error()) {
+            <div class="auth-alert error">
+              <span class="material-icons">error_outline</span>
+              {{ error() }}
+            </div>
+          }
+
+          <button
+            class="fc-btn auth-submit"
+            type="submit"
+            [disabled]="loading() || form.invalid"
+            style="width: fit-content; padding: 0.75rem 2rem; cursor: pointer;"
+          >
+            @if (loading()) {
+              <span class="material-icons spin">progress_activity</span>
+            }
+            Send Message
+          </button>
+        </form>
+      }
+    </div>
   `,
 })
-export class AboutComponent { }
+export class AboutComponent {
+  private readonly fb = inject(FormBuilder);
+
+  protected readonly submitted = signal(false);
+  protected readonly loading = signal(false);
+  protected readonly error = signal<string | null>(null);
+
+  protected readonly form = this.fb.nonNullable.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', Validators.required],
+  });
+
+  async submit(): Promise<void> {
+    if (this.form.invalid || this.loading()) return;
+    this.loading.set(true);
+    this.error.set(null);
+
+    try {
+      const res = await fetch('https://formspree.io/f/mredgkjl', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(this.form.getRawValue())
+      });
+
+      if (res.ok) {
+        this.submitted.set(true);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        this.error.set(data.error || 'Oops! There was a problem submitting your form.');
+      }
+    } catch {
+      this.error.set('Oops! There was a problem submitting your form.');
+    } finally {
+      this.loading.set(false);
+    }
+  }
+}
