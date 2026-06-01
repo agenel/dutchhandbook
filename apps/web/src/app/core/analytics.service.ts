@@ -1,19 +1,28 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { isPlatformBrowser } from '@angular/common';
 import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AnalyticsService {
   private readonly http = inject(HttpClient);
+  private readonly platformId = inject(PLATFORM_ID);
   private initialized = false;
 
   init() {
     if (this.initialized) return;
     this.initialized = true;
 
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.http.get<Record<string, string>>(`${environment.apiBaseUrl}/content/config`).subscribe({
       next: (config) => {
-        this.injectTools(config);
+        // Defer non-critical tracker injections until browser is idle to prioritize FCP/LCP
+        if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+          window.requestIdleCallback(() => this.injectTools(config), { timeout: 3000 });
+        } else {
+          setTimeout(() => this.injectTools(config), 2500);
+        }
       },
       error: () => {
         // Silent fail on analytics config load error
