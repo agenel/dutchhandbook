@@ -79,7 +79,10 @@ export class AuthService {
         expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
       },
     });
-    await this.mail.sendVerificationEmail(email, verifyToken);
+    // Send email in the background without awaiting it to keep API response instantaneous
+    this.mail.sendVerificationEmail(email, verifyToken).catch((err) => {
+      console.error(`Failed to send verification email to ${email} in background:`, err);
+    });
 
     await this.sessions.createSession(user.id, req, res);
     await this.logEvent(user.id, 'REGISTER', req);
@@ -159,9 +162,10 @@ export class AuthService {
       },
     });
 
-    // TODO: send email. For now log token in server logs only.
-    // This is safe for local dev; production should wire SMTP before enabling.
-    await this.mail.sendPasswordResetEmail(email, token);
+    // Send email in the background without awaiting it to keep API response instantaneous
+    this.mail.sendPasswordResetEmail(email, token).catch((err) => {
+      console.error(`Failed to send password reset email to ${email} in background:`, err);
+    });
     await this.logEvent(user.id, 'PASSWORD_RESET_REQUEST', req);
   }
 

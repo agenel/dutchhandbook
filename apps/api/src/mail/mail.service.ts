@@ -22,8 +22,8 @@ export class MailService {
     if (host && user && pass) {
       this.transporter = nodemailer.createTransport({
         host,
-        port,
-        secure: port === 465, // true for 465, false for other ports
+        port: Number(port),
+        secure: Number(port) === 465, // true for 465, false for other ports
         auth: {
           user,
           pass,
