@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'md-admin-dev-tools',
@@ -170,6 +171,51 @@ import { environment } from '../../../../environments/environment';
         </label>
       </div>
     </form>
+
+    <div style="margin-top: 2rem;">
+      <div class="tool-card" style="max-width: 600px;">
+        <div class="card-head">
+          <div class="tool-title">
+            <span class="material-icons" style="color: var(--orange);">mail_lock</span>
+            <h3>SMTP Mail Server Diagnostics</h3>
+          </div>
+        </div>
+        <p class="desc">Send a manual test email to verify that your Resend SMTP host connection is correct and your credentials are valid. This will display the direct SMTP error stack if the send fails.</p>
+        
+        <div style="display: flex; gap: 0.8rem; align-items: flex-end;">
+          <label class="field" style="flex: 1;">
+            Test Recipient Email Address
+            <input type="email" #testEmailInput placeholder="developer@example.com" style="font-family: 'DM Sans', sans-serif;" />
+          </label>
+          <button 
+            type="button" 
+            class="save-btn" 
+            style="margin-bottom: 0; padding: 0.65rem 1.25rem;" 
+            [disabled]="testingMail()"
+            (click)="testMail(testEmailInput.value)"
+          >
+            @if (testingMail()) {
+              <span class="material-icons spin" style="animation: spin 1s linear infinite;">autorenew</span> Sending...
+            } @else {
+              <span class="material-icons">send</span> Send Test
+            }
+          </button>
+        </div>
+
+        @if (testResult()) {
+          <div style="margin-top: 1rem; padding: 1rem; border-radius: 10px; font-size: 0.88rem;" 
+               [ngClass]="testResult()?.success ? 'diagnostic-success' : 'diagnostic-error'">
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; margin-bottom: 0.5rem;">
+              <span class="material-icons">{{ testResult()?.success ? 'check_circle' : 'error' }}</span>
+              {{ testResult()?.success ? 'Test Email Sent Successfully!' : 'SMTP Connection Failed!' }}
+            </div>
+            @if (testResult()?.error) {
+              <pre style="margin: 0.5rem 0 0; background: rgba(0,0,0,0.05); padding: 0.65rem; border-radius: 6px; overflow-x: auto; white-space: pre-wrap; font-family: 'DM Mono', monospace; font-size: 0.75rem; border: 1.5px solid var(--border);">{{ testResult()?.error }}</pre>
+            }
+          </div>
+        }
+      </div>
+    </div>
   `,
   styles: [
     `
@@ -311,16 +357,23 @@ import { environment } from '../../../../environments/environment';
       .field input:focus {
         border-color: var(--orange);
       }
+
+      .diagnostic-success { background: #f0fff4; border: 1px solid #9ae6b4; color: #276749; }
+      .diagnostic-error { background: #fff5f5; border: 1px solid #fed7d7; color: #c53030; }
+      @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     `
   ]
 })
 export class AdminDevToolsComponent implements OnInit {
   private readonly http = inject(HttpClient);
   private readonly fb = inject(FormBuilder);
+  private readonly adminService = inject(AdminService);
 
   protected readonly loading = signal(false);
   protected readonly error = signal<string | null>(null);
   protected readonly success = signal(false);
+  protected readonly testingMail = signal(false);
+  protected readonly testResult = signal<{ success: boolean; error?: string } | null>(null);
 
   protected readonly form = this.fb.nonNullable.group({
     googleAnalyticsKey: [''],
@@ -371,6 +424,29 @@ export class AdminDevToolsComponent implements OnInit {
       error: () => {
         this.error.set('Failed to save developer tool settings.');
         this.loading.set(false);
+      }
+    });
+  }
+
+  testMail(email: string) {
+    if (!email) {
+      alert('Please enter a valid recipient email address.');
+      return;
+    }
+    this.testingMail.set(true);
+    this.testResult.set(null);
+
+    this.adminService.sendTestEmail(email).subscribe({
+      next: (res) => {
+        this.testResult.set(res);
+        this.testingMail.set(false);
+      },
+      error: (err) => {
+        this.testResult.set({
+          success: false,
+          error: err.error?.message || err.message || 'Server error occurred'
+        });
+        this.testingMail.set(false);
       }
     });
   }

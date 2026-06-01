@@ -2,6 +2,9 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { AuditService } from '../common/audit.service';
 import { Request } from 'express';
+import { MailService } from '../mail/mail.service';
+import argon2 from 'argon2';
+import { randomBytes } from 'node:crypto';
 import type { 
   AdminUserDto, 
   AdminStatsDto, 
@@ -18,6 +21,7 @@ export class AdminService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly audit: AuditService,
+    private readonly mail: MailService,
   ) {}
 
   async getUsers(page: number, limit: number, search: string): Promise<PaginatedResult<AdminUserDto>> {
@@ -323,5 +327,36 @@ export class AdminService {
     }
 
     return this.getSettings();
+  }
+
+  async sendTestEmail(email: string, req: Request): Promise<{ success: boolean; error?: string }> {
+    await this.audit.logEvent((req as any).user?.id, 'ADMIN_SEND_TEST_EMAIL', req, { targetEmail: email });
+    return this.mail.sendTestEmail(email);
+  }
+
+  async resendVerification(userId: string, req: Request): Promise<{ success: boolean; error?: string }> {
+    const user = await this.prisma.user.findUnique({ where: { id: userId } });
+    if (!user) throw new NotFoundException('User not found');
+
+    await this.audit.logEvent((req as any).user?.id, 'ADMIN_RESEND_VERIFICATION', req, { targetUserId: userId, targetEmail: user.email });
+
+    const verifyToken = randomBytes(32).toString('base64url');
+    const verifyHash = await argon2.hash(verifyToken, { type: argon2.argon2id });
+    
+    await this.prisma.emailToken.create({
+      data: {
+        userId: user.id,
+        purpose: 'VERIFY',
+        tokenHash: verifyHash,
+        expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
+      },
+    });
+
+    try {
+      await this.mail.sendVerificationEmail(user.email, verifyToken);
+      return { success: true };
+    } catch (err) {
+      return { success: false, error: (err as any).message || String(err) };
+    }
   }
 }

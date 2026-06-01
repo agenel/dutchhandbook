@@ -1,6 +1,7 @@
 import { 
   Controller, 
   Get, 
+  Post,
   Patch, 
   Delete, 
   Query, 
@@ -99,5 +100,15 @@ export class AdminController {
     @Req() req: Request
   ) {
     return this.admin.updateSettings(dto, req);
+  }
+
+  @Post('email/test')
+  async sendTestEmail(@Body('email') email: string, @Req() req: Request) {
+    return this.admin.sendTestEmail(email, req);
+  }
+
+  @Post('users/:id/resend-verification')
+  async resendVerification(@Param('id') id: string, @Req() req: Request) {
+    return this.admin.resendVerification(id, req);
   }
 }

@@ -65,4 +65,12 @@ export class AdminService {
 
     return this.http.get<PaginatedResult<AdminAuditLogDto>>(`${this.apiUrl}/audit-logs`, { params });
   }
+
+  sendTestEmail(email: string): Observable<{ success: boolean; error?: string }> {
+    return this.http.post<{ success: boolean; error?: string }>(`${this.apiUrl}/email/test`, { email });
+  }
+
+  resendVerification(userId: string): Observable<{ success: boolean; error?: string }> {
+    return this.http.post<{ success: boolean; error?: string }>(`${this.apiUrl}/users/${userId}/resend-verification`, {});
+  }
 }

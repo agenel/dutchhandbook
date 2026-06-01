@@ -98,6 +98,11 @@ import type { AdminUserDto, PaginatedResult } from '@moredutch/shared';
                     <button class="action-btn" [class.danger]="!user.isBanned" [disabled]="loading()" title="Toggle Ban" (click)="toggleBan(user)">
                       <span class="material-icons">{{ user.isBanned ? 'lock_open' : 'block' }}</span>
                     </button>
+                    @if (!user.emailVerified) {
+                      <button class="action-btn" [disabled]="loading()" title="Resend Verification Email" (click)="resendVerification(user)">
+                        <span class="material-icons">mail</span>
+                      </button>
+                    }
                     <button class="action-btn danger" [disabled]="loading()" title="Delete User" (click)="deleteUser(user)">
                       <span class="material-icons">delete_forever</span>
                     </button>
@@ -430,6 +435,25 @@ export class AdminUsersComponent implements OnInit {
     this.adminService.deleteUser(user.id).subscribe({
       next: () => this.loadUsers(),
       error: () => this.loading.set(false)
+    });
+  }
+
+  resendVerification(user: AdminUserDto) {
+    if (!confirm(`Are you sure you want to resend the verification email to ${user.email}?`)) return;
+    this.loading.set(true);
+    this.adminService.resendVerification(user.id).subscribe({
+      next: (res) => {
+        this.loading.set(false);
+        if (res.success) {
+          alert(`Verification email successfully resent to ${user.email}!`);
+        } else {
+          alert(`Failed to send verification email: ${res.error}`);
+        }
+      },
+      error: (err) => {
+        this.loading.set(false);
+        alert(`Request failed: ${err.error?.message || err.message || 'Server error occurred'}`);
+      }
     });
   }
 
