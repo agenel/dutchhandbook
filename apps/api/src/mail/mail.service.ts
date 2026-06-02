@@ -28,6 +28,9 @@ export class MailService {
           user,
           pass,
         },
+        connectionTimeout: 5000, // 5s connection timeout to prevent hangs
+        greetingTimeout: 5000,   // 5s greeting timeout
+        socketTimeout: 5000,     // 5s socket timeout
       });
       this.logger.log('MailService: Configured with SMTP');
     } else {
