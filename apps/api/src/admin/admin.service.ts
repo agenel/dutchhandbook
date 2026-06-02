@@ -353,7 +353,7 @@ export class AdminService {
     });
 
     try {
-      await this.mail.sendVerificationEmail(user.email, verifyToken);
+      await this.mail.sendVerificationEmail(user.email, verifyToken, req);
       return { success: true };
     } catch (err) {
       return { success: false, error: (err as any).message || String(err) };

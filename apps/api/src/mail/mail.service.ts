@@ -42,15 +42,50 @@ export class MailService {
     }
   }
 
-  async sendVerificationEmail(email: string, token: string) {
-    const url = `${this.siteUrl}/auth/verify?token=${token}`;
+  private getSiteUrl(req?: any): string {
+    // 1. Try to extract origin from the dynamic request headers (Origin, Host, or Referer)
+    if (req) {
+      const origin = req.headers?.origin || req.headers?.['x-forwarded-host'] || req.headers?.referer;
+      if (origin) {
+        try {
+          const urlStr = origin.startsWith('http') ? origin : `https://${origin}`;
+          const url = new URL(urlStr);
+          const parsedOrigin = url.origin;
+          
+          const isProd = this.config.get<string>('NODE_ENV') === 'production' || process.env.NODE_ENV === 'production';
+          // Only use origin if we are not in production or it doesn't point to localhost
+          if (!isProd || (!parsedOrigin.includes('localhost') && !parsedOrigin.includes('127.0.0.1'))) {
+            return parsedOrigin;
+          }
+        } catch (e) {
+          // Ignore URL parsing exceptions and fall back
+        }
+      }
+    }
+
+    // 2. Use the configured siteUrl
+    const url = this.siteUrl || '';
+
+    // 3. Self-healing fallback: If we are in production but the URL points to localhost, automatically override with the production domain.
+    const isProd = this.config.get<string>('NODE_ENV') === 'production' || process.env.NODE_ENV === 'production';
+    if (isProd && (url.includes('localhost') || url.includes('127.0.0.1') || !url)) {
+      return 'https://moredutch.com';
+    }
+
+    return url;
+  }
+
+  async sendVerificationEmail(email: string, token: string, req?: any) {
+    const resolvedSiteUrl = this.getSiteUrl(req);
+    const url = `${resolvedSiteUrl}/auth/verify?token=${token}`;
     const subject = 'Confirm your More Dutch account';
     const html = verificationTemplate(url);
     return this.sendMail(email, subject, html);
   }
 
-  async sendPasswordResetEmail(email: string, token: string) {
-    const url = `${this.siteUrl}/auth/reset?token=${token}`;
+  async sendPasswordResetEmail(email: string, token: string, req?: any) {
+    const resolvedSiteUrl = this.getSiteUrl(req);
+    const url = `${resolvedSiteUrl}/auth/reset?token=${token}`;
     const subject = 'Reset your More Dutch password';
     const html = passwordResetTemplate(url);
     return this.sendMail(email, subject, html);

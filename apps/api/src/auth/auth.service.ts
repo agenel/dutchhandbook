@@ -80,7 +80,7 @@ export class AuthService {
       },
     });
     // Send email in the background without awaiting it to keep API response instantaneous
-    this.mail.sendVerificationEmail(email, verifyToken).catch((err) => {
+    this.mail.sendVerificationEmail(email, verifyToken, req).catch((err) => {
       console.error(`Failed to send verification email to ${email} in background:`, err);
     });
 
@@ -163,7 +163,7 @@ export class AuthService {
     });
 
     // Send email in the background without awaiting it to keep API response instantaneous
-    this.mail.sendPasswordResetEmail(email, token).catch((err) => {
+    this.mail.sendPasswordResetEmail(email, token, req).catch((err) => {
       console.error(`Failed to send password reset email to ${email} in background:`, err);
     });
     await this.logEvent(user.id, 'PASSWORD_RESET_REQUEST', req);
