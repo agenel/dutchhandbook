@@ -10,6 +10,7 @@ export class MailService {
   private readonly from: string;
   private readonly siteUrl: string;
   private readonly pass?: string;
+  private readonly host?: string;
 
   constructor(private readonly config: ConfigService) {
     this.siteUrl = this.config.get<string>('SITE_URL') || 'http://localhost:4000';
@@ -20,6 +21,7 @@ export class MailService {
     const user = this.config.get<string>('SMTP_USER');
     const pass = this.config.get<string>('SMTP_PASS');
     this.pass = pass;
+    this.host = host;
 
     if (host && user && pass) {
       this.transporter = nodemailer.createTransport({
@@ -57,34 +59,25 @@ export class MailService {
   async sendTestEmail(email: string): Promise<{ success: boolean; error?: string }> {
     const subject = 'More Dutch SMTP Connection Test';
     const html = '<h1>SMTP Connection Test Successful</h1><p>Your mail server configurations are working correctly!</p>';
-    if (this.transporter) {
-      try {
-        await this.transporter.sendMail({
-          from: this.from,
-          to: email,
-          subject,
-          html,
-        });
-        this.logger.log(`Test email sent to ${email}`);
-        return { success: true };
-      } catch (err) {
-        this.logger.error(`Test email failed for ${email}`, err);
-        return { success: false, error: (err as any).message || String(err) };
-      }
-    } else {
-      return { success: false, error: 'No active SMTP transporter. Simulation mode active.' };
-    }
+    
+    // Route through the unified sendMail method so the test email can benefit from the
+    // Resend REST API HTTPS fallback on environments like Render where outbound SMTP ports are blocked.
+    return this.sendMail(email, subject, html);
   }
 
   private async sendMail(to: string, subject: string, html: string): Promise<{ success: boolean; error?: string }> {
-    // If it's a Resend API key, use Resend's REST API directly over HTTPS (Port 443)
+    const cleanPass = this.pass ? this.pass.replace(/['"]/g, '').trim() : '';
+    const cleanHost = this.host ? this.host.replace(/['"]/g, '').trim() : '';
+    const isResend = cleanHost.includes('resend') || cleanPass.startsWith('re_');
+
+    // If it's a Resend API key or Resend host, use Resend's REST API directly over HTTPS (Port 443)
     // to bypass outgoing SMTP port blocks on cloud hosts like Render.
-    if (this.pass && this.pass.startsWith('re_')) {
+    if (isResend && cleanPass) {
       try {
         const response = await fetch('https://api.resend.com/emails', {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${this.pass}`,
+            'Authorization': `Bearer ${cleanPass}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
