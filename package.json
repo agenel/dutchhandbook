@@ -19,12 +19,15 @@
     "test:e2e": "playwright test",
     "seed": "npm --workspace apps/api run seed",
     "prisma:migrate": "npm --workspace apps/api run prisma:migrate",
-    "format": "prettier --write \"**/*.{ts,js,json,md,html,scss,css}\""
+    "format": "prettier --write \"**/*.{ts,js,json,md,html,scss,css}\"",
+    "deploy:web": "npm run build:web && wrangler deploy",
+    "preview:web": "npm run build:web && wrangler versions upload"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "prettier": "^3.3.3",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "wrangler": "^4.0.0"
   },
   "engines": {
     "node": ">=20.11.0",

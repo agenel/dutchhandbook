@@ -1,0 +1,17 @@
+{
+  // Cloudflare Workers + Static Assets config for the More Dutch frontend.
+  // `npx wrangler deploy` uploads the Angular build (assets) plus the small
+  // Worker below, which reverse-proxies /api/* to the Render API so the browser
+  // stays same-origin (required for the cookie + CSRF auth).
+  "name": "moredutch",
+  "main": "worker/index.js",
+  "compatibility_date": "2024-11-06",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "apps/web/dist/web/browser",
+    // Serve index.html for unmatched client routes (Angular SPA deep links, 404 page).
+    "not_found_handling": "single-page-application",
+    // Run the Worker (API proxy) first for /api/*, before asset/SPA handling.
+    "run_worker_first": ["/api/*"]
+  }
+}
