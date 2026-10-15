@@ -62,7 +62,7 @@ import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.com
       </div>
     </md-help-dialog>
 
-    @if (selectedDeck()) {
+    @if (selectedDeck() && !finished()) {
       <div class="study">
         <div class="study-header">
           <button class="btn-back" type="button" (click)="exit()">
@@ -96,9 +96,28 @@ import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.com
         </div>
 
         <div class="study-footer">
-          <span class="card-counter">{{ index() + 1 }} / {{ selectedDeck()!.cards.length }}</span>
+          <span class="card-counter">{{ pos() + 1 }} / {{ queue().length }}</span>
           <div class="progress-container">
             <div class="progress-fill" [style.width.%]="progressPct()"></div>
+          </div>
+        </div>
+      </div>
+    } @else if (finished()) {
+      <div class="study">
+        <div class="complete-card">
+          <span class="material-icons complete-icon">celebration</span>
+          <h2>Deck complete!</h2>
+          <p>
+            You reviewed {{ reviewedCount() }} cards from
+            <strong>{{ selectedDeck()!.category }}</strong>.
+          </p>
+          <div class="complete-actions">
+            <button class="btn-action btn-easy" type="button" (click)="restart()">
+              <span class="material-icons">replay</span> Study again
+            </button>
+            <button class="btn-back" type="button" (click)="exit()">
+              <span class="material-icons">arrow_back</span> Back to Decks
+            </button>
           </div>
         </div>
       </div>
@@ -271,6 +290,27 @@ import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.com
       .btn-easy { background: #dcfce7; color: #166534; }
       .btn-hard:hover { transform: translateY(-2px); background: #fecaca; }
       .btn-easy:hover { transform: translateY(-2px); background: #bbf7d0; }
+      .complete-card {
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+        background: var(--surface, #fff);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        max-width: 460px;
+        margin: 2rem auto;
+      }
+      .complete-icon {
+        font-size: 3rem;
+        color: var(--orange, #e8500a);
+      }
+      .complete-card h2 { margin: 0.75rem 0 0.25rem; }
+      .complete-card p { color: var(--text-muted, #6b7280); margin: 0 0 1.5rem; }
+      .complete-actions {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
       .study-footer {
         margin-top: 3rem;
         display: flex;
@@ -299,30 +339,49 @@ export class FlashcardsComponent {
   });
 
   protected readonly selectedDeck = signal<FlashcardDeck | null>(null);
-  protected readonly index = signal(0);
+  /** Working queue for the session — cards rated "Hard" are re-appended so they
+   *  come back around, which is the spaced-repetition behaviour the help text
+   *  promises (previously the rating was discarded entirely). */
+  protected readonly queue = signal<{ front: string; back: string }[]>([]);
+  protected readonly pos = signal(0);
+  protected readonly reviewedCount = signal(0);
+  protected readonly finished = signal(false);
   protected readonly flipped = signal(false);
   protected readonly animating = signal(false);
   protected helpOpen = false;
 
   protected readonly current = computed(() => {
-    const d = this.selectedDeck();
-    return d ? d.cards[this.index()] : { front: '', back: '' };
+    return this.queue()[this.pos()] ?? { front: '', back: '' };
   });
   protected readonly progressPct = computed(() => {
-    const deck = this.selectedDeck();
-    return deck ? Math.round(((this.index() + 1) / deck.cards.length) * 100) : 0;
+    const len = this.queue().length;
+    return len ? Math.round((this.pos() / len) * 100) : 0;
   });
 
   select(deck: FlashcardDeck): void {
     this.selectedDeck.set(deck);
-    this.index.set(0);
+    this.startSession(deck);
+  }
+
+  restart(): void {
+    const deck = this.selectedDeck();
+    if (deck) this.startSession(deck);
+  }
+
+  private startSession(deck: FlashcardDeck): void {
+    this.queue.set(deck.cards.map((c) => ({ front: c.front, back: c.back })));
+    this.pos.set(0);
+    this.reviewedCount.set(0);
+    this.finished.set(false);
     this.flipped.set(false);
     this.animating.set(false);
   }
 
   exit(): void {
     this.selectedDeck.set(null);
-    this.index.set(0);
+    this.queue.set([]);
+    this.pos.set(0);
+    this.finished.set(false);
     this.animating.set(false);
   }
 
@@ -331,21 +390,27 @@ export class FlashcardsComponent {
     this.flipped.update((v) => !v);
   }
 
-  rate(_easy: boolean): void {
+  rate(easy: boolean): void {
     if (this.animating()) return;
-    const deck = this.selectedDeck();
-    if (!deck) return;
-    const current = this.index();
-    if (current < deck.cards.length - 1) {
-      this.animating.set(true);
-      this.flipped.set(false);
-      setTimeout(() => {
-        this.index.set(current + 1);
-        this.animating.set(false);
-      }, 300);
-    } else {
-      alert('Deck completed! Well done.');
-      this.exit();
+    if (!this.queue().length) return;
+
+    const card = this.current();
+    // "Hard" → requeue the card at the end of the session so it repeats.
+    if (!easy) {
+      this.queue.update((q) => [...q, card]);
     }
+
+    this.animating.set(true);
+    this.flipped.set(false);
+    setTimeout(() => {
+      this.reviewedCount.update((n) => n + 1);
+      const next = this.pos() + 1;
+      if (next >= this.queue().length) {
+        this.finished.set(true);
+      } else {
+        this.pos.set(next);
+      }
+      this.animating.set(false);
+    }, 300);
   }
 }

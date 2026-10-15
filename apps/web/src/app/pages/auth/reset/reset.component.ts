@@ -34,6 +34,7 @@ import { AuthService } from '../../../core/auth.service';
               placeholder="••••••••"
               formControlName="password"
             />
+            <span class="auth-hint">At least 8 characters, including a number and a symbol.</span>
           </label>
 
           <label class="auth-label">
@@ -91,6 +92,7 @@ import { AuthService } from '../../../core/auth.service';
       transition: border-color 0.2s;
     }
     .auth-input:focus { outline: none; border-color: var(--orange); }
+    .auth-hint { display: block; margin-top: 0.35rem; font-size: 0.8rem; color: var(--text-muted, #6b7280); }
     .auth-submit { width: 100%; margin-top: 1rem; }
     .auth-links { text-align: center; margin-top: 1.5rem; font-size: 0.9rem; }
     .auth-links a { color: var(--orange); text-decoration: none; font-weight: 500; }
@@ -106,8 +108,15 @@ export class ResetComponent implements OnInit {
   protected readonly loading = signal(false);
   protected readonly error = signal<string | null>(null);
 
+  // Rules must mirror the backend PasswordSchema (min 8, at least one number and
+  // one symbol) or a valid-looking form is rejected server-side with a 400.
   protected readonly form = this.fb.nonNullable.group({
-    password: ['', [Validators.required, Validators.minLength(8)]],
+    password: ['', [
+      Validators.required,
+      Validators.minLength(8),
+      Validators.pattern(/[0-9]/),
+      Validators.pattern(/[^a-zA-Z0-9]/),
+    ]],
     confirmPassword: ['', [Validators.required]],
   });
 

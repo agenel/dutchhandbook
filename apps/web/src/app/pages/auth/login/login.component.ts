@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/auth.service';
-import { ProgressService } from '../../../core/progress.service';
+import { SessionSyncService } from '../../../core/session-sync.service';
 
 @Component({
   selector: 'md-login',
@@ -122,7 +122,7 @@ import { ProgressService } from '../../../core/progress.service';
 export class LoginComponent {
   private readonly fb = inject(FormBuilder);
   private readonly auth = inject(AuthService);
-  private readonly progress = inject(ProgressService);
+  private readonly sessionSync = inject(SessionSyncService);
   private readonly router = inject(Router);
 
   protected readonly loading = signal(false);
@@ -148,9 +148,9 @@ export class LoginComponent {
       })
       .subscribe({
         next: () => {
-          this.progress.migrateAnonymousProgress().subscribe(() => {
-            this.progress.refreshFromServer().subscribe();
-            this.router.navigateByUrl('/');
+          this.sessionSync.syncAfterAuth().subscribe({
+            next: () => this.router.navigateByUrl('/'),
+            error: () => this.router.navigateByUrl('/'),
           });
         },
         error: (err: { error?: { message?: string } }) => {

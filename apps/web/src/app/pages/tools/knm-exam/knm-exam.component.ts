@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
-import { forkJoin, map, type Observable } from 'rxjs';
+import { catchError, forkJoin, map, of, tap, type Observable } from 'rxjs';
 import { AuthService } from '../../../core/auth.service';
 import { ContentService } from '../../../core/content.service';
 import { ProgressService } from '../../../core/progress.service';
@@ -116,9 +116,23 @@ type ExamState = 'setup' | 'exam' | 'results';
           </div>
 
           <div style="margin-top:1.5rem;">
-            <button class="start-btn" type="button" [disabled]="allQuestions().length === 0" (click)="startExam()">
-              Start Practice Exam
-              <span class="material-icons">play_arrow</span>
+            @if (loadFailed()) {
+              <p class="load-status error" role="alert">
+                We couldn't load the question bank. Please check your connection and refresh.
+              </p>
+            }
+            <button
+              class="start-btn"
+              type="button"
+              [disabled]="questionsLoading() || allQuestions().length === 0"
+              (click)="startExam()"
+            >
+              @if (questionsLoading()) {
+                Loading questions…
+              } @else {
+                Start Practice Exam
+                <span class="material-icons">play_arrow</span>
+              }
             </button>
           </div>
         </div>
@@ -301,6 +315,14 @@ type ExamState = 'setup' | 'exam' | 'results';
       .start-btn:disabled {
         opacity: 0.6;
         cursor: wait;
+      }
+      .load-status {
+        margin: 0 0 1rem;
+        font-size: 0.95rem;
+      }
+      .load-status.error {
+        color: #b42318;
+        font-weight: 600;
       }
       .q-header {
         display: flex;
@@ -506,12 +528,30 @@ export class KnmExamComponent {
   ] as const;
 
   private readonly chapters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+  protected readonly questionsLoading = signal(true);
+  protected readonly loadFailed = signal(false);
   protected readonly allQuestions = toSignal(
     forkJoin(
-      this.chapters.map(
-        (chapter) => this.content.knm(chapter) as Observable<KnmQuestion[]>,
+      // Per-chapter catchError so a single failed request degrades gracefully
+      // to the chapters that did load, instead of forkJoin erroring and leaving
+      // the Start button silently disabled with no explanation.
+      this.chapters.map((chapter) =>
+        (this.content.knm(chapter) as Observable<KnmQuestion[]>).pipe(
+          catchError(() => of([] as KnmQuestion[])),
+        ),
       ),
-    ).pipe(map((chapters) => chapters.flat().map((question) => this.normalizeQuestion(question)))),
+    ).pipe(
+      map((chapters) => chapters.flat().map((question) => this.normalizeQuestion(question))),
+      tap((all) => {
+        this.questionsLoading.set(false);
+        if (all.length === 0) this.loadFailed.set(true);
+      }),
+      catchError(() => {
+        this.questionsLoading.set(false);
+        this.loadFailed.set(true);
+        return of([] as KnmQuestion[]);
+      }),
+    ),
     { initialValue: [] as KnmQuestion[] },
   );
 

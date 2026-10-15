@@ -2,6 +2,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  DestroyRef,
   computed,
   effect,
   inject,
@@ -208,7 +209,7 @@ interface WheelTense {
                 } @else {
                   <span class="pronoun-sm">ik</span>
                   <span class="conj-form">{{ getConjugations(verb).imperfectum_sg }}</span>
-                  <span class="translation">I saw</span>
+                  <span class="translation">{{ pastMeaning(verb) }}</span>
                 }
               </div>
             </div>
@@ -649,6 +650,14 @@ export class VerbWheelComponent {
     return 'I ' + eng.replace('to ', '');
   });
 
+  /** Past-tense gloss for the browse card. The dataset has no English past
+   *  forms, so we show the correct verb with a "(past)" marker rather than the
+   *  old hardcoded "I saw" that was wrong for every verb. */
+  protected pastMeaning(verb: VerbExt): string {
+    const base = (verb.english ?? '').replace('to ', '').trim();
+    return base ? `I ${base} (past)` : '';
+  }
+
   protected readonly correctAnswer = computed(() => {
     const v = this.currentVerb();
     if (!v) return '';
@@ -666,6 +675,9 @@ export class VerbWheelComponent {
       const len = this.deck().length;
       if (this.cardIndex() >= len && len > 0) this.cardIndex.set(0);
     });
+
+    // Don't let a pending auto-advance mutate signals after the user navigates away.
+    inject(DestroyRef).onDestroy(() => this.clearDrillTimer());
   }
 
   prev() { if (this.cardIndex() > 0) { this.cardIndex.update(i => i - 1); this.resetDrillState(); } }
@@ -681,7 +693,11 @@ export class VerbWheelComponent {
     this.resetDrillState();
   }
 
+  private drillTimer: ReturnType<typeof setTimeout> | null = null;
+
   checkDrill() {
+    // Ignore a second submit while the auto-advance is already pending.
+    if (this.drillResult() !== null) return;
     const answer = this.drillAnswer().trim().toLowerCase();
     const correct = this.correctAnswer().trim().toLowerCase();
     this.drillTotal.update(n => n + 1);
@@ -691,13 +707,24 @@ export class VerbWheelComponent {
     } else {
       this.drillResult.set('wrong');
     }
-    setTimeout(() => this.nextDrill(), 1600);
+    this.clearDrillTimer();
+    this.drillTimer = setTimeout(() => this.nextDrill(), 1600);
   }
 
   nextDrill() {
+    // Cancel any pending auto-advance so a manual "Next" click can't be
+    // followed by the timer firing and skipping a card.
+    this.clearDrillTimer();
     this.next();
     this.pickHiddenTense();
     this.resetDrillState();
+  }
+
+  private clearDrillTimer() {
+    if (this.drillTimer !== null) {
+      clearTimeout(this.drillTimer);
+      this.drillTimer = null;
+    }
   }
 
   private pickHiddenTense() {

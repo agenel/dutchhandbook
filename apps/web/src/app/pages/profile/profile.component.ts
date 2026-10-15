@@ -1,9 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   inject,
   signal,
-  OnInit,
 } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -271,7 +271,7 @@ import { ProgressService } from '../../core/progress.service';
     `,
   ],
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
   protected readonly auth = inject(AuthService);
   protected readonly progress = inject(ProgressService);
   private readonly router = inject(Router);
@@ -285,15 +285,28 @@ export class ProfileComponent implements OnInit {
     totalKnmAttempts: number;
   } | null>(null);
 
-  ngOnInit(): void {
-    if (this.auth.isAuthenticated()) {
-      this.progress.getAttempts().subscribe((items) => this.attempts.set(items));
-      this.progress.getStats().subscribe((s) => this.userStats.set(s));
-      // Refresh signals from server so counts are in sync
-      this.progress.refreshVerbsFromServer().subscribe();
-      this.progress.refreshNounsFromServer().subscribe();
-      this.progress.refreshCommonWordsFromServer().subscribe();
-    }
+  private loaded = false;
+
+  constructor() {
+    // React to the auth signal rather than checking once in ngOnInit: on a hard
+    // refresh of /profile the session bootstrap hasn't resolved yet, so a one-shot
+    // `isAuthenticated()` check would be false and the page would render empty
+    // stats until an in-app re-navigation.
+    effect(() => {
+      if (this.auth.isAuthenticated() && !this.loaded) {
+        this.loaded = true;
+        this.loadProfileData();
+      }
+    });
+  }
+
+  private loadProfileData(): void {
+    this.progress.getAttempts().subscribe((items) => this.attempts.set(items));
+    this.progress.getStats().subscribe((s) => this.userStats.set(s));
+    // Refresh signals from server so counts are in sync
+    this.progress.refreshVerbsFromServer().subscribe();
+    this.progress.refreshNounsFromServer().subscribe();
+    this.progress.refreshCommonWordsFromServer().subscribe();
   }
 
   signOut(): void {

@@ -2,6 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  DestroyRef,
   PLATFORM_ID,
   computed,
   effect,
@@ -394,20 +395,28 @@ export class VerbExplorerComponent {
       if (!isPlatformBrowser(this.platformId)) return;
       localStorage.setItem(MASTERED_VERBS_KEY, JSON.stringify(this.masteredIds()));
     });
+
+    // Lock body scroll while the detail panel is open, driven purely by state so
+    // it can never get stuck: an in-panel router link (e.g. "Practice in Wheel")
+    // navigates away without calling closeDetail(), and without this the whole
+    // app would stay unscrollable until reload.
+    effect(() => {
+      if (!isPlatformBrowser(this.platformId)) return;
+      document.body.style.overflow = this.selectedVerb() ? 'hidden' : '';
+    });
+
+    // Belt-and-braces: always release the lock when the component is destroyed.
+    inject(DestroyRef).onDestroy(() => {
+      if (isPlatformBrowser(this.platformId)) document.body.style.overflow = '';
+    });
   }
 
   protected openDetail(verb: VerbWithLegacyFields): void {
     this.selectedVerb.set(verb);
-    if (isPlatformBrowser(this.platformId)) {
-      document.body.style.overflow = 'hidden';
-    }
   }
 
   protected closeDetail(): void {
     this.selectedVerb.set(null);
-    if (isPlatformBrowser(this.platformId)) {
-      document.body.style.overflow = '';
-    }
   }
 
   protected isMastered(verb: VerbWithLegacyFields): boolean {

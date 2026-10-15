@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, signal, computed } from '@a
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/auth.service';
+import { SessionSyncService } from '../../../core/session-sync.service';
 
 @Component({
   selector: 'md-register',
@@ -139,6 +140,7 @@ import { AuthService } from '../../../core/auth.service';
 export class RegisterComponent {
   private readonly fb = inject(FormBuilder);
   private readonly auth = inject(AuthService);
+  private readonly sessionSync = inject(SessionSyncService);
   private readonly router = inject(Router);
 
   protected readonly loading = signal(false);
@@ -183,6 +185,7 @@ export class RegisterComponent {
         next: () => {
           this.success.set(true);
           this.loading.set(false);
+          this.sessionSync.syncAfterAuth().subscribe();
           setTimeout(() => this.router.navigateByUrl('/'), 2000);
         },
         error: (err: { error?: { message?: string } }) => {

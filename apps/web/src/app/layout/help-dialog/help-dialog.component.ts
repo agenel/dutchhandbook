@@ -1,4 +1,15 @@
-import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  HostListener,
+  PLATFORM_ID,
+  effect,
+  inject,
+  input,
+  model,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -8,7 +19,13 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (visible()) {
-      <div class="help-modal active" (click)="closeFromBackdrop($event)">
+      <div
+        class="help-modal active"
+        role="dialog"
+        aria-modal="true"
+        [attr.aria-label]="'Help'"
+        (click)="closeFromBackdrop($event)"
+      >
         <div class="help-content">
           <button class="help-close" type="button" aria-label="Close help" (click)="visible.set(false)">
             <span class="material-icons">close</span>
@@ -38,6 +55,24 @@ import { RouterLink } from '@angular/router';
 export class HelpDialogComponent {
   readonly visible = model<boolean>(false);
   readonly title = input<string>('How it works');
+
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+
+  constructor() {
+    // Lock background scroll while the dialog is open; always release on destroy.
+    effect(() => {
+      if (!this.isBrowser) return;
+      document.body.style.overflow = this.visible() ? 'hidden' : '';
+    });
+    inject(DestroyRef).onDestroy(() => {
+      if (this.isBrowser) document.body.style.overflow = '';
+    });
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.visible()) this.visible.set(false);
+  }
 
   closeFromBackdrop(event: MouseEvent): void {
     if (event.target instanceof HTMLElement && event.target.classList.contains('help-modal')) {

@@ -227,5 +227,13 @@ export const routes: Routes = [
     canActivate: [adminGuard],
     loadChildren: () => import('./pages/admin/admin.routes').then(m => m.ADMIN_ROUTES),
   },
-  { path: '**', redirectTo: '' },
+  {
+    path: '**',
+    loadComponent: () => import('./pages/not-found/not-found.component').then((m) => m.NotFoundComponent),
+    data: {
+      title: 'Page not found — More Dutch',
+      description: 'The page you were looking for could not be found.',
+      robots: 'noindex, follow',
+    },
+  },
 ];

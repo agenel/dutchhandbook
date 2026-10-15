@@ -4,6 +4,17 @@
     <meta charset="utf-8" />
     <title>More Dutch — Interactive Dutch Grammar Hub & Cheat Sheets</title>
     <base href="/" />
+    <!-- Apply the saved theme before first paint so dark-mode users don't get a
+         white flash on every load. Mirrors ThemeService (key: dgh_dark_mode). -->
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('dgh_dark_mode') === 'true') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="The ultimate interactive hub for Dutch learners. Master A1-B1 grammar with 15+ cheat sheets, verb explorers, flashcards, and drills." />
     <meta name="author" content="soylu.dev" />
@@ -23,10 +34,18 @@
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet"
+      />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    </noscript>
   </head>
   <body>
     <md-root></md-root>

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, PLATFORM_ID, computed, inject, signal } from '@angular/core';
 import type { LoginDto, RegisterDto } from '@moredutch/shared';
 import type { PublicUser } from '@moredutch/shared';
-import { Observable, catchError, of, tap } from 'rxjs';
+import { Observable, catchError, of, shareReplay, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -15,16 +15,29 @@ export class AuthService {
   private readonly _user = signal<PublicUser | null>(null);
   readonly user = computed(() => this._user());
   readonly isAuthenticated = computed(() => this._user() !== null);
+  /** True once the initial `/auth/me` bootstrap has resolved (success or not). */
+  readonly ready = signal(false);
+
+  /** Shared, single-flight bootstrap so guards and the shell don't each fire `/auth/me`. */
+  private bootstrap$?: Observable<PublicUser | null>;
 
   bootstrap(): Observable<PublicUser | null> {
     if (!this.isBrowser) return of(null);
-    return this.http.get<PublicUser>(`${this.base}/me`).pipe(
-      tap((u) => this._user.set(u)),
-      catchError(() => {
-        this._user.set(null);
-        return of(null);
-      }),
-    );
+    if (!this.bootstrap$) {
+      this.bootstrap$ = this.http.get<PublicUser>(`${this.base}/me`).pipe(
+        tap((u) => {
+          this._user.set(u);
+          this.ready.set(true);
+        }),
+        catchError(() => {
+          this._user.set(null);
+          this.ready.set(true);
+          return of(null);
+        }),
+        shareReplay(1),
+      );
+    }
+    return this.bootstrap$;
   }
 
   register(dto: RegisterDto): Observable<PublicUser> {
