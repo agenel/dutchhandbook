@@ -42,32 +42,46 @@ export class MailService {
     }
   }
 
+  private getAllowedOrigins(): string[] {
+    return (this.config.get<string>('CORS_ALLOWED_ORIGINS') || '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
+
   private getSiteUrl(req?: any): string {
-    // 1. Try to extract origin from the dynamic request headers (Origin, Host, or Referer)
-    if (req) {
-      const origin = req.headers?.origin || req.headers?.['x-forwarded-host'] || req.headers?.referer;
-      if (origin) {
-        try {
-          const urlStr = origin.startsWith('http') ? origin : `https://${origin}`;
-          const url = new URL(urlStr);
-          const parsedOrigin = url.origin;
-          
-          const isProd = this.config.get<string>('NODE_ENV') === 'production' || process.env.NODE_ENV === 'production';
-          // Only use origin if we are not in production or it doesn't point to localhost
-          if (!isProd || (!parsedOrigin.includes('localhost') && !parsedOrigin.includes('127.0.0.1'))) {
-            return parsedOrigin;
+    // SECURITY: email links (password reset / verification) must never be built
+    // from attacker-controlled headers — doing so lets an attacker request a
+    // reset for a victim with `Origin: evil.com` and receive a legit-looking
+    // email whose link carries a valid token to their host (account takeover).
+    //
+    // We only honour the request Origin when it EXACTLY matches a configured
+    // CORS allowlist entry (so multi-domain deploys still work); otherwise we
+    // fall back to the configured SITE_URL.
+    const headerOrigin = req?.headers?.origin;
+    if (typeof headerOrigin === 'string' && headerOrigin) {
+      const allowed = this.getAllowedOrigins();
+      try {
+        const parsedOrigin = new URL(headerOrigin).origin;
+        const isAllowed = allowed.some((entry) => {
+          try {
+            return new URL(entry).origin === parsedOrigin;
+          } catch {
+            return false;
           }
-        } catch (e) {
-          // Ignore URL parsing exceptions and fall back
-        }
+        });
+        if (isAllowed) return parsedOrigin;
+      } catch {
+        // fall through to configured SITE_URL
       }
     }
 
-    // 2. Use the configured siteUrl
     const url = this.siteUrl || '';
 
-    // 3. Self-healing fallback: If we are in production but the URL points to localhost, automatically override with the production domain.
-    const isProd = this.config.get<string>('NODE_ENV') === 'production' || process.env.NODE_ENV === 'production';
+    // Self-healing fallback: if we are in production but the configured URL is
+    // missing or points to localhost, use the canonical production domain.
+    const isProd =
+      this.config.get<string>('NODE_ENV') === 'production' || process.env.NODE_ENV === 'production';
     if (isProd && (url.includes('localhost') || url.includes('127.0.0.1') || !url)) {
       return 'https://moredutch.com';
     }

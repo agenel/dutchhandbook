@@ -8,6 +8,11 @@ build/
 .angular/
 .next/
 .turbo/
+# Compiled TS output accidentally emitted next to sources
+packages/shared/src/**/*.js
+packages/shared/src/**/*.js.map
+packages/shared/src/**/*.d.ts
+packages/shared/src/**/*.d.ts.map
 
 # Environment
 .env

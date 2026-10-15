@@ -1,4 +1,5 @@
 import { Body, Controller, Get, HttpCode, Post, Req, Res, UnauthorizedException } from '@nestjs/common';
+import { Throttle } from '@nestjs/throttler';
 import { Request, Response } from 'express';
 import type { LoginDto, RegisterDto, PasswordResetRequestDto, PasswordResetConfirmDto, PublicUser } from '@moredutch/shared';
 import {
@@ -6,6 +7,7 @@ import {
   RegisterSchema,
   PasswordResetRequestSchema,
   PasswordResetConfirmSchema,
+  VerifyEmailSchema,
 } from '../schemas/validation';
 import { SkipCsrf } from '../common/csrf.guard';
 import { ZodValidationPipe } from '../common/zod.pipe';
@@ -25,6 +27,7 @@ export class AuthController {
   }
 
   @SkipCsrf()
+  @Throttle({ long: { limit: 5, ttl: 60000 } })
   @Post('register')
   async register(
     @Body(new ZodValidationPipe(RegisterSchema)) dto: RegisterDto,
@@ -36,6 +39,7 @@ export class AuthController {
   }
 
   @SkipCsrf()
+  @Throttle({ long: { limit: 10, ttl: 60000 } })
   @Post('login')
   @HttpCode(200)
   async login(
@@ -62,6 +66,7 @@ export class AuthController {
   }
 
   @SkipCsrf()
+  @Throttle({ long: { limit: 5, ttl: 60000 } })
   @Post('password/request-reset')
   @HttpCode(204)
   async requestReset(
@@ -73,6 +78,7 @@ export class AuthController {
   }
 
   @SkipCsrf()
+  @Throttle({ long: { limit: 10, ttl: 60000 } })
   @Post('password/confirm-reset')
   @HttpCode(204)
   async confirmReset(
@@ -82,12 +88,13 @@ export class AuthController {
   }
 
   @SkipCsrf()
+  @Throttle({ long: { limit: 10, ttl: 60000 } })
   @Post('email/verify')
   @HttpCode(204)
-  async verifyEmail(@Body() body: { token?: string }): Promise<void> {
-    const token = String(body?.token ?? '');
-    if (!token) throw new UnauthorizedException();
-    await this.auth.verifyEmail(token);
+  async verifyEmail(
+    @Body(new ZodValidationPipe(VerifyEmailSchema)) dto: { token: string },
+  ): Promise<void> {
+    await this.auth.verifyEmail(dto.token);
   }
 }
 

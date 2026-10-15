@@ -8,21 +8,17 @@ import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '../prisma/prisma.service';
 import { Request, Response } from 'express';
 import argon2 from 'argon2';
-import { randomBytes } from 'node:crypto';
 import type { LoginDto, RegisterDto, PublicUser } from '@moredutch/shared';
 import { SessionsService } from './sessions.service';
 import { AuditService } from '../common/audit.service';
 import { MailService } from '../mail/mail.service';
+import { generateToken, hashToken } from '../common/token.util';
 
 const COOKIE_SID = 'mc_sid';
 const COOKIE_CSRF = 'mc_csrf';
 
 function normalizeEmail(email: string): string {
   return email.trim().toLowerCase();
-}
-
-function randToken(bytes = 32): string {
-  return randomBytes(bytes).toString('base64url');
 }
 
 @Injectable()
@@ -40,6 +36,15 @@ export class AuthService {
     if (!session) throw new UnauthorizedException();
     const user = await this.prisma.user.findUnique({ where: { id: session.userId } });
     if (!user) throw new UnauthorizedException();
+    if (user.isBanned) {
+      // Revoke the live session so a ban takes effect immediately, not only on
+      // next login.
+      await this.prisma.session.update({
+        where: { id: session.id },
+        data: { revokedAt: new Date() },
+      });
+      throw new ForbiddenException({ message: 'Account suspended' });
+    }
     // Re-issue the CSRF cookie when a response object is available (e.g. /auth/me
     // bootstrap call) so returning users always have a fresh token even when
     // they never went through login in the current browser session.
@@ -68,14 +73,13 @@ export class AuthService {
       },
     });
 
-    // Email verification token (logged for now until SMTP is wired).
-    const verifyToken = randToken(32);
-    const verifyHash = await argon2.hash(verifyToken, { type: argon2.argon2id });
+    // Email verification token — stored as a fast SHA-256 hash (see token.util).
+    const verifyToken = generateToken(32);
     await this.prisma.emailToken.create({
       data: {
         userId: user.id,
         purpose: 'VERIFY',
-        tokenHash: verifyHash,
+        tokenHash: hashToken(verifyToken),
         expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
       },
     });
@@ -96,6 +100,11 @@ export class AuthService {
     if (!user) {
       await this.logEvent(null, 'LOGIN_FAILED', req, { email });
       throw new UnauthorizedException({ message: 'Invalid email or password' });
+    }
+
+    if (user.isBanned) {
+      await this.logEvent(user.id, 'LOGIN_BANNED', req);
+      throw new ForbiddenException({ message: 'Account suspended' });
     }
 
     if (user.lockedUntil && user.lockedUntil.getTime() > Date.now()) {
@@ -150,14 +159,13 @@ export class AuthService {
     const user = await this.prisma.user.findFirst({ where: { emailNormalized: email } });
     if (!user) return;
 
-    const token = randToken(32);
-    const tokenHash = await argon2.hash(token, { type: argon2.argon2id });
+    const token = generateToken(32);
 
     await this.prisma.emailToken.create({
       data: {
         userId: user.id,
         purpose: 'PASSWORD_RESET',
-        tokenHash,
+        tokenHash: hashToken(token),
         expiresAt: new Date(Date.now() + 60 * 60 * 1000),
       },
     });
@@ -170,44 +178,43 @@ export class AuthService {
   }
 
   async confirmPasswordReset(token: string, newPassword: string): Promise<void> {
-    const candidates = await this.prisma.emailToken.findMany({
-      where: { purpose: 'PASSWORD_RESET', usedAt: null, expiresAt: { gt: new Date() } },
-      take: 50,
-      orderBy: { createdAt: 'desc' },
-      include: { user: true },
+    const t = await this.prisma.emailToken.findUnique({
+      where: { tokenHash: hashToken(token) },
     });
-
-    for (const t of candidates) {
-      const ok = await argon2.verify(t.tokenHash, token);
-      if (!ok) continue;
-      const passwordHash = await argon2.hash(newPassword, { type: argon2.argon2id });
-      await this.prisma.$transaction([
-        this.prisma.user.update({ where: { id: t.userId }, data: { passwordHash } }),
-        this.prisma.emailToken.update({ where: { id: t.id }, data: { usedAt: new Date() } }),
-        this.prisma.session.updateMany({ where: { userId: t.userId }, data: { revokedAt: new Date() } }),
-      ]);
-      return;
+    if (
+      !t ||
+      t.purpose !== 'PASSWORD_RESET' ||
+      t.usedAt ||
+      t.expiresAt.getTime() <= Date.now()
+    ) {
+      throw new UnauthorizedException({ message: 'Invalid or expired token' });
     }
 
-    throw new UnauthorizedException({ message: 'Invalid or expired token' });
+    const passwordHash = await argon2.hash(newPassword, { type: argon2.argon2id });
+    await this.prisma.$transaction([
+      this.prisma.user.update({ where: { id: t.userId }, data: { passwordHash } }),
+      this.prisma.emailToken.update({ where: { id: t.id }, data: { usedAt: new Date() } }),
+      this.prisma.session.updateMany({ where: { userId: t.userId }, data: { revokedAt: new Date() } }),
+    ]);
   }
 
   async verifyEmail(token: string): Promise<void> {
-    const candidates = await this.prisma.emailToken.findMany({
-      where: { purpose: 'VERIFY', usedAt: null, expiresAt: { gt: new Date() } },
-      take: 50,
-      orderBy: { createdAt: 'desc' },
+    const t = await this.prisma.emailToken.findUnique({
+      where: { tokenHash: hashToken(token) },
     });
-    for (const t of candidates) {
-      const ok = await argon2.verify(t.tokenHash, token);
-      if (!ok) continue;
-      await this.prisma.$transaction([
-        this.prisma.user.update({ where: { id: t.userId }, data: { emailVerified: true } }),
-        this.prisma.emailToken.update({ where: { id: t.id }, data: { usedAt: new Date() } }),
-      ]);
-      return;
+    if (
+      !t ||
+      t.purpose !== 'VERIFY' ||
+      t.usedAt ||
+      t.expiresAt.getTime() <= Date.now()
+    ) {
+      throw new UnauthorizedException({ message: 'Invalid or expired token' });
     }
-    throw new UnauthorizedException({ message: 'Invalid or expired token' });
+
+    await this.prisma.$transaction([
+      this.prisma.user.update({ where: { id: t.userId }, data: { emailVerified: true } }),
+      this.prisma.emailToken.update({ where: { id: t.id }, data: { usedAt: new Date() } }),
+    ]);
   }
 
   toPublic(user: {
@@ -251,7 +258,7 @@ export class AuthService {
   }
 
   issueCsrfCookie(res: Response): void {
-    const token = randToken(24);
+    const token = generateToken(24);
     res.cookie(COOKIE_CSRF, token, this.csrfCookieOptions());
   }
 

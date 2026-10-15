@@ -3,8 +3,7 @@ import { PrismaService } from '../prisma/prisma.service';
 import { AuditService } from '../common/audit.service';
 import { Request } from 'express';
 import { MailService } from '../mail/mail.service';
-import argon2 from 'argon2';
-import { randomBytes } from 'node:crypto';
+import { generateToken, hashToken } from '../common/token.util';
 import type { 
   AdminUserDto, 
   AdminStatsDto, 
@@ -340,14 +339,13 @@ export class AdminService {
 
     await this.audit.logEvent((req as any).user?.id, 'ADMIN_RESEND_VERIFICATION', req, { targetUserId: userId, targetEmail: user.email });
 
-    const verifyToken = randomBytes(32).toString('base64url');
-    const verifyHash = await argon2.hash(verifyToken, { type: argon2.argon2id });
-    
+    const verifyToken = generateToken(32);
+
     await this.prisma.emailToken.create({
       data: {
         userId: user.id,
         purpose: 'VERIFY',
-        tokenHash: verifyHash,
+        tokenHash: hashToken(verifyToken),
         expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
       },
     });

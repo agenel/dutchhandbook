@@ -74,6 +74,11 @@ import * as path from 'path';
     AdminModule,
   ],
   providers: [
+    // ThrottlerGuard needs Reflector injected; provide it explicitly.
+    Reflector,
+    // Rate limiting runs first so throttled requests are rejected before any
+    // heavier work (argon2 hashing, DB writes, email sends) happens.
+    { provide: APP_GUARD, useClass: ThrottlerGuard },
     { provide: APP_GUARD, useClass: CsrfGuard },
     { provide: APP_FILTER, useClass: GlobalExceptionFilter },
   ],

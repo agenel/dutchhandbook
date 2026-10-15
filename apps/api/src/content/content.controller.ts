@@ -2,6 +2,21 @@ import { Controller, Get } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 
 /**
+ * Config keys that are safe to expose to unauthenticated browsers. These are all
+ * client-side analytics/chat identifiers that ship to the browser anyway. Any
+ * other key an admin stores in SystemSetting (internal URLs, secrets, feature
+ * flags) is NEVER returned by this public endpoint.
+ */
+const PUBLIC_CONFIG_KEYS = [
+  'googleAnalyticsKey',
+  'googleTagManagerId',
+  'posthogKey',
+  'intercomAppId',
+  'crispWebsiteId',
+  'metaPixelId',
+] as const;
+
+/**
  * Placeholder content API.
  *
  * The SPA currently ships its learning content as static JSON assets.
@@ -20,7 +35,9 @@ export class ContentController {
 
   @Get('config')
   async config(): Promise<Record<string, string>> {
-    const settings = await this.prisma.systemSetting.findMany();
+    const settings = await this.prisma.systemSetting.findMany({
+      where: { key: { in: [...PUBLIC_CONFIG_KEYS] } },
+    });
     return settings.reduce((acc, curr) => {
       acc[curr.key] = curr.value;
       return acc;
