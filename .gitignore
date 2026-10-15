@@ -57,3 +57,6 @@ playwright/.cache/
 *.db-journal
 package-lock.json
 *.tsbuildinfo
+
+# Claude Code ephemeral worktrees (not real submodules)
+.claude/worktrees/
