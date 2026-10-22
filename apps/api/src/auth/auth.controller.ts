@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, Post, Req, Res, UnauthorizedException } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Patch, Post, Req, Res, UnauthorizedException } from '@nestjs/common';
 import { Throttle } from '@nestjs/throttler';
 import { Request, Response } from 'express';
 import type { LoginDto, RegisterDto, PasswordResetRequestDto, PasswordResetConfirmDto, PublicUser } from '@moredutch/shared';
@@ -8,6 +8,9 @@ import {
   PasswordResetRequestSchema,
   PasswordResetConfirmSchema,
   VerifyEmailSchema,
+  ChangePasswordSchema,
+  UpdateProfileSchema,
+  DeleteAccountSchema,
 } from '../schemas/validation';
 import { SkipCsrf } from '../common/csrf.guard';
 import { ZodValidationPipe } from '../common/zod.pipe';
@@ -24,6 +27,45 @@ export class AuthController {
   ): Promise<PublicUser> {
     const user = await this.auth.requireUser(req, res);
     return user;
+  }
+
+  /** App bootstrap: always 200, so anonymous page views don't log a 401. */
+  @Get('session')
+  async session(
+    @Req() req: Request,
+    @Res({ passthrough: true }) res: Response,
+  ): Promise<{ user: PublicUser | null }> {
+    return { user: await this.auth.currentUser(req, res) };
+  }
+
+  @Throttle({ long: { limit: 5, ttl: 60000 } })
+  @Post('password/change')
+  @HttpCode(204)
+  async changePassword(
+    @Body(new ZodValidationPipe(ChangePasswordSchema)) dto: { currentPassword: string; newPassword: string },
+    @Req() req: Request,
+  ): Promise<void> {
+    await this.auth.changePassword(req, dto);
+  }
+
+  @Throttle({ long: { limit: 20, ttl: 60000 } })
+  @Patch('profile')
+  async updateProfile(
+    @Body(new ZodValidationPipe(UpdateProfileSchema)) dto: { displayName?: string | null },
+    @Req() req: Request,
+  ): Promise<PublicUser> {
+    return this.auth.updateProfile(req, dto);
+  }
+
+  @Throttle({ long: { limit: 5, ttl: 60000 } })
+  @Post('account/delete')
+  @HttpCode(204)
+  async deleteAccount(
+    @Body(new ZodValidationPipe(DeleteAccountSchema)) dto: { password: string },
+    @Req() req: Request,
+    @Res({ passthrough: true }) res: Response,
+  ): Promise<void> {
+    await this.auth.deleteAccount(req, res, dto);
   }
 
   @SkipCsrf()

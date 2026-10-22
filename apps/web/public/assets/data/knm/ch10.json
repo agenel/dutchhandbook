@@ -258,5 +258,330 @@
     ],
     "answer": "Elke 5 jaar",
     "correctIndex": 2
+  },
+  {
+    "id": "ch10-n-0",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Hoeveel leden heeft de Eerste Kamer?",
+    "options": [
+      "75",
+      "100",
+      "150",
+      "225"
+    ],
+    "answer": "75",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-1",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Door wie worden de leden van de Eerste Kamer gekozen?",
+    "options": [
+      "Rechtstreeks door alle Nederlanders",
+      "Door de leden van de Provinciale Staten",
+      "Door de koning",
+      "Door de burgemeesters"
+    ],
+    "answer": "Door de leden van de Provinciale Staten",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch10-n-2",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Hoe heten de Eerste Kamer en de Tweede Kamer samen?",
+    "options": [
+      "De regering",
+      "De Staten-Generaal (het parlement)",
+      "De gemeenteraad",
+      "De ministerraad"
+    ],
+    "answer": "De Staten-Generaal (het parlement)",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch10-n-3",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Uit hoeveel provincies bestaat Nederland?",
+    "options": [
+      "7",
+      "10",
+      "12",
+      "16"
+    ],
+    "answer": "12",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch10-n-4",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Wie is de voorzitter van het bestuur van een provincie?",
+    "options": [
+      "De burgemeester",
+      "De commissaris van de Koning",
+      "De minister-president",
+      "De wethouder"
+    ],
+    "answer": "De commissaris van de Koning",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch10-n-5",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Waar zorgt een waterschap voor?",
+    "options": [
+      "Het onderhoud van dijken en schoon en veilig water",
+      "Het maken van landelijke wetten",
+      "Het leger",
+      "De scholen"
+    ],
+    "answer": "Het onderhoud van dijken en schoon en veilig water",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-6",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Hoe heet de volksvertegenwoordiging van een gemeente die door de inwoners wordt gekozen?",
+    "options": [
+      "De Tweede Kamer",
+      "De gemeenteraad",
+      "De Provinciale Staten",
+      "De ministerraad"
+    ],
+    "answer": "De gemeenteraad",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch10-n-7",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Wie vormen samen met de burgemeester het dagelijks bestuur van de gemeente?",
+    "options": [
+      "De wethouders",
+      "De ministers",
+      "De rechters",
+      "De provincies"
+    ],
+    "answer": "De wethouders",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-8",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Wat gebeurt er op Prinsjesdag, de derde dinsdag van september?",
+    "options": [
+      "De koning leest de troonrede voor met de plannen van de regering",
+      "Er is een grote voetbalwedstrijd",
+      "Iedereen heeft verplicht een vrije dag",
+      "De koning wordt gekozen"
+    ],
+    "answer": "De koning leest de troonrede voor met de plannen van de regering",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-9",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Wat zijn de belangrijkste stukken van de regering die op Prinsjesdag bekend worden?",
+    "options": [
+      "De troonrede en de Miljoenennota",
+      "Het weerbericht",
+      "De voetbalcompetitie",
+      "De schoolvakanties"
+    ],
+    "answer": "De troonrede en de Miljoenennota",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-10",
+    "topic": "Verkiezingen (Elections)",
+    "question": "Wat is een 'coalitie'?",
+    "options": [
+      "Een samenwerking van partijen die samen de regering vormen",
+      "Een groep rechters",
+      "Een sportclub",
+      "Een groep van alle burgemeesters"
+    ],
+    "answer": "Een samenwerking van partijen die samen de regering vormen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-11",
+    "topic": "Verkiezingen (Elections)",
+    "question": "Wat is de 'oppositie' in de Tweede Kamer?",
+    "options": [
+      "De partijen die niet meeregeren en de regering controleren",
+      "De partijen die samen de regering vormen",
+      "De rechters",
+      "De ambtenaren van de gemeente"
+    ],
+    "answer": "De partijen die niet meeregeren en de regering controleren",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-12",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Hoe noemen we de ministers en staatssecretarissen samen, die het land besturen?",
+    "options": [
+      "Het kabinet",
+      "De gemeenteraad",
+      "De rechtbank",
+      "De Provinciale Staten"
+    ],
+    "answer": "Het kabinet",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-13",
+    "topic": "De regels (The rules)",
+    "question": "Wat doet de Belastingdienst?",
+    "options": [
+      "Belasting innen voor de overheid",
+      "Wetten maken",
+      "De koning kiezen",
+      "Rechtszaken behandelen"
+    ],
+    "answer": "Belasting innen voor de overheid",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-14",
+    "topic": "De regels (The rules)",
+    "question": "Waarom is het belangrijk dat de rechter onafhankelijk is?",
+    "options": [
+      "Zodat de rechter eerlijk kan oordelen, zonder bemoeienis van de regering",
+      "Zodat de rechter meer geld verdient",
+      "Zodat de rechter meer vakantie heeft",
+      "Dat is niet belangrijk"
+    ],
+    "answer": "Zodat de rechter eerlijk kan oordelen, zonder bemoeienis van de regering",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-15",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Welke rol heeft de koning in de Nederlandse politiek?",
+    "options": [
+      "Hij bestuurt het land helemaal alleen",
+      "Hij heeft vooral een ceremoniële rol en is politiek neutraal",
+      "Hij maakt zelf alle wetten",
+      "Hij kiest de rechters"
+    ],
+    "answer": "Hij heeft vooral een ceremoniële rol en is politiek neutraal",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch10-n-16",
+    "topic": "De regels (The rules)",
+    "question": "Welke vrijheid staat in de Grondwet, naast de vrijheid van meningsuiting?",
+    "options": [
+      "De vrijheid van godsdienst",
+      "De vrijheid om geen belasting te betalen",
+      "De vrijheid om door rood te rijden",
+      "De vrijheid om niet naar school te gaan"
+    ],
+    "answer": "De vrijheid van godsdienst",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-17",
+    "topic": "Verkiezingen (Elections)",
+    "question": "Wie mag meestal stemmen bij de gemeenteraadsverkiezingen?",
+    "options": [
+      "Alleen de burgemeester",
+      "Inwoners van 18 jaar en ouder, ook veel niet-Nederlanders die er langer wonen",
+      "Alleen mensen met veel geld",
+      "Alleen kinderen"
+    ],
+    "answer": "Inwoners van 18 jaar en ouder, ook veel niet-Nederlanders die er langer wonen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch10-n-18",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Waar vraag je een paspoort of identiteitskaart aan?",
+    "options": [
+      "Bij de gemeente",
+      "Bij de Tweede Kamer",
+      "Bij de rechtbank",
+      "Bij de koning"
+    ],
+    "answer": "Bij de gemeente",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-19",
+    "topic": "Nederland en Europa",
+    "question": "Van welke internationale organisaties is Nederland lid?",
+    "options": [
+      "De Europese Unie, de Verenigde Naties en de NAVO",
+      "Alleen van een voetbalbond",
+      "Van geen enkele organisatie",
+      "Alleen van de VOC"
+    ],
+    "answer": "De Europese Unie, de Verenigde Naties en de NAVO",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-20",
+    "topic": "De regels (The rules)",
+    "question": "Wat is 'naturalisatie'?",
+    "options": [
+      "Nederlander worden (de Nederlandse nationaliteit krijgen)",
+      "Het planten van bomen",
+      "Het betalen van belasting",
+      "Het halen van een rijbewijs"
+    ],
+    "answer": "Nederlander worden (de Nederlandse nationaliteit krijgen)",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-21",
+    "topic": "De regels (The rules)",
+    "question": "Wat is de scheiding der machten (trias politica)?",
+    "options": [
+      "De wetgevende, uitvoerende en rechterlijke macht zijn van elkaar gescheiden",
+      "De koning heeft alle macht",
+      "Er is maar één persoon de baas",
+      "De macht ligt bij de buren"
+    ],
+    "answer": "De wetgevende, uitvoerende en rechterlijke macht zijn van elkaar gescheiden",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-22",
+    "topic": "De regels (The rules)",
+    "question": "Waar gebruikt de overheid het belastinggeld onder andere voor?",
+    "options": [
+      "Wegen, onderwijs, zorg en veiligheid",
+      "Alleen voor de koning",
+      "Alleen voor feesten",
+      "Niets, het blijft op de bank staan"
+    ],
+    "answer": "Wegen, onderwijs, zorg en veiligheid",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch10-n-23",
+    "topic": "Verkiezingen (Elections)",
+    "question": "Hoe vaak zijn er in Nederland verkiezingen voor de Provinciale Staten?",
+    "options": [
+      "Elk jaar",
+      "Om de twee jaar",
+      "Om de vier jaar",
+      "Om de tien jaar"
+    ],
+    "answer": "Om de vier jaar",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch10-n-24",
+    "topic": "Het bestuur van Nederland (The governance of the Netherlands)",
+    "question": "Wat doet de Tweede Kamer als ze het niet eens is met een minister?",
+    "options": [
+      "Ze mag de minister controleren en kritische vragen stellen",
+      "Ze mag de minister slaan",
+      "Ze mag helemaal niets doen",
+      "Ze belt de koning om het op te lossen"
+    ],
+    "answer": "Ze mag de minister controleren en kritische vragen stellen",
+    "correctIndex": 0
   }
 ]

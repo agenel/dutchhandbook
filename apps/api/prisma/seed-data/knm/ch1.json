@@ -1,5 +1,6 @@
 [
   {
+    "id": "ch1-0",
     "topic": "Geografie (Geography)",
     "question": "Welke landen zijn de buurlanden van Nederland?",
     "options": [
@@ -8,9 +9,11 @@
       "België en Engeland",
       "Denemarken en Duitsland"
     ],
-    "answer": "Duitsland en België"
+    "answer": "Duitsland en België",
+    "correctIndex": 1
   },
   {
+    "id": "ch1-1",
     "topic": "Geografie (Geography)",
     "question": "Hoe lang is Nederland ongeveer van noord naar zuid?",
     "options": [
@@ -19,9 +22,11 @@
       "300 kilometer",
       "500 kilometer"
     ],
-    "answer": "300 kilometer"
+    "answer": "300 kilometer",
+    "correctIndex": 2
   },
   {
+    "id": "ch1-2",
     "topic": "Provincies en steden (Provinces and cities)",
     "question": "Wat is de hoofdstad van Nederland?",
     "options": [
@@ -30,9 +35,11 @@
       "Utrecht",
       "Amsterdam"
     ],
-    "answer": "Amsterdam"
+    "answer": "Amsterdam",
+    "correctIndex": 3
   },
   {
+    "id": "ch1-3",
     "topic": "Provincies en steden (Provinces and cities)",
     "question": "In welke stad zit de regering van Nederland?",
     "options": [
@@ -41,9 +48,11 @@
       "Den Haag",
       "Utrecht"
     ],
-    "answer": "Den Haag"
+    "answer": "Den Haag",
+    "correctIndex": 2
   },
   {
+    "id": "ch1-4",
     "topic": "Provincies en steden (Provinces and cities)",
     "question": "Wat is de naam van de grootste haven van Europa, gelegen in Rotterdam?",
     "options": [
@@ -52,9 +61,11 @@
       "De Afsluitdijk",
       "IJsselmeer"
     ],
-    "answer": "Europoort"
+    "answer": "Europoort",
+    "correctIndex": 0
   },
   {
+    "id": "ch1-5",
     "topic": "Provincies en steden (Provinces and cities)",
     "question": "In welke stad staat de Domtoren?",
     "options": [
@@ -63,9 +74,11 @@
       "Maastricht",
       "Groningen"
     ],
-    "answer": "Utrecht"
+    "answer": "Utrecht",
+    "correctIndex": 1
   },
   {
+    "id": "ch1-6",
     "topic": "Landschap (Landscape)",
     "question": "Hoe noemen we het drukke gebied in het westen waar de vier grootste steden liggen?",
     "options": [
@@ -74,9 +87,11 @@
       "De Polder",
       "Limburg"
     ],
-    "answer": "De Randstad"
+    "answer": "De Randstad",
+    "correctIndex": 1
   },
   {
+    "id": "ch1-7",
     "topic": "Landschap (Landscape)",
     "question": "Waar vind je een rustig gebied met veel natuur genaamd de Veluwe?",
     "options": [
@@ -85,9 +100,11 @@
       "In de provincie Zeeland",
       "In de provincie Friesland"
     ],
-    "answer": "In de provincie Gelderland"
+    "answer": "In de provincie Gelderland",
+    "correctIndex": 1
   },
   {
+    "id": "ch1-8",
     "topic": "Water (Water)",
     "question": "Wat is een polder?",
     "options": [
@@ -96,9 +113,11 @@
       "Een groot meer in het midden van het land",
       "Een bosrijk gebied met veel natuur"
     ],
-    "answer": "Land dat vroeger water was"
+    "answer": "Land dat vroeger water was",
+    "correctIndex": 1
   },
   {
+    "id": "ch1-9",
     "topic": "Water (Water)",
     "question": "Hoe heet de dijk die de zee heeft dichtgemaakt om het IJsselmeer te vormen?",
     "options": [
@@ -107,9 +126,11 @@
       "De Afsluitdijk",
       "De Maasdijk"
     ],
-    "answer": "De Afsluitdijk"
+    "answer": "De Afsluitdijk",
+    "correctIndex": 2
   },
   {
+    "id": "ch1-10",
     "topic": "Water (Water)",
     "question": "Wat is het hoogste punt van Nederland?",
     "options": [
@@ -118,9 +139,11 @@
       "323 meter",
       "7 meter onder de zeespiegel"
     ],
-    "answer": "323 meter"
+    "answer": "323 meter",
+    "correctIndex": 2
   },
   {
+    "id": "ch1-11",
     "topic": "Water (Water)",
     "question": "Waar ligt het laagste punt van Nederland?",
     "options": [
@@ -129,9 +152,11 @@
       "In de provincie Limburg",
       "Op de Waddeneilanden"
     ],
-    "answer": "Vlak bij Rotterdam"
+    "answer": "Vlak bij Rotterdam",
+    "correctIndex": 1
   },
   {
+    "id": "ch1-12",
     "topic": "De seizoenen (The seasons)",
     "question": "Rond welke dag van de maand begint meestal een nieuw seizoen?",
     "options": [
@@ -140,9 +165,11 @@
       "De 21ste",
       "De 30ste"
     ],
-    "answer": "De 21ste"
+    "answer": "De 21ste",
+    "correctIndex": 2
   },
   {
+    "id": "ch1-13",
     "topic": "De seizoenen (The seasons)",
     "question": "In welk seizoen blijft het 's avonds lang licht?",
     "options": [
@@ -151,9 +178,11 @@
       "De herfst",
       "De winter"
     ],
-    "answer": "De zomer"
+    "answer": "De zomer",
+    "correctIndex": 1
   },
   {
+    "id": "ch1-14",
     "topic": "De mensen (The people)",
     "question": "Hoeveel mensen wonen er ongeveer in Nederland?",
     "options": [
@@ -162,9 +191,11 @@
       "17 miljoen",
       "23 miljoen"
     ],
-    "answer": "17 miljoen"
+    "answer": "17 miljoen",
+    "correctIndex": 2
   },
   {
+    "id": "ch1-15",
     "topic": "De mensen (The people)",
     "question": "Waarom wordt Nederland een 'dichtbevolkt' land genoemd?",
     "options": [
@@ -173,9 +204,11 @@
       "Omdat er veel mensen op een klein stukje land wonen",
       "Omdat iedereen in de stad woont"
     ],
-    "answer": "Omdat er veel mensen op een klein stukje land wonen"
+    "answer": "Omdat er veel mensen op een klein stukje land wonen",
+    "correctIndex": 2
   },
   {
+    "id": "ch1-16",
     "topic": "De taal (The language)",
     "question": "Welke taal wordt er, naast het Nederlands, gesproken in de provincie Friesland?",
     "options": [
@@ -184,9 +217,11 @@
       "Engels",
       "Surinaams"
     ],
-    "answer": "Fries"
+    "answer": "Fries",
+    "correctIndex": 1
   },
   {
+    "id": "ch1-17",
     "topic": "De regering (The government)",
     "question": "Wie is de koning van Nederland?",
     "options": [
@@ -195,9 +230,11 @@
       "Koningin Máxima",
       "Prinses Amalia"
     ],
-    "answer": "Koning Willem-Alexander"
+    "answer": "Koning Willem-Alexander",
+    "correctIndex": 1
   },
   {
+    "id": "ch1-18",
     "topic": "Het geloof (Religion)",
     "question": "Welke dag is een speciale dag voor christenen waarop velen naar de kerk gaan?",
     "options": [
@@ -206,9 +243,11 @@
       "Zondag",
       "Maandag"
     ],
-    "answer": "Zondag"
+    "answer": "Zondag",
+    "correctIndex": 2
   },
   {
+    "id": "ch1-19",
     "topic": "Nederland in Europa (The Netherlands in Europe)",
     "question": "Met welk geld betalen de mensen in Nederland?",
     "options": [
@@ -217,6 +256,332 @@
       "De euro",
       "Het pond"
     ],
-    "answer": "De euro"
+    "answer": "De euro",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch1-n-0",
+    "topic": "Provincies en steden (Provinces and cities)",
+    "question": "Uit hoeveel provincies bestaat Nederland?",
+    "options": [
+      "9 provincies",
+      "10 provincies",
+      "12 provincies",
+      "15 provincies"
+    ],
+    "answer": "12 provincies",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch1-n-1",
+    "topic": "Provincies en steden (Provinces and cities)",
+    "question": "Wat is de hoofdstad van de provincie Friesland?",
+    "options": [
+      "Groningen",
+      "Leeuwarden",
+      "Assen",
+      "Zwolle"
+    ],
+    "answer": "Leeuwarden",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-2",
+    "topic": "Provincies en steden (Provinces and cities)",
+    "question": "Wat is de hoofdstad van de provincie Limburg?",
+    "options": [
+      "Eindhoven",
+      "Maastricht",
+      "Venlo",
+      "Roermond"
+    ],
+    "answer": "Maastricht",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-3",
+    "topic": "Provincies en steden (Provinces and cities)",
+    "question": "In welke provincie ligt de stad Rotterdam?",
+    "options": [
+      "Noord-Holland",
+      "Zuid-Holland",
+      "Utrecht",
+      "Zeeland"
+    ],
+    "answer": "Zuid-Holland",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-4",
+    "topic": "Provincies en steden (Provinces and cities)",
+    "question": "Welke provincie heeft de meeste inwoners?",
+    "options": [
+      "Zuid-Holland",
+      "Zeeland",
+      "Drenthe",
+      "Flevoland"
+    ],
+    "answer": "Zuid-Holland",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch1-n-5",
+    "topic": "Landschap (Landscape)",
+    "question": "Welke provincie is de nieuwste en is bijna helemaal op het water gewonnen?",
+    "options": [
+      "Groningen",
+      "Flevoland",
+      "Limburg",
+      "Zeeland"
+    ],
+    "answer": "Flevoland",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-6",
+    "topic": "Landschap (Landscape)",
+    "question": "Voor welke bloemen is Nederland in de hele wereld bekend?",
+    "options": [
+      "Rozen",
+      "Tulpen",
+      "Zonnebloemen",
+      "Lelies"
+    ],
+    "answer": "Tulpen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-7",
+    "topic": "Geografie (Geography)",
+    "question": "Welke zee ligt aan de noord- en westkant van Nederland?",
+    "options": [
+      "De Middellandse Zee",
+      "De Oostzee",
+      "De Noordzee",
+      "De Zwarte Zee"
+    ],
+    "answer": "De Noordzee",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch1-n-8",
+    "topic": "Provincies en steden (Provinces and cities)",
+    "question": "Hoe heet de grootste luchthaven van Nederland?",
+    "options": [
+      "Schiphol",
+      "Eindhoven Airport",
+      "Rotterdam The Hague",
+      "Lelystad Airport"
+    ],
+    "answer": "Schiphol",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch1-n-9",
+    "topic": "Water (Water)",
+    "question": "Welk eiland hoort bij de Waddeneilanden?",
+    "options": [
+      "Texel",
+      "Marken",
+      "Urk",
+      "Goeree"
+    ],
+    "answer": "Texel",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch1-n-10",
+    "topic": "Water (Water)",
+    "question": "Wat is het IJsselmeer?",
+    "options": [
+      "Een rivier naar Duitsland",
+      "Het grootste meer van Nederland",
+      "Een haven bij Rotterdam",
+      "Een bos op de Veluwe"
+    ],
+    "answer": "Het grootste meer van Nederland",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-11",
+    "topic": "Water (Water)",
+    "question": "Welke grote rivier stroomt vanuit Duitsland Nederland binnen?",
+    "options": [
+      "De Rijn",
+      "De Theems",
+      "De Donau",
+      "De Seine"
+    ],
+    "answer": "De Rijn",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch1-n-12",
+    "topic": "Water (Water)",
+    "question": "Waarvoor dienen de Deltawerken in het zuidwesten van Nederland?",
+    "options": [
+      "Om stroom op te wekken",
+      "Om het land te beschermen tegen het water van de zee",
+      "Om toeristen te trekken",
+      "Om vis te vangen"
+    ],
+    "answer": "Om het land te beschermen tegen het water van de zee",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-13",
+    "topic": "Water (Water)",
+    "question": "In welke provincie richtte de watersnoodramp van 1953 de meeste schade aan?",
+    "options": [
+      "Friesland",
+      "Zeeland",
+      "Drenthe",
+      "Overijssel"
+    ],
+    "answer": "Zeeland",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-14",
+    "topic": "De seizoenen (The seasons)",
+    "question": "Welk seizoen is meestal het koudst in Nederland?",
+    "options": [
+      "De lente",
+      "De zomer",
+      "De herfst",
+      "De winter"
+    ],
+    "answer": "De winter",
+    "correctIndex": 3
+  },
+  {
+    "id": "ch1-n-15",
+    "topic": "De seizoenen (The seasons)",
+    "question": "Welke maanden horen bij de herfst?",
+    "options": [
+      "December, januari, februari",
+      "September, oktober, november",
+      "Maart, april, mei",
+      "Juni, juli, augustus"
+    ],
+    "answer": "September, oktober, november",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-16",
+    "topic": "De seizoenen (The seasons)",
+    "question": "Hoe is het weer in Nederland meestal?",
+    "options": [
+      "Heel droog en warm",
+      "Wisselend, met veel regen en wind",
+      "Altijd koud met veel sneeuw",
+      "Altijd zonnig"
+    ],
+    "answer": "Wisselend, met veel regen en wind",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-17",
+    "topic": "De taal (The language)",
+    "question": "In welke provincie is het Fries een officiële taal naast het Nederlands?",
+    "options": [
+      "Groningen",
+      "Friesland",
+      "Drenthe",
+      "Limburg"
+    ],
+    "answer": "Friesland",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-18",
+    "topic": "Het geloof (Religion)",
+    "question": "Mag iedereen in Nederland zelf kiezen welk geloof hij heeft?",
+    "options": [
+      "Nee, iedereen moet christelijk zijn",
+      "Ja, er is vrijheid van godsdienst",
+      "Alleen met toestemming van de gemeente",
+      "Nee, geloof is verboden"
+    ],
+    "answer": "Ja, er is vrijheid van godsdienst",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-19",
+    "topic": "Het geloof (Religion)",
+    "question": "In welk deel van Nederland wonen traditioneel veel katholieken?",
+    "options": [
+      "In het noorden",
+      "In het zuiden",
+      "Op de Waddeneilanden",
+      "In de Randstad"
+    ],
+    "answer": "In het zuiden",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-20",
+    "topic": "De regering (The government)",
+    "question": "Wat voor soort staatsvorm heeft Nederland?",
+    "options": [
+      "Een republiek",
+      "Een koninkrijk (monarchie)",
+      "Een keizerrijk",
+      "Een dictatuur"
+    ],
+    "answer": "Een koninkrijk (monarchie)",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-21",
+    "topic": "De regering (The government)",
+    "question": "Hoe heet de leider van de regering van Nederland?",
+    "options": [
+      "De koning",
+      "De minister-president",
+      "De burgemeester",
+      "De president"
+    ],
+    "answer": "De minister-president",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-22",
+    "topic": "De regering (The government)",
+    "question": "Hoeveel zetels heeft de Tweede Kamer?",
+    "options": [
+      "75 zetels",
+      "100 zetels",
+      "150 zetels",
+      "200 zetels"
+    ],
+    "answer": "150 zetels",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch1-n-23",
+    "topic": "De regering (The government)",
+    "question": "Wie is volgens de troonopvolging de opvolger van koning Willem-Alexander?",
+    "options": [
+      "Prinses Beatrix",
+      "Prinses Amalia",
+      "Prins Constantijn",
+      "Koningin Máxima"
+    ],
+    "answer": "Prinses Amalia",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch1-n-24",
+    "topic": "Nederland in Europa (The Netherlands in Europe)",
+    "question": "Met welk geld betaalden de mensen in Nederland vroeger, vóór de euro?",
+    "options": [
+      "De mark",
+      "De gulden",
+      "De frank",
+      "Het pond"
+    ],
+    "answer": "De gulden",
+    "correctIndex": 1
   }
 ]

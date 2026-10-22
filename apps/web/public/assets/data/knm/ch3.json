@@ -258,5 +258,330 @@
     ],
     "answer": "Anderhalve liter",
     "correctIndex": 2
+  },
+  {
+    "id": "ch3-n-0",
+    "topic": "De huisarts (The GP)",
+    "question": "Wat is de huisarts?",
+    "options": [
+      "Een dokter in het ziekenhuis",
+      "De dokter in de buurt waar je als eerste naartoe gaat",
+      "Iemand die medicijnen verkoopt",
+      "Een dokter voor je tanden"
+    ],
+    "answer": "De dokter in de buurt waar je als eerste naartoe gaat",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-1",
+    "topic": "Ziekenhuis (Hospital)",
+    "question": "Waar werkt een medisch specialist meestal?",
+    "options": [
+      "In de apotheek",
+      "In het ziekenhuis",
+      "Op het gemeentehuis",
+      "In de drogist"
+    ],
+    "answer": "In het ziekenhuis",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-2",
+    "topic": "Medicijnen (Medicine)",
+    "question": "Wat is een recept?",
+    "options": [
+      "Een rekening van de verzekering",
+      "Een briefje van de dokter waarmee je medicijnen kunt halen",
+      "Een afspraakkaart",
+      "Een verwijsbrief naar het ziekenhuis"
+    ],
+    "answer": "Een briefje van de dokter waarmee je medicijnen kunt halen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-3",
+    "topic": "Medicijnen (Medicine)",
+    "question": "Waar koop je eenvoudige medicijnen zonder recept, zoals paracetamol?",
+    "options": [
+      "Bij de apotheek met recept",
+      "Bij de drogist of supermarkt",
+      "Op het gemeentehuis",
+      "Bij de huisartsenpost"
+    ],
+    "answer": "Bij de drogist of supermarkt",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-4",
+    "topic": "Tandarts (Dentist)",
+    "question": "Naar wie ga je als je kiespijn hebt of een probleem met je tanden?",
+    "options": [
+      "De huisarts",
+      "De tandarts",
+      "De fysiotherapeut",
+      "De apotheker"
+    ],
+    "answer": "De tandarts",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-5",
+    "topic": "Zorgverzekering (Insurance)",
+    "question": "Vanaf welke leeftijd moet je zelf premie betalen voor je zorgverzekering?",
+    "options": [
+      "Vanaf 12 jaar",
+      "Vanaf 16 jaar",
+      "Vanaf 18 jaar",
+      "Vanaf 21 jaar"
+    ],
+    "answer": "Vanaf 18 jaar",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch3-n-6",
+    "topic": "Zorgverzekering (Insurance)",
+    "question": "Wat is de premie van de zorgverzekering?",
+    "options": [
+      "Het bedrag dat je elke maand aan de verzekering betaalt",
+      "Een deel dat je zelf betaalt bij de dokter",
+      "Geld dat je terugkrijgt van de dokter",
+      "De boete als je ziek wordt"
+    ],
+    "answer": "Het bedrag dat je elke maand aan de verzekering betaalt",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch3-n-7",
+    "topic": "Zorgverzekering (Insurance)",
+    "question": "Wat is een aanvullende verzekering?",
+    "options": [
+      "De verplichte verzekering voor iedereen",
+      "Een extra verzekering voor zorg die niet in de basisverzekering zit",
+      "Een verzekering voor je auto",
+      "Een verzekering voor je huis"
+    ],
+    "answer": "Een extra verzekering voor zorg die niet in de basisverzekering zit",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-8",
+    "topic": "Gezond blijven (Stay healthy)",
+    "question": "Waar gaan ouders met hun baby of jonge kind voor controle en vaccinaties?",
+    "options": [
+      "Naar het consultatiebureau",
+      "Naar de apotheek",
+      "Naar de tandarts",
+      "Naar het gemeentehuis"
+    ],
+    "answer": "Naar het consultatiebureau",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch3-n-9",
+    "topic": "Gezond blijven (Stay healthy)",
+    "question": "Wie begeleidt een zwangere vrouw meestal bij de zwangerschap en de geboorte als er geen problemen zijn?",
+    "options": [
+      "De tandarts",
+      "De verloskundige",
+      "De apotheker",
+      "De fysiotherapeut"
+    ],
+    "answer": "De verloskundige",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-10",
+    "topic": "Gezond blijven (Stay healthy)",
+    "question": "Welke hulpmiddel helpt je om gezond en gevarieerd te eten?",
+    "options": [
+      "De Schijf van Vijf",
+      "De bijsluiter",
+      "Het eigen risico",
+      "De verwijsbrief"
+    ],
+    "answer": "De Schijf van Vijf",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch3-n-11",
+    "topic": "Gezond blijven (Stay healthy)",
+    "question": "Vanaf welke leeftijd mag je in Nederland sigaretten en alcohol kopen?",
+    "options": [
+      "Vanaf 16 jaar",
+      "Vanaf 18 jaar",
+      "Vanaf 21 jaar",
+      "Er is geen leeftijdsgrens"
+    ],
+    "answer": "Vanaf 18 jaar",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-12",
+    "topic": "Gezond blijven (Stay healthy)",
+    "question": "Wat is belangrijk om gezond te blijven?",
+    "options": [
+      "Veel roken",
+      "Gezond eten en genoeg bewegen",
+      "Weinig slapen",
+      "Veel alcohol drinken"
+    ],
+    "answer": "Gezond eten en genoeg bewegen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-13",
+    "topic": "Veilige seks (Safe sex)",
+    "question": "Wat is een soa?",
+    "options": [
+      "Een soort medicijn",
+      "Een ziekte die je kunt krijgen door seks",
+      "Een zorgverzekering",
+      "Een afspraak bij de dokter"
+    ],
+    "answer": "Een ziekte die je kunt krijgen door seks",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-14",
+    "topic": "Veilige seks (Safe sex)",
+    "question": "Waar kun je je laten testen op een soa?",
+    "options": [
+      "Bij de bibliotheek",
+      "Bij de huisarts of de GGD",
+      "Bij de drogist",
+      "Bij de gemeente"
+    ],
+    "answer": "Bij de huisarts of de GGD",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-15",
+    "topic": "Vrije tijd (Free time)",
+    "question": "Wat betaal je om lid te zijn van een sportvereniging?",
+    "options": [
+      "Eigen risico",
+      "Contributie (lidmaatschapsgeld)",
+      "Premie",
+      "Belasting"
+    ],
+    "answer": "Contributie (lidmaatschapsgeld)",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-16",
+    "topic": "Vrije tijd (Free time)",
+    "question": "Wat heb je nodig om boeken te lenen bij de bibliotheek?",
+    "options": [
+      "Een paspoort",
+      "Een bibliotheekpas",
+      "Een recept",
+      "Een verwijsbrief"
+    ],
+    "answer": "Een bibliotheekpas",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-17",
+    "topic": "Vrije tijd (Free time)",
+    "question": "Wat is een buurthuis?",
+    "options": [
+      "Een ziekenhuis in de buurt",
+      "Een plek in de buurt voor activiteiten en ontmoeting",
+      "Een winkel voor medicijnen",
+      "Het huis van de burgemeester"
+    ],
+    "answer": "Een plek in de buurt voor activiteiten en ontmoeting",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-18",
+    "topic": "Snel hulp nodig (Emergency)",
+    "question": "Wat kun je doen als je dringend hulp van de dokter nodig hebt in het weekend of 's nachts?",
+    "options": [
+      "Wachten tot maandag",
+      "De huisartsenpost bellen",
+      "Naar de apotheek gaan",
+      "De gemeente bellen"
+    ],
+    "answer": "De huisartsenpost bellen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-19",
+    "topic": "De huisarts (The GP)",
+    "question": "Wat moet je doen voordat je naar de huisarts gaat?",
+    "options": [
+      "Je gaat gewoon binnenlopen",
+      "Je maakt eerst een afspraak",
+      "Je schrijft een brief aan de gemeente",
+      "Je belt het alarmnummer 112"
+    ],
+    "answer": "Je maakt eerst een afspraak",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-20",
+    "topic": "Medicijnen (Medicine)",
+    "question": "Waarom is het belangrijk om de bijsluiter te lezen?",
+    "options": [
+      "Om te weten hoe duur het medicijn is",
+      "Om te weten hoe en hoeveel je het medicijn moet gebruiken",
+      "Om te weten waar je het kunt kopen",
+      "Om te weten wie de dokter is"
+    ],
+    "answer": "Om te weten hoe en hoeveel je het medicijn moet gebruiken",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-21",
+    "topic": "Zorgverzekering (Insurance)",
+    "question": "Wat is zorgtoeslag?",
+    "options": [
+      "Extra kosten bij een operatie",
+      "Geld van de Belastingdienst om de premie te helpen betalen bij een laag inkomen",
+      "Een boete als je geen verzekering hebt",
+      "Geld voor je huur"
+    ],
+    "answer": "Geld van de Belastingdienst om de premie te helpen betalen bij een laag inkomen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch3-n-22",
+    "topic": "Gezond blijven (Stay healthy)",
+    "question": "Bij welke organisatie kun je terecht voor vaccinaties en informatie over de publieke gezondheid?",
+    "options": [
+      "De GGD",
+      "De NS",
+      "De IND",
+      "Het UWV"
+    ],
+    "answer": "De GGD",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch3-n-23",
+    "topic": "Ziekenhuis (Hospital)",
+    "question": "Wat heb je meestal nodig om bij een specialist in het ziekenhuis terecht te kunnen?",
+    "options": [
+      "Een verwijsbrief van de huisarts",
+      "Een recept van de apotheek",
+      "Een rijbewijs",
+      "Een vergunning van de gemeente"
+    ],
+    "answer": "Een verwijsbrief van de huisarts",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch3-n-24",
+    "topic": "Gezond blijven (Stay healthy)",
+    "question": "Waarom is er op veel openbare plaatsen een rookverbod?",
+    "options": [
+      "Omdat roken te duur is",
+      "Omdat meeroken slecht is voor de gezondheid van anderen",
+      "Omdat sigaretten verboden zijn",
+      "Omdat de koning dat wil"
+    ],
+    "answer": "Omdat meeroken slecht is voor de gezondheid van anderen",
+    "correctIndex": 1
   }
 ]

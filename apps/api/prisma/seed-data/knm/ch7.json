@@ -1,5 +1,6 @@
 [
   {
+    "id": "ch7-0",
     "topic": "Wat wil ik en wat kan ik? (Skills and Goals)",
     "question": "Wat is 'vrijwilligerswerk'?",
     "options": [
@@ -8,9 +9,11 @@
       "Werk dat je alleen in de vakantie doet",
       "Werk waarbij je zelf mag beslissen hoe laat je begint"
     ],
-    "answer": "Werk dat je doet zonder dat je betaald krijgt"
+    "answer": "Werk dat je doet zonder dat je betaald krijgt",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-1",
     "topic": "Wie kunnen je helpen? (Who can help?)",
     "question": "Waarvoor staat de afkorting UWV?",
     "options": [
@@ -19,9 +22,11 @@
       "Uitzendbureau voor Werkzoekenden",
       "Unieke Werk Voorziening"
     ],
-    "answer": "Uitvoeringsinstituut Werknemersverzekeringen"
+    "answer": "Uitvoeringsinstituut Werknemersverzekeringen",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-2",
     "topic": "Wie kunnen je helpen? (Who can help?)",
     "question": "Wat is een uitzendbureau?",
     "options": [
@@ -30,9 +35,11 @@
       "Een kantoor van de gemeente voor uitkeringen",
       "Een plek waar je alleen pasfoto's kunt laten maken"
     ],
-    "answer": "Een bedrijf dat werknemers tijdelijk verhuurt aan andere bedrijven"
+    "answer": "Een bedrijf dat werknemers tijdelijk verhuurt aan andere bedrijven",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-3",
     "topic": "Solliciteren (Applying for a job)",
     "question": "Wat is een CV (curriculum vitae)?",
     "options": [
@@ -41,9 +48,11 @@
       "Een officieel diploma van de basisschool",
       "Een brief waarin je vertelt waarom je de baan wilt"
     ],
-    "answer": "Een papier waarop staat welke opleidingen en werkervaring je hebt"
+    "answer": "Een papier waarop staat welke opleidingen en werkervaring je hebt",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-4",
     "topic": "Solliciteren (Applying for a job)",
     "question": "Wat doe je tijdens een sollicitatiegesprek?",
     "options": [
@@ -52,9 +61,11 @@
       "Je tekent meteen je definitieve contract",
       "Je krijgt een rondleiding door de hele stad"
     ],
-    "answer": "Je praat met een mogelijke werkgever over de baan en jezelf"
+    "answer": "Je praat met een mogelijke werkgever over de baan en jezelf",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-5",
     "topic": "Solliciteren (Applying for a job)",
     "question": "Waar vind je een 'vacature'?",
     "options": [
@@ -63,9 +74,11 @@
       "Alleen in het ziekenhuis",
       "In je eigen brievenbus tussen de reclame"
     ],
-    "answer": "Op internet, in kranten of bij een uitzendbureau"
+    "answer": "Op internet, in kranten of bij een uitzendbureau",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-6",
     "topic": "Wat wil ik en wat kan ik? (Skills and Goals)",
     "question": "Wat is diplomawaardering?",
     "options": [
@@ -74,9 +87,11 @@
       "Het betalen voor een nieuw diploma bij de gemeente",
       "Het vertalen van je CV naar het Engels"
     ],
-    "answer": "Kijken wat je buitenlandse diploma waard is in Nederland"
+    "answer": "Kijken wat je buitenlandse diploma waard is in Nederland",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-7",
     "topic": "Een eigen bedrijf beginnen (Starting a business)",
     "question": "Waar moet je je inschrijven als je een eigen bedrijf begint?",
     "options": [
@@ -85,9 +100,11 @@
       "Bij de bibliotheek",
       "Bij het UWV"
     ],
-    "answer": "Bij de Kamer van Koophandel (KvK)"
+    "answer": "Bij de Kamer van Koophandel (KvK)",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-8",
     "topic": "Rechten en plichten (Rights and duties)",
     "question": "Wat is het minimumloon?",
     "options": [
@@ -96,9 +113,11 @@
       "Het geld dat je krijgt als je ziek bent",
       "De belasting die je over je loon betaalt"
     ],
-    "answer": "Het bedrag dat iedereen minimaal moet verdienen volgens de wet"
+    "answer": "Het bedrag dat iedereen minimaal moet verdienen volgens de wet",
+    "correctIndex": 0
   },
   {
+    "id": "ch7-9",
     "topic": "Rechten en plichten (Rights and duties)",
     "question": "Van welke factor hangt de hoogte van het minimumloon onder andere af?",
     "options": [
@@ -107,9 +126,11 @@
       "Van de kleur van je haar",
       "Van hoeveel kinderen je hebt"
     ],
-    "answer": "Van je leeftijd"
+    "answer": "Van je leeftijd",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-10",
     "topic": "Rechten en plichten (Rights and duties)",
     "question": "Wat is een 'proeftijd'?",
     "options": [
@@ -118,9 +139,11 @@
       "De pauze waarin je je eigen eten mag opeten",
       "De tijd waarin je leert hoe de computer werkt"
     ],
-    "answer": "Een periode waarin de baas kijkt of je het werk goed doet"
+    "answer": "Een periode waarin de baas kijkt of je het werk goed doet",
+    "correctIndex": 0
   },
   {
+    "id": "ch7-11",
     "topic": "Rechten en plichten (Rights and duties)",
     "question": "Wat moet je doen als je ziek bent en niet kunt werken?",
     "options": [
@@ -129,9 +152,11 @@
       "Je belt de politie om het te vertellen",
       "Je vraagt je buren om je werk te doen"
     ],
-    "answer": "Je belt je werkgever om je ziek te melden"
+    "answer": "Je belt je werkgever om je ziek te melden",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-12",
     "topic": "Rechten en plichten (Rights and duties)",
     "question": "Wat betekent 'zwart werken'?",
     "options": [
@@ -140,9 +165,11 @@
       "Werken in een fabriek met veel rook",
       "Heel zwaar werk doen"
     ],
-    "answer": "Werken zonder dat de Belastingdienst het weet"
+    "answer": "Werken zonder dat de Belastingdienst het weet",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-13",
     "topic": "Rechten en plichten (Rights and duties)",
     "question": "Wat is een CAO?",
     "options": [
@@ -151,9 +178,11 @@
       "Een formulier voor het aanvragen van vakantie",
       "De afkorting voor een computercursus"
     ],
-    "answer": "Afspraken over werk voor een hele groep mensen in een sector"
+    "answer": "Afspraken over werk voor een hele groep mensen in een sector",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-14",
     "topic": "Rechten en plichten (Rights and duties)",
     "question": "Heb je in Nederland recht op vakantiedagen als je werkt?",
     "options": [
@@ -162,9 +191,11 @@
       "Alleen als je ouder bent dan 50 jaar",
       "Alleen als je in een grote stad werkt"
     ],
-    "answer": "Ja, elke werknemer heeft recht op een aantal vakantiedagen"
+    "answer": "Ja, elke werknemer heeft recht op een aantal vakantiedagen",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-15",
     "topic": "Samenwerken (Collaboration)",
     "question": "Wat is in Nederland heel belangrijk als je begint met werken?",
     "options": [
@@ -173,9 +204,11 @@
       "Dat je je eigen computer meeneemt",
       "Dat je alleen met mensen uit je eigen land praat"
     ],
-    "answer": "Dat je precies op tijd bent"
+    "answer": "Dat je precies op tijd bent",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-16",
     "topic": "Samenwerken (Collaboration)",
     "question": "Hoe gaan collega's in Nederland vaak met elkaar om tijdens de lunch?",
     "options": [
@@ -184,9 +217,11 @@
       "Ze moeten verplicht een liedje zingen",
       "Ze gaan allemaal naar een verschillend restaurant"
     ],
-    "answer": "Ze eten vaak samen en praten over werk of andere dingen"
+    "answer": "Ze eten vaak samen en praten over werk of andere dingen",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-17",
     "topic": "Rechten en plichten (Rights and duties)",
     "question": "Wat is loonheffing?",
     "options": [
@@ -195,9 +230,11 @@
       "Het geld dat je betaalt voor je reiskosten",
       "De huur die je werkgever voor je betaalt"
     ],
-    "answer": "Geld voor de belasting en premies dat van je loon wordt afgehaald"
+    "answer": "Geld voor de belasting en premies dat van je loon wordt afgehaald",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-18",
     "topic": "Solliciteren (Applying for a job)",
     "question": "Wat is 'netwerken'?",
     "options": [
@@ -206,9 +243,11 @@
       "Het schoonmaken van de computers op kantoor",
       "Het aanleggen van nieuwe wegen in de Randstad"
     ],
-    "answer": "Aan mensen die je kent vertellen dat je werk zoekt"
+    "answer": "Aan mensen die je kent vertellen dat je werk zoekt",
+    "correctIndex": 1
   },
   {
+    "id": "ch7-19",
     "topic": "Wat wil ik en wat kan ik? (Skills and Goals)",
     "question": "Waarom is een 'stage' handig?",
     "options": [
@@ -217,6 +256,332 @@
       "Omdat je dan meteen de baas van het bedrijf wordt",
       "Om gratis op vakantie te gaan"
     ],
-    "answer": "Om ervaring op te doen in een bedrijf en te leren"
+    "answer": "Om ervaring op te doen in een bedrijf en te leren",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch7-n-0",
+    "topic": "Solliciteren (Applying for a job)",
+    "question": "Wat schrijf je in een motivatiebrief (sollicitatiebrief)?",
+    "options": [
+      "Waarom je de baan wilt en waarom je geschikt bent",
+      "Een lijst met je lievelingseten",
+      "De route naar het bedrijf",
+      "Je medische gegevens"
+    ],
+    "answer": "Waarom je de baan wilt en waarom je geschikt bent",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-1",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wat is het verschil tussen een tijdelijk en een vast contract?",
+    "options": [
+      "Een tijdelijk contract stopt op een afgesproken datum, een vast contract niet",
+      "Een vast contract is altijd korter",
+      "Er is geen verschil",
+      "Een tijdelijk contract is alleen voor de baas"
+    ],
+    "answer": "Een tijdelijk contract stopt op een afgesproken datum, een vast contract niet",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-2",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wat is een 'opzegtermijn'?",
+    "options": [
+      "De tijd tussen het opzeggen en het echt stoppen met je baan",
+      "De pauze tijdens het werk",
+      "De tijd die je reist naar je werk",
+      "De zomervakantie"
+    ],
+    "answer": "De tijd tussen het opzeggen en het echt stoppen met je baan",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-3",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wanneer krijgen veel werknemers in Nederland hun vakantiegeld uitbetaald?",
+    "options": [
+      "In december",
+      "Meestal in mei",
+      "Op hun verjaardag",
+      "Elke week"
+    ],
+    "answer": "Meestal in mei",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch7-n-4",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wat heb je nodig om in Nederland te mogen werken en belasting te betalen?",
+    "options": [
+      "Een burgerservicenummer (BSN)",
+      "Een rijbewijs voor de vrachtwagen",
+      "Een lidmaatschap van een sportclub",
+      "Een eigen auto"
+    ],
+    "answer": "Een burgerservicenummer (BSN)",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-5",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wie zorgt op het werk voor goede en veilige arbeidsomstandigheden?",
+    "options": [
+      "De werkgever",
+      "De buurman",
+      "De koning",
+      "De leerling"
+    ],
+    "answer": "De werkgever",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-6",
+    "topic": "Samenwerken (Collaboration)",
+    "question": "Wat is een vakbond?",
+    "options": [
+      "Een organisatie die opkomt voor de belangen van werknemers",
+      "Een bank voor bedrijven",
+      "Een school voor managers",
+      "Een winkel voor gereedschap"
+    ],
+    "answer": "Een organisatie die opkomt voor de belangen van werknemers",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-7",
+    "topic": "Wie kunnen je helpen? (Who can help?)",
+    "question": "Wat is een WW-uitkering?",
+    "options": [
+      "Geld van het UWV als je je baan verliest en werkloos wordt",
+      "Geld dat je krijgt als je met vakantie gaat",
+      "Een beloning voor goed werk",
+      "Geld voor het kopen van een huis"
+    ],
+    "answer": "Geld van het UWV als je je baan verliest en werkloos wordt",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-8",
+    "topic": "Wie kunnen je helpen? (Who can help?)",
+    "question": "Bij wie vraag je een bijstandsuitkering aan als je geen werk en te weinig geld hebt?",
+    "options": [
+      "Bij de gemeente",
+      "Bij de Kamer van Koophandel",
+      "Bij de buren",
+      "Bij de bibliotheek"
+    ],
+    "answer": "Bij de gemeente",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-9",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wat is de AOW?",
+    "options": [
+      "Een pensioen van de overheid voor mensen die de pensioenleeftijd bereiken",
+      "Een uitkering voor studenten",
+      "Een belasting op auto's",
+      "Een verzekering voor je huis"
+    ],
+    "answer": "Een pensioen van de overheid voor mensen die de pensioenleeftijd bereiken",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-10",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wat vind je op een loonstrook (salarisstrook)?",
+    "options": [
+      "Hoeveel je verdient en hoeveel belasting eraf gaat",
+      "De route naar je werk",
+      "Het weerbericht",
+      "Je medische dossier"
+    ],
+    "answer": "Hoeveel je verdient en hoeveel belasting eraf gaat",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-11",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wat betekent 'parttime' werken?",
+    "options": [
+      "Werken in deeltijd, dus minder dan een volledige werkweek",
+      "Werken in het buitenland",
+      "Alleen 's nachts werken",
+      "Nooit werken"
+    ],
+    "answer": "Werken in deeltijd, dus minder dan een volledige werkweek",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-12",
+    "topic": "Een eigen bedrijf beginnen (Starting a business)",
+    "question": "Wat is een zzp'er?",
+    "options": [
+      "Een zelfstandige zonder personeel die voor zichzelf werkt",
+      "Een werknemer met een vast contract",
+      "Iemand die werkloos is",
+      "Een leerling op een school"
+    ],
+    "answer": "Een zelfstandige zonder personeel die voor zichzelf werkt",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-13",
+    "topic": "Solliciteren (Applying for a job)",
+    "question": "Wat is een getuigschrift (referentie) van een vorige werkgever?",
+    "options": [
+      "Een verklaring over hoe je gewerkt hebt bij een vorige baan",
+      "Een boete van de politie",
+      "Een belastingformulier",
+      "Een vakantiekaart"
+    ],
+    "answer": "Een verklaring over hoe je gewerkt hebt bij een vorige baan",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-14",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Vanaf welke leeftijd heeft iemand recht op het volledige minimumloon voor volwassenen?",
+    "options": [
+      "16 jaar",
+      "18 jaar",
+      "21 jaar",
+      "25 jaar"
+    ],
+    "answer": "21 jaar",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch7-n-15",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wat geeft een werkgever aan de werknemer als bewijs van de afspraken over het werk?",
+    "options": [
+      "Een arbeidscontract (arbeidsovereenkomst)",
+      "Een treinkaartje",
+      "Een paspoort",
+      "Een schooldiploma"
+    ],
+    "answer": "Een arbeidscontract (arbeidsovereenkomst)",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-16",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wat is 'overwerk'?",
+    "options": [
+      "Meer uren werken dan is afgesproken in je contract",
+      "Te laat op het werk komen",
+      "Op vakantie gaan",
+      "Thuisblijven als je ziek bent"
+    ],
+    "answer": "Meer uren werken dan is afgesproken in je contract",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-17",
+    "topic": "Een eigen bedrijf beginnen (Starting a business)",
+    "question": "Wat is btw?",
+    "options": [
+      "Belasting die je betaalt over producten en diensten",
+      "Het loon van de directeur",
+      "Een soort vakantie",
+      "Een diploma voor ondernemers"
+    ],
+    "answer": "Belasting die je betaalt over producten en diensten",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-18",
+    "topic": "Samenwerken (Collaboration)",
+    "question": "Wat is een ondernemingsraad (OR)?",
+    "options": [
+      "Een groep werknemers die meepraat met de werkgever over het bedrijf",
+      "De klantenservice van een winkel",
+      "De directie van de bank",
+      "Een groep klanten"
+    ],
+    "answer": "Een groep werknemers die meepraat met de werkgever over het bedrijf",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-19",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Mag een werkgever je weigeren vanwege je afkomst of huidskleur?",
+    "options": [
+      "Ja, dat mag altijd",
+      "Nee, dat is discriminatie en is verboden",
+      "Alleen bij grote bedrijven",
+      "Alleen als de collega's het willen"
+    ],
+    "answer": "Nee, dat is discriminatie en is verboden",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch7-n-20",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wat krijg je vaak van je werkgever als je met het openbaar vervoer of de auto naar je werk reist?",
+    "options": [
+      "Een reiskostenvergoeding",
+      "Een gratis huis",
+      "Elke maand een nieuwe telefoon",
+      "Niets, dat mag niet"
+    ],
+    "answer": "Een reiskostenvergoeding",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-21",
+    "topic": "Wie kunnen je helpen? (Who can help?)",
+    "question": "Waar kun je bij de overheid vacatures en informatie over werk vinden?",
+    "options": [
+      "Bij het UWV (werk.nl)",
+      "Bij de dierenarts",
+      "Bij de bakker",
+      "Bij het consultatiebureau"
+    ],
+    "answer": "Bij het UWV (werk.nl)",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-22",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Waar heeft een vrouw recht op rond de geboorte van haar kind?",
+    "options": [
+      "Zwangerschaps- en bevallingsverlof",
+      "Niets, ze moet gewoon doorwerken",
+      "Alleen één dag vrij",
+      "Alleen als de werkgever het goedvindt"
+    ],
+    "answer": "Zwangerschaps- en bevallingsverlof",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch7-n-23",
+    "topic": "Rechten en plichten (Rights and duties)",
+    "question": "Wat kan een werkgever doen als een werknemer zijn werk echt niet goed doet?",
+    "options": [
+      "Hem meteen zonder reden slaan",
+      "Hem volgens de juiste regels ontslaan",
+      "Zijn huis afpakken",
+      "Hem gevangenzetten"
+    ],
+    "answer": "Hem volgens de juiste regels ontslaan",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch7-n-24",
+    "topic": "Solliciteren (Applying for a job)",
+    "question": "Waarom is het handig om een profiel op bijvoorbeeld LinkedIn te hebben?",
+    "options": [
+      "Om jezelf te laten zien aan werkgevers en te netwerken",
+      "Om gratis te reizen",
+      "Om belasting te ontwijken",
+      "Om een rijbewijs te halen"
+    ],
+    "answer": "Om jezelf te laten zien aan werkgevers en te netwerken",
+    "correctIndex": 0
   }
 ]

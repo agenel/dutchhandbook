@@ -82,6 +82,9 @@ import { SessionSyncService } from '../../../core/session-sync.service';
   `,
   styles: [`
     :host { display: block; }
+    /* Comfortable touch target (WCAG 2.2 target-size >= 24px). */
+    .auth-eye { width: 32px; height: 32px; right: 0.4rem; justify-content: center; border-radius: 8px; }
+    .auth-eye:focus-visible { outline: 2px solid var(--orange); outline-offset: 1px; }
     .auth-or {
       text-align: center;
       margin: 0.4rem 0;

@@ -277,96 +277,984 @@
     "category": "Common Conjunctions",
     "icon": "link",
     "cards": [
-      { "id": "conj1", "front": "Want", "back": "Because (main clause order)" },
-      { "id": "conj2", "front": "Omdat", "back": "Because (subordinate clause order)" },
-      { "id": "conj3", "front": "Maar", "back": "But" },
-      { "id": "conj4", "front": "Hoewel", "back": "Although" },
-      { "id": "conj5", "front": "Terwijl", "back": "While / Whereas" },
-      { "id": "conj6", "front": "Of", "back": "Or / Whether" },
-      { "id": "conj7", "front": "Dus", "back": "So / Therefore" },
-      { "id": "conj8", "front": "Wanneer", "back": "When" },
-      { "id": "conj9", "front": "Sinds", "back": "Since" },
-      { "id": "conj10", "front": "Zodat", "back": "So that" }
+      {
+        "id": "conj1",
+        "front": "Want",
+        "back": "Because (main clause order)"
+      },
+      {
+        "id": "conj2",
+        "front": "Omdat",
+        "back": "Because (subordinate clause order)"
+      },
+      {
+        "id": "conj3",
+        "front": "Maar",
+        "back": "But"
+      },
+      {
+        "id": "conj4",
+        "front": "Hoewel",
+        "back": "Although"
+      },
+      {
+        "id": "conj5",
+        "front": "Terwijl",
+        "back": "While / Whereas"
+      },
+      {
+        "id": "conj6",
+        "front": "Of",
+        "back": "Or / Whether"
+      },
+      {
+        "id": "conj7",
+        "front": "Dus",
+        "back": "So / Therefore"
+      },
+      {
+        "id": "conj8",
+        "front": "Wanneer",
+        "back": "When"
+      },
+      {
+        "id": "conj9",
+        "front": "Sinds",
+        "back": "Since"
+      },
+      {
+        "id": "conj10",
+        "front": "Zodat",
+        "back": "So that"
+      }
     ]
   },
   {
     "category": "Prepositions of Place",
     "icon": "location_on",
     "cards": [
-      { "id": "prep1", "front": "Op", "back": "On / At" },
-      { "id": "prep2", "front": "In", "back": "In" },
-      { "id": "prep3", "front": "Onder", "back": "Under" },
-      { "id": "prep4", "front": "Boven", "back": "Above" },
-      { "id": "prep5", "front": "Naast", "back": "Next to" },
-      { "id": "prep6", "front": "Tussen", "back": "Between" },
-      { "id": "prep7", "front": "Achter", "back": "Behind" },
-      { "id": "prep8", "front": "Voor", "back": "In front of / For" },
-      { "id": "prep9", "front": "Tegenover", "back": "Opposite" },
-      { "id": "prep10", "front": "Dichtbij", "back": "Near" }
+      {
+        "id": "prep1",
+        "front": "Op",
+        "back": "On / At"
+      },
+      {
+        "id": "prep2",
+        "front": "In",
+        "back": "In"
+      },
+      {
+        "id": "prep3",
+        "front": "Onder",
+        "back": "Under"
+      },
+      {
+        "id": "prep4",
+        "front": "Boven",
+        "back": "Above"
+      },
+      {
+        "id": "prep5",
+        "front": "Naast",
+        "back": "Next to"
+      },
+      {
+        "id": "prep6",
+        "front": "Tussen",
+        "back": "Between"
+      },
+      {
+        "id": "prep7",
+        "front": "Achter",
+        "back": "Behind"
+      },
+      {
+        "id": "prep8",
+        "front": "Voor",
+        "back": "In front of / For"
+      },
+      {
+        "id": "prep9",
+        "front": "Tegenover",
+        "back": "Opposite"
+      },
+      {
+        "id": "prep10",
+        "front": "Dichtbij",
+        "back": "Near"
+      }
     ]
   },
   {
     "category": "At the Doctor",
     "icon": "medical_services",
     "cards": [
-      { "id": "med1", "front": "De afspraak", "back": "The appointment" },
-      { "id": "med2", "front": "De pijn", "back": "The pain" },
-      { "id": "med3", "front": "Ik ben ziek", "back": "I am sick" },
-      { "id": "med4", "front": "De koorts", "back": "The fever" },
-      { "id": "med5", "front": "Het recept", "back": "The prescription" },
-      { "id": "med6", "front": "De apotheek", "back": "The pharmacy" },
-      { "id": "med7", "front": "Hoofdpijn", "back": "Headache" },
-      { "id": "med8", "front": "Verkouden", "back": "To have a cold" },
-      { "id": "med9", "front": "De verzekering", "back": "The insurance" },
-      { "id": "med10", "front": "Beterschap!", "back": "Get well soon!" }
+      {
+        "id": "med1",
+        "front": "De afspraak",
+        "back": "The appointment"
+      },
+      {
+        "id": "med2",
+        "front": "De pijn",
+        "back": "The pain"
+      },
+      {
+        "id": "med3",
+        "front": "Ik ben ziek",
+        "back": "I am sick"
+      },
+      {
+        "id": "med4",
+        "front": "De koorts",
+        "back": "The fever"
+      },
+      {
+        "id": "med5",
+        "front": "Het recept",
+        "back": "The prescription"
+      },
+      {
+        "id": "med6",
+        "front": "De apotheek",
+        "back": "The pharmacy"
+      },
+      {
+        "id": "med7",
+        "front": "Hoofdpijn",
+        "back": "Headache"
+      },
+      {
+        "id": "med8",
+        "front": "Verkouden",
+        "back": "To have a cold"
+      },
+      {
+        "id": "med9",
+        "front": "De verzekering",
+        "back": "The insurance"
+      },
+      {
+        "id": "med10",
+        "front": "Beterschap!",
+        "back": "Get well soon!"
+      }
     ]
   },
   {
     "category": "At the Supermarket",
     "icon": "shopping_cart",
     "cards": [
-      { "id": "shop1", "front": "De aanbieding", "back": "The offer / sale" },
-      { "id": "shop2", "front": "De kassa", "back": "The checkout / cash register" },
-      { "id": "shop3", "front": "Het bonnetje", "back": "The receipt" },
-      { "id": "shop4", "front": "De tas", "back": "The bag" },
-      { "id": "shop5", "front": "Wisselgeld", "back": "Change (money)" },
-      { "id": "shop6", "front": "Pinnen", "back": "To pay by card" },
-      { "id": "shop7", "front": "Contant", "back": "Cash" },
-      { "id": "shop8", "front": "De korting", "back": "The discount" },
-      { "id": "shop9", "front": "Houdbaarheidsdatum", "back": "Expiration date" },
-      { "id": "shop10", "front": "Zelfscankassa", "back": "Self-scan checkout" }
+      {
+        "id": "shop1",
+        "front": "De aanbieding",
+        "back": "The offer / sale"
+      },
+      {
+        "id": "shop2",
+        "front": "De kassa",
+        "back": "The checkout / cash register"
+      },
+      {
+        "id": "shop3",
+        "front": "Het bonnetje",
+        "back": "The receipt"
+      },
+      {
+        "id": "shop4",
+        "front": "De tas",
+        "back": "The bag"
+      },
+      {
+        "id": "shop5",
+        "front": "Wisselgeld",
+        "back": "Change (money)"
+      },
+      {
+        "id": "shop6",
+        "front": "Pinnen",
+        "back": "To pay by card"
+      },
+      {
+        "id": "shop7",
+        "front": "Contant",
+        "back": "Cash"
+      },
+      {
+        "id": "shop8",
+        "front": "De korting",
+        "back": "The discount"
+      },
+      {
+        "id": "shop9",
+        "front": "Houdbaarheidsdatum",
+        "back": "Expiration date"
+      },
+      {
+        "id": "shop10",
+        "front": "Zelfscankassa",
+        "back": "Self-scan checkout"
+      }
     ]
   },
   {
     "category": "Work & Office",
     "icon": "work",
     "cards": [
-      { "id": "work1", "front": "De vergadering", "back": "The meeting" },
-      { "id": "work2", "front": "De collega", "back": "The colleague" },
-      { "id": "work3", "front": "Het salaris", "back": "The salary" },
-      { "id": "work4", "front": "De pauze", "back": "The break" },
-      { "id": "work5", "front": "Solliciteren", "back": "To apply for a job" },
-      { "id": "work6", "front": "De werkgever", "back": "The employer" },
-      { "id": "work7", "front": "Ontslag nemen", "back": "To quit / resign" },
-      { "id": "work8", "front": "De deadline", "back": "The deadline" },
-      { "id": "work9", "front": "Thuiswerken", "back": "Working from home" },
-      { "id": "work10", "front": "De handleiding", "back": "The manual" }
+      {
+        "id": "work1",
+        "front": "De vergadering",
+        "back": "The meeting"
+      },
+      {
+        "id": "work2",
+        "front": "De collega",
+        "back": "The colleague"
+      },
+      {
+        "id": "work3",
+        "front": "Het salaris",
+        "back": "The salary"
+      },
+      {
+        "id": "work4",
+        "front": "De pauze",
+        "back": "The break"
+      },
+      {
+        "id": "work5",
+        "front": "Solliciteren",
+        "back": "To apply for a job"
+      },
+      {
+        "id": "work6",
+        "front": "De werkgever",
+        "back": "The employer"
+      },
+      {
+        "id": "work7",
+        "front": "Ontslag nemen",
+        "back": "To quit / resign"
+      },
+      {
+        "id": "work8",
+        "front": "De deadline",
+        "back": "The deadline"
+      },
+      {
+        "id": "work9",
+        "front": "Thuiswerken",
+        "back": "Working from home"
+      },
+      {
+        "id": "work10",
+        "front": "De handleiding",
+        "back": "The manual"
+      }
     ]
   },
   {
     "category": "Opposite Adjectives",
     "icon": "compare_arrows",
     "cards": [
-      { "id": "adj1", "front": "Groot / Klein", "back": "Big / Small" },
-      { "id": "adj2", "front": "Snel / Langzaam", "back": "Fast / Slow" },
-      { "id": "adj3", "front": "Duur / Goedkoop", "back": "Expensive / Cheap" },
-      { "id": "adj4", "front": "Warm / Koud", "back": "Warm / Cold" },
-      { "id": "adj5", "front": "Mooi / Lelijk", "back": "Beautiful / Ugly" },
-      { "id": "adj6", "front": "Makkelijk / Moeilijk", "back": "Easy / Difficult" },
-      { "id": "adj7", "front": "Rijk / Arm", "back": "Rich / Poor" },
-      { "id": "adj8", "front": "Schoon / Vuil", "back": "Clean / Dirty" },
-      { "id": "adj9", "front": "Vol / Leeg", "back": "Full / Empty" },
-      { "id": "adj10", "front": "Zwaar / Licht", "back": "Heavy / Light" }
+      {
+        "id": "adj1",
+        "front": "Groot / Klein",
+        "back": "Big / Small"
+      },
+      {
+        "id": "adj2",
+        "front": "Snel / Langzaam",
+        "back": "Fast / Slow"
+      },
+      {
+        "id": "adj3",
+        "front": "Duur / Goedkoop",
+        "back": "Expensive / Cheap"
+      },
+      {
+        "id": "adj4",
+        "front": "Warm / Koud",
+        "back": "Warm / Cold"
+      },
+      {
+        "id": "adj5",
+        "front": "Mooi / Lelijk",
+        "back": "Beautiful / Ugly"
+      },
+      {
+        "id": "adj6",
+        "front": "Makkelijk / Moeilijk",
+        "back": "Easy / Difficult"
+      },
+      {
+        "id": "adj7",
+        "front": "Rijk / Arm",
+        "back": "Rich / Poor"
+      },
+      {
+        "id": "adj8",
+        "front": "Schoon / Vuil",
+        "back": "Clean / Dirty"
+      },
+      {
+        "id": "adj9",
+        "front": "Vol / Leeg",
+        "back": "Full / Empty"
+      },
+      {
+        "id": "adj10",
+        "front": "Zwaar / Licht",
+        "back": "Heavy / Light"
+      }
+    ]
+  },
+  {
+    "category": "Food & Drink",
+    "icon": "restaurant",
+    "cards": [
+      {
+        "id": "fc-food-1",
+        "front": "de appel",
+        "back": "the apple"
+      },
+      {
+        "id": "fc-food-2",
+        "front": "de banaan",
+        "back": "the banana"
+      },
+      {
+        "id": "fc-food-3",
+        "front": "het ei",
+        "back": "the egg"
+      },
+      {
+        "id": "fc-food-4",
+        "front": "de rijst",
+        "back": "the rice"
+      },
+      {
+        "id": "fc-food-5",
+        "front": "de soep",
+        "back": "the soup"
+      },
+      {
+        "id": "fc-food-6",
+        "front": "de suiker",
+        "back": "the sugar"
+      },
+      {
+        "id": "fc-food-7",
+        "front": "het zout",
+        "back": "the salt"
+      },
+      {
+        "id": "fc-food-8",
+        "front": "de boter",
+        "back": "the butter"
+      },
+      {
+        "id": "fc-food-9",
+        "front": "de vis",
+        "back": "the fish"
+      },
+      {
+        "id": "fc-food-10",
+        "front": "de sinaasappel",
+        "back": "the orange"
+      },
+      {
+        "id": "fc-food-11",
+        "front": "de tomaat",
+        "back": "the tomato"
+      },
+      {
+        "id": "fc-food-12",
+        "front": "de ui",
+        "back": "the onion"
+      },
+      {
+        "id": "fc-food-13",
+        "front": "het sap",
+        "back": "the juice"
+      },
+      {
+        "id": "fc-food-14",
+        "front": "de koek",
+        "back": "the cookie / biscuit"
+      },
+      {
+        "id": "fc-food-15",
+        "front": "de taart",
+        "back": "the cake / pie"
+      }
+    ]
+  },
+  {
+    "category": "House & Furniture",
+    "icon": "home",
+    "cards": [
+      {
+        "id": "fc-house-1",
+        "front": "de muur",
+        "back": "the wall"
+      },
+      {
+        "id": "fc-house-2",
+        "front": "de vloer",
+        "back": "the floor"
+      },
+      {
+        "id": "fc-house-3",
+        "front": "het plafond",
+        "back": "the ceiling"
+      },
+      {
+        "id": "fc-house-4",
+        "front": "de trap",
+        "back": "the stairs"
+      },
+      {
+        "id": "fc-house-5",
+        "front": "de spiegel",
+        "back": "the mirror"
+      },
+      {
+        "id": "fc-house-6",
+        "front": "het gordijn",
+        "back": "the curtain"
+      },
+      {
+        "id": "fc-house-7",
+        "front": "het tapijt",
+        "back": "the carpet"
+      },
+      {
+        "id": "fc-house-8",
+        "front": "de la",
+        "back": "the drawer"
+      },
+      {
+        "id": "fc-house-9",
+        "front": "het kussen",
+        "back": "the pillow / cushion"
+      },
+      {
+        "id": "fc-house-10",
+        "front": "de deken",
+        "back": "the blanket"
+      },
+      {
+        "id": "fc-house-11",
+        "front": "de wastafel",
+        "back": "the washbasin"
+      },
+      {
+        "id": "fc-house-12",
+        "front": "het bad",
+        "back": "the bath"
+      },
+      {
+        "id": "fc-house-13",
+        "front": "het schilderij",
+        "back": "the painting"
+      },
+      {
+        "id": "fc-house-14",
+        "front": "de klok",
+        "back": "the clock"
+      },
+      {
+        "id": "fc-house-15",
+        "front": "de plant",
+        "back": "the plant"
+      }
+    ]
+  },
+  {
+    "category": "Family",
+    "icon": "family_restroom",
+    "cards": [
+      {
+        "id": "fc-family-1",
+        "front": "de familie",
+        "back": "the family (relatives)"
+      },
+      {
+        "id": "fc-family-2",
+        "front": "het gezin",
+        "back": "the (nuclear) family"
+      },
+      {
+        "id": "fc-family-3",
+        "front": "de ouders",
+        "back": "the parents"
+      },
+      {
+        "id": "fc-family-4",
+        "front": "de echtgenoot",
+        "back": "the husband"
+      },
+      {
+        "id": "fc-family-5",
+        "front": "de echtgenote",
+        "back": "the wife"
+      },
+      {
+        "id": "fc-family-6",
+        "front": "de partner",
+        "back": "the partner"
+      },
+      {
+        "id": "fc-family-7",
+        "front": "de baby",
+        "back": "the baby"
+      },
+      {
+        "id": "fc-family-8",
+        "front": "de tweeling",
+        "back": "the twins"
+      },
+      {
+        "id": "fc-family-9",
+        "front": "de dochter",
+        "back": "the daughter"
+      },
+      {
+        "id": "fc-family-10",
+        "front": "de zoon",
+        "back": "the son"
+      },
+      {
+        "id": "fc-family-11",
+        "front": "de schoonmoeder",
+        "back": "the mother-in-law"
+      },
+      {
+        "id": "fc-family-12",
+        "front": "de schoonvader",
+        "back": "the father-in-law"
+      },
+      {
+        "id": "fc-family-13",
+        "front": "de stiefvader",
+        "back": "the stepfather"
+      },
+      {
+        "id": "fc-family-14",
+        "front": "de buurman",
+        "back": "the neighbour (male)"
+      },
+      {
+        "id": "fc-family-15",
+        "front": "de buurvrouw",
+        "back": "the neighbour (female)"
+      }
+    ]
+  },
+  {
+    "category": "Body & Health",
+    "icon": "healing",
+    "cards": [
+      {
+        "id": "fc-body-1",
+        "front": "de gezondheid",
+        "back": "the health"
+      },
+      {
+        "id": "fc-body-2",
+        "front": "gezond",
+        "back": "healthy"
+      },
+      {
+        "id": "fc-body-3",
+        "front": "de huid",
+        "back": "the skin"
+      },
+      {
+        "id": "fc-body-4",
+        "front": "de nek",
+        "back": "the neck"
+      },
+      {
+        "id": "fc-body-5",
+        "front": "de elleboog",
+        "back": "the elbow"
+      },
+      {
+        "id": "fc-body-6",
+        "front": "de pols",
+        "back": "the wrist"
+      },
+      {
+        "id": "fc-body-7",
+        "front": "de enkel",
+        "back": "the ankle"
+      },
+      {
+        "id": "fc-body-8",
+        "front": "de spier",
+        "back": "the muscle"
+      },
+      {
+        "id": "fc-body-9",
+        "front": "het bot",
+        "back": "the bone"
+      },
+      {
+        "id": "fc-body-10",
+        "front": "het bloed",
+        "back": "the blood"
+      },
+      {
+        "id": "fc-body-11",
+        "front": "de keel",
+        "back": "the throat"
+      },
+      {
+        "id": "fc-body-12",
+        "front": "de long",
+        "back": "the lung"
+      },
+      {
+        "id": "fc-body-13",
+        "front": "de maag",
+        "back": "the stomach"
+      },
+      {
+        "id": "fc-body-14",
+        "front": "de wond",
+        "back": "the wound"
+      },
+      {
+        "id": "fc-body-15",
+        "front": "moe",
+        "back": "tired"
+      }
+    ]
+  },
+  {
+    "category": "Clothing",
+    "icon": "checkroom",
+    "cards": [
+      {
+        "id": "fc-clothing-1",
+        "front": "de muts",
+        "back": "the beanie / woolly hat"
+      },
+      {
+        "id": "fc-clothing-2",
+        "front": "de sjaal",
+        "back": "the scarf"
+      },
+      {
+        "id": "fc-clothing-3",
+        "front": "de handschoen",
+        "back": "the glove"
+      },
+      {
+        "id": "fc-clothing-4",
+        "front": "de laars",
+        "back": "the boot"
+      },
+      {
+        "id": "fc-clothing-5",
+        "front": "de sandaal",
+        "back": "the sandal"
+      },
+      {
+        "id": "fc-clothing-6",
+        "front": "de zwembroek",
+        "back": "the swimming trunks"
+      },
+      {
+        "id": "fc-clothing-7",
+        "front": "het badpak",
+        "back": "the swimsuit"
+      },
+      {
+        "id": "fc-clothing-8",
+        "front": "de zonnebril",
+        "back": "the sunglasses"
+      },
+      {
+        "id": "fc-clothing-9",
+        "front": "de portemonnee",
+        "back": "the wallet / purse"
+      },
+      {
+        "id": "fc-clothing-10",
+        "front": "de paraplu",
+        "back": "the umbrella"
+      },
+      {
+        "id": "fc-clothing-11",
+        "front": "de knoop",
+        "back": "the button"
+      },
+      {
+        "id": "fc-clothing-12",
+        "front": "de rits",
+        "back": "the zipper"
+      },
+      {
+        "id": "fc-clothing-13",
+        "front": "de maat",
+        "back": "the size"
+      },
+      {
+        "id": "fc-clothing-14",
+        "front": "de handtas",
+        "back": "the handbag"
+      },
+      {
+        "id": "fc-clothing-15",
+        "front": "de ring",
+        "back": "the ring"
+      }
+    ]
+  },
+  {
+    "category": "Weather & Seasons",
+    "icon": "cloud",
+    "cards": [
+      {
+        "id": "fc-weather-1",
+        "front": "het weer",
+        "back": "the weather"
+      },
+      {
+        "id": "fc-weather-2",
+        "front": "de zon",
+        "back": "the sun"
+      },
+      {
+        "id": "fc-weather-3",
+        "front": "de regen",
+        "back": "the rain"
+      },
+      {
+        "id": "fc-weather-4",
+        "front": "de wind",
+        "back": "the wind"
+      },
+      {
+        "id": "fc-weather-5",
+        "front": "de wolk",
+        "back": "the cloud"
+      },
+      {
+        "id": "fc-weather-6",
+        "front": "de sneeuw",
+        "back": "the snow"
+      },
+      {
+        "id": "fc-weather-7",
+        "front": "het onweer",
+        "back": "the thunderstorm"
+      },
+      {
+        "id": "fc-weather-8",
+        "front": "de bliksem",
+        "back": "the lightning"
+      },
+      {
+        "id": "fc-weather-9",
+        "front": "de donder",
+        "back": "the thunder"
+      },
+      {
+        "id": "fc-weather-10",
+        "front": "de mist",
+        "back": "the fog"
+      },
+      {
+        "id": "fc-weather-11",
+        "front": "het ijs",
+        "back": "the ice"
+      },
+      {
+        "id": "fc-weather-12",
+        "front": "de temperatuur",
+        "back": "the temperature"
+      },
+      {
+        "id": "fc-weather-13",
+        "front": "zonnig",
+        "back": "sunny"
+      },
+      {
+        "id": "fc-weather-14",
+        "front": "bewolkt",
+        "back": "cloudy"
+      },
+      {
+        "id": "fc-weather-15",
+        "front": "winderig",
+        "back": "windy"
+      }
+    ]
+  },
+  {
+    "category": "Travel & Transport",
+    "icon": "directions_bus",
+    "cards": [
+      {
+        "id": "fc-travel-1",
+        "front": "de reis",
+        "back": "the trip / journey"
+      },
+      {
+        "id": "fc-travel-2",
+        "front": "het kaartje",
+        "back": "the ticket"
+      },
+      {
+        "id": "fc-travel-3",
+        "front": "de koffer",
+        "back": "the suitcase"
+      },
+      {
+        "id": "fc-travel-4",
+        "front": "de rugzak",
+        "back": "the backpack"
+      },
+      {
+        "id": "fc-travel-5",
+        "front": "het paspoort",
+        "back": "the passport"
+      },
+      {
+        "id": "fc-travel-6",
+        "front": "de grens",
+        "back": "the border"
+      },
+      {
+        "id": "fc-travel-7",
+        "front": "het hotel",
+        "back": "the hotel"
+      },
+      {
+        "id": "fc-travel-8",
+        "front": "de sleutel",
+        "back": "the key"
+      },
+      {
+        "id": "fc-travel-9",
+        "front": "de bestemming",
+        "back": "the destination"
+      },
+      {
+        "id": "fc-travel-10",
+        "front": "de vertraging",
+        "back": "the delay"
+      },
+      {
+        "id": "fc-travel-11",
+        "front": "de aankomst",
+        "back": "the arrival"
+      },
+      {
+        "id": "fc-travel-12",
+        "front": "het vertrek",
+        "back": "the departure"
+      },
+      {
+        "id": "fc-travel-13",
+        "front": "de chauffeur",
+        "back": "the driver"
+      },
+      {
+        "id": "fc-travel-14",
+        "front": "het perron",
+        "back": "the platform"
+      },
+      {
+        "id": "fc-travel-15",
+        "front": "de dienstregeling",
+        "back": "the timetable"
+      }
+    ]
+  },
+  {
+    "category": "Emotions & Adjectives",
+    "icon": "mood",
+    "cards": [
+      {
+        "id": "fc-emotion-1",
+        "front": "blij",
+        "back": "happy / glad"
+      },
+      {
+        "id": "fc-emotion-2",
+        "front": "verdrietig",
+        "back": "sad"
+      },
+      {
+        "id": "fc-emotion-3",
+        "front": "boos",
+        "back": "angry"
+      },
+      {
+        "id": "fc-emotion-4",
+        "front": "bang",
+        "back": "afraid / scared"
+      },
+      {
+        "id": "fc-emotion-5",
+        "front": "trots",
+        "back": "proud"
+      },
+      {
+        "id": "fc-emotion-6",
+        "front": "jaloers",
+        "back": "jealous"
+      },
+      {
+        "id": "fc-emotion-7",
+        "front": "verrast",
+        "back": "surprised"
+      },
+      {
+        "id": "fc-emotion-8",
+        "front": "nerveus",
+        "back": "nervous"
+      },
+      {
+        "id": "fc-emotion-9",
+        "front": "rustig",
+        "back": "calm"
+      },
+      {
+        "id": "fc-emotion-10",
+        "front": "eenzaam",
+        "back": "lonely"
+      },
+      {
+        "id": "fc-emotion-11",
+        "front": "dankbaar",
+        "back": "grateful"
+      },
+      {
+        "id": "fc-emotion-12",
+        "front": "teleurgesteld",
+        "back": "disappointed"
+      },
+      {
+        "id": "fc-emotion-13",
+        "front": "enthousiast",
+        "back": "enthusiastic"
+      },
+      {
+        "id": "fc-emotion-14",
+        "front": "verliefd",
+        "back": "in love"
+      },
+      {
+        "id": "fc-emotion-15",
+        "front": "tevreden",
+        "back": "satisfied / content"
+      }
     ]
   }
 ]

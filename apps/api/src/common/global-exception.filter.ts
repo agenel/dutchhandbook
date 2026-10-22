@@ -41,6 +41,14 @@ export class GlobalExceptionFilter implements ExceptionFilter {
   }
 
   private normalize(exception: unknown): ErrorBody {
+    // Body-parser errors (raised before any controller runs) carry a `type`.
+    const bodyErrorType = (exception as { type?: unknown } | null)?.type;
+    if (bodyErrorType === 'entity.too.large') {
+      return { statusCode: HttpStatus.PAYLOAD_TOO_LARGE, message: 'Request body is too large' };
+    }
+    if (bodyErrorType === 'entity.parse.failed') {
+      return { statusCode: HttpStatus.BAD_REQUEST, message: 'Request body is not valid JSON' };
+    }
     if (exception instanceof ZodError) {
       const flattened = exception.flatten();
       const fieldErrors = flattened.fieldErrors as Record<string, string[] | undefined>;

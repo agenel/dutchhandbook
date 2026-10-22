@@ -20,7 +20,12 @@
         "perfectum": "is geweest"
       },
       "example": "Ik ben een student.",
-      "example_en": "I am a student."
+      "example_en": "I am a student.",
+      "englishForms": {
+        "present": "am",
+        "past": "was",
+        "participle": "been"
+      }
     },
     {
       "id": 2,
@@ -42,7 +47,12 @@
         "perfectum": "heeft gehad"
       },
       "example": "Ik heb een boek.",
-      "example_en": "I have a book."
+      "example_en": "I have a book.",
+      "englishForms": {
+        "present": "have",
+        "past": "had",
+        "participle": "had"
+      }
     },
     {
       "id": 3,
@@ -64,7 +74,12 @@
         "perfectum": "is gegaan"
       },
       "example": "Wij gaan naar huis.",
-      "example_en": "We are going home."
+      "example_en": "We are going home.",
+      "englishForms": {
+        "present": "go",
+        "past": "went",
+        "participle": "gone"
+      }
     },
     {
       "id": 4,
@@ -86,7 +101,12 @@
         "perfectum": "is gekomen"
       },
       "example": "Hij komt uit Nederland.",
-      "example_en": "He comes from the Netherlands."
+      "example_en": "He comes from the Netherlands.",
+      "englishForms": {
+        "present": "come",
+        "past": "came",
+        "participle": "come"
+      }
     },
     {
       "id": 5,
@@ -108,7 +128,12 @@
         "perfectum": "heeft gedaan"
       },
       "example": "Wat doe je?",
-      "example_en": "What are you doing?"
+      "example_en": "What are you doing?",
+      "englishForms": {
+        "present": "do",
+        "past": "did",
+        "participle": "done"
+      }
     },
     {
       "id": 6,
@@ -130,7 +155,12 @@
         "perfectum": "heeft gekund"
       },
       "example": "Ik kan Nederlands spreken.",
-      "example_en": "I can speak Dutch."
+      "example_en": "I can speak Dutch.",
+      "englishForms": {
+        "present": "can",
+        "past": "could",
+        "participle": "been able to"
+      }
     },
     {
       "id": 7,
@@ -152,7 +182,12 @@
         "perfectum": "heeft gemoeten"
       },
       "example": "Je moet slapen.",
-      "example_en": "You must sleep."
+      "example_en": "You must sleep.",
+      "englishForms": {
+        "present": "must",
+        "past": "had to",
+        "participle": "had to"
+      }
     },
     {
       "id": 8,
@@ -174,7 +209,12 @@
         "perfectum": "heeft gewild"
       },
       "example": "Ik wil water.",
-      "example_en": "I want water."
+      "example_en": "I want water.",
+      "englishForms": {
+        "present": "want",
+        "past": "wanted",
+        "participle": "wanted"
+      }
     },
     {
       "id": 9,
@@ -196,7 +236,12 @@
         "perfectum": "heeft gemogen"
       },
       "example": "Mag ik hier zitten?",
-      "example_en": "May I sit here?"
+      "example_en": "May I sit here?",
+      "englishForms": {
+        "present": "may",
+        "past": "was allowed to",
+        "participle": "been allowed to"
+      }
     },
     {
       "id": 10,
@@ -218,7 +263,12 @@
         "perfectum": "is geworden"
       },
       "example": "Het wordt koud.",
-      "example_en": "It is becoming cold."
+      "example_en": "It is becoming cold.",
+      "englishForms": {
+        "present": "become",
+        "past": "became",
+        "participle": "become"
+      }
     },
     {
       "id": 11,
@@ -240,7 +290,12 @@
         "perfectum": "heeft gezegd"
       },
       "example": "Wat zeg je?",
-      "example_en": "What are you saying?"
+      "example_en": "What are you saying?",
+      "englishForms": {
+        "present": "say",
+        "past": "said",
+        "participle": "said"
+      }
     },
     {
       "id": 12,
@@ -262,7 +317,12 @@
         "perfectum": "heeft gezien"
       },
       "example": "Ik zie de vogel.",
-      "example_en": "I see the bird."
+      "example_en": "I see the bird.",
+      "englishForms": {
+        "present": "see",
+        "past": "saw",
+        "participle": "seen"
+      }
     },
     {
       "id": 13,
@@ -284,7 +344,12 @@
         "perfectum": "heeft geweten"
       },
       "example": "Ik weet het niet.",
-      "example_en": "I don't know."
+      "example_en": "I don't know.",
+      "englishForms": {
+        "present": "know",
+        "past": "knew",
+        "participle": "known"
+      }
     },
     {
       "id": 14,
@@ -306,7 +371,12 @@
         "perfectum": "heeft gevonden"
       },
       "example": "Ik vind dit leuk.",
-      "example_en": "I find this nice (I like this)."
+      "example_en": "I find this nice (I like this).",
+      "englishForms": {
+        "present": "find",
+        "past": "found",
+        "participle": "found"
+      }
     },
     {
       "id": 15,
@@ -328,7 +398,12 @@
         "perfectum": "heeft gestaan"
       },
       "example": "De auto staat daar.",
-      "example_en": "The car is (standing) there."
+      "example_en": "The car is (standing) there.",
+      "englishForms": {
+        "present": "stand",
+        "past": "stood",
+        "participle": "stood"
+      }
     },
     {
       "id": 16,
@@ -350,7 +425,12 @@
         "perfectum": "heeft gegeven"
       },
       "example": "Ik geef je een cadeau.",
-      "example_en": "I give you a gift."
+      "example_en": "I give you a gift.",
+      "englishForms": {
+        "present": "give",
+        "past": "gave",
+        "participle": "given"
+      }
     },
     {
       "id": 17,
@@ -372,7 +452,12 @@
         "perfectum": "heeft geholpen"
       },
       "example": "Kan je me helpen?",
-      "example_en": "Can you help me?"
+      "example_en": "Can you help me?",
+      "englishForms": {
+        "present": "help",
+        "past": "helped",
+        "participle": "helped"
+      }
     },
     {
       "id": 18,
@@ -394,7 +479,12 @@
         "perfectum": "heeft gekeken"
       },
       "example": "Ik kijk televisie.",
-      "example_en": "I watch television."
+      "example_en": "I watch television.",
+      "englishForms": {
+        "present": "look",
+        "past": "looked",
+        "participle": "looked"
+      }
     },
     {
       "id": 19,
@@ -416,7 +506,12 @@
         "perfectum": "heeft gedacht"
       },
       "example": "Ik denk aan jou.",
-      "example_en": "I am thinking about you."
+      "example_en": "I am thinking about you.",
+      "englishForms": {
+        "present": "think",
+        "past": "thought",
+        "participle": "thought"
+      }
     },
     {
       "id": 20,
@@ -438,7 +533,12 @@
         "perfectum": "heeft geloofd"
       },
       "example": "Ik geloof je.",
-      "example_en": "I believe you."
+      "example_en": "I believe you.",
+      "englishForms": {
+        "present": "believe",
+        "past": "believed",
+        "participle": "believed"
+      }
     },
     {
       "id": 21,
@@ -460,7 +560,12 @@
         "perfectum": "heeft gesproken"
       },
       "example": "Ik spreek een beetje Nederlands.",
-      "example_en": "I speak a little Dutch."
+      "example_en": "I speak a little Dutch.",
+      "englishForms": {
+        "present": "speak",
+        "past": "spoke",
+        "participle": "spoken"
+      }
     },
     {
       "id": 22,
@@ -482,7 +587,12 @@
         "perfectum": "heeft gevraagd"
       },
       "example": "Mag ik iets vragen?",
-      "example_en": "May I ask something?"
+      "example_en": "May I ask something?",
+      "englishForms": {
+        "present": "ask",
+        "past": "asked",
+        "participle": "asked"
+      }
     },
     {
       "id": 23,
@@ -504,7 +614,12 @@
         "perfectum": "heeft gewerkt"
       },
       "example": "Ik werk bij een bank.",
-      "example_en": "I work at a bank."
+      "example_en": "I work at a bank.",
+      "englishForms": {
+        "present": "work",
+        "past": "worked",
+        "participle": "worked"
+      }
     },
     {
       "id": 24,
@@ -526,7 +641,12 @@
         "perfectum": "heeft gemaakt"
       },
       "example": "Ik maak het eten.",
-      "example_en": "I am making the food."
+      "example_en": "I am making the food.",
+      "englishForms": {
+        "present": "make",
+        "past": "made",
+        "participle": "made"
+      }
     },
     {
       "id": 25,
@@ -548,7 +668,12 @@
         "perfectum": "heeft gekregen"
       },
       "example": "Ik krijg een mail.",
-      "example_en": "I am getting an email."
+      "example_en": "I am getting an email.",
+      "englishForms": {
+        "present": "get",
+        "past": "got",
+        "participle": "got"
+      }
     },
     {
       "id": 26,
@@ -570,7 +695,12 @@
         "perfectum": "heeft gelezen"
       },
       "example": "Ik lees de krant.",
-      "example_en": "I read the newspaper."
+      "example_en": "I read the newspaper.",
+      "englishForms": {
+        "present": "read",
+        "past": "read",
+        "participle": "read"
+      }
     },
     {
       "id": 27,
@@ -592,7 +722,12 @@
         "perfectum": "heeft geschreven"
       },
       "example": "Ik schrijf een brief.",
-      "example_en": "I am writing a letter."
+      "example_en": "I am writing a letter.",
+      "englishForms": {
+        "present": "write",
+        "past": "wrote",
+        "participle": "written"
+      }
     },
     {
       "id": 28,
@@ -614,7 +749,12 @@
         "perfectum": "heeft geleerd"
       },
       "example": "Ik leer Nederlands.",
-      "example_en": "I am learning Dutch."
+      "example_en": "I am learning Dutch.",
+      "englishForms": {
+        "present": "learn",
+        "past": "learned",
+        "participle": "learned"
+      }
     },
     {
       "id": 29,
@@ -636,7 +776,12 @@
         "perfectum": "heeft gegeten"
       },
       "example": "Wat eten we vandaag?",
-      "example_en": "What are we eating today?"
+      "example_en": "What are we eating today?",
+      "englishForms": {
+        "present": "eat",
+        "past": "ate",
+        "participle": "eaten"
+      }
     },
     {
       "id": 30,
@@ -658,7 +803,12 @@
         "perfectum": "heeft gedronken"
       },
       "example": "Ik drink koffie.",
-      "example_en": "I drink coffee."
+      "example_en": "I drink coffee.",
+      "englishForms": {
+        "present": "drink",
+        "past": "drank",
+        "participle": "drunk"
+      }
     },
     {
       "id": 31,
@@ -680,7 +830,12 @@
         "perfectum": "heeft geslapen"
       },
       "example": "Ik slaap acht uur.",
-      "example_en": "I sleep eight hours."
+      "example_en": "I sleep eight hours.",
+      "englishForms": {
+        "present": "sleep",
+        "past": "slept",
+        "participle": "slept"
+      }
     },
     {
       "id": 32,
@@ -702,7 +857,12 @@
         "perfectum": "heeft gezeten"
       },
       "example": "Ik zit op een stoel.",
-      "example_en": "I am sitting on a chair."
+      "example_en": "I am sitting on a chair.",
+      "englishForms": {
+        "present": "sit",
+        "past": "sat",
+        "participle": "sat"
+      }
     },
     {
       "id": 33,
@@ -724,7 +884,12 @@
         "perfectum": "heeft gelegen"
       },
       "example": "Het boek ligt op de tafel.",
-      "example_en": "The book is lying on the table."
+      "example_en": "The book is lying on the table.",
+      "englishForms": {
+        "present": "lie",
+        "past": "lay",
+        "participle": "lain"
+      }
     },
     {
       "id": 34,
@@ -746,7 +911,12 @@
         "perfectum": "heeft/is gelopen"
       },
       "example": "Ik loop naar de stad.",
-      "example_en": "I am walking to the city."
+      "example_en": "I am walking to the city.",
+      "englishForms": {
+        "present": "walk",
+        "past": "walked",
+        "participle": "walked"
+      }
     },
     {
       "id": 35,
@@ -768,7 +938,12 @@
         "perfectum": "heeft/is gefietst"
       },
       "example": "Ik fiets elke dag.",
-      "example_en": "I cycle every day."
+      "example_en": "I cycle every day.",
+      "englishForms": {
+        "present": "cycle",
+        "past": "cycled",
+        "participle": "cycled"
+      }
     },
     {
       "id": 36,
@@ -790,7 +965,12 @@
         "perfectum": "heeft/is gereden"
       },
       "example": "Hij rijdt een auto.",
-      "example_en": "He drives a car."
+      "example_en": "He drives a car.",
+      "englishForms": {
+        "present": "drive",
+        "past": "drove",
+        "participle": "driven"
+      }
     },
     {
       "id": 37,
@@ -812,7 +992,12 @@
         "perfectum": "heeft gekocht"
       },
       "example": "Ik koop brood.",
-      "example_en": "I buy bread."
+      "example_en": "I buy bread.",
+      "englishForms": {
+        "present": "buy",
+        "past": "bought",
+        "participle": "bought"
+      }
     },
     {
       "id": 38,
@@ -834,7 +1019,12 @@
         "perfectum": "heeft betaald"
       },
       "example": "Ik betaal de rekening.",
-      "example_en": "I am paying the bill."
+      "example_en": "I am paying the bill.",
+      "englishForms": {
+        "present": "pay",
+        "past": "paid",
+        "participle": "paid"
+      }
     },
     {
       "id": 39,
@@ -856,7 +1046,12 @@
         "perfectum": "heeft verkocht"
       },
       "example": "Zij verkoopt haar huis.",
-      "example_en": "She is selling her house."
+      "example_en": "She is selling her house.",
+      "englishForms": {
+        "present": "sell",
+        "past": "sold",
+        "participle": "sold"
+      }
     },
     {
       "id": 40,
@@ -878,7 +1073,12 @@
         "perfectum": "heeft gehoopt"
       },
       "example": "Ik hoop dat het lukt.",
-      "example_en": "I hope that it succeeds."
+      "example_en": "I hope that it succeeds.",
+      "englishForms": {
+        "present": "hope",
+        "past": "hoped",
+        "participle": "hoped"
+      }
     },
     {
       "id": 41,
@@ -900,7 +1100,12 @@
         "perfectum": "heeft geluisterd"
       },
       "example": "Ik luister naar muziek.",
-      "example_en": "I listen to music."
+      "example_en": "I listen to music.",
+      "englishForms": {
+        "present": "listen",
+        "past": "listened",
+        "participle": "listened"
+      }
     },
     {
       "id": 42,
@@ -922,7 +1127,12 @@
         "perfectum": "heeft gehoord"
       },
       "example": "Hoor je dat?",
-      "example_en": "Do you hear that?"
+      "example_en": "Do you hear that?",
+      "englishForms": {
+        "present": "hear",
+        "past": "heard",
+        "participle": "heard"
+      }
     },
     {
       "id": 43,
@@ -944,7 +1154,12 @@
         "perfectum": "heeft gevoeld"
       },
       "example": "Ik voel me goed.",
-      "example_en": "I feel good."
+      "example_en": "I feel good.",
+      "englishForms": {
+        "present": "feel",
+        "past": "felt",
+        "participle": "felt"
+      }
     },
     {
       "id": 44,
@@ -966,7 +1181,12 @@
         "perfectum": "heeft gewacht"
       },
       "example": "Ik wacht op de bus.",
-      "example_en": "I am waiting for the bus."
+      "example_en": "I am waiting for the bus.",
+      "englishForms": {
+        "present": "wait",
+        "past": "waited",
+        "participle": "waited"
+      }
     },
     {
       "id": 45,
@@ -988,7 +1208,12 @@
         "perfectum": "heeft gezocht"
       },
       "example": "Ik zoek mijn sleutels.",
-      "example_en": "I am looking for my keys."
+      "example_en": "I am looking for my keys.",
+      "englishForms": {
+        "present": "look for",
+        "past": "looked for",
+        "participle": "looked for"
+      }
     },
     {
       "id": 46,
@@ -1010,7 +1235,12 @@
         "perfectum": "heeft gevonden"
       },
       "example": "Heb je het gevonden?",
-      "example_en": "Did you find it?"
+      "example_en": "Did you find it?",
+      "englishForms": {
+        "present": "find",
+        "past": "found",
+        "participle": "found"
+      }
     },
     {
       "id": 47,
@@ -1032,7 +1262,12 @@
         "perfectum": "heeft gehouden"
       },
       "example": "Ik houd van jou.",
-      "example_en": "I love you."
+      "example_en": "I love you.",
+      "englishForms": {
+        "present": "love",
+        "past": "loved",
+        "participle": "loved"
+      }
     },
     {
       "id": 48,
@@ -1054,7 +1289,12 @@
         "perfectum": "heeft geprobeerd"
       },
       "example": "Ik probeer het.",
-      "example_en": "I am trying it."
+      "example_en": "I am trying it.",
+      "englishForms": {
+        "present": "try",
+        "past": "tried",
+        "participle": "tried"
+      }
     },
     {
       "id": 49,
@@ -1076,7 +1316,12 @@
         "perfectum": "is begonnen"
       },
       "example": "De les begint nu.",
-      "example_en": "The lesson starts now."
+      "example_en": "The lesson starts now.",
+      "englishForms": {
+        "present": "begin",
+        "past": "began",
+        "participle": "begun"
+      }
     },
     {
       "id": 50,
@@ -1098,7 +1343,12 @@
         "perfectum": "is geëindigd"
       },
       "example": "De film eindigt om tien uur.",
-      "example_en": "The movie ends at ten o'clock."
+      "example_en": "The movie ends at ten o'clock.",
+      "englishForms": {
+        "present": "end",
+        "past": "ended",
+        "participle": "ended"
+      }
     },
     {
       "id": 51,
@@ -1120,7 +1370,12 @@
         "perfectum": "heeft gepakt"
       },
       "example": "Ik pak mijn tas.",
-      "example_en": "I grab my bag."
+      "example_en": "I grab my bag.",
+      "englishForms": {
+        "present": "grab",
+        "past": "grabbed",
+        "participle": "grabbed"
+      }
     },
     {
       "id": 52,
@@ -1142,7 +1397,12 @@
         "perfectum": "heeft gebracht"
       },
       "example": "Ik breng je naar huis.",
-      "example_en": "I am bringing you home."
+      "example_en": "I am bringing you home.",
+      "englishForms": {
+        "present": "bring",
+        "past": "brought",
+        "participle": "brought"
+      }
     },
     {
       "id": 53,
@@ -1164,7 +1424,12 @@
         "perfectum": "heeft gedragen"
       },
       "example": "Ik draag een blauwe jas.",
-      "example_en": "I am wearing a blue jacket."
+      "example_en": "I am wearing a blue jacket.",
+      "englishForms": {
+        "present": "wear",
+        "past": "wore",
+        "participle": "worn"
+      }
     },
     {
       "id": 54,
@@ -1186,7 +1451,12 @@
         "perfectum": "is gevallen"
       },
       "example": "Het glas valt op de grond.",
-      "example_en": "The glass falls on the floor."
+      "example_en": "The glass falls on the floor.",
+      "englishForms": {
+        "present": "fall",
+        "past": "fell",
+        "participle": "fallen"
+      }
     },
     {
       "id": 55,
@@ -1208,7 +1478,12 @@
         "perfectum": "heeft/is gevlogen"
       },
       "example": "Wij vliegen naar Spanje.",
-      "example_en": "We are flying to Spain."
+      "example_en": "We are flying to Spain.",
+      "englishForms": {
+        "present": "fly",
+        "past": "flew",
+        "participle": "flown"
+      }
     },
     {
       "id": 56,
@@ -1230,7 +1505,12 @@
         "perfectum": "heeft/is gezwommen"
       },
       "example": "Ik zwem in de zee.",
-      "example_en": "I swim in the sea."
+      "example_en": "I swim in the sea.",
+      "englishForms": {
+        "present": "swim",
+        "past": "swam",
+        "participle": "swum"
+      }
     },
     {
       "id": 57,
@@ -1252,7 +1532,12 @@
         "perfectum": "heeft gespeeld"
       },
       "example": "De kinderen spelen buiten.",
-      "example_en": "The children are playing outside."
+      "example_en": "The children are playing outside.",
+      "englishForms": {
+        "present": "play",
+        "past": "played",
+        "participle": "played"
+      }
     },
     {
       "id": 58,
@@ -1274,7 +1559,12 @@
         "perfectum": "heeft gezongen"
       },
       "example": "Zij zingt een mooi lied.",
-      "example_en": "She is singing a beautiful song."
+      "example_en": "She is singing a beautiful song.",
+      "englishForms": {
+        "present": "sing",
+        "past": "sang",
+        "participle": "sung"
+      }
     },
     {
       "id": 59,
@@ -1296,7 +1586,12 @@
         "perfectum": "heeft gedanst"
       },
       "example": "Wij dansen op het feest.",
-      "example_en": "We are dancing at the party."
+      "example_en": "We are dancing at the party.",
+      "englishForms": {
+        "present": "dance",
+        "past": "danced",
+        "participle": "danced"
+      }
     },
     {
       "id": 60,
@@ -1318,7 +1613,12 @@
         "perfectum": "heeft gelachen"
       },
       "example": "Waarom lach je?",
-      "example_en": "Why are you laughing?"
+      "example_en": "Why are you laughing?",
+      "englishForms": {
+        "present": "laugh",
+        "past": "laughed",
+        "participle": "laughed"
+      }
     },
     {
       "id": 61,
@@ -1340,7 +1640,12 @@
         "perfectum": "heeft gehuild"
       },
       "example": "De baby huilt.",
-      "example_en": "The baby is crying."
+      "example_en": "The baby is crying.",
+      "englishForms": {
+        "present": "cry",
+        "past": "cried",
+        "participle": "cried"
+      }
     },
     {
       "id": 62,
@@ -1362,7 +1667,12 @@
         "perfectum": "heeft/is vergeten"
       },
       "example": "Ik ben mijn tas vergeten.",
-      "example_en": "I have forgotten my bag."
+      "example_en": "I have forgotten my bag.",
+      "englishForms": {
+        "present": "forget",
+        "past": "forgot",
+        "participle": "forgotten"
+      }
     },
     {
       "id": 63,
@@ -1384,7 +1694,12 @@
         "perfectum": "heeft onthouden"
       },
       "example": "Ik kan dat niet onthouden.",
-      "example_en": "I cannot remember that."
+      "example_en": "I cannot remember that.",
+      "englishForms": {
+        "present": "remember",
+        "past": "remembered",
+        "participle": "remembered"
+      }
     },
     {
       "id": 64,
@@ -1406,7 +1721,12 @@
         "perfectum": "heeft gebruikt"
       },
       "example": "Ik gebruik de computer.",
-      "example_en": "I am using the computer."
+      "example_en": "I am using the computer.",
+      "englishForms": {
+        "present": "use",
+        "past": "used",
+        "participle": "used"
+      }
     },
     {
       "id": 65,
@@ -1428,7 +1748,12 @@
         "perfectum": "heeft geholpen"
       },
       "example": "Kan ik u helpen?",
-      "example_en": "Can I help you?"
+      "example_en": "Can I help you?",
+      "englishForms": {
+        "present": "help",
+        "past": "helped",
+        "participle": "helped"
+      }
     },
     {
       "id": 66,
@@ -1450,7 +1775,12 @@
         "perfectum": "heeft gestuurd"
       },
       "example": "Ik stuur je een bericht.",
-      "example_en": "I'm sending you a message."
+      "example_en": "I'm sending you a message.",
+      "englishForms": {
+        "present": "send",
+        "past": "sent",
+        "participle": "sent"
+      }
     },
     {
       "id": 67,
@@ -1472,7 +1802,12 @@
         "perfectum": "heeft gebeld"
       },
       "example": "Ik bel je straks.",
-      "example_en": "I'll call you later."
+      "example_en": "I'll call you later.",
+      "englishForms": {
+        "present": "call",
+        "past": "called",
+        "participle": "called"
+      }
     },
     {
       "id": 68,
@@ -1494,7 +1829,12 @@
         "perfectum": "heeft ontmoet"
       },
       "example": "Leuk om je te ontmoeten.",
-      "example_en": "Nice to meet you."
+      "example_en": "Nice to meet you.",
+      "englishForms": {
+        "present": "meet",
+        "past": "met",
+        "participle": "met"
+      }
     },
     {
       "id": 69,
@@ -1516,7 +1856,12 @@
         "perfectum": "heeft begrepen"
       },
       "example": "Ik begrijp het.",
-      "example_en": "I understand it."
+      "example_en": "I understand it.",
+      "englishForms": {
+        "present": "understand",
+        "past": "understood",
+        "participle": "understood"
+      }
     },
     {
       "id": 70,
@@ -1538,7 +1883,12 @@
         "perfectum": "heeft verstaan"
       },
       "example": "Ik kan je niet goed verstaan.",
-      "example_en": "I can't hear/understand you well."
+      "example_en": "I can't hear/understand you well.",
+      "englishForms": {
+        "present": "understand",
+        "past": "understood",
+        "participle": "understood"
+      }
     },
     {
       "id": 71,
@@ -1560,7 +1910,12 @@
         "perfectum": "heeft gedacht"
       },
       "example": "Wat denk je?",
-      "example_en": "What do you think?"
+      "example_en": "What do you think?",
+      "englishForms": {
+        "present": "think",
+        "past": "thought",
+        "participle": "thought"
+      }
     },
     {
       "id": 72,
@@ -1582,7 +1937,12 @@
         "perfectum": "heeft geloofd"
       },
       "example": "Ik geloof dat het waar is.",
-      "example_en": "I believe it is true."
+      "example_en": "I believe it is true.",
+      "englishForms": {
+        "present": "believe",
+        "past": "believed",
+        "participle": "believed"
+      }
     },
     {
       "id": 73,
@@ -1604,7 +1964,12 @@
         "perfectum": "heeft gehoopt"
       },
       "example": "Ik hoop dat je komt.",
-      "example_en": "I hope that you come."
+      "example_en": "I hope that you come.",
+      "englishForms": {
+        "present": "hope",
+        "past": "hoped",
+        "participle": "hoped"
+      }
     },
     {
       "id": 74,
@@ -1626,7 +1991,12 @@
         "perfectum": "heeft gevonden"
       },
       "example": "Ik vind mijn boek niet.",
-      "example_en": "I can't find my book."
+      "example_en": "I can't find my book.",
+      "englishForms": {
+        "present": "find",
+        "past": "found",
+        "participle": "found"
+      }
     },
     {
       "id": 75,
@@ -1648,7 +2018,12 @@
         "perfectum": "heeft verloren"
       },
       "example": "Wij verliezen de wedstrijd.",
-      "example_en": "We are losing the match."
+      "example_en": "We are losing the match.",
+      "englishForms": {
+        "present": "lose",
+        "past": "lost",
+        "participle": "lost"
+      }
     },
     {
       "id": 76,
@@ -1670,7 +2045,12 @@
         "perfectum": "heeft gewonnen"
       },
       "example": "Ik win altijd.",
-      "example_en": "I always win."
+      "example_en": "I always win.",
+      "englishForms": {
+        "present": "win",
+        "past": "won",
+        "participle": "won"
+      }
     },
     {
       "id": 77,
@@ -1692,7 +2072,12 @@
         "perfectum": "heeft gekookt"
       },
       "example": "Ik kook elke avond.",
-      "example_en": "I cook every evening."
+      "example_en": "I cook every evening.",
+      "englishForms": {
+        "present": "cook",
+        "past": "cooked",
+        "participle": "cooked"
+      }
     },
     {
       "id": 78,
@@ -1714,7 +2099,12 @@
         "perfectum": "heeft gebakken"
       },
       "example": "Ik bak een taart.",
-      "example_en": "I am baking a cake."
+      "example_en": "I am baking a cake.",
+      "englishForms": {
+        "present": "bake",
+        "past": "baked",
+        "participle": "baked"
+      }
     },
     {
       "id": 79,
@@ -1736,7 +2126,12 @@
         "perfectum": "heeft gepoetst"
       },
       "example": "Ik poets mijn tanden.",
-      "example_en": "I brush my teeth."
+      "example_en": "I brush my teeth.",
+      "englishForms": {
+        "present": "clean",
+        "past": "cleaned",
+        "participle": "cleaned"
+      }
     },
     {
       "id": 80,
@@ -1759,7 +2154,12 @@
         "perfectum": "heeft schoongemaakt"
       },
       "example": "Ik maak het huis schoon.",
-      "example_en": "I clean the house."
+      "example_en": "I clean the house.",
+      "englishForms": {
+        "present": "clean",
+        "past": "cleaned",
+        "participle": "cleaned"
+      }
     },
     {
       "id": 81,
@@ -1781,7 +2181,12 @@
         "perfectum": "heeft gewassen"
       },
       "example": "Ik was mijn handen.",
-      "example_en": "I wash my hands."
+      "example_en": "I wash my hands.",
+      "englishForms": {
+        "present": "wash",
+        "past": "washed",
+        "participle": "washed"
+      }
     },
     {
       "id": 82,
@@ -1803,7 +2208,12 @@
         "perfectum": "heeft gedoucht"
       },
       "example": "Ik douch in de ochtend.",
-      "example_en": "I shower in the morning."
+      "example_en": "I shower in the morning.",
+      "englishForms": {
+        "present": "shower",
+        "past": "showered",
+        "participle": "showered"
+      }
     },
     {
       "id": 83,
@@ -1825,7 +2235,12 @@
         "perfectum": "heeft geleefd"
       },
       "example": "Hij leeft nog.",
-      "example_en": "He is still alive."
+      "example_en": "He is still alive.",
+      "englishForms": {
+        "present": "live",
+        "past": "lived",
+        "participle": "lived"
+      }
     },
     {
       "id": 84,
@@ -1847,7 +2262,12 @@
         "perfectum": "heeft gewoond"
       },
       "example": "Ik woon in Amsterdam.",
-      "example_en": "I live in Amsterdam."
+      "example_en": "I live in Amsterdam.",
+      "englishForms": {
+        "present": "live",
+        "past": "lived",
+        "participle": "lived"
+      }
     },
     {
       "id": 85,
@@ -1869,7 +2289,12 @@
         "perfectum": "is gestorven"
       },
       "example": "De plant is gestorven.",
-      "example_en": "The plant has died."
+      "example_en": "The plant has died.",
+      "englishForms": {
+        "present": "die",
+        "past": "died",
+        "participle": "died"
+      }
     },
     {
       "id": 86,
@@ -1891,7 +2316,12 @@
         "perfectum": "is getrouwd"
       },
       "example": "Zij gaan trouwen.",
-      "example_en": "They are going to marry."
+      "example_en": "They are going to marry.",
+      "englishForms": {
+        "present": "marry",
+        "past": "married",
+        "participle": "married"
+      }
     },
     {
       "id": 87,
@@ -1913,7 +2343,12 @@
         "perfectum": "heeft beloofd"
       },
       "example": "Ik beloof het.",
-      "example_en": "I promise it."
+      "example_en": "I promise it.",
+      "englishForms": {
+        "present": "promise",
+        "past": "promised",
+        "participle": "promised"
+      }
     },
     {
       "id": 88,
@@ -1935,7 +2370,12 @@
         "perfectum": "heeft ontvangen"
       },
       "example": "Ik heb uw brief ontvangen.",
-      "example_en": "I have received your letter."
+      "example_en": "I have received your letter.",
+      "englishForms": {
+        "present": "receive",
+        "past": "received",
+        "participle": "received"
+      }
     },
     {
       "id": 89,
@@ -1957,7 +2397,12 @@
         "perfectum": "is gestopt"
       },
       "example": "De bus stopt hier.",
-      "example_en": "The bus stops here."
+      "example_en": "The bus stops here.",
+      "englishForms": {
+        "present": "stop",
+        "past": "stopped",
+        "participle": "stopped"
+      }
     },
     {
       "id": 90,
@@ -1980,7 +2425,12 @@
         "perfectum": "is doorgegaan"
       },
       "example": "We moeten doorgaan.",
-      "example_en": "We must continue."
+      "example_en": "We must continue.",
+      "englishForms": {
+        "present": "continue",
+        "past": "continued",
+        "participle": "continued"
+      }
     },
     {
       "id": 91,
@@ -2002,7 +2452,12 @@
         "perfectum": "heeft gevierd"
       },
       "example": "Ik vier mijn verjaardag.",
-      "example_en": "I am celebrating my birthday."
+      "example_en": "I am celebrating my birthday.",
+      "englishForms": {
+        "present": "celebrate",
+        "past": "celebrated",
+        "participle": "celebrated"
+      }
     },
     {
       "id": 92,
@@ -2024,7 +2479,12 @@
         "perfectum": "heeft betekend"
       },
       "example": "Wat betekent dit woord?",
-      "example_en": "What does this word mean?"
+      "example_en": "What does this word mean?",
+      "englishForms": {
+        "present": "mean",
+        "past": "meant",
+        "participle": "meant"
+      }
     },
     {
       "id": 93,
@@ -2046,7 +2506,12 @@
         "perfectum": "is veranderd"
       },
       "example": "Alles verandert.",
-      "example_en": "Everything is changing."
+      "example_en": "Everything is changing.",
+      "englishForms": {
+        "present": "change",
+        "past": "changed",
+        "participle": "changed"
+      }
     },
     {
       "id": 94,
@@ -2068,7 +2533,12 @@
         "perfectum": "heeft gekozen"
       },
       "example": "Ik kies de rode.",
-      "example_en": "I choose the red one."
+      "example_en": "I choose the red one.",
+      "englishForms": {
+        "present": "choose",
+        "past": "chose",
+        "participle": "chosen"
+      }
     },
     {
       "id": 95,
@@ -2090,7 +2560,12 @@
         "perfectum": "heeft gehuurd"
       },
       "example": "Ik huur een fiets.",
-      "example_en": "I am renting a bike."
+      "example_en": "I am renting a bike.",
+      "englishForms": {
+        "present": "rent",
+        "past": "rented",
+        "participle": "rented"
+      }
     },
     {
       "id": 96,
@@ -2112,7 +2587,12 @@
         "perfectum": "heeft geleend"
       },
       "example": "Mag ik je pen lenen?",
-      "example_en": "May I borrow your pen?"
+      "example_en": "May I borrow your pen?",
+      "englishForms": {
+        "present": "borrow",
+        "past": "borrowed",
+        "participle": "borrowed"
+      }
     },
     {
       "id": 97,
@@ -2134,7 +2614,12 @@
         "perfectum": "heeft bewaard"
       },
       "example": "Bewaar het bonnetje.",
-      "example_en": "Keep the receipt."
+      "example_en": "Keep the receipt.",
+      "englishForms": {
+        "present": "keep",
+        "past": "kept",
+        "participle": "kept"
+      }
     },
     {
       "id": 98,
@@ -2156,7 +2641,12 @@
         "perfectum": "heeft betaald"
       },
       "example": "Hoe wilt u betalen?",
-      "example_en": "How would you like to pay?"
+      "example_en": "How would you like to pay?",
+      "englishForms": {
+        "present": "pay",
+        "past": "paid",
+        "participle": "paid"
+      }
     },
     {
       "id": 99,
@@ -2178,7 +2668,12 @@
         "perfectum": "is gereisd"
       },
       "example": "Ik reis veel.",
-      "example_en": "I travel a lot."
+      "example_en": "I travel a lot.",
+      "englishForms": {
+        "present": "travel",
+        "past": "traveled",
+        "participle": "traveled"
+      }
     },
     {
       "id": 100,
@@ -2200,7 +2695,12 @@
         "perfectum": "heeft bezocht"
       },
       "example": "Wij bezoeken het museum.",
-      "example_en": "We are visiting the museum."
+      "example_en": "We are visiting the museum.",
+      "englishForms": {
+        "present": "visit",
+        "past": "visited",
+        "participle": "visited"
+      }
     },
     {
       "id": 101,
@@ -2222,7 +2722,12 @@
         "perfectum": "heeft gebouwd"
       },
       "example": "Zij bouwen een nieuw huis.",
-      "example_en": "They are building a new house."
+      "example_en": "They are building a new house.",
+      "englishForms": {
+        "present": "build",
+        "past": "built",
+        "participle": "built"
+      }
     },
     {
       "id": 102,
@@ -2244,7 +2749,12 @@
         "perfectum": "heeft bewogen"
       },
       "example": "Ik kan mijn arm niet bewegen.",
-      "example_en": "I cannot move my arm."
+      "example_en": "I cannot move my arm.",
+      "englishForms": {
+        "present": "move",
+        "past": "moved",
+        "participle": "moved"
+      }
     },
     {
       "id": 103,
@@ -2266,7 +2776,12 @@
         "perfectum": "heeft besteld"
       },
       "example": "Ik bestel een pizza.",
-      "example_en": "I'm ordering a pizza."
+      "example_en": "I'm ordering a pizza.",
+      "englishForms": {
+        "present": "order",
+        "past": "ordered",
+        "participle": "ordered"
+      }
     },
     {
       "id": 104,
@@ -2288,7 +2803,12 @@
         "perfectum": "heeft geproefd"
       },
       "example": "Wil je dit proeven?",
-      "example_en": "Do you want to taste this?"
+      "example_en": "Do you want to taste this?",
+      "englishForms": {
+        "present": "taste",
+        "past": "tasted",
+        "participle": "tasted"
+      }
     },
     {
       "id": 105,
@@ -2310,7 +2830,12 @@
         "perfectum": "heeft geroken"
       },
       "example": "Het ruikt hier lekker.",
-      "example_en": "It smells good in here."
+      "example_en": "It smells good in here.",
+      "englishForms": {
+        "present": "smell",
+        "past": "smelled",
+        "participle": "smelled"
+      }
     },
     {
       "id": 106,
@@ -2332,7 +2857,12 @@
         "perfectum": "is gestopt"
       },
       "example": "De trein stopt op elk station.",
-      "example_en": "The train stops at every station."
+      "example_en": "The train stops at every station.",
+      "englishForms": {
+        "present": "stop",
+        "past": "stopped",
+        "participle": "stopped"
+      }
     },
     {
       "id": 107,
@@ -2354,7 +2884,12 @@
         "perfectum": "heeft getrokken"
       },
       "example": "Niet duwen, maar trekken.",
-      "example_en": "Don't push, but pull."
+      "example_en": "Don't push, but pull.",
+      "englishForms": {
+        "present": "pull",
+        "past": "pulled",
+        "participle": "pulled"
+      }
     },
     {
       "id": 108,
@@ -2376,7 +2911,12 @@
         "perfectum": "heeft geduwd"
       },
       "example": "Je moet hard duwen.",
-      "example_en": "You have to push hard."
+      "example_en": "You have to push hard.",
+      "englishForms": {
+        "present": "push",
+        "past": "pushed",
+        "participle": "pushed"
+      }
     },
     {
       "id": 109,
@@ -2398,7 +2938,12 @@
         "perfectum": "heeft gevangen"
       },
       "example": "De kat vangt een muis.",
-      "example_en": "The cat catches a mouse."
+      "example_en": "The cat catches a mouse.",
+      "englishForms": {
+        "present": "catch",
+        "past": "caught",
+        "participle": "caught"
+      }
     },
     {
       "id": 110,
@@ -2420,7 +2965,12 @@
         "perfectum": "heeft gegooid"
       },
       "example": "Gooi de bal naar mij.",
-      "example_en": "Throw the ball to me."
+      "example_en": "Throw the ball to me.",
+      "englishForms": {
+        "present": "throw",
+        "past": "threw",
+        "participle": "thrown"
+      }
     },
     {
       "id": 111,
@@ -2442,7 +2992,12 @@
         "perfectum": "heeft gevouwen"
       },
       "example": "Ik vouw de was op.",
-      "example_en": "I am folding the laundry."
+      "example_en": "I am folding the laundry.",
+      "englishForms": {
+        "present": "fold",
+        "past": "folded",
+        "participle": "folded"
+      }
     },
     {
       "id": 112,
@@ -2464,7 +3019,12 @@
         "perfectum": "heeft gesneden"
       },
       "example": "Ik snijd het brood.",
-      "example_en": "I'm cutting the bread."
+      "example_en": "I'm cutting the bread.",
+      "englishForms": {
+        "present": "cut",
+        "past": "cut",
+        "participle": "cut"
+      }
     },
     {
       "id": 113,
@@ -2486,7 +3046,12 @@
         "perfectum": "heeft geplakt"
       },
       "example": "Ik plak een postzegel.",
-      "example_en": "I'm sticking on a stamp."
+      "example_en": "I'm sticking on a stamp.",
+      "englishForms": {
+        "present": "stick",
+        "past": "stuck",
+        "participle": "stuck"
+      }
     },
     {
       "id": 114,
@@ -2508,7 +3073,12 @@
         "perfectum": "heeft getekend"
       },
       "example": "Zij tekent een portret.",
-      "example_en": "She is drawing a portrait."
+      "example_en": "She is drawing a portrait.",
+      "englishForms": {
+        "present": "draw",
+        "past": "drew",
+        "participle": "drawn"
+      }
     },
     {
       "id": 115,
@@ -2530,7 +3100,12 @@
         "perfectum": "heeft geschilderd"
       },
       "example": "Wij schilderen de muur.",
-      "example_en": "We are painting the wall."
+      "example_en": "We are painting the wall.",
+      "englishForms": {
+        "present": "paint",
+        "past": "painted",
+        "participle": "painted"
+      }
     },
     {
       "id": 116,
@@ -2552,7 +3127,12 @@
         "perfectum": "heeft gewonnen"
       },
       "example": "Ik hoop dat we winnen.",
-      "example_en": "I hope we win."
+      "example_en": "I hope we win.",
+      "englishForms": {
+        "present": "win",
+        "past": "won",
+        "participle": "won"
+      }
     },
     {
       "id": 117,
@@ -2574,7 +3154,12 @@
         "perfectum": "heeft verloren"
       },
       "example": "Hebben ze verloren?",
-      "example_en": "Did they lose?"
+      "example_en": "Did they lose?",
+      "englishForms": {
+        "present": "lose",
+        "past": "lost",
+        "participle": "lost"
+      }
     },
     {
       "id": 118,
@@ -2596,7 +3181,12 @@
         "perfectum": "heeft geoefend"
       },
       "example": "Ik oefen mijn Nederlands.",
-      "example_en": "I practice my Dutch."
+      "example_en": "I practice my Dutch.",
+      "englishForms": {
+        "present": "practice",
+        "past": "practiced",
+        "participle": "practiced"
+      }
     },
     {
       "id": 119,
@@ -2618,7 +3208,12 @@
         "perfectum": "heeft herhaald"
       },
       "example": "Kunt u dat herhalen?",
-      "example_en": "Could you repeat that?"
+      "example_en": "Could you repeat that?",
+      "englishForms": {
+        "present": "repeat",
+        "past": "repeated",
+        "participle": "repeated"
+      }
     },
     {
       "id": 120,
@@ -2641,7 +3236,12 @@
         "perfectum": "heeft uitgelegd"
       },
       "example": "De docent legt de regel uit.",
-      "example_en": "The teacher explains the rule."
+      "example_en": "The teacher explains the rule.",
+      "englishForms": {
+        "present": "explain",
+        "past": "explained",
+        "participle": "explained"
+      }
     },
     {
       "id": 121,
@@ -2663,7 +3263,12 @@
         "perfectum": "heeft begrepen"
       },
       "example": "Ik begrijp het niet.",
-      "example_en": "I don't understand it."
+      "example_en": "I don't understand it.",
+      "englishForms": {
+        "present": "understand",
+        "past": "understood",
+        "participle": "understood"
+      }
     },
     {
       "id": 122,
@@ -2685,7 +3290,12 @@
         "perfectum": "heeft onthouden"
       },
       "example": "Hoe kan ik dit onthouden?",
-      "example_en": "How can I remember this?"
+      "example_en": "How can I remember this?",
+      "englishForms": {
+        "present": "remember",
+        "past": "remembered",
+        "participle": "remembered"
+      }
     },
     {
       "id": 123,
@@ -2707,7 +3317,12 @@
         "perfectum": "is vergeten"
       },
       "example": "Ben je de sleutels vergeten?",
-      "example_en": "Did you forget the keys?"
+      "example_en": "Did you forget the keys?",
+      "englishForms": {
+        "present": "forget",
+        "past": "forgot",
+        "participle": "forgotten"
+      }
     },
     {
       "id": 124,
@@ -2729,7 +3344,12 @@
         "perfectum": "heeft herinnerd"
       },
       "example": "Ik herinner me dat niet.",
-      "example_en": "I don't remember that."
+      "example_en": "I don't remember that.",
+      "englishForms": {
+        "present": "remind",
+        "past": "reminded",
+        "participle": "reminded"
+      }
     },
     {
       "id": 125,
@@ -2751,7 +3371,12 @@
         "perfectum": "heeft verwacht"
       },
       "example": "Ik verwacht regen.",
-      "example_en": "I expect rain."
+      "example_en": "I expect rain.",
+      "englishForms": {
+        "present": "expect",
+        "past": "expected",
+        "participle": "expected"
+      }
     },
     {
       "id": 126,
@@ -2773,7 +3398,12 @@
         "perfectum": "heeft gehoopt"
       },
       "example": "Ik hoop op goed nieuws.",
-      "example_en": "I hope for good news."
+      "example_en": "I hope for good news.",
+      "englishForms": {
+        "present": "hope",
+        "past": "hoped",
+        "participle": "hoped"
+      }
     },
     {
       "id": 127,
@@ -2795,7 +3425,12 @@
         "perfectum": "heeft geloofd"
       },
       "example": "Ik geloof in jou.",
-      "example_en": "I believe in you."
+      "example_en": "I believe in you.",
+      "englishForms": {
+        "present": "believe",
+        "past": "believed",
+        "participle": "believed"
+      }
     },
     {
       "id": 128,
@@ -2817,7 +3452,12 @@
         "perfectum": "heeft gedacht"
       },
       "example": "Denk je aan mij?",
-      "example_en": "Are you thinking of me?"
+      "example_en": "Are you thinking of me?",
+      "englishForms": {
+        "present": "think",
+        "past": "thought",
+        "participle": "thought"
+      }
     },
     {
       "id": 129,
@@ -2839,7 +3479,12 @@
         "perfectum": "heeft gevonden"
       },
       "example": "Ik vind dit boek leuk.",
-      "example_en": "I like this book (I find it nice)."
+      "example_en": "I like this book (I find it nice).",
+      "englishForms": {
+        "present": "find",
+        "past": "found",
+        "participle": "found"
+      }
     },
     {
       "id": 130,
@@ -2861,7 +3506,12 @@
         "perfectum": "heeft gekozen"
       },
       "example": "Je moet nu kiezen.",
-      "example_en": "You have to choose now."
+      "example_en": "You have to choose now.",
+      "englishForms": {
+        "present": "choose",
+        "past": "chose",
+        "participle": "chosen"
+      }
     },
     {
       "id": 131,
@@ -2883,7 +3533,12 @@
         "perfectum": "heeft beslist"
       },
       "example": "Wie heeft dit beslist?",
-      "example_en": "Who decided this?"
+      "example_en": "Who decided this?",
+      "englishForms": {
+        "present": "decide",
+        "past": "decided",
+        "participle": "decided"
+      }
     },
     {
       "id": 132,
@@ -2905,7 +3560,12 @@
         "perfectum": "heeft beloofd"
       },
       "example": "Ik beloof dat ik kom.",
-      "example_en": "I promise that I'm coming."
+      "example_en": "I promise that I'm coming.",
+      "englishForms": {
+        "present": "promise",
+        "past": "promised",
+        "participle": "promised"
+      }
     },
     {
       "id": 133,
@@ -2927,7 +3587,12 @@
         "perfectum": "heeft verteld"
       },
       "example": "Vertel me een verhaal.",
-      "example_en": "Tell me a story."
+      "example_en": "Tell me a story.",
+      "englishForms": {
+        "present": "tell",
+        "past": "told",
+        "participle": "told"
+      }
     },
     {
       "id": 134,
@@ -2949,7 +3614,12 @@
         "perfectum": "heeft gezegd"
       },
       "example": "Wat zei hij?",
-      "example_en": "What did he say?"
+      "example_en": "What did he say?",
+      "englishForms": {
+        "present": "say",
+        "past": "said",
+        "participle": "said"
+      }
     },
     {
       "id": 135,
@@ -2971,7 +3641,12 @@
         "perfectum": "heeft gevraagd"
       },
       "example": "Mag ik iets vragen?",
-      "example_en": "May I ask something?"
+      "example_en": "May I ask something?",
+      "englishForms": {
+        "present": "ask",
+        "past": "asked",
+        "participle": "asked"
+      }
     },
     {
       "id": 136,
@@ -2993,7 +3668,12 @@
         "perfectum": "heeft geantwoord"
       },
       "example": "Geef me een antwoord.",
-      "example_en": "Give me an answer."
+      "example_en": "Give me an answer.",
+      "englishForms": {
+        "present": "answer",
+        "past": "answered",
+        "participle": "answered"
+      }
     },
     {
       "id": 137,
@@ -3015,7 +3695,12 @@
         "perfectum": "heeft gekeken"
       },
       "example": "Kijk naar de vogel.",
-      "example_en": "Look at the bird."
+      "example_en": "Look at the bird.",
+      "englishForms": {
+        "present": "look",
+        "past": "looked",
+        "participle": "looked"
+      }
     },
     {
       "id": 138,
@@ -3037,7 +3722,12 @@
         "perfectum": "heeft geluisterd"
       },
       "example": "Luister naar de muziek.",
-      "example_en": "Listen to the music."
+      "example_en": "Listen to the music.",
+      "englishForms": {
+        "present": "listen",
+        "past": "listened",
+        "participle": "listened"
+      }
     },
     {
       "id": 139,
@@ -3059,7 +3749,12 @@
         "perfectum": "heeft gehoord"
       },
       "example": "Hoor je dat geluid?",
-      "example_en": "Do you hear that sound?"
+      "example_en": "Do you hear that sound?",
+      "englishForms": {
+        "present": "hear",
+        "past": "heard",
+        "participle": "heard"
+      }
     },
     {
       "id": 140,
@@ -3081,7 +3776,12 @@
         "perfectum": "heeft gevoeld"
       },
       "example": "Ik voel me gelukkig.",
-      "example_en": "I feel happy."
+      "example_en": "I feel happy.",
+      "englishForms": {
+        "present": "feel",
+        "past": "felt",
+        "participle": "felt"
+      }
     },
     {
       "id": 141,
@@ -3103,7 +3803,12 @@
         "perfectum": "heeft geroken"
       },
       "example": "De bloemen ruiken lekker.",
-      "example_en": "The flowers smell nice."
+      "example_en": "The flowers smell nice.",
+      "englishForms": {
+        "present": "smell",
+        "past": "smelled",
+        "participle": "smelled"
+      }
     },
     {
       "id": 142,
@@ -3125,7 +3830,12 @@
         "perfectum": "heeft geproefd"
       },
       "example": "Proef deze soep eens.",
-      "example_en": "Try/taste this soup."
+      "example_en": "Try/taste this soup.",
+      "englishForms": {
+        "present": "taste",
+        "past": "tasted",
+        "participle": "tasted"
+      }
     },
     {
       "id": 143,
@@ -3147,7 +3857,12 @@
         "perfectum": "heeft gegeten"
       },
       "example": "Ik eet een appel.",
-      "example_en": "I eat an apple."
+      "example_en": "I eat an apple.",
+      "englishForms": {
+        "present": "eat",
+        "past": "ate",
+        "participle": "eaten"
+      }
     },
     {
       "id": 144,
@@ -3169,7 +3884,12 @@
         "perfectum": "heeft gedronken"
       },
       "example": "Ik drink water.",
-      "example_en": "I drink water."
+      "example_en": "I drink water.",
+      "englishForms": {
+        "present": "drink",
+        "past": "drank",
+        "participle": "drunk"
+      }
     },
     {
       "id": 145,
@@ -3191,7 +3911,12 @@
         "perfectum": "heeft geslapen"
       },
       "example": "Slaap lekker!",
-      "example_en": "Sleep tight!"
+      "example_en": "Sleep tight!",
+      "englishForms": {
+        "present": "sleep",
+        "past": "slept",
+        "participle": "slept"
+      }
     },
     {
       "id": 146,
@@ -3213,7 +3938,12 @@
         "perfectum": "heeft gewaakt"
       },
       "example": "De hond waakt over het huis.",
-      "example_en": "The dog watches over the house."
+      "example_en": "The dog watches over the house.",
+      "englishForms": {
+        "present": "wake",
+        "past": "woke",
+        "participle": "woken"
+      }
     },
     {
       "id": 147,
@@ -3235,7 +3965,12 @@
         "perfectum": "heeft gewoond"
       },
       "example": "Ik woon in Utrecht.",
-      "example_en": "I live in Utrecht."
+      "example_en": "I live in Utrecht.",
+      "englishForms": {
+        "present": "live",
+        "past": "lived",
+        "participle": "lived"
+      }
     },
     {
       "id": 148,
@@ -3257,7 +3992,12 @@
         "perfectum": "heeft gewerkt"
       },
       "example": "Ik werk van negen tot vijf.",
-      "example_en": "I work from nine to five."
+      "example_en": "I work from nine to five.",
+      "englishForms": {
+        "present": "work",
+        "past": "worked",
+        "participle": "worked"
+      }
     },
     {
       "id": 149,
@@ -3279,7 +4019,12 @@
         "perfectum": "heeft gerust"
       },
       "example": "Ik moet even rusten.",
-      "example_en": "I need to rest for a bit."
+      "example_en": "I need to rest for a bit.",
+      "englishForms": {
+        "present": "rest",
+        "past": "rested",
+        "participle": "rested"
+      }
     },
     {
       "id": 150,
@@ -3301,7 +4046,12 @@
         "perfectum": "heeft ontspannen"
       },
       "example": "Ik ontspan me in bad.",
-      "example_en": "I relax in the bath."
+      "example_en": "I relax in the bath.",
+      "englishForms": {
+        "present": "relax",
+        "past": "relaxed",
+        "participle": "relaxed"
+      }
     },
     {
       "id": 151,
@@ -3323,7 +4073,12 @@
         "perfectum": "heeft geademd"
       },
       "example": "Adem diep in.",
-      "example_en": "Breathe in deeply."
+      "example_en": "Breathe in deeply.",
+      "englishForms": {
+        "present": "breathe",
+        "past": "breathed",
+        "participle": "breathed"
+      }
     },
     {
       "id": 152,
@@ -3345,7 +4100,12 @@
         "perfectum": "heeft gezwegen"
       },
       "example": "Hij zweeg de hele avond.",
-      "example_en": "He was silent the whole evening."
+      "example_en": "He was silent the whole evening.",
+      "englishForms": {
+        "present": "am silent",
+        "past": "was silent",
+        "participle": "been silent"
+      }
     },
     {
       "id": 153,
@@ -3367,7 +4127,12 @@
         "perfectum": "heeft geschreeuwd"
       },
       "example": "Niet zo hard schreeuwen!",
-      "example_en": "Don't shout so loud!"
+      "example_en": "Don't shout so loud!",
+      "englishForms": {
+        "present": "shout",
+        "past": "shouted",
+        "participle": "shouted"
+      }
     },
     {
       "id": 154,
@@ -3389,7 +4154,12 @@
         "perfectum": "heeft gefluisterd"
       },
       "example": "Zij fluisterde in mijn oor.",
-      "example_en": "She whispered in my ear."
+      "example_en": "She whispered in my ear.",
+      "englishForms": {
+        "present": "whisper",
+        "past": "whispered",
+        "participle": "whispered"
+      }
     },
     {
       "id": 155,
@@ -3411,7 +4181,12 @@
         "perfectum": "heeft gezongen"
       },
       "example": "Wij zingen een lied.",
-      "example_en": "We are singing a song."
+      "example_en": "We are singing a song.",
+      "englishForms": {
+        "present": "sing",
+        "past": "sang",
+        "participle": "sung"
+      }
     },
     {
       "id": 156,
@@ -3433,7 +4208,12 @@
         "perfectum": "heeft gedanst"
       },
       "example": "Zij danst in de regen.",
-      "example_en": "She is dancing in the rain."
+      "example_en": "She is dancing in the rain.",
+      "englishForms": {
+        "present": "dance",
+        "past": "danced",
+        "participle": "danced"
+      }
     },
     {
       "id": 157,
@@ -3455,7 +4235,12 @@
         "perfectum": "is gesprongen"
       },
       "example": "Het kind springt van de trap.",
-      "example_en": "The child jumps from the stairs."
+      "example_en": "The child jumps from the stairs.",
+      "englishForms": {
+        "present": "jump",
+        "past": "jumped",
+        "participle": "jumped"
+      }
     },
     {
       "id": 158,
@@ -3477,7 +4262,12 @@
         "perfectum": "is geklommen"
       },
       "example": "Wij klimmen op de berg.",
-      "example_en": "We are climbing the mountain."
+      "example_en": "We are climbing the mountain.",
+      "englishForms": {
+        "present": "climb",
+        "past": "climbed",
+        "participle": "climbed"
+      }
     },
     {
       "id": 159,
@@ -3499,7 +4289,12 @@
         "perfectum": "is gevallen"
       },
       "example": "Pas op dat je niet valt.",
-      "example_en": "Be careful not to fall."
+      "example_en": "Be careful not to fall.",
+      "englishForms": {
+        "present": "fall",
+        "past": "fell",
+        "participle": "fallen"
+      }
     },
     {
       "id": 160,
@@ -3521,7 +4316,12 @@
         "perfectum": "is gevlogen"
       },
       "example": "De vogels vliegen naar het zuiden.",
-      "example_en": "The birds fly south."
+      "example_en": "The birds fly south.",
+      "englishForms": {
+        "present": "fly",
+        "past": "flew",
+        "participle": "flown"
+      }
     },
     {
       "id": 161,
@@ -3543,7 +4343,12 @@
         "perfectum": "is gevaren"
       },
       "example": "Wij varen op de grachten.",
-      "example_en": "We are sailing on the canals."
+      "example_en": "We are sailing on the canals.",
+      "englishForms": {
+        "present": "sail",
+        "past": "sailed",
+        "participle": "sailed"
+      }
     },
     {
       "id": 162,
@@ -3565,7 +4370,12 @@
         "perfectum": "heeft/is gereden"
       },
       "example": "Ik rijd in een rode auto.",
-      "example_en": "I drive in a red car."
+      "example_en": "I drive in a red car.",
+      "englishForms": {
+        "present": "drive",
+        "past": "drove",
+        "participle": "driven"
+      }
     },
     {
       "id": 163,
@@ -3587,7 +4397,12 @@
         "perfectum": "heeft/is gefietst"
       },
       "example": "Ik fiets naar mijn werk.",
-      "example_en": "I cycle to my work."
+      "example_en": "I cycle to my work.",
+      "englishForms": {
+        "present": "cycle",
+        "past": "cycled",
+        "participle": "cycled"
+      }
     },
     {
       "id": 164,
@@ -3609,7 +4424,12 @@
         "perfectum": "heeft/is gewandeld"
       },
       "example": "Wij wandelen in het bos.",
-      "example_en": "We are walking in the forest."
+      "example_en": "We are walking in the forest.",
+      "englishForms": {
+        "present": "walk",
+        "past": "walked",
+        "participle": "walked"
+      }
     },
     {
       "id": 165,
@@ -3631,7 +4451,12 @@
         "perfectum": "is gerend"
       },
       "example": "Waarom ren je zo hard?",
-      "example_en": "Why are you running so fast?"
+      "example_en": "Why are you running so fast?",
+      "englishForms": {
+        "present": "run",
+        "past": "ran",
+        "participle": "run"
+      }
     },
     {
       "id": 166,
@@ -3653,7 +4478,12 @@
         "perfectum": "heeft gestuurd"
       },
       "example": "Ik stuur je de foto's.",
-      "example_en": "I'm sending you the photos."
+      "example_en": "I'm sending you the photos.",
+      "englishForms": {
+        "present": "send",
+        "past": "sent",
+        "participle": "sent"
+      }
     },
     {
       "id": 167,
@@ -3675,7 +4505,12 @@
         "perfectum": "heeft ontvangen"
       },
       "example": "Heb je mijn mail ontvangen?",
-      "example_en": "Did you receive my email?"
+      "example_en": "Did you receive my email?",
+      "englishForms": {
+        "present": "receive",
+        "past": "received",
+        "participle": "received"
+      }
     },
     {
       "id": 168,
@@ -3697,7 +4532,12 @@
         "perfectum": "heeft gevierd"
       },
       "example": "Ik vier mijn verjaardag morgen.",
-      "example_en": "I'm celebrating my birthday tomorrow."
+      "example_en": "I'm celebrating my birthday tomorrow.",
+      "englishForms": {
+        "present": "celebrate",
+        "past": "celebrated",
+        "participle": "celebrated"
+      }
     },
     {
       "id": 169,
@@ -3719,7 +4559,12 @@
         "perfectum": "heeft gefeliciteerd"
       },
       "example": "Ik feliciteer je met je nieuwe baan.",
-      "example_en": "I congratulate you on your new job."
+      "example_en": "I congratulate you on your new job.",
+      "englishForms": {
+        "present": "congratulate",
+        "past": "congratulated",
+        "participle": "congratulated"
+      }
     },
     {
       "id": 170,
@@ -3742,7 +4587,12 @@
         "perfectum": "heeft uitgenodigd"
       },
       "example": "Mag ik je uitnodigen voor het feest?",
-      "example_en": "May I invite you to the party?"
+      "example_en": "May I invite you to the party?",
+      "englishForms": {
+        "present": "invite",
+        "past": "invited",
+        "participle": "invited"
+      }
     },
     {
       "id": 171,
@@ -3764,7 +4614,12 @@
         "perfectum": "heeft bezocht"
       },
       "example": "Wij bezoeken onze opa.",
-      "example_en": "We are visiting our grandpa."
+      "example_en": "We are visiting our grandpa.",
+      "englishForms": {
+        "present": "visit",
+        "past": "visited",
+        "participle": "visited"
+      }
     },
     {
       "id": 172,
@@ -3786,7 +4641,12 @@
         "perfectum": "heeft ontmoet"
       },
       "example": "Ik ontmoet je bij het station.",
-      "example_en": "I'll meet you at the station."
+      "example_en": "I'll meet you at the station.",
+      "englishForms": {
+        "present": "meet",
+        "past": "met",
+        "participle": "met"
+      }
     },
     {
       "id": 173,
@@ -3808,7 +4668,12 @@
         "perfectum": "heeft gezoend"
       },
       "example": "Zij zoenen elkaar.",
-      "example_en": "They are kissing each other."
+      "example_en": "They are kissing each other.",
+      "englishForms": {
+        "present": "kiss",
+        "past": "kissed",
+        "participle": "kissed"
+      }
     },
     {
       "id": 174,
@@ -3830,7 +4695,12 @@
         "perfectum": "is getrouwd"
       },
       "example": "Wij gaan volgend jaar trouwen.",
-      "example_en": "We are getting married next year."
+      "example_en": "We are getting married next year.",
+      "englishForms": {
+        "present": "marry",
+        "past": "married",
+        "participle": "married"
+      }
     },
     {
       "id": 175,
@@ -3852,7 +4722,12 @@
         "perfectum": "is gescheiden"
       },
       "example": "Zij gaan scheiden.",
-      "example_en": "They are going to divorce."
+      "example_en": "They are going to divorce.",
+      "englishForms": {
+        "present": "separate",
+        "past": "separated",
+        "participle": "separated"
+      }
     },
     {
       "id": 176,
@@ -3874,7 +4749,12 @@
         "perfectum": "is gestorven"
       },
       "example": "De oude man is gestorven.",
-      "example_en": "The old man has died."
+      "example_en": "The old man has died.",
+      "englishForms": {
+        "present": "die",
+        "past": "died",
+        "participle": "died"
+      }
     },
     {
       "id": 177,
@@ -3896,7 +4776,12 @@
         "perfectum": "heeft begraven"
       },
       "example": "De hond begraaft een bot.",
-      "example_en": "The dog is burying a bone."
+      "example_en": "The dog is burying a bone.",
+      "englishForms": {
+        "present": "bury",
+        "past": "buried",
+        "participle": "buried"
+      }
     },
     {
       "id": 178,
@@ -3918,7 +4803,12 @@
         "perfectum": "heeft gehuild"
       },
       "example": "Waarom huilt de baby?",
-      "example_en": "Why is the baby crying?"
+      "example_en": "Why is the baby crying?",
+      "englishForms": {
+        "present": "cry",
+        "past": "cried",
+        "participle": "cried"
+      }
     },
     {
       "id": 179,
@@ -3940,7 +4830,12 @@
         "perfectum": "heeft gelachen"
       },
       "example": "Wij lachen om de grap.",
-      "example_en": "We are laughing at the joke."
+      "example_en": "We are laughing at the joke.",
+      "englishForms": {
+        "present": "laugh",
+        "past": "laughed",
+        "participle": "laughed"
+      }
     },
     {
       "id": 180,
@@ -3962,7 +4857,12 @@
         "perfectum": "heeft geglimlacht"
       },
       "example": "Zij glimlacht naar mij.",
-      "example_en": "She is smiling at me."
+      "example_en": "She is smiling at me.",
+      "englishForms": {
+        "present": "smile",
+        "past": "smiled",
+        "participle": "smiled"
+      }
     },
     {
       "id": 181,
@@ -3984,7 +4884,12 @@
         "perfectum": "heeft geholpen"
       },
       "example": "Kan ik u ergens mee helpen?",
-      "example_en": "Can I help you with anything?"
+      "example_en": "Can I help you with anything?",
+      "englishForms": {
+        "present": "help",
+        "past": "helped",
+        "participle": "helped"
+      }
     },
     {
       "id": 182,
@@ -4006,7 +4911,12 @@
         "perfectum": "heeft gered"
       },
       "example": "Hij redde de kat uit de boom.",
-      "example_en": "He saved the cat from the tree."
+      "example_en": "He saved the cat from the tree.",
+      "englishForms": {
+        "present": "save",
+        "past": "saved",
+        "participle": "saved"
+      }
     },
     {
       "id": 183,
@@ -4028,7 +4938,12 @@
         "perfectum": "heeft beschermd"
       },
       "example": "Deze jas beschermt tegen de kou.",
-      "example_en": "This jacket protects against the cold."
+      "example_en": "This jacket protects against the cold.",
+      "englishForms": {
+        "present": "protect",
+        "past": "protected",
+        "participle": "protected"
+      }
     },
     {
       "id": 184,
@@ -4050,7 +4965,12 @@
         "perfectum": "heeft gevochten"
       },
       "example": "Zij vechten voor hun rechten.",
-      "example_en": "They are fighting for their rights."
+      "example_en": "They are fighting for their rights.",
+      "englishForms": {
+        "present": "fight",
+        "past": "fought",
+        "participle": "fought"
+      }
     },
     {
       "id": 185,
@@ -4073,7 +4993,12 @@
         "perfectum": "heeft oorlog gevoerd"
       },
       "example": "De landen voeren oorlog.",
-      "example_en": "The countries are waging war."
+      "example_en": "The countries are waging war.",
+      "englishForms": {
+        "present": "wage war",
+        "past": "waged war",
+        "participle": "waged war"
+      }
     },
     {
       "id": 186,
@@ -4096,7 +5021,12 @@
         "perfectum": "heeft vrede gesloten"
       },
       "example": "Eindelijk hebben ze vrede gesloten.",
-      "example_en": "Finally they have made peace."
+      "example_en": "Finally they have made peace.",
+      "englishForms": {
+        "present": "make peace",
+        "past": "made peace",
+        "participle": "made peace"
+      }
     },
     {
       "id": 187,
@@ -4118,7 +5048,12 @@
         "perfectum": "is gereisd"
       },
       "example": "Ik reis graag met de trein.",
-      "example_en": "I like to travel by train."
+      "example_en": "I like to travel by train.",
+      "englishForms": {
+        "present": "travel",
+        "past": "traveled",
+        "participle": "traveled"
+      }
     },
     {
       "id": 188,
@@ -4140,7 +5075,12 @@
         "perfectum": "is vertrokken"
       },
       "example": "De trein vertrekt om acht uur.",
-      "example_en": "The train departs at eight o'clock."
+      "example_en": "The train departs at eight o'clock.",
+      "englishForms": {
+        "present": "depart",
+        "past": "departed",
+        "participle": "departed"
+      }
     },
     {
       "id": 189,
@@ -4163,7 +5103,12 @@
         "perfectum": "is aangekomen"
       },
       "example": "Wanneer komt de bus aan?",
-      "example_en": "When does the bus arrive?"
+      "example_en": "When does the bus arrive?",
+      "englishForms": {
+        "present": "arrive",
+        "past": "arrived",
+        "participle": "arrived"
+      }
     },
     {
       "id": 190,
@@ -4185,7 +5130,12 @@
         "perfectum": "is geland"
       },
       "example": "Het vliegtuig is geland.",
-      "example_en": "The plane has landed."
+      "example_en": "The plane has landed.",
+      "englishForms": {
+        "present": "land",
+        "past": "landed",
+        "participle": "landed"
+      }
     },
     {
       "id": 191,
@@ -4208,7 +5158,12 @@
         "perfectum": "is opgestegen"
       },
       "example": "We gaan bijna opstijgen.",
-      "example_en": "We are about to take off."
+      "example_en": "We are about to take off.",
+      "englishForms": {
+        "present": "take off",
+        "past": "took off",
+        "participle": "taken off"
+      }
     },
     {
       "id": 192,
@@ -4231,7 +5186,12 @@
         "perfectum": "heeft ingepakt"
       },
       "example": "Ik pak mijn koffer in.",
-      "example_en": "I'm packing my suitcase."
+      "example_en": "I'm packing my suitcase.",
+      "englishForms": {
+        "present": "pack",
+        "past": "packed",
+        "participle": "packed"
+      }
     },
     {
       "id": 193,
@@ -4254,7 +5214,12 @@
         "perfectum": "heeft uitgepakt"
       },
       "example": "Pak je cadeautje maar uit.",
-      "example_en": "Go ahead and unpack/open your gift."
+      "example_en": "Go ahead and unpack/open your gift.",
+      "englishForms": {
+        "present": "unpack",
+        "past": "unpacked",
+        "participle": "unpacked"
+      }
     },
     {
       "id": 194,
@@ -4276,7 +5241,12 @@
         "perfectum": "heeft besteld"
       },
       "example": "Ik bestel online.",
-      "example_en": "I order online."
+      "example_en": "I order online.",
+      "englishForms": {
+        "present": "order",
+        "past": "ordered",
+        "participle": "ordered"
+      }
     },
     {
       "id": 195,
@@ -4298,7 +5268,12 @@
         "perfectum": "heeft betaald"
       },
       "example": "Ik betaal met mijn pinpas.",
-      "example_en": "I pay with my debit card."
+      "example_en": "I pay with my debit card.",
+      "englishForms": {
+        "present": "pay",
+        "past": "paid",
+        "participle": "paid"
+      }
     },
     {
       "id": 196,
@@ -4320,7 +5295,12 @@
         "perfectum": "heeft gekocht"
       },
       "example": "Ik koop een nieuw boek.",
-      "example_en": "I'm buying a new book."
+      "example_en": "I'm buying a new book.",
+      "englishForms": {
+        "present": "buy",
+        "past": "bought",
+        "participle": "bought"
+      }
     },
     {
       "id": 197,
@@ -4342,7 +5322,12 @@
         "perfectum": "heeft verkocht"
       },
       "example": "Zij verkopen hun auto.",
-      "example_en": "They are selling their car."
+      "example_en": "They are selling their car.",
+      "englishForms": {
+        "present": "sell",
+        "past": "sold",
+        "participle": "sold"
+      }
     },
     {
       "id": 198,
@@ -4364,7 +5349,12 @@
         "perfectum": "heeft gehuurd"
       },
       "example": "Wij huren een vakantiehuisje.",
-      "example_en": "We are renting a holiday home."
+      "example_en": "We are renting a holiday home.",
+      "englishForms": {
+        "present": "rent",
+        "past": "rented",
+        "participle": "rented"
+      }
     },
     {
       "id": 199,
@@ -4386,7 +5376,12 @@
         "perfectum": "heeft verhuurd"
       },
       "example": "Ik verhuur mijn appartement.",
-      "example_en": "I'm renting out my apartment."
+      "example_en": "I'm renting out my apartment.",
+      "englishForms": {
+        "present": "rent out",
+        "past": "rented out",
+        "participle": "rented out"
+      }
     },
     {
       "id": 200,
@@ -4408,7 +5403,12 @@
         "perfectum": "heeft gekost"
       },
       "example": "Hoeveel kost dit?",
-      "example_en": "How much does this cost?"
+      "example_en": "How much does this cost?",
+      "englishForms": {
+        "present": "cost",
+        "past": "cost",
+        "participle": "cost"
+      }
     }
   ]
 }

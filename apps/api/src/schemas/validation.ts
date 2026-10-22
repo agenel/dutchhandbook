@@ -55,6 +55,14 @@ export const ChangePasswordSchema = z.object({
   newPassword: PasswordSchema,
 });
 
+export const UpdateProfileSchema = z.object({
+  displayName: z.string().max(40).nullable().optional().transform(sanitize),
+});
+
+export const DeleteAccountSchema = z.object({
+  password: z.string().min(1).max(128),
+});
+
 // ── Progress ──────────────────────────────────────────────────────────────────
 
 export const MasteryToggleSchema = z.object({

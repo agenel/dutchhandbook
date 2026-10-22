@@ -48,4 +48,6 @@ export interface Verb {
   example?: string;
   example_en?: string;
   conjugations?: VerbConjugations;
+  /** English forms of the first meaning: I-form present, simple past, past participle. */
+  englishForms?: { present: string; past: string; participle: string };
 }

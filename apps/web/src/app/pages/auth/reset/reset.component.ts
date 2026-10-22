@@ -78,10 +78,10 @@ import { AuthService } from '../../../core/auth.service';
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
     .auth-logo { text-align: center; margin-bottom: 2rem; }
-    .auth-logo a { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem; text-decoration: none; color: #333; }
+    .auth-logo a { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem; text-decoration: none; color: var(--ink); }
     .auth-logo span { color: var(--orange); }
     .auth-title { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.5rem; text-align: center; }
-    .auth-sub { color: #666; text-align: center; margin-bottom: 2rem; font-size: 0.95rem; }
+    .auth-sub { color: var(--muted); text-align: center; margin-bottom: 2rem; font-size: 0.95rem; }
     .auth-form { display: flex; flex-direction: column; gap: 1.2rem; }
     .auth-label { display: flex; flex-direction: column; gap: 0.5rem; font-weight: 600; font-size: 0.9rem; }
     .auth-input {
@@ -89,10 +89,12 @@ import { AuthService } from '../../../core/auth.service';
       border: 1.5px solid var(--border);
       border-radius: 12px;
       font-size: 1rem;
+      background: var(--white);
+      color: var(--ink);
       transition: border-color 0.2s;
     }
     .auth-input:focus { outline: none; border-color: var(--orange); }
-    .auth-hint { display: block; margin-top: 0.35rem; font-size: 0.8rem; color: var(--text-muted, #6b7280); }
+    .auth-hint { display: block; margin-top: 0.35rem; font-size: 0.8rem; color: var(--muted); }
     .auth-submit { width: 100%; margin-top: 1rem; }
     .auth-links { text-align: center; margin-top: 1.5rem; font-size: 0.9rem; }
     .auth-links a { color: var(--orange); text-decoration: none; font-weight: 500; }

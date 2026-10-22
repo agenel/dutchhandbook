@@ -17,9 +17,9 @@ type NounWithLegacyFields = Noun & {
   imports: [HelpDialogComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="hero" style="border-bottom:none; padding-bottom: 0;">
+    <div class="hero">
       <h1>
-        de / het<br /><em>Trainer</em>
+        de / het <em>Trainer</em>
         <button class="help-trigger" type="button" title="How it works" (click)="helpOpen = true">
           <span class="material-icons">help_outline</span>
         </button>
@@ -81,7 +81,7 @@ type NounWithLegacyFields = Noun & {
       <div class="stats-bar">
         <div>Session: <span class="score-val">{{ correct() }} / {{ total() }}</span></div>
         <div>
-          <span class="stats-label">Level:</span>
+          <label class="stats-label" for="level-select">Level:</label>
           <select id="level-select" [value]="selectedLevel()" (change)="changeLevel($event)">
             <option value="all">All Levels</option>
             <option value="A1">A1 Only</option>
@@ -140,8 +140,8 @@ type NounWithLegacyFields = Noun & {
   styles: [
     `
       :host {
-        --de-color: #3b82f6;
-        --het-color: #f59e0b;
+        --de-color: #2563EB; /* white text 5.2:1 */
+        --het-color: #B45309; /* was #f59e0b (2.1:1 with white); now 5.0:1 */
       }
       .game-container {
         max-width: 600px;
@@ -307,7 +307,8 @@ export class DeHetComponent {
   protected readonly total = signal(0);
   protected readonly result = signal<null | 'right' | 'wrong'>(null);
   protected readonly selectedLevel = signal('all');
-  protected readonly masteredIds = signal<number[]>(this.readMasteredIds());
+  /** Single source of truth (string ids, synced with the server for signed-in users). */
+  protected readonly masteredIds = this.progress.masteredNounIds;
   protected helpOpen = false;
   private initialized = false;
 
@@ -320,7 +321,7 @@ export class DeHetComponent {
   protected readonly current = computed<NounWithLegacyFields | undefined>(
     () => this.filteredNouns()[this.index()],
   );
-  protected readonly masteredCount = computed(() => this.masteredIds().length);
+  protected readonly masteredCount = computed(() => this.masteredIds().size);
 
   constructor() {
     effect(() => {
@@ -340,10 +341,7 @@ export class DeHetComponent {
       this.correct.update((v) => v + 1);
       this.streak.update((v) => v + 1);
       this.result.set('right');
-      if (typeof n.id === 'number' && !this.masteredIds().includes(n.id)) {
-        this.masteredIds.update((ids) => [...ids, n.id!]);
-        this.writeMasteredIds();
-      }
+      if (n.id !== undefined && n.id !== null) this.progress.addNoun(String(n.id));
     } else {
       this.streak.set(0);
       this.result.set('wrong');
@@ -370,23 +368,5 @@ export class DeHetComponent {
 
   private randomIndex(length: number): number {
     return Math.floor(Math.random() * length);
-  }
-
-  private readMasteredIds(): number[] {
-    try {
-      const value = localStorage.getItem('dgh_mastered_nouns');
-      return value ? JSON.parse(value) : [];
-    } catch {
-      return [];
-    }
-  }
-
-  private writeMasteredIds(): void {
-    try {
-      localStorage.setItem('dgh_mastered_nouns', JSON.stringify(this.masteredIds()));
-    } catch {
-      /* ignore */
-    }
-    this.progress.syncNouns(this.masteredIds().map(String));
   }
 }

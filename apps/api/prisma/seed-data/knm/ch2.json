@@ -1,5 +1,6 @@
 [
   {
+    "id": "ch2-0",
     "topic": "Feestdagen (Holidays)",
     "question": "Op welke datum vieren mensen in Nederland Valentijnsdag?",
     "options": [
@@ -8,9 +9,11 @@
       "27 april",
       "5 december"
     ],
-    "answer": "14 februari"
+    "answer": "14 februari",
+    "correctIndex": 1
   },
   {
+    "id": "ch2-1",
     "topic": "Feestdagen (Holidays)",
     "question": "In welk deel van Nederland vieren mensen vooral Carnaval?",
     "options": [
@@ -19,9 +22,11 @@
       "In het zuiden",
       "Op de Waddeneilanden"
     ],
-    "answer": "In het zuiden"
+    "answer": "In het zuiden",
+    "correctIndex": 2
   },
   {
+    "id": "ch2-2",
     "topic": "Feestdagen (Holidays)",
     "question": "Wat eten veel Nederlanders traditioneel tijdens het paasfeest?",
     "options": [
@@ -30,9 +35,11 @@
       "Beschuit met muisjes",
       "Pepernoten"
     ],
-    "answer": "Eieren"
+    "answer": "Eieren",
+    "correctIndex": 1
   },
   {
+    "id": "ch2-3",
     "topic": "Feestdagen (Holidays)",
     "question": "Wat is de kleur van Nederland, die je overal ziet op Koningsdag?",
     "options": [
@@ -41,9 +48,11 @@
       "Blauw",
       "Oranje"
     ],
-    "answer": "Oranje"
+    "answer": "Oranje",
+    "correctIndex": 3
   },
   {
+    "id": "ch2-4",
     "topic": "Feestdagen (Holidays)",
     "question": "Wat gebeurt er in Nederland op 4 mei om 20:00 uur?",
     "options": [
@@ -52,9 +61,11 @@
       "Het is twee minuten stil",
       "De winkels gaan open"
     ],
-    "answer": "Het is twee minuten stil"
+    "answer": "Het is twee minuten stil",
+    "correctIndex": 2
   },
   {
+    "id": "ch2-5",
     "topic": "Feestdagen (Holidays)",
     "question": "Welk feest vieren de Nederlanders op 5 december?",
     "options": [
@@ -63,9 +74,11 @@
       "Bevrijdingsdag",
       "Nieuwjaar"
     ],
-    "answer": "Sinterklaas"
+    "answer": "Sinterklaas",
+    "correctIndex": 1
   },
   {
+    "id": "ch2-6",
     "topic": "Feestdagen (Holidays)",
     "question": "Wat vieren christenen met Kerstmis?",
     "options": [
@@ -74,9 +87,11 @@
       "Het einde van de oorlog",
       "Het begin van de lente"
     ],
-    "answer": "Dat Jezus is geboren"
+    "answer": "Dat Jezus is geboren",
+    "correctIndex": 0
   },
   {
+    "id": "ch2-7",
     "topic": "Familiedagen (Family traditions)",
     "question": "Wat mag een kind in Nederland doen op school als het jarig is?",
     "options": [
@@ -85,9 +100,11 @@
       "Een cadeau aan de juf geven",
       "Vroeg naar huis gaan"
     ],
-    "answer": "Trakteren"
+    "answer": "Trakteren",
+    "correctIndex": 1
   },
   {
+    "id": "ch2-8",
     "topic": "Familiedagen (Family traditions)",
     "question": "Waar moeten mensen in Nederland altijd naartoe om officieel te trouwen?",
     "options": [
@@ -96,9 +113,11 @@
       "Het gemeentehuis",
       "Het politiebureau"
     ],
-    "answer": "Het gemeentehuis"
+    "answer": "Het gemeentehuis",
+    "correctIndex": 2
   },
   {
+    "id": "ch2-9",
     "topic": "Familiedagen (Family traditions)",
     "question": "Wat krijgt het bezoek te eten als er in Nederland een baby is geboren?",
     "options": [
@@ -107,9 +126,11 @@
       "Beschuit met muisjes",
       "Pannenkoeken"
     ],
-    "answer": "Beschuit met muisjes"
+    "answer": "Beschuit met muisjes",
+    "correctIndex": 2
   },
   {
+    "id": "ch2-10",
     "topic": "Familiedagen (Family traditions)",
     "question": "Wat hangen mensen vaak buiten als een leerling geslaagd is voor een examen?",
     "options": [
@@ -118,9 +139,11 @@
       "Een bord met 'Hoera een baby'",
       "Oranje slingers"
     ],
-    "answer": "Een vlag met een schooltas"
+    "answer": "Een vlag met een schooltas",
+    "correctIndex": 1
   },
   {
+    "id": "ch2-11",
     "topic": "Familiedagen (Family traditions)",
     "question": "Welk woord zeg je in Nederland tegen de familie als er iemand is doodgegaan?",
     "options": [
@@ -129,9 +152,11 @@
       "Gecondoleerd",
       "Eet smakelijk"
     ],
-    "answer": "Gecondoleerd"
+    "answer": "Gecondoleerd",
+    "correctIndex": 2
   },
   {
+    "id": "ch2-12",
     "topic": "Contacten (Social contacts)",
     "question": "Wat is heel belangrijk als je in Nederland een officiële afspraak hebt?",
     "options": [
@@ -140,9 +165,11 @@
       "Dat je je hele familie meeneemt",
       "Dat je je mooiste kleren draagt"
     ],
-    "answer": "Dat je precies op tijd komt"
+    "answer": "Dat je precies op tijd komt",
+    "correctIndex": 1
   },
   {
+    "id": "ch2-13",
     "topic": "Contacten (Social contacts)",
     "question": "Wanneer gebruiken Nederlanders meestal de woorden 'u' en 'meneer' of 'mevrouw'?",
     "options": [
@@ -151,9 +178,11 @@
       "Tegen mensen die ze niet goed kennen",
       "Tegen hun broers en zussen"
     ],
-    "answer": "Tegen mensen die ze niet goed kennen"
+    "answer": "Tegen mensen die ze niet goed kennen",
+    "correctIndex": 2
   },
   {
+    "id": "ch2-14",
     "topic": "Contacten (Social contacts)",
     "question": "Hoeveel zoenen geven mensen die elkaar goed kennen elkaar vaak als begroeting?",
     "options": [
@@ -162,9 +191,11 @@
       "Drie",
       "Vier"
     ],
-    "answer": "Drie"
+    "answer": "Drie",
+    "correctIndex": 2
   },
   {
+    "id": "ch2-15",
     "topic": "Contacten (Social contacts)",
     "question": "Wat betekent het dat Nederlanders vaak 'direct' zijn?",
     "options": [
@@ -173,9 +204,11 @@
       "Ze willen alles meteen hebben",
       "Ze spreken alleen Nederlands"
     ],
-    "answer": "Ze zeggen vaak what ze echt denken"
+    "answer": "Ze zeggen vaak wat ze echt denken",
+    "correctIndex": 1
   },
   {
+    "id": "ch2-16",
     "topic": "Contacten (Social contacts)",
     "question": "Wat moet je vaak doen in een drukke winkel of bij de gemeente om op je beurt te wachten?",
     "options": [
@@ -184,9 +217,11 @@
       "Vooraan in de rij gaan staan",
       "De politie bellen"
     ],
-    "answer": "Een nummertje trekken"
+    "answer": "Een nummertje trekken",
+    "correctIndex": 1
   },
   {
+    "id": "ch2-17",
     "topic": "Openbaar vervoer (Public transport)",
     "question": "Wat moet je doen met je ov-chipkaart als je in de bus of tram stapt?",
     "options": [
@@ -195,9 +230,11 @@
       "Aan de chauffeur geven",
       "In je tas laten zitten"
     ],
-    "answer": "Inchecken"
+    "answer": "Inchecken",
+    "correctIndex": 0
   },
   {
+    "id": "ch2-18",
     "topic": "Contacten (Social contacts)",
     "question": "Wat doen Nederlanders meestal als ze nieuwe buren krijgen?",
     "options": [
@@ -206,9 +243,11 @@
       "Ze vragen meteen om geld",
       "Ze gaan verhuizen"
     ],
-    "answer": "Ze gaan even kennismaken"
+    "answer": "Ze gaan even kennismaken",
+    "correctIndex": 1
   },
   {
+    "id": "ch2-19",
     "topic": "Contacten (Social contacts)",
     "question": "Wat doen Nederlanders vaak als ze met elkaar praten?",
     "options": [
@@ -217,6 +256,332 @@
       "Ze kijken elkaar aan",
       "Ze praten heel zachtjes"
     ],
-    "answer": "Ze kijken elkaar aan"
+    "answer": "Ze kijken elkaar aan",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch2-n-0",
+    "topic": "Feestdagen (Holidays)",
+    "question": "Op welke datum is Koningsdag meestal?",
+    "options": [
+      "27 april",
+      "5 mei",
+      "25 december",
+      "1 januari"
+    ],
+    "answer": "27 april",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch2-n-1",
+    "topic": "Feestdagen (Holidays)",
+    "question": "Wat vieren de mensen in Nederland op 5 mei (Bevrijdingsdag)?",
+    "options": [
+      "De verjaardag van de koning",
+      "Het einde van de Tweede Wereldoorlog",
+      "Het begin van de zomer",
+      "De geboorte van Jezus"
+    ],
+    "answer": "Het einde van de Tweede Wereldoorlog",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-2",
+    "topic": "Feestdagen (Holidays)",
+    "question": "Welk lekkers eten veel Nederlanders traditioneel met Oud en Nieuw?",
+    "options": [
+      "Oliebollen",
+      "Eieren",
+      "Pepernoten",
+      "Beschuit met muisjes"
+    ],
+    "answer": "Oliebollen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch2-n-3",
+    "topic": "Feestdagen (Holidays)",
+    "question": "Wat doen veel mensen in Nederland om middernacht op oudejaarsavond?",
+    "options": [
+      "Naar de kerk gaan",
+      "Vuurwerk afsteken",
+      "Gaan slapen",
+      "Cadeaus uitpakken"
+    ],
+    "answer": "Vuurwerk afsteken",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-4",
+    "topic": "Feestdagen (Holidays)",
+    "question": "Uit welk land komt Sinterklaas volgens het verhaal?",
+    "options": [
+      "Duitsland",
+      "Spanje",
+      "Amerika",
+      "Engeland"
+    ],
+    "answer": "Spanje",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-5",
+    "topic": "Feestdagen (Holidays)",
+    "question": "Hoe heet de avond van 5 december waarop mensen cadeautjes geven?",
+    "options": [
+      "Pakjesavond",
+      "Kerstavond",
+      "Oudejaarsavond",
+      "Bevrijdingsavond"
+    ],
+    "answer": "Pakjesavond",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch2-n-6",
+    "topic": "Feestdagen (Holidays)",
+    "question": "Op welke dagen is het eerste en tweede kerstdag?",
+    "options": [
+      "24 en 25 december",
+      "25 en 26 december",
+      "31 december en 1 januari",
+      "5 en 6 december"
+    ],
+    "answer": "25 en 26 december",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-7",
+    "topic": "Feestdagen (Holidays)",
+    "question": "In welk seizoen valt Pasen?",
+    "options": [
+      "De winter",
+      "De lente",
+      "De zomer",
+      "De herfst"
+    ],
+    "answer": "De lente",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-8",
+    "topic": "Feestdagen (Holidays)",
+    "question": "Wanneer vieren mensen Carnaval?",
+    "options": [
+      "In de zomervakantie",
+      "In de periode vóór de vastentijd (voor Pasen)",
+      "Met kerst",
+      "Op Koningsdag"
+    ],
+    "answer": "In de periode vóór de vastentijd (voor Pasen)",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-9",
+    "topic": "Familiedagen (Family traditions)",
+    "question": "Wat zeg je tegen iemand die jarig is?",
+    "options": [
+      "Gecondoleerd",
+      "Gefeliciteerd",
+      "Beterschap",
+      "Eet smakelijk"
+    ],
+    "answer": "Gefeliciteerd",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-10",
+    "topic": "Familiedagen (Family traditions)",
+    "question": "Wat wens je iemand die ziek is?",
+    "options": [
+      "Gefeliciteerd",
+      "Beterschap",
+      "Gecondoleerd",
+      "Veel succes"
+    ],
+    "answer": "Beterschap",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-11",
+    "topic": "Familiedagen (Family traditions)",
+    "question": "Welke kleur muisjes eet men bij de geboorte van een meisje?",
+    "options": [
+      "Blauwe muisjes",
+      "Roze muisjes",
+      "Groene muisjes",
+      "Gele muisjes"
+    ],
+    "answer": "Roze muisjes",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-12",
+    "topic": "Familiedagen (Family traditions)",
+    "question": "Wat is typisch voor een Nederlandse verjaardag thuis?",
+    "options": [
+      "Je krijgt een warme maaltijd",
+      "Je krijgt koffie of thee met een stukje taart",
+      "Je moet een cadeau kopen voor alle gasten",
+      "Je blijft slapen"
+    ],
+    "answer": "Je krijgt koffie of thee met een stukje taart",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-13",
+    "topic": "Contacten (Social contacts)",
+    "question": "Wat doe je meestal als je bij iemand op bezoek wilt gaan?",
+    "options": [
+      "Je gaat zomaar langs zonder iets te zeggen",
+      "Je maakt eerst een afspraak",
+      "Je wacht tot ze jou uitnodigen per brief",
+      "Je belt de gemeente"
+    ],
+    "answer": "Je maakt eerst een afspraak",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-14",
+    "topic": "Contacten (Social contacts)",
+    "question": "Welk woord gebruik je meestal tegen iemand die je goed kent, zoals een vriend?",
+    "options": [
+      "U",
+      "Je of jij",
+      "Meneer",
+      "Mevrouw"
+    ],
+    "answer": "Je of jij",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-15",
+    "topic": "Contacten (Social contacts)",
+    "question": "Waar hangt bij veel Nederlanders een verjaardagskalender?",
+    "options": [
+      "Op het toilet",
+      "In de tuin",
+      "Op het dak",
+      "In de auto"
+    ],
+    "answer": "Op het toilet",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch2-n-16",
+    "topic": "Contacten (Social contacts)",
+    "question": "Wat neem je vaak mee als je bij iemand bent uitgenodigd om te eten?",
+    "options": [
+      "Niets, dat hoeft niet",
+      "Een kleinigheidje, zoals bloemen of wijn",
+      "Je eigen eten",
+      "Een grote som geld"
+    ],
+    "answer": "Een kleinigheidje, zoals bloemen of wijn",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-17",
+    "topic": "Openbaar vervoer (Public transport)",
+    "question": "Wat moet je doen met je ov-chipkaart als je uit de bus, tram of trein stapt?",
+    "options": [
+      "Inchecken",
+      "Uitchecken",
+      "De kaart weggooien",
+      "Niets"
+    ],
+    "answer": "Uitchecken",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-18",
+    "topic": "Openbaar vervoer (Public transport)",
+    "question": "Wat gebeurt er meestal als je vergeet uit te checken?",
+    "options": [
+      "Je krijgt geld terug",
+      "Je betaalt te veel geld",
+      "De bus stopt niet",
+      "Je krijgt een boete van de politie"
+    ],
+    "answer": "Je betaalt te veel geld",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-19",
+    "topic": "Openbaar vervoer (Public transport)",
+    "question": "Hoe heet het grootste treinbedrijf van Nederland?",
+    "options": [
+      "De NS (Nederlandse Spoorwegen)",
+      "De GVB",
+      "De RET",
+      "De ANWB"
+    ],
+    "answer": "De NS (Nederlandse Spoorwegen)",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch2-n-20",
+    "topic": "Openbaar vervoer (Public transport)",
+    "question": "Wat is een heel populair vervoermiddel voor korte afstanden in Nederland?",
+    "options": [
+      "De fiets",
+      "Het vliegtuig",
+      "De boot",
+      "De trein"
+    ],
+    "answer": "De fiets",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch2-n-21",
+    "topic": "Openbaar vervoer (Public transport)",
+    "question": "Waarvoor gebruik je een ov-chipkaart of OV-pas?",
+    "options": [
+      "Om te betalen in de supermarkt",
+      "Om te reizen met bus, tram, metro en trein",
+      "Om naar de dokter te gaan",
+      "Om te stemmen"
+    ],
+    "answer": "Om te reizen met bus, tram, metro en trein",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-22",
+    "topic": "Contacten (Social contacts)",
+    "question": "Wat vinden Nederlanders belangrijk als je een afspraak hebt?",
+    "options": [
+      "Dat je te laat komt",
+      "Dat je je aan de afspraak houdt en op tijd bent",
+      "Dat je niet komt opdagen",
+      "Dat je een cadeau meeneemt"
+    ],
+    "answer": "Dat je je aan de afspraak houdt en op tijd bent",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch2-n-23",
+    "topic": "Familiedagen (Family traditions)",
+    "question": "Waar trouwen mensen in Nederland officieel voor de wet?",
+    "options": [
+      "In de kerk",
+      "In de moskee",
+      "Op het gemeentehuis",
+      "Thuis"
+    ],
+    "answer": "Op het gemeentehuis",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch2-n-24",
+    "topic": "Feestdagen (Holidays)",
+    "question": "Wat gebeurt er op 4 mei tijdens de Dodenherdenking?",
+    "options": [
+      "Er is vuurwerk",
+      "Mensen herdenken de slachtoffers van oorlogen",
+      "De koning is jarig",
+      "Iedereen gaat naar het strand"
+    ],
+    "answer": "Mensen herdenken de slachtoffers van oorlogen",
+    "correctIndex": 1
   }
 ]

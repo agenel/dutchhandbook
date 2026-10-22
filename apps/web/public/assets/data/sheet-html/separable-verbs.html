@@ -8,7 +8,7 @@
 [data-theme="dark"] .tk-conj { background:var(--white); color:var(--ink); border:1.5px solid var(--border); }
 .tk-sep  { background:var(--purple-light); color:var(--purple); border:1.5px dashed var(--purple-border); font-weight:700; }
 .tk-sep-solid { background:var(--purple-light); color:var(--purple); border:1.5px solid var(--purple-border); font-weight:700; }
-.tk-rest { background:#F0F0EA; color:var(--muted); border:1.5px solid #E0D8CC; }
+.tk-rest { background:var(--stripe); color:var(--muted); border:1.5px solid var(--border); }
 [data-theme="dark"] .tk-rest { background:var(--white); border-color:var(--border); }
 
 .diag { background:var(--white); border:1.5px solid var(--border); border-radius:10px; padding:1.2rem 1.4rem; margin-bottom:1rem; }
@@ -45,12 +45,12 @@
 /* ge- banner */
 .ge-box { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; display:flex; gap:1.1rem; flex-wrap:wrap; }
 [data-theme="dark"] .ge-box { background:var(--white); color:var(--ink); border:1.5px solid var(--border); }
-.ge-label { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--purple-border); flex-shrink:0; padding-top:2px; font-weight:500; }
+.ge-label { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:#DDB8E8; /* box is dark in both themes */ flex-shrink:0; padding-top:2px; font-weight:500; }
 .ge-body { font-size:0.83rem; line-height:1.6; font-weight:300; }
-.ge-body strong { color:var(--purple-border); font-weight:600; }
+.ge-body strong { color:#DDB8E8; font-weight:600; }
 .ge-exs { display:flex; flex-direction:column; gap:0.28rem; margin-top:0.55rem; }
 .ge-ex { font-family:'DM Mono',monospace; font-size:0.76rem; color:rgba(255,255,255,0.65); }
-.ge-ex em { font-style:normal; color:var(--purple-border); font-weight:600; }
+.ge-ex em { font-style:normal; color:#DDB8E8; font-weight:600; }
 
 td.prefix-col { font-family:'DM Mono',monospace; font-weight:700; color:var(--purple); font-size:0.86rem; }
 td.verbs-col { font-size:0.8rem; line-height:1.7; }
@@ -239,10 +239,10 @@ td.verbs-col span { font-family:'DM Mono',monospace; font-size:0.76rem; backgrou
     <div class="sent-row">
       <span class="sent-label">Wrong</span>
       <div class="tokens">
-        <span class="token tk-subj" style="opacity:0.4">hij</span>
-        <span class="token tk-verb" style="opacity:0.4;text-decoration:line-through">belt</span>
-        <span class="token tk-rest" style="opacity:0.4">haar elke dag</span>
-        <span class="token tk-sep" style="opacity:0.4;text-decoration:line-through">op.</span>
+        <span class="token tk-subj" style="border-style:dashed">hij</span>
+        <span class="token tk-verb" style="border-style:dashed;text-decoration:line-through">belt</span>
+        <span class="token tk-rest" style="border-style:dashed">haar elke dag</span>
+        <span class="token tk-sep" style="border-style:dashed;text-decoration:line-through">op.</span>
         <span style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--red);margin-left:0.3rem;font-weight:700">&#10007;</span>
       </div>
     </div>

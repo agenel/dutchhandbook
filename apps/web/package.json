@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && node ../../scripts/generate-sitemap.mjs",
+    "build": "ng build && node ../../scripts/finalize-static-build.mjs && node ../../scripts/generate-sitemap.mjs",
     "watch": "ng build --watch --configuration development",
     "serve:ssr": "node dist/web/server/server.mjs",
     "test": "ng test --watch=false --browsers=ChromeHeadless",

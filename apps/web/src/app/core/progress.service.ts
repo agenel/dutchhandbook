@@ -50,6 +50,10 @@ export class ProgressService {
   readonly masteredNounsCount = computed(() => this._masteredNouns().size);
   readonly masteredCommonWordsCount = computed(() => this._masteredCommonWords().size);
   readonly masteredCommonWords = computed(() => this._masteredCommonWords());
+  /** Mastered verb / noun ids, always as strings (the server's format). Tools
+   *  must read these instead of localStorage, or signed-in progress appears lost. */
+  readonly masteredVerbIds = computed(() => this._masteredVerbs());
+  readonly masteredNounIds = computed(() => this._masteredNouns());
 
   constructor() {
     // Seed verb/noun signals from localStorage on startup
@@ -152,16 +156,46 @@ export class ProgressService {
     );
   }
 
-  // ── Verb mastery ──────────────────────────────────────────────────────────
+  /** Forget everything tied to the signed-in user on this device (shared computers). */
+  clearLocalProgress(): void {
+    this._mastery.set({});
+    this._masteredVerbs.set(new Set());
+    this._masteredNouns.set(new Set());
+    this._masteredCommonWords.set(new Set());
+    if (!this.isBrowser) return;
+    try {
+      // Sheet mastery keys are dgh_mastered_<slug>; the verb/noun/word lists share the prefix.
+      Object.keys(localStorage)
+        .filter((k) => k.startsWith('dgh_mastered_'))
+        .forEach((k) => localStorage.removeItem(k));
+    } catch {
+      /* ignore */
+    }
+  }
 
-  readMasteredVerbs(): Set<string> {
+  /** Read an id list from localStorage as strings; older builds stored numbers. */
+  private readIdSet(key: string): Set<string> {
     if (!this.isBrowser) return new Set();
     try {
-      const raw = localStorage.getItem(VERBS_KEY);
-      return new Set(raw ? (JSON.parse(raw) as string[]) : []);
+      const parsed: unknown = JSON.parse(localStorage.getItem(key) ?? '[]');
+      return new Set(Array.isArray(parsed) ? parsed.map(String) : []);
     } catch {
       return new Set();
     }
+  }
+
+  // ── Verb mastery ──────────────────────────────────────────────────────────
+
+  readMasteredVerbs(): Set<string> {
+    return this.readIdSet(VERBS_KEY);
+  }
+
+  toggleVerb(id: string): void {
+    const next = new Set(this._masteredVerbs());
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
+    this.writeMasteredVerbs(next);
+    this.syncVerbs([...next]);
   }
 
   writeMasteredVerbs(ids: Set<string>): void {
@@ -192,13 +226,14 @@ export class ProgressService {
   // ── Noun mastery ──────────────────────────────────────────────────────────
 
   readMasteredNouns(): Set<string> {
-    if (!this.isBrowser) return new Set();
-    try {
-      const raw = localStorage.getItem(NOUNS_KEY);
-      return new Set(raw ? (JSON.parse(raw) as string[]) : []);
-    } catch {
-      return new Set();
-    }
+    return this.readIdSet(NOUNS_KEY);
+  }
+
+  addNoun(id: string): void {
+    if (this._masteredNouns().has(id)) return;
+    const next = new Set(this._masteredNouns()).add(id);
+    this.writeMasteredNouns(next);
+    this.syncNouns([...next]);
   }
 
   writeMasteredNouns(ids: Set<string>): void {
@@ -229,13 +264,7 @@ export class ProgressService {
   // ── Common words mastery ──────────────────────────────────────────────────
 
   readMasteredCommonWords(): Set<string> {
-    if (!this.isBrowser) return new Set();
-    try {
-      const raw = localStorage.getItem(COMMON_WORDS_KEY);
-      return new Set(raw ? (JSON.parse(raw) as string[]) : []);
-    } catch {
-      return new Set();
-    }
+    return this.readIdSet(COMMON_WORDS_KEY);
   }
 
   writeMasteredCommonWords(ids: Set<string>): void {

@@ -4,6 +4,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { ContentService } from '../../../core/content.service';
 import { ProgressService } from '../../../core/progress.service';
+import { LangFlagComponent } from '../../../layout/lang-flag/lang-flag.component';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
 interface CommonWordCard {
@@ -21,7 +22,7 @@ interface CommonWordLesson {
 @Component({
   selector: 'md-common-words',
   standalone: true,
-  imports: [CommonModule, RouterLink, HelpDialogComponent],
+  imports: [CommonModule, RouterLink, HelpDialogComponent, LangFlagComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="tool-shell">
@@ -29,25 +30,22 @@ interface CommonWordLesson {
         <div class="hero-header">
           <div class="hero-main">
             <div class="nav-back-container">
-              <a routerLink="/tools" class="nav-back small">
+              <a routerLink="/" fragment="tools" class="nav-back small">
                 <span class="material-icons">arrow_back</span>
                 Back to Tools
               </a>
             </div>
             <h1>
-              1000 Common <em>Words</em>
+              Common Dutch <em>Words</em>
               <button class="help-trigger" type="button" title="How it works" (click)="helpOpen = true">
                 <span class="material-icons">help_outline</span>
               </button>
             </h1>
             <p class="hero-desc compact">
-              Master the most frequently used Dutch words. 40 lessons of 25 words each.
+              {{ totalWords() }} everyday Dutch words in {{ lessons().length }} short lessons.
             </p>
           </div>
           <div class="hero-stats">
-            <div class="section-title compact" style="margin-bottom: 0.5rem; text-align: right;">
-              Overall Progress
-            </div>
             <div class="progress-container compact">
               <div class="progress-fill" [style.width.%]="masteryPct()"></div>
               <div class="progress-text">
@@ -62,11 +60,11 @@ interface CommonWordLesson {
         <div class="help-section">
           <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
             <span class="material-icons" style="color:var(--orange);">auto_awesome</span>
-            <h3 style="margin:0;">The 1000 Words Journey</h3>
+            <h3 style="margin:0;">How the lessons work</h3>
           </div>
           <p>
-            This tool is designed to take you through the most essential Dutch vocabulary. 
-            The list is divided into 40 structured lessons, each containing 25 high-frequency words.
+            This tool takes you through essential everyday Dutch vocabulary:
+            {{ totalWords() }} words split into {{ lessons().length }} short lessons, each grouped by topic.
           </p>
         </div>
 
@@ -201,8 +199,8 @@ interface CommonWordLesson {
           @if (viewMode() === 'list') {
             <div class="word-list-container">
               <div class="word-list-header line-end">
-                <div class="col-dutch">Dutch</div>
-                <div class="col-english">English</div>
+                <div class="col-dutch"><md-lang-flag lang="nl" />Dutch</div>
+                <div class="col-english"><md-lang-flag lang="en" />English</div>
                 <div class="col-done">
                   Done
                   <button 
@@ -243,12 +241,12 @@ interface CommonWordLesson {
                 <div class="practice-card-wrapper">
                   <div class="practice-card" [class.flipped]="isFlipped()" (click)="toggleFlip()">
                     <div class="card-face card-front">
-                      <div class="card-label">Dutch</div>
+                      <div class="card-label"><md-lang-flag lang="nl" />Dutch</div>
                       <div class="card-content">{{ practiceCards()[currentIdx()].front }}</div>
                       <div class="card-hint">Click to flip</div>
                     </div>
                     <div class="card-face card-back">
-                      <div class="card-label">English</div>
+                      <div class="card-label"><md-lang-flag lang="en" />English</div>
                       <div class="card-content">{{ practiceCards()[currentIdx()].back }}</div>
                       <div class="card-hint">Click to flip</div>
                     </div>
@@ -303,9 +301,9 @@ interface CommonWordLesson {
       grid-template-columns: 1fr 220px;
       align-items: center;
       gap: 2rem;
-      padding: 1.5rem 0;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--ink);
+      padding: 0.5rem 0 0;
+      margin-bottom: 1.25rem;
+      border-bottom: none;
     }
 
     @media (max-width: 800px) {
@@ -321,13 +319,13 @@ interface CommonWordLesson {
 
     .hero-main h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-size: clamp(1.6rem, 3.2vw, 2.15rem);
       font-weight: 900;
       margin: 0.25rem 0;
-      line-height: 1;
+      line-height: 1.1;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.6rem;
     }
 
     .hero-main h1 em {
@@ -372,7 +370,7 @@ interface CommonWordLesson {
       left: 0;
       top: 0;
       bottom: 0;
-      background: var(--orange);
+      background: var(--orange-fill);
       opacity: 0.1;
       transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -484,7 +482,7 @@ interface CommonWordLesson {
 
     .card-progress-fill {
       height: 100%;
-      background: var(--orange);
+      background: var(--orange-fill);
       transition: width 0.3s ease;
     }
 
@@ -590,6 +588,11 @@ interface CommonWordLesson {
       font-size: 0.75rem;
       gap: 0.35rem;
       margin-bottom: 0.5rem;
+      padding: 0;
+      border: none;
+      background: none;
+      box-shadow: none;
+      transform: none;
     }
 
     .nav-back:hover {
@@ -1029,6 +1032,10 @@ export class CommonWordsComponent {
     if (!this.hideMasteredLessons()) return list;
     return list.filter(l => !this.isLessonFullyMastered(l));
   });
+
+  protected readonly totalWords = computed(() =>
+    this.lessons().reduce((n, lesson) => n + lesson.cards.length, 0),
+  );
 
   protected readonly masteredLessonsCount = computed(() => {
     return this.lessons().filter(l => this.isLessonFullyMastered(l)).length;

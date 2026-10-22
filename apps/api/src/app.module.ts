@@ -51,6 +51,8 @@ import * as path from 'path';
           ],
           censor: '[REDACTED]',
         },
+        // Real visitor IP (resolved by clientIpMiddleware; the socket is always nginx).
+        customProps: (req) => ({ clientIp: (req as { ip?: string }).ip }),
         customLogLevel: (_req, res, err) => {
           if (err || res.statusCode >= 500) return 'error';
           if (res.statusCode >= 400) return 'warn';

@@ -7,10 +7,10 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="hero" style="border-bottom:none; padding-top:1rem;">
+    <div class="hero">
       <div class="hero-layout">
         <div class="hero-title">
-          <h1>Learning<br /><em>Guide</em></h1>
+          <h1>Learning <em>Guide</em></h1>
         </div>
         <div class="hero-content">
           <p class="hero-desc">
@@ -26,7 +26,7 @@ import { RouterLink } from '@angular/router';
       </div>
     </div>
 
-    <div class="section-title">
+    <div class="section-title" role="heading" aria-level="2">
       The More Dutch Method
       <div class="title-line"></div>
     </div>
@@ -51,7 +51,7 @@ import { RouterLink } from '@angular/router';
       </div>
     </div>
 
-    <div class="section-title" style="margin-top:3rem;">
+    <div class="section-title" role="heading" aria-level="2" style="margin-top:3rem;">
       Mastering the Tools
       <div class="title-line"></div>
     </div>
@@ -112,7 +112,7 @@ import { RouterLink } from '@angular/router';
       </div>
     </div>
 
-    <div class="section-title" style="margin-top:3rem;">
+    <div class="section-title" role="heading" aria-level="2" style="margin-top:3rem;">
       Common Questions
       <div class="title-line"></div>
     </div>

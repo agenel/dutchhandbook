@@ -60,3 +60,6 @@ package-lock.json
 
 # Claude Code ephemeral worktrees (not real submodules)
 .claude/worktrees/
+
+# Wrangler local dev state
+.wrangler/

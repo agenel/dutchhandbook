@@ -53,7 +53,7 @@ interface WheelTense {
   imports: [FormsModule, RouterLink, HelpDialogComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="hero" style="border-bottom:none; padding-bottom:1rem;">
+    <div class="hero">
       <h1>
         Conjugation <em>Wheel</em>
         <button class="help-trigger" type="button" title="How it works" (click)="helpOpen = true">
@@ -74,7 +74,7 @@ interface WheelTense {
         <p>
           Each verb is shown as a wheel of 3 tenses around a central infinitive. The <strong style="color:#c0392b;">red</strong> circle
           is the <em>Present</em> (O.T.T), the <strong style="color:#2c3e87;">blue</strong> is the <em>Past</em> (O.V.T),
-          and the <strong style="color:#27ae60;">green</strong> is the <em>Perfect</em> (V.T.T).
+          and the <strong style="color:#1A7F45;">green</strong> is the <em>Perfect</em> (V.T.T).
         </p>
       </div>
 
@@ -105,8 +105,8 @@ interface WheelTense {
     <!-- Controls -->
     <div class="wheel-controls">
       <div class="filter-group">
-        <label>Level</label>
-        <select [ngModel]="levelFilter()" (ngModelChange)="levelFilter.set($event); resetIndex()">
+        <label for="wheel-level">Level</label>
+        <select id="wheel-level" [ngModel]="levelFilter()" (ngModelChange)="levelFilter.set($event); resetIndex()">
           <option value="all">All Levels</option>
           <option value="A1">A1</option>
           <option value="A2">A2</option>
@@ -114,8 +114,8 @@ interface WheelTense {
         </select>
       </div>
       <div class="filter-group">
-        <label>Type</label>
-        <select [ngModel]="typeFilter()" (ngModelChange)="typeFilter.set($event); resetIndex()">
+        <label for="wheel-type">Type</label>
+        <select id="wheel-type" [ngModel]="typeFilter()" (ngModelChange)="typeFilter.set($event); resetIndex()">
           <option value="all">All Types</option>
           <option value="irregular">Irregular</option>
           <option value="regular">Regular</option>
@@ -223,7 +223,7 @@ interface WheelTense {
 
             <!-- Right: Perfect -->
             <div class="satellite-wrap right">
-              <div class="tense-badge" style="background:#27ae60; color:#fff;">PERFECT / V.T.T</div>
+              <div class="tense-badge" style="background:#1A7F45; color:#fff;">PERFECT / V.T.T</div>
               <div
                 class="satellite perfect"
                 [class.hidden-tense]="drillMode() && hiddenTense() === 'perfect'"
@@ -236,8 +236,9 @@ interface WheelTense {
                     (keydown.enter)="checkDrill()"
                     placeholder="?" />
                 } @else {
+                  <span class="pronoun-sm">hij</span>
                   <span class="conj-form" style="font-size:1.1rem;">{{ getConjugations(verb).perfectum }}</span>
-                  <span class="translation">{{ 'have ' + verb.english.replace('to ','') }}</span>
+                  <span class="translation">{{ perfectMeaning(verb) }}</span>
                 }
               </div>
             </div>
@@ -248,10 +249,12 @@ interface WheelTense {
         @if (drillMode()) {
           <div class="drill-controls">
             @if (drillResult() === null) {
-              <button type="button" class="check-btn" (click)="checkDrill()">
+              <!-- Skip sits left and Check right, so the spot where "Next" was is
+                   Check (inert while empty): a double tap can't skip a card. -->
+              <button type="button" class="skip-btn" (click)="nextDrill()">Skip</button>
+              <button type="button" class="check-btn" (click)="checkDrill()" [disabled]="!drillAnswer().trim()">
                 Check Answer
               </button>
-              <button type="button" class="skip-btn" (click)="nextDrill()">Skip</button>
             } @else {
               <div class="drill-feedback" [class.correct]="drillResult() === 'correct'" [class.wrong]="drillResult() === 'wrong'">
                 @if (drillResult() === 'correct') {
@@ -336,9 +339,9 @@ interface WheelTense {
     }
     .mode-btn .material-icons { font-size: 1rem; }
     .mode-btn.active {
-      background: var(--orange);
+      background: var(--orange-fill);
       color: #fff;
-      border-color: var(--orange);
+      border-color: var(--orange-fill);
     }
 
     .nav-row {
@@ -460,7 +463,7 @@ interface WheelTense {
       width: 170px;
       height: 170px;
       border-radius: 50%;
-      background: var(--orange);
+      background: var(--orange-fill);
       border: 4px solid #c05a1a;
       display: flex;
       flex-direction: column;
@@ -486,14 +489,15 @@ interface WheelTense {
     }
     .center-translation {
       font-size: 0.8rem;
-      color: rgba(255,255,255,0.85);
+      color: #fff;
       font-style: italic;
     }
 
+    /* Text on the tinted circles uses --ink: --muted drops below 4.5:1 there. */
     .pronoun-sm {
       font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--muted);
+      font-size: 0.7rem;
+      color: var(--ink);
     }
     .conj-form {
       font-family: 'Playfair Display', serif;
@@ -502,8 +506,8 @@ interface WheelTense {
       color: var(--ink);
     }
     .translation {
-      font-size: 0.72rem;
-      color: var(--muted);
+      font-size: 0.75rem;
+      color: var(--ink);
       font-style: italic;
       text-align: center;
       padding: 0 0.5rem;
@@ -533,7 +537,7 @@ interface WheelTense {
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      background: var(--orange);
+      background: var(--orange-fill);
       color: #fff;
       border: none;
       padding: 0.65rem 1.5rem;
@@ -543,7 +547,8 @@ interface WheelTense {
       cursor: pointer;
       transition: all 0.2s;
     }
-    .check-btn:hover { background: #c05a1a; }
+    .check-btn:hover:not(:disabled) { background: #a8380a; }
+    .check-btn:disabled { opacity: 0.45; cursor: not-allowed; }
     .check-btn .material-icons { font-size: 1rem; }
     .skip-btn {
       background: transparent;
@@ -563,8 +568,8 @@ interface WheelTense {
       padding: 0.6rem 1.2rem;
       border-radius: 10px;
     }
-    .drill-feedback.correct { color: var(--green); background: #d1fae5; }
-    .drill-feedback.wrong { color: #dc2626; background: #fee2e2; }
+    .drill-feedback.correct { color: var(--green); background: var(--green-light); }
+    .drill-feedback.wrong { color: var(--red); background: var(--red-light); }
     .drill-feedback .material-icons { font-size: 1.1rem; }
 
     .drill-score {
@@ -645,17 +650,26 @@ export class VerbWheelComponent {
     (this.currentVerb()?.infinitive ?? '').toUpperCase()
   );
 
+  /** English glosses come from the data's englishForms ("I am / I was / have
+   *  been"); without them, fall back to the bare meaning rather than invent
+   *  ungrammatical forms like "I be". */
   protected readonly verbMeaning = computed(() => {
-    const eng = this.currentVerb()?.english ?? '';
-    return 'I ' + eng.replace('to ', '');
+    const v = this.currentVerb();
+    if (!v) return '';
+    return v.englishForms ? `I ${v.englishForms.present}` : this.baseMeaning(v);
   });
 
-  /** Past-tense gloss for the browse card. The dataset has no English past
-   *  forms, so we show the correct verb with a "(past)" marker rather than the
-   *  old hardcoded "I saw" that was wrong for every verb. */
   protected pastMeaning(verb: VerbExt): string {
-    const base = (verb.english ?? '').replace('to ', '').trim();
-    return base ? `I ${base} (past)` : '';
+    return verb.englishForms ? `I ${verb.englishForms.past}` : this.baseMeaning(verb);
+  }
+
+  /** The data's perfectum is the hij-form ("heeft gehad", "is geweest"). */
+  protected perfectMeaning(verb: VerbExt): string {
+    return verb.englishForms ? `he has ${verb.englishForms.participle}` : this.baseMeaning(verb);
+  }
+
+  private baseMeaning(verb: VerbExt): string {
+    return (verb.english ?? '').split('/')[0].trim();
   }
 
   protected readonly correctAnswer = computed(() => {
@@ -698,6 +712,8 @@ export class VerbWheelComponent {
   checkDrill() {
     // Ignore a second submit while the auto-advance is already pending.
     if (this.drillResult() !== null) return;
+    // An empty answer isn't an attempt.
+    if (!this.drillAnswer().trim()) return;
     const answer = this.drillAnswer().trim().toLowerCase();
     const correct = this.correctAnswer().trim().toLowerCase();
     this.drillTotal.update(n => n + 1);
@@ -711,7 +727,14 @@ export class VerbWheelComponent {
     this.drillTimer = setTimeout(() => this.nextDrill(), 1600);
   }
 
+  private lastAdvanceAt = 0;
+
   nextDrill() {
+    // A second tap within 400 ms of advancing (double tap, or a tap racing the
+    // auto-advance timer) must not skip another card.
+    const now = Date.now();
+    if (now - this.lastAdvanceAt < 400) return;
+    this.lastAdvanceAt = now;
     // Cancel any pending auto-advance so a manual "Next" click can't be
     // followed by the timer firing and skipping a card.
     this.clearDrillTimer();

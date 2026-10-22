@@ -258,5 +258,330 @@
     ],
     "answer": "Een digitaal identiteitsbewijs om zaken met de overheid online te regelen",
     "correctIndex": 0
+  },
+  {
+    "id": "ch5-n-0",
+    "topic": "De gemeente (The municipality)",
+    "question": "Wat is een BSN (burgerservicenummer)?",
+    "options": [
+      "Een geheime pincode voor je bankpas",
+      "Een persoonlijk nummer voor contact met de overheid",
+      "Een nummer van je zorgverzekering",
+      "Je huisnummer"
+    ],
+    "answer": "Een persoonlijk nummer voor contact met de overheid",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-1",
+    "topic": "De gemeente (The municipality)",
+    "question": "Waar krijg je een BSN als je in Nederland komt wonen?",
+    "options": [
+      "Bij de bank",
+      "Bij de gemeente als je je inschrijft",
+      "Bij de politie",
+      "Bij de huisarts"
+    ],
+    "answer": "Bij de gemeente als je je inschrijft",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-2",
+    "topic": "De gemeente (The municipality)",
+    "question": "Hoe lang is een paspoort voor volwassenen geldig?",
+    "options": [
+      "5 jaar",
+      "10 jaar",
+      "15 jaar",
+      "20 jaar"
+    ],
+    "answer": "10 jaar",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-3",
+    "topic": "De gemeente (The municipality)",
+    "question": "Waar geef je een huwelijk, een geboorte of een overlijden officieel door?",
+    "options": [
+      "Bij de politie",
+      "Bij de gemeente",
+      "Bij de Belastingdienst",
+      "Bij de bank"
+    ],
+    "answer": "Bij de gemeente",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-4",
+    "topic": "De Belastingdienst (Tax office)",
+    "question": "Wat is btw?",
+    "options": [
+      "Belasting over het geld dat je verdient",
+      "Belasting die je betaalt over spullen en diensten die je koopt",
+      "Belasting voor je huis",
+      "Een toeslag van de overheid"
+    ],
+    "answer": "Belasting die je betaalt over spullen en diensten die je koopt",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-5",
+    "topic": "De Belastingdienst (Tax office)",
+    "question": "Wanneer moet je meestal je belastingaangifte over het vorige jaar doen?",
+    "options": [
+      "Vóór 1 mei",
+      "Vóór 1 januari",
+      "Vóór 1 september",
+      "Dat hoeft nooit"
+    ],
+    "answer": "Vóór 1 mei",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch5-n-6",
+    "topic": "Toeslagen (Allowances)",
+    "question": "Welke toeslag kun je krijgen voor de kosten van kinderopvang?",
+    "options": [
+      "De zorgtoeslag",
+      "De kinderopvangtoeslag",
+      "De huurtoeslag",
+      "De AOW"
+    ],
+    "answer": "De kinderopvangtoeslag",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-7",
+    "topic": "Toeslagen (Allowances)",
+    "question": "Wat is kinderbijslag?",
+    "options": [
+      "Geld van de overheid om voor je kinderen te betalen",
+      "Een verzekering voor kinderen",
+      "Een korting bij de supermarkt",
+      "Een boete voor ouders"
+    ],
+    "answer": "Geld van de overheid om voor je kinderen te betalen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch5-n-8",
+    "topic": "Toeslagen (Allowances)",
+    "question": "Van welke organisatie krijgen ouders de kinderbijslag?",
+    "options": [
+      "Van de SVB (Sociale Verzekeringsbank)",
+      "Van de IND",
+      "Van de politie",
+      "Van de gemeente"
+    ],
+    "answer": "Van de SVB (Sociale Verzekeringsbank)",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch5-n-9",
+    "topic": "Hulp bij problemen (Help with problems)",
+    "question": "Bij welke organisatie vraag je een WW-uitkering aan als je werkloos wordt?",
+    "options": [
+      "Bij de IND",
+      "Bij het UWV",
+      "Bij de Belastingdienst",
+      "Bij de bank"
+    ],
+    "answer": "Bij het UWV",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-10",
+    "topic": "Hulp bij problemen (Help with problems)",
+    "question": "Waar vraag je een bijstandsuitkering aan als je geen inkomen hebt?",
+    "options": [
+      "Bij de gemeente",
+      "Bij de politie",
+      "Bij de IND",
+      "Bij de huisarts"
+    ],
+    "answer": "Bij de gemeente",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch5-n-11",
+    "topic": "Betalen (Payments/Banking)",
+    "question": "Wat is een betaalrekening?",
+    "options": [
+      "Een spaarpot thuis",
+      "Een bankrekening voor je dagelijkse betalingen",
+      "Een lening bij de bank",
+      "Een verzekering"
+    ],
+    "answer": "Een bankrekening voor je dagelijkse betalingen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-12",
+    "topic": "Betalen (Payments/Banking)",
+    "question": "Hoe betaal je vaak veilig online in een Nederlandse webshop?",
+    "options": [
+      "Met contant geld",
+      "Met iDEAL",
+      "Met een cheque",
+      "Met postzegels"
+    ],
+    "answer": "Met iDEAL",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-13",
+    "topic": "Betalen (Payments/Banking)",
+    "question": "Wat is een automatische incasso?",
+    "options": [
+      "Je haalt zelf geld uit de automaat",
+      "De rekening wordt automatisch van je bankrekening afgeschreven",
+      "Je krijgt automatisch geld van de overheid",
+      "Je spaart automatisch"
+    ],
+    "answer": "De rekening wordt automatisch van je bankrekening afgeschreven",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-14",
+    "topic": "Betalen (Payments/Banking)",
+    "question": "Wat betekent 'rood staan'?",
+    "options": [
+      "Je hebt veel geld gespaard",
+      "Je geeft meer geld uit dan er op je rekening staat",
+      "Je hebt een nieuwe pinpas",
+      "Je betaalt met contant geld"
+    ],
+    "answer": "Je geeft meer geld uit dan er op je rekening staat",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-15",
+    "topic": "Verblijfsvergunning (Residence permit)",
+    "question": "Wat is een verblijfsvergunning?",
+    "options": [
+      "Een rijbewijs",
+      "Een officieel document dat je in Nederland mag wonen",
+      "Een bankpas",
+      "Een zorgverzekering"
+    ],
+    "answer": "Een officieel document dat je in Nederland mag wonen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-16",
+    "topic": "Verblijfsvergunning (Residence permit)",
+    "question": "Wat moeten veel nieuwkomers in Nederland doen?",
+    "options": [
+      "Inburgeren: de taal leren en examens halen",
+      "Meteen gaan stemmen",
+      "Een huis kopen",
+      "Lid worden van een sportclub"
+    ],
+    "answer": "Inburgeren: de taal leren en examens halen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch5-n-17",
+    "topic": "Verblijfsvergunning (Residence permit)",
+    "question": "Wat leer je onder andere voor het inburgeringsexamen?",
+    "options": [
+      "Alleen rekenen",
+      "De Nederlandse taal en kennis van de Nederlandse maatschappij",
+      "Autorijden",
+      "Koken"
+    ],
+    "answer": "De Nederlandse taal en kennis van de Nederlandse maatschappij",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-18",
+    "topic": "Hulp bij problemen (Help with problems)",
+    "question": "Is het eerste advies van het Juridisch Loket meestal gratis?",
+    "options": [
+      "Nee, het is altijd heel duur",
+      "Ja, het eerste advies is gratis",
+      "Alleen voor rijke mensen",
+      "Alleen met een verwijsbrief"
+    ],
+    "answer": "Ja, het eerste advies is gratis",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-19",
+    "topic": "Hulp bij problemen (Help with problems)",
+    "question": "Wie kan je helpen bij problemen op je werk?",
+    "options": [
+      "Een vakbond",
+      "De apotheek",
+      "De IND",
+      "De brandweer"
+    ],
+    "answer": "Een vakbond",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch5-n-20",
+    "topic": "DigiD",
+    "question": "Waarvoor gebruik je je DigiD?",
+    "options": [
+      "Om te reizen met de trein",
+      "Om online in te loggen bij de overheid, de zorg en de Belastingdienst",
+      "Om te betalen in de winkel",
+      "Om de dokter te bellen"
+    ],
+    "answer": "Om online in te loggen bij de overheid, de zorg en de Belastingdienst",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-21",
+    "topic": "De politie (The police)",
+    "question": "Wat doe je als er iets gestolen is en je wilt dit aan de politie melden?",
+    "options": [
+      "Je doet aangifte",
+      "Je belt de gemeente",
+      "Je gaat naar de apotheek",
+      "Je betaalt een boete"
+    ],
+    "answer": "Je doet aangifte",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch5-n-22",
+    "topic": "De Belastingdienst (Tax office)",
+    "question": "Wie betaalt er in Nederland belasting?",
+    "options": [
+      "Alleen mensen met een eigen bedrijf",
+      "Iedereen die in Nederland woont of werkt",
+      "Alleen rijke mensen",
+      "Alleen Nederlanders"
+    ],
+    "answer": "Iedereen die in Nederland woont of werkt",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-23",
+    "topic": "De gemeente (The municipality)",
+    "question": "Waar vraag je een Nederlands rijbewijs aan?",
+    "options": [
+      "Bij de politie",
+      "Bij de gemeente",
+      "Bij de Belastingdienst",
+      "Bij de IND"
+    ],
+    "answer": "Bij de gemeente",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch5-n-24",
+    "topic": "Verblijfsvergunning (Residence permit)",
+    "question": "Bij welke organisatie moet je zijn voor vragen over je verblijfsvergunning of naturalisatie?",
+    "options": [
+      "Bij de IND (Immigratie- en Naturalisatiedienst)",
+      "Bij het UWV",
+      "Bij de SVB",
+      "Bij de politie"
+    ],
+    "answer": "Bij de IND (Immigratie- en Naturalisatiedienst)",
+    "correctIndex": 0
   }
 ]

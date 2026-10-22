@@ -2,18 +2,19 @@ import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@a
 import { toSignal } from '@angular/core/rxjs-interop';
 import type { FlashcardDeck } from '@moredutch/shared';
 import { ContentService } from '../../../core/content.service';
+import { LangFlagComponent } from '../../../layout/lang-flag/lang-flag.component';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
 @Component({
   selector: 'md-flashcards',
   standalone: true,
-  imports: [HelpDialogComponent],
+  imports: [HelpDialogComponent, LangFlagComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (!selectedDeck()) {
-      <div class="hero" style="border-bottom:none; padding-bottom: 1rem;">
+      <div class="hero">
         <h1>
-          Vocab<br /><em>Flashcards</em>
+          Vocab <em>Flashcards</em>
           <button class="help-trigger" type="button" title="How it works" (click)="helpOpen = true">
             <span class="material-icons">help_outline</span>
           </button>
@@ -74,11 +75,11 @@ import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.com
         <div class="flashcard-scene" (click)="flip()">
           <div class="flashcard" [class.is-flipped]="flipped()">
             <div class="flashcard-face front">
-              <span class="face-label">Dutch</span>
+              <span class="face-label"><md-lang-flag lang="nl" />Dutch</span>
               <div>{{ current().front }}</div>
             </div>
             <div class="flashcard-face back">
-              <span class="face-label">English</span>
+              <span class="face-label"><md-lang-flag lang="en" />English</span>
               <div>{{ current().back }}</div>
             </div>
           </div>
@@ -126,7 +127,7 @@ import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.com
         @for (deck of decks(); track deck.category) {
           <button type="button" class="deck-card" (click)="select(deck)">
             <div class="deck-icon"><span class="material-icons">{{ deck.icon }}</span></div>
-            <h3>{{ deck.category }}</h3>
+            <span class="deck-title">{{ deck.category }}</span>
             <div class="deck-count">{{ deck.cards.length }} cards</div>
           </button>
         }
@@ -173,6 +174,14 @@ import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.com
       }
       .study-header {
         text-align: left;
+      }
+      /* Was an <h3> inside the button; headings inside buttons break heading navigation. */
+      .deck-title {
+        display: block;
+        margin: 0.6rem 0 0.25rem;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--ink);
       }
       .deck-name {
         font-family: 'DM Sans', sans-serif;
@@ -239,17 +248,18 @@ import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.com
       }
       .flashcard-face.back {
         transform: rotateY(180deg);
-        background: #fafafa;
+        background: var(--stripe);
         font-family: 'DM Sans', sans-serif;
         font-size: 1.8rem;
         color: var(--ink);
       }
-      [data-theme="dark"] .flashcard-face.back { background: #1e1e1e; }
       .face-label {
         position: absolute;
         top: 1.5rem;
         font-family: 'DM Mono', monospace;
-        font-size: 0.6rem;
+        font-size: 0.72rem;
+        display: inline-flex;
+        align-items: center;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         color: var(--muted);
@@ -286,14 +296,16 @@ import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.com
         gap: 0.5rem;
         transition: all 0.2s;
       }
-      .btn-hard { background: #fee2e2; color: #991b1b; }
-      .btn-easy { background: #dcfce7; color: #166534; }
-      .btn-hard:hover { transform: translateY(-2px); background: #fecaca; }
-      .btn-easy:hover { transform: translateY(-2px); background: #bbf7d0; }
+      .btn-hard { background: var(--red-light); color: var(--red); border: 1.5px solid var(--red-border); }
+      .btn-easy { background: var(--green-light); color: var(--green); border: 1.5px solid var(--green-border); }
+      .btn-hard:hover { transform: translateY(-2px); border-color: var(--red); }
+      .btn-easy:hover { transform: translateY(-2px); border-color: var(--green); }
       .complete-card {
         text-align: center;
         padding: 2.5rem 1.5rem;
-        background: var(--surface, #fff);
+        background: var(--white);
+        color: var(--ink);
+        border: 1.5px solid var(--border);
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         max-width: 460px;
@@ -304,7 +316,7 @@ import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.com
         color: var(--orange, #e8500a);
       }
       .complete-card h2 { margin: 0.75rem 0 0.25rem; }
-      .complete-card p { color: var(--text-muted, #6b7280); margin: 0 0 1.5rem; }
+      .complete-card p { color: var(--muted); margin: 0 0 1.5rem; }
       .complete-actions {
         display: flex;
         gap: 0.75rem;

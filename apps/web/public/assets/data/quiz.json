@@ -1213,31 +1213,51 @@
   {
     "id": "gram-1",
     "question": "Morgen ___ ik naar Amsterdam.",
-    "options": ["ga", "gaat", "gaan", "gaat u"],
+    "options": [
+      "ga",
+      "gaat",
+      "gaan",
+      "gaat u"
+    ],
     "correctIndex": 0,
     "explanation": "Inversion: When a sentence starts with something other than the subject (like 'Morgen'), the verb and subject swap places. Subject is 'ik', so verb is 'ga'.",
-    "category": "Word Order"
+    "category": "Word Order (V2 Rule)"
   },
   {
     "id": "gram-2",
     "question": "Ik vind dat een ___ (mooi) boek.",
-    "options": ["mooi", "mooie", "mooiste", "moois"],
+    "options": [
+      "mooi",
+      "mooie",
+      "mooiste",
+      "moois"
+    ],
     "correctIndex": 0,
     "explanation": "Adjective Inflection: We don't add -e for 'een' + 'het-word' (het boek). 'Een mooi boek'.",
-    "category": "Adjectives"
+    "category": "Adjective Declension"
   },
   {
     "id": "gram-3",
     "question": "Dat is de ___ (klein) auto.",
-    "options": ["klein", "kleine", "kleiner", "kleinst"],
+    "options": [
+      "klein",
+      "kleine",
+      "kleiner",
+      "kleinst"
+    ],
     "correctIndex": 1,
     "explanation": "Adjective Inflection: We add -e for 'de' or 'het' words. 'De kleine auto'.",
-    "category": "Adjectives"
+    "category": "Adjective Declension"
   },
   {
     "id": "gram-4",
     "question": "Ik ___ (opbellen) mijn moeder vanavond.",
-    "options": ["opbel", "bel op", "bellen op", "opbellen"],
+    "options": [
+      "opbel",
+      "bel op",
+      "bellen op",
+      "opbellen"
+    ],
     "correctIndex": 1,
     "explanation": "Separable Verbs: In a main clause, the prefix (op) goes to the end. 'Ik bel mijn moeder op'.",
     "category": "Verbs"
@@ -1245,7 +1265,12 @@
   {
     "id": "gram-5",
     "question": "Waarom ben je te laat? ___ ik de bus heb gemist.",
-    "options": ["Want", "Omdat", "Dus", "Maar"],
+    "options": [
+      "Want",
+      "Omdat",
+      "Dus",
+      "Maar"
+    ],
     "correctIndex": 1,
     "explanation": "'Omdat' is used to start a subordinate clause where the verb goes to the end. 'Want' would require main clause order.",
     "category": "Conjunctions"
@@ -1253,7 +1278,12 @@
   {
     "id": "gram-6",
     "question": "Wat is het meervoud van 'kind'?",
-    "options": ["kinden", "kinders", "kinderen", "kinds"],
+    "options": [
+      "kinden",
+      "kinders",
+      "kinderen",
+      "kinds"
+    ],
     "correctIndex": 2,
     "explanation": "'Kind' is an irregular plural ending in -eren: 'kinderen'.",
     "category": "Plurals"
@@ -1261,15 +1291,25 @@
   {
     "id": "gram-7",
     "question": "Ik heb ___ (geen/niet) tijd.",
-    "options": ["geen", "niet", "niks", "niet een"],
+    "options": [
+      "geen",
+      "niet",
+      "niks",
+      "niet een"
+    ],
     "correctIndex": 0,
     "explanation": "Use 'geen' to negate a noun that would otherwise have 'een' or no article.",
-    "category": "Negation"
+    "category": "Negation (Geen & Niet)"
   },
   {
     "id": "gram-8",
     "question": "Jij ___ (hebben) een appel.",
-    "options": ["heb", "hebt", "heeft", "hebben"],
+    "options": [
+      "heb",
+      "hebt",
+      "heeft",
+      "hebben"
+    ],
     "correctIndex": 1,
     "explanation": "Conjugation of 'hebben': Ik heb, jij hebt, hij heeft.",
     "category": "Verbs"
@@ -1277,7 +1317,12 @@
   {
     "id": "gram-9",
     "question": "De man ___ (lopen) op straat.",
-    "options": ["loop", "loopt", "lopen", "loope"],
+    "options": [
+      "loop",
+      "loopt",
+      "lopen",
+      "loope"
+    ],
     "correctIndex": 1,
     "explanation": "Third person singular: stem (loop) + t = loopt.",
     "category": "Verbs"
@@ -1285,23 +1330,38 @@
   {
     "id": "gram-10",
     "question": "Which of these is a 'het-word'?",
-    "options": ["Huis", "Auto", "Fiets", "Tafel"],
+    "options": [
+      "Huis",
+      "Auto",
+      "Fiets",
+      "Tafel"
+    ],
     "correctIndex": 0,
     "explanation": "Het huis. The others are de-words: de auto, de fiets, de tafel.",
-    "category": "Articles"
+    "category": "Articles (De & Het)"
   },
   {
     "id": "gram-11",
     "question": "Ik ben gisteren naar de stad ___ (lopen).",
-    "options": ["geloopt", "gelopen", "gelopen zijn", "loop"],
+    "options": [
+      "geloopt",
+      "gelopen",
+      "gelopen zijn",
+      "loop"
+    ],
     "correctIndex": 1,
     "explanation": "Perfectum: 'Lopen' indicates movement with a destination, so it uses 'zijn' + the strong participle 'gelopen'.",
-    "category": "Perfectum"
+    "category": "Perfect Tense (Perfectum)"
   },
   {
     "id": "gram-12",
     "question": "Ik ___ (zich wassen) elke ochtend.",
-    "options": ["was me", "was zich", "was je", "was hem"],
+    "options": [
+      "was me",
+      "was zich",
+      "was je",
+      "was hem"
+    ],
     "correctIndex": 0,
     "explanation": "Reflexive Verbs: For 'ik', the reflexive pronoun is 'me'. 'Ik was me'.",
     "category": "Reflexive Verbs"
@@ -1309,7 +1369,12 @@
   {
     "id": "gram-13",
     "question": "De man ___ daar loopt, is mijn vader.",
-    "options": ["die", "dat", "wat", "wie"],
+    "options": [
+      "die",
+      "dat",
+      "wat",
+      "wie"
+    ],
     "correctIndex": 0,
     "explanation": "Relative Pronouns: Use 'die' for de-words (de man).",
     "category": "Relative Pronouns"
@@ -1317,7 +1382,12 @@
   {
     "id": "gram-14",
     "question": "Het boek ___ op tafel ligt, is nieuw.",
-    "options": ["die", "dat", "wat", "wie"],
+    "options": [
+      "die",
+      "dat",
+      "wat",
+      "wie"
+    ],
     "correctIndex": 1,
     "explanation": "Relative Pronouns: Use 'dat' for het-words (het boek).",
     "category": "Relative Pronouns"
@@ -1325,15 +1395,25 @@
   {
     "id": "gram-15",
     "question": "Hij heeft de hele dag ___ (werken).",
-    "options": ["gewerkt", "gewerken", "gewerckt", "gewerktet"],
+    "options": [
+      "gewerkt",
+      "gewerken",
+      "gewerckt",
+      "gewerktet"
+    ],
     "correctIndex": 0,
     "explanation": "Perfectum: 'Werken' is a weak verb. Stem 'werk' ends in 'k' (Soft Ketchup), so it ends in 't'.",
-    "category": "Perfectum"
+    "category": "Perfect Tense (Perfectum)"
   },
   {
     "id": "gram-16",
     "question": "Wat betekent de uitdrukking: 'Helaas pindakaas'?",
-    "options": ["Unfortunately, peanut butter", "That's too bad", "I love peanuts", "It's a sticky situation"],
+    "options": [
+      "Unfortunately, peanut butter",
+      "That's too bad",
+      "I love peanuts",
+      "It's a sticky situation"
+    ],
     "correctIndex": 1,
     "explanation": "A very common informal idiom meaning 'Too bad' or 'That's a pity' (literally 'Unfortunately, peanut butter').",
     "category": "Idioms"
@@ -1341,7 +1421,12 @@
   {
     "id": "gram-17",
     "question": "Hoe zeg je 'to enjoy yourself'?",
-    "options": ["Zich vermaken", "Zich gebruiken", "Zich kijken", "Zich praten"],
+    "options": [
+      "Zich vermaken",
+      "Zich gebruiken",
+      "Zich kijken",
+      "Zich praten"
+    ],
     "correctIndex": 0,
     "explanation": "'Zich vermaken' is the reflexive verb for enjoying oneself.",
     "category": "Reflexive Verbs"
@@ -1349,23 +1434,38 @@
   {
     "id": "gram-18",
     "question": "Ik heb het huis ___ (kopen).",
-    "options": ["gekocht", "gekoopt", "gekopen", "kocht"],
+    "options": [
+      "gekocht",
+      "gekoopt",
+      "gekopen",
+      "kocht"
+    ],
     "correctIndex": 0,
     "explanation": "Perfectum: 'Kopen' is an irregular verb. Participle is 'gekocht'.",
-    "category": "Perfectum"
+    "category": "Perfect Tense (Perfectum)"
   },
   {
     "id": "gram-19",
     "question": "Wij ___ (zijn) vorig jaar in Parijs.",
-    "options": ["waren", "was", "zijn", "ben"],
+    "options": [
+      "waren",
+      "was",
+      "zijn",
+      "ben"
+    ],
     "correctIndex": 0,
     "explanation": "Imperfectum (Simple Past) of 'zijn': Wij waren.",
-    "category": "Past Tense"
+    "category": "Past Tense (Preterite)"
   },
   {
     "id": "gram-20",
     "question": "___ (hoe laat) begint de les?",
-    "options": ["Wanneer", "Hoe laat", "Waarom", "Hoe"],
+    "options": [
+      "Wanneer",
+      "Hoe laat",
+      "Waarom",
+      "Hoe"
+    ],
     "correctIndex": 1,
     "explanation": "'Hoe laat' is used specifically for the clock time, while 'wanneer' is more general.",
     "category": "Question Words"
@@ -1373,15 +1473,25 @@
   {
     "id": "gram-21",
     "question": "Ik ___ (gaan) naar de supermarkt.",
-    "options": ["ben gegaan", "heb gegaan", "ben gaant", "heb gegaant"],
+    "options": [
+      "ben gegaan",
+      "heb gegaan",
+      "ben gaant",
+      "heb gegaant"
+    ],
     "correctIndex": 0,
     "explanation": "Verbs of movement with a destination use 'zijn'. 'Ik ben gegaan'.",
-    "category": "Perfectum"
+    "category": "Perfect Tense (Perfectum)"
   },
   {
     "id": "gram-22",
     "question": "Wat is de hoofdstad van Nederland?",
-    "options": ["Den Haag", "Rotterdam", "Amsterdam", "Utrecht"],
+    "options": [
+      "Den Haag",
+      "Rotterdam",
+      "Amsterdam",
+      "Utrecht"
+    ],
     "correctIndex": 2,
     "explanation": "Amsterdam is the capital, though the government is in Den Haag.",
     "category": "General Knowledge"
@@ -1389,7 +1499,12 @@
   {
     "id": "gram-23",
     "question": "Ik ga ___ (met) de fiets naar school.",
-    "options": ["met", "door", "bij", "op"],
+    "options": [
+      "met",
+      "door",
+      "bij",
+      "op"
+    ],
     "correctIndex": 0,
     "explanation": "Use 'met' for transportation methods: met de fiets, met de bus.",
     "category": "Prepositions"
@@ -1397,7 +1512,12 @@
   {
     "id": "gram-24",
     "question": "Zij ___ (drinken) een kopje koffie.",
-    "options": ["drinkt", "drinken", "drink", "drinked"],
+    "options": [
+      "drinkt",
+      "drinken",
+      "drink",
+      "drinked"
+    ],
     "correctIndex": 0,
     "explanation": "Third person singular: stem + t. 'Zij drinkt'.",
     "category": "Verbs"
@@ -1405,7 +1525,12 @@
   {
     "id": "gram-25",
     "question": "Wij ___ (wonen) al drie jaar in Nederland.",
-    "options": ["wonen", "woont", "woon", "gewoond"],
+    "options": [
+      "wonen",
+      "woont",
+      "woon",
+      "gewoond"
+    ],
     "correctIndex": 0,
     "explanation": "First person plural: infinite form of the verb. 'Wij wonen'.",
     "category": "Verbs"
@@ -1413,23 +1538,38 @@
   {
     "id": "gram-26",
     "question": "Het is tien ___ (over) half drie.",
-    "options": ["over", "voor", "na", "bij"],
+    "options": [
+      "over",
+      "voor",
+      "na",
+      "bij"
+    ],
     "correctIndex": 1,
     "explanation": "Telling time: 'Tien voor half drie' is 14:20. Dutch counts towards or after the 'half hour'.",
-    "category": "Time"
+    "category": "Time & Dates"
   },
   {
     "id": "gram-27",
     "question": "Ik heb ___ (de) auto gewassen.",
-    "options": ["de", "het", "een", "geen"],
+    "options": [
+      "de",
+      "het",
+      "een",
+      "geen"
+    ],
     "correctIndex": 0,
     "explanation": "De auto. It is a masculine/feminine word.",
-    "category": "Articles"
+    "category": "Articles (De & Het)"
   },
   {
     "id": "gram-28",
     "question": "Wat is 'a snack bar' in Dutch?",
-    "options": ["De snackbar", "Het snackbar", "De restaurant", "Het cafe"],
+    "options": [
+      "De snackbar",
+      "Het snackbar",
+      "De restaurant",
+      "Het cafe"
+    ],
     "correctIndex": 0,
     "explanation": "De snackbar.",
     "category": "Vocabulary"
@@ -1437,17 +1577,2107 @@
   {
     "id": "gram-29",
     "question": "Hij ___ (hebben) gisteren een cadeau gekregen.",
-    "options": ["had", "heeft", "heb", "hebben"],
+    "options": [
+      "had",
+      "heeft",
+      "heb",
+      "hebben"
+    ],
     "correctIndex": 0,
     "explanation": "Simple past of 'hebben': hij had.",
-    "category": "Past Tense"
+    "category": "Past Tense (Preterite)"
   },
   {
     "id": "gram-30",
     "question": "Ik ga naar de bakker ___ brood te kopen.",
-    "options": ["om", "voor", "te", "zodat"],
+    "options": [
+      "om",
+      "voor",
+      "te",
+      "zodat"
+    ],
     "correctIndex": 0,
     "explanation": "Use 'om ... te' for intentions/purposes. 'Om brood te kopen'.",
     "category": "Conjunctions"
+  },
+  {
+    "id": "verbs-n-0",
+    "question": "Ik ___ (spelen) graag voetbal.",
+    "options": [
+      "speel",
+      "speelt",
+      "spelen",
+      "gespeeld"
+    ],
+    "correctIndex": 0,
+    "explanation": "For 'ik', use the bare stem: spelen -> speel.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-1",
+    "question": "Jij ___ (drinken) thee.",
+    "options": [
+      "drink",
+      "drinkt",
+      "drinken",
+      "dronk"
+    ],
+    "correctIndex": 1,
+    "explanation": "For 'jij', add -t to the stem: drink + t = drinkt.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-2",
+    "question": "Hij ___ (fietsen) naar zijn werk.",
+    "options": [
+      "fiets",
+      "fietst",
+      "fietsen",
+      "gefietst"
+    ],
+    "correctIndex": 1,
+    "explanation": "For hij/zij/het, add -t to the stem: fiets + t = fietst.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-3",
+    "question": "Wij ___ (koken) vanavond samen.",
+    "options": [
+      "kook",
+      "kookt",
+      "koken",
+      "gekookt"
+    ],
+    "correctIndex": 2,
+    "explanation": "Plural subjects (wij/jullie/zij) use the infinitive: koken.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-4",
+    "question": "Jullie ___ (lezen) een boek.",
+    "options": [
+      "leest",
+      "lezen",
+      "lees",
+      "las"
+    ],
+    "correctIndex": 1,
+    "explanation": "Plural subjects use the infinitive: lezen.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-5",
+    "question": "Zij (they) ___ (dansen) in de club.",
+    "options": [
+      "danst",
+      "dansen",
+      "dans",
+      "gedanst"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Zij' (plural, they) uses the infinitive: dansen.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-6",
+    "question": "What is the stem of 'antwoorden' (to answer)?",
+    "options": [
+      "antwoor",
+      "antwoord",
+      "antwoordt",
+      "antwoorde"
+    ],
+    "correctIndex": 1,
+    "explanation": "Remove -en to get the stem: antwoorden -> antwoord.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-7",
+    "question": "Ik ___ (zullen) morgen komen.",
+    "options": [
+      "zal",
+      "zult",
+      "zullen",
+      "zou"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Zullen' is irregular: ik zal.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-8",
+    "question": "___ jij morgen? (werken)",
+    "options": [
+      "Werk",
+      "Werkt",
+      "Werken",
+      "Gewerkt"
+    ],
+    "correctIndex": 0,
+    "explanation": "With inversion the -t drops when 'jij' follows the verb: Werk jij?",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-9",
+    "question": "Hij ___ (doen) zijn huiswerk.",
+    "options": [
+      "doe",
+      "doet",
+      "doen",
+      "deed"
+    ],
+    "correctIndex": 1,
+    "explanation": "For hij, add -t: doe + t = doet.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-10",
+    "question": "What is the stem of 'maken' (to make)?",
+    "options": [
+      "mak",
+      "maak",
+      "maakt",
+      "make"
+    ],
+    "correctIndex": 1,
+    "explanation": "Open-syllable rule: the short 'a' doubles, so the stem is 'maak'.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-11",
+    "question": "U ___ (komen) vanavond.",
+    "options": [
+      "kom",
+      "komt",
+      "komen",
+      "kwam"
+    ],
+    "correctIndex": 1,
+    "explanation": "The formal 'u' takes stem + t: komt.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-12",
+    "question": "Het kind ___ (slapen) al.",
+    "options": [
+      "slaap",
+      "slaapt",
+      "slapen",
+      "sliep"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Het kind' is 3rd person singular: stem + t = slaapt.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "verbs-n-13",
+    "question": "Ik ___ (gaan) naar school.",
+    "options": [
+      "ga",
+      "gaat",
+      "gaan",
+      "ging"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Gaan' is irregular: ik ga.",
+    "category": "Verb Conjugation"
+  },
+  {
+    "id": "past-n-0",
+    "question": "Imperfectum of 'spelen' for 'ik'?",
+    "options": [
+      "speelde",
+      "speelte",
+      "gespeeld",
+      "speeldde"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stem 'speel' ends in 'l' (not in 't kofschip), so add -de: speelde.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-1",
+    "question": "Imperfectum of 'koken' for 'hij'?",
+    "options": [
+      "kookte",
+      "kookde",
+      "gekookt",
+      "kookt"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stem 'kook' ends in 'k' (in 't kofschip), so add -te: kookte.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-2",
+    "question": "Imperfectum of 'wonen' for 'wij'?",
+    "options": [
+      "woonden",
+      "woonten",
+      "woondden",
+      "gewoond"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stem 'woon' ends in 'n' (not in 't kofschip); plural adds -den: woonden.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-3",
+    "question": "Imperfectum of 'fietsen' for 'ik'?",
+    "options": [
+      "fietste",
+      "fietsde",
+      "gefietst",
+      "fiette"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stem 'fiets' ends in 's' (in 't kofschip), so add -te: fietste.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-4",
+    "question": "Imperfectum of 'horen' for 'jij'?",
+    "options": [
+      "hoorde",
+      "hoorte",
+      "gehoord",
+      "hoordte"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stem 'hoor' ends in 'r' (not in 't kofschip), so add -de: hoorde.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-5",
+    "question": "Simple past of 'gaan' for 'ik'?",
+    "options": [
+      "ging",
+      "gingen",
+      "gegaan",
+      "gaat"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Gaan' is a strong (irregular) verb: ik ging.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-6",
+    "question": "Simple past of 'hebben' for 'wij'?",
+    "options": [
+      "hadden",
+      "hebben",
+      "hadde",
+      "haden"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Hebben' is irregular: wij hadden.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-7",
+    "question": "Simple past of 'zijn' for 'jij'?",
+    "options": [
+      "was",
+      "waren",
+      "bent",
+      "geweest"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Zijn' is irregular: jij was.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-8",
+    "question": "Simple past of 'zien' for 'hij'?",
+    "options": [
+      "zag",
+      "zagen",
+      "ziet",
+      "gezien"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Zien' is a strong verb: hij zag.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-9",
+    "question": "Imperfectum of 'leggen' for 'ik'?",
+    "options": [
+      "legde",
+      "legte",
+      "gelegd",
+      "lagde"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stem 'leg' ends in 'g' (not in 't kofschip), so add -de: legde.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-10",
+    "question": "Imperfectum of 'maken' for 'zij' (she)?",
+    "options": [
+      "maakte",
+      "maakde",
+      "gemaakt",
+      "maakt"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stem 'maak' ends in 'k' (in 't kofschip), so add -te: maakte.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-11",
+    "question": "Simple past of 'kunnen' for 'ik'?",
+    "options": [
+      "kon",
+      "konden",
+      "kan",
+      "gekund"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Kunnen' is irregular: ik kon.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-12",
+    "question": "Simple past of 'komen' for 'wij'?",
+    "options": [
+      "kwamen",
+      "kwam",
+      "komen",
+      "gekomen"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Komen' is a strong verb: wij kwamen.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "past-n-13",
+    "question": "Imperfectum of 'leven' for 'hij'?",
+    "options": [
+      "leefde",
+      "leefte",
+      "geleefd",
+      "levde"
+    ],
+    "correctIndex": 0,
+    "explanation": "The v in 'leven' means the soft -de ending (v/z verbs take -de): leefde.",
+    "category": "Past Tense (Preterite)"
+  },
+  {
+    "id": "perfect-n-0",
+    "question": "'I have worked.' = ?",
+    "options": [
+      "Ik heb gewerkt.",
+      "Ik ben gewerkt.",
+      "Ik heb werken.",
+      "Ik had werken."
+    ],
+    "correctIndex": 0,
+    "explanation": "'Werken' takes 'hebben'; the participle is gewerkt.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-1",
+    "question": "Past participle of 'maken'?",
+    "options": [
+      "gemaakt",
+      "gemaken",
+      "maakt",
+      "gemaked"
+    ],
+    "correctIndex": 0,
+    "explanation": "Weak verb: ge + stem 'maak' + t (k is in 't kofschip) = gemaakt.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-2",
+    "question": "Past participle of 'spelen'?",
+    "options": [
+      "gespeeld",
+      "gespeelt",
+      "gespelen",
+      "speelde"
+    ],
+    "correctIndex": 0,
+    "explanation": "Weak verb: ge + stem 'speel' + d = gespeeld (l is not in 't kofschip).",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-3",
+    "question": "Which auxiliary is used with 'blijven' (to stay) in the perfect tense?",
+    "options": [
+      "hebben",
+      "zijn",
+      "both",
+      "neither"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Blijven' always takes 'zijn': ik ben gebleven.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-4",
+    "question": "'She has cycled to school.' (destination) = ?",
+    "options": [
+      "Zij is naar school gefietst.",
+      "Zij heeft naar school gefietst.",
+      "Zij is naar school gefietsd.",
+      "Zij heeft naar school fietsen."
+    ],
+    "correctIndex": 0,
+    "explanation": "Movement with a destination uses 'zijn': zij is ... gefietst.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-5",
+    "question": "Past participle of 'hebben'?",
+    "options": [
+      "gehad",
+      "gehebt",
+      "gehebben",
+      "gehadt"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Hebben' is irregular: the participle is gehad.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-6",
+    "question": "Past participle of 'lezen'?",
+    "options": [
+      "gelezen",
+      "gelezt",
+      "geleesd",
+      "gelees"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Lezen' is a strong verb: gelezen.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-7",
+    "question": "Past participle of 'drinken'?",
+    "options": [
+      "gedronken",
+      "gedrinkt",
+      "gedronkt",
+      "gedrinken"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Drinken' is a strong verb with vowel change: gedronken.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-8",
+    "question": "Do verbs with the prefixes be-, ge-, ver-, ont- get an extra 'ge-' in the participle?",
+    "options": [
+      "Yes, always",
+      "No, never",
+      "Only be-",
+      "Only ver-"
+    ],
+    "correctIndex": 1,
+    "explanation": "Verbs with unstressed prefixes (be-, ge-, ver-, ont-, her-, er-) take NO extra ge-.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-9",
+    "question": "Past participle of 'betalen' (to pay)?",
+    "options": [
+      "betaald",
+      "gebetaald",
+      "betaalt",
+      "gebetald"
+    ],
+    "correctIndex": 0,
+    "explanation": "The prefix 'be-' takes no ge-: betaald.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-10",
+    "question": "'We have slept.' = ?",
+    "options": [
+      "Wij hebben geslapen.",
+      "Wij zijn geslapen.",
+      "Wij hebben slapen.",
+      "Wij hadden geslapen."
+    ],
+    "correctIndex": 0,
+    "explanation": "'Slapen' takes 'hebben'; the strong participle is geslapen.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-11",
+    "question": "Past participle of 'kopen' (to buy)?",
+    "options": [
+      "gekocht",
+      "gekoopt",
+      "gekopen",
+      "koopte"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Kopen' is irregular: the participle is gekocht.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-12",
+    "question": "Past participle of 'wachten' (to wait)?",
+    "options": [
+      "gewacht",
+      "gewachtt",
+      "gewachd",
+      "gewachtet"
+    ],
+    "correctIndex": 0,
+    "explanation": "The stem 'wacht' already ends in -t, so no extra t is added: gewacht.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "perfect-n-13",
+    "question": "'He has become ill.' (worden) = ?",
+    "options": [
+      "Hij is ziek geworden.",
+      "Hij heeft ziek geworden.",
+      "Hij is ziek gewordt.",
+      "Hij heeft ziek worden."
+    ],
+    "correctIndex": 0,
+    "explanation": "'Worden' (change of state) takes 'zijn': hij is ... geworden.",
+    "category": "Perfect Tense (Perfectum)"
+  },
+  {
+    "id": "dehet-n-0",
+    "question": "Which is correct?",
+    "options": [
+      "het boek",
+      "de boek",
+      "het boeken",
+      "een boeken"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Boek' is a het-word: het boek (plurals always take 'de', so 'het boeken' is wrong).",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-1",
+    "question": "Which is correct?",
+    "options": [
+      "de fiets",
+      "het fiets",
+      "het fietsen",
+      "een fietsen"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Fiets' is a de-word: de fiets.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-2",
+    "question": "Which is correct?",
+    "options": [
+      "het station",
+      "de station",
+      "het stations",
+      "een stations"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Station' is a het-word: het station.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-3",
+    "question": "Which is correct?",
+    "options": [
+      "de computer",
+      "het computer",
+      "het computers",
+      "een computers"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Computer' is a de-word: de computer.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-4",
+    "question": "Which is correct?",
+    "options": [
+      "het brood",
+      "de brood",
+      "het broden",
+      "een broden"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Brood' is a het-word: het brood.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-5",
+    "question": "Which is correct?",
+    "options": [
+      "de koffie",
+      "het koffie",
+      "het koffies",
+      "een koffies"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Koffie' is a de-word: de koffie.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-6",
+    "question": "Which is correct?",
+    "options": [
+      "het jaar",
+      "de jaar",
+      "het jaren",
+      "een jaren"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Jaar' is a het-word: het jaar.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-7",
+    "question": "Which is correct?",
+    "options": [
+      "de nacht",
+      "het nacht",
+      "het nachten",
+      "een nachten"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Nacht' is a de-word: de nacht.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-8",
+    "question": "Which is correct?",
+    "options": [
+      "het raam",
+      "de raam",
+      "het ramen",
+      "een ramen"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Raam' is a het-word: het raam.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-9",
+    "question": "Which is correct?",
+    "options": [
+      "het museum",
+      "de museum",
+      "het museums",
+      "een museums"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Museum' is a het-word: het museum.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-10",
+    "question": "Nouns ending in -teit (e.g. kwaliteit) take which article?",
+    "options": [
+      "de",
+      "het",
+      "both",
+      "een"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nouns ending in -teit are always de-words: de kwaliteit.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-11",
+    "question": "Nouns ending in -isme (e.g. toerisme) take which article?",
+    "options": [
+      "de",
+      "het",
+      "both",
+      "een"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nouns ending in -isme are always het-words: het toerisme.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "dehet-n-12",
+    "question": "Verbs used as nouns (e.g. 'eten', 'zwemmen') take which article?",
+    "options": [
+      "de",
+      "het",
+      "both",
+      "een"
+    ],
+    "correctIndex": 1,
+    "explanation": "Infinitives used as nouns are always het-words: het eten.",
+    "category": "Articles (De & Het)"
+  },
+  {
+    "id": "plural-n-0",
+    "question": "What is the plural of 'huis'?",
+    "options": [
+      "huisen",
+      "huizen",
+      "huis's",
+      "huize"
+    ],
+    "correctIndex": 1,
+    "explanation": "The 's' becomes 'z' and -en is added after the long vowel: huizen.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-1",
+    "question": "What is the plural of 'kind'?",
+    "options": [
+      "kinden",
+      "kinderen",
+      "kinds",
+      "kindes"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Kind' is irregular and takes -eren: kinderen.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-2",
+    "question": "What is the plural of 'appel'?",
+    "options": [
+      "appelen",
+      "appels",
+      "appel's",
+      "appellen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nouns ending in -el usually take -s: appels.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-3",
+    "question": "What is the plural of 'kopje'?",
+    "options": [
+      "kopjes",
+      "kopjen",
+      "kopje's",
+      "kopjeen"
+    ],
+    "correctIndex": 0,
+    "explanation": "Diminutives (-je) always take -s: kopjes.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-4",
+    "question": "What is the plural of 'foto'?",
+    "options": [
+      "fotoen",
+      "fotos",
+      "foto's",
+      "foton"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nouns ending in -o take -'s: foto's.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-5",
+    "question": "What is the plural of 'man'?",
+    "options": [
+      "mans",
+      "mannen",
+      "manen",
+      "man's"
+    ],
+    "correctIndex": 1,
+    "explanation": "Short vowel doubles the consonant before -en: mannen ('manen' means manes/moons).",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-6",
+    "question": "What is the plural of 'ei' (egg)?",
+    "options": [
+      "eien",
+      "eieren",
+      "eis",
+      "eieren's"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Ei' is irregular and takes -eren: eieren.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-7",
+    "question": "What is the plural of 'stoel'?",
+    "options": [
+      "stoels",
+      "stoelen",
+      "stoele",
+      "stoel's"
+    ],
+    "correctIndex": 1,
+    "explanation": "Most nouns take -en: stoelen.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-8",
+    "question": "What is the plural of 'baby'?",
+    "options": [
+      "babys",
+      "babies",
+      "baby's",
+      "babyen"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nouns ending in -y take -'s: baby's.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-9",
+    "question": "What is the plural of 'brief' (letter)?",
+    "options": [
+      "briefs",
+      "brieven",
+      "briefen",
+      "brief's"
+    ],
+    "correctIndex": 1,
+    "explanation": "The 'f' becomes 'v' and -en is added: brieven.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-10",
+    "question": "What is the plural of 'huisje'?",
+    "options": [
+      "huisjes",
+      "huisjen",
+      "huisje's",
+      "huisies"
+    ],
+    "correctIndex": 0,
+    "explanation": "Diminutives always take -s: huisjes.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-11",
+    "question": "What is the plural of 'week'?",
+    "options": [
+      "weeks",
+      "weken",
+      "weeken",
+      "week's"
+    ],
+    "correctIndex": 1,
+    "explanation": "Open-syllable rule: 'ee' shortens to 'e' before -en: weken.",
+    "category": "Plurals"
+  },
+  {
+    "id": "plural-n-12",
+    "question": "What is the plural of 'lepel' (spoon)?",
+    "options": [
+      "lepelen",
+      "lepels",
+      "lepel's",
+      "lepellen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nouns ending in -el usually take -s: lepels.",
+    "category": "Plurals"
+  },
+  {
+    "id": "adj-n-0",
+    "question": "Which is correct: 'a small house'? (het huis)",
+    "options": [
+      "een klein huis",
+      "een kleine huis",
+      "een kleinere huis",
+      "een kleinst huis"
+    ],
+    "correctIndex": 0,
+    "explanation": "After 'een' + a het-word, the adjective gets NO -e: een klein huis.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-1",
+    "question": "Which is correct: 'the big table'? (de tafel)",
+    "options": [
+      "de groot tafel",
+      "de grote tafel",
+      "de groter tafel",
+      "de grootst tafel"
+    ],
+    "correctIndex": 1,
+    "explanation": "After a definite article the adjective gets -e (and oo->o): de grote tafel.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-2",
+    "question": "Which is correct: 'the new house'? (het huis)",
+    "options": [
+      "het nieuw huis",
+      "het nieuwe huis",
+      "het nieuwer huis",
+      "het nieuwst huis"
+    ],
+    "correctIndex": 1,
+    "explanation": "After the definite 'het' the adjective gets -e: het nieuwe huis.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-3",
+    "question": "Which is correct: 'a beautiful car'? (de auto)",
+    "options": [
+      "een mooi auto",
+      "een mooie auto",
+      "een mooier auto",
+      "een mooist auto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Before a de-word with 'een', the adjective gets -e: een mooie auto.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-4",
+    "question": "Which is correct: 'The flowers are beautiful.'?",
+    "options": [
+      "De bloemen zijn mooi.",
+      "De bloemen zijn mooie.",
+      "De bloemen zijn mooier.",
+      "De bloemen zijn mooist."
+    ],
+    "correctIndex": 0,
+    "explanation": "Predicative adjectives (after zijn) never get -e: zijn mooi.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-5",
+    "question": "Which is correct: 'a tasty apple'? (de appel)",
+    "options": [
+      "een lekker appel",
+      "een lekkere appel",
+      "een lekkerder appel",
+      "een lekkerst appel"
+    ],
+    "correctIndex": 1,
+    "explanation": "Before a de-word with 'een', the adjective gets -e: een lekkere appel.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-6",
+    "question": "Which is correct: 'Old people are wise.'? (plural)",
+    "options": [
+      "Oud mensen zijn wijs.",
+      "Oude mensen zijn wijs.",
+      "Ouder mensen zijn wijs.",
+      "Oudst mensen zijn wijs."
+    ],
+    "correctIndex": 1,
+    "explanation": "Before a plural noun the adjective always gets -e: oude mensen.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-7",
+    "question": "Which is correct: 'a red coat'? (de jas)",
+    "options": [
+      "een rood jas",
+      "een rode jas",
+      "een roder jas",
+      "een roodst jas"
+    ],
+    "correctIndex": 1,
+    "explanation": "Before a de-word with 'een', add -e (and oo->o): een rode jas.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-8",
+    "question": "What is the comparative of 'groot' (big)?",
+    "options": [
+      "groter",
+      "grootst",
+      "grote",
+      "meer groot"
+    ],
+    "correctIndex": 0,
+    "explanation": "The comparative adds -er: groter.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-9",
+    "question": "What is the superlative of 'klein' (small)?",
+    "options": [
+      "kleiner",
+      "kleinst",
+      "klein",
+      "kleine"
+    ],
+    "correctIndex": 1,
+    "explanation": "The superlative adds -st: kleinst.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-10",
+    "question": "Which is correct: 'the expensive watch'? (het horloge)",
+    "options": [
+      "het duur horloge",
+      "het dure horloge",
+      "het duurder horloge",
+      "het duurst horloge"
+    ],
+    "correctIndex": 1,
+    "explanation": "After the definite 'het' the adjective gets -e (uu->u): het dure horloge.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-11",
+    "question": "Do material adjectives ending in -en (e.g. gouden, houten) get an extra -e?",
+    "options": [
+      "Yes, always",
+      "No, never",
+      "Only with de-words",
+      "Only in plural"
+    ],
+    "correctIndex": 1,
+    "explanation": "Material adjectives in -en never inflect further: een houten tafel.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "adj-n-12",
+    "question": "Which is correct: 'This car is faster than that one.'?",
+    "options": [
+      "Deze auto is snel dan die.",
+      "Deze auto is snelle dan die.",
+      "Deze auto is sneller dan die.",
+      "Deze auto is snelst dan die."
+    ],
+    "correctIndex": 2,
+    "explanation": "A comparison uses the comparative (-er) + dan: sneller dan.",
+    "category": "Adjective Declension"
+  },
+  {
+    "id": "order-n-0",
+    "question": "Which is correct?",
+    "options": [
+      "Ik ga naar huis omdat ik moe ben.",
+      "Ik ga naar huis omdat ik ben moe.",
+      "Ik ga naar huis omdat moe ik ben.",
+      "Ik ga naar huis omdat ben ik moe."
+    ],
+    "correctIndex": 0,
+    "explanation": "In a subordinate clause with 'omdat' the verb goes to the end: omdat ik moe ben.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-1",
+    "question": "Which is correct?",
+    "options": [
+      "Vanavond wij kijken een film.",
+      "Vanavond kijken wij een film.",
+      "Vanavond een film kijken wij.",
+      "Wij kijken vanavond wij een film."
+    ],
+    "correctIndex": 1,
+    "explanation": "When the sentence starts with a time word, inversion puts the verb 2nd: Vanavond kijken wij.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-2",
+    "question": "In a main clause, the finite verb is in which position?",
+    "options": [
+      "first",
+      "second",
+      "last",
+      "third"
+    ],
+    "correctIndex": 1,
+    "explanation": "The V2 rule: the finite verb is always the second element in a main clause.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-3",
+    "question": "Which word order is correct: 'I go ___.'?",
+    "options": [
+      "morgen met de trein naar Utrecht",
+      "naar Utrecht met de trein morgen",
+      "met de trein morgen naar Utrecht",
+      "naar Utrecht morgen met de trein"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dutch order is Time-Manner-Place: morgen (time), met de trein (manner), naar Utrecht (place).",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-4",
+    "question": "In a yes/no question, the finite verb goes in which position?",
+    "options": [
+      "first",
+      "second",
+      "last",
+      "after the subject"
+    ],
+    "correctIndex": 0,
+    "explanation": "Yes/no questions start with the verb: Werk jij vandaag?",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-5",
+    "question": "Which is correct?",
+    "options": [
+      "Ik weet dat hij spreekt Nederlands.",
+      "Ik weet dat hij Nederlands spreekt.",
+      "Ik weet dat spreekt hij Nederlands.",
+      "Ik weet dat Nederlands hij spreekt."
+    ],
+    "correctIndex": 1,
+    "explanation": "In a subordinate clause with 'dat', the verb goes to the end: dat hij Nederlands spreekt.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-6",
+    "question": "What word order follows 'want' (because)?",
+    "options": [
+      "verb to the end",
+      "inversion",
+      "normal main-clause order (subject + verb)",
+      "verb first"
+    ],
+    "correctIndex": 2,
+    "explanation": "'Want' is a coordinating conjunction: normal subject-verb order follows, no inversion.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-7",
+    "question": "Which is correct?",
+    "options": [
+      "Hij heeft gisteren gekocht een boek.",
+      "Hij heeft gisteren een boek gekocht.",
+      "Hij heeft gekocht gisteren een boek.",
+      "Gekocht hij heeft gisteren een boek."
+    ],
+    "correctIndex": 1,
+    "explanation": "The past participle goes to the end of the clause: ... een boek gekocht.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-8",
+    "question": "Which is correct?",
+    "options": [
+      "Ik wil kopen een huis.",
+      "Ik wil een huis kopen.",
+      "Ik kopen wil een huis.",
+      "Ik een huis wil kopen."
+    ],
+    "correctIndex": 1,
+    "explanation": "A dependent infinitive goes to the end: Ik wil een huis kopen.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-9",
+    "question": "Which is correct (object first for emphasis)?",
+    "options": [
+      "Dat boek ik heb al gelezen.",
+      "Dat boek heb ik al gelezen.",
+      "Dat boek ik al gelezen heb.",
+      "Heb dat boek ik al gelezen."
+    ],
+    "correctIndex": 1,
+    "explanation": "Fronting the object triggers inversion; the verb stays 2nd: Dat boek heb ik al gelezen.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-10",
+    "question": "Which is correct?",
+    "options": [
+      "Waar jij woont?",
+      "Waar woon jij?",
+      "Waar woont jij?",
+      "Waar wonen jij?"
+    ],
+    "correctIndex": 1,
+    "explanation": "After a question word, inversion follows and the -t drops with 'jij': Waar woon jij?",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-11",
+    "question": "Which conjunction sends the verb to the end of its clause?",
+    "options": [
+      "want",
+      "omdat",
+      "en",
+      "maar"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Omdat' is subordinating and sends the verb to the end; want/en/maar keep main-clause order.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-12",
+    "question": "Which is correct?",
+    "options": [
+      "Hij blijft thuis, dat zij is ziek.",
+      "Ik hoor dat zij ziek is.",
+      "Ik hoor dat is zij ziek.",
+      "Ik hoor dat ziek zij is."
+    ],
+    "correctIndex": 1,
+    "explanation": "In a subordinate clause with 'dat', the verb goes last: dat zij ziek is.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "order-n-13",
+    "question": "In a main clause, infinitives and past participles go where?",
+    "options": [
+      "at the front",
+      "in the middle",
+      "at the end",
+      "right after the subject"
+    ],
+    "correctIndex": 2,
+    "explanation": "Non-finite verbs (infinitives/participles) cluster at the end of the clause.",
+    "category": "Word Order (V2 Rule)"
+  },
+  {
+    "id": "prep-n-0",
+    "question": "Ik luister ___ muziek.",
+    "options": [
+      "naar",
+      "aan",
+      "op",
+      "voor"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Luisteren naar' is a fixed combination: luister naar muziek.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-1",
+    "question": "Zij wacht ___ de trein.",
+    "options": [
+      "voor",
+      "op",
+      "aan",
+      "naar"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Wachten op' is a fixed combination: wacht op de trein.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-2",
+    "question": "Ik ben trots ___ mijn kinderen.",
+    "options": [
+      "van",
+      "op",
+      "voor",
+      "met"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Trots op' is a fixed combination: trots op mijn kinderen.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-3",
+    "question": "Hij houdt ___ voetbal.",
+    "options": [
+      "van",
+      "over",
+      "aan",
+      "op"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Houden van' means to like/love: houdt van voetbal.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-4",
+    "question": "Wij praten ___ het weer.",
+    "options": [
+      "over",
+      "aan",
+      "van",
+      "bij"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Praten over' means to talk about: praten over het weer.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-5",
+    "question": "De kat zit ___ de tafel. (on top of)",
+    "options": [
+      "op",
+      "in",
+      "aan",
+      "naar"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Op' means on top of: op de tafel.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-6",
+    "question": "Ik woon ___ Nederland.",
+    "options": [
+      "in",
+      "op",
+      "naar",
+      "te"
+    ],
+    "correctIndex": 0,
+    "explanation": "Use 'in' with countries: in Nederland.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-7",
+    "question": "Zij gaat ___ de dokter. (to the doctor's)",
+    "options": [
+      "naar",
+      "bij",
+      "aan",
+      "in"
+    ],
+    "correctIndex": 0,
+    "explanation": "Use 'naar' for movement to a destination: naar de dokter.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-8",
+    "question": "Ik denk ___ jou.",
+    "options": [
+      "aan",
+      "over",
+      "op",
+      "van"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Denken aan' means to think of/about: denk aan jou.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-9",
+    "question": "Dit cadeau is ___ jou. (for you)",
+    "options": [
+      "voor",
+      "aan",
+      "bij",
+      "van"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Voor' means for: voor jou.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-10",
+    "question": "Ik ga ___ de bus naar werk. (by bus)",
+    "options": [
+      "met",
+      "op",
+      "in",
+      "bij"
+    ],
+    "correctIndex": 0,
+    "explanation": "Use 'met' for means of transport: met de bus.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-11",
+    "question": "Het boek ligt ___ de tafel. (on the table)",
+    "options": [
+      "op",
+      "in",
+      "aan",
+      "boven"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Op' means on (a surface): op de tafel.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "prep-n-12",
+    "question": "Zij is bang ___ honden.",
+    "options": [
+      "voor",
+      "van",
+      "aan",
+      "op"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Bang voor' means afraid of: bang voor honden.",
+    "category": "Prepositions"
+  },
+  {
+    "id": "pron-n-0",
+    "question": "What is the possessive for 'ik'?",
+    "options": [
+      "mijn",
+      "mij",
+      "mijne",
+      "me"
+    ],
+    "correctIndex": 0,
+    "explanation": "The possessive of 'ik' is 'mijn': mijn boek.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-1",
+    "question": "What is the possessive for 'hij'?",
+    "options": [
+      "zijn",
+      "hem",
+      "hij",
+      "zich"
+    ],
+    "correctIndex": 0,
+    "explanation": "The possessive of 'hij' is 'zijn': zijn auto.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-2",
+    "question": "What is the possessive for 'zij' (she)?",
+    "options": [
+      "haar",
+      "zij",
+      "hun",
+      "ze"
+    ],
+    "correctIndex": 0,
+    "explanation": "The possessive of 'zij' (she) is 'haar': haar tas.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-3",
+    "question": "What is the possessive for 'jullie'?",
+    "options": [
+      "jullie",
+      "jouw",
+      "hun",
+      "je"
+    ],
+    "correctIndex": 0,
+    "explanation": "The possessive of 'jullie' is 'jullie': jullie huis.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-4",
+    "question": "What is the possessive for 'zij' (they)?",
+    "options": [
+      "hun",
+      "hen",
+      "zij",
+      "ze"
+    ],
+    "correctIndex": 0,
+    "explanation": "The possessive of 'zij' (they) is 'hun': hun kinderen.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-5",
+    "question": "What is the object form of 'ik'?",
+    "options": [
+      "mij",
+      "ik",
+      "mijn",
+      "wij"
+    ],
+    "correctIndex": 0,
+    "explanation": "The object form of 'ik' is 'mij' (or unstressed 'me').",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-6",
+    "question": "What is the object form of 'wij'?",
+    "options": [
+      "ons",
+      "onze",
+      "wij",
+      "we"
+    ],
+    "correctIndex": 0,
+    "explanation": "The object form of 'wij' is 'ons': Hij ziet ons.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-7",
+    "question": "Fill in: '___ ben moe.'",
+    "options": [
+      "Ik",
+      "Mij",
+      "Mijn",
+      "Me"
+    ],
+    "correctIndex": 0,
+    "explanation": "The subject pronoun is 'ik': Ik ben moe.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-8",
+    "question": "Dit is ___ boek. (my)",
+    "options": [
+      "mijn",
+      "mij",
+      "me",
+      "mijne"
+    ],
+    "correctIndex": 0,
+    "explanation": "The possessive 'mijn' is used before a noun: mijn boek.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-9",
+    "question": "___ huis is groot. (our - het huis)",
+    "options": [
+      "Ons",
+      "Onze",
+      "Onzes",
+      "Oner"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Ons' is used before het-words: ons huis.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-10",
+    "question": "___ auto is rood. (our - de auto)",
+    "options": [
+      "Ons",
+      "Onze",
+      "Onzen",
+      "Onze's"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Onze' is used before de-words and plurals: onze auto.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-11",
+    "question": "Ik zie ___. (him)",
+    "options": [
+      "hem",
+      "hij",
+      "zijn",
+      "hun"
+    ],
+    "correctIndex": 0,
+    "explanation": "The object form of 'hij' is 'hem': Ik zie hem.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "pron-n-12",
+    "question": "What is the formal possessive 'your' (matching 'u')?",
+    "options": [
+      "uw",
+      "u",
+      "jouw",
+      "jullie"
+    ],
+    "correctIndex": 0,
+    "explanation": "The formal possessive is 'uw': uw naam.",
+    "category": "Pronouns"
+  },
+  {
+    "id": "neg-n-0",
+    "question": "Ik heb ___ geld. (no money)",
+    "options": [
+      "geen",
+      "niet",
+      "niks",
+      "nooit"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Geen' negates a noun without an article: geen geld.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-1",
+    "question": "Ik ken hem ___. (not)",
+    "options": [
+      "geen",
+      "niet",
+      "geen een",
+      "nee"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Niet' negates a verb: ken hem niet.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-2",
+    "question": "Dat is ___ goed idee. (not a)",
+    "options": [
+      "geen",
+      "niet",
+      "niet een",
+      "nooit"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Geen' replaces 'een' + noun: geen goed idee.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-3",
+    "question": "Hij komt vandaag ___. (not)",
+    "options": [
+      "geen",
+      "niet",
+      "geen een",
+      "niks"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Niet' negates the verb action: komt vandaag niet.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-4",
+    "question": "Ik heb ___ honger. (not hungry)",
+    "options": [
+      "geen",
+      "niet",
+      "nooit",
+      "niks"
+    ],
+    "correctIndex": 0,
+    "explanation": "With nouns like 'honger' use 'geen': geen honger.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-5",
+    "question": "'I have no brothers.' = ?",
+    "options": [
+      "Ik heb geen broers.",
+      "Ik heb niet broers.",
+      "Ik heb broers niet.",
+      "Ik niet heb broers."
+    ],
+    "correctIndex": 0,
+    "explanation": "'Geen' negates a noun without an article: geen broers.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-6",
+    "question": "'This book is not interesting.' = ?",
+    "options": [
+      "Dit boek is geen interessant.",
+      "Dit boek is niet interessant.",
+      "Dit boek niet is interessant.",
+      "Dit boek is interessant niet."
+    ],
+    "correctIndex": 1,
+    "explanation": "'Niet' negates an adjective and comes before it: niet interessant.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-7",
+    "question": "'I don't drink coffee.' = ?",
+    "options": [
+      "Ik drink geen koffie.",
+      "Ik drink niet koffie.",
+      "Ik drink koffie niet.",
+      "Ik niet drink koffie."
+    ],
+    "correctIndex": 0,
+    "explanation": "'Geen' negates the noun without an article: geen koffie.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-8",
+    "question": "'Geen' is used to negate...",
+    "options": [
+      "verbs",
+      "adjectives",
+      "nouns with 'een' or no article",
+      "prepositions"
+    ],
+    "correctIndex": 2,
+    "explanation": "'Geen' negates nouns that have 'een' or no article.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-9",
+    "question": "'Niet' is used to negate...",
+    "options": [
+      "nouns with 'een'",
+      "verbs and adjectives",
+      "only plurals",
+      "articles"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Niet' negates verbs, adjectives, and definite/possessive phrases.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-10",
+    "question": "'I never smoke.' = ?",
+    "options": [
+      "Ik rook nooit.",
+      "Ik rook geen.",
+      "Ik niet rook.",
+      "Ik rook niet nooit."
+    ],
+    "correctIndex": 0,
+    "explanation": "'Nooit' means never: Ik rook nooit.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-11",
+    "question": "'That is not my car.' = ?",
+    "options": [
+      "Dat is geen mijn auto.",
+      "Dat is niet mijn auto.",
+      "Dat is mijn auto geen.",
+      "Dat niet is mijn auto."
+    ],
+    "correctIndex": 1,
+    "explanation": "'Niet' negates a possessive phrase and comes before it: niet mijn auto.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "neg-n-12",
+    "question": "Ik zie ___. (nothing)",
+    "options": [
+      "niets",
+      "geen",
+      "niet",
+      "nooit"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Niets' (or 'niks') means nothing: Ik zie niets.",
+    "category": "Negation (Geen & Niet)"
+  },
+  {
+    "id": "modal-n-0",
+    "question": "Ik ___ zwemmen. (can)",
+    "options": [
+      "kan",
+      "kunt",
+      "kunnen",
+      "kant"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Kunnen' for 'ik' is 'kan': Ik kan zwemmen.",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-1",
+    "question": "Jij ___ naar huis gaan. (must)",
+    "options": [
+      "moet",
+      "moett",
+      "moeten",
+      "moest"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Moeten' for 'jij' is 'moet': Jij moet ... gaan.",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-2",
+    "question": "Hij ___ een nieuwe auto. (wants)",
+    "options": [
+      "wil",
+      "wilt",
+      "willen",
+      "wilde"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Willen' for 'hij' is 'wil': Hij wil ...",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-3",
+    "question": "Wij ___ hier parkeren. (may/allowed)",
+    "options": [
+      "mag",
+      "mogen",
+      "moogt",
+      "mocht"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Mogen' for plural 'wij' is 'mogen': Wij mogen ...",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-4",
+    "question": "Which modal means 'can / to be able to'?",
+    "options": [
+      "kunnen",
+      "mogen",
+      "moeten",
+      "willen"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Kunnen' means can/to be able to.",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-5",
+    "question": "___ ik je iets vragen? (May I)",
+    "options": [
+      "Mag",
+      "Moet",
+      "Hoef",
+      "Wilt"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Mogen' expresses permission; the 'ik' form is 'mag': Mag ik ...?",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-6",
+    "question": "In a modal sentence, where does the main (infinitive) verb go?",
+    "options": [
+      "before the modal",
+      "at the end of the clause",
+      "right after the subject",
+      "it is dropped"
+    ],
+    "correctIndex": 1,
+    "explanation": "The dependent infinitive goes to the end: Ik moet nu werken.",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-7",
+    "question": "U ___ hier niet roken. (not allowed)",
+    "options": [
+      "mag",
+      "moet",
+      "hoeft",
+      "wilt"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Mogen' expresses permission; 'mag niet' means 'not allowed': U mag hier niet roken.",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-8",
+    "question": "Wij ___ vanavond komen. (can/kunnen)",
+    "options": [
+      "kan",
+      "kunt",
+      "kunnen",
+      "konden"
+    ],
+    "correctIndex": 2,
+    "explanation": "'Kunnen' for plural 'wij' is 'kunnen': Wij kunnen komen.",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-9",
+    "question": "'I don't have to work today.' = ?",
+    "options": [
+      "Ik moet vandaag niet werken.",
+      "Ik hoef vandaag niet te werken.",
+      "Ik kan vandaag niet werken.",
+      "Ik mag vandaag niet werken."
+    ],
+    "correctIndex": 1,
+    "explanation": "'Hoeven ... niet te' expresses 'don't have to': Ik hoef niet te werken.",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-10",
+    "question": "Zij ___ morgen komen. (zullen, she)",
+    "options": [
+      "zal",
+      "zult",
+      "zullen",
+      "zou"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Zullen' for singular 'zij' is 'zal': Zij zal morgen komen.",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-11",
+    "question": "Simple past of 'moeten' for 'ik'?",
+    "options": [
+      "moest",
+      "moste",
+      "moette",
+      "gemoeten"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Moeten' is irregular in the past: ik moest.",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "modal-n-12",
+    "question": "'Mag' is the ik/hij-form of which modal verb?",
+    "options": [
+      "mogen",
+      "moeten",
+      "kunnen",
+      "willen"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Mag' is the singular form of 'mogen'.",
+    "category": "Modal Verbs"
+  },
+  {
+    "id": "sep-n-0",
+    "question": "Which is correct? (aankomen)",
+    "options": [
+      "De trein aankomt om acht uur.",
+      "De trein komt om acht uur aan.",
+      "De trein komt aan om acht uur.",
+      "De trein om acht uur aankomt."
+    ],
+    "correctIndex": 1,
+    "explanation": "In a main clause the prefix 'aan' moves to the end: komt om acht uur aan.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-1",
+    "question": "Which is correct? (opstaan)",
+    "options": [
+      "Ik opsta elke dag vroeg.",
+      "Ik sta elke dag vroeg op.",
+      "Ik sta op elke dag vroeg.",
+      "Ik elke dag vroeg opsta."
+    ],
+    "correctIndex": 1,
+    "explanation": "The prefix 'op' separates to the end: Ik sta elke dag vroeg op.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-2",
+    "question": "Past participle of 'aankomen'?",
+    "options": [
+      "aangekomen",
+      "geaankomen",
+      "aankomgen",
+      "aangekomt"
+    ],
+    "correctIndex": 0,
+    "explanation": "The ge- is inserted between prefix and stem: aan + ge + komen = aangekomen.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-3",
+    "question": "Past participle of 'opruimen' (to tidy up)?",
+    "options": [
+      "opgeruimd",
+      "geopruimd",
+      "opruimgd",
+      "opgeruimt"
+    ],
+    "correctIndex": 0,
+    "explanation": "The ge- goes between prefix and stem: op + ge + ruimd = opgeruimd.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-4",
+    "question": "Which is correct? (opstaan, subordinate clause)",
+    "options": [
+      "...omdat hij vroeg opstaat.",
+      "...omdat hij vroeg staat op.",
+      "...omdat hij op vroeg staat.",
+      "...omdat hij staat vroeg op."
+    ],
+    "correctIndex": 0,
+    "explanation": "In a subordinate clause the verb stays together at the end: omdat hij vroeg opstaat.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-5",
+    "question": "Which is correct? (meegaan)",
+    "options": [
+      "Wil je meegaan?",
+      "Wil je gaan mee?",
+      "Wil je mee gaan?",
+      "Wil mee je gaan?"
+    ],
+    "correctIndex": 0,
+    "explanation": "With a modal, the separable verb stays together as an infinitive at the end: meegaan.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-6",
+    "question": "Which of these is a separable verb?",
+    "options": [
+      "opbellen",
+      "vertellen",
+      "bestellen",
+      "beloven"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Opbellen' (op + bellen) is separable; ver-/be- are inseparable prefixes.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-7",
+    "question": "Which is correct? (uitgeven)",
+    "options": [
+      "Hij uitgeeft veel geld.",
+      "Hij geeft veel geld uit.",
+      "Hij geeft uit veel geld.",
+      "Hij veel geld uitgeeft."
+    ],
+    "correctIndex": 1,
+    "explanation": "The prefix 'uit' moves to the end: Hij geeft veel geld uit.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-8",
+    "question": "In a present-tense main clause, where does the separable prefix go?",
+    "options": [
+      "at the front",
+      "at the end of the clause",
+      "right after the verb",
+      "it disappears"
+    ],
+    "correctIndex": 1,
+    "explanation": "The prefix separates and moves to the end of the clause.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-9",
+    "question": "Past participle of 'meenemen'?",
+    "options": [
+      "meegenomen",
+      "gemeenemen",
+      "meenamgen",
+      "meegenomt"
+    ],
+    "correctIndex": 0,
+    "explanation": "The ge- goes between prefix and stem: mee + ge + nomen = meegenomen.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-10",
+    "question": "Which is correct? (afwassen)",
+    "options": [
+      "Ik moet de borden afwassen.",
+      "Ik moet de borden was af.",
+      "Ik moet afwassen de borden.",
+      "Ik moet de borden af wassen."
+    ],
+    "correctIndex": 0,
+    "explanation": "With a modal the separable verb stays together as an infinitive at the end: afwassen.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-11",
+    "question": "Past participle of 'terugkomen'?",
+    "options": [
+      "teruggekomen",
+      "geterugkomen",
+      "terugkomgen",
+      "teruggekomt"
+    ],
+    "correctIndex": 0,
+    "explanation": "The ge- goes between prefix and stem: terug + ge + komen = teruggekomen.",
+    "category": "Separable Verbs"
+  },
+  {
+    "id": "sep-n-12",
+    "question": "Which is correct? (meekomen)",
+    "options": [
+      "Meekom je morgen?",
+      "Kom je morgen mee?",
+      "Kom mee je morgen?",
+      "Je komt morgen mee?"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a question the verb comes first and the prefix goes to the end: Kom je morgen mee?",
+    "category": "Separable Verbs"
   }
 ]

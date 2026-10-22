@@ -3,11 +3,14 @@ import {
   ChangeDetectionStrategy,
   Component,
   DestroyRef,
+  ElementRef,
+  HostListener,
   PLATFORM_ID,
   computed,
   effect,
   inject,
   signal,
+  viewChild,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
@@ -15,9 +18,9 @@ import { RouterLink } from '@angular/router';
 import type { Verb } from '@moredutch/shared';
 import { ContentService } from '../../../core/content.service';
 import { ProgressService } from '../../../core/progress.service';
+import { LangFlagComponent } from '../../../layout/lang-flag/lang-flag.component';
 import { HelpDialogComponent } from '../../../layout/help-dialog/help-dialog.component';
 
-const MASTERED_VERBS_KEY = 'dgh_mastered_verbs';
 
 type VerbWithLegacyFields = Verb & {
   id?: number;
@@ -42,10 +45,10 @@ type VerbWithLegacyFields = Verb & {
 @Component({
   selector: 'md-verb-explorer',
   standalone: true,
-  imports: [FormsModule, HelpDialogComponent, RouterLink],
+  imports: [FormsModule, HelpDialogComponent, RouterLink, LangFlagComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="hero" style="border-bottom:none; padding-bottom: 1rem;">
+    <div class="hero">
       <h1>
         Verb <em>Explorer</em>
         <button class="help-trigger" type="button" title="How it works" (click)="helpOpen = true">
@@ -112,6 +115,8 @@ type VerbWithLegacyFields = Verb & {
         <span class="material-icons">search</span>
         <input
           type="text"
+          id="verb-search"
+          aria-label="Search verbs by Dutch or English"
           placeholder="Search by Dutch or English..."
           [ngModel]="query()"
           (ngModelChange)="query.set($event)"
@@ -119,16 +124,16 @@ type VerbWithLegacyFields = Verb & {
       </div>
       <div class="filters">
         <div class="filter-group">
-          <label>Mastery</label>
-          <select [ngModel]="masteryFilter()" (ngModelChange)="masteryFilter.set($event)">
+          <label for="verb-filter-mastery">Mastery</label>
+          <select id="verb-filter-mastery" [ngModel]="masteryFilter()" (ngModelChange)="masteryFilter.set($event)">
             <option value="all">All Verbs</option>
             <option value="unmastered">Unmastered Only</option>
             <option value="mastered">Mastered Only</option>
           </select>
         </div>
         <div class="filter-group">
-          <label>Type</label>
-          <select [ngModel]="typeFilter()" (ngModelChange)="typeFilter.set($event)">
+          <label for="verb-filter-type">Type</label>
+          <select id="verb-filter-type" [ngModel]="typeFilter()" (ngModelChange)="typeFilter.set($event)">
             <option value="all">All Types</option>
             <option value="regular">Regular</option>
             <option value="irregular">Irregular</option>
@@ -136,8 +141,8 @@ type VerbWithLegacyFields = Verb & {
           </select>
         </div>
         <div class="filter-group">
-          <label>Level</label>
-          <select [ngModel]="levelFilter()" (ngModelChange)="levelFilter.set($event)">
+          <label for="verb-filter-level">Level</label>
+          <select id="verb-filter-level" [ngModel]="levelFilter()" (ngModelChange)="levelFilter.set($event)">
             <option value="all">All Levels</option>
             <option value="A1">A1</option>
             <option value="A2">A2</option>
@@ -165,8 +170,8 @@ type VerbWithLegacyFields = Verb & {
         <thead>
           <tr>
             <th class="col-rank">#</th>
-            <th>Infinitive</th>
-            <th>English</th>
+            <th><md-lang-flag lang="nl" />Infinitive</th>
+            <th><md-lang-flag lang="en" />English</th>
             <th class="col-type">Type</th>
             <th class="col-helper">Helper</th>
             <th class="col-level">Level</th>
@@ -218,13 +223,18 @@ type VerbWithLegacyFields = Verb & {
 
     @if (selectedVerb(); as verb) {
       <div class="detail-overlay" style="display:block;" (click)="closeDetail()"></div>
-      <div class="detail-panel active">
+      <div
+        class="detail-panel active"
+        role="dialog"
+        aria-modal="true"
+        [attr.aria-label]="verb.infinitive + ' conjugation details'"
+      >
         <div class="detail-header">
           <div class="detail-title">
             <h2>{{ verb.infinitive }}</h2>
             <p>{{ verb.english }}</p>
           </div>
-          <button class="close-detail" type="button" (click)="closeDetail()">
+          <button #closeBtn class="close-detail" type="button" aria-label="Close details" (click)="closeDetail()">
             <span class="material-icons">close</span>
           </button>
         </div>
@@ -359,7 +369,8 @@ export class VerbExplorerComponent {
   protected readonly masteryFilter = signal('all');
   protected readonly selectedVerb = signal<VerbWithLegacyFields | null>(null);
   protected helpOpen = false;
-  protected readonly masteredIds = signal<number[]>(this.readMasteredIds());
+  /** Single source of truth (string ids, synced with the server for signed-in users). */
+  protected readonly masteredIds = this.progress.masteredVerbIds;
 
   protected readonly filtered = computed(() => {
     const q = this.query().trim().toLowerCase();
@@ -381,9 +392,10 @@ export class VerbExplorerComponent {
     });
   });
 
-  protected readonly masteredCount = computed(
-    () => this.masteredIds().filter((id) => this.verbs().some((v) => v.id === id)).length,
-  );
+  protected readonly masteredCount = computed(() => {
+    const ids = this.masteredIds();
+    return this.verbs().filter((v) => v.id !== undefined && ids.has(String(v.id))).length;
+  });
 
   protected readonly masteryPct = computed(() => {
     const total = this.verbs().length || 200;
@@ -391,11 +403,6 @@ export class VerbExplorerComponent {
   });
 
   constructor() {
-    effect(() => {
-      if (!isPlatformBrowser(this.platformId)) return;
-      localStorage.setItem(MASTERED_VERBS_KEY, JSON.stringify(this.masteredIds()));
-    });
-
     // Lock body scroll while the detail panel is open, driven purely by state so
     // it can never get stuck: an in-panel router link (e.g. "Practice in Wheel")
     // navigates away without calling closeDetail(), and without this the whole
@@ -411,24 +418,38 @@ export class VerbExplorerComponent {
     });
   }
 
+  private readonly closeBtn = viewChild<ElementRef<HTMLButtonElement>>('closeBtn');
+  /** Element that opened the panel, so focus can return to it on close. */
+  private returnFocusTo: HTMLElement | null = null;
+
   protected openDetail(verb: VerbWithLegacyFields): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.returnFocusTo = document.activeElement as HTMLElement | null;
+    }
     this.selectedVerb.set(verb);
+    setTimeout(() => this.closeBtn()?.nativeElement.focus());
   }
 
   protected closeDetail(): void {
+    if (!this.selectedVerb()) return;
     this.selectedVerb.set(null);
+    const target = this.returnFocusTo;
+    this.returnFocusTo = null;
+    if (target?.isConnected) setTimeout(() => target.focus());
+  }
+
+  @HostListener('document:keydown.escape')
+  protected onEscape(): void {
+    this.closeDetail();
   }
 
   protected isMastered(verb: VerbWithLegacyFields): boolean {
-    return verb.id !== undefined && this.masteredIds().includes(verb.id);
+    return verb.id !== undefined && this.masteredIds().has(String(verb.id));
   }
 
   protected toggleMastery(verb: VerbWithLegacyFields): void {
     if (verb.id === undefined) return;
-    this.masteredIds.update((ids) =>
-      ids.includes(verb.id!) ? ids.filter((id) => id !== verb.id) : [...ids, verb.id!],
-    );
-    this.progress.syncVerbs(this.masteredIds().map(String));
+    this.progress.toggleVerb(String(verb.id));
   }
 
   protected typeLabel(verb: VerbWithLegacyFields): string {
@@ -444,14 +465,5 @@ export class VerbExplorerComponent {
       imperfectum_sg: verb.past,
       perfectum: verb.participle,
     };
-  }
-
-  private readMasteredIds(): number[] {
-    try {
-      const parsed = JSON.parse(localStorage.getItem(MASTERED_VERBS_KEY) ?? '[]');
-      return Array.isArray(parsed) ? parsed.filter((id): id is number => typeof id === 'number') : [];
-    } catch {
-      return [];
-    }
   }
 }

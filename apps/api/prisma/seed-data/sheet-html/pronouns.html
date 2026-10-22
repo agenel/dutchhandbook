@@ -18,22 +18,22 @@ tr.row-hi td.nl-main { color:var(--gold); }
 
 .fc-subj .fc-head { background:var(--blue-light); border-color:var(--blue-border); }
 .fc-subj .fc-title { color:var(--blue); }
-.fc-subj .fc-badge { background:var(--blue-border); color:var(--blue); }
+.fc-subj .fc-badge { background:var(--blue-light); color:var(--blue); border:1px solid var(--blue-border); }
 .fc-subj .example { border-color:var(--blue-border); }
 
 .fc-obj .fc-head { background:var(--green-light); border-color:var(--green-border); }
 .fc-obj .fc-title { color:var(--green); }
-.fc-obj .fc-badge { background:var(--green-border); color:var(--green); }
+.fc-obj .fc-badge { background:var(--green-light); color:var(--green); border:1px solid var(--green-border); }
 .fc-obj .example { border-color:var(--green-border); }
 
 .fc-poss .fc-head { background:var(--red-light); border-color:var(--red-border); }
 .fc-poss .fc-title { color:var(--red); }
-.fc-poss .fc-badge { background:var(--red-border); color:var(--red); }
+.fc-poss .fc-badge { background:var(--red-light); color:var(--red); border:1px solid var(--red-border); }
 .fc-poss .example { border-color:var(--red-border); }
 
 .fc-refl .fc-head { background:var(--gold-light); border-color:var(--gold-border); }
 .fc-refl .fc-title { color:var(--gold); }
-.fc-refl .fc-badge { background:var(--gold-border); color:#7A5A00; }
+.fc-refl .fc-badge { background:var(--gold-light); color:var(--gold); border:1px solid var(--gold-border); }
 .fc-refl .example { border-color:var(--gold-border); }
 
 .note-box { border-radius:9px; padding:0.9rem 1.1rem; margin-bottom:1.5rem; display:flex; gap:0.75rem; align-items:flex-start; font-size:0.82rem; line-height:1.55; }
@@ -150,7 +150,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-main">ik</td>
         <td class="nl-weak">&mdash;</td>
         <td class="nl-obj">mij</td>
-        <td class="nl-obj" style="opacity:0.65">me</td>
+        <td class="nl-obj" style="font-weight:400;font-style:italic">me</td>
         <td class="nl-poss">mijn</td>
         <td class="en">I / me / my</td>
       </tr>
@@ -159,7 +159,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-main" style="color:var(--gold)">jij</td>
         <td class="nl-weak">je</td>
         <td class="nl-obj" style="color:var(--gold)">jou</td>
-        <td class="nl-obj" style="opacity:0.65;color:var(--gold)">je</td>
+        <td class="nl-obj" style="font-weight:400;font-style:italic;color:var(--gold)">je</td>
         <td class="nl-poss" style="color:var(--gold)">jouw / je</td>
         <td class="en">you / you / your</td>
       </tr>
@@ -168,7 +168,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-main">u</td>
         <td class="nl-weak">&mdash;</td>
         <td class="nl-obj">u</td>
-        <td class="nl-obj" style="opacity:0.65">&mdash;</td>
+        <td class="nl-obj" style="font-weight:400;font-style:italic">&mdash;</td>
         <td class="nl-poss">uw</td>
         <td class="en">you (formal) / your</td>
       </tr>
@@ -177,7 +177,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-main">hij</td>
         <td class="nl-weak">ie / 'ie</td>
         <td class="nl-obj">hem</td>
-        <td class="nl-obj" style="opacity:0.65">'m</td>
+        <td class="nl-obj" style="font-weight:400;font-style:italic">'m</td>
         <td class="nl-poss">zijn</td>
         <td class="en">he / him / his</td>
       </tr>
@@ -186,7 +186,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-main">zij</td>
         <td class="nl-weak">ze</td>
         <td class="nl-obj">haar</td>
-        <td class="nl-obj" style="opacity:0.65">d'r / 'r</td>
+        <td class="nl-obj" style="font-weight:400;font-style:italic">d'r / 'r</td>
         <td class="nl-poss">haar</td>
         <td class="en">she / her / her</td>
       </tr>
@@ -195,7 +195,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-main">het</td>
         <td class="nl-weak">'t</td>
         <td class="nl-obj">het</td>
-        <td class="nl-obj" style="opacity:0.65">'t</td>
+        <td class="nl-obj" style="font-weight:400;font-style:italic">'t</td>
         <td class="nl-poss">zijn</td>
         <td class="en">it / it / its</td>
       </tr>
@@ -204,7 +204,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-main">wij</td>
         <td class="nl-weak">we</td>
         <td class="nl-obj">ons</td>
-        <td class="nl-obj" style="opacity:0.65">&mdash;</td>
+        <td class="nl-obj" style="font-weight:400;font-style:italic">&mdash;</td>
         <td class="nl-poss">ons / onze</td>
         <td class="en">we / us / our</td>
       </tr>
@@ -213,7 +213,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-main" style="color:var(--gold)">jullie</td>
         <td class="nl-weak">&mdash;</td>
         <td class="nl-obj" style="color:var(--gold)">jullie</td>
-        <td class="nl-obj" style="opacity:0.65;color:var(--gold)">&mdash;</td>
+        <td class="nl-obj" style="font-weight:400;font-style:italic;color:var(--gold)">&mdash;</td>
         <td class="nl-poss" style="color:var(--gold)">jullie</td>
         <td class="en">you (pl) / you / your</td>
       </tr>
@@ -222,7 +222,7 @@ tr.row-hi td.nl-main { color:var(--gold); }
         <td class="nl-main">zij</td>
         <td class="nl-weak">ze</td>
         <td class="nl-obj">hen / hun</td>
-        <td class="nl-obj" style="opacity:0.65">ze</td>
+        <td class="nl-obj" style="font-weight:400;font-style:italic">ze</td>
         <td class="nl-poss">hun</td>
         <td class="en">they / them / their</td>
       </tr>

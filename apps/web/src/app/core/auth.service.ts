@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, PLATFORM_ID, computed, inject, signal } from '@angular/core';
 import type { LoginDto, RegisterDto } from '@moredutch/shared';
 import type { PublicUser } from '@moredutch/shared';
-import { Observable, catchError, of, shareReplay, tap } from 'rxjs';
+import { Observable, catchError, map, of, shareReplay, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -15,16 +15,19 @@ export class AuthService {
   private readonly _user = signal<PublicUser | null>(null);
   readonly user = computed(() => this._user());
   readonly isAuthenticated = computed(() => this._user() !== null);
-  /** True once the initial `/auth/me` bootstrap has resolved (success or not). */
+  /** True once the initial session bootstrap has resolved (success or not). */
   readonly ready = signal(false);
 
-  /** Shared, single-flight bootstrap so guards and the shell don't each fire `/auth/me`. */
+  /** Shared, single-flight bootstrap so guards and the shell don't each fire a request. */
   private bootstrap$?: Observable<PublicUser | null>;
 
   bootstrap(): Observable<PublicUser | null> {
     if (!this.isBrowser) return of(null);
     if (!this.bootstrap$) {
-      this.bootstrap$ = this.http.get<PublicUser>(`${this.base}/me`).pipe(
+      // `/auth/session` answers 200 with `{ user: null }` for anonymous visitors,
+      // so normal page views don't log a red 401 in the console.
+      this.bootstrap$ = this.http.get<{ user: PublicUser | null }>(`${this.base}/session`).pipe(
+        map((r) => r?.user ?? null),
         tap((u) => {
           this._user.set(u);
           this.ready.set(true);
@@ -68,5 +71,22 @@ export class AuthService {
 
   verifyEmail(token: string): Observable<void> {
     return this.http.post<void>(`${this.base}/email/verify`, { token });
+  }
+
+  changePassword(currentPassword: string, newPassword: string): Observable<void> {
+    return this.http.post<void>(`${this.base}/password/change`, { currentPassword, newPassword });
+  }
+
+  updateProfile(displayName: string | null): Observable<PublicUser> {
+    return this.http
+      .patch<PublicUser>(`${this.base}/profile`, { displayName })
+      .pipe(tap((u) => this._user.set(u)));
+  }
+
+  /** Permanently delete the signed-in account (server clears the session cookies). */
+  deleteAccount(password: string): Observable<void> {
+    return this.http
+      .post<void>(`${this.base}/account/delete`, { password })
+      .pipe(tap(() => this._user.set(null)));
   }
 }

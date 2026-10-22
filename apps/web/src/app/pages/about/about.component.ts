@@ -8,10 +8,10 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="hero" style="border-bottom:none; padding-top:1rem;">
+    <div class="hero">
       <div class="hero-layout">
         <div class="hero-title">
-          <h1>The<br /><em>Mission</em></h1>
+          <h1>The <em>Mission</em></h1>
         </div>
         <div class="hero-content">
           <p class="hero-desc">
@@ -22,7 +22,7 @@ import { RouterLink } from '@angular/router';
       </div>
     </div>
 
-    <div class="section-title">
+    <div class="section-title" role="heading" aria-level="2">
       The Journey
       <div class="title-line"></div>
     </div>
@@ -47,7 +47,7 @@ import { RouterLink } from '@angular/router';
       </div>
     </div>
 
-    <div class="section-title" style="margin-top: 3rem;">
+    <div class="section-title" role="heading" aria-level="2" style="margin-top: 3rem;">
       How It Works
       <div class="title-line"></div>
     </div>
@@ -88,7 +88,7 @@ import { RouterLink } from '@angular/router';
       </p>
     </div>
 
-    <div class="section-title" style="margin-top: 3rem;">
+    <div class="section-title" role="heading" aria-level="2" style="margin-top: 3rem;">
       Get in Touch
       <div class="title-line"></div>
     </div>

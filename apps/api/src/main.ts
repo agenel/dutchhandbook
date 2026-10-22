@@ -7,6 +7,7 @@ import helmet from 'helmet';
 import { Logger } from 'nestjs-pino';
 import { AppModule } from './app.module';
 import { GlobalExceptionFilter } from './common/global-exception.filter';
+import { clientIpMiddleware } from './common/client-ip.middleware';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { bufferLogs: true });
@@ -19,13 +20,25 @@ async function bootstrap() {
     .map((s) => s.trim())
     .filter(Boolean);
 
+  // Must run before guards so ThrottlerGuard rate-limits per real visitor.
+  app.use(clientIpMiddleware(config.get<string>('PROXY_SHARED_KEY')));
   app.use(cookieParser(config.getOrThrow<string>('COOKIE_SECRET')));
   app.use(json({ limit: '100kb' }));
   app.use(urlencoded({ extended: true, limit: '100kb' }));
 
   app.use(
     helmet({
-      contentSecurityPolicy: false, // CSP nonces are emitted by SSR
+      // The API only serves JSON: forbid every resource type and all framing.
+      // (The admin mail preview sets its own, looser policy per response.)
+      contentSecurityPolicy: {
+        useDefaults: false,
+        directives: {
+          defaultSrc: ["'none'"],
+          frameAncestors: ["'none'"],
+          baseUri: ["'none'"],
+          formAction: ["'none'"],
+        },
+      },
       hsts: isProd
         ? { maxAge: 63072000, includeSubDomains: true, preload: true }
         : false,

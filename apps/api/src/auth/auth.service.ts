@@ -31,7 +31,8 @@ export class AuthService {
     private readonly mail: MailService,
   ) {}
 
-  async requireUser(req: Request, res?: Response): Promise<PublicUser> {
+  /** Resolve the signed-in user and their session, enforcing bans. */
+  private async loadSessionUser(req: Request) {
     const session = await this.sessions.getSessionFromRequest(req);
     if (!session) throw new UnauthorizedException();
     const user = await this.prisma.user.findUnique({ where: { id: session.userId } });
@@ -45,11 +46,73 @@ export class AuthService {
       });
       throw new ForbiddenException({ message: 'Account suspended' });
     }
+    return { session, user };
+  }
+
+  async requireUser(req: Request, res?: Response): Promise<PublicUser> {
+    const { user } = await this.loadSessionUser(req);
     // Re-issue the CSRF cookie when a response object is available (e.g. /auth/me
     // bootstrap call) so returning users always have a fresh token even when
     // they never went through login in the current browser session.
     if (res) this.issueCsrfCookie(res);
     return this.toPublic(user);
+  }
+
+  /** Like requireUser, but anonymous (or banned) visitors get null instead of an error. */
+  async currentUser(req: Request, res?: Response): Promise<PublicUser | null> {
+    try {
+      return await this.requireUser(req, res);
+    } catch (err) {
+      if (err instanceof UnauthorizedException || err instanceof ForbiddenException) return null;
+      throw err;
+    }
+  }
+
+  async changePassword(
+    req: Request,
+    dto: { currentPassword: string; newPassword: string },
+  ): Promise<void> {
+    const { session, user } = await this.loadSessionUser(req);
+    if (!(await argon2.verify(user.passwordHash, dto.currentPassword))) {
+      await this.logEvent(user.id, 'PASSWORD_CHANGE_FAILED', req);
+      throw new BadRequestException({ message: 'Current password is incorrect' });
+    }
+    if (dto.currentPassword === dto.newPassword) {
+      throw new BadRequestException({ message: 'New password must be different from the current one' });
+    }
+    const passwordHash = await argon2.hash(dto.newPassword, { type: argon2.argon2id });
+    await this.prisma.$transaction([
+      this.prisma.user.update({ where: { id: user.id }, data: { passwordHash } }),
+      // Sign out every other device; keep the session that made the change.
+      this.prisma.session.updateMany({
+        where: { userId: user.id, id: { not: session.id }, revokedAt: null },
+        data: { revokedAt: new Date() },
+      }),
+    ]);
+    await this.logEvent(user.id, 'PASSWORD_CHANGED', req);
+  }
+
+  async updateProfile(req: Request, dto: { displayName?: string | null }): Promise<PublicUser> {
+    const { user } = await this.loadSessionUser(req);
+    const updated = await this.prisma.user.update({
+      where: { id: user.id },
+      data: { displayName: dto.displayName ?? null },
+    });
+    await this.logEvent(user.id, 'PROFILE_UPDATED', req);
+    return this.toPublic(updated);
+  }
+
+  async deleteAccount(req: Request, res: Response, dto: { password: string }): Promise<void> {
+    const { user } = await this.loadSessionUser(req);
+    if (!(await argon2.verify(user.passwordHash, dto.password))) {
+      await this.logEvent(user.id, 'ACCOUNT_DELETE_FAILED', req);
+      throw new BadRequestException({ message: 'Password is incorrect' });
+    }
+    // Audit rows survive the delete (userId is set to null), so keep the id in meta.
+    await this.logEvent(user.id, 'ACCOUNT_DELETED', req, { deletedUserId: user.id });
+    // Sessions, tokens, progress and preferences cascade with the user row.
+    await this.prisma.user.delete({ where: { id: user.id } });
+    this.sessions.clearCookies(res);
   }
 
   async register(dto: RegisterDto, req: Request, res: Response): Promise<{ user: PublicUser }> {

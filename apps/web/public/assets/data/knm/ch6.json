@@ -258,5 +258,330 @@
     ],
     "answer": "Het controleren van de groei en gezondheid van jonge kinderen (0-4 jaar)",
     "correctIndex": 1
+  },
+  {
+    "id": "ch6-n-0",
+    "topic": "Leerplicht (Compulsory education)",
+    "question": "Tot welke leeftijd geldt de leerplicht in Nederland?",
+    "options": [
+      "Tot 14 jaar",
+      "Tot het einde van het schooljaar waarin het kind 16 wordt",
+      "Tot 21 jaar",
+      "Tot het kind een baan heeft"
+    ],
+    "answer": "Tot het einde van het schooljaar waarin het kind 16 wordt",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch6-n-1",
+    "topic": "Kwalificatieplicht (Qualification obligation)",
+    "question": "Wat houdt de kwalificatieplicht in?",
+    "options": [
+      "Jongeren tot 18 jaar zonder startkwalificatie moeten onderwijs blijven volgen",
+      "Je moet verplicht naar de universiteit",
+      "Je moet verplicht werk zoeken",
+      "Je moet elk jaar een nieuw diploma kopen"
+    ],
+    "answer": "Jongeren tot 18 jaar zonder startkwalificatie moeten onderwijs blijven volgen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-2",
+    "topic": "Kwalificatieplicht (Qualification obligation)",
+    "question": "Wat is een startkwalificatie?",
+    "options": [
+      "Een rijbewijs",
+      "Een diploma van havo, vwo of mbo niveau 2",
+      "Een inburgeringsdiploma",
+      "Een diploma van de basisschool"
+    ],
+    "answer": "Een diploma van havo, vwo of mbo niveau 2",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch6-n-3",
+    "topic": "Vervolgopleiding (Higher education)",
+    "question": "Hoeveel niveaus heeft het mbo?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "answer": "4",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch6-n-4",
+    "topic": "Vervolgopleiding (Higher education)",
+    "question": "Waar staat de afkorting hbo voor?",
+    "options": [
+      "Hoog bijzonder onderwijs",
+      "Hoger beroepsonderwijs",
+      "Handig basisonderwijs",
+      "Herhaald beroepsonderwijs"
+    ],
+    "answer": "Hoger beroepsonderwijs",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch6-n-5",
+    "topic": "Basisschool (Primary school)",
+    "question": "Welke toets maken leerlingen in groep 8 van de basisschool?",
+    "options": [
+      "De doorstroomtoets (vroeger: de eindtoets of Cito-toets)",
+      "Het rijexamen",
+      "Het inburgeringsexamen",
+      "Een sollicitatiegesprek"
+    ],
+    "answer": "De doorstroomtoets (vroeger: de eindtoets of Cito-toets)",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-6",
+    "topic": "Speciaal onderwijs (Special education)",
+    "question": "Voor welke kinderen is er speciaal onderwijs?",
+    "options": [
+      "Voor kinderen die extra hulp of zorg nodig hebben",
+      "Alleen voor hele slimme kinderen",
+      "Alleen voor kinderen uit het buitenland",
+      "Voor kinderen van rijke ouders"
+    ],
+    "answer": "Voor kinderen die extra hulp of zorg nodig hebben",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-7",
+    "topic": "Basisschool (Primary school)",
+    "question": "Hoeveel groepen heeft de basisschool?",
+    "options": [
+      "4",
+      "6",
+      "8",
+      "10"
+    ],
+    "answer": "8",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch6-n-8",
+    "topic": "Contact met school (Contact with school)",
+    "question": "Wat is een ouderavond op school?",
+    "options": [
+      "Een avond waarop ouders informatie krijgen over de klas en de school",
+      "Een feest alleen voor kinderen",
+      "Een avond waarop ouders moeten schoonmaken",
+      "Een examen voor ouders"
+    ],
+    "answer": "Een avond waarop ouders informatie krijgen over de klas en de school",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-9",
+    "topic": "Contact met school (Contact with school)",
+    "question": "Wat is de medezeggenschapsraad (MR) van een school?",
+    "options": [
+      "Een groep ouders en personeel die meepraat over het beleid van de school",
+      "De politie op school",
+      "De groep die het schoolgebouw bouwt",
+      "De leerlingen van groep 8"
+    ],
+    "answer": "Een groep ouders en personeel die meepraat over het beleid van de school",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-10",
+    "topic": "Schoolkeuze (Choosing a school)",
+    "question": "Mogen ouders in Nederland zelf een school voor hun kind kiezen?",
+    "options": [
+      "Nee, de gemeente kiest de school",
+      "Ja, er is vrijheid van onderwijs en ouders mogen kiezen",
+      "Alleen als ze veel geld hebben",
+      "Alleen de dichtstbijzijnde school is toegestaan"
+    ],
+    "answer": "Ja, er is vrijheid van onderwijs en ouders mogen kiezen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch6-n-11",
+    "topic": "Schoolkeuze (Choosing a school)",
+    "question": "Wat is een 'bijzondere school'?",
+    "options": [
+      "Een school met een bepaalde godsdienst of onderwijsvisie, zoals een katholieke of islamitische school",
+      "Een school alleen voor beroemde mensen",
+      "Een school zonder leraren",
+      "Een school die nooit open is"
+    ],
+    "answer": "Een school met een bepaalde godsdienst of onderwijsvisie, zoals een katholieke of islamitische school",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-12",
+    "topic": "Voortgezet onderwijs (Secondary education)",
+    "question": "Wat leren leerlingen extra op een gymnasium?",
+    "options": [
+      "Alleen sport",
+      "De klassieke talen Latijn en Grieks",
+      "Alleen koken",
+      "Autorijden"
+    ],
+    "answer": "De klassieke talen Latijn en Grieks",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch6-n-13",
+    "topic": "Leerplicht (Compulsory education)",
+    "question": "Wat betekent 'spijbelen'?",
+    "options": [
+      "Zonder geldige reden niet naar school gaan",
+      "Heel hard studeren",
+      "Altijd op tijd op school komen",
+      "Netjes je huiswerk maken"
+    ],
+    "answer": "Zonder geldige reden niet naar school gaan",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-14",
+    "topic": "Voortgezet onderwijs (Secondary education)",
+    "question": "Wat is de 'brugklas'?",
+    "options": [
+      "Het eerste jaar van de middelbare school",
+      "Het laatste jaar van de basisschool",
+      "Een les over het bouwen van bruggen",
+      "Een klas op de universiteit"
+    ],
+    "answer": "Het eerste jaar van de middelbare school",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-15",
+    "topic": "Voortgezet onderwijs (Secondary education)",
+    "question": "Wat moet je halen om de middelbare school met succes af te ronden?",
+    "options": [
+      "Een rijbewijs",
+      "Je eindexamen (een diploma)",
+      "Een paspoort",
+      "Een inburgeringsdiploma"
+    ],
+    "answer": "Je eindexamen (een diploma)",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch6-n-16",
+    "topic": "Volwasseneneducatie (Adult education)",
+    "question": "Waar kunnen volwassenen naartoe om beter Nederlands te leren lezen en schrijven?",
+    "options": [
+      "Naar een taalcursus of de bibliotheek",
+      "Naar de dierentuin",
+      "Naar het gemeentehuis voor een paspoort",
+      "Nergens, dat kan niet"
+    ],
+    "answer": "Naar een taalcursus of de bibliotheek",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-17",
+    "topic": "Contact met school (Contact with school)",
+    "question": "Wat staat er in de schoolgids?",
+    "options": [
+      "Informatie over de school, de regels en de schooltijden",
+      "De namen van alle supermarkten",
+      "Het weerbericht",
+      "De dienstregeling van de trein"
+    ],
+    "answer": "Informatie over de school, de regels en de schooltijden",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-18",
+    "topic": "Basisschool (Primary school)",
+    "question": "Wat doen leerlingen vaak thuis met opdrachten die ze van de leraar meekrijgen?",
+    "options": [
+      "Huiswerk maken",
+      "Autorijden",
+      "Werken in een fabriek",
+      "Belasting betalen"
+    ],
+    "answer": "Huiswerk maken",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-19",
+    "topic": "Opvoeding (Upbringing)",
+    "question": "Wat doen scholen in Nederland tegen pesten?",
+    "options": [
+      "Niets, pesten mag",
+      "Ze hebben regels en afspraken om pesten tegen te gaan",
+      "Ze sturen gepeste kinderen naar huis",
+      "Ze belonen kinderen die pesten"
+    ],
+    "answer": "Ze hebben regels en afspraken om pesten tegen te gaan",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch6-n-20",
+    "topic": "Kinderopvang (Childcare)",
+    "question": "Waar kunnen peuters van ongeveer 2 tot 4 jaar spelen en wennen aan een groep?",
+    "options": [
+      "Op de peuterspeelzaal",
+      "Op de universiteit",
+      "In de rechtbank",
+      "Bij de notaris"
+    ],
+    "answer": "Op de peuterspeelzaal",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-21",
+    "topic": "Voortgezet onderwijs (Secondary education)",
+    "question": "Wat doet een decaan op de middelbare school?",
+    "options": [
+      "Hij helpt leerlingen bij het kiezen van een opleiding of studie",
+      "Hij is de kok van de kantine",
+      "Hij is de buschauffeur",
+      "Hij is de politieagent"
+    ],
+    "answer": "Hij helpt leerlingen bij het kiezen van een opleiding of studie",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-22",
+    "topic": "Vervolgopleiding (Higher education)",
+    "question": "Wat betekent het als een studie een 'numerus fixus' heeft?",
+    "options": [
+      "Er is een maximaal aantal plaatsen voor studenten",
+      "De studie is gratis",
+      "Iedereen wordt automatisch toegelaten",
+      "De studie duurt maar één dag"
+    ],
+    "answer": "Er is een maximaal aantal plaatsen voor studenten",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-23",
+    "topic": "Basisschool (Primary school)",
+    "question": "Hoe noemen we de persoon die lesgeeft op de basisschool?",
+    "options": [
+      "De leerkracht (meester of juf)",
+      "De burgemeester",
+      "De minister",
+      "De agent"
+    ],
+    "answer": "De leerkracht (meester of juf)",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch6-n-24",
+    "topic": "Schoolkeuze (Choosing a school)",
+    "question": "Wat is het verschil tussen openbaar en bijzonder onderwijs?",
+    "options": [
+      "Openbaar onderwijs is niet gebonden aan een godsdienst, bijzonder onderwijs wel aan een geloof of visie",
+      "Openbaar onderwijs is alleen buiten en bijzonder onderwijs alleen binnen",
+      "Er is geen enkel verschil",
+      "Openbaar onderwijs kost geld en bijzonder onderwijs is gratis"
+    ],
+    "answer": "Openbaar onderwijs is niet gebonden aan een godsdienst, bijzonder onderwijs wel aan een geloof of visie",
+    "correctIndex": 0
   }
 ]

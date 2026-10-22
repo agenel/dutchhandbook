@@ -32,7 +32,7 @@ import { RouterLink } from '@angular/router';
         color: var(--orange, #e8500a);
       }
       .nf h1 { margin: 0.5rem 0 0.5rem; }
-      .nf p { color: var(--text-muted, #6b7280); margin-bottom: 1.75rem; }
+      .nf p { color: var(--muted); margin-bottom: 1.75rem; }
       .nf-btn {
         display: inline-flex;
         align-items: center;

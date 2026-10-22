@@ -13,6 +13,21 @@ md-root {
   min-height: 100%;
 }
 
+/* Default link color. Without it, links in prose (About, Help) fell back to
+   the browser's #0000EE, which is 2:1 on the dark theme. Component rules with
+   their own class still win (higher specificity). */
+a {
+  color: var(--orange);
+  text-underline-offset: 0.15em;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
 /* Skip link (a11y) — visually hidden until focused */
 .skip-link {
   position: absolute;

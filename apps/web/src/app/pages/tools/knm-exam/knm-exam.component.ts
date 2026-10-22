@@ -24,7 +24,7 @@ type ExamState = 'setup' | 'exam' | 'results';
   imports: [RouterLink, HelpDialogComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="hero" style="border-bottom:none; padding-bottom:1rem;">
+    <div class="hero">
       <h1>
         KNM <em>Exam</em>
         <button class="help-trigger" type="button" title="How it works" (click)="helpOpen = true">
@@ -89,16 +89,7 @@ type ExamState = 'setup' | 'exam' | 'results';
     <div class="exam-content">
       @if (state() === 'setup') {
         <div class="setup-card">
-          <span
-            class="material-icons"
-            style="font-size:3rem; color:var(--orange); margin-bottom:1rem; display:block;"
-            >gavel</span
-          >
-          <h2>KNM Mock Exam</h2>
-          <p>
-            Test your knowledge of Dutch society. Questions are randomly selected from all 10
-            chapters.
-          </p>
+          <p class="setup-lead">Choose a length. Questions are drawn at random from all 10 chapters.</p>
 
           <div class="option-grid">
             @for (length of lengths; track length.value) {
@@ -109,7 +100,7 @@ type ExamState = 'setup' | 'exam' | 'results';
                 (click)="setLength(length.value)"
               >
                 <span class="material-icons">{{ length.icon }}</span>
-                <h3>{{ length.value }} Questions</h3>
+                <span class="length-title">{{ length.value }} Questions</span>
                 <p>{{ length.label }}</p>
               </button>
             }
@@ -152,13 +143,15 @@ type ExamState = 'setup' | 'exam' | 'results';
               <div class="topic-tag">{{ q.topic || 'KNM' }}</div>
               <div class="question-text">{{ q.question }}</div>
               <div class="ans-grid">
-                @for (option of q.options; track option; let i = $index) {
+                @for (option of q.options; track $index; let i = $index) {
                   <button
                     type="button"
                     class="ans-btn"
                     [class.correct]="picked() !== null && isCorrectOption(i)"
                     [class.incorrect]="picked() === i && !isCorrectOption(i)"
+                    [class.dim]="picked() !== null && !isCorrectOption(i) && picked() !== i"
                     [class.disabled]="picked() !== null"
+                    [attr.aria-disabled]="picked() !== null"
                     (click)="pick(i)"
                   >
                     <span>{{ option }}</span>
@@ -186,12 +179,12 @@ type ExamState = 'setup' | 'exam' | 'results';
         </div>
       } @else {
         <div class="results-ui setup-card">
-          <div class="score-circle">
+          <div class="score-circle" [class.on-target]="resultPct() >= target">
             <div class="score-val">{{ resultPct() }}%</div>
             <div class="score-label">Result</div>
           </div>
           <div class="result-msg">{{ resultMessage() }}</div>
-          <p>You answered {{ correct() }} out of {{ questions().length }} questions correctly.</p>
+          <p>You answered {{ correct() }} out of {{ questions().length }} questions correctly. Target: {{ target }}%.</p>
 
           @if (attemptSaved() === 'saved') {
             <div class="save-notice saved">
@@ -215,6 +208,24 @@ type ExamState = 'setup' | 'exam' | 'results';
             <a routerLink="/" class="btn-secondary">Back to Hub</a>
           </div>
         </div>
+
+        @if (missed().length > 0) {
+          <section class="review" aria-labelledby="knm-review-heading">
+            <h3 id="knm-review-heading">Review: {{ missed().length }} missed</h3>
+            <ol class="review-list">
+              @for (m of missed(); track m.q.id) {
+                <li class="review-item">
+                  @if (m.q.topic) { <span class="review-topic">{{ m.q.topic }}</span> }
+                  <p class="review-q">{{ m.q.question }}</p>
+                  <p class="review-a"><span class="lbl wrong">Your answer</span> {{ m.q.options[m.pick] }}</p>
+                  <p class="review-a"><span class="lbl right">Correct</span> {{ m.q.options[m.q.correctIndex] }}</p>
+                </li>
+              }
+            </ol>
+          </section>
+        } @else {
+          <p class="all-right">No mistakes in this exam.</p>
+        }
       }
     </div>
   `,
@@ -222,7 +233,7 @@ type ExamState = 'setup' | 'exam' | 'results';
     `
       .exam-content {
         max-width: 800px;
-        margin: 2rem auto;
+        margin: 0 auto 2rem;
         padding: 0 1rem;
       }
       .setup-card {
@@ -281,7 +292,9 @@ type ExamState = 'setup' | 'exam' | 'results';
         font-size: 1.8rem;
         color: var(--orange);
       }
-      .length-btn h3 {
+      .length-btn .length-title {
+        display: block;
+        font-weight: 700;
         margin: 0;
         font-size: 1rem;
         color: var(--ink);
@@ -297,7 +310,7 @@ type ExamState = 'setup' | 'exam' | 'results';
         font-size: 1rem;
         font-weight: 700;
         border-radius: 16px;
-        background: var(--orange);
+        background: var(--orange-fill);
         color: white;
         border: none;
         cursor: pointer;
@@ -390,17 +403,30 @@ type ExamState = 'setup' | 'exam' | 'results';
         font-size: 1rem;
         font-family: inherit;
       }
+      /* Hover only outlines and lifts; filled backgrounds are reserved for results,
+         so a hovered option never looks like an answered one. */
       .ans-btn:hover:not(.disabled) {
         border-color: var(--orange);
-        background: var(--orange-bg);
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+      }
+      .ans-btn:focus-visible,
+      .length-btn:focus-visible,
+      .start-btn:focus-visible {
+        outline: 3px solid var(--orange);
+        outline-offset: 2px;
       }
       .ans-btn.correct {
         border-color: var(--green);
         background: var(--green-light);
+        font-weight: 600;
       }
       .ans-btn.incorrect {
         border-color: var(--red);
         background: var(--red-light);
+        font-weight: 600;
+      }
+      .ans-btn.dim {
+        opacity: 0.55;
       }
       .ans-btn.disabled {
         cursor: default;
@@ -415,6 +441,34 @@ type ExamState = 'setup' | 'exam' | 'results';
         margin-top: 1.5rem;
         min-height: 50px;
       }
+      .setup-lead {
+        margin: 0 auto 1.5rem !important;
+      }
+      .review { margin-top: 1.5rem; }
+      .review h3 { margin: 0 0 0.75rem; color: var(--ink); }
+      .review-list { display: grid; gap: 0.75rem; padding-left: 1.25rem; margin: 0; }
+      .review-item {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+        color: var(--ink);
+      }
+      .review-topic { font-size: 0.75rem; color: var(--muted); }
+      .review-q { font-weight: 600; margin: 0.2rem 0 0.4rem; }
+      .review-a { margin: 0.15rem 0; }
+      .lbl {
+        display: inline-block;
+        min-width: 96px;
+        font-family: 'DM Mono', monospace;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .lbl.wrong { color: var(--red); }
+      .lbl.right { color: var(--green); }
+      .all-right { text-align: center; color: var(--green); font-weight: 600; margin-top: 1rem; }
+      .score-circle.on-target { border-color: var(--green) !important; }
       .score-circle {
         width: 120px;
         height: 120px;
@@ -458,7 +512,7 @@ type ExamState = 'setup' | 'exam' | 'results';
       }
       .save-notice .material-icons { font-size: 1rem; }
       .save-notice.saved { background: #f0fff4; border: 1px solid #9ae6b4; color: #276749; }
-      .save-notice.failed { background: #fff5f5; border: 1px solid #fed7d7; color: #c53030; }
+      .save-notice.failed { background: var(--red-light); border: 1px solid var(--red-border); color: var(--red); }
       .save-notice.anon { background: var(--orange-bg); border: 1px solid var(--orange-border); color: var(--muted); }
       .save-notice.anon a { color: var(--orange); font-weight: 600; text-decoration: none; }
       .save-notice.anon a:hover { text-decoration: underline; }
@@ -488,7 +542,7 @@ type ExamState = 'setup' | 'exam' | 'results';
         text-decoration: none;
       }
       .btn-primary {
-        background: var(--orange);
+        background: var(--orange-fill);
         color: white;
         flex: 2;
       }
@@ -499,8 +553,32 @@ type ExamState = 'setup' | 'exam' | 'results';
         flex: 1;
       }
       @media (max-width: 600px) {
+        /* Keep "Start Practice Exam" above the fold on a phone. */
+        .exam-content {
+          margin: 0.5rem auto 1.5rem;
+          padding: 0;
+        }
+        .setup-card {
+          padding: 1.25rem 1rem;
+        }
         .option-grid {
           grid-template-columns: repeat(2, 1fr);
+          gap: 0.6rem;
+          margin-bottom: 1rem;
+        }
+        .length-btn {
+          padding: 0.75rem 0.5rem;
+          gap: 0.25rem;
+        }
+        .length-btn .material-icons {
+          font-size: 1.4rem;
+        }
+        .start-btn {
+          width: 100%;
+          justify-content: center;
+        }
+        .question-card {
+          padding: 2.25rem 1.1rem 1.25rem;
         }
         .result-actions {
           flex-direction: column;
@@ -572,12 +650,24 @@ export class KnmExamComponent {
     const total = this.questions().length;
     return total ? Math.round((this.correct() / total) * 100) : 0;
   });
+  /** Matches the help text: aim for a consistent 75% before exam day. */
+  protected readonly target = 75;
+  /** The learner's pick for each question of the current exam. */
+  private readonly picks = signal<number[]>([]);
+
   protected readonly resultMessage = computed(() => {
     const percent = this.resultPct();
-    if (percent >= 80) return 'Excellent! You are ready for the KNM exam.';
-    if (percent >= 60) return 'Good job! You passed, but keep practicing.';
-    return 'Keep studying. You need at least 60% to pass.';
+    if (percent >= 90) return 'Excellent! You are well above the 75% target.';
+    if (percent >= this.target) return 'On target. Keep this up and you are ready for exam day.';
+    if (percent >= 60) return 'Close, but below the 75% target. Review the questions you missed.';
+    return 'Keep studying. Aim for 75% on practice exams before the real one.';
   });
+
+  protected readonly missed = computed(() =>
+    this.questions()
+      .map((q, i) => ({ q, pick: this.picks()[i] }))
+      .filter((m) => m.pick !== undefined && m.pick !== m.q.correctIndex),
+  );
 
   setLength(length: number): void {
     this.selectedLength.set(length);
@@ -587,9 +677,11 @@ export class KnmExamComponent {
     const pool = this.shuffle(this.allQuestions());
     const length = Math.min(this.selectedLength(), pool.length);
     this.questions.set(pool.slice(0, length));
+    this.picks.set([]);
     this.index.set(0);
     this.picked.set(null);
     this.correct.set(0);
+    this.attemptSaved.set(null);
     this.examStartTime = Date.now();
     this.state.set('exam');
   }
@@ -597,6 +689,12 @@ export class KnmExamComponent {
   pick(optionIndex: number): void {
     if (this.picked() !== null) return;
     this.picked.set(optionIndex);
+    const at = this.index();
+    this.picks.update((p) => {
+      const next = [...p];
+      next[at] = optionIndex;
+      return next;
+    });
     if (this.isCorrectOption(optionIndex)) this.correct.update((value) => value + 1);
   }
 
@@ -624,6 +722,7 @@ export class KnmExamComponent {
   restart(): void {
     this.state.set('setup');
     this.questions.set([]);
+    this.picks.set([]);
     this.index.set(0);
     this.picked.set(null);
     this.correct.set(0);

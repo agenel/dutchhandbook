@@ -258,5 +258,330 @@
     ],
     "answer": "Nee, je mag ook ongetrouwd samenwonen",
     "correctIndex": 1
+  },
+  {
+    "id": "ch8-n-0",
+    "topic": "Gelijkwaardigheid (Equality)",
+    "question": "Hoe gaan de meeste Nederlanders om met homoseksuele mensen (LHBTI)?",
+    "options": [
+      "Ze accepteren dat mensen van hetzelfde geslacht van elkaar houden",
+      "Ze vinden dat het verboden moet worden",
+      "Ze mogen niet op straat komen",
+      "Ze moeten verplicht verhuizen"
+    ],
+    "answer": "Ze accepteren dat mensen van hetzelfde geslacht van elkaar houden",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-1",
+    "topic": "Relaties (Relationships)",
+    "question": "Is een gedwongen huwelijk (iemand dwingen te trouwen) toegestaan in Nederland?",
+    "options": [
+      "Ja, als de familie het wil",
+      "Nee, dat is verboden en strafbaar",
+      "Alleen bij volwassenen",
+      "Alleen als er geen kinderen zijn"
+    ],
+    "answer": "Nee, dat is verboden en strafbaar",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch8-n-2",
+    "topic": "Huiselijk geweld (Domestic violence)",
+    "question": "Wat is 'eergerelateerd geweld' en mag het in Nederland?",
+    "options": [
+      "Geweld om de 'eer' van de familie; dat is verboden en strafbaar",
+      "Een sport; dat mag",
+      "Een feest; dat mag",
+      "Een belasting; die moet je betalen"
+    ],
+    "answer": "Geweld om de 'eer' van de familie; dat is verboden en strafbaar",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-3",
+    "topic": "Seksualiteit (Sexuality)",
+    "question": "Mag een vrouw in Nederland zelf beslissen over een abortus (een zwangerschap afbreken)?",
+    "options": [
+      "Nee, dat is altijd verboden",
+      "Ja, dat mag binnen de regels van de wet",
+      "Alleen de man beslist dat",
+      "Alleen de buren beslissen dat"
+    ],
+    "answer": "Ja, dat mag binnen de regels van de wet",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch8-n-4",
+    "topic": "Omgangsvormen (Social norms)",
+    "question": "Wat is waar over euthanasie in Nederland?",
+    "options": [
+      "Het is onder strenge voorwaarden toegestaan",
+      "Het is nooit toegestaan",
+      "Iedereen mag het zomaar doen",
+      "Alleen de koning mag het beslissen"
+    ],
+    "answer": "Het is onder strenge voorwaarden toegestaan",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-5",
+    "topic": "Vrijheid van godsdienst (Freedom of religion)",
+    "question": "Wat betekent 'scheiding van kerk en staat'?",
+    "options": [
+      "Geloof en de overheid staan los van elkaar",
+      "De kerk bepaalt de wetten",
+      "Iedereen moet naar de kerk",
+      "De staat kiest een geloof voor iedereen"
+    ],
+    "answer": "Geloof en de overheid staan los van elkaar",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-6",
+    "topic": "Omgangsvormen (Social norms)",
+    "question": "Hoe communiceren Nederlanders vaak?",
+    "options": [
+      "Heel direct; ze zeggen vaak gewoon wat ze denken",
+      "Ze zeggen nooit iets",
+      "Alleen met handgebaren",
+      "Alleen schriftelijk"
+    ],
+    "answer": "Heel direct; ze zeggen vaak gewoon wat ze denken",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-7",
+    "topic": "Omgangsvormen (Social norms)",
+    "question": "Wat is in Nederland een normale gewoonte als iemand jarig is?",
+    "options": [
+      "Je feliciteert diegene en vaak ook de familie",
+      "Je moet gaan huilen",
+      "Je mag er niet over praten",
+      "Je geeft geld aan de overheid"
+    ],
+    "answer": "Je feliciteert diegene en vaak ook de familie",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-8",
+    "topic": "Omgangsvormen (Social norms)",
+    "question": "Wat betekent 'afspraak is afspraak' in de Nederlandse cultuur?",
+    "options": [
+      "Je komt je afspraken na en bent op tijd",
+      "Afspraken zijn niet belangrijk",
+      "Je mag altijd te laat komen",
+      "Afspraken gelden alleen voor de baas"
+    ],
+    "answer": "Je komt je afspraken na en bent op tijd",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-9",
+    "topic": "Omgangsvormen (Social norms)",
+    "question": "Wat doen veel Nederlanders thuis met hun afval?",
+    "options": [
+      "Ze scheiden het afval, bijvoorbeeld papier, glas en plastic",
+      "Ze gooien alles op straat",
+      "Ze verbranden alles in de tuin",
+      "Ze bewaren alles voor altijd"
+    ],
+    "answer": "Ze scheiden het afval, bijvoorbeeld papier, glas en plastic",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-10",
+    "topic": "Vrijheid (Freedom)",
+    "question": "Mag je in Nederland een vereniging oprichten of lid worden van een club?",
+    "options": [
+      "Ja, er is vrijheid van vereniging",
+      "Nee, dat is verboden",
+      "Alleen als je rijk bent",
+      "Alleen mannen mogen dat"
+    ],
+    "answer": "Ja, er is vrijheid van vereniging",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-11",
+    "topic": "Vrijheid (Freedom)",
+    "question": "Mag je in Nederland demonstreren (met een groep protesteren)?",
+    "options": [
+      "Ja, dat mag, zolang het vreedzaam is en volgens de regels",
+      "Nee, demonstreren is altijd verboden",
+      "Alleen de regering mag demonstreren",
+      "Alleen op zondag"
+    ],
+    "answer": "Ja, dat mag, zolang het vreedzaam is en volgens de regels",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-12",
+    "topic": "Vrijheid van godsdienst (Freedom of religion)",
+    "question": "Hoe kijken Nederlanders meestal naar het geloof van een ander?",
+    "options": [
+      "Iedereen mag zelf weten wat hij gelooft; dat wordt gerespecteerd",
+      "Iedereen moet hetzelfde geloven",
+      "Alleen één geloof is toegestaan",
+      "Geloven is verboden"
+    ],
+    "answer": "Iedereen mag zelf weten wat hij gelooft; dat wordt gerespecteerd",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-13",
+    "topic": "Omgangsvormen (Social norms)",
+    "question": "Wat is belangrijk als buren in Nederland?",
+    "options": [
+      "Rekening houden met elkaar, bijvoorbeeld geen overlast geven",
+      "Nooit met elkaar praten",
+      "Elkaars spullen afpakken",
+      "Altijd ruzie maken"
+    ],
+    "answer": "Rekening houden met elkaar, bijvoorbeeld geen overlast geven",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-14",
+    "topic": "Opvoeding (Upbringing)",
+    "question": "Mag een kind in Nederland ook zijn eigen mening geven?",
+    "options": [
+      "Ja, kinderen mogen meepraten en hun mening geven",
+      "Nee, kinderen mogen niets zeggen",
+      "Alleen jongens mogen praten",
+      "Alleen op school"
+    ],
+    "answer": "Ja, kinderen mogen meepraten en hun mening geven",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-15",
+    "topic": "Vrijheid (Freedom)",
+    "question": "Wat is normaal in Nederland op het gebied van privacy?",
+    "options": [
+      "Mensen hebben recht op een eigen privéleven",
+      "Iedereen mag alles van je weten",
+      "De buren bepalen jouw leven",
+      "Privacy bestaat niet"
+    ],
+    "answer": "Mensen hebben recht op een eigen privéleven",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-16",
+    "topic": "Omgangsvormen (Social norms)",
+    "question": "Hoe leven in Nederland mensen met verschillende culturen en geloven samen?",
+    "options": [
+      "Naast elkaar, met respect voor elkaars verschillen",
+      "Gescheiden, want contact is verboden",
+      "Iedereen moet precies hetzelfde zijn",
+      "Alleen Nederlanders mogen er wonen"
+    ],
+    "answer": "Naast elkaar, met respect voor elkaars verschillen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-17",
+    "topic": "Omgangsvormen (Social norms)",
+    "question": "Mag je in Nederland op zondag werken of winkelen?",
+    "options": [
+      "Ja, veel winkels zijn open en werken mag",
+      "Nee, op zondag mag niets",
+      "Alleen de kerk is open",
+      "Alleen met toestemming van de buren"
+    ],
+    "answer": "Ja, veel winkels zijn open en werken mag",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-18",
+    "topic": "Omgangsvormen (Social norms)",
+    "question": "Wat vinden Nederlanders belangrijk als je het ergens niet mee eens bent?",
+    "options": [
+      "Dat je er met woorden over praat en niet met geweld",
+      "Dat je meteen gaat vechten",
+      "Dat je weggaat en nooit meer praat",
+      "Dat je de politie slaat"
+    ],
+    "answer": "Dat je er met woorden over praat en niet met geweld",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-19",
+    "topic": "Gelijkwaardigheid (Equality)",
+    "question": "Hebben mannen en vrouwen in Nederland gelijke kansen op werk en opleiding?",
+    "options": [
+      "Ja, mannen en vrouwen hebben gelijke kansen",
+      "Nee, alleen mannen mogen werken",
+      "Nee, alleen vrouwen mogen studeren",
+      "Alleen getrouwde mensen mogen werken"
+    ],
+    "answer": "Ja, mannen en vrouwen hebben gelijke kansen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-20",
+    "topic": "Discriminatie (Discrimination)",
+    "question": "Wat kun je doen als je gediscrimineerd wordt?",
+    "options": [
+      "Een melding of klacht doen, bijvoorbeeld bij een antidiscriminatiebureau",
+      "Niets, dat hoort erbij",
+      "De ander slaan",
+      "Meteen naar een ander land verhuizen"
+    ],
+    "answer": "Een melding of klacht doen, bijvoorbeeld bij een antidiscriminatiebureau",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-21",
+    "topic": "Relaties (Relationships)",
+    "question": "Mag je in Nederland zelf kiezen of je wel of niet kinderen wilt?",
+    "options": [
+      "Ja, dat is je eigen keuze",
+      "Nee, de overheid beslist dat",
+      "Alleen getrouwde mensen mogen kiezen",
+      "De buren beslissen dat"
+    ],
+    "answer": "Ja, dat is je eigen keuze",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-22",
+    "topic": "Omgangsvormen (Social norms)",
+    "question": "Wat is een gewoonte bij het begroeten in Nederland?",
+    "options": [
+      "Elkaar een hand geven of soms drie zoenen op de wang",
+      "Altijd buigen tot de grond",
+      "Nooit iemand aankijken",
+      "Geld geven bij de begroeting"
+    ],
+    "answer": "Elkaar een hand geven of soms drie zoenen op de wang",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-23",
+    "topic": "Gelijkwaardigheid (Equality)",
+    "question": "Hoe denken de meeste Nederlanders over het gelijk behandelen van mensen?",
+    "options": [
+      "Iedereen moet gelijk behandeld worden, ongeacht afkomst, geloof of geslacht",
+      "Rijke mensen hebben meer rechten",
+      "Mannen hebben meer rechten dan vrouwen",
+      "Alleen Nederlanders tellen mee"
+    ],
+    "answer": "Iedereen moet gelijk behandeld worden, ongeacht afkomst, geloof of geslacht",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch8-n-24",
+    "topic": "Opvoeding (Upbringing)",
+    "question": "Wat wordt in Nederland gezien als normaal in de opvoeding van kinderen?",
+    "options": [
+      "Praten met kinderen en dingen uitleggen, zonder geweld",
+      "Kinderen slaan als straf",
+      "Kinderen opsluiten",
+      "Kinderen nooit iets uitleggen"
+    ],
+    "answer": "Praten met kinderen en dingen uitleggen, zonder geweld",
+    "correctIndex": 0
   }
 ]

@@ -243,7 +243,7 @@ import type { AdminUserDto, PaginatedResult } from '@moredutch/shared';
       .badge.active { background: var(--green-light); color: var(--green); }
       .badge.banned { background: var(--red-light); color: var(--red); }
       .badge.verified { background: #e3f2fd; color: #1976d2; }
-      .badge.unverified { background: #fff3e0; color: #ef6c00; }
+      .badge.unverified { background: var(--gold-light); color: var(--gold); }
 
       .verification-status {
         margin-top: 0.5rem;

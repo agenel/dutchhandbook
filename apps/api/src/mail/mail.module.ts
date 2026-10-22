@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { MailService } from './mail.service';
-import { MailPreviewController } from './mail-preview.controller';
 
+// MailPreviewController lives in AdminModule (it needs AdminGuard -> AuthService,
+// and AuthModule already imports this module).
 @Module({
   providers: [MailService],
-  controllers: [MailPreviewController],
   exports: [MailService],
 })
 export class MailModule {}

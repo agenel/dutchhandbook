@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, defaultIfEmpty, forkJoin, of, switchMap, tap } from 'rxjs';
+import { Observable, catchError, defaultIfEmpty, finalize, forkJoin, of, switchMap, tap } from 'rxjs';
+import { AuthService } from './auth.service';
 import { ProgressService } from './progress.service';
 import { ThemeService } from './theme.service';
 
@@ -13,8 +14,21 @@ import { ThemeService } from './theme.service';
  */
 @Injectable({ providedIn: 'root' })
 export class SessionSyncService {
+  private readonly auth = inject(AuthService);
   private readonly progress = inject(ProgressService);
   private readonly theme = inject(ThemeService);
+
+  /**
+   * Sign out and forget this user's progress on the device, so the next person
+   * on a shared computer doesn't see it. Local data is cleared even if the
+   * server call fails.
+   */
+  signOut(): Observable<void> {
+    return this.auth.logout().pipe(
+      catchError(() => of(void 0)),
+      finalize(() => this.progress.clearLocalProgress()),
+    );
+  }
 
   /**
    * Push anonymous localStorage progress up, then pull the authoritative server

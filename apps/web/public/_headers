@@ -5,6 +5,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://client.crisp.chat https://connect.facebook.net https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://client.crisp.chat; font-src 'self' data: https://fonts.gstatic.com https://client.crisp.chat; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://client.crisp.chat wss://client.relay.crisp.chat https://storage.crisp.chat https://www.facebook.com https://connect.facebook.net https://us.i.posthog.com https://us-assets.i.posthog.com; frame-src 'self' https://www.googletagmanager.com https://game.crisp.chat; media-src 'self' https://client.crisp.chat; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests
 
 # Long-cache the Angular hashed build assets (filenames change per build).
 /*.js

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   PLATFORM_ID,
   computed,
   effect,
@@ -163,6 +164,7 @@ import { HelpDialogComponent } from '../../layout/help-dialog/help-dialog.compon
           type="button"
           class="mastery-toggle"
           [class.mastered]="progress.isMastered(s.slug)"
+          [attr.aria-pressed]="progress.isMastered(s.slug)"
           (click)="toggleMastery(s.slug)"
         >
           @if (progress.isMastered(s.slug)) {
@@ -172,7 +174,7 @@ import { HelpDialogComponent } from '../../layout/help-dialog/help-dialog.compon
           }
         </button>
 
-        <nav class="sheet-nav">
+        <nav class="sheet-nav" aria-label="Previous and next cheat sheet">
           @if (s.prev) {
             <a [routerLink]="['/sheets', s.prev]" class="fc-btn">
               <span class="material-icons">arrow_back</span> Previous
@@ -223,6 +225,18 @@ import { HelpDialogComponent } from '../../layout/help-dialog/help-dialog.compon
       .legacy-sheet-content {
         display: contents;
       }
+      /* Header copy of the mastery toggle lives in injected HTML, so it needs
+         ::ng-deep; match the "Test Mode" pill next to it. */
+      :host ::ng-deep .mastery-toggle-top {
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        line-height: 1;
+        gap: 0.3rem;
+      }
+      :host ::ng-deep .mastery-toggle-top .material-icons {
+        font-size: 1rem;
+      }
     `,
   ],
 })
@@ -235,6 +249,7 @@ export class SheetPageComponent {
   private readonly platformId = inject(PLATFORM_ID);
   protected readonly isBrowser = isPlatformBrowser(this.platformId);
   protected readonly progress = inject(ProgressService);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   protected helpOpen = false;
 
   private readonly params = toSignal<ParamMap | null>(this.route.paramMap, { initialValue: null });
@@ -271,6 +286,20 @@ export class SheetPageComponent {
   });
 
   constructor() {
+    // Keep the mastery buttons inside the injected legacy HTML (header + any
+    // in-content ones) in sync when mastery changes via the footer button.
+    effect(() => {
+      const s = this.sheet();
+      this.legacyHtml();
+      if (!s || !this.isBrowser) return;
+      const mastered = this.progress.isMastered(s.slug);
+      setTimeout(() => {
+        this.host.nativeElement
+          .querySelectorAll('.legacy-sheet-content .mastery-toggle')
+          .forEach((button) => this.applyMasteryButtonState(button, mastered));
+      });
+    });
+
     effect(() => {
       const s = this.sheet();
       const slug = this.params()?.get('slug') ?? '';
@@ -367,6 +396,16 @@ export class SheetPageComponent {
   private renderLegacyMasteryState(html: string, slug: string): string {
     const template = document.createElement('template');
     template.innerHTML = html;
+    // Also offer the mastery toggle in the sheet header next to Test Mode, so
+    // learners don't have to scroll to the bottom of a long sheet to find it.
+    const headerActions = template.content.querySelector('.site-header .fc-toggle-wrap');
+    if (headerActions && !headerActions.querySelector('.mastery-toggle')) {
+      const top = document.createElement('button');
+      top.type = 'button';
+      top.className = 'mastery-toggle mastery-toggle-top';
+      top.setAttribute('data-sheet', slug);
+      headerActions.prepend(top);
+    }
     template.content.querySelectorAll('.mastery-toggle').forEach((button) => {
       const sheetSlug = button.getAttribute('data-sheet') ?? slug;
       this.applyMasteryButtonState(button, this.progress.isMastered(sheetSlug));
@@ -376,6 +415,7 @@ export class SheetPageComponent {
 
   private applyMasteryButtonState(button: Element, mastered: boolean): void {
     button.classList.toggle('mastered', mastered);
+    button.setAttribute('aria-pressed', String(mastered));
     button.innerHTML = mastered
       ? 'Mastered <span class="material-icons">check_circle</span>'
       : 'Mark as Mastered <span class="material-icons">check_circle_outline</span>';

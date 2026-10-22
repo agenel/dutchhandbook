@@ -15,11 +15,11 @@ type LevelFilter = 'all' | CefrLevel;
   imports: [RouterLink, FormsModule, ButtonModule, InputTextModule, HelpDialogComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="hero" style="border-bottom:none; padding-top:1rem;">
+    <div class="hero">
       <div class="hero-layout">
         <div class="hero-title">
           <h1>
-            Grammar<br /><em>Cheat</em><br />Sheets
+            Grammar <em>Cheat Sheets</em>
             <button
               class="help-trigger"
               type="button"
@@ -80,7 +80,7 @@ type LevelFilter = 'all' | CefrLevel;
     </md-help-dialog>
 
     <div class="section-title">
-      Grammar Cheat Sheets
+      All modules
       <div class="title-line"></div>
       <button
         type="button"
@@ -96,12 +96,14 @@ type LevelFilter = 'all' | CefrLevel;
 
     <div
       class="dash-row"
-      style="display:flex; gap:1rem; margin-bottom:2rem; flex-wrap:wrap;"
+      style="display:flex; gap:1rem; margin-bottom:1.25rem; flex-wrap:wrap;"
     >
       <div class="search-container" style="margin-bottom:0;">
         <span class="material-icons">search</span>
         <input
           type="text"
+          id="sheet-search"
+          aria-label="Search cheat sheets"
           placeholder="Search cheatsheets..."
           [ngModel]="search()"
           (ngModelChange)="search.set($event)"
@@ -153,9 +155,37 @@ type LevelFilter = 'all' | CefrLevel;
             <span class="material-icons">arrow_forward</span>
           </div>
         </a>
+      } @empty {
+        <div class="sheets-empty" role="status">
+          <span class="material-icons" aria-hidden="true">search_off</span>
+          @if (search().trim()) {
+            <p>No cheat sheets match <strong>“{{ search().trim() }}”</strong>{{ activeLevel() !== 'all' ? ' at level ' + activeLevel() : '' }}.</p>
+          } @else {
+            <p>No cheat sheets to show{{ activeLevel() !== 'all' ? ' at level ' + activeLevel() : '' }}{{ progress.hideMastered() ? ' (mastered sheets are hidden)' : '' }}.</p>
+          }
+          <button type="button" class="fc-btn" (click)="clearFilters()">Clear search and filters</button>
+        </div>
       }
     </div>
   `,
+  styles: [
+    `
+      .sheets-empty {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 3rem 1rem;
+        text-align: center;
+        border: 1.5px dashed var(--border);
+        border-radius: 16px;
+        color: var(--muted);
+      }
+      .sheets-empty .material-icons { font-size: 2.4rem; color: var(--muted); }
+      .sheets-empty p { margin: 0; color: var(--ink); }
+    `,
+  ],
 })
 export class CheatsheetsComponent {
   protected readonly progress = inject(ProgressService);
@@ -181,6 +211,11 @@ export class CheatsheetsComponent {
       return haystack.includes(q);
     });
   });
+
+  protected clearFilters(): void {
+    this.search.set('');
+    this.activeLevel.set('all');
+  }
 
   protected readonly masteryPct = computed(() =>
     Math.round((this.progress.masteredCount() / this.total) * 100),

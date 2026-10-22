@@ -34,6 +34,607 @@
     "explanation": "The article 'een' comes before the noun 'boek'."
   },
   {
+    "id": "s-n-0",
+    "english": "I eat bread.",
+    "words": [
+      "Ik",
+      "eet",
+      "brood"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "Subject 'Ik' + finite verb 'eet' in 2nd position + object."
+  },
+  {
+    "id": "s-n-1",
+    "english": "He drinks coffee.",
+    "words": [
+      "Hij",
+      "drinkt",
+      "koffie"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "The verb 'drinkt' takes a -t ending with 'hij' and stays 2nd."
+  },
+  {
+    "id": "s-n-2",
+    "english": "We live in Amsterdam.",
+    "words": [
+      "Wij",
+      "wonen",
+      "in",
+      "Amsterdam"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "Finite verb 'wonen' is 2nd; the place phrase follows."
+  },
+  {
+    "id": "s-n-3",
+    "english": "She buys a dress.",
+    "words": [
+      "Zij",
+      "koopt",
+      "een",
+      "jurk"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "The article 'een' comes before the noun 'jurk'."
+  },
+  {
+    "id": "s-n-4",
+    "english": "The children play outside.",
+    "words": [
+      "De",
+      "kinderen",
+      "spelen",
+      "buiten"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "The whole subject 'De kinderen' is 1st; verb 'spelen' is 2nd."
+  },
+  {
+    "id": "s-n-5",
+    "english": "The man reads the newspaper.",
+    "words": [
+      "De",
+      "man",
+      "leest",
+      "de",
+      "krant"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "Finite verb 'leest' follows the subject noun phrase."
+  },
+  {
+    "id": "s-n-6",
+    "english": "I write a letter.",
+    "words": [
+      "Ik",
+      "schrijf",
+      "een",
+      "brief"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "Subject + verb 'schrijf' (2nd) + object 'een brief'."
+  },
+  {
+    "id": "s-n-7",
+    "english": "You speak Dutch.",
+    "words": [
+      "Jij",
+      "spreekt",
+      "Nederlands"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "Language name 'Nederlands' is capitalised; verb stays 2nd."
+  },
+  {
+    "id": "s-n-8",
+    "english": "The dog sleeps in the garden.",
+    "words": [
+      "De",
+      "hond",
+      "slaapt",
+      "in",
+      "de",
+      "tuin"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "Verb 'slaapt' is 2nd; the place phrase comes last."
+  },
+  {
+    "id": "s-n-9",
+    "english": "My mother cooks the dinner.",
+    "words": [
+      "Mijn",
+      "moeder",
+      "kookt",
+      "het",
+      "eten"
+    ],
+    "rule": "Basic Word Order (V2)",
+    "explanation": "Possessive + noun form the subject; verb 'kookt' is 2nd."
+  },
+  {
+    "id": "s-n-90",
+    "english": "The big house is beautiful.",
+    "words": [
+      "Het",
+      "grote",
+      "huis",
+      "is",
+      "mooi"
+    ],
+    "rule": "Adjectives & Articles",
+    "explanation": "A definite het-word takes the -e ending: 'grote'."
+  },
+  {
+    "id": "s-n-91",
+    "english": "I have a red car.",
+    "words": [
+      "Ik",
+      "heb",
+      "een",
+      "rode",
+      "auto"
+    ],
+    "rule": "Adjectives & Articles",
+    "explanation": "A de-word with 'een' still gets the -e ending: 'rode'."
+  },
+  {
+    "id": "s-n-92",
+    "english": "She wears a blue dress.",
+    "words": [
+      "Zij",
+      "draagt",
+      "een",
+      "blauwe",
+      "jurk"
+    ],
+    "rule": "Adjectives & Articles",
+    "explanation": "'jurk' is a de-word, so the adjective gets -e: 'blauwe'."
+  },
+  {
+    "id": "s-n-93",
+    "english": "The small dog is sweet.",
+    "words": [
+      "De",
+      "kleine",
+      "hond",
+      "is",
+      "lief"
+    ],
+    "rule": "Adjectives & Articles",
+    "explanation": "Definite de-word takes -e; predicate adjective 'lief' does not."
+  },
+  {
+    "id": "s-n-94",
+    "english": "We live in an old city.",
+    "words": [
+      "Wij",
+      "wonen",
+      "in",
+      "een",
+      "oude",
+      "stad"
+    ],
+    "rule": "Adjectives & Articles",
+    "explanation": "'stad' is a de-word, so 'oud' becomes 'oude'."
+  },
+  {
+    "id": "s-n-95",
+    "english": "He drinks cold water.",
+    "words": [
+      "Hij",
+      "drinkt",
+      "koud",
+      "water"
+    ],
+    "rule": "Adjectives & Articles",
+    "explanation": "An indefinite het-word with no article keeps 'koud' uninflected."
+  },
+  {
+    "id": "s-n-96",
+    "english": "The new book is interesting.",
+    "words": [
+      "Het",
+      "nieuwe",
+      "boek",
+      "is",
+      "interessant"
+    ],
+    "rule": "Adjectives & Articles",
+    "explanation": "Definite het-word takes -e: 'nieuwe'."
+  },
+  {
+    "id": "s-n-97",
+    "english": "I eat a fresh apple.",
+    "words": [
+      "Ik",
+      "eet",
+      "een",
+      "verse",
+      "appel"
+    ],
+    "rule": "Adjectives & Articles",
+    "explanation": "'appel' is a de-word, so 'vers' becomes 'verse'."
+  },
+  {
+    "id": "s-n-98",
+    "english": "The long road is quiet.",
+    "words": [
+      "De",
+      "lange",
+      "weg",
+      "is",
+      "rustig"
+    ],
+    "rule": "Adjectives & Articles",
+    "explanation": "Definite de-word takes -e: 'lange'."
+  },
+  {
+    "id": "s-n-99",
+    "english": "She has long hair.",
+    "words": [
+      "Zij",
+      "heeft",
+      "lang",
+      "haar"
+    ],
+    "rule": "Adjectives & Articles",
+    "explanation": "An indefinite het-word with no article keeps 'lang' uninflected."
+  },
+  {
+    "id": "s-n-40",
+    "english": "I drink no alcohol.",
+    "words": [
+      "Ik",
+      "drink",
+      "geen",
+      "alcohol"
+    ],
+    "rule": "Negation",
+    "explanation": "Use 'geen' to negate an indefinite noun (no article)."
+  },
+  {
+    "id": "s-n-41",
+    "english": "He is not coming today.",
+    "words": [
+      "Hij",
+      "komt",
+      "vandaag",
+      "niet"
+    ],
+    "rule": "Negation",
+    "explanation": "'Niet' comes at the end here, after the time word."
+  },
+  {
+    "id": "s-n-42",
+    "english": "We have no dog.",
+    "words": [
+      "Wij",
+      "hebben",
+      "geen",
+      "hond"
+    ],
+    "rule": "Negation",
+    "explanation": "'Geen' negates the noun 'hond' (replaces 'een')."
+  },
+  {
+    "id": "s-n-43",
+    "english": "She eats no meat.",
+    "words": [
+      "Zij",
+      "eet",
+      "geen",
+      "vlees"
+    ],
+    "rule": "Negation",
+    "explanation": "Indefinite mass noun 'vlees' is negated with 'geen'."
+  },
+  {
+    "id": "s-n-44",
+    "english": "I do not understand that.",
+    "words": [
+      "Ik",
+      "begrijp",
+      "dat",
+      "niet"
+    ],
+    "rule": "Negation",
+    "explanation": "'Niet' follows the object 'dat' and closes the sentence."
+  },
+  {
+    "id": "s-n-45",
+    "english": "They do not live here.",
+    "words": [
+      "Zij",
+      "wonen",
+      "hier",
+      "niet"
+    ],
+    "rule": "Negation",
+    "explanation": "'Niet' comes after the place word 'hier'."
+  },
+  {
+    "id": "s-n-46",
+    "english": "I have no time.",
+    "words": [
+      "Ik",
+      "heb",
+      "geen",
+      "tijd"
+    ],
+    "rule": "Negation",
+    "explanation": "'Geen' negates the noun 'tijd'."
+  },
+  {
+    "id": "s-n-47",
+    "english": "The book is not interesting.",
+    "words": [
+      "Het",
+      "boek",
+      "is",
+      "niet",
+      "interessant"
+    ],
+    "rule": "Negation",
+    "explanation": "'Niet' comes before the adjective it negates."
+  },
+  {
+    "id": "s-n-48",
+    "english": "You are not right.",
+    "words": [
+      "Jij",
+      "hebt",
+      "geen",
+      "gelijk"
+    ],
+    "rule": "Negation",
+    "explanation": "The fixed phrase 'gelijk hebben' is negated with 'geen'."
+  },
+  {
+    "id": "s-n-49",
+    "english": "I do not know him.",
+    "words": [
+      "Ik",
+      "ken",
+      "hem",
+      "niet"
+    ],
+    "rule": "Negation",
+    "explanation": "'Niet' follows the pronoun object 'hem'."
+  },
+  {
+    "id": "s-n-20",
+    "english": "Do you drink coffee?",
+    "words": [
+      "Drink",
+      "jij",
+      "koffie"
+    ],
+    "rule": "Yes/No Questions",
+    "explanation": "Yes/no questions start with the finite verb, then the subject."
+  },
+  {
+    "id": "s-n-21",
+    "english": "Are you coming tonight?",
+    "words": [
+      "Kom",
+      "jij",
+      "vanavond"
+    ],
+    "rule": "Yes/No Questions",
+    "explanation": "Verb 'Kom' is first; no 't' is added before 'jij' in a question."
+  },
+  {
+    "id": "s-n-22",
+    "english": "Does he live in Utrecht?",
+    "words": [
+      "Woont",
+      "hij",
+      "in",
+      "Utrecht"
+    ],
+    "rule": "Yes/No Questions",
+    "explanation": "Finite verb first; 'hij' keeps the -t ending on 'woont'."
+  },
+  {
+    "id": "s-n-23",
+    "english": "Do you speak English?",
+    "words": [
+      "Spreekt",
+      "u",
+      "Engels"
+    ],
+    "rule": "Yes/No Questions",
+    "explanation": "Formal 'u' keeps the -t; verb leads the question."
+  },
+  {
+    "id": "s-n-24",
+    "english": "Are we going to the park?",
+    "words": [
+      "Gaan",
+      "wij",
+      "naar",
+      "het",
+      "park"
+    ],
+    "rule": "Yes/No Questions",
+    "explanation": "Verb 'Gaan' opens the question, then subject and place."
+  },
+  {
+    "id": "s-n-25",
+    "english": "Do they have a car?",
+    "words": [
+      "Hebben",
+      "zij",
+      "een",
+      "auto"
+    ],
+    "rule": "Yes/No Questions",
+    "explanation": "The finite verb 'Hebben' comes before the subject 'zij'."
+  },
+  {
+    "id": "s-n-26",
+    "english": "Is she reading a book?",
+    "words": [
+      "Leest",
+      "zij",
+      "een",
+      "boek"
+    ],
+    "rule": "Yes/No Questions",
+    "explanation": "Verb first; Dutch has no separate continuous form."
+  },
+  {
+    "id": "s-n-27",
+    "english": "Do you want tea?",
+    "words": [
+      "Wil",
+      "jij",
+      "thee"
+    ],
+    "rule": "Yes/No Questions",
+    "explanation": "Verb 'Wil' leads; subject 'jij' follows it."
+  },
+  {
+    "id": "s-n-28",
+    "english": "Do you eat meat?",
+    "words": [
+      "Eet",
+      "jij",
+      "vlees"
+    ],
+    "rule": "Yes/No Questions",
+    "explanation": "Finite verb 'Eet' opens the yes/no question."
+  },
+  {
+    "id": "s-n-29",
+    "english": "Do you work tomorrow?",
+    "words": [
+      "Werk",
+      "jij",
+      "morgen"
+    ],
+    "rule": "Yes/No Questions",
+    "explanation": "Verb first, then subject, then the time word."
+  },
+  {
+    "id": "s-n-30",
+    "english": "What are you doing?",
+    "words": [
+      "Wat",
+      "doe",
+      "jij"
+    ],
+    "rule": "Wh-Questions",
+    "explanation": "Question word 'Wat' is 1st, verb 'doe' is 2nd, subject 3rd."
+  },
+  {
+    "id": "s-n-31",
+    "english": "Where do you live?",
+    "words": [
+      "Waar",
+      "woon",
+      "jij"
+    ],
+    "rule": "Wh-Questions",
+    "explanation": "'Waar' asks for place; the verb stays in 2nd position."
+  },
+  {
+    "id": "s-n-32",
+    "english": "When are you coming?",
+    "words": [
+      "Wanneer",
+      "kom",
+      "jij"
+    ],
+    "rule": "Wh-Questions",
+    "explanation": "'Wanneer' (when) is 1st; verb 'kom' follows immediately."
+  },
+  {
+    "id": "s-n-33",
+    "english": "How are you?",
+    "words": [
+      "Hoe",
+      "gaat",
+      "het",
+      "met",
+      "jou"
+    ],
+    "rule": "Wh-Questions",
+    "explanation": "A fixed phrase: 'Hoe gaat het met...' with verb in 2nd position."
+  },
+  {
+    "id": "s-n-34",
+    "english": "Why are you crying?",
+    "words": [
+      "Waarom",
+      "huil",
+      "jij"
+    ],
+    "rule": "Wh-Questions",
+    "explanation": "'Waarom' (why) opens the question; verb 'huil' is 2nd."
+  },
+  {
+    "id": "s-n-35",
+    "english": "What is your name?",
+    "words": [
+      "Hoe",
+      "heet",
+      "jij"
+    ],
+    "rule": "Wh-Questions",
+    "explanation": "Dutch uses 'Hoe heet jij' (how are you called) for names."
+  },
+  {
+    "id": "s-n-36",
+    "english": "Where is the station?",
+    "words": [
+      "Waar",
+      "is",
+      "het",
+      "station"
+    ],
+    "rule": "Wh-Questions",
+    "explanation": "'Waar' is 1st; verb 'is' is 2nd, then the subject."
+  },
+  {
+    "id": "s-n-37",
+    "english": "When does the shop open?",
+    "words": [
+      "Wanneer",
+      "opent",
+      "de",
+      "winkel"
+    ],
+    "rule": "Wh-Questions",
+    "explanation": "Question word first, verb 'opent' 2nd, subject 'de winkel' 3rd."
+  },
+  {
+    "id": "s-n-38",
+    "english": "What are you eating?",
+    "words": [
+      "Wat",
+      "eet",
+      "jij"
+    ],
+    "rule": "Wh-Questions",
+    "explanation": "'Wat' asks for the object; verb 'eet' keeps 2nd position."
+  },
+  {
+    "id": "s-n-39",
+    "english": "Who is that man?",
+    "words": [
+      "Wie",
+      "is",
+      "die",
+      "man"
+    ],
+    "rule": "Wh-Questions",
+    "explanation": "'Wie' (who) is 1st; verb 'is' is 2nd before the subject."
+  },
+  {
     "id": "s-1-0",
     "english": "Today I am working.",
     "words": [
@@ -50,12 +651,145 @@
     "words": [
       "Morgen",
       "gaan",
-      "Wij",
+      "wij",
       "naar",
       "school"
     ],
     "rule": "Inversion",
-    "explanation": "Morgen (1) + gaan (2) + Wij (3). The verb is always second."
+    "explanation": "Morgen (1) + gaan (2) + wij (3). The verb is always second."
+  },
+  {
+    "id": "s-n-10",
+    "english": "Tomorrow I go to the city.",
+    "words": [
+      "Morgen",
+      "ga",
+      "ik",
+      "naar",
+      "de",
+      "stad"
+    ],
+    "rule": "Inversion",
+    "explanation": "Starting with 'Morgen' pushes the subject 'ik' after the verb 'ga'."
+  },
+  {
+    "id": "s-n-11",
+    "english": "Today she works at home.",
+    "words": [
+      "Vandaag",
+      "werkt",
+      "zij",
+      "thuis"
+    ],
+    "rule": "Inversion",
+    "explanation": "Time word first, so verb 'werkt' stays 2nd and 'zij' moves to 3rd."
+  },
+  {
+    "id": "s-n-12",
+    "english": "In the evening we watch a film.",
+    "words": [
+      "In",
+      "de",
+      "avond",
+      "kijken",
+      "wij",
+      "een",
+      "film"
+    ],
+    "rule": "Inversion",
+    "explanation": "The time phrase counts as 1st position; verb 'kijken' is 2nd."
+  },
+  {
+    "id": "s-n-13",
+    "english": "On Monday he plays tennis.",
+    "words": [
+      "Op",
+      "maandag",
+      "speelt",
+      "hij",
+      "tennis"
+    ],
+    "rule": "Inversion",
+    "explanation": "After 'Op maandag' the verb precedes the subject 'hij'."
+  },
+  {
+    "id": "s-n-14",
+    "english": "Now I drink tea.",
+    "words": [
+      "Nu",
+      "drink",
+      "ik",
+      "thee"
+    ],
+    "rule": "Inversion",
+    "explanation": "The adverb 'Nu' is 1st, so 'drink' comes before 'ik'."
+  },
+  {
+    "id": "s-n-15",
+    "english": "Here we live happily.",
+    "words": [
+      "Hier",
+      "wonen",
+      "wij",
+      "gelukkig"
+    ],
+    "rule": "Inversion",
+    "explanation": "Place word 'Hier' triggers inversion of verb and subject."
+  },
+  {
+    "id": "s-n-16",
+    "english": "Next week they travel to Paris.",
+    "words": [
+      "Volgende",
+      "week",
+      "reizen",
+      "zij",
+      "naar",
+      "Parijs"
+    ],
+    "rule": "Inversion",
+    "explanation": "The time phrase 'Volgende week' is 1st; verb 'reizen' stays 2nd."
+  },
+  {
+    "id": "s-n-17",
+    "english": "In the summer we go to the beach.",
+    "words": [
+      "In",
+      "de",
+      "zomer",
+      "gaan",
+      "wij",
+      "naar",
+      "het",
+      "strand"
+    ],
+    "rule": "Inversion",
+    "explanation": "The time phrase takes 1st position and the verb 'gaan' follows."
+  },
+  {
+    "id": "s-n-18",
+    "english": "Tonight I cook fish.",
+    "words": [
+      "Vanavond",
+      "kook",
+      "ik",
+      "vis"
+    ],
+    "rule": "Inversion",
+    "explanation": "'Vanavond' first means 'kook' comes before the subject 'ik'."
+  },
+  {
+    "id": "s-n-19",
+    "english": "At school we learn Dutch.",
+    "words": [
+      "Op",
+      "school",
+      "leren",
+      "wij",
+      "Nederlands"
+    ],
+    "rule": "Inversion",
+    "explanation": "The place phrase 'Op school' is 1st; verb 'leren' stays 2nd."
   },
   {
     "id": "s-2-0",
@@ -79,5 +813,527 @@
     ],
     "rule": "Modal Verbs",
     "explanation": "Kunnen (modal) is 2nd, spreken (infinitive) is last."
+  },
+  {
+    "id": "s-n-50",
+    "english": "I must go home.",
+    "words": [
+      "Ik",
+      "moet",
+      "naar",
+      "huis",
+      "gaan"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "Modal 'moet' is 2nd; the infinitive 'gaan' goes to the end."
+  },
+  {
+    "id": "s-n-51",
+    "english": "She can swim well.",
+    "words": [
+      "Zij",
+      "kan",
+      "goed",
+      "zwemmen"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "Modal 'kan' is 2nd; infinitive 'zwemmen' is last."
+  },
+  {
+    "id": "s-n-52",
+    "english": "We want to learn Dutch.",
+    "words": [
+      "Wij",
+      "willen",
+      "Nederlands",
+      "leren"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "Modal 'willen' is 2nd; infinitive 'leren' moves to the end."
+  },
+  {
+    "id": "s-n-53",
+    "english": "You may come in.",
+    "words": [
+      "Jij",
+      "mag",
+      "binnenkomen"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "Modal 'mag' is 2nd; the infinitive 'binnenkomen' ends the clause."
+  },
+  {
+    "id": "s-n-54",
+    "english": "He must work tomorrow.",
+    "words": [
+      "Hij",
+      "moet",
+      "morgen",
+      "werken"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "Modal 'moet' is 2nd; infinitive 'werken' is pushed to the end."
+  },
+  {
+    "id": "s-n-55",
+    "english": "I can cook.",
+    "words": [
+      "Ik",
+      "kan",
+      "koken"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "Modal 'kan' 2nd, infinitive 'koken' at the end."
+  },
+  {
+    "id": "s-n-56",
+    "english": "They want to buy a house.",
+    "words": [
+      "Zij",
+      "willen",
+      "een",
+      "huis",
+      "kopen"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "The object sits between the modal and the final infinitive 'kopen'."
+  },
+  {
+    "id": "s-n-57",
+    "english": "You must drink water.",
+    "words": [
+      "Jij",
+      "moet",
+      "water",
+      "drinken"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "Modal 'moet' 2nd; infinitive 'drinken' goes last."
+  },
+  {
+    "id": "s-n-58",
+    "english": "We can help you.",
+    "words": [
+      "Wij",
+      "kunnen",
+      "jou",
+      "helpen"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "Modal 'kunnen' 2nd; infinitive 'helpen' ends the clause."
+  },
+  {
+    "id": "s-n-59",
+    "english": "I want to sleep.",
+    "words": [
+      "Ik",
+      "wil",
+      "slapen"
+    ],
+    "rule": "Modal Verbs",
+    "explanation": "Modal 'wil' 2nd, infinitive 'slapen' at the end."
+  },
+  {
+    "id": "s-n-70",
+    "english": "I get up early.",
+    "words": [
+      "Ik",
+      "sta",
+      "vroeg",
+      "op"
+    ],
+    "rule": "Separable Verbs",
+    "explanation": "'opstaan' splits: 'sta' stays 2nd, prefix 'op' goes to the end."
+  },
+  {
+    "id": "s-n-71",
+    "english": "She calls her mother.",
+    "words": [
+      "Zij",
+      "belt",
+      "haar",
+      "moeder",
+      "op"
+    ],
+    "rule": "Separable Verbs",
+    "explanation": "'opbellen' splits; prefix 'op' moves to the end."
+  },
+  {
+    "id": "s-n-72",
+    "english": "We tidy up the room.",
+    "words": [
+      "Wij",
+      "ruimen",
+      "de",
+      "kamer",
+      "op"
+    ],
+    "rule": "Separable Verbs",
+    "explanation": "'opruimen' splits; prefix 'op' ends the sentence."
+  },
+  {
+    "id": "s-n-73",
+    "english": "He turns off the light.",
+    "words": [
+      "Hij",
+      "doet",
+      "het",
+      "licht",
+      "uit"
+    ],
+    "rule": "Separable Verbs",
+    "explanation": "'uitdoen' splits; prefix 'uit' goes to the end."
+  },
+  {
+    "id": "s-n-74",
+    "english": "I bring the children along.",
+    "words": [
+      "Ik",
+      "neem",
+      "de",
+      "kinderen",
+      "mee"
+    ],
+    "rule": "Separable Verbs",
+    "explanation": "'meenemen' splits; prefix 'mee' moves to the end."
+  },
+  {
+    "id": "s-n-75",
+    "english": "They arrive at six o'clock.",
+    "words": [
+      "Zij",
+      "komen",
+      "om",
+      "zes",
+      "uur",
+      "aan"
+    ],
+    "rule": "Separable Verbs",
+    "explanation": "'aankomen' splits; prefix 'aan' goes to the very end."
+  },
+  {
+    "id": "s-n-76",
+    "english": "You close the door.",
+    "words": [
+      "Jij",
+      "doet",
+      "de",
+      "deur",
+      "dicht"
+    ],
+    "rule": "Separable Verbs",
+    "explanation": "'dichtdoen' splits; prefix 'dicht' ends the sentence."
+  },
+  {
+    "id": "s-n-77",
+    "english": "I turn on the television.",
+    "words": [
+      "Ik",
+      "zet",
+      "de",
+      "televisie",
+      "aan"
+    ],
+    "rule": "Separable Verbs",
+    "explanation": "'aanzetten' splits; prefix 'aan' moves to the end."
+  },
+  {
+    "id": "s-n-78",
+    "english": "We go out tonight.",
+    "words": [
+      "Wij",
+      "gaan",
+      "vanavond",
+      "uit"
+    ],
+    "rule": "Separable Verbs",
+    "explanation": "'uitgaan' splits; prefix 'uit' goes after the time word."
+  },
+  {
+    "id": "s-n-79",
+    "english": "She fills in the form.",
+    "words": [
+      "Zij",
+      "vult",
+      "het",
+      "formulier",
+      "in"
+    ],
+    "rule": "Separable Verbs",
+    "explanation": "'invullen' splits; prefix 'in' goes to the end."
+  },
+  {
+    "id": "s-n-60",
+    "english": "I have eaten bread.",
+    "words": [
+      "Ik",
+      "heb",
+      "brood",
+      "gegeten"
+    ],
+    "rule": "Perfect Tense",
+    "explanation": "Helper 'heb' is 2nd; past participle 'gegeten' goes to the end."
+  },
+  {
+    "id": "s-n-61",
+    "english": "She has bought a book.",
+    "words": [
+      "Zij",
+      "heeft",
+      "een",
+      "boek",
+      "gekocht"
+    ],
+    "rule": "Perfect Tense",
+    "explanation": "'heeft' + object + participle 'gekocht' at the end."
+  },
+  {
+    "id": "s-n-62",
+    "english": "We have played football.",
+    "words": [
+      "Wij",
+      "hebben",
+      "voetbal",
+      "gespeeld"
+    ],
+    "rule": "Perfect Tense",
+    "explanation": "Regular participle 'gespeeld' closes the sentence."
+  },
+  {
+    "id": "s-n-63",
+    "english": "He has drunk coffee.",
+    "words": [
+      "Hij",
+      "heeft",
+      "koffie",
+      "gedronken"
+    ],
+    "rule": "Perfect Tense",
+    "explanation": "Irregular participle 'gedronken' goes to the end."
+  },
+  {
+    "id": "s-n-64",
+    "english": "They have worked hard.",
+    "words": [
+      "Zij",
+      "hebben",
+      "hard",
+      "gewerkt"
+    ],
+    "rule": "Perfect Tense",
+    "explanation": "'hebben' is 2nd; participle 'gewerkt' is last."
+  },
+  {
+    "id": "s-n-65",
+    "english": "I have seen the film.",
+    "words": [
+      "Ik",
+      "heb",
+      "de",
+      "film",
+      "gezien"
+    ],
+    "rule": "Perfect Tense",
+    "explanation": "Participle 'gezien' closes the clause after the object."
+  },
+  {
+    "id": "s-n-66",
+    "english": "You have made a mistake.",
+    "words": [
+      "Jij",
+      "hebt",
+      "een",
+      "fout",
+      "gemaakt"
+    ],
+    "rule": "Perfect Tense",
+    "explanation": "'hebt' + object + participle 'gemaakt' at the end."
+  },
+  {
+    "id": "s-n-67",
+    "english": "We have traveled to Spain.",
+    "words": [
+      "Wij",
+      "zijn",
+      "naar",
+      "Spanje",
+      "gereisd"
+    ],
+    "rule": "Perfect Tense",
+    "explanation": "Verbs of movement use 'zijn'; participle 'gereisd' is last."
+  },
+  {
+    "id": "s-n-68",
+    "english": "She has read the letter.",
+    "words": [
+      "Zij",
+      "heeft",
+      "de",
+      "brief",
+      "gelezen"
+    ],
+    "rule": "Perfect Tense",
+    "explanation": "Irregular participle 'gelezen' goes to the end."
+  },
+  {
+    "id": "s-n-69",
+    "english": "I have slept well.",
+    "words": [
+      "Ik",
+      "heb",
+      "goed",
+      "geslapen"
+    ],
+    "rule": "Perfect Tense",
+    "explanation": "'heb' is 2nd; participle 'geslapen' closes the sentence."
+  },
+  {
+    "id": "s-n-80",
+    "english": "I stay home because I am sick.",
+    "words": [
+      "Ik",
+      "blijf",
+      "thuis",
+      "omdat",
+      "ik",
+      "ziek",
+      "ben"
+    ],
+    "rule": "Subordinate Clauses",
+    "explanation": "After 'omdat' the verb 'ben' moves to the end of the clause."
+  },
+  {
+    "id": "s-n-81",
+    "english": "She says that she is coming.",
+    "words": [
+      "Zij",
+      "zegt",
+      "dat",
+      "zij",
+      "komt"
+    ],
+    "rule": "Subordinate Clauses",
+    "explanation": "After 'dat' the verb 'komt' goes to the end."
+  },
+  {
+    "id": "s-n-82",
+    "english": "We go outside if the weather is good.",
+    "words": [
+      "Wij",
+      "gaan",
+      "naar",
+      "buiten",
+      "als",
+      "het",
+      "weer",
+      "goed",
+      "is"
+    ],
+    "rule": "Subordinate Clauses",
+    "explanation": "After 'als' the verb 'is' is sent to the end of the clause."
+  },
+  {
+    "id": "s-n-83",
+    "english": "I know that you are right.",
+    "words": [
+      "Ik",
+      "weet",
+      "dat",
+      "jij",
+      "gelijk",
+      "hebt"
+    ],
+    "rule": "Subordinate Clauses",
+    "explanation": "After 'dat' the verb 'hebt' closes the subordinate clause."
+  },
+  {
+    "id": "s-n-84",
+    "english": "He is happy because he has a new car.",
+    "words": [
+      "Hij",
+      "is",
+      "blij",
+      "omdat",
+      "hij",
+      "een",
+      "nieuwe",
+      "auto",
+      "heeft"
+    ],
+    "rule": "Subordinate Clauses",
+    "explanation": "After 'omdat' the verb 'heeft' goes to the very end."
+  },
+  {
+    "id": "s-n-85",
+    "english": "I think that it is too expensive.",
+    "words": [
+      "Ik",
+      "denk",
+      "dat",
+      "het",
+      "te",
+      "duur",
+      "is"
+    ],
+    "rule": "Subordinate Clauses",
+    "explanation": "After 'dat' the verb 'is' moves to the end."
+  },
+  {
+    "id": "s-n-86",
+    "english": "We eat at home because it is raining.",
+    "words": [
+      "Wij",
+      "eten",
+      "thuis",
+      "omdat",
+      "het",
+      "regent"
+    ],
+    "rule": "Subordinate Clauses",
+    "explanation": "After 'omdat' the verb 'regent' is placed at the end."
+  },
+  {
+    "id": "s-n-87",
+    "english": "She hopes that we win.",
+    "words": [
+      "Zij",
+      "hoopt",
+      "dat",
+      "wij",
+      "winnen"
+    ],
+    "rule": "Subordinate Clauses",
+    "explanation": "After 'dat' the verb 'winnen' ends the clause."
+  },
+  {
+    "id": "s-n-88",
+    "english": "I come along if I have time.",
+    "words": [
+      "Ik",
+      "kom",
+      "mee",
+      "als",
+      "ik",
+      "tijd",
+      "heb"
+    ],
+    "rule": "Subordinate Clauses",
+    "explanation": "After 'als' the verb 'heb' goes to the end of the clause."
+  },
+  {
+    "id": "s-n-89",
+    "english": "I cannot sleep because the dog barks.",
+    "words": [
+      "Ik",
+      "kan",
+      "niet",
+      "slapen",
+      "omdat",
+      "de",
+      "hond",
+      "blaft"
+    ],
+    "rule": "Subordinate Clauses",
+    "explanation": "After 'omdat' the verb 'blaft' moves to the end of the clause."
   }
 ]

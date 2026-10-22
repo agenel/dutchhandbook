@@ -9,9 +9,14 @@
   "assets": {
     "binding": "ASSETS",
     "directory": "apps/web/dist/web/browser",
-    // Serve index.html for unmatched client routes (Angular SPA deep links, 404 page).
+    // Serve index.html (the client-only app shell) for routes that aren't
+    // prerendered: account pages and unknown URLs (the app shows its 404 page).
     "not_found_handling": "single-page-application",
-    // Run the Worker (API proxy) first for /api/*, before asset/SPA handling.
-    "run_worker_first": ["/api/*"]
+    // Prerendered pages live at <route>/index.html. Serve them at the
+    // slash-less URL the app uses (/tools/quiz) instead of 307-redirecting to /tools/quiz/.
+    "html_handling": "drop-trailing-slash",
+    // Run the Worker first for /api/* (proxy) and "/" (serves the prerendered
+    // home from /_home/; see worker/index.js). Everything else is static.
+    "run_worker_first": ["/api/*", "/"]
   }
 }

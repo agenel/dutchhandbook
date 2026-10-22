@@ -75,7 +75,7 @@ export const routes: Routes = [
     data: {
       title: 'Dutch Vocabulary Flashcards — Learn Fast | More Dutch',
       description:
-        'Master essential Dutch vocabulary with interactive flashcards. Categories include numbers, colors, clothing, and house items.',
+        'Learn everyday Dutch vocabulary with 18 flashcard decks (230 cards), from numbers and colors to food, clothing and travel.',
       canonicalPath: '/tools/flashcards',
       keywords: 'Dutch vocabulary, Dutch flashcards, spaced repetition Dutch',
     },
@@ -87,7 +87,7 @@ export const routes: Routes = [
     data: {
       title: 'de / het Trainer — Master Dutch Noun Gender | More Dutch',
       description:
-        'The fastest way to learn de/het. Practice 500+ common nouns in a rapid-fire drill.',
+        'Learn which Dutch nouns take de or het. Practice 300 common nouns in a quick drill.',
       canonicalPath: '/tools/de-het',
       keywords: 'de het Dutch, Dutch noun gender, common nouns Dutch',
     },
@@ -99,7 +99,7 @@ export const routes: Routes = [
     data: {
       title: 'Dutch Grammar Quiz — More Dutch',
       description:
-        'Test your knowledge of Dutch grammar with interactive quizzes linked to our cheat sheets.',
+        'Test your Dutch grammar with 285 practice questions across 24 topics, each with an explanation.',
       canonicalPath: '/tools/quiz',
       keywords: 'Dutch grammar quiz, Dutch practice test',
     },
@@ -149,11 +149,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/tools/common-words/common-words.component').then((m) => m.CommonWordsComponent),
     data: {
-      title: '1000 Most Common Dutch Words — Master Vocabulary | More Dutch',
+      title: 'Common Dutch Words — Vocabulary by Lesson | More Dutch',
       description:
-        'Master the 1000 most frequently used Dutch words grouped by lesson. Interactive flashcards and list views for efficient learning.',
+        'Learn 594 everyday Dutch words in 30 short lessons, with list and flashcard practice.',
       canonicalPath: '/tools/common-words',
-      keywords: 'Dutch vocabulary, 1000 common Dutch words, learn Dutch words, basic Dutch',
+      keywords: 'Dutch vocabulary, common Dutch words, learn Dutch words, basic Dutch',
     },
   },
   {
@@ -226,6 +226,10 @@ export const routes: Routes = [
     path: 'admin',
     canActivate: [adminGuard],
     loadChildren: () => import('./pages/admin/admin.routes').then(m => m.ADMIN_ROUTES),
+    data: {
+      title: 'Admin — More Dutch',
+      robots: 'noindex, nofollow',
+    },
   },
   {
     path: '**',

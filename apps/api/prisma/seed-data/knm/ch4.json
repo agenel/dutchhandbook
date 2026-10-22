@@ -1,5 +1,6 @@
 [
   {
+    "id": "ch4-0",
     "topic": "Woningtypen (Types of housing)",
     "question": "Wat is een appartement?",
     "options": [
@@ -8,9 +9,11 @@
       "Een tijdelijk huis voor toeristen",
       "Een woning in een dorp"
     ],
-    "answer": "Een woning in een flatgebouw"
+    "answer": "Een woning in een flatgebouw",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-1",
     "topic": "Een huis kopen (Buying a house)",
     "question": "Hoe heet het geld dat je bij een bank leent om een huis te kopen?",
     "options": [
@@ -19,9 +22,11 @@
       "Hypotheek",
       "Kwijtschelding"
     ],
-    "answer": "Hypotheek"
+    "answer": "Hypotheek",
+    "correctIndex": 2
   },
   {
+    "id": "ch4-2",
     "topic": "Een huis kopen (Buying a house)",
     "question": "Wat is een makelaar?",
     "options": [
@@ -30,9 +35,11 @@
       "Iemand die de elektriciteit repareert",
       "De eigenaar van een huurwoning"
     ],
-    "answer": "Iemand die helpt bij het kopen of verkopen van een huis"
+    "answer": "Iemand die helpt bij het kopen of verkopen van een huis",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-3",
     "topic": "Een huis kopen (Buying a house)",
     "question": "Waar moet je naartoe om het officiële contract voor een koophuis te tekenen?",
     "options": [
@@ -41,9 +48,11 @@
       "De notaris",
       "De huurcommissie"
     ],
-    "answer": "De notaris"
+    "answer": "De notaris",
+    "correctIndex": 2
   },
   {
+    "id": "ch4-4",
     "topic": "Een huis huren (Renting a house)",
     "question": "Wanneer kun je een socialehuurwoning huren?",
     "options": [
@@ -52,9 +61,11 @@
       "Alleen als je student bent",
       "Alleen als je ouder bent dan 65 jaar"
     ],
-    "answer": "Als je inkomen laag is"
+    "answer": "Als je inkomen laag is",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-5",
     "topic": "Een huis huren (Renting a house)",
     "question": "Wat is de 'vrije sector'?",
     "options": [
@@ -63,9 +74,11 @@
       "Een organisatie die afval ophaalt",
       "Huizen waar je geen belasting voor betaalt"
     ],
-    "answer": "Woningen met een hoge huur voor mensen met een hoger inkomen"
+    "answer": "Woningen met een hoge huur voor mensen met een hoger inkomen",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-6",
     "topic": "Een huis huren (Renting a house)",
     "question": "Hoe heet de organisatie waarbij verschillende woningcorporaties samenwerken om huizen te verhuren?",
     "options": [
@@ -74,9 +87,11 @@
       "WoningNet of Woonnet",
       "Independer"
     ],
-    "answer": "WoningNet of Woonnet"
+    "answer": "WoningNet of Woonnet",
+    "correctIndex": 2
   },
   {
+    "id": "ch4-7",
     "topic": "Een huis huren (Renting a house)",
     "question": "Wat zijn servicekosten?",
     "options": [
@@ -85,9 +100,11 @@
       "Het geld dat je betaalt aan de makelaar",
       "De rente op je hypotheek"
     ],
-    "answer": "Extra kosten voor bijvoorbeeld het schoonmaken van de flat"
+    "answer": "Extra kosten voor bijvoorbeeld het schoonmaken van de flat",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-8",
     "topic": "Een huis huren (Renting a house)",
     "question": "Waar kun je terecht als je een groot probleem hebt met je verhuurder over de huurprijs?",
     "options": [
@@ -96,9 +113,11 @@
       "De politie",
       "Het energiebedrijf"
     ],
-    "answer": "De huurcommissie"
+    "answer": "De huurcommissie",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-9",
     "topic": "Belastingen (Taxes)",
     "question": "Welke belasting betaalt iedereen voor het afvalwater?",
     "options": [
@@ -107,9 +126,11 @@
       "Rioolheffing",
       "Huurtoeslag"
     ],
-    "answer": "Rioolheffing"
+    "answer": "Rioolheffing",
+    "correctIndex": 2
   },
   {
+    "id": "ch4-10",
     "topic": "Belastingen (Taxes)",
     "question": "Wat is 'kwijtschelding' van gemeentelijke belastingen?",
     "options": [
@@ -118,9 +139,11 @@
       "Dat de belasting elk jaar hoger wordt",
       "Dat je geld terugkrijgt voor de huur"
     ],
-    "answer": "Dat je de belasting niet hoeft te betalen bij een laag inkomen"
+    "answer": "Dat je de belasting niet hoeft te betalen bij een laag inkomen",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-11",
     "topic": "Afval (Waste)",
     "question": "Waar breng je lege flessen en potten naartoe?",
     "options": [
@@ -129,9 +152,11 @@
       "Het chemisch afval",
       "De groene container"
     ],
-    "answer": "De glasbak"
+    "answer": "De glasbak",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-12",
     "topic": "Energie en water (Energy and water)",
     "question": "Hoe heet het vaste bedrag dat je elke maand aan het energiebedrijf betaalt?",
     "options": [
@@ -140,9 +165,11 @@
       "Meterstand",
       "Declaratie"
     ],
-    "answer": "Termijnbedrag"
+    "answer": "Termijnbedrag",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-13",
     "topic": "Energie en water (Energy and water)",
     "question": "Wat is een 'storing'?",
     "options": [
@@ -151,9 +178,11 @@
       "Het opzeggen van een abonnement",
       "Het doorgeven van de meterstand"
     ],
-    "answer": "Dat iets niet goed werkt, zoals geen elektriciteit"
+    "answer": "Dat iets niet goed werkt, zoals geen elektriciteit",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-14",
     "topic": "Verzekeringen (Insurances)",
     "question": "Welke verzekering betaalt als jij per ongeluk de computer van een vriend kapotmaakt?",
     "options": [
@@ -162,9 +191,11 @@
       "De woonhuisverzekering",
       "De zorgverzekering"
     ],
-    "answer": "De aansprakelijkheidsverzekering (AVP)"
+    "answer": "De aansprakelijkheidsverzekering (AVP)",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-15",
     "topic": "Verzekeringen (Insurances)",
     "question": "Wat is de inboedel?",
     "options": [
@@ -173,9 +204,11 @@
       "De grond onder het huis",
       "De buren in je straat"
     ],
-    "answer": "Alles wat er in en bij je huis staat, zoals meubels"
+    "answer": "Alles wat er in en bij je huis staat, zoals meubels",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-16",
     "topic": "Verzekeringen (Insurances)",
     "question": "Welke verzekering is verplicht als je een auto of brommer hebt?",
     "options": [
@@ -184,9 +217,11 @@
       "De woonhuisverzekering",
       "De AVP"
     ],
-    "answer": "De autoverzekering (WA-verzekering)"
+    "answer": "De autoverzekering (WA-verzekering)",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-17",
     "topic": "Vergunningen (Permits)",
     "question": "Wat is een vergunning?",
     "options": [
@@ -195,9 +230,11 @@
       "Een brief over de jaarrekening",
       "Een contract voor internet"
     ],
-    "answer": "Een officieel papier van de gemeente met toestemming"
+    "answer": "Een officieel papier van de gemeente met toestemming",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-18",
     "topic": "Zuinig zijn (Saving energy)",
     "question": "Welk label op een nieuw apparaat betekent dat het zuinig is?",
     "options": [
@@ -206,9 +243,11 @@
       "E-label",
       "P-label"
     ],
-    "answer": "A-label"
+    "answer": "A-label",
+    "correctIndex": 1
   },
   {
+    "id": "ch4-19",
     "topic": "Verhuizen (Moving)",
     "question": "Wat is een verhuisbericht?",
     "options": [
@@ -217,6 +256,332 @@
       "Een boete voor te laat verhuizen",
       "Een contract met de woningcorporatie"
     ],
-    "answer": "Een formulier om aan anderen te laten weten dat je een nieuw adres hebt"
+    "answer": "Een formulier om aan anderen te laten weten dat je een nieuw adres hebt",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-0",
+    "topic": "Woningtypen (Types of housing)",
+    "question": "Wat is een vrijstaand huis?",
+    "options": [
+      "Een huis dat vastzit aan andere huizen",
+      "Een huis dat los staat van andere huizen",
+      "Een woning in een flat",
+      "Een tijdelijke woning"
+    ],
+    "answer": "Een huis dat los staat van andere huizen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-1",
+    "topic": "Woningtypen (Types of housing)",
+    "question": "Wat is een rijtjeshuis?",
+    "options": [
+      "Een huis dat helemaal alleen staat",
+      "Een huis in een rij van huizen die aan elkaar vastzitten",
+      "Een woning op de bovenste verdieping",
+      "Een huis op het water"
+    ],
+    "answer": "Een huis in een rij van huizen die aan elkaar vastzitten",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-2",
+    "topic": "Woningtypen (Types of housing)",
+    "question": "Wat is een VvE (Vereniging van Eigenaren)?",
+    "options": [
+      "Een groep huurders die samen de huur betaalt",
+      "Een groep eigenaren van appartementen die samen voor het gebouw zorgt",
+      "Een bedrijf dat afval ophaalt",
+      "Een verzekering voor je huis"
+    ],
+    "answer": "Een groep eigenaren van appartementen die samen voor het gebouw zorgt",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-3",
+    "topic": "Een huis huren (Renting a house)",
+    "question": "Wat teken je als je een woning gaat huren?",
+    "options": [
+      "Een hypotheek",
+      "Een huurcontract",
+      "Een verwijsbrief",
+      "Een vergunning"
+    ],
+    "answer": "Een huurcontract",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-4",
+    "topic": "Een huis huren (Renting a house)",
+    "question": "Wat is de waarborgsom (borg) bij het huren van een woning?",
+    "options": [
+      "Geld dat je nooit terugkrijgt",
+      "Geld dat je vooraf betaalt en terugkrijgt als je de woning netjes achterlaat",
+      "De maandelijkse huur",
+      "Een belasting voor de gemeente"
+    ],
+    "answer": "Geld dat je vooraf betaalt en terugkrijgt als je de woning netjes achterlaat",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-5",
+    "topic": "Een huis huren (Renting a house)",
+    "question": "Wat is huurtoeslag?",
+    "options": [
+      "Extra huur die je moet betalen",
+      "Geld van de Belastingdienst om de huur te betalen bij een laag inkomen",
+      "Een boete voor te late huur",
+      "Geld voor een koophuis"
+    ],
+    "answer": "Geld van de Belastingdienst om de huur te betalen bij een laag inkomen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-6",
+    "topic": "Een huis huren (Renting a house)",
+    "question": "Hoe kom je meestal aan een sociale huurwoning?",
+    "options": [
+      "Je koopt hem bij de makelaar",
+      "Je schrijft je in en wacht op je beurt (inschrijftijd)",
+      "Je vraagt het aan de koning",
+      "Je krijgt hem meteen van de gemeente"
+    ],
+    "answer": "Je schrijft je in en wacht op je beurt (inschrijftijd)",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-7",
+    "topic": "Belastingen (Taxes)",
+    "question": "Welke belasting betalen huiseigenaren aan de gemeente over hun woning?",
+    "options": [
+      "De rioolheffing",
+      "De OZB (onroerendezaakbelasting)",
+      "De huurtoeslag",
+      "De waterschapsbelasting"
+    ],
+    "answer": "De OZB (onroerendezaakbelasting)",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-8",
+    "topic": "Belastingen (Taxes)",
+    "question": "Waarvoor betaal je afvalstoffenheffing?",
+    "options": [
+      "Voor het ophalen en verwerken van je afval",
+      "Voor het schone drinkwater",
+      "Voor de dijken",
+      "Voor je hypotheek"
+    ],
+    "answer": "Voor het ophalen en verwerken van je afval",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch4-n-9",
+    "topic": "Belastingen (Taxes)",
+    "question": "Welke belasting betaal je voor het onderhoud van dijken en voor schoon water?",
+    "options": [
+      "De OZB",
+      "De waterschapsbelasting",
+      "De inkomstenbelasting",
+      "De afvalstoffenheffing"
+    ],
+    "answer": "De waterschapsbelasting",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-10",
+    "topic": "Afval (Waste)",
+    "question": "Wat hoort er in de groene (gft-)container?",
+    "options": [
+      "Glas en flessen",
+      "Groente-, fruit- en tuinafval",
+      "Oude kranten",
+      "Batterijen en verf"
+    ],
+    "answer": "Groente-, fruit- en tuinafval",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-11",
+    "topic": "Afval (Waste)",
+    "question": "Waar gooi je oude kranten en karton?",
+    "options": [
+      "In de glasbak",
+      "Bij het oud papier",
+      "In het chemisch afval",
+      "In de gft-container"
+    ],
+    "answer": "Bij het oud papier",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-12",
+    "topic": "Afval (Waste)",
+    "question": "Waar breng je verf, batterijen en ander klein chemisch afval naartoe?",
+    "options": [
+      "In de gewone vuilnisbak",
+      "Naar de milieustraat of de chemokar",
+      "In de glasbak",
+      "Bij het oud papier"
+    ],
+    "answer": "Naar de milieustraat of de chemokar",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-13",
+    "topic": "Afval (Waste)",
+    "question": "Wat doe je met grote spullen zoals een oude bank (grofvuil)?",
+    "options": [
+      "Je zet het zomaar op straat",
+      "Je maakt een afspraak met de gemeente om het op te halen",
+      "Je gooit het in de glasbak",
+      "Je verbrandt het in de tuin"
+    ],
+    "answer": "Je maakt een afspraak met de gemeente om het op te halen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-14",
+    "topic": "Energie en water (Energy and water)",
+    "question": "Wat geef je door aan het energiebedrijf zodat je de juiste rekening krijgt?",
+    "options": [
+      "Je telefoonnummer",
+      "De meterstand",
+      "Je paspoortnummer",
+      "Je bankpas"
+    ],
+    "answer": "De meterstand",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-15",
+    "topic": "Energie en water (Energy and water)",
+    "question": "Wat is de jaarafrekening van het energiebedrijf?",
+    "options": [
+      "De maandelijkse premie",
+      "Een overzicht aan het eind van het jaar of je geld terugkrijgt of moet bijbetalen",
+      "Een boete",
+      "De borg voor je woning"
+    ],
+    "answer": "Een overzicht aan het eind van het jaar of je geld terugkrijgt of moet bijbetalen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-16",
+    "topic": "Energie en water (Energy and water)",
+    "question": "Kun je in Nederland het water uit de kraan veilig drinken?",
+    "options": [
+      "Nee, nooit",
+      "Ja, het kraanwater is schoon en veilig",
+      "Alleen als je het eerst kookt",
+      "Alleen in de zomer"
+    ],
+    "answer": "Ja, het kraanwater is schoon en veilig",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-17",
+    "topic": "Verzekeringen (Insurances)",
+    "question": "Wat verzekert de inboedelverzekering?",
+    "options": [
+      "Het gebouw van je huis",
+      "Je spullen in huis, zoals meubels en televisie",
+      "Je auto",
+      "Je gezondheid"
+    ],
+    "answer": "Je spullen in huis, zoals meubels en televisie",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-18",
+    "topic": "Verzekeringen (Insurances)",
+    "question": "Welke verzekering is voor het gebouw zelf en vooral belangrijk voor huiseigenaren?",
+    "options": [
+      "De inboedelverzekering",
+      "De woonhuisverzekering (opstalverzekering)",
+      "De zorgverzekering",
+      "De reisverzekering"
+    ],
+    "answer": "De woonhuisverzekering (opstalverzekering)",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-19",
+    "topic": "Vergunningen (Permits)",
+    "question": "Wanneer heb je vaak een vergunning van de gemeente nodig?",
+    "options": [
+      "Als je boodschappen doet",
+      "Als je gaat verbouwen aan je huis",
+      "Als je op vakantie gaat",
+      "Als je naar de dokter gaat"
+    ],
+    "answer": "Als je gaat verbouwen aan je huis",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-20",
+    "topic": "Zuinig zijn (Saving energy)",
+    "question": "Wat kun je doen om energie te besparen?",
+    "options": [
+      "De verwarming hoger zetten",
+      "Het huis goed isoleren en LED-lampen gebruiken",
+      "Alle lampen laten branden",
+      "Langer douchen"
+    ],
+    "answer": "Het huis goed isoleren en LED-lampen gebruiken",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-21",
+    "topic": "Verhuizen (Moving)",
+    "question": "Wat moet je bij de gemeente doen als je naar een nieuw adres verhuist?",
+    "options": [
+      "Niets",
+      "Je nieuwe adres doorgeven (je inschrijven)",
+      "Een vergunning kopen",
+      "Een nieuw paspoort voor de hele familie halen"
+    ],
+    "answer": "Je nieuwe adres doorgeven (je inschrijven)",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-22",
+    "topic": "Verhuizen (Moving)",
+    "question": "Wie moet je, naast de gemeente, ook je nieuwe adres doorgeven?",
+    "options": [
+      "Alleen de buren",
+      "Bijvoorbeeld de bank, de verzekering en je werk",
+      "Niemand",
+      "Alleen de koning"
+    ],
+    "answer": "Bijvoorbeeld de bank, de verzekering en je werk",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-23",
+    "topic": "Een huis kopen (Buying a house)",
+    "question": "Wat is een hypotheek?",
+    "options": [
+      "Huur die je elke maand betaalt",
+      "Geld dat je bij de bank leent om een huis te kopen",
+      "Een belasting voor de gemeente",
+      "Een verzekering voor je spullen"
+    ],
+    "answer": "Geld dat je bij de bank leent om een huis te kopen",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch4-n-24",
+    "topic": "Een huis kopen (Buying a house)",
+    "question": "Bij wie teken je het officiële contract als je een huis koopt?",
+    "options": [
+      "Bij de makelaar",
+      "Bij de notaris",
+      "Bij de huurcommissie",
+      "Bij de energieleverancier"
+    ],
+    "answer": "Bij de notaris",
+    "correctIndex": 1
   }
 ]

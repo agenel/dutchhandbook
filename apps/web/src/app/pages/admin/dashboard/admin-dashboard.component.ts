@@ -232,10 +232,10 @@ import type { AdminStatsDto, AdminSignupChartDto, AdminAttemptsChartDto, AdminCh
         justify-content: center;
       }
       .kpi-icon .material-icons { font-size: 1.5rem; }
-      .bg-ink-light { background: #f1f1f1; color: var(--ink); }
-      .bg-blue-light { background: #eef6ff; color: var(--blue); }
-      .bg-green-light { background: #effaf3; color: var(--green); }
-      .bg-orange-light { background: #fff7ed; color: var(--orange); }
+      .bg-ink-light { background: var(--stripe); color: var(--ink); }
+      .bg-blue-light { background: var(--blue-light); color: var(--blue); }
+      .bg-green-light { background: var(--green-light); color: var(--green); }
+      .bg-orange-light { background: var(--orange-bg); color: var(--orange); }
 
       .kpi-title { font-size: 0.8rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; }
       .kpi-value { font-family: 'DM Mono', monospace; font-size: 1.8rem; font-weight: 700; color: var(--ink); line-height: 1.2; }

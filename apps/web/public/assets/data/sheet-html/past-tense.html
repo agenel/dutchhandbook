@@ -25,7 +25,7 @@
 .tb-imp .tb-head { background:var(--gold-light); border-color:var(--gold-border); }
 .tb-imp .tb-name { color:var(--gold); }
 .tb-imp .tb-alt { color:var(--gold); }
-.tb-imp .tb-ex { background:var(--gold-light); color:#7A5A00; border:1px solid var(--gold-border); }
+.tb-imp .tb-ex { background:var(--gold-light); color:var(--gold); border:1px solid var(--gold-border); }
 
 /* form cards */
 .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem; }
@@ -47,7 +47,7 @@
 .fp { padding:0.16rem 0.42rem; border-radius:4px; font-family:'DM Mono',monospace; font-size:0.73rem; font-weight:600; }
 .fp-aux { background:var(--blue-light); color:var(--blue); border:1px solid var(--blue-border); }
 .fp-ge  { background:var(--red-light); color:var(--red); border:1px solid var(--red-border); }
-.fp-st { background:#F0F0EA; color:var(--ink); border:1px solid #E0D8CC; }
+.fp-st { background:var(--stripe); color:var(--ink); border:1px solid var(--border); }
 [data-theme="dark"] .fp-st { background:var(--white); color:var(--ink); border-color:var(--border); }
 .fp-end { background:var(--green-light); color:var(--green); border:1px solid var(--green-border); }
 .fp-plus { color:var(--muted); font-size:0.75rem; }
@@ -59,19 +59,19 @@
 
 .fc-hebben .fc-head { background:var(--orange-bg); border-color:var(--orange-border); }
 .fc-hebben .fc-title { color:var(--orange); }
-.fc-hebben .fc-badge { background:var(--orange-border); color:var(--red); }
+.fc-hebben .fc-badge { background:var(--white); color:var(--red); border:1px solid var(--orange-border); }
 
 .fc-zijn .fc-head { background:var(--teal-light); border-color:var(--teal-border); }
 .fc-zijn .fc-title { color:var(--teal); }
-.fc-zijn .fc-badge { background:var(--teal-border); color:var(--teal); }
+.fc-zijn .fc-badge { background:var(--teal-light); color:var(--teal); border:1px solid var(--teal-border); }
 
 .fc-weak .fc-head { background:var(--gold-light); border-color:var(--gold-border); }
 .fc-weak .fc-title { color:var(--gold); }
-.fc-weak .fc-badge { background:var(--gold-border); color:#7A5A00; }
+.fc-weak .fc-badge { background:var(--gold-light); color:var(--gold); border:1px solid var(--gold-border); }
 
 .fc-strong .fc-head { background:var(--purple-light); border-color:var(--purple-border); }
 .fc-strong .fc-title { color:var(--purple); }
-.fc-strong .fc-badge { background:var(--purple-border); color:var(--purple); }
+.fc-strong .fc-badge { background:var(--purple-light); color:var(--purple); border:1px solid var(--purple-border); }
 
 /* zijn/hebben split box */
 .zh-box { background:var(--ink); color:var(--cream); border-radius:10px; padding:1.1rem 1.4rem; margin-bottom:2rem; }
@@ -80,8 +80,8 @@
 .zh-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
 @media(max-width:500px){.zh-grid{grid-template-columns:1fr}}
 .zh-col-title { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.45rem; font-weight:500; }
-.tc-zijn { color:var(--teal-border); }
-.tc-hebb { color:var(--orange-light); }
+.tc-zijn { color:#A8D8D8; }
+.tc-hebb { color:#FFD0B5; }
 .zh-list { font-size:0.79rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.75); }
 .zh-list strong { color:rgba(255,255,255,0.95); font-weight:500; }
 [data-theme="dark"] .zh-list strong, [data-theme="dark"] .zh-list { color:var(--ink); }

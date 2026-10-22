@@ -258,5 +258,330 @@
     ],
     "answer": "1975",
     "correctIndex": 2
+  },
+  {
+    "id": "ch9-n-0",
+    "topic": "De tijd voor 1800",
+    "question": "Wie schilderde 'De Nachtwacht' in de Gouden Eeuw?",
+    "options": [
+      "Vincent van Gogh",
+      "Rembrandt van Rijn",
+      "Johannes Vermeer",
+      "Piet Mondriaan"
+    ],
+    "answer": "Rembrandt van Rijn",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch9-n-1",
+    "topic": "De tijd na 1800",
+    "question": "Welke beroemde Nederlandse schilder maakte 'De Zonnebloemen' en 'De Sterrennacht'?",
+    "options": [
+      "Rembrandt",
+      "Vincent van Gogh",
+      "Jeroen Bosch",
+      "Frans Hals"
+    ],
+    "answer": "Vincent van Gogh",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch9-n-2",
+    "topic": "De tijd voor 1800",
+    "question": "Wie was Desiderius Erasmus?",
+    "options": [
+      "Een beroemde Nederlandse geleerde en schrijver",
+      "Een koning van Nederland",
+      "Een voetballer",
+      "Een zeeheld"
+    ],
+    "answer": "Een beroemde Nederlandse geleerde en schrijver",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-3",
+    "topic": "De tijd voor 1800",
+    "question": "Hoe heette de oorlog van Nederland tegen Spanje ook wel?",
+    "options": [
+      "De Eerste Wereldoorlog",
+      "De Tachtigjarige Oorlog",
+      "De Koude Oorlog",
+      "De Hongerwinter"
+    ],
+    "answer": "De Tachtigjarige Oorlog",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch9-n-4",
+    "topic": "De tijd voor 1800",
+    "question": "Met welke vrede eindigde in 1648 de oorlog tegen Spanje?",
+    "options": [
+      "De Vrede van Versailles",
+      "De Vrede van Münster",
+      "De Vrede van Parijs",
+      "De Vrede van Wenen"
+    ],
+    "answer": "De Vrede van Münster",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch9-n-5",
+    "topic": "De tijd voor 1800",
+    "question": "Waar hield de WIC (West-Indische Compagnie) zich onder andere mee bezig?",
+    "options": [
+      "Handel in het westen, waaronder helaas ook de handel in tot slaaf gemaakte mensen",
+      "Het bouwen van scholen",
+      "Het maken van wetten",
+      "Het aanleggen van spoorwegen"
+    ],
+    "answer": "Handel in het westen, waaronder helaas ook de handel in tot slaaf gemaakte mensen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-6",
+    "topic": "De tijd na 1800",
+    "question": "In welk jaar werd de slavernij in de Nederlandse koloniën officieel afgeschaft?",
+    "options": [
+      "1648",
+      "1815",
+      "1863",
+      "1945"
+    ],
+    "answer": "1863",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch9-n-7",
+    "topic": "De tijd na 1800",
+    "question": "Op welke datum herdenken we in Nederland de slachtoffers van oorlogen (Dodenherdenking)?",
+    "options": [
+      "4 mei",
+      "5 mei",
+      "27 april",
+      "25 december"
+    ],
+    "answer": "4 mei",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-8",
+    "topic": "De tijd na 1800",
+    "question": "Wat gebeurde er op 5 mei 1945?",
+    "options": [
+      "Nederland werd bevrijd aan het einde van de Tweede Wereldoorlog",
+      "De euro werd ingevoerd",
+      "De Watersnoodramp begon",
+      "De koning werd geboren"
+    ],
+    "answer": "Nederland werd bevrijd aan het einde van de Tweede Wereldoorlog",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-9",
+    "topic": "De tijd na 1800",
+    "question": "Wat overkwam de Joden in Nederland tijdens de Tweede Wereldoorlog?",
+    "options": [
+      "Zij werden vervolgd en velen werden vermoord",
+      "Zij kregen extra rechten",
+      "Er gebeurde niets bijzonders",
+      "Zij mochten het land besturen"
+    ],
+    "answer": "Zij werden vervolgd en velen werden vermoord",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-10",
+    "topic": "De tijd na 1800",
+    "question": "Welk beroemd bouwwerk sloot in 1932 de Zuiderzee af en maakte er het IJsselmeer van?",
+    "options": [
+      "De Deltawerken",
+      "De Afsluitdijk",
+      "De Erasmusbrug",
+      "De Dom van Utrecht"
+    ],
+    "answer": "De Afsluitdijk",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch9-n-11",
+    "topic": "De tijd voor 1800",
+    "question": "Hoe maakten Nederlanders door de eeuwen heen nieuw land in het water?",
+    "options": [
+      "Door polders te maken en het water weg te pompen met molens en gemalen",
+      "Door bergen af te graven",
+      "Door zand uit de woestijn te halen",
+      "Door bomen te planten in zee"
+    ],
+    "answer": "Door polders te maken en het water weg te pompen met molens en gemalen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-12",
+    "topic": "De tijd na 1800",
+    "question": "Welk land maakte zich in 1830 los van het Koninkrijk der Nederlanden?",
+    "options": [
+      "Duitsland",
+      "België",
+      "Frankrijk",
+      "Luxemburg"
+    ],
+    "answer": "België",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch9-n-13",
+    "topic": "De tijd na 1800",
+    "question": "Wie was rond 1806 korte tijd koning van Holland en een broer van Napoleon?",
+    "options": [
+      "Lodewijk Napoleon",
+      "Willem van Oranje",
+      "Thorbecke",
+      "Willem-Alexander"
+    ],
+    "answer": "Lodewijk Napoleon",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-14",
+    "topic": "De tijd na 1800",
+    "question": "Hoe heet het koningshuis (de koninklijke familie) van Nederland?",
+    "options": [
+      "Oranje-Nassau",
+      "Habsburg",
+      "Windsor",
+      "Bourbon"
+    ],
+    "answer": "Oranje-Nassau",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-15",
+    "topic": "De tijd na 1800",
+    "question": "Wat veranderde er door de nieuwe Grondwet van Thorbecke in 1848 voor de koning?",
+    "options": [
+      "De koning kreeg juist meer macht",
+      "De macht van de koning werd kleiner en het volk kreeg meer invloed",
+      "De koning werd afgeschaft",
+      "Er kwam geen regering meer"
+    ],
+    "answer": "De macht van de koning werd kleiner en het volk kreeg meer invloed",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch9-n-16",
+    "topic": "De tijd na 1800",
+    "question": "In welke eeuw leefde en schilderde Vincent van Gogh?",
+    "options": [
+      "De 15e eeuw",
+      "De 17e eeuw",
+      "De 19e eeuw",
+      "De 21e eeuw"
+    ],
+    "answer": "De 19e eeuw",
+    "correctIndex": 2
+  },
+  {
+    "id": "ch9-n-17",
+    "topic": "De tijd na 1800",
+    "question": "Welke munt gebruikte Nederland vóór de euro?",
+    "options": [
+      "De frank",
+      "De gulden",
+      "De mark",
+      "De dollar"
+    ],
+    "answer": "De gulden",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch9-n-18",
+    "topic": "De tijd na 1800",
+    "question": "In welk jaar kregen Nederlanders de euro als contant geld in handen?",
+    "options": [
+      "1992",
+      "2002",
+      "2012",
+      "1975"
+    ],
+    "answer": "2002",
+    "correctIndex": 1
+  },
+  {
+    "id": "ch9-n-19",
+    "topic": "De tijd na 1800",
+    "question": "Was Nederland een van de oprichters van de Europese samenwerking (nu de EU)?",
+    "options": [
+      "Ja, Nederland hoorde bij de eerste landen",
+      "Nee, Nederland deed nooit mee",
+      "Nederland kwam er pas in 2020 bij",
+      "Alleen als waarnemer"
+    ],
+    "answer": "Ja, Nederland hoorde bij de eerste landen",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-20",
+    "topic": "De tijd na 1800",
+    "question": "Uit welk gebied van het voormalige Nederlands-Indië kwamen de 'Molukkers' naar Nederland?",
+    "options": [
+      "De Molukken",
+      "Canada",
+      "Spanje",
+      "Noorwegen"
+    ],
+    "answer": "De Molukken",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-21",
+    "topic": "De tijd na 1800",
+    "question": "Waar zat Anne Frank ondergedoken in Amsterdam, nu een museum?",
+    "options": [
+      "In het Achterhuis",
+      "In het paleis",
+      "In een kerk",
+      "In een school"
+    ],
+    "answer": "In het Achterhuis",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-22",
+    "topic": "De tijd na 1800",
+    "question": "Welke politicus staat bekend om het invoeren van een ouderdomspensioen (de AOW) na de oorlog?",
+    "options": [
+      "Willem Drees",
+      "Johan Thorbecke",
+      "Michiel de Ruyter",
+      "Willem van Oranje"
+    ],
+    "answer": "Willem Drees",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-23",
+    "topic": "De tijd voor 1800",
+    "question": "In welke stad staat het Rijksmuseum, met veel kunst uit de Gouden Eeuw?",
+    "options": [
+      "Amsterdam",
+      "Maastricht",
+      "Groningen",
+      "Middelburg"
+    ],
+    "answer": "Amsterdam",
+    "correctIndex": 0
+  },
+  {
+    "id": "ch9-n-24",
+    "topic": "De tijd voor 1800",
+    "question": "Hoe heette de republiek van Nederland in de tijd vóór er een koning was?",
+    "options": [
+      "De Republiek der Zeven Verenigde Nederlanden",
+      "Het Romeinse Rijk",
+      "De Bondsrepubliek",
+      "Het Koninkrijk België"
+    ],
+    "answer": "De Republiek der Zeven Verenigde Nederlanden",
+    "correctIndex": 0
   }
 ]

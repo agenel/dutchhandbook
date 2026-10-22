@@ -6,36 +6,41 @@ export interface ToolMeta {
   tag: string;
 }
 
+/**
+ * Tool cards on the homepage. Keep every number here true to the data files in
+ * apps/web/public/assets/data/ — update the copy whenever content is added.
+ * Tags use one taxonomy, by skill: Exam prep · Verbs · Grammar · Vocabulary · Word order.
+ */
 export const TOOL_REGISTRY: ToolMeta[] = [
   {
     slug: 'knm-exam',
     title: 'KNM Practice Exam',
     description:
-      'Prepare for the Knowledge of Dutch Society exam with realistic mock tests and analytics.',
+      'Mock exams for Kennis van de Nederlandse Maatschappij: 450 questions across all 10 topics, with your score at the end.',
     icon: 'gavel',
-    tag: 'Exam Prep',
+    tag: 'Exam prep',
   },
   {
     slug: 'verb-explorer',
     title: 'Verb Explorer',
     description:
-      'Search and filter the 200 most common Dutch verbs. Full conjugations and examples for every verb.',
+      'Search and filter the 200 most common Dutch verbs, with full conjugations and an example for every verb.',
     icon: 'travel_explore',
-    tag: 'Priority Tool',
+    tag: 'Verbs',
   },
   {
     slug: 'verb-wheel',
     title: 'Conjugation Wheel',
     description:
-      'Visualize all three tenses in one spatial layout. Practice present, past, and perfect tenses with drill mode.',
+      'See present, past and perfect side by side for each of the 200 verbs, then test yourself in drill mode.',
     icon: 'donut_large',
-    tag: 'Grammar Drill',
+    tag: 'Verbs',
   },
   {
     slug: 'common-words',
-    title: '1000 Common Words',
+    title: 'Common Words',
     description:
-      'Master the 1000 most frequently used Dutch words grouped by lesson. Interactive practice modes.',
+      '594 high-frequency words in 30 topic lessons. Work through each list, then practise and mark words as mastered.',
     icon: 'menu_book',
     tag: 'Vocabulary',
   },
@@ -43,7 +48,7 @@ export const TOOL_REGISTRY: ToolMeta[] = [
     slug: 'flashcards',
     title: 'Flashcards',
     description:
-      'Master essential Dutch vocabulary with spaced-repetition flashcards across 6 categories.',
+      '230 cards in 18 themed decks. Cards you mark as hard come back until you know them.',
     icon: 'style',
     tag: 'Vocabulary',
   },
@@ -51,25 +56,25 @@ export const TOOL_REGISTRY: ToolMeta[] = [
     slug: 'de-het',
     title: 'de/het Trainer',
     description:
-      'The fastest way to learn noun genders. Practice 500+ common nouns in a rapid-fire drill.',
+      'Learn noun genders with a rapid-fire drill of 300 common nouns, filterable by level.',
     icon: 'category',
-    tag: 'Practice',
+    tag: 'Grammar',
   },
   {
     slug: 'quiz',
     title: 'Grammar Quiz',
     description:
-      'Test your knowledge of the grammar rules with interactive quizzes linked to our cheat sheets.',
+      '285 questions across 24 grammar topics, with a short explanation after every answer.',
     icon: 'quiz',
-    tag: 'Tests',
+    tag: 'Grammar',
   },
   {
     slug: 'sentence-builder',
     title: 'Sentence Builder',
     description:
-      'Master Dutch word order by assembling sentences block by block. V2, Inversion, and more.',
+      'Put the words in the right order: 107 sentences covering 10 word-order rules, from V2 to subordinate clauses.',
     icon: 'account_tree',
-    tag: 'Advanced',
+    tag: 'Word order',
   },
 ];
 

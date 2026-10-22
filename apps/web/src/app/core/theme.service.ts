@@ -18,7 +18,10 @@ export class ThemeService {
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private readonly progress = inject(ProgressService);
 
-  private readonly _dark = signal<boolean>(this.readBool(DARK_KEY, false));
+  /** True once the visitor (or their saved server preference) picked a theme.
+   *  Until then we follow the device's light/dark setting and save nothing. */
+  private explicitTheme = this.readStored(DARK_KEY) !== null;
+  private readonly _dark = signal<boolean>(this.initialDark());
   private readonly _flashcard = signal<boolean>(false);
 
   readonly dark = computed(() => this._dark());
@@ -33,12 +36,20 @@ export class ThemeService {
       } else {
         html.removeAttribute('data-theme');
       }
+      if (!this.explicitTheme) return;
       try {
         localStorage.setItem(DARK_KEY, String(this._dark()));
       } catch {
         /* private mode — ignore */
       }
     });
+
+    // Track OS theme changes until the visitor chooses one themselves.
+    if (this.isBrowser && typeof matchMedia === 'function') {
+      matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', (e) => {
+        if (!this.explicitTheme) this._dark.set(e.matches);
+      });
+    }
 
     effect(() => {
       if (!this.isBrowser) return;
@@ -53,6 +64,7 @@ export class ThemeService {
   }
 
   toggleDark(): void {
+    this.explicitTheme = true;
     this._dark.update((v) => !v);
     if (this.isBrowser) {
       this.progress.patchPreferences({ darkMode: this._dark() }).subscribe();
@@ -61,6 +73,7 @@ export class ThemeService {
 
   /** Replace dark mode (e.g. after loading server preferences). */
   setDark(value: boolean): void {
+    this.explicitTheme = true;
     this._dark.set(value);
   }
 
@@ -76,13 +89,21 @@ export class ThemeService {
     this._flashcard.set(value);
   }
 
-  private readBool(key: string, fallback: boolean): boolean {
-    if (!this.isBrowser) return fallback;
+  /** Saved choice if there is one, otherwise the device's color-scheme setting. */
+  private initialDark(): boolean {
+    const stored = this.readStored(DARK_KEY);
+    if (stored !== null) return stored === 'true';
+    return this.isBrowser && typeof matchMedia === 'function'
+      ? matchMedia('(prefers-color-scheme: dark)').matches
+      : false;
+  }
+
+  private readStored(key: string): string | null {
+    if (!this.isBrowser) return null;
     try {
-      const v = localStorage.getItem(key);
-      return v === null ? fallback : v === 'true';
+      return localStorage.getItem(key);
     } catch {
-      return fallback;
+      return null;
     }
   }
 }
